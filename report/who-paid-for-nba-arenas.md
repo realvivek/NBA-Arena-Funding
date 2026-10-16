@@ -1,16 +1,18 @@
 # Who Paid for the NBA's Arenas
 
-October 11, 2026
+October 16, 2026
 
-Taxpayers have put $8.93B into today's 30 NBA arenas, a third of the $26.85B spent on them (2026 dollars). Counting property-tax exemptions and taxes redirected to arena debt, public money passes $10.6B, or 38%. Another $3.1B is committed or pending for new and rebuilt arenas in Oklahoma City, Salt Lake City, San Antonio, Portland and Memphis.
+Taxpayers have put $9.30B into today's 30 NBA arenas, 34% of the $27.18B spent on them (2026 dollars). Counting property-tax exemptions and taxes redirected to arena debt, public money passes $11.0B, or 39%. Another $3.2B is committed or pending for new and rebuilt arenas in Oklahoma City, Salt Lake City, San Antonio, Portland and Memphis.
+
+The money has moved from building arenas to rebuilding them. Since 2014, public money to renovate or buy existing arenas has come to $2.90B, nearly three times the $1.03B in the three arenas that opened in that time.
 
 Relocation threats worked as deadlines. Of 20 documented owner or league threats since 1994, 13 were followed by public money in the same city, a median 11 months later. Deals after a threat were no more lopsided than deals without one: the public paid two-thirds to three-quarters either way.
 
-Residents carried more of it than visitors: their sales, property and general taxes supplied 46% of public capital, against 42% from hotel, car-rental and food taxes. The research consensus is that the money does not come back in local growth.
+Residents carried more of it than visitors: their sales, property and general taxes supplied 45% of public capital, against 41% from hotel, car-rental and food taxes. The research consensus is that the money does not come back in local growth.
 
 ## All 30 arenas
 
-Eighteen of the 30 arenas are publicly owned, and the public paid half or more of everything spent on 12 of them. Of the 12 owned privately or run privately on public land, 7 still got public money or a property-tax break; we found none for Intuit Dome, Chase Center, TD Garden, Xfinity Mobile Arena or Scotiabank Arena.
+Eighteen of the 30 arenas are publicly owned, and the public paid half or more of everything spent on 12 of them. Of the 12 owned privately or run privately on public land, 7 still got public money or a property-tax break; we found none for Intuit Dome, Chase Center, Xfinity Mobile Arena or Scotiabank Arena. TD Garden was approved in 1992 under a state urban-renewal law with negotiated tax payments of $1.0M to $1.5M a year, a break we could not put a number on.
 
 Rows run from the most public money to the least; dollar amounts are charted under What taxpayers carry. Public share covers construction, later renovations and documented yearly payments, in 2026 dollars.
 
@@ -18,26 +20,26 @@ Rows run from the most public money to the least; dollar amounts are charted und
 | --- | --- | --- | --- | --- | --- | --- |
 | [Orlando Magic](https://en.wikipedia.org/wiki/Kia_Center) | Kia Center (2010) | City | 92% | Hotel (tourist) tax | 2035 | Rent $1M a year |
 | [Washington Wizards](https://en.wikipedia.org/wiki/Capital_One_Arena) | Capital One Arena (1997) | District of Columbia, since 2024 | 56% | General funds and bonds | 2050 | Teams committed through 2050 |
-| [Indiana Pacers](https://indyencyclopedia.org/bankers-life-fieldhouse/) | Gainbridge Fieldhouse (1999) | City board (CIB) | 71% | Hotel and food taxes, state tax capture | 2044 | Up to $750M if the team leaves |
-| [Charlotte Hornets](https://www.carolinajournal.com/opinion/on-world-class-chumps/) | Spectrum Center (2005) | City | 78% | Hotel and car-rental taxes | 2045 | No rent until 2030 |
+| [Indiana Pacers](https://indyencyclopedia.org/bankers-life-fieldhouse/) | Gainbridge Fieldhouse (1999) | City board (CIB) | 72% | Hotel and food taxes, state tax capture | 2044 | Up to $750M if the team leaves |
+| [Charlotte Hornets](https://www.carolinajournal.com/opinion/on-world-class-chumps/) | Spectrum Center (2005) | City | 92% | Hotel and car-rental taxes | 2045 | No rent until 2030 |
 | [Memphis Grizzlies](https://en.wikipedia.org/wiki/FedExForum) | FedExForum (2004) | City and county | 100% | Public bonds, split not documented | 2029 | New lease pending; $470M renovation waits on it |
-| [Utah Jazz](https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years) | Delta Center (1991) | Owner's company, on city land | 57% | 0.5% city sales tax | 2055 | $125M if one team leaves, $250M if both (draft terms) |
-| [Houston Rockets](https://houstonsports.org/wp-content/uploads/Multi-Purpose_Arena_Letter_of_Agreement.pdf) | Toyota Center (2003) | City-county sports authority | 70% | Hotel and car-rental taxes | 2033 | Public owner must keep it "first-class" |
-| [Brooklyn Nets](https://www.ibo.nyc.ny.us/iboreports/52909AtlanticYardsTestimony.pdf) | Barclays Center (2012) | State entity, private operator | 22% | City and state land and infrastructure | Not confirmed | Not confirmed |
-| [San Antonio Spurs](https://en.wikipedia.org/wiki/Frost_Bank_Center) | Frost Bank Center (2002) | County | 84% | Hotel and car-rental taxes | 2032 | Up to $124M |
-| [Detroit Pistons](https://www.degc.org/_files/ugd/a7a51b_45e5bce6092b43bf9c6702781cc4fd9a.pdf) | Little Caesars Arena (2017) | City authority, Ilitch-run | 33% | Captured property taxes, school taxes included | Not public | Not public |
-| [Cleveland Cavaliers](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) | Rocket Arena (1994) | Public nonprofit (Gateway) | 58% | Alcohol and cigarette taxes | 2034 | Public owner owes major repairs |
+| [Utah Jazz](https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years) | Delta Center (1991) | Owner's company, on city land | 60% | 0.5% city sales tax | 2055 | $125M if one team leaves, $250M if both (draft terms) |
 | [New Orleans Pelicans](https://en.wikipedia.org/wiki/Smoothie_King_Center) | Smoothie King Center (1999) | State | 100% | Hotel taxes and state funds | 2029 | Lease ends June 30, 2029 |
+| [Brooklyn Nets](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/infrastructure/2009/2009-may-atlantic-yards-testimony.pdf) | Barclays Center (2012) | State entity, private operator | 23% | City and state land and infrastructure | Not confirmed | Not confirmed |
+| [Houston Rockets](https://houstonsports.org/wp-content/uploads/Multi-Purpose_Arena_Letter_of_Agreement.pdf) | Toyota Center (2003) | City-county sports authority | 70% | Hotel and car-rental taxes | 2033 | Public owner must keep it "first-class" |
+| [Cleveland Cavaliers](https://ohioauditor.gov/AuditSearch/Reports/2000/gateway_economic_development_corporation_of_greater_cleveland_99-cuyahoga.pdf) | Rocket Arena (1994) | Public nonprofit (Gateway) | 65% | County bonds, repayment source not documented | 2034 | Public owner owes major repairs |
+| [San Antonio Spurs](https://en.wikipedia.org/wiki/Frost_Bank_Center) | Frost Bank Center (2002) | County | 85% | Hotel and car-rental taxes | 2032 | Up to $124M |
+| [Miami Heat](https://www.miaminewtimes.com/news/the-heats-hot-air-6356397/) | Kaseya Center (1999) | County | 49% | County land plus county and state yearly payments | 2040 | County pays $6.4M a year |
+| [Detroit Pistons](https://www.degc.org/_files/ugd/a7a51b_45e5bce6092b43bf9c6702781cc4fd9a.pdf) | Little Caesars Arena (2017) | City authority, Ilitch-run | 31% | Captured property taxes, school taxes included | Not public | Not public |
 | [Milwaukee Bucks](https://docs-preview.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf) | Fiserv Forum (2018) | Public district | 48% | State and county funds, hotel taxes | 2046 | $553M, falling to $20M |
-| [Miami Heat](https://www.miaminewtimes.com/news/the-heats-hot-air-6356397/) | Kaseya Center (1999) | County | 43% | County land plus yearly payments | 2040 | County pays $6.4M a year |
 | [Atlanta Hawks](https://law.marquette.edu/assets/sports-law/pdf/sports-facility-reports/sfr-v13-nba.pdf) | State Farm Arena (1999) | Public authority | 46% | Car-rental and hotel taxes | 2046 | Up to $200M |
 | [Sacramento Kings](https://en.wikipedia.org/wiki/Golden_1_Center) | Golden 1 Center (2016) | City | 40% | Parking-backed lease-revenue bonds | 2051 | Minimum rent $406.2M over 35 years |
-| [Phoenix Suns](https://www.sportsbusinessdaily.com/Daily/Issues/1995/02/14/Facilities-Venues/STATE-OF-THE-ARENA-AMERICA-WEST-ARENA.aspx) | Mortgage Matchup Center (1992) | City | 60% | Hotel and car-rental taxes | 2037 | Up to $200M |
 | [Oklahoma City Thunder](https://en.wikipedia.org/wiki/Paycom_Center) | Paycom Center (2002) | City | 100% | City sales tax | 2050 | Over $1B (new arena lease) |
-| [Minnesota Timberwolves](https://www.lrl.mn.gov/guides/target.aspx) | Target Center (1990) | City | 55% | City bonds and sales tax | 2035 | $50M |
+| [Phoenix Suns](https://www.sportsbusinessdaily.com/Daily/Issues/1995/02/14/Facilities-Venues/STATE-OF-THE-ARENA-AMERICA-WEST-ARENA.aspx) | Mortgage Matchup Center (1992) | City | 54% | Hotel and car-rental taxes | 2037 | Up to $200M |
+| [Minnesota Timberwolves](https://www.lrl.mn.gov/guides/target.aspx) | Target Center (1990) | City | 56% | City bonds and sales tax | 2035 | $50M |
 | [Dallas Mavericks](https://www.bondbuyer.com/news/dallas-to-retire-final-piece-of-arena-debt-16-years-early) | American Airlines Center (2001) | City | 30% | Hotel and car-rental taxes | 2031 | Team pursuing a new arena |
-| [Portland Trail Blazers](https://en.wikipedia.org/wiki/Moda_Center) | Moda Center (1995) | City, since 2024 | 15% | City purchase; state bonds pending | 2030 | Must repay city money if it leaves |
-| [Denver Nuggets](https://renewdenver.org/projects/pepsi-center/) | Ball Arena (1999) | Private (Kroenke) | 21% | Tax increment and infrastructure | Owns building |  |
+| [Portland Trail Blazers](https://en.wikipedia.org/wiki/Moda_Center) | Moda Center (1995) | City, since 2024 | 14% | City purchase; state bonds pending | 2030 | Must repay city money if it leaves |
+| [Denver Nuggets](https://renewdenver.org/projects/pepsi-center/) | Ball Arena (1999) | Private (Kroenke) | 20% | Tax increment and infrastructure | Owns building |  |
 | [Los Angeles Lakers](https://en.wikipedia.org/wiki/Crypto.com_Arena) | Crypto.com Arena (1999) | AEG, on city land | 0% counted | City land | Owner-run |  |
 | [LA Clippers](https://commercialobserver.com/2020/09/los-angeles-inglewood-clippers-win-unanimous-approval-to-purchase-land-for-1-8-billion-nba-arena) | Intuit Dome (2024) | Private (Ballmer) | 0% | None found | Owns building |  |
 | [Golden State Warriors](https://en.wikipedia.org/wiki/Chase_Center) | Chase Center (2019) | Private | 0% | None found | Owns building |  |
@@ -47,7 +49,7 @@ Rows run from the most public money to the least; dollar amounts are charted und
 | [Philadelphia 76ers](https://en.wikipedia.org/wiki/Xfinity_Mobile_Arena) | Xfinity Mobile Arena (1996) | Private (Comcast Spectacor) | 0% | None found | 2031 | Team plans a new arena about 2031 |
 | [Toronto Raptors](https://www.scotiabankarena.com/venue-information/history) | Scotiabank Arena (1999) | Private (MLSE) | 0% | None documented | Owns building |  |
 
-Most construction costs come from press and secondary sources. Public figures for Milwaukee, Sacramento, Detroit, Denver, Houston, Indianapolis, New Orleans and DC come from primary documents. "0% counted" means a tax break exists but sits outside the core total.
+Construction costs for 12 arenas come from audits, bond or SEC filings and government decisions; the other 18 come from press and secondary sources. The arena-by-arena labels are in the ledger. "0% counted" means a tax break exists but sits outside the core total.
 
 ## How the money was raised
 
@@ -81,9 +83,9 @@ The public money is concentrated: ten arenas hold 63% of it. The four costliest 
 
 The $8.93B leaves out public money that never shows up as a check. Federal taxpayers add about $1.32B (present value) by exempting arena bond interest from tax. New York has excused Madison Square Garden from property tax since 1982, about $42M a year ([NYC Independent Budget Office](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf)).
 
-DC extended Capital One Arena's tax exemption to 2050. Its own finance office valued the tax relief at $312.7M and found it "not financially necessary" ([DC CFO](https://cfo.dc.gov/sites/default/files/dc/sites/ocfo/publication/attachments/TAFA_Capital%20One%20Arena%20112624.pdf)). Counting exemptions and the property tax redirected to Barclays Center's bonds lifts the public total past $10.6B.
+DC extended Capital One Arena's tax exemption to 2050. Its own finance office valued the tax relief at $312.7M and found it "not financially necessary" ([DC CFO](https://cfo.dc.gov/sites/default/files/dc/sites/ocfo/publication/attachments/TAFA_Capital%20One%20Arena%20112624.pdf)). The United Center's owners paid property tax under a 1989 state formula based on the arena's net income. We estimate it cut their taxes by $46.6M in 2002-2016 alone ([method](../data/property_tax/united_center_formula_savings.md)). Counting the exemptions, that formula and the property tax redirected to Barclays Center's bonds lifts the public total past $11.0B.
 
-![Residents paid 46% of the public arena money; visitors paid 42%: public capital by who mostly pays and by funding stream](charts/public-capital-by-stream.png)
+![Residents paid 45% of the public arena money; visitors paid 41%: public capital by who mostly pays and by funding stream](charts/public-capital-by-stream.png)
 
 *Same ledger. Public capital (construction, purchases, renovations) by funding stream, 2026 dollars. Totals: [totals.txt](../data/ledger/totals.txt).*
 
@@ -94,13 +96,13 @@ Spread over the households that pay, the biggest commitments run to thousands of
 | Deal | Paying jurisdiction | Per household |
 | --- | --- | --- |
 | Delta Center and its district (2025) | Salt Lake City | $9,099, an upper bound: 30% or more of the tax comes from non-residents |
-| Thunder's current and new arenas | Oklahoma City | $3,934 |
-| Capital One Arena, since 1997 | District of Columbia | $2,315 |
+| Thunder's current and new arenas | Oklahoma City | $4,174 |
+| Capital One Arena, since 1997 | District of Columbia | $2,293 |
 | Kia Center | Orange County, Florida | $1,571, mostly tourist tax |
 | Golden 1 Center | Sacramento | $1,549 |
-| Spectrum Center | Charlotte | $1,476 |
+| Spectrum Center | Charlotte | $1,483 |
 
-The payments continue for decades after opening. Documented yearly subsidies to five teams already total $524M, led by Indianapolis's payments to the Pacers ([CIB audit](https://www.in.gov/sboa/WebReports/83950A.pdf)). Louisiana has budgeted $17.68M of Pelicans "lease entitlements" for FY2027 ([Louisiana Senate](https://www.senate.la.gov/FiscalServices/Presentations/2026/01%20-%20124%20LSED%20FY%2027%20FINAL.pdf)).
+The payments continue for decades after opening. Documented yearly payments to seven teams already total $759M. The largest are Miami-Dade County's and Florida's payments to the Heat's arena operator ([Inspector General](https://www.miamidadeig.org/resources-oig/pdf/Reports2012/IG11.34FinalBasketball.pdf), [OPPAGA](https://oppaga.fl.gov/Documents/Reports/15-01.pdf)) and Indianapolis's payments to the Pacers ([CIB audit](https://www.in.gov/sboa/WebReports/83950A.pdf)). Louisiana has budgeted $17.68M of Pelicans "lease entitlements" for FY2027 ([Louisiana Senate](https://www.senate.la.gov/FiscalServices/Presentations/2026/01%20-%20124%20LSED%20FY%2027%20FINAL.pdf)).
 
 ## Relocation threats and what they bought
 
@@ -140,7 +142,14 @@ Primary documents:
 
 - [2023 NBA collective bargaining agreement](https://imgix.cosmicjs.com/25da5eb0-15eb-11ee-b5b3-fbd321202bdf-Final-2023-NBA-Collective-Bargaining-Agreement-6-28-23.pdf), Article VII
 - [Louisiana Legislative Auditor, stadium district audit FY2023](https://lla.la.gov/publicreports.nsf/0/ae49cb44840fe57986258b0900722bdf/$file/0000454ba.pdf) and [FY2027 Senate budget presentation](https://www.senate.la.gov/FiscalServices/Presentations/2026/01%20-%20124%20LSED%20FY%2027%20FINAL.pdf)
-- [Indianapolis Capital Improvement Board audit FY2023](https://www.in.gov/sboa/WebReports/83950A.pdf)
+- [Indianapolis Capital Improvement Board audit FY2023](https://www.in.gov/sboa/WebReports/83950A.pdf) and [FY2025](https://www.capitalimprovementboard.org/wp-content/uploads/2026/06/CIB-of-Managers-of-Marion-County-FS-Final-2025.pdf)
+- [City of Memphis CAFR FY2005](https://memphistn.gov/wp-content/uploads/2025/01/FY05-Annual-Report.pdf), [Detroit DDA audited statements FY2019](https://www.degc.org/_files/ugd/a7a51b_4187f63ed8eb44f0b177da32f136fb2c.pdf), [Gateway Economic Development Corp. FY1999 audit](https://ohioauditor.gov/AuditSearch/Reports/2000/gateway_economic_development_corporation_of_greater_cleveland_99-cuyahoga.pdf), [Bexar County CAFR FY2006](https://www.bexar.org/Archive.aspx?ADID=1188) and [City of Charlotte ACFR FY2020](https://lgreports.nctreasurer.com/Reports/2020/Municipality/Charlotte.pdf)
+- [GAO, District of Columbia: Final Status on the Sports Arena (1998)](https://www.govinfo.gov/content/pkg/GAOREPORTS-AIMD-98-223/pdf/GAOREPORTS-AIMD-98-223.pdf) and [Minnesota Legislative Auditor (2017)](https://www.leg.state.mn.us/docs/2017/other/170786.pdf)
+- [Miami-Dade Inspector General, IG11-34 (2012)](https://www.miamidadeig.org/resources-oig/pdf/Reports2012/IG11.34FinalBasketball.pdf) and [Florida OPPAGA Report 15-01](https://oppaga.fl.gov/Documents/Reports/15-01.pdf)
+- [Orlando/Orange County restated interlocal agreement (2016)](https://occompt.legistar1.com/occompt/attachments/017457ff-5195-4c2a-907c-792707710a8e.pdf) and [City of Portland term sheet (2026)](https://efiles.portlandoregon.gov/record/18127836/file/document/)
+- Forest City Enterprises, MSG and Ascent Entertainment filings on [SEC EDGAR](https://www.sec.gov/edgar/search/)
+- [MTA staff summary on the Vanderbilt Yard (2009)](http://www.nolandgrab.org/docs/MTAStaffSummaryVDYard062209.pdf) and [IBO, The Proposed Arena at Atlantic Yards (2009)](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2009/2009-september-the-proposed-arena-at-atlantic-yards.pdf)
+- [35 ILCS 200/10-220, the 1989 stadium valuation formula](https://www.ilga.gov/Documents/legislation/ilcs/documents/003502000K10-220.htm), with [Cook County Assessor data](https://datacatalog.cookcountyil.gov/resource/uzyt-m557.json)
 - [Wisconsin Legislative Fiscal Bureau, Informational Paper 18](https://docs-preview.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf)
 - [Detroit Downtown Development Authority refinancing](https://degc.org/post/downtown-development-authority-completes-major-bond-refinance)
 - [Utah Tax Commission sales-tax distributions](https://tax.utah.gov/sales/distributions/), [Salt Lake City district bond notice](https://www.utah.gov/pmn/files/1261183.pdf) and [June 17, 2025 board minutes](https://www.utah.gov/pmn/files/1368579.pdf)

@@ -7,11 +7,12 @@ This repo is an investigation into how the 30 current NBA arenas were funded: wh
 The scripts reproduce the committed outputs byte for byte on Python 3.11 with scipy 1.17. Use a virtual environment outside the repo, or `.venv/` (ignored):
 
 ```
-uv venv -p 3.11 .venv && uv pip install --python .venv/bin/python "scipy==1.17.*"
+uv venv -p 3.11 .venv && uv pip install --python .venv/bin/python "scipy==1.17.*" "matplotlib==3.10.*"
 .venv/bin/python scripts/arena_ledger/build_ledger.py     # data/ledger/arena_ledger.csv, _calc.json
 .venv/bin/python scripts/arena_ledger/write_totals.py     # data/ledger/totals.txt
 .venv/bin/python scripts/arena_threats/build.py           # data/threats/threat_ledger.csv, left_behind.csv
 .venv/bin/python scripts/arena_threats/compare.py         # data/threats/comparison.txt
+.venv/bin/python scripts/arena_ledger/report_charts.py    # report/charts/*.png, after the ledger is built
 git status --short data/                                  # empty when inputs are unchanged
 ```
 

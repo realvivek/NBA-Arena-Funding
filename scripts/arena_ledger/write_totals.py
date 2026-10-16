@@ -93,7 +93,7 @@ H={
 'WAS':'1997 public money $75.5M (GAO: District $61.5M for land, site and Metro match + $14M federal and WMATA); $50M 2007 TIF notes (arena ticket tax); 2024 $87.5M purchase + $427.5M renovation; property/possessory-interest tax exemption since construction, ~$10M/yr now, extended to 2050 ($312.7M FY2025-50 per OCFO)',
 'UTA':'RDA-owned land at $1/yr (2026 assessed $68.8M, exempt); city CRA reimbursement for the 2017 renovation up to $22.7M through 2040; $525M of 0.5% city sales-tax bonds into a privately owned arena + $375M for the surrounding district',
 'POR':'City $34.5M (1995); building bought for $1 and land under it for $7.13M (2024); $573M pending (state income-tax capture $365M)',
-'DEN':'$36.5M TIF + $4.5M city infrastructure (DURA); city land under a 23-year $10-a-year ground lease; property-tax and construction sales-tax rebates (amounts not found); exemption from the 10% seat tax (memo estimate ~$96M, from one press figure)',
+'DEN':'$36.5M TIF + $4.5M city infrastructure (DURA); city land under a 23-year $10-a-year ground lease; construction sales-tax rebates (amount not found); exemption from the 10% seat tax (memo estimate ~$96M, from one press figure)',
 'LAL':'City-owned land under 55-yr ground lease (exempt); ~$70M city advance (CAO) or ~$58M of bonds and reserves (Seattle 2017), offset by AEG under the Gap Funding Agreement (conduit, not counted)',
 'NYK':'Full property-tax exemption since 1982: $42M in FY2023 (IBO); $946.7M cumulative (IBO via Reinvent Albany) - expanded total only',
 'CHI':'1989 stadium valuation formula: taxes forgone 2002-2016 about $46.6M nominal (expanded total; 1994-2001 not computed); 2024 assessment cut from $92.1M to $50.3M on appeal',
@@ -187,7 +187,7 @@ for r in cur:
     if r['construction_cost_other_reports']: P(f"{r['team']}: cost {r['construction_cost_nominal_m']}M used; other: {r['construction_cost_other_reports']}")
 P('CHA: public $170M (Carolina Journal, explicit taxpayer figure) used; the ACFR names occupancy- and rental-car-tax financing, private contributions and sales of city assets without amounts.')
 P('CLE: public $120M = county taxable bonds lent to Gateway for arena construction (Gateway FY1999 audit) used; PFM attributed $100M of sin-tax bonds to the arena, but the audit says the 1990 bonds were primarily for the stadium.')
-P('ORL: public $418M from the 2016 plan of finance (TDT $270M, land sales $62M, covenant bonds $37M, state and other $30M, interest $19M) used; PFM $430M; earlier split $100M CRA + $330M TDT not supported.')
+P('ORL: public $430M from the 2016 plan of finance (TDT $270M, land sales $62M, covenant bonds $37M, state and other $30M, city cash $12M repaid from Magic use payments, interest $19M) used; same as PFM; $418M if the $12M is treated as the Magic\'s; earlier split $100M CRA + $330M TDT not supported.')
 P('WAS: 1997 public $75.5M (GAO Table 1 plus federal and WMATA Metro money) used; Wikipedia ~$79M; District-only $61.5M.')
 P('PHX: 1992 city share $35M (press) used, re-bucketed to tourist taxes per the 2019 council backup; a 1998 arena refunding of $48.74M (CAFR) suggests the city debt was larger.')
 P('UTA: 2017 renovation city reimbursement counted at its $22.7M cap (SLC ACFR); the ledger earlier treated the 2017 renovation as fully private.')
@@ -195,5 +195,20 @@ P('HOU: public $175M = 2000 Letter Agreement arena budget (primary); press range
 P('OKC new arena: MAPS 4 money $70M (earlier okc.gov), $78M (OCPPA audited FY2024; okc.gov March 2026; Bond Buyer), ~$99M (Bond Buyer May 2026), $89M (okc.gov Oct 12 2026); public set to $900M arena - $50M Thunder; cost estimate $1.016B (Bond Buyer).')
 P('WAS: renovation total $712.5M from Council memo ($800M incl. $87.5M purchase); Monumental now says $1B+.')
 P('MIN: purchase $54.6M (Legislative Auditor 2017) vs $54.0M arena line of the 1995 bonds (2003 packet; the $0.6M difference is other acquisition costs) vs ~$54M (SBD 1994); 2017 Taylor $58M (LRL) vs $60M (Wikipedia).')
+P('')
+P('J. BUILDING VERSUS REBUILDING SINCE 2014 (2026$)')
+P('-'*78)
+START=2014
+built=[(t['team'],t['opened'],sum(t.get('pub',{}).values())*fac(t['opened'])) for t in TEAMS if t['opened']>=START and t.get('pub')]
+rebuilt=[(t['team'],r['cpi_year'],sum(r['pub'].values())*fac(r['cpi_year'])) for t in TEAMS for r in t.get('renos',[]) if r['status'] in ('completed','binding') and r['cpi_year']>=START and r['pub']]
+bought=[(t['team'],t['acq']['year'],t['acq']['amt']*fac(t['acq']['year'])) for t in TEAMS if t.get('acq') and t['acq']['year']>=START]
+sb=sum(x[2] for x in built); sr=sum(x[2] for x in rebuilt)+sum(x[2] for x in bought)
+P(f"Public construction money in arenas opened {START}-2026: {f(sb)} ("+', '.join(f"{k} {y} {f(v)}" for k,y,v in built)+")")
+P(f"Public money to renovate or buy existing arenas, {START}-2026 (completed or binding): {f(sr)} = {sr/sb:.2f} times the construction money")
+agg_r={}
+for k,y,v in rebuilt+bought: agg_r[k]=agg_r.get(k,0)+v
+P('  by arena: '+', '.join(f"{k} {f(v)}" for k,v in sorted(agg_r.items(), key=lambda x:-x[1])))
+P(f"Pending on existing arenas (not counted): {f(agg['pend26'])}; new or replacement arenas and districts outside the 30-arena total, binding or voter-approved: {f(sum(p['pub'] for p in C['projects'] if not p['in_team_row']))}")
+P('Years: construction at the opening year; renovations at the mid-construction year (future and in-progress work at face value, year 2026); purchases at the transaction year.')
 open(DATA+'/ledger/totals.txt','w').write('\n'.join(out)+'\n')
 print('\n'.join(out))

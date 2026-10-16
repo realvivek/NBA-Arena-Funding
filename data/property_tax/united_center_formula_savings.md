@@ -11,7 +11,7 @@ Columns, all for the Assessor's 75-PIN United Center valuation unit (keypin 17-0
 - `paid_with_floor`: `bill`, raised to the statutory $1,000,000 minimum where lower (2005-2008) (a).
 - `cf_a_tax`: tax at the Assessor's first assessed value after the formula ended, $32,310,359 (tax year 2017 certified), x `eq_factor` x `rate_pct` (a).
 - `saving_a`: `cf_a_tax` - `paid_with_floor` (a). Sum 2002-2016: $46.6M. This is the figure used in the ledger's expanded total.
-- `cf_b_tax`, `saving_b`: the same with the Assessor's 2021 market value ($112.5M x 25% = $28,124,917 assessed) (a). Sum: $36.1M, recorded as the low alternative.
+- `cf_b_tax`, `saving_b`: the same with the Assessor's 2021 assessed value, $28,124,917 (about $112.5M market value x 25%) (a). Sum: $36.1M, recorded as the low alternative.
 
 Why this is a floor: 1994-2001 (eight of the formula's 23 years) could not be computed, because Board of Review values before 1999 and Chicago composite rates before 2002 could not be reached (cookcountyclerkil.gov returned 403). Extending the 2002-2010 average saving to those years gives about $77M for the whole term (rough, not used). The Chicago Teachers Union's income-approach estimates for 2002-2007 alone run from $28.2M to $64.2M.
 
