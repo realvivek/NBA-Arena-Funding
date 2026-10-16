@@ -1,0 +1,40 @@
+site,team,kind,tract2010,in_qoz,adjacent_qoz,tract2020,oz2_eligible,poverty,mfi_ratio,oz2_state_nomination,adj_oz2_nominated,lat,lon,coord_src
+State Farm Arena,ATL,arena,13121003500,False,13121002600;13121004300;13121011800;13121011900;13121012000,13121003500,0,40.70,198.4,state list not checked,,33.7573,-84.3963,manual_coords
+TD Garden,BOS,arena,25025020303,False,,25025020305,0,11.00,134.3,state list not checked,,42.3662,-71.0621,manual_coords
+Barclays Center,BKN,arena,36047012902,False,,36047012902,0,6.305,199.5,state list not checked,,40.68343,-73.97588,census_geocoder
+Spectrum Center,CHA,arena,37119000100,False,,37119000104,0,9.445,174.0,state list not checked,,35.22511,-80.84054,census_geocoder
+United Center,CHI,arena,17031838100,False,17031280400,17031838100,0,23.95,187.5,state list not checked,,41.88129,-87.67422,census_geocoder
+Rocket Arena,CLE,arena,39035107701,True,39035103300;39035103602;39035104200;39035107101;39035107802;39035108301;39035108701,39035107701,0,21.94,156.0,state list not checked,,41.4966,-81.6881,manual_coords
+American Airlines Center,DAL,arena,48113001900,False,,48113001902,0,7.595,201.8,TX not nominated,48113010003,32.78564,-96.80994,census_geocoder
+Ball Arena,DEN,arena,08031001902,False,08031000800,08031980200,0,8.379,140.6,state list not checked,,39.74732,-105.00813,census_geocoder
+Little Caesars Arena,DET,arena,26163522500,True,26163517200;26163517300;26163517500;26163520300;26163520400;26163520700;26163521400;26163521500,26163522500,1,61.38,23.77,state list not checked,,42.34195,-83.05433,census_geocoder
+Chase Center,GSW,arena,06075060700,False,06075017902,06075060701,0,4.245,152.1,CA draft list: no,,37.768,-122.3877,manual_coords
+Toyota Center,HOU,arena,48201100000,True,48201211400;48201212300;48201310100;48201312300;48201312500,48201100001,0,11.21,150.6,TX not nominated,48201310102,29.752,-95.36232,census_geocoder
+Gainbridge Fieldhouse,IND,arena,18097391000,True,18097353300;18097353500;18097353600;18097354200;18097356200;18097356400,18097391001,0,45.07,172.1,state list not checked,,39.76415,-86.15631,census_geocoder
+Intuit Dome,LAC,arena,06037601900,False,06037601700;06037601801,06037601900,1,15.86,62.14,CA draft list: no,06037601100,33.9454,-118.34215,census_geocoder
+Crypto.com Arena,LAL,arena,06037207710,False,06037224010;06037224200,06037207711,0,15.62,126.4,CA draft list: no,06037207502;06037209202;06037209300;06037210010,34.04351,-118.26545,census_geocoder
+FedExForum,MEM,arena,47157011400,True,47157003700;47157003800;47157003900;47157004500;47157004600;47157005000;47157011300;47157011600,47157011402,1,34.36,38.56,state list not checked,,35.1382,-90.0506,manual_coords
+Kaseya Center,MIA,arena,12086003702,False,12086002702;12086003100;12086003400,12086003710,0,16.43,137.8,state list not checked,,25.78109,-80.18914,census_geocoder
+Fiserv Forum,MIL,arena,55079186300,False,55079011300;55079014100;55079186800,55079186300,0,17.40,85.35,state list not checked,,43.0451,-87.9172,manual_coords
+Target Center,MIN,arena,27053126100,False,27053104800,27053126102,0,11.50,164.3,state list not checked,,44.97962,-93.27497,census_geocoder
+Smoothie King Center,NOP,arena,22071013400,True,22071000200;22071004900;22071006000;22071007700;22071014000,22071013400,1,28.21,,state list not checked,,29.949,-90.0821,manual_coords
+Madison Square Garden,NYK,arena,36061010100,False,,36061010100,0,18.79,,state list not checked,,40.7505,-73.9934,manual_coords
+Paycom Center,OKC,arena,40109103700,True,40109103601;40109103602;40109103800;40109109100,40109109900,1,40.36,108.7,state list not checked,,35.46422,-97.51471,census_geocoder
+Kia Center,ORL,arena,12095010500,True,12095010400;12095018300,12095010500,1,58.25,,state list not checked,,28.54012,-81.38391,census_geocoder
+Xfinity Mobile Arena,PHI,arena,42101980600,False,,42101980600,0,,,state list not checked,,39.90517,-75.17347,census_geocoder
+PHX Arena (Footprint Center),PHX,arena,04013114100,True,04013113100;04013114000;04013114200,04013114100,0,17.14,127.2,state list not checked,,33.44653,-112.07062,census_geocoder
+Moda Center,POR,arena,41051002303,True,41051002100;41051005100,41051002303,1,30.35,77.81,state list not checked,,45.533,-122.66769,census_geocoder
+Golden 1 Center,SAC,arena,06067000700,True,06067001101;06067005301;06113010101;06113010201,06067000700,1,50.94,,CA draft list: no,06067001103;06113010104;06113010105,38.5802,-121.4997,manual_coords
+Frost Bank Center,SAS,arena,48029130800,True,48029130600;48029130700,48029130800,1,49.87,32.92,TX nominated (Sep 2026),48029130600;48029130900,29.427,-98.4375,manual_coords
+Delta Center,UTA,arena,49035102500,True,49035100600;49035102600;49035114000,49035102501,0,13.79,97.13,state list not checked,,40.76929,-111.89975,census_geocoder
+Capital One Arena,WAS,arena,11001005800,False,,11001005801,0,15.65,161.6,state list not checked,,38.8974,-77.01997,census_geocoder
+"Spurs Project Marvel arena (Hemisfair, ex-Institute of Texan Cultures)",SAS,new,48029110100,True,48029110500;48029110600,48029110100,1,12.06,54.03,TX nominated (Sep 2026),48029110300;48029110600;48029110700,29.4172,-98.4826,manual_coords
+OKC Continental Coliseum (ex-Cox Convention Center site),OKC,new,40109109100,True,40109102500;40109102600;40109103000;40109103200;40109103601;40109103700;40109103800,40109980007,0,28.11,182.2,state list not checked,,35.4655,-97.5148,manual_coords
+Salt Palace (SLC sports/entertainment district),UTA,new,49035102500,True,49035100600;49035102600;49035114000,49035102501,0,13.79,97.13,state list not checked,,40.7662,-111.89403,census_geocoder
+Deer District (The Trade hotel),MIL,new,55079014100,True,55079186000,55079014100,1,52.93,31.36,state list not checked,,43.04576,-87.91624,census_geocoder
+District Detroit (Fox Theatre block),DET,new,26163520700,True,26163517200;26163517300;26163520800;26163521400;26163521500;26163522500,26163520700,1,25.15,,state list not checked,,42.3384,-83.05192,census_geocoder
+"76 Place site (Market East, abandoned 2025)",PHI,new,42101000500,False,42101000200,42101000500,0,15.53,129.5,state list not checked,,39.9516,-75.1568,census_geocoder
+Climate Pledge Arena (Seattle expansion venue),SEA,new,53033007100,False,,53033007101,0,8.314,83.57,state list not checked,,47.62216,-122.35534,census_geocoder
+"LVXP arena site (ex-Wet n Wild, north Strip)",LV,new,32003002303,False,32003001100,32003002303,0,18.65,122.5,state list not checked,,36.14184,-115.15848,census_geocoder
+OVG arena site (LV Blvd & Blue Diamond Rd),LV,new,32003002828,False,,32003002828,0,7.970,153.2,state list not checked,,36.039,-115.1717,manual_coords
+T-Mobile Arena (Las Vegas),LV,new,32003006700,False,32003002201;32003002403;32003002405;32003002603;32003002962;32003006800,32003006700,0,12.91,160.1,state list not checked,,36.10242,-115.17303,census_geocoder

@@ -1,0 +1,160 @@
+import sys
+import json, csv, os
+ROOT=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DATA=ROOT+'/data'
+C=json.load(open(DATA+'/ledger/_calc.json'))
+agg=C['agg']; aggp=C['aggp']; det=C['detail']; CPI={int(k):v for k,v in C['CPI'].items()}; HH=C['HH']
+HH2=json.load(open(DATA+'/inputs/census/acs2024_B11001_states2.json'))
+for k,v in HH2['data'].items(): HH[k]=[HH2['geography'][k]['name'], int(v['B11001']['estimate']['B11001001'])]
+rows=list(csv.DictReader(open(DATA+'/ledger/arena_ledger.csv')))
+cur=[r for r in rows if r['row_type']=='current_arena']
+B=['general','sales','tourist','tif','leaserev','land','infra','sin','mixed']
+BN={'general':'General taxes / GO bonds / appropriations / state grants / public asset sales','sales':'Dedicated general sales tax','tourist':'Hotel, car-rental, F&B, ticket (visitor) taxes',
+    'tif':'Tax increment & tax capture (TIF, CRA, Indiana PSDA, Oregon income-tax capture)','leaserev':'Lease-revenue bonds (general fund / parking backed)','land':'Land contributed or sold below value',
+    'infra':'Infrastructure / parking / site work (funding stream not specified)','sin':'Sin taxes (alcohol/tobacco, Cleveland)','mixed':'Public, mechanism split not documented'}
+f=lambda x: f"${x/1000:.2f}B" if abs(x)>=1000 else f"${x:.0f}M"
+def fac(y): return 1.0 if y>=2026 else CPI[2026]/CPI[y]
+out=[]
+P=out.append
+P('NBA ARENA LEDGER - COMPUTED TOTALS (built 2026-10-11)')
+P('='*78)
+P('CPI: BLS CPI-U, U.S. city average, all items, NOT seasonally adjusted (FRED CPIAUCNS = BLS CUUR0000SA0).')
+P(f"Annual averages = mean of monthly values. 2026 base = Jan-Aug 2026 average {CPI[2026]:.3f} (Sep 2026 not yet released);")
+P(f"2025 average uses 11 months ({CPI[2025]:.3f}; Oct 2025 CPI was not published). Years used: " + ', '.join(f"{y}={CPI[y]:.1f}" for y in [1968,1990,1991,1992,1994,1995,1997,1999,2001,2002,2003,2004,2005,2007,2009,2010,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2023,2024,2025,2026]))
+P('Conversion: construction money at the opening-year CPI; acquisitions at transaction year; completed renovations at mid-construction year;')
+P('ongoing payments at each payment year; money committed for work still under way or in the future is taken at face value (factor 1.0, not deflated).')
+P(f"Canadian dollars: Scotiabank Arena C$288M converted at 1999 average {C['CAD1999']:.4f} CAD/USD (FRED EXCAUS) before CPI; 2023 reno at 1.3492.")
+P('')
+P('A. CORE TOTAL - 30 CURRENT NBA ARENAS (spent or legally committed public money, 2026 dollars)')
+P('-'*78)
+core=agg['core26']; spend=agg['spend26']
+P(f"Public construction contributions ............ {f(agg['pub26'])}")
+P(f"Public purchases of existing arenas ........... {f(agg['acq26'])}  (Minneapolis 1995, Portland 2024, DC 2024)")
+P(f"Public renovation money (completed + binding).. {f(agg['ren_pub26'])}")
+P(f"Documented ongoing cash subsidies to date ..... {f(agg['og26'])}  (IND 2014-23, MIA FY2000-26, MEM 2021-26, NOP partial, MIN 2024)")
+P(f"ALL PUBLIC MONEY (core) ....................... {f(core)}")
+P(f"Total arena spending (construction public+private, renovations public+private, ongoing public) = {f(spend)}")
+P(f"PUBLIC SHARE OF TOTAL ARENA SPENDING ........... {100*core/spend:.1f}%")
+P(f"  construction only: public {f(agg['pub26'])} of {f(agg['con26'])} = {100*agg['pub26']/agg['con26']:.1f}%  (private construction {f(agg['priv26'])})")
+P(f"  renovations only: public {f(agg['ren_pub26'])} of {f(agg['ren_tot26'])} = {100*agg['ren_pub26']/agg['ren_tot26']:.1f}%")
+P(f"Pending public money on current arenas (not in core): {f(agg['pend26'])}  (Memphis $470M awaiting lease; Portland $586.6M SB1501/county/city)")
+P('Method: public share = public money / (max(reported cost, public+private construction) + renovation totals + ongoing public). Public purchases count as')
+P('public money but not as new spending (they reimburse private builders). Debt service on counted bonds is NOT added (no double counting).')
+P('')
+P('B. MECHANISM SPLIT - public CAPITAL money (construction + purchases + completed/binding renovations), 2026$')
+P('-'*78)
+bt=sum(C['bucket26'].values())
+for b in sorted(B,key=lambda b:-C['bucket26'].get(b,0)):
+    v=C['bucket26'].get(b,0)
+    if v: P(f"  {BN[b]:<92}{f(v):>9}  {100*v/bt:5.1f}%")
+P(f"  {'TOTAL capital':<92}{f(bt):>9}")
+P(f"  Ongoing operating subsidies (separate from capital): {f(agg['og26'])}")
+P('  Rule: each dollar assigned once - by documented funding stream; in-kind land -> land; infrastructure with no stated stream -> infrastructure.')
+P('')
+P('C. TOP 10 ARENAS BY PUBLIC MONEY (core, 2026$)')
+P('-'*78)
+top=sorted(cur,key=lambda r:-float(r['PUBLIC_TOTAL_2026_m'] or 0))
+for i,r in enumerate(top[:10],1):
+    P(f"{i:>2}. {r['team']} {r['arena']:<34} public {f(float(r['PUBLIC_TOTAL_2026_m'])):>8} | share {r['public_share_pct']:>5}% | constr {r['public_construction_2026_m']} + acq {r['public_acquisition_2026_m'] or 0} + reno {r['public_renovation_2026_m']} + ongoing {r['ongoing_to_date_2026_m'] or 0}")
+P('')
+P('D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (14): GSW, LAC, BOS, NYK, CHI, LAL, DEN, PHI, TOR, BKN, DET, WAS, UTA, POR')
+P('-'*78)
+P(f"Construction: private {f(aggp['priv26'])} vs public {f(aggp['pub26'])} ({100*aggp['pub26']/aggp['con26']:.1f}% public); plus public purchases {f(aggp['acq26'])} and public renovation {f(aggp['ren_pub26'])}")
+P(f"Core public money {f(aggp['core26'])} of {f(aggp['spend26'])} total spending = {100*aggp['core26']/aggp['spend26']:.1f}%")
+ex=[t for t in ['GSW','LAC','BOS','NYK','CHI','LAL','DEN','PHI','TOR','BKN','DET']]
+s_core=sum(det[t]['core26'] for t in ex); s_sp=sum(det[t]['spend26'] for t in ex)
+P(f"Excluding the three later public takeovers/rebuilds (WAS, UTA, POR): public {f(s_core)} of {f(s_sp)} = {100*s_core/s_sp:.1f}%")
+bp=C['bucket26_priv']; btp=sum(bp.values())
+P('Mechanism split of their public capital money (2026$): '+'; '.join(f"{BN[b].split(' (')[0]} {f(bp[b])} ({100*bp[b]/btp:.0f}%)" for b in sorted(bp,key=lambda b:-bp[b]) if bp[b]))
+te={'BKN':'PILOT bonds $511M (2009; refunded 2016: $478.7M tax-exempt + $15M taxable)','DET':'MSF 2014A $250M tax-exempt (2014B $200M taxable, Olympia-paid); DDA 2018A refunding $287.4M','UTA':'PID sales-tax bonds 2025A/B/C $900M tax-exempt','WAS':'DC GO-funded $515M (tax status of specific bonds not confirmed)'}
+P('Tax-exempt bonds behind privately built arenas: '+'; '.join(f"{k}: {v}" for k,v in te.items())+f". Federal PV cost of new-money issues (GDG method, tau .28): BKN ${C['fedpv'].get('BKN',0):.0f}M, DET ${C['fedpv'].get('DET',0):.0f}M, UTA ${C['fedpv'].get('UTA',0):.0f}M, WAS ${C['fedpv'].get('WAS',0):.0f}M.")
+P('Hidden public money still received:')
+H={
+'BKN':'City $205M + State $100M capital for land/infrastructure (2012$ -> $441M 2026$); $511M tax-exempt PILOT bonds (property taxes diverted to arena debt; $738M 2026$; expanded total); below-market MTA rail-yard sale (unquantified); full property-tax exemption (would-be $99M/yr 2023 vs $39M PILOT)',
+'DET':'$286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia rent-free',
+'WAS':'~$79M DC land/site/Metro (1997); $50M 2007 TIF notes (arena ticket tax); 2024 $87.5M purchase + $427.5M renovation; property/possessory-interest tax exemption since construction, ~$10M/yr now, extended to 2050 ($312.7M FY2025-50 per OCFO)',
+'UTA':'RDA-owned land at $1/yr (2026 assessed $68.8M, exempt); $525M of 0.5% city sales-tax bonds into a privately owned arena + $375M for the surrounding district',
+'POR':'City $34.5M (1995); $7.13M purchase (2024); $586.6M pending (state income-tax capture $365M)',
+'DEN':'$36.5M TIF + $4.5M city infrastructure (DURA); forgone ~$4M/yr McNichols seat tax (unquantified total)',
+'LAL':'City-owned land under 55-yr ground lease (exempt); ~$58M city bonds/reserves guaranteed by AEG (conduit, not counted)',
+'NYK':'Full property-tax exemption since 1982: $42M in FY2023 (IBO); $946.7M cumulative (IBO via Reinvent Albany) - expanded total only',
+'CHI':'1989 state property-tax break (unquantified); 2024 assessment cut from $92.1M to $50.3M on appeal',
+'GSW':'None found beyond city event-day services; pays ~$19.5M/yr property tax',
+'LAC':'None found; bought public land for $66.25M; pays ~$10.8M/yr property tax',
+'BOS':'None found; pays $2.66M property tax (FY2026)',
+'PHI':'None found in sources reached',
+'TOR':'None documented ("no public funding was used"); site bought from Canada Post for C$60M',
+}
+for k,v in H.items(): P(f"  {k}: {v}")
+P('')
+P('E. EXPANDED TOTAL (adds tax-break financing that the core excludes)')
+P('-'*78)
+fed=sum(C['fedpv'].values())
+P(f"Core public money .......................................... {f(core)}")
+P(f"+ Barclays PILOT bonds (property tax diverted to arena debt) {f(agg['pilot26'])}")
+P(f"+ MSG property-tax exemption, cumulative (nominal, >= in 2026$) $947M")
+exp=core+agg['pilot26']+946.7
+P(f"= EXPANDED PUBLIC TOTAL .................................... >= {f(exp)}  ({100*exp/(spend+946.7):.1f}% of spending base incl. the MSG exemption)")
+P('Not added (future): DC extended property/possessory-interest tax exemption for Capital One Arena valued by OCFO at $49.8M FY2025-28 + $262.9M FY2029-50 = $312.7M (OCFO: "not financially necessary").')
+P(f"Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, arena_tax file; new-money issues only, refundings excluded) = {f(fed)} - not added (different payer, overlapping with local bonds).")
+P('')
+P('F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$)')
+P('-'*78)
+P('Binding: OKC new arena $850M public (sales tax; $900M minimum cost - Thunder $50M); Utah Delta Center district $375M (sales-tax bonds issued 2025) -> $1.225B')
+P('Voter-approved, agreements pending: Bexar County $311M venue tax for Spurs arena')
+P('Pending/non-binding: San Antonio city $489M (Spurs); Portland $586.6M; Memphis $470M (last two sit in team rows as pending)')
+P('No public deal: 76ers/Comcast South Philly arena (billed "fully privately funded"); Mavericks Valley View arena (no financing deal)')
+allin=core+1225+311+489+agg['pend26']
+P(f"Core + binding new = {f(core+1225)}; + all approved/pending = {f(allin)}")
+P('')
+P('G. COST PER HOUSEHOLD - LARGEST PUBLIC DEALS (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)')
+P('-'*78)
+hh=lambda g: HH[g][1]
+D=[
+ ('UTA','Delta Center 2025 deal (arena $525M + district $375M), 0.5% Salt Lake City sales tax',900.0,[('16000US4967000',1.0)],'City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound'),
+ ('OKC','New Thunder arena ($850M) + Paycom 2002 & 2008 money ($292M), OKC city sales tax',850.0+det['OKC']['core26'],[('16000US4055000',1.0)],'City sales tax (also paid by commuters/visitors)'),
+ ('WAS','Capital One Arena all public money since 1997',det['WAS']['core26'],[('04000US11',1.0)],'District of Columbia general fund/GO'),
+ ('ORL','Kia Center (2010 build + 2025 renovation)',det['ORL']['core26'],[('05000US12095',1.0)],'Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional'),
+ ('IND','Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23)',det['IND']['core26'],[('05000US18097',(det['IND']['core26']-122.4*CPI[2026]/CPI[2021])/det['IND']['core26']),('04000US18',122.4*CPI[2026]/CPI[2021]/det['IND']['core26'])],'Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)'),
+ ('CHA','Spectrum Center (2005, 2014, 2022-25)',det['CHA']['core26'],[('16000US3712000',1.0)],'City of Charlotte hotel/car-rental taxes'),
+ ('MEM','FedExForum (2004 bonds, $80M state, subsidies)',det['MEM']['core26'],[('05000US47157',(det['MEM']['core26']-80*CPI[2026]/CPI[2025])/det['MEM']['core26']),('04000US47',80*CPI[2026]/CPI[2025]/det['MEM']['core26'])],'Shelby County (city+county) + Tennessee ($80M state)'),
+ ('HOU','Toyota Center (2003 + 2026 state grant)',det['HOU']['core26'],[('05000US48201',(det['HOU']['core26']-95)/det['HOU']['core26']),('04000US48',95/det['HOU']['core26'])],'Harris County (HCHSA hotel/car taxes) + Texas ($95M)'),
+ ('BKN','Barclays Center direct capital (city $205M, state $100M)',det['BKN']['core26'],[('16000US3651000',205/305),('04000US36',100/305)],'New York City + New York State'),
+ ('SAS','Frost Bank Center (2002, 2015) + county $311M for new arena',det['SAS']['core26']+311,[('05000US48029',1.0)],'Bexar County visitor taxes (paid mostly by visitors)'),
+ ('DET','Little Caesars Arena DDA TIF',det['DET']['core26'],[('16000US2622000',1.0)],'City of Detroit (TIF also captures county/school taxes; schools backfilled by state)'),
+ ('CLE','Rocket Arena (1994, 2017-19, 2019 repairs)',det['CLE']['core26'],[('05000US39035',1.0)],'Cuyahoga County (sin tax, county bonds)'),
+ ('POR','Moda Center pending rebuild ($586.6M) + past ($82.6M)',586.6+det['POR']['core26'],[('04000US41',365/(586.6+det['POR']['core26'])),('05000US41051',101.6/(586.6+det['POR']['core26'])),('16000US4159000',(120+det['POR']['core26'])/(586.6+det['POR']['core26']))],'Oregon (income-tax capture) + Multnomah County + City of Portland'),
+ ('MIL','Fiserv Forum',det['MIL']['core26'],[('05000US55079',(330.2-54.05*CPI[2026]/CPI[2018])/330.2),('04000US55',54.05*CPI[2026]/CPI[2018]/330.2)],'Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)'),
+ ('NOP','Smoothie King Center',det['NOP']['core26'],[('04000US22',1.0)],'State of Louisiana (LSED/state)'),
+ ('SAC','Golden 1 Center',det['SAC']['core26'],[('16000US0664000',1.0)],'City of Sacramento general fund/parking'),
+]
+for team,desc,amt,geos,note in D:
+    parts=[];
+    for g,share in geos:
+        nm,n=HH[g]; parts.append(f"{nm} {n:,} hh -> ${amt*share*1e6/n:,.0f}/hh (share {share:.0%})")
+    P(f"{team}: {desc}: {f(amt)} | "+' ; '.join(parts)+f" | {note}")
+P('')
+P('H. LABELS AND SOURCING')
+P('-'*78)
+lab={}
+for r in cur:
+    for k in ['construction_cost_label','public_construction_label']:
+        lab.setdefault(k,{}); l=r[k] or 'n/a'; lab[k][l]=lab[k].get(l,0)+1
+P('Construction-cost labels: '+str(lab['construction_cost_label'])+' ; public-contribution labels: '+str(lab['public_construction_label']))
+P('(a) computed, (b) primary document, (c) press/secondary. Primary documents used include: Wisconsin LFB Informational Paper 18; Sacramento 2015 lease-revenue bond')
+P('official statement; Detroit DDA audited statements; Houston 2000 arena letter agreement and 2001 lease; Indiana CIB ACFRs; Louisiana LLA audits and Senate')
+P('fiscal decks; DC OCFO fiscal impact statement and Council memo; Bexar County release; Denver DURA project record; NYC IBO 2023 memo; Oregon SB 1501;')
+P('Utah PID notices; okc.gov; Miami-Dade budget. Secondary: Wikipedia, PFM comparables deck for Oregon DAS (June 2026), Bond Buyer, local press.')
+P('')
+P('I. DISAGREEMENTS RESOLVED (value used <- alternatives)')
+P('-'*78)
+for r in cur:
+    if r['construction_cost_other_reports']: P(f"{r['team']}: cost {r['construction_cost_nominal_m']}M used; other: {r['construction_cost_other_reports']}")
+P('CHA: public $170M (Carolina Journal, explicit taxpayer figure) used; city owns entire $265M building so up to ~$242M is arguable.')
+P('HOU: public $175M = 2000 Letter Agreement arena budget (primary); press range $125-175M; Rockets rent services part of the debt (size unknown).')
+P('OKC new arena: MAPS 4 transfer $70M (okc.gov) vs $78M (Bond Buyer); public set to $900M minimum cost - $50M Thunder.')
+P('WAS: renovation total $712.5M from Council memo ($800M incl. $87.5M purchase); Monumental now says $1B+.')
+P('MIN: purchase $54.6M (2003 legislative committee agenda) vs ~$54M (SBD 1994); 2017 Taylor $58M (LRL) vs $60M (Wikipedia).')
+P('NOP: cost $114M (Wikipedia) vs $112M incl. site work (state) vs $84M (New Orleans Magazine).')
+open(DATA+'/ledger/totals.txt','w').write('\n'.join(out)+'\n')
+print('\n'.join(out))

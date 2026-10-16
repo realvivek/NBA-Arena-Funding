@@ -1,0 +1,16 @@
+arena,team,owner,year,paid_to_team_$M,capital_annualized_$M,rent_and_offsets_$M,net_$M,net_per_home_game_$K,rank_basis,label,src
+Gainbridge Fieldhouse,IND,Capital Improvement Board (Marion Co.),CY2023,14.71,17.37,0.0,32.08,782.0,net incl. annualized capital,b (ACFR) + a,"CIB ACFR FY2023 (SBOA 83950A) p.47 stmt of rev/exp; p.103-104 ten-yr table; Note 9 p.79; FY2022 (B61741) p.41,45,75-77"
+Kia Center,ORL,City of Orlando,2025-2035,0.0,22.6,1.0,21.6,527.0,capital over remaining lease,c + a,CFPublic 2024-11-20; PFM/Oregon DAS deck June 2026 p.10; Use Agmt s4.1/s5.1 via Marquette summary
+Smoothie King Center,NOP,LSED / State of Louisiana,FY2027 budget,21.33,0.0,0.0,21.33,520.0,operating payments only,b,"La. Senate Fiscal Services LSED FY27 presentation p.19 ($17,683,634); FY26 presentation p.19 ($3.65M/yr FY23-FY29)"
+Little Caesars Arena (Pistons 50% share),DET,Detroit DDA,FY2024,0.0,15.01,0.0,15.01,366.0,debt service from tax capture,b + a,"DDA FS FY2024 p.17-18 (transfer to stadium fund $30,026,206; FY23 $30,924,733); Note H p.39-40"
+Smoothie King Center (audited),NOP,LSED / State of Louisiana,FY2023 actual,14.51,0.0,0.0,14.51,354.0,operating payments only,b + a,LSED FY2023 audit (LLA 80230105) note 17 p.57; Senate FY26 p.19
+Target Center,MIN,City of Minneapolis,2024/2026-35,0.0,5.35,0.0,9.95,243.0,net incl. annualized capital,c + a,PFM deck p.9 (2024 supplements); Hoodline/Axios 2026-07-13 (city memo $53.5M 2026-35)
+Mortgage Matchup Center,PHX,City of Phoenix,2019-2037,0.0,9.89,,9.89,241.0,net incl. annualized capital,c + a (rent not netted),SI 2019-01-23; SBD 2019-01-24
+Spectrum Center,CHA,City of Charlotte,2024-2029,0.0,9.35,1.1,8.25,201.0,net incl. annualized capital,c + a,WBTV 2022-06-01/14; SportBusiness (lease to 2045)
+Fiserv Forum,MIL,Wisconsin Center District,2019-2036,0.0,11.14,3.78,7.36,180.0,net incl. annualized capital,b + a (WCD debt svc estimated),Wis. LFB Informational Paper 18 (Jan 2021) p.6-7
+FedExForum,MEM,Memphis-Shelby Co. PBA,2025-29,6.3,,,6.3,154.0,operating subsidy,c (debt svc excluded; known clause excluded),PFM deck p.8
+Toyota Center,HOU,Harris Co.-Houston Sports Authority,2026-2033,0.0,13.57,8.5,5.07,124.0,"state grant over remaining lease, net of rent","b (rent, lease) + c (grant) + a",HCHSA 2026 budget p.1; Arena Lease s4.1/s8.6; Stadium Journey/Houston Chronicle Apr 2026
+State Farm Arena,ATL,Atlanta-Fulton Co. Recreation Authority,2018-2028,0.0,4.91,0.0,4.91,120.0,net incl. annualized capital,c + a,NBA.com/AJC 2016; Field of Schemes 2016-11-02
+Rocket Arena,CLE,Gateway EDC / Cuyahoga Co.,2020-2034,0.0,4.67,0.0,4.67,114.0,capital (public half of Transformation),b + a (major capital repairs excluded),"Gateway FY2022 audit (Ohio AOS) p.15,21,23-24; board packet 2025-12-17 p.4-5"
+Golden 1 Center,SAC,City of Sacramento,FY2025,0.0,4.55,0.0,4.55,111.0,parking-fund share of bond debt service,b + a,"City ACFR FY2025 p.45, 87, 97, 99; FY2018 continuing disclosure Exhibit D note 5"
+Kaseya Center,MIA,Miami-Dade County,FY2025-26,6.4,0.0,5.9,0.5,12.0,operating subsidy net of naming rights,b (payment) + c (offsets) + a,Miami-Dade FY2025-26 Adopted Budget Vol.1 p.176; ESPN 2023 (Kaseya $117.37M/17y); NBC Miami 2014-06-03

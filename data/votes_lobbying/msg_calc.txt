@@ -1,0 +1,22 @@
+Implied Knicks escalator 4.35% (rounded inputs); Rangers 4.88%
+Check: 0.72*144 = 103.7 vs stated FY2026 103.8
+('FY2025 (Jan-Jun 2025 retro)', 144.0, 123.84, 20.160000000000004)
+('FY2026', 150.3, 103.8, 46.5)
+('FY2027', 156.8, 103.8, 53.0)
+('FY2028', 163.6, 103.8, 59.8)
+('FY2029', 170.7, 103.8, 66.9)
+('FY2030', 178.1, 'no contract (ROFR/110% match)', None)
+('FY2031', 185.9, 'no contract (ROFR/110% match)', None)
+('FY2032', 194.0, 'no contract (ROFR/110% match)', None)
+('FY2033', 202.4, 'no contract (ROFR/110% match)', None)
+('FY2034', 211.2, 'no contract (ROFR/110% match)', None)
+('FY2035', 220.4, 'no contract (ROFR/110% match)', None)
+Knicks foregone stated fees Jan-2025..FY2029: $246.4M
+Knicks contracted fees dropped FY2030-FY2035 (old schedule): $1192.0M
+esc 4.0%: foregone thru FY2029 $240.9M; FY2030-35 dropped $1162.1M
+esc 4.5%: foregone thru FY2029 $248.7M; FY2030-35 dropped $1205.3M
+MSGN term loan 804 -> 210 new; cash 80 (65 MSGN + 15 Sphere); write-off ~510-514; Sphere gain on extinguishment 346.1
+BRI impact of cut under Art VII 1(a)(7)(iii)(A): $0 (Knicks local-media BRI pegged to Lakers' local media net proceeds)
+If Lakers local=150: imputed-vs-actual gap $46M/yr; ~50% player share $23M/yr
+If Lakers local=200: imputed-vs-actual gap $96M/yr; ~50% player share $48M/yr
+If Lakers local=250: imputed-vs-actual gap $146M/yr; ~50% player share $73M/yr

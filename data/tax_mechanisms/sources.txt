@@ -1,0 +1,54 @@
+LABELS: (a) computed here; (b) primary document; (c) press/secondary with URL.  All downloads saved under data/ (untrusted).
+
+TASK 1 - ATHLETE INCOME TAX CAPTURE
+(b) La. R.S. 39:100.1 Sports Facility Assistance Fund: https://www.legis.la.gov/Legis/LawPrint.aspx?d=95676  [data/louisiana/rs39_100_1.html]
+(b) LSED audited financial statements (Louisiana Legislative Auditor):
+    FYE 6/30/2023 (issued 2024-04-24): https://lla.la.gov/publicreports.nsf/0/ae49cb44840fe57986258b0900722bdf/$file/0000454ba.pdf  - Note 16 (Saints $3,583,406 nonresident NFL tax), Note 17 (Pelicans paid $2,562,287 "from the nonresident players' tax"); "Players' tax" revenue $6,150,430
+    FYE 6/30/2022: https://lla.la.gov/publicreports.nsf/0/494ead13137033e78625896e006f1bef/$file/00000f4f.pdf (Pelicans $2,115,732; Saints $3,051,383; players' tax $5,203,858)
+    FYE 6/30/2021: https://lla.la.gov/publicreports.nsf/0/4a10ae998e0aa9c88625880e005a39f1/$file/0002644e.pdf (Pelicans $2,008,917; Saints $2,069,317; players' tax $4,120,548)
+(b) La. Senate Fiscal Services LSED budget decks FY23-FY27 (SFAF "state income tax from non-resident players"; lease entitlements incl. "player tax allocation"; Quality Jobs-equivalent $3.65M/yr FY2023-FY2029):
+    https://www.senate.la.gov/FiscalServices/Presentations/2022/RS/FINAL%20FY23%20LSED.pdf
+    https://senate.la.gov/FiscalServices/Presentations/2023/FINAL%20EXEC%20LA%20STAD%20&%20EXPO%20DISTR%20124%20FY24%20CG.pdf
+    https://www.senate.la.gov/FiscalServices/Presentations/2024/01%20-%20124%20LSED%20FY%2025%20FINAL.pdf
+    https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf
+    https://senate.la.gov/FiscalServices/Presentations/2026/01%20-%20124%20LSED%20FY%2027%20FINAL.pdf
+(c) Louisiana Illuminator 2021-10-13 (Pelicans Quality Jobs $3.65M): https://lailluminator.com/2021/10/13/new-orleans-pelicans-get-millions-in-incentives-for-creating-quality-jobs-for-nba-players/
+(b) Oregon SB 1501 (2026) enrolled, Oregon Laws 2026 ch. 74: https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/SB1501/Enrolled
+(b) Oregon LRO revenue impact SB 1501-B (3/2/2026): https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureAnalysisDocument/95417
+(b) SB 1501-B budget report (House): https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureAnalysisDocument/95538
+(b) Oregon DAS Moda Center page (signed March 2026): https://www.oregon.gov/das/Pages/moda-center-project.aspx ; (c) KPTV 2026-04-27 ceremonial signing, city $120M/county $88M ask: https://www.kptv.com/2026/04/27/kotek-signs-bill-moda-center-renovation-blazers-lease/
+(b) Indiana CIB audited financial statements (State Board of Accounts): FY2023 https://www.in.gov/sboa/WebReports/83950A.pdf ; FY2022 https://www.in.gov/sboa/WebReports/B61741.pdf ; FY2021 https://www.in.gov/sboa/WebReports/B59377.pdf (PSDA covered taxes incl. Indiana AGI tax on resident & nonresident individuals; $16M/yr state cap through 2040; 2021 MCCRFA Series 2021A ~$401.41M; CIB 2021A $22.925M)
+(c) Bond Buyer 2021-02-23 (Y. Shields) Indianapolis Pacers arena bonds, ~$254M new money, senior lien on Original Sports PSDA: https://bondbuyer.com/news/indianapolis-selling-bonds-to-renovate-indiana-pacers-nba-sports-arena
+(b) Wisconsin LFB Informational Paper 18 (Jan 2021): https://docs-preview.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf
+(c) PolitiFact 2019-05-22 (LFB 3/24/2015 + DOR projections $717.16M; $6.5M 2014 base): https://www.politifact.com/factchecks/2019/may/22/scott-neitzel/will-wisconsin-taxpayers-get-tremendous-payback-mo
+(c) BizTimes 2014-11-18 (LFB memo: ~$10.7M 2012): https://biztimes.com/state-report-estimates-impact-of-jock-tax-for-new-arena
+(b) Tennessee DOR, Professional Privilege Tax for Athletes (PC 760; NBA ended 6/1/2016): https://www.tn.gov/revenue/taxes/professional-privilege-tax/professional-privilege-tax-for-athletes.html
+(c) Tax Foundation 2014 (proceeds go to team): https://taxfoundation.org/tennessee-jock-tax-finally-sacked/ ; WPLN (~$3.5M/yr): https://wpln.org/post/power-play-to-lower-pro-athlete-tax-bills-in-tennessee/ ; Sportsnaut 2016-05-29 citing Commercial Appeal ($2.38M refund): https://sportsnaut.com/nba/city-memphis-return-millions-tax-money-nba-players
+(c) Pittsburgh facility usage fee struck down (non-NBA): https://www.cbsnews.com/pittsburgh/news/pittsburgh-jock-tax-unconstitutional
+(a) Visiting-player model: out/visiting_player_tax_model.csv (payrolls from cap/out/salaryswish_team_payrolls_2022_2026.csv; 41 home games x mean opponent payroll x d/200 duty days x top rate; d=1.0/1.25/1.5)
+
+TASK 2 - TAX-EXEMPT BONDS
+(b) Gayer, Drukker & Gold, Brookings (Sept 2016): https://www.brookings.edu/wp-content/uploads/2016/09/gayerdrukkergold_stadiumsubsidies_090816.pdf (method; NBA rows Table 3/4)
+(b) FRED Moody's Aaa (AAA) yields: https://fred.stlouisfed.org/graph/fredgraph.csv?id=AAA
+(b) Sacramento Golden 1 Center Series 2015 remarketing circular ($272,870,000, "Federally Taxable"; Orrick opinion; Kings payments not pledged): https://www.cityofsacramento.gov/content/dam/portal/treasurer/DebtManagement/officialstatements/lease-revenue-revenue/2015_Lease_Revenue_Bonds_Series_2015_(G1C)_Taxable.pdf
+(c) Bond Buyer 2025-06-03 (K. Pierog): Downtown Revitalization PID $651.26M A / $217.73M B / $31M C, exempt from federal & Utah tax, Goldman Sachs: https://bondbuyer.com/news/new-issuer-will-sell-bonds-for-salt-lake-city-arena-project
+(b) Utah PMN notices/budgets of the PID: https://www.utah.gov/pmn/files/1261183.pdf (authorization up to $1.1B); PID 2027 tentative budget (2026 interest 2025A $34.41M, 2025B $10.30M, 2025C $1.25M) [data/utah/pmn_1492267.txt]
+(c) Mintz (Barclays 2016A $478,665,000 tax-exempt; 2016B $15,000,000 taxable): https://www.mintz.com/insights-center/news-press/mintz-serves-co-bond-counsel-brooklyn-arena-local-development
+(b/c) Detroit DDA/LCA: https://degc.org/post/downtown-development-authority-completes-major-bond-refinance ; https://arenadigest.com/2017/11/02/2017110220171102olympia-to-pay-off-refinance-little-caesars-arena-bonds/ ; https://www.bondbuyer.com/news/new-money-deal-will-finance-detroit-arena-adaptation
+(c) Milwaukee WCD 2016 deals: https://www.bondbuyer.com/news/tip-off-this-week-for-milwaukee-bucks-bond-deals ; BCPL May 18 2016 minutes (taxable $45M subordinate term sheet)
+(c) Atlanta $110M car-rental-tax bonds: https://bondbuyer.com/news/atlanta-to-pay-200m-for-nba-arena-improvements
+(c) Charlotte Spectrum Center $110M variable COPs (2023), 2024 conversion: https://www.yahoo.com/news/more-spectrum-center-upgrades-approved-210921809.html ; https://www.wbtv.com/2022/06/14/charlotte-city-council-approves-275-million-spectrum-center-renovations
+(c) DC Capital One Arena $515M GO-funded appropriations: https://dccouncil.gov/wp-content/uploads/2024/03/4.2.24-Arena-Funding-MEMO.pdf
+(c) Ways & Means hearing 2026-06-30: https://hlc.com/en/publications/ways-and-means-hearing-shows-continued-bipartisan-interest-in-removing-tax-breaks-for-sports-teams ; Deloitte TNV 2026-07-02 [data/deloitte_260702.pdf]; https://www.bdo.com/insights/tax/house-taxwriters-target-sports-teams-for-taxation
+(a) out/nba_arena_bond_federal_cost.csv: annual loss = tau x Aaa(issue yr) x par; tau 0.28 (GDG/Bergstresser-Cohen) and 0.35; PV at 3% over 30 yrs; replicates GDG NBA rows within about 0-25% (Barclays 164 vs 161).
+
+TASK 3 - SECTION 197
+(b) H.R. 1 Engrossed in House, Sec. 112017: https://www.govinfo.gov/content/pkg/BILLS-119hr1eh/html/BILLS-119hr1eh.htm (0 matches in Senate-engrossed EAS and enrolled ENR texts: BILLS-119hr1eas, BILLS-119hr1enr)
+(b) H. Rept. 119-106 pt. 2 (reasons for change): https://www.govinfo.gov/content/pkg/CRPT-119hrpt106/html/CRPT-119hrpt106-pt2.htm
+(c) JCT score $991M/10 yrs (press citing JCT; JCT site blocked): https://insidersport.com/2025/05/28/us-tax-reform-could-cause-sports-franchise-chaos/
+(b) House Clerk LDA filings: Ernst & Young (Washington Council EY) for Office of the Commissioner of Baseball, 2025 Q1 (file 301718683) & Q2 (301756796), $50,000 each, sole issue = IRC sec. 197 for sports franchises (lobbyist Lisa Wolski); 2026 Q2 (301888250) "Tax issues affecting the professional sports industry" (Ray Beeman); NHL/Cornerstone 2026 Q2 (301878942) "federal tax policy in professional sports".
+(c) ProPublica 2021-07-08 Billionaire Playbook: https://www.propublica.org/article/the-billionaire-playbook-how-sports-owners-use-their-teams-to-avoid-millions-in-taxes ; Tax Foundation 2021: https://taxfoundation.org/billionaire-playbook-amortization-sports-deductions/
+(c) Deals: Celtics https://www.cbsnews.com/amp/boston/news/nba-approves-sale-boston-celtics-bill-chisholm ; Lakers https://pr.nba.com/nba-board-of-governors-sale-lakers-mark-walter/ , https://www.sportico.com/business/team-sales/2025/los-angeles-lakers-sale-mark-walter-nba-1234875227/ ; Blazers https://www.opb.org/article/2026/03/30/nba-approves-trail-blazers-sale-tom-dundon/ ; Suns https://www.wsls.com/sports/2023/02/07/ap-source-nba-approves-sale-of-phoenix-suns-to-mat-ishbia/ ; Mavericks https://www.cbsnews.com/amp/news/nba-approves-sale-dallas-mavericks-las-vegas-sands-miriam-adelson/ ; Wolves https://www.cbssports.com/nba/news/timberwolves-sale-falls-apart-alex-rodriguez-marc-lore-fail-to-close-deal-nba-team-no-longer-for-sale
+(a) out/nba_control_sales_sec197.csv: 90% of consideration amortizable over 15 yrs, 37% rate, PV at 5%.
+
+INACCESSIBLE: jct.gov and cbo.gov (Cloudflare 403) - JCX-26-25R line item and JCX-19-26 not read; emma.msrb.org (403) - no official statements/outstanding balances; sportico.com (tollbit redirect); insidersport.com (403, used search snippet); LSED FY2024+ audits not located; Wisconsin LFB 2014/2015 memos not online; Wisconsin DOR actual NBA collections unpublished; TN 2014 fiscal note not retrieved; lda.senate.gov not used (House Clerk data only; prefilter matched MLB filings only via issue text).

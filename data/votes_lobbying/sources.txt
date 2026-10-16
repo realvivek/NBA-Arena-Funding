@@ -1,0 +1,27 @@
+PRIMARY (SEC EDGAR, saved in data/):
+- MSGS 10-K FY2026 acc 0001628280-26-056812 (msgs-20260630.htm): Note 3 amendments; Note 11 MSGN warrants carried at "-"; $13.2M national-game reduction; $125.7M FY2026 local media; 162(m) ~$59M FY2028
+- MSGS 10-K FY2025 acc 0001636519-25-000027: 28%/18% cuts, $157.4M vs $175.3M, stated $139.237M FY2026 vs $162.939M FY2025
+- MSGS 10-Q Dec-2024 acc 0001636519-25-000006: FY2025 stated fees up to ~$186.7M pre-cut
+- MSGS 8-K 2025-06-27 acc 0001193125-25-151354 (TSA 2025-04-24; amendments)
+- MSGS DEF 14A 2024-10-24 acc 0001636519-24-000019: Knicks $138M FY2024 / $144M FY2025; Rangers $41M/$43M
+- MSGS DEF 14A 2025-10-23 acc 0001628280-25-046103: Knicks $118.2M FY2025 revenue; FY2026 stated $103.8M (Rangers $35.4M); Independent Committee policy; Tese on Sphere board; Dolan Family Group holdings
+- Sphere 10-K FY2025 acc 0001628280-26-007760: warrant fair value $0; $210M term loan; $15M capital contribution; contingent interest units (50% excess cash/M&A, cap $100M); gain on extinguishment $346.092M; rights fee expense -$65.19M
+- Sphere 8-K ex.99.1 (Q1 2025 results) acc 0001795250-25-000027: $804M -> $210M; $80M cash ($65M MSGN + $15M Sphere)
+- Sphere DEF 14A 2026-04-28 acc 0001628280-26-027969: Dolan Family Group holdings
+- Rogers 40-F 2025 FS acc 0000733099-26-000009; Rogers 6-K 2024-09-18; BCE 6-K 2025-07-03 (Bell TSN rights through 2043-44 "at fair market value")
+- 2023 NBA CBA Art. VII Sec.1(a)(5)(v) (Team Content uncapped), 1(a)(7)(i)-(iii) (bigticket/data/cba_2023.txt lines ~7380-7660)
+PRIMARY (lobbying): House Clerk LDA bulk XML https://disclosurespreview.house.gov/data/LD/<year>_<quarter>_XML.zip (2015Q1-2026Q2 parsed; extracts in data/lda_house/*.jsonl)
+PRIMARY (London): GLA Mayoral Decision MD3416 https://www.london.gov.uk/media/111883/download
+PRESS:
+- https://frontofficesports.com/article/knicks-rangers-to-see-big-cut-in-msg-networks-media-rights-fees/ ; https://awfulannouncing.com/local-networks/msg-networks-cut-media-rights-fees-knicks-rangers.html ; https://www.sportcal.com/news/msg-networks-cuts-media-rights-fees-after-debt-restructure
+- https://www.sportsbusinessdaily.com/Daily/Issues/2011/02/15/Media/LakersTWC.aspx (Lakers ~$3B/20y estimate)
+- https://igamingbusiness.com/sports-betting/nba-cftc-discussions-intesify-may-2026/ (NBA CFTC letter 2026-04-30, Spillane; Silver 2026-04-27)
+- https://sbcamericas.com/2025/05/02/nba-prediction-market-concerns-cftc/ ; https://sbcamericas.com/2025/10/27/congress-letter-nba-adam-silver-scandal/
+- Sportico 2021 "NBA avoids congressional lobbying" (paywalled; via search snippet)
+- https://sanantonioreport.org/?p=5426832 (2026-01-21 final PAC totals) ; https://sanantonioreport.org/5-takeaways-from-the-nov-4-spurs-arena-vote/ ; https://www.sacurrent.com/news/san-antonio-news/arena-pac-spending/
+- https://www.ksat.com/news/local/2025/11/04/results-props-a-and-b-for-coliseum-complex-downtown-spurs-arena-in-the-nov-4-2025-election/ ; https://www.ksat.com/news/local/2026/07/07/spurs-can-play-an-additional-home-game-outside-of-frost-bank-center-in-26-27-27-28-seasons/
+- https://www.tpr.org/government-politics/2025-08-21/heres-whats-in-the-downtown-arena-term-sheet-the-city-just-inked-with-the-san-antonio-spurs ; https://www.eurohoops.net/en/nba-news/1999497/san-antonio-spurs-arena-update-nba/
+- https://news.yahoo.com/okc-closing-arena-vote-groups-120227859.html ; https://news.yahoo.com/live-updates-oklahoma-city-voters-152052322.html ; https://www.kgou.org/sports/2025-06-18/oklahoma-city-inks-deal-to-keep-thunder-through-2053-nails-down-new-arena-policies ; https://www.okc.gov/News-articles/City-Council-approves-letter-of-intent-with-the-Oklahoma-City-Thunder-and-sets-Dec.-12-election-to-fund-new-arena
+- https://preview.reviewjournal.com/business/tourism/lvcva-to-spend-2-25m-to-sponsor-in-season-nba-tourney-2682926/amp ; https://lvsportsbiz.com/2025/09/03/lvcva-set-to-hand-out-million-dollar-payouts-next-week-to-nba-espn-productions-for-events-in-las-vegas/ ; https://lvsportsbiz.com/2024/05/14/tourism-and-sports-lvcva-approves-6-2-million-in-sponsorships-for-wrestlemania-41-nba-summer-league-during-tuesdays-board-meeting/ ; https://cdcgaming.com/las-vegas-tourism-agency-allocates-4-6-million-to-host-nba-summer-league-through-2028/
+- https://taxprofblog.aals.org/2026/07/13/house-ways-and-means-exploring-perceived-disparity-in-sports-team-pay-deduction/ (162(m) hearing 2026-06-30)
+INACCESSIBLE: lda.senate.gov / lda.gov (503 maintenance); opensecrets.org (403/blocked); web.archive.org (egress-blocked); comments.cftc.gov (403); lvcva.com (403); edocs.bexar.org (403); OKC 2023 committee reports (paper, City Clerk pre-Nov-2025); olmsapps.dol.gov (TLS chain failure).

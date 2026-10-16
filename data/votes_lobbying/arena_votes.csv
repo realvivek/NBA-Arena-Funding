@@ -1,0 +1,19 @@
+case,metric,value,source,label
+"OKC 2023-12-12 sales tax (1 cent, 72 months)",yes / no,"41,129 / 16,797 (71%)","press: unofficial final, Oklahoman via Yahoo; AP",c
+OKC,"pro spending (Greater OKC Chamber ""Keep OKC Big League"", TV buys since Nov 20)",">= $478,000 (floor; Chamber general funds, donors undisclosed)",press: The Oklahoman,c
+OKC,opposition (Buy Your Own Arena / Oklahoma Progress Now),"< $10,000",press: Oklahoman,c
+OKC,spend ratio pro:opp,>= 48:1,computed,a
+OKC,pro $ per yes vote / per margin vote,">= $11.62 / >= $19.64 (margin 24,332)",computed,a
+OKC,public $ per yes vote,"~$21,882 (>= $900M public incl. $70M MAPS 4)",computed,a
+OKC,binding terms,"Development agreement May 2024 (city min. $900M); arena use license June 2025: 25 yrs, through >= 2053, early-exit penalties > $1B; Thunder $50M (~5.5%)",press: KGOU/KOSU 2025-06-17/18; okc.gov 2023-09-26 LOI,c/b
+"Bexar County Prop B 2025-11-04 (venue tax, up to $311M)",yes / no,"128,642 / 118,068 (52.14%)",press: KSAT results page,c
+"Bexar Prop A (rodeo/Frost Bank Center grounds, ~$192M)",yes / no,"137,804 / 108,671 (55.91%)",press: KSAT,c
+San Antonio,"Spurs-backed PAC (Win Together) receipts Aug-Nov 2025, mostly San Antonio Spurs LLC","$9.2M (final semiannual report; filings on edocs.bexar.org, 403 to us)",press: San Antonio Report 2026-01-21,c
+San Antonio,"opposition PAC (Defending Public Money for Public Good, COPS/Metro)","~$270,000 (~3% of Spurs PAC)",press: San Antonio Report 2026-01-21,c
+San Antonio,spend ratio,~34:1,computed,a
+San Antonio,pro $ per Prop B yes vote / per margin vote,"~$71.52 / ~$870 (margin 10,574); PAC also backed Prop A",computed,a
+San Antonio,public money: county (voted) + city (not voted),"$311M + $489M = $800M vs Spurs $500M + overruns; county $ per yes vote ~$2,418",press (term sheet): TPR 2025-08-21; computed,c/a
+San Antonio,binding terms status,"Aug 21 2025 term sheet NON-binding (council 7-4): 30-yr lease $4M/yr +2%/yr, 30-yr non-relocation; definitive docs targeted end-2026; Aug 2026 council rejected 6-5 putting city $489M on ballot (Mayor Ortiz Jones push)","press: TPR, KSAT 2026-01-15, Eurohoops 2026-08-17",c
+San Antonio,post-vote concession,"2026-07-07 Bexar commissioners 4-0 (Calvert abstained) allow up to 4 regular-season home games/season away from Frost Bank Center in 2026-27, 2027-28 (baseline 2), no payment reported",press: KSAT 2026-07-07; CBS Austin,c
+Salt Lake City (Jazz/SEG) 2024,no public vote,0.5% city sales tax ~$900M over 30 yrs for Delta Center ($525M) + district ($375M); referendum effort dropped 2024-10-04 after talks with SEG,press: Utah News Dispatch; SL Tribune 2024-10-04,c
+Washington DC (Wizards/Monumental),federal lobbying on DC funding,"Forbes-Tate for Monumental Sports $60K/quarter 2024Q4-2026Q2 (SPO; BUD ""funding of the District of Columbia"" from 2025Q1) + Summit Public Affairs $40K/quarter 2025Q3-2026Q2",House Clerk LDA XML (primary),b

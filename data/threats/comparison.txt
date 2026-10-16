@@ -1,0 +1,92 @@
+COMPARISON: public money after a documented relocation threat vs. deals without one (NBA home-city arena deals, 1993-2026)
+Generated from threat_ledger.csv; dollars are nominal public CAPITAL commitments converted to 2025 dollars with approximate CPI-U annual averages.
+
+CLASSIFICATION RULE
+- Threat group (T): the owner or the league made an explicit threat (named another city, filed/announced a move, sold to a buyer intending to move, or the league stated it would move/buy the team) or an implied threat (talks with another city, "exploring options", invoking or holding a lease out clause, sale to an out-of-town buyer, sale offered with no relocation restriction) during the same arena campaign that produced the approval.
+- No-threat group (N): no such owner/league statement found. Includes cases where only public officials cited relocation risk (OKC 2023, flagged) and two 1998-99 cases with unclear records (DAL 1998, SAS 1999, flagged).
+- Excluded: operating-only deals (IND 2010 $33.5M; MEM 2022 $44.8M; both threat cases), the 1997 Sacramento loan, unexecuted term sheets (SAC 2012), pending deals (MEM 2024), and destination-city money (reported separately below).
+- Public share = public capital / total project cost where both are known (n/a for MIN 1994 purchase, CHA 2022, UTA 2024).
+
+DEALS
+id | year | deal | group | public $M nominal | 2025$ | share | flags
+E02 | 1993 | SEA KeyArena renovation | N | 74.5 | 166 | 78% | none
+E05 | 1998 | DAL American Airlines Center | N | 125.0 | 247 | 30% | unclear
+E06 | 1999 | SAS SBC Center | N | 146.5 | 283 | 84% | unclear
+E25 | 2014 | SAS AT&T Center renovation | N | 85.0 | 116 | 84% | none
+E26 | 2016 | MIN Target Center renovation | N | 74.0 | 99 | 53% | none
+E27 | 2016 | ATL Philips Arena renovation | N | 142.5 | 191 | 74% | none
+E28 | 2017 | CLE Q transformation | N | 70.0 | 92 | 50% | none
+E29 | 2019 | IND Fieldhouse renovation | N | 295.0 | 372 | 82% | none
+E30 | 2022 | CHA Spectrum Center + practice | N | 275.0 | 302 | n/a | none
+E23 | 2023 | OKC new arena | N | 900.0 | 951 | 95% | official_cited
+E31 | 2024 | UTA Delta Center (sales tax) | N | 525.0 | 539 | n/a | none
+E32 | 2024 | ORL Kia Center package | N | 226.0 | 232 | 100% | none
+E24 | 2025 | SAS new arena (county binding; share uses city term sheet) | N | 311.0 | 311 | 62% | none;share 800/1300 planned
+E33 | 2026 | HOU Toyota Center overhaul | N | 95.0 | 93 | 53% | none
+E01 | 1994 | MIN Target Center purchase | T | 48.0 | 104 | n/a | explicit;league opposed
+E03 | 1996 | MIA AmericanAirlines Arena (land) | T | 38.0 | 78 | 15% | explicit; + $6.4M/yr county operating (not in capital)
+E07 | 2000 | HOU Toyota Center | T | 182.0 | 340 | 77% | explicit;league-backed
+E10 | 2007 | ORL Amway Center | T | 430.0 | 668 | 90% | implied;66-month lag
+E15 | 2012 | NOH arena upgrades | T | 50.0 | 70 | 100% | implied;league-owned team
+E17 | 2014 | SAC Golden 1 Center | T | 255.0 | 347 | 50% | explicit;league opposed move
+E18 | 2015 | MIL Fiserv Forum | T | 250.0 | 340 | 48% | explicit;league-backed
+E19 | 2019 | PHX arena renovation | T | 150.0 | 189 | 65% | explicit;disputed
+E21 | 2024 | WAS Capital One Arena | T | 515.0 | 529 | 64% | explicit
+E22 | 2026 | POR Moda Center (state) | T | 365.0 | 356 | 61% | implied;weak;pending local
+
+RESULTS
+Main comparison
+  threat: n=10 | public $ (2025$) median 340, mean 302 | public share n=9 median 64%, mean 63%
+  no threat: n=14 | public $ (2025$) median 239, mean 285 | public share n=12 median 76%, mean 70%
+  Mann-Whitney two-sided p: dollars 0.70, share 0.52
+S1: drop disputed/weak threat cases (PHX 2019, POR 2026)
+  threat: n=8 | public $ (2025$) median 340, mean 309 | public share n=7 median 64%, mean 64%
+  no threat: n=14 | public $ (2025$) median 239, mean 285 | public share n=12 median 76%, mean 70%
+  Mann-Whitney two-sided p: dollars 0.76, share 0.61
+S2: drop unclear no-threat cases (DAL 1998, SAS 1999)
+  threat: n=10 | public $ (2025$) median 340, mean 302 | public share n=9 median 64%, mean 63%
+  no threat: n=12 | public $ (2025$) median 212, mean 289 | public share n=10 median 76%, mean 73%
+  Mann-Whitney two-sided p: dollars 0.77, share 0.41
+S3: count official-cited risk (OKC 2023) as a threat
+  threat: n=11 | public $ (2025$) median 340, mean 361 | public share n=10 median 65%, mean 67%
+  no threat: n=13 | public $ (2025$) median 232, mean 234 | public share n=11 median 74%, mean 68%
+  Mann-Whitney two-sided p: dollars 0.30, share 0.94
+S4: approvals 2010-2026 only
+  threat: n=6 | public $ (2025$) median 343, mean 305 | public share n=6 median 63%, mean 65%
+  no threat: n=11 | public $ (2025$) median 232, mean 300 | public share n=9 median 74%, mean 72%
+  Mann-Whitney two-sided p: dollars 0.73, share 0.48
+S5: 36-month window (drops ORL 2007, 66-month lag)
+  threat: n=9 | public $ (2025$) median 340, mean 261 | public share n=8 median 63%, mean 60%
+  no threat: n=14 | public $ (2025$) median 239, mean 285 | public share n=12 median 76%, mean 70%
+  Mann-Whitney two-sided p: dollars 0.97, share 0.32
+S6: stratified - NEW ARENAS only (MIA land, HOU, ORL, SAC, MIL vs DAL, SAS99, OKC, SAS25)
+  threat: n=5 | public $ (2025$) median 340, mean 355 | public share n=5 median 50%, mean 56%
+  no threat: n=4 | public $ (2025$) median 297, mean 448 | public share n=4 median 73%, mean 67%
+S7: stratified - RENOVATIONS/UPGRADES only
+  threat: n=4 | public $ (2025$) median 273, mean 286 | public share n=4 median 65%, mean 73%
+  no threat: n=10 | public $ (2025$) median 179, mean 220 | public share n=8 median 76%, mean 72%
+
+THREAT OUTCOMES (explicit/implied episodes in threat_ledger.csv: n=20)
+- Same-city public money approved afterward: 13 (E01, E03, E04, E07, E10, E14, E15, E17, E18, E19, E20, E21, E22)
+- Team left; destination city paid (Memphis $250M, Oklahoma City $121.6M, New York PV ~$492M non-federal; New Orleans package): 4 (E08, E09, E13, E36)
+- No new money and team stayed: 3 (E11, E12, E16; SAC 2011 was followed by E17 money)
+- Months from first documented threat to first same-city approval (n=12): median 11.2, min 1.4, max 66.4; 10 of 12 within 24 months
+  E19 PHX Suns 1.4; E01 MIN Timberwolves 2.9; E21 WAS Wizards 3.6; E03 MIA Heat 4.7; E22 POR Trail Blazers 6.7; E07 HOU Rockets 7.0; E15 NOH Hornets 15.3; E18 MIL Bucks 15.7; E17 SAC Kings 15.9; E20 MEM Grizzlies 21.6; E14 IND Pacers 24.1; E10 ORL Magic 66.4
+- League role: backed or enabled the threat in HOU 2000 (Stern ultimatum), MIL 2015 (buy-back clause), SEA->OKC 2008 and CHA->NOH 2002 (relocations approved); opposed in MIN 1994, SAC 2011 and SAC 2013 - yet home-city money still followed in MIN 1994 and SAC 2014.
+
+DESTINATION / LURE MONEY (not in T vs N): Memphis 2001 $250M (100% public); Oklahoma City 2008 $121.6M sales tax; Charlotte 2002 ~$265M for the expansion team after the Hornets left; New York 2006-09 PV $350M city + $142M state/MTA (+$194M federal via tax-exempt bonds); Detroit 2017 $34.5M for the Pistons; Kansas City 2004 ~$212M (no team came); offers not used: Seattle 2012 up to $200M, Anaheim 2011 $75M bonds, Louisville 2001 $200M arena, Virginia 2024 ~$1.47B bonds.
+
+CAVEATS
+- Small samples (10 vs 14); p-values are descriptive only; none of the differences is statistically distinguishable from chance. Deal sizes are driven by era, arena age and scope (new build vs renovation), so a raw comparison cannot isolate the effect of a threat.
+- Selection: threats are documented mostly where reporters covered them; "no documented threat" is not proof none was made privately. Several no-threat deals were renovations required by lease clauses (e.g., CHA 2022 obligations, IND 2019).
+- Capital only: operating subsidies (MIA $6.4M/yr; IND CIB ~$12.5M+/yr; MEM $44.8M) and tax exemptions are excluded; including them would raise totals for some threat cases.
+- CPI factors are approximate annual averages; 2025-26 values estimated.
+
+EVIDENCE ON PAYOFF (task 4)
+- Bradbury, J.C., Coates, D. & Humphreys, B.R. (2023). "The impact of professional sports franchises and venues on local economies: A comprehensive survey." Journal of Economic Surveys 37(4): 1389-1431. doi:10.1111/joes.12533 (online 2022-09-07). Abstract: >130 studies over 30+ years "continue to confirm the decades-old consensus of very limited economic impacts of professional sports teams and stadiums. Even with added nonpecuniary social benefits ... welfare improvements from hosting teams tend to fall well short of covering public outlays."
+- Gayer, T., Drukker, A.J. & Gold, A.K. (2016). "Tax-exempt municipal bonds and the financing of professional sports stadiums." Brookings Economic Studies, Sept 2016: of 45 major-league venues built or significantly renovated since 2000, 36 used tax-exempt bonds ($13.0B principal); present-value federal subsidy $3.2B (about $3.7B including bondholder windfall). Updated: Drukker, Gayer & Gold (2020), National Tax Journal 73(1): 157-196, doi:10.17310/ntj.2020.1.05 - 57 venues, 43 with tax-exempt financing, $3.6B PV subsidy, $4.3B federal revenue loss.
+- Promised vs delivered (NBA arenas):
+  1) Barclays Center / Atlantic Yards (Nets): 2014 agreement required 2,250 affordable units by 2025-05-31; about 1,374 built and 876 not started; $2,000/month per missing unit penalties (>$1.75M/month) waived by Empire State Development after the developer threatened to sue (Gothamist, 2025). IBO (2009): arena a net loss to the city of $40M (cash) to $180M (with tax breaks).
+  2) Little Caesars Arena / District Detroit (Pistons since 2017): Detroit News analysis found more than a dozen of the 50 promised blocks emptier than at the 2014 launch and 24 buildings in the Ilitch footprint still empty; a neighborhood advisory council member cited ~700 promised residential units not built while parking was (HBO Real Sports / Local 4, 2019). Ilitch Holdings called the HBO report inaccurate.
+  3) American Airlines Center / Victory Park (Mavericks): public $185.3M ($125M arena + >$60M infrastructure); by 2006 the district was "less than half completed, and its taxable value about one-third, when compared with original outlooks" (Dallas Morning News, 2006-07-30).
+  (Also: Oklahoma City 2008 arena tax collected $103.5M vs $121M projected; Kansas City arena still without an anchor tenant.)
