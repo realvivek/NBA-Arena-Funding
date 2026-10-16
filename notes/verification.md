@@ -49,6 +49,20 @@ No primary construction cost was found or reachable for State Farm Arena, United
 - **Barclays Center, MTA Vanderbilt Yard.** The MTA's June 22, 2009 staff summary confirms $20M cash for the arena block and $80M present value at 6.5% for the air rights, paid 2012-2030. The city's Independent Budget Office (Sept. 2009) set the subsidy at the $50M gap between Extell's $150M bid and Forest City's $100M and assigned $10M of it to the arena. That $10M is now in the core total as land sold below value. Whole-project alternatives are recorded, not counted: $50M (bid gap), $114.5M (the $214.5M appraisal less the $100M present value) and $35M-$103M (the smaller replacement yard).
 - **Ball Arena, seat tax.** The 1997 Arena Agreement (s.5.7, filed with the SEC by the team's owner) declares the city's 10% Facilities Development Admissions tax inapplicable and binds the city not to collect it. The only revenue figure, about $4M a year at McNichols Arena, comes from a 9News page that returned 403 and was read only as search-index text. At 24 seasons of the agreement's term that is about $96M nominal (range $28M-$108M). Recorded as a memo, not added to any total, until a city budget record of the tax's yield is found. The same agreement also gave property-tax rebates for 23 years and construction sales-tax rebates; their amounts were not found.
 
+## Ongoing subsidies extended (October 16, 2026)
+
+The documented series now covers seven teams and $759M (2026 dollars), up from five teams and $524M. "Ongoing" means yearly public cash to the team or the arena's operator for running a public building; debt service on counted bonds is excluded.
+
+| Team | Years now documented | Record |
+| --- | --- | --- |
+| Pacers | 2001, 2014-2025 | Capital Improvement Board ACFRs FY2009, FY2023, FY2024, FY2025 ten-year tables: Fieldhouse operating reimbursements, Pacers note forgiveness ($40M of 2010-13 operating loans forgiven in 2015-24) and a 2001 pass-through of cable franchise fees. 2002-2013 show no payment line. |
+| Heat | FY1998-FY2026 | County: Inspector General IG11-34 ($72.2M through FY2010 including a $5.0M pre-opening subsidy), budgets FY2013-14 and FY2026, ACFR liability reductions FY2015-25, and naming-rights payments to the manager from FY2021. State: OPPAGA 15-01 ($32.5M paid through June 2014; later years at the scheduled $2.0M a year). FY2011-12 county payments are not documented and are not counted. |
+| Pelicans | FY2003-FY2026 | LSED audits (Louisiana Legislative Auditor): naming payments, an attendance credit, nonresident players' income tax, benchmark and fixed additional payments; the state's $3.65M Quality Jobs equivalent for FY2025-26 (executive budgets). |
+| Timberwolves | 2010-2018 | Minneapolis adopted budgets, Arena Reserve fund: operator reimbursement to AEG. |
+| Thunder | FY2023 | Oklahoma City Auditor report 20-02: $8.8M Paycom Arena operating subsidy. Other years are reported only together with other city venues. |
+| Hornets | FY2020-23 | Charlotte budgets: city arena-reserve contributions beyond the $0.6M a year already in the 2014 deal, net of the team's match. |
+| Grizzlies | 2021-2026 | Still press only (PFM). See the correction below. |
+
 ## Corrections made during the work
 
 - **DC exemption value.** One draft of the report gave the value as $262.9M, after misreading the OCFO memo's phrase "$262.9 million through the base term of the Lease". Table 1 of the memo shows that figure is the FY2029-2050 column only. The total through June 30, 2050 is $312.7M, the figure the ledger already carried. The report was corrected on October 11, 2026.
@@ -68,6 +82,11 @@ No primary construction cost was found or reachable for State Farm Arena, United
 - **Detroit 2014B bonds (Oct. 16, 2026).** $200M was authorized but $188.5M was drawn (DDA FY2018 audit). The conduit figure now uses $188.5M.
 - **Portland purchase (Oct. 16, 2026).** The lease table said the city bought the arena "for $1"; the ledger said $7.13M. The city's FY2024 ACFR says both: $1.00 for the building and $7.13M for the land under it.
 - **New Orleans alternative cost (Oct. 16, 2026).** A "$112M incl. site work (La. state presentation)" alternative had no URL and could not be found, so it was removed.
+- **Pelicans payments (Oct. 16, 2026).** The FY2021 figure left out a $1.7M additional payment (LSED FY2021 audit). FY2024 and FY2025 held only the $3.65M Quality Jobs equivalent and left out about $5.7M a year of audited players'-tax and additional payments. The $3.65M for FY2023 and FY2024 was removed: the Senate deck calls it an obligation, but no appropriation for those years appears in the executive budgets. Two capital items missing from the ledger were added: $16.5M of state Treasury money for "NBA upgrades" in 2002-04 (LSED FY2015 audit, note 17) and $2.57M of special capital reimbursements to the team in FY2008-09.
+- **Heat payments (Oct. 16, 2026).** The ledger assumed $6.4M in every year FY2000-FY2026. The record shows $3.2M plus a $5.0M pre-opening subsidy in FY2000, $6.4M a year after that, and no record for FY2011-12, which are now left out. The 2014 amendment keeps $6.4M through FY2029 and raises it to $8.5M a year from July 2030 to June 2035.
+- **Timberwolves payments (Oct. 16, 2026).** The 2024 figure ($4.6M, from PFM) was transfers into the city's arena fund, which also pay for capital and city administration. It now matches the 2024 ACFR ($4.602M) but measures more than payments to the operator, so the series uses the operator reimbursement instead (2010-2018).
+- **Pacers 2017-18 values (Oct. 16, 2026).** The original FY2017 and FY2018 ACFRs show $8.70M and $8.93M of Fieldhouse reimbursements; later ten-year tables restate them to $12.02M and $12.31M by moving CIB-paid utilities, insurance and security into the line. The ledger uses the restated values; 2014-16 were never restated, so they run about $3.3M a year low compared with later years.
+- **Grizzlies subsidy flag (Oct. 16, 2026).** No primary record of the $4.95M-$6.3M a year subsidy was found. The only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds. The series stays labeled (c) and flagged as possibly overlapping the capital already counted.
 - **Cook County query.** A first query used a wrong PIN prefix and returned small totals. The main arena PIN 17182010350000 confirmed the 2024 cut.
 
 ## Not reachable from the build environment
@@ -87,6 +106,9 @@ The web-search allowance shared by the October 16 research ran out partway throu
 - okc.gov blocks scripted downloads (HTTP 403), and the city ACFR is too large for the browser-style fetch; the OCPPA report was read instead.
 - portland.gov spectator-venue pages (HTTP 403/404).
 - The Houston Sports Authority's 2014 board minutes are image-only scans and were not read.
+- audit.sboa.in.gov sends an incomplete certificate chain; the FY2024 CIB report was read after adding the issuer's published intermediate certificate, with verification on.
+- lims.minneapolismn.gov (Cloudflare 403): Minneapolis budgets for 2021-2026, so operator payments after 2018 are missing.
+- comptroller.tn.gov report search runs only in a browser; the Memphis and Shelby County Sports Authority's own audits were not found.
 
 - results.okelections.gov (HTTP 403). Oklahoma City's 2025 bond results were taken from okc.gov, which cites the State Election Board's unofficial results.
 - okc.gov and memphistn.gov refuse scripted downloads (HTTP 403); their pages and PDFs were read through a browser-style fetch instead.

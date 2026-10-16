@@ -11,44 +11,44 @@ A. CORE TOTAL - 30 CURRENT NBA ARENAS (spent or legally committed public money, 
 ------------------------------------------------------------------------------
 Public construction contributions ............ $5.19B
 Public purchases of existing arenas ........... $219M  (Minneapolis 1995, Portland 2024, DC 2024)
-Public renovation money (completed + binding).. $3.09B
-Documented ongoing cash subsidies to date ..... $620M  (CHA 2020-23; IND 2014-23; MEM 2021-26; MIA 1998-26; MIN 2024; NOP 2014, 2021-26; OKC 2023)
-ALL PUBLIC MONEY (core) ....................... $9.12B
-Total arena spending (construction public+private, renovations public+private, ongoing public) = $26.97B
-PUBLIC SHARE OF TOTAL ARENA SPENDING ........... 33.8%
+Public renovation money (completed + binding).. $3.12B
+Documented ongoing cash subsidies to date ..... $759M  (CHA 2020-23; IND 2001, 2014-25; MEM 2021-26; MIA 1998-26; MIN 2010-18; NOP 2003-26; OKC 2023)
+ALL PUBLIC MONEY (core) ....................... $9.29B
+Total arena spending (construction public+private, renovations public+private, ongoing public) = $27.14B
+PUBLIC SHARE OF TOTAL ARENA SPENDING ........... 34.2%
   construction only: public $5.19B of $19.41B = 26.8%  (private construction $14.22B)
-  renovations only: public $3.09B of $6.94B = 44.5%
+  renovations only: public $3.12B of $6.97B = 44.8%
 Pending public money on current arenas (not in core): $1.04B  (MEM $470M; POR $573M; see the renovation items in arena_ledger.csv)
 Method: public share = public money / (max(reported cost, public+private construction) + renovation totals + ongoing public). Public purchases count as
 public money but not as new spending (they reimburse private builders). Debt service on counted bonds is NOT added (no double counting).
 
 B. MECHANISM SPLIT - public CAPITAL money (construction + purchases + completed/binding renovations), 2026$
 ------------------------------------------------------------------------------
-  Hotel, car-rental, F&B, ticket (visitor) taxes                                                 $3.53B   41.5%
-  General taxes / GO bonds / appropriations / state grants / public asset sales                  $1.91B   22.5%
-  Dedicated general sales tax                                                                     $917M   10.8%
+  Hotel, car-rental, F&B, ticket (visitor) taxes                                                 $3.53B   41.4%
+  General taxes / GO bonds / appropriations / state grants / public asset sales                  $1.95B   22.8%
+  Dedicated general sales tax                                                                     $917M   10.7%
   Public, mechanism split not documented                                                          $885M   10.4%
   Tax increment & tax capture (TIF, CRA, Indiana PSDA, Oregon income-tax capture)                 $687M    8.1%
   Lease-revenue bonds (general fund / parking backed)                                             $305M    3.6%
   Land contributed or sold below value                                                            $202M    2.4%
   Sin taxes (alcohol/tobacco, Cleveland)                                                           $53M    0.6%
   Infrastructure / parking / site work (funding stream not specified)                               $9M    0.1%
-  TOTAL capital                                                                                  $8.50B
-  Ongoing operating subsidies (separate from capital): $620M
+  TOTAL capital                                                                                  $8.54B
+  Ongoing operating subsidies (separate from capital): $759M
   Rule: each dollar assigned once - by documented funding stream; in-kind land -> land; infrastructure with no stated stream -> infrastructure.
 
 C. TOP 10 ARENAS BY PUBLIC MONEY (core, 2026$)
 ------------------------------------------------------------------------------
  1. ORL Kia Center                         public    $862M | share  90.1% | constr 635.8 + acq 0 + reno 226.0 + ongoing 0
  2. WAS Capital One Arena                  public    $756M | share  55.5% | constr 156.0 + acq 92.5 + reno 507.5 + ongoing 0
- 3. IND Gainbridge Fieldhouse              public    $716M | share  71.4% | constr 157.3 + acq 0 + reno 361.1 + ongoing 197.6
+ 3. IND Gainbridge Fieldhouse              public    $747M | share  72.3% | constr 157.3 + acq 0 + reno 361.1 + ongoing 229.1
  4. CHA Spectrum Center                    public    $565M | share  91.7% | constr 288.7 + acq 0 + reno 274.2 + ongoing 2.4
  5. MEM FedExForum                         public    $556M | share 100.0% | constr 439.0 + acq 0 + reno 82.4 + ongoing 35.1
  6. UTA Delta Center                       public    $548M | share  60.0% | constr 0.0 + acq 0 + reno 547.7 + ongoing 0
- 7. BKN Barclays Center                    public    $455M | share  23.0% | constr 455.0 + acq 0 + reno 0.0 + ongoing 0
- 8. HOU Toyota Center                      public    $447M | share  69.8% | constr 351.6 + acq 0 + reno 95.0 + ongoing 0
- 9. CLE Rocket Arena                       public    $433M | share  64.7% | constr 268.5 + acq 0 + reno 164.1 + ongoing 0
-10. SAS Frost Bank Center                  public    $414M | share  84.5% | constr 294.8 + acq 0 + reno 118.9 + ongoing 0
+ 7. NOP Smoothie King Center               public    $460M | share 100.0% | constr 227.0 + acq 0 + reno 104.9 + ongoing 128.2
+ 8. BKN Barclays Center                    public    $455M | share  23.0% | constr 455.0 + acq 0 + reno 0.0 + ongoing 0
+ 9. HOU Toyota Center                      public    $447M | share  69.8% | constr 351.6 + acq 0 + reno 95.0 + ongoing 0
+10. CLE Rocket Arena                       public    $433M | share  64.7% | constr 268.5 + acq 0 + reno 164.1 + ongoing 0
 
 D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (14): GSW, LAC, BOS, NYK, CHI, LAL, DEN, PHI, TOR, BKN, DET, WAS, UTA, POR
 ------------------------------------------------------------------------------
@@ -75,11 +75,11 @@ Hidden public money still received:
 
 E. EXPANDED TOTAL (adds tax-break financing that the core excludes)
 ------------------------------------------------------------------------------
-Core public money .......................................... $9.12B
+Core public money .......................................... $9.29B
 + Barclays PILOT bonds (property tax diverted to arena debt) $738M
 + CHI United Center valuation formula, 2002-2016             $75M  (yearly series, deflated)
 + NYK Madison Square Garden exemption since 1982             $947M  (nominal cumulative, a floor in 2026$)
-= EXPANDED PUBLIC TOTAL .................................... >= $10.88B  (38.9% of a spending base that adds the tax breaks)
+= EXPANDED PUBLIC TOTAL .................................... >= $11.05B  (39.2% of a spending base that adds the tax breaks)
 Not added (future): DC extended property/possessory-interest tax exemption for Capital One Arena valued by OCFO at $49.8M FY2025-28 + $262.9M FY2029-50 = $312.7M (OCFO: "not financially necessary").
 Memo, not added: DEN Ball Arena seat-tax exemption, 1999-2023: about $96M nominal, from one unverified press figure (range in arena_ledger.csv tax_break_notes).
 Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, arena_tax file; new-money issues only, refundings excluded) = $1.32B - not added (different payer, overlapping with local bonds).
@@ -91,7 +91,7 @@ Voter-approved, agreements pending: SAS Spurs downtown arena (Project Marvel) $3
 Pending/non-binding, new arenas: SAS Spurs downtown arena (Project Marvel) $549M -> $549M; pending on current arenas (team rows): $1.04B
 No public deal: PHI 76ers-Comcast Spectacor South Philadelphia arena; DAL Mavericks planned arena (Valley View site)
 OKC binding total includes $60M of 2025 GO bonds for a garage and team offices outside the $900M arena budget; Bexar County $311M is the voter-approved cap.
-Core + binding new = $10.41B; + all approved/pending = $12.31B
+Core + binding new = $10.58B; + all approved/pending = $12.48B
 
 G. COST PER HOUSEHOLD - LARGEST PUBLIC DEALS (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)
 ------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ UTA: Delta Center 2025 deal (arena $525M + district $375M), 0.5% Salt Lake City 
 OKC: New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($302M), OKC city sales tax and GO bonds: $1.21B | Oklahoma City, OK 290,311 hh -> $4,174/hh (share 100%) | City sales tax (also paid by commuters/visitors) and GO bonds
 WAS: Capital One Arena all public money since 1997: $756M | District of Columbia 329,687 hh -> $2,293/hh (share 100%) | District of Columbia general fund/GO
 ORL: Kia Center (2010 build + 2025 renovation): $862M | Orange County, FL 560,020 hh -> $1,539/hh (share 100%) | Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional
-IND: Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23): $716M | Marion County, IN 408,907 hh -> $1,384/hh (share 79%) ; Indiana 2,775,637 hh -> $54/hh (share 21%) | Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)
+IND: Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23): $747M | Marion County, IN 408,907 hh -> $1,461/hh (share 80%) ; Indiana 2,775,637 hh -> $54/hh (share 20%) | Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)
 CHA: Spectrum Center (2005, 2014, 2022-25): $565M | Charlotte, NC 381,274 hh -> $1,483/hh (share 100%) | City of Charlotte hotel/car-rental taxes
 MEM: FedExForum (2004 build, $80M state 2025, subsidies): $556M | Shelby County, TN 359,692 hh -> $1,220/hh (share 79%) ; Tennessee 2,928,765 hh -> $40/hh (share 21%) | Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)
 HOU: Toyota Center (2003 + 2026 state grant): $447M | Harris County, TX 1,801,856 hh -> $195/hh (share 79%) ; Texas 11,449,769 hh -> $8/hh (share 21%) | Harris County (HCHSA hotel/car taxes) + Texas ($95M)
@@ -109,7 +109,7 @@ DET: Little Caesars Arena DDA TIF: $387M | Detroit, MI 268,048 hh -> $1,444/hh (
 CLE: Rocket Arena (1994, 2017-19, 2019 repairs): $433M | Cuyahoga County, OH 551,960 hh -> $784/hh (share 100%) | Cuyahoga County (sin tax, county bonds)
 POR: Moda Center pending rebuild ($573M) + past ($83M): $656M | Oregon 1,744,270 hh -> $209/hh (share 56%) ; Multnomah County, OR 353,080 hh -> $249/hh (share 13%) ; Portland, OR 294,419 hh -> $688/hh (share 31%) | Oregon (income-tax capture) + Multnomah County + City of Portland
 MIL: Fiserv Forum: $330M | Milwaukee County, WI 396,211 hh -> $653/hh (share 78%) ; Wisconsin 2,535,198 hh -> $28/hh (share 22%) | Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)
-NOP: Smoothie King Center: $334M | Louisiana 1,848,965 hh -> $181/hh (share 100%) | State of Louisiana (LSED/state)
+NOP: Smoothie King Center: $460M | Louisiana 1,848,965 hh -> $249/hh (share 100%) | State of Louisiana (LSED/state)
 SAC: Golden 1 Center: $308M | Sacramento, CA 198,965 hh -> $1,549/hh (share 100%) | City of Sacramento general fund/parking
 
 H. LABELS AND SOURCING
