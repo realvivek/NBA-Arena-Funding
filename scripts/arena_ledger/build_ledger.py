@@ -65,7 +65,11 @@ for t in TEAMS:
     ren_pub_n=sum(sum(r['pub'].values()) for r in rb); ren_tot_n=sum(r['total'] for r in rb)
     ren_pub26=sum(sum(r['pub'].values())*f26(r['cpi_year']) for r in rb); ren_tot26=sum(r['total']*f26(r['cpi_year']) for r in rb)
     pend_n=sum(sum(r['pub'].values()) for r in rp); pend26=sum(sum(r['pub'].values())*f26(r['cpi_year']) for r in rp)
-    og=t.get('ongoing',[]); og_n=sum(a for y,a in og); og26=sum(a*f26(y) for y,a in og)
+    og=list(t.get('ongoing',[]))
+    ogx=t.get('ongoing_extra',[])
+    for e in ogx: og+=e['series']
+    og.sort()
+    og_n=sum(a for y,a in og); og26=sum(a*f26(y) for y,a in og); og_years=sorted({y for y,a in og})
     pub26=pubn*fac; priv26=(priv or 0)*fac; cost26=(cost or 0)*fac; con_total26=con_total*fac
     core26=pub26+acq26+ren_pub26+og26
     spend26=con_total26+ren_tot26+og26
@@ -81,6 +85,12 @@ for t in TEAMS:
         if T in PRIVATE_BUILT: bucket26_priv[b]+=v
     pilot=t.get('pilot'); pilot26=pilot*fac if pilot else 0.0
     tbk=t.get('taxbreak')
+    tb_cum=tbk.get('cum') if tbk else None; tb_cum26=None
+    if tbk and tbk.get('series_file'):
+        ser=[(int(r['tax_year']), float(r[tbk['series_col']])/1e6) for r in csv.DictReader(open(DATA+'/'+tbk['series_file']))]
+        tb_cum=sum(a for y,a in ser); tb_cum26=sum(a*f26(y) for y,a in ser); tb_years=f"{ser[0][0]}-{ser[-1][0]}"
+    elif tb_cum: tb_cum26=tb_cum  # nominal cumulative with no yearly series (MSG): counted at face value, a floor in 2026 dollars
+    exp26=tb_cum26 if (tbk and tbk.get('expanded') and tb_cum26) else 0.0
     conduit=t.get('conduit')
     le=dict(lease.get(T,{}))
     OVR={'SAS':dict(term_end_year='2032',term_and_nonrelocation='Lease expires 2032 (Bexar County)',outs_penalties_notes='Break fees up to $124M (per Bexar 2015 deal, renovation file)',label='b/c',source=U['bexar15']),
@@ -107,10 +117,13 @@ for t in TEAMS:
         public_renovation_nominal_m=r1(ren_pub_n), renovation_total_cost_nominal_m=r1(ren_tot_n), public_renovation_pending_nominal_m=r1(pend_n) if pend_n else '',
         renovation_items=reno_txt, renovation_sources=reno_src,
         ongoing_annual_from_net_cost_file=netdesc,
-        ongoing_to_date_nominal_m=r1(og_n) if og else '', ongoing_to_date_years=(f"{og[0][0]}-{og[-1][0]} ({len(og)} yrs documented)" if og else ''),
-        ongoing_label=t.get('ongoing_label',''), ongoing_source=t.get('ongoing_src',''), ongoing_notes=t.get('ongoing_note',''),
-        tax_break_desc=(tbk['desc'] if tbk else ''), tax_break_annual_m=(tbk['annual'] if tbk else ''), tax_break_annual_year=(tbk['annual_year'] if tbk else ''), tax_break_annual_2026_m=(r1(tbk['annual']*f26(tbk['annual_year'])) if tbk else ''),
-        tax_break_cumulative_nominal_m=(tbk['cum'] if tbk and tbk.get('cum') else ''), tax_break_future_committed_m=(tbk.get('future','') if tbk else ''), tax_break_notes=(tbk.get('future_note','') if tbk else ''), tax_break_source=((tbk['annual_src']+(' ; '+tbk['cum_src'] if tbk.get('cum_src') else '')) if tbk else ''),
+        ongoing_to_date_nominal_m=r1(og_n) if og else '', ongoing_to_date_years=(f"{og_years[0]}-{og_years[-1]} ({len(og_years)} yrs documented)" if og else ''),
+        ongoing_label=' ; '.join(x for x in [t.get('ongoing_label','')]+[e['label'] for e in ogx] if x),
+        ongoing_source=' ; '.join(x for x in [t.get('ongoing_src','')]+[e['src'] for e in ogx] if x),
+        ongoing_notes=' | '.join(x for x in [t.get('ongoing_note','')]+[e['component']+': '+e['note'] for e in ogx] if x),
+        tax_break_desc=(tbk['desc'] if tbk else ''), tax_break_annual_m=(tbk['annual'] if tbk and tbk.get('annual') else ''), tax_break_annual_year=(tbk['annual_year'] if tbk and tbk.get('annual') else ''), tax_break_annual_2026_m=(r1(tbk['annual']*f26(tbk['annual_year'])) if tbk and tbk.get('annual') else ''),
+        tax_break_cumulative_nominal_m=(r1(tb_cum) if tb_cum else ''), tax_break_cumulative_2026_m=(r1(tb_cum26) if tb_cum26 else ''), tax_break_in_expanded_total=('Y' if exp26 else ('memo' if tbk and tbk.get('memo') else ('' if not tbk else 'N'))),
+        tax_break_future_committed_m=(tbk.get('future','') if tbk else ''), tax_break_memo_estimate_m=(tbk.get('memo','') if tbk else ''), tax_break_notes=(tbk.get('future_note','') if tbk else ''), tax_break_source=(((tbk['annual_src'] or '')+(' ; '+tbk['cum_src'] if tbk.get('cum_src') else '')) if tbk else ''),
         pilot_or_tax_diversion_financing_m=r1(pilot) if pilot else '', pilot_note=t.get('pilot_note',''),
         conduit_public_financing_repaid_privately_m=r1(conduit) if conduit else '', conduit_2026_m=r1(conduit*fac) if conduit else '', conduit_note=t.get('conduit_note',''),
         tax_exempt_bonds_par_m_from_arena_tax=r1(bd['par_te']) if bd else '', taxable_bonds_par_m=r1(bd['par_tax']) if bd else '', bond_detail=' | '.join(bd['rows']) if bd else '',
@@ -128,7 +141,7 @@ for t in TEAMS:
     )
     rows.append(row)
     detail[T]=dict(core26=core26, spend26=spend26, pub26=pub26, priv26=priv26, acq26=acq26, ren_pub26=ren_pub26, ren_tot26=ren_tot26, og26=og26, pend26=pend26, con26=con_total26, pilot26=pilot26, tb=dict(tb),
-                   og_years=[y for y,a in og], pend_items=[(r['desc'], sum(r['pub'].values())*f26(r['cpi_year'])) for r in rp])
+                   og_years=og_years, exp26=exp26, tb_desc=(tbk['desc'] if tbk else ''), tb_short=(tbk.get('short',T) if tbk else ''), tb_memo=(tbk.get('memo') if tbk else None), pend_items=[(r['desc'], sum(r['pub'].values())*f26(r['cpi_year'])) for r in rp])
     for k,v in dict(core26=core26, spend26=spend26, pub26=pub26, priv26=priv26, acq26=acq26, ren_pub26=ren_pub26, ren_tot26=ren_tot26, og26=og26, pend26=pend26, con26=con_total26, pilot26=pilot26).items():
         agg[k]+=v
         if T in PRIVATE_BUILT: aggp[k]+=v
@@ -136,35 +149,35 @@ for t in TEAMS:
 # notes/gaps per team
 GAPS={
 'ATL':'Original construction split from Marquette summary (via search index) - Recreation Authority official statements not reachable (EMMA blocked).',
-'BOS':'No public money documented; state/MBTA infrastructure around North Station not quantified.',
-'BKN':'City $205M figure from IBO 2009 testimony as reported (IBO URL now redirects); MTA land discount unquantified; PILOT bonds counted only in expanded total.',
-'CHA':'Public share of 2005 build disputed ($170M taxpayer per Carolina Journal vs city-owned $265M); team contribution ~$23M.',
-'CHI':'1989 property-tax break amount not found.',
-'CLE':'1994 cost reported $100M-$155M; public $100M from PFM summary; 2017 county share mechanism (hotel/admissions taxes per press) not verified -> mixed.',
-'DAL':'Land/infrastructure around Victory Park not quantified.',
-'DEN':'Land the city bought from Southern Pacific (1997) - price/transfer terms not found.',
+'BOS':'No public construction money; as-built cost not found (the 1992 BRA estimate is used); the Chapter 121A tax arrangement and the deferred $5.126M MBTA note are not quantified.',
+'BKN':"State $100M from press (Gotham Gazette); city $205M from IBO 2009 testimony; MTA rail yard counted at IBO's $10M arena share; PILOT bonds counted only in expanded total.",
+'CHA':'City ACFR states a $200M project without itemizing it; the $170M public figure (press) is not split in any primary document; arena reserve contributions before FY2020 not reachable.',
+'CHI':'1989 formula valuation counted in the expanded total for tax years 2002-2016 only; 1994-2001 inputs not reachable; last formula year inferred.',
+'CLE':"Arena cost is the recorded building line, excluding the complex's shared land, site and capitalized costs; repayment source of the county's 1992 and 1994 arena bonds not documented (mixed); 2017 county share mechanism not verified (mixed).",
+'DAL':'Construction cost and $125M public cap from press; 1998A/B arena bonds of $124.4M outstanding in 2002 (City ACFR) are consistent with the cap; land/infrastructure around Victory Park not quantified.',
+'DEN':'Cost includes financing costs; property-tax and construction sales-tax rebates under the 1997 agreement not quantified; seat-tax exemption estimated from one unverified press figure (memo only); land the city bought from Southern Pacific not found.',
 'DET':'Public share excludes DDA land/infrastructure outside bond-funded costs and the ongoing school-tax capture beyond debt service.',
 'GSW':'City event-day service costs not counted.',
-'HOU':'Rent Supported Debt (Rockets rent) size not found, so net public share overstated; city land $20M from Marquette 2005 (via search).',
-'IND':'Ongoing CIB payments documented only 2014-2023 (ACFR ten-year table); 2010-2013 and 2024-26 subsidies not included.',
+'HOU':'Final cost not found ($235M press; $195M floor from primary budgets); Rent Supported Debt capped at $30.4M but actual size not found, so net public share overstated; 2020 rent abatements ($2.975M) and pre-opening maintenance deposits ($4.5M, payment unconfirmed) not counted.',
+'IND':'1997A/B bond par ($230.7M) exceeds the reported $183M cost and no primary public/private split was found; ongoing CIB payments documented only 2014-2023 (ACFR ten-year table).',
 'LAC':'No public money found; land purchased at $66.25M.',
-'LAL':'$58M city financing treated as conduit (AEG guaranty); 1997 deal documents not reached.',
-'MEM':'2004 bond repayment mechanisms (tourist taxes, state sales-tax rebate, seat fees) not split; $470M of the $550M renovation pending lease.',
-'MIA':'Heat-paid construction per press; county land $38M (press); subsidy assumed $6.4M every year FY2000-26.',
+'LAL':"City's ~$70M advance treated as conduit (developer must offset it under the Gap Funding Agreement); 1997 deal documents not reached.",
+'MEM':'Cost and funding split from the City CAFR (FY2005); Sports Authority bond repayment streams not split (mixed); $470M of the $550M renovation pending lease.',
+'MIA':'County land $37.6M from the Inspector General; Heat-paid construction per press; county subsidy assumed $6.4M every year FY2000-26; State of Florida payments after June 2014 at the scheduled rate.',
 'MIL':'Value of the Bradley Center site conveyed to the team not documented; state GPR to 2035-36 is debt service on counted bonds.',
-'MIN':'1995 purchase price from a 2003 legislative committee agenda; only 2024 operating supplements documented.',
-'NOP':'1999 construction mechanism from press; ongoing payments partial (audited FY2014, FY2021-23, QJ FY2024-26 only); team revenue entitlements excluded.',
+'MIN':'City subsidy split (TIF bonds vs land and infrastructure) not settled (mixed); only 2024 operating supplements documented.',
+'NOP':'1999 construction cost and mechanism from press; ongoing payments partial (audited FY2014, FY2021-23, QJ FY2024-26 only); team revenue entitlements excluded.',
 'NYK':'Exemption cumulative ($946.7M) from Reinvent Albany citing IBO July 2023 (nominal, through ~2023) - not converted to 2026$.',
-'OKC':'2008 renovation arena share computed pro rata from plan; MAPS 4 money for the new arena reported as $70M, $78M, $89M (okc.gov 2026-10-12) and ~$99M.',
-'ORL':'2007 split between TDT bonds and CRA ($100M) from secondary sources; PFM says public $430M.',
+'OKC':'2002 cost from press; 2008 renovation arena share computed pro rata from plan; operating subsidy documented for FY2023 only; MAPS 4 money for the new arena reported as $70M, $78M, $89M and ~$99M.',
+'ORL':'Cost is a plan-of-finance figure (2016), not an audited final cost; interest earnings on bond proceeds (mixed).',
 'PHI':'No public money found in sources reached (contemporaneous 1994-96 records not reached).',
-'PHX':'1992 city $35M mechanism not documented; 2019 $175M includes $25M capital reserve paid over time.',
-'POR':'1995 city $34.5M mechanism not documented (reported as garages/infrastructure elsewhere, unverified); $586.6M rebuild pending.',
-'SAC':'Value of city parcels/billboard rights given to Kings not documented; final cost $558.2M from Wikipedia (OS estimate $507.1M).',
-'SAS':'Public 2002 share computed as cost - Spurs $28.5M; infobox says $186M cost.',
-'TOR':'No Canadian public money documented; property-tax status not verified.',
-'UTA':'1990 RDA land value and any RDA cash not documented; district $375M in project row.',
-'WAS':'1997 public ~$79M from Wikipedia (land, site, Metro); construction total reported $200M-$260M; Monumental share of renovation computed from Council memo ($800M total).',
+'PHX':'1992 cost and $35M city share from press; a 1998 arena refunding of $48.74M suggests more city debt; 2019 $175M includes the $25M renewal and replacement account paid over time.',
+'POR':'1995 cost and city $34.5M from press, mechanism not documented; $573M rebuild pending; city match of team capital spending during the bridge term not quantified.',
+'SAC':"Cost from the construction monitor's last posted report (99.5% complete), not an audited total; value of city parcels and billboard rights not documented.",
+'SAS':'Recorded cost probably includes capitalized interest; the 2000 bond program also paid for Coliseum and grounds work.',
+'TOR':"Cost from the owner's web page only; no Canadian public money documented; property-tax status not verified.",
+'UTA':'1990 RDA land value and any RDA cash not documented; 2017 city reimbursement counted at its $22.7M cap; district $375M in project row.',
+'WAS':'Building cost $175M (GAO, developer estimate) to $260M (press); 1997 public money from GAO (District $61.5M + $14M federal and WMATA for the Metro link); Monumental share of renovation computed from Council memo ($800M total).',
 }
 for r in rows: r['notes_and_gaps']=GAPS.get(r['team'],'')
 

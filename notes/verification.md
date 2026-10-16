@@ -1,6 +1,6 @@
 # Verification notes
 
-Claims in the report that were checked against primary records, with what each record shows. Last updated October 11, 2026.
+Claims in the report that were checked against primary records, with what each record shows. Last updated October 16, 2026.
 
 ## Checked against primary records
 
@@ -21,6 +21,34 @@ Claims in the report that were checked against primary records, with what each r
 | MSG property-tax exemption of about $42M a year | NYC Independent Budget Office, March 2023 | $42M in FY2023. The cumulative $946.7M since 1982 comes via Reinvent Albany and is used only in the expanded total. |
 | MLB's lobbyist was the only one on record on the Section 197 cap | House Clerk lobbying disclosures (bulk XML) | Ernst & Young for the Office of the Commissioner of Baseball: $50,000 in each of Q1 and Q2 2025, on sports franchise amortization under Section 197 (H.R. 1). The Senate LDA site was down for maintenance, so the House files were used. |
 
+## Construction costs moved to primary documents (October 16, 2026)
+
+Thirteen of the 30 construction costs now come from a primary document, up from one. Each row's alternatives stay in `construction_cost_other_reports` and section I of `totals.txt`.
+
+| Arena | Before | Now | Record and what the figure measures |
+| --- | --- | --- | --- |
+| Barclays Center | $1.0B (c) | $950.7M (b) | Forest City Enterprises 10-K for the year ended Jan. 31, 2013, Development Pipeline, p.24: "Total Cost" at opening, scope not defined. Schedule III (p.148) records the building at $890.2M with land at zero. |
+| Fiserv Forum | $524.1M (b) | $524.1M (b) | Wisconsin LFB Paper 18: the 2016 development-agreement estimate, including plaza, parking structure and an estimated $24.1M owner overrun. The district's 2018 audit records the arena at about $416M-$422M. |
+| FedExForum | $250M (c) | $250M (b) | City of Memphis CAFR FY2005, joint-venture note (printed p.72): "$186,000 from Senior Lien Revenue Bonds, $20,000 from Subordinate Lien Revenue Bonds, $12,000 each by the City and the County ..., and $20,000 from the State of Tennessee" (thousands). No team money in the funding table. |
+| Target Center | $127M (c) | $127M (b) | Minnesota Legislative Auditor, July 26, 2017, Exhibit 1: total $127M, public $23M (18%); the 1995 purchase at $54.6M on the same page. |
+| Spectrum Center | $265M (c) | $200M (b) | City of Charlotte ACFR FY2020, Note 6e: "The $200 million project", not itemized. Press figures of $260M-$265M are kept as alternatives. |
+| Rocket Arena | $152M (c) | $157.8M (b) | Gateway Economic Development Corp. FY1999 audit (Ohio Auditor of State), balance sheet: "Arena 157,816,726", excluding the complex's shared land, site work and capitalized costs. |
+| Ball Arena | $187M (c) | $200.0M (b) | Ascent Entertainment 10-K405 for 1999, p.11: "approximately $200.0 million, including financing costs". The 1998 budget was $169.1M. |
+| Little Caesars Arena | $862.9M (c) | $929.6M (b) | Detroit DDA audited statements FY2019, Note E: Stadium $929,575,183 (building, including Olympia-donated construction; excludes $8.4M of land). |
+| TD Garden | $160M (c) | $160M (b) | Boston Redevelopment Authority, Oct. 22, 1992 Chapter 121A decision: "total capital required to complete the Project is estimated to be $160,000,000" (an estimate, including pre-development and acquisition). |
+| Kia Center | $480M (c) | $480M (b) | Orlando/Orange County restated interlocal agreement (2016), "Overall Project Sources and Uses of Funds", Event Center column: $380M construction + $40M land and site + $60M parking and roads. A plan figure, not an audited total. |
+| Golden 1 Center | $558.2M (c) | $559.2M (b) | Construction monitor's Report 34 (Sept. 5, 2017), posted by the City Treasurer: total project budget $559,152,604 including $34.5M of land, 99.5% complete. |
+| Frost Bank Center | $175M (c) | $188.4M (b) | Bexar County CAFR FY2006, Note E: the Arena Venue fund carries building and equipment at $188,452,905, without land and probably with capitalized interest. |
+| Scotiabank Arena | C$288M (c) | C$288M (b) | The owner's venue history page: "$288 million dollar Air Canada Centre"; undated, no breakdown. Labeled primary as an owner statement, origin team. |
+
+No primary construction cost was found or reachable for State Farm Arena, United Center, American Airlines Center, Chase Center, Toyota Center (a $195M floor from the 2000 budget documents is recorded), Gainbridge Fieldhouse ($230.7M of 1997 bonds for the arena and garage is recorded as par, not cost), Intuit Dome, Crypto.com Arena, Kaseya Center (the Inspector General says "over $200 million"), Smoothie King Center, Madison Square Garden's 1968 building, Paycom Center, Xfinity Mobile Arena, Mortgage Matchup Center, Moda Center, Delta Center and Capital One Arena (GAO records the developer's $175M estimate). Madison Square Garden's 2011-13 renovation moved from about $1B (c) to $1,025M incurred through Dec. 31, 2013 (b, MSG Form 10-Q). Phoenix's 2019-20 renovation ($234,904,757) is now primary (council item 18-3724, Exhibit A).
+
+## Tax breaks quantified (October 16, 2026)
+
+- **United Center, 1989 valuation formula.** Public Act 86-110 (35 ILCS 200/10-205 to 10-220) valued the arena at 20% of four times its owners' net income after interest, income taxes and capital repairs, with a $1M minimum tax, for 22 years after the base year. Taxes forgone in tax years 2002-2016: $46.6M nominal, $75M in 2026 dollars, computed at the Assessor's first post-formula assessed value ($32.31M, 2017) with each year's equalizer and rate, less taxes paid. Inputs: Cook County Assessor (Socrata `uzyt-m557`), the Assessor's PTAXSIM database and IDOR equalizers; 2002-2005 rates from the Chicago Teachers Union's 2013 report, which match PTAXSIM where both exist. The series and method are in `data/property_tax/united_center_formula_savings.csv` and `.md`. It is a floor: 1994-2001 could not be computed. Alternatives: $36.1M at the 2021 market value; about $77M extended to 1994-2001. Added to the expanded total only, like the MSG exemption.
+- **Barclays Center, MTA Vanderbilt Yard.** The MTA's June 22, 2009 staff summary confirms $20M cash for the arena block and $80M present value at 6.5% for the air rights, paid 2012-2030. The city's Independent Budget Office (Sept. 2009) set the subsidy at the $50M gap between Extell's $150M bid and Forest City's $100M and assigned $10M of it to the arena. That $10M is now in the core total as land sold below value. Whole-project alternatives are recorded, not counted: $50M (bid gap), $114.5M (the $214.5M appraisal less the $100M present value) and $35M-$103M (the smaller replacement yard).
+- **Ball Arena, seat tax.** The 1997 Arena Agreement (s.5.7, filed with the SEC by the team's owner) declares the city's 10% Facilities Development Admissions tax inapplicable and binds the city not to collect it. The only revenue figure, about $4M a year at McNichols Arena, comes from a 9News page that returned 403 and was read only as search-index text. At 24 seasons of the agreement's term that is about $96M nominal (range $28M-$108M). Recorded as a memo, not added to any total, until a city budget record of the tax's yield is found. The same agreement also gave property-tax rebates for 23 years and construction sales-tax rebates; their amounts were not found.
+
 ## Corrections made during the work
 
 - **DC exemption value.** One draft of the report gave the value as $262.9M, after misreading the OCFO memo's phrase "$262.9 million through the base term of the Lease". Table 1 of the memo shows that figure is the FY2029-2050 column only. The total through June 30, 2050 is $312.7M, the figure the ledger already carried. The report was corrected on October 11, 2026.
@@ -30,9 +58,35 @@ Claims in the report that were checked against primary records, with what each r
 - **Oklahoma City bond vote (Oct. 16, 2026).** The ledger described an Oct. 14, 2026 general-obligation bond vote adding about $60M for a garage and team offices as pending. No election was held on that date (Oklahoma State Election Board 2026 calendar). The vote was Oct. 14, 2025, and all 11 propositions passed (okc.gov, "OKC voters approve 2025 bond"; Prop. 5 75.52%, Prop. 9 75.95%). The $35M garage is listed on the city's bond page; the $25M for team offices comes from the Oklahoma Gazette, since the city lists the line without an amount. Bond Buyer reports $90M of the 2025 bonds allocated to arena parking, streets and offices; that figure is recorded as the alternative. The $60M now counts as binding public money outside the $900M arena budget.
 - **Oklahoma City MAPS 4 money (Oct. 16, 2026).** Four figures are on record: $70M (an earlier okc.gov page), $78M (okc.gov, March 26, 2026, and Bond Buyer), about $99M (Bond Buyer, May 19, 2026) and $89M (okc.gov, Oct. 12, 2026). All are recorded. The public total is unchanged because it is computed as the $900M arena cost less the Thunder's $50M. Bond Buyer's "currently estimated" $1.016B cost is recorded as an alternative. The team's commitment runs through at least 2053 (KGOU, Bond Buyer), not 2050 as the lease table had it.
 - **Portland renovation money (Oct. 16, 2026).** The ledger counted the county's full $101.6M as renovation capital, for a $586.6M package. The amended term sheet adopted Aug. 12, 2026 (Resolution 37750, p.2 and pp.4-5) sets a $573M public renovation budget: state $365M, city $120M and county $88M. The county's other $13.6M is ongoing money ($1.6M in FY2027-28 and $2M a year in FY2031-36), as are the city's ongoing payments, capped at $275,000,016 over 20 years (Exhibit D). The term sheet contradicts itself on the county's funding source: business income tax from the franchise sale on pp.4-5, motor-vehicle-rental and tourism taxes excluding business income tax in Exhibit F. Both are recorded.
+- **Cleveland public money (Oct. 16, 2026).** The ledger, following PFM, said $100M of 1990 sin-tax bonds paid for the arena. Gateway's FY1999 audit says the 1990 bonds paid "primarily" for the stadium and that Cuyahoga County lent Gateway the proceeds of $75M (1992) and $45M (1994) of taxable bonds "to pay Arena construction costs". The arena's public construction money is now $120M, funding stream not documented.
+- **Orlando funding split (Oct. 16, 2026).** The ledger split the public money into $100M of redevelopment-agency tax increment and $330M of tourist tax (Business View 2017; PFM). The 2016 restated interlocal agreement's sources-and-uses table shows $270M of tourist-tax bonds, $62M of city land-sale proceeds, $37M of city covenant bonds, $30M of state and other government money and $19M of interest, and no redevelopment-agency bonds for the arena. Public money is now $418M, not $430M: PFM counted the $12M present value of the Magic's use payments as public.
+- **DC public money, 1997 (Oct. 16, 2026).** The ledger's ~$79M (Wikipedia) was replaced by GAO's audited figure: the District's predevelopment spending of $61.49M (land, site, Metro match, relocation, fees), plus $12M of federal and $2M of WMATA money for the Metro connection, $75.5M in all.
+- **Salt Lake City 2017 renovation (Oct. 16, 2026).** The ledger called the 2017 renovation fully private. Salt Lake City's FY2025 ACFR records a 2017 agreement under which the city's redevelopment agency reimburses the arena lessee up to $22.7M through 2040. It is counted at the cap.
+- **Miami state payments (Oct. 16, 2026).** Florida has paid the arena's operator $166,667 a month since 1998 under its sports-facility program ($60M over 30 years; $32.5M through June 30, 2014, per OPPAGA Report 15-01). These payments were missing from the ledger and are now in the ongoing series. Orlando gets the same payment, but it is bonded inside the Kia Center plan of finance and is not added again.
+- **Charlotte 2014 renovation (Oct. 16, 2026).** The city's ACFR gives $27.5M of capital improvements; the ledger's $33.5M (WFAE) also counts $0.6M a year for ten years to the arena reserve. Both are recorded and the total is unchanged.
+- **Phoenix funding stream (Oct. 16, 2026).** The city's 1992 share was moved from "mechanism not documented" to visitor taxes, per the city's 2019 council backup. The $35M amount is still press-only, and a 1998 arena refunding of $48.74M suggests the city's debt was larger.
+- **Detroit 2014B bonds (Oct. 16, 2026).** $200M was authorized but $188.5M was drawn (DDA FY2018 audit). The conduit figure now uses $188.5M.
+- **Portland purchase (Oct. 16, 2026).** The lease table said the city bought the arena "for $1"; the ledger said $7.13M. The city's FY2024 ACFR says both: $1.00 for the building and $7.13M for the land under it.
+- **New Orleans alternative cost (Oct. 16, 2026).** A "$112M incl. site work (La. state presentation)" alternative had no URL and could not be found, so it was removed.
 - **Cook County query.** A first query used a wrong PIN prefix and returned small totals. The main arena PIN 17182010350000 confirmed the 2024 cut.
 
 ## Not reachable from the build environment
+
+The web-search allowance shared by the October 16 research ran out partway through, so some leads were followed only through official sites, SEC EDGAR and public records APIs. Not searched as a result: Pennsylvania RACP grants and Philadelphia records for Xfinity Mobile Arena, City of Toronto and Ontario records, Portland's 1992-93 ordinances, Atlanta Recreation Authority audits, Dallas budget books, the privately owned arenas' recurring public costs, the 2009 Atlantic Yards court rulings and Denver's seat-tax receipts before 1999.
+
+- atlantaga.gov and citycouncil.atlantaga.gov (HTTP 403); the Recreation Authority's audit items on BoardDocs return "No Access".
+- localdocs.charlotte.edu (proxy 502): Charlotte budget books and CAFRs before FY2019, including the arena reserve before FY2020.
+- unitedcenter.com, cookcountyclerkil.gov (tax rates before 2002), chicagobusiness.com (HTTP 403); ilga.gov needed its missing intermediate certificate added to a copy of the CA bundle; the enacted text of P.A. 86-110 is not online.
+- City of Inglewood, leginfo.legislature.ca.gov (Cloudflare 403) and ibecproject.com (error 525): no primary source for Intuit Dome's cost.
+- 9news.com and westword.com (HTTP 403): the Denver seat-tax figure.
+- mta.info board books before September 2009, dddb.net (HTTP 403) and esd.ny.gov (HTTP 403): the 2005 MTA appraisal itself and the 2009 project plan.
+- Older orlando.gov and flauditor.gov CAFRs (HTTP 404); the Orange County Comptroller document center (HTTP 403; its Legistar records worked).
+- Old phoenix.gov arena documents, including the 1989 operating agreement (HTTP 404; 2018-19 items came from Phoenix's Legistar records).
+- dallascityhall.com budget pages and the FY2001-FY2002 Dallas ACFRs (HTTP 404).
+- The Louisiana Legislative Auditor's older report views (HTTP 404): LSED audits before FY2014.
+- okc.gov blocks scripted downloads (HTTP 403), and the city ACFR is too large for the browser-style fetch; the OCPPA report was read instead.
+- portland.gov spectator-venue pages (HTTP 403/404).
+- The Houston Sports Authority's 2014 board minutes are image-only scans and were not read.
 
 - results.okelections.gov (HTTP 403). Oklahoma City's 2025 bond results were taken from okc.gov, which cites the State Election Board's unofficial results.
 - okc.gov and memphistn.gov refuse scripted downloads (HTTP 403); their pages and PDFs were read through a browser-style fetch instead.
