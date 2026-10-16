@@ -1,4 +1,87 @@
 {
+ "as_of": "2026-10-16",
+ "projects": [
+  {
+   "team": "OKC",
+   "arena": "New Oklahoma City arena (Continental Coliseum, Paycom Center replacement)",
+   "status": "binding",
+   "in_team_row": false,
+   "pub": 910.0,
+   "pend": 0
+  },
+  {
+   "team": "SAS",
+   "arena": "Spurs downtown arena (Project Marvel)",
+   "status": "voter-approved (county) / pending (city)",
+   "in_team_row": false,
+   "pub": 311.0,
+   "pend": 549.0
+  },
+  {
+   "team": "PHI",
+   "arena": "76ers-Comcast Spectacor South Philadelphia arena",
+   "status": "planned (approvals pending)",
+   "in_team_row": false,
+   "pub": 0,
+   "pend": 0
+  },
+  {
+   "team": "DAL",
+   "arena": "Mavericks planned arena (Valley View site)",
+   "status": "planned (no financing deal)",
+   "in_team_row": false,
+   "pub": 0,
+   "pend": 0
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center rebuild (Oregon SB 1501)",
+   "status": "pending",
+   "in_team_row": true,
+   "pub": 0,
+   "pend": 573.0
+  },
+  {
+   "team": "UTA",
+   "arena": "Delta Center district (Jazz/Mammoth)",
+   "status": "binding (bonds issued 2025)",
+   "in_team_row": false,
+   "pub": 375.0,
+   "pend": 0
+  },
+  {
+   "team": "HOU",
+   "arena": "Toyota Center 2026 renovation",
+   "status": "binding",
+   "in_team_row": true,
+   "pub": 95.0,
+   "pend": 0
+  },
+  {
+   "team": "ORL",
+   "arena": "Kia Center renovation",
+   "status": "binding",
+   "in_team_row": true,
+   "pub": 226.0,
+   "pend": 0
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena purchase + renovation (2024 deal)",
+   "status": "binding",
+   "in_team_row": true,
+   "pub": 515.0,
+   "pend": 0
+  },
+  {
+   "team": "MEM",
+   "arena": "FedExForum $550M renovation",
+   "status": "partly binding",
+   "in_team_row": true,
+   "pub": 80.0,
+   "pend": 470.0
+  }
+ ],
  "agg": {
   "core26": 8926.262502832365,
   "spend26": 26848.48722940206,
@@ -8,7 +91,7 @@
   "ren_pub26": 3046.603447721252,
   "ren_tot26": 6890.327149383142,
   "og26": 523.5971040877977,
-  "pend26": 1056.6,
+  "pend26": 1043.0,
   "con26": 19434.56297593112,
   "pilot26": 738.1549959402959
  },
@@ -21,7 +104,7 @@
   "ren_pub26": 1032.4776959128399,
   "ren_tot26": 4304.568613246129,
   "og26": 0.0,
-  "pend26": 586.6,
+  "pend26": 573.0,
   "con26": 12227.005305428638,
   "pilot26": 738.1549959402959
  },
@@ -60,7 +143,9 @@
    "tb": {
     "tourist": 269.72434644906957,
     "general": 42.925154781397815
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "BOS": {
    "core26": 0.0,
@@ -74,7 +159,9 @@
    "pend26": 0,
    "con26": 348.2327026140216,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "BKN": {
    "core26": 440.5817490445993,
@@ -90,7 +177,9 @@
    "pilot26": 738.1549959402959,
    "tb": {
     "general": 440.5817490445993
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "CHA": {
    "core26": 562.9495705552242,
@@ -106,7 +195,9 @@
    "pilot26": 0.0,
    "tb": {
     "tourist": 562.9495705552242
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "CHI": {
    "core26": 0.0,
@@ -120,7 +211,9 @@
    "pend26": 0,
    "con26": 391.56478748524194,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "CLE": {
    "core26": 368.74471225160687,
@@ -137,7 +230,9 @@
    "tb": {
     "sin": 276.2905327224423,
     "mixed": 92.45417952916453
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "DAL": {
    "core26": 234.13171239646087,
@@ -153,7 +248,9 @@
    "pilot26": 0.0,
    "tb": {
     "tourist": 234.13171239646087
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "DEN": {
    "core26": 81.63211991595377,
@@ -170,7 +267,14 @@
    "tb": {
     "tif": 72.67249699834908,
     "infra": 8.959622917604682
-   }
+   },
+   "og_years": [],
+   "pend_items": [
+    [
+     "$135M renovation announced Sept 2026 (to 2028-29)",
+     0.0
+    ]
+   ]
   },
   "DET": {
    "core26": 386.96800949196563,
@@ -186,7 +290,9 @@
    "pilot26": 0.0,
    "tb": {
     "tif": 386.96800949196563
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "GSW": {
    "core26": 0.0,
@@ -200,7 +306,9 @@
    "pend26": 0,
    "con26": 1816.1707610673004,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "HOU": {
    "core26": 446.5622095130238,
@@ -218,7 +326,9 @@
     "tourist": 315.50454699886745,
     "land": 36.057662514156284,
     "general": 95.0
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "IND": {
    "core26": 715.9421057554268,
@@ -236,7 +346,20 @@
     "tourist": 337.9472397926593,
     "tif": 149.81236060482763,
     "general": 30.598929862097147
-   }
+   },
+   "og_years": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+   ],
+   "pend_items": []
   },
   "LAC": {
    "core26": 0.0,
@@ -250,7 +373,9 @@
    "pend26": 0,
    "con26": 2114.5500875867965,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "LAL": {
    "core26": 0.0,
@@ -264,7 +389,9 @@
    "pend26": 0,
    "con26": 746.6352431337234,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "MEM": {
    "core26": 556.4616854083129,
@@ -281,7 +408,21 @@
    "tb": {
     "mixed": 438.96855422218295,
     "general": 82.41343964614855
-   }
+   },
+   "og_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "pend_items": [
+    [
+     "$550M renovation: remainder pending new lease",
+     470.0
+    ]
+   ]
   },
   "MIA": {
    "core26": 325.65762737058094,
@@ -297,7 +438,37 @@
    "pilot26": 0.0,
    "tb": {
     "land": 75.65903797088397
-   }
+   },
+   "og_years": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "pend_items": []
   },
   "MIL": {
    "core26": 330.19349831844477,
@@ -315,7 +486,9 @@
     "general": 142.7756686728955,
     "tourist": 125.34145196168163,
     "tif": 62.07637768386761
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "MIN": {
    "core26": 282.2043026455687,
@@ -333,7 +506,11 @@
     "mixed": 58.3818378085337,
     "general": 118.83440976703487,
     "sales": 100.12458986855054
-   }
+   },
+   "og_years": [
+    2024
+   ],
+   "pend_items": []
   },
   "NOP": {
    "core26": 334.2326891579314,
@@ -350,7 +527,17 @@
    "tb": {
     "tourist": 226.97711391265193,
     "general": 71.18379279445249
-   }
+   },
+   "og_years": [
+    2014,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "pend_items": []
   },
   "NYK": {
    "core26": 0.0,
@@ -364,7 +551,9 @@
    "pend26": 0,
    "con26": 1172.791886679444,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "OKC": {
    "core26": 292.16022873422423,
@@ -380,7 +569,9 @@
    "pilot26": 0.0,
    "tb": {
     "sales": 292.16022873422423
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "ORL": {
    "core26": 880.0161163098385,
@@ -397,7 +588,9 @@
    "tb": {
     "tif": 152.09677123484616,
     "tourist": 727.9193450749923
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "PHI": {
    "core26": 0.0,
@@ -411,7 +604,9 @@
    "pend26": 0,
    "con26": 444.03971150781007,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "PHX": {
    "core26": 306.98169458515935,
@@ -428,7 +623,9 @@
    "tb": {
     "mixed": 82.72672377954625,
     "tourist": 224.2549708056131
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "POR": {
    "core26": 82.62604756339533,
@@ -439,13 +636,28 @@
    "ren_pub26": 0,
    "ren_tot26": 0,
    "og26": 0,
-   "pend26": 586.6,
+   "pend26": 573.0,
    "con26": 570.2310505304604,
    "pilot26": 0.0,
    "tb": {
     "mixed": 75.08767650114841,
     "general": 7.538371062246929
-   }
+   },
+   "og_years": [],
+   "pend_items": [
+    [
+     "SB 1501 rebuild: State of Oregon bonds",
+     365.0
+    ],
+    [
+     "Rebuild: Multnomah County",
+     88.0
+    ],
+    [
+     "Rebuild: City of Portland",
+     120.0
+    ]
+   ]
   },
   "SAC": {
    "core26": 308.2921030656724,
@@ -462,7 +674,9 @@
    "tb": {
     "leaserev": 304.56109150907304,
     "general": 3.731011556599352
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "SAS": {
    "core26": 389.05780548265454,
@@ -478,7 +692,9 @@
    "pilot26": 0.0,
    "tb": {
     "tourist": 389.05780548265454
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "TOR": {
    "core26": 0.0,
@@ -492,7 +708,9 @@
    "pend26": 0,
    "con26": 385.9242284432551,
    "pilot26": 0.0,
-   "tb": {}
+   "tb": {},
+   "og_years": [],
+   "pend_items": []
   },
   "UTA": {
    "core26": 525.0,
@@ -508,7 +726,9 @@
    "pilot26": 0.0,
    "tb": {
     "sales": 525.0
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   },
   "WAS": {
    "core26": 763.2170140358535,
@@ -526,13 +746,16 @@
     "infra": 163.2277517910913,
     "general": 520.0115663319224,
     "tourist": 79.97769591283982
-   }
+   },
+   "og_years": [],
+   "pend_items": []
   }
  },
  "proj_agg": {
-  "binding_or_approved_new": 1536.0,
-  "pending_new": 489.0,
+  "binding_or_approved_new": 1596.0,
+  "pending_new": 549.0,
   "b_sales": 1225.0,
+  "b_general": 60.0,
   "b_tourist": 311.0
  },
  "CPI": {

@@ -1,4 +1,4 @@
-NBA ARENA LEDGER - COMPUTED TOTALS (built 2026-10-11)
+NBA ARENA LEDGER - COMPUTED TOTALS (built 2026-10-16)
 ==============================================================================
 CPI: BLS CPI-U, U.S. city average, all items, NOT seasonally adjusted (FRED CPIAUCNS = BLS CUUR0000SA0).
 Annual averages = mean of monthly values. 2026 base = Jan-Aug 2026 average 331.655 (Sep 2026 not yet released);
@@ -12,13 +12,13 @@ A. CORE TOTAL - 30 CURRENT NBA ARENAS (spent or legally committed public money, 
 Public construction contributions ............ $5.14B
 Public purchases of existing arenas ........... $219M  (Minneapolis 1995, Portland 2024, DC 2024)
 Public renovation money (completed + binding).. $3.05B
-Documented ongoing cash subsidies to date ..... $524M  (IND 2014-23, MIA FY2000-26, MEM 2021-26, NOP partial, MIN 2024)
+Documented ongoing cash subsidies to date ..... $524M  (IND 2014-23; MEM 2021-26; MIA 2000-26; MIN 2024; NOP 2014, 2021-26)
 ALL PUBLIC MONEY (core) ....................... $8.93B
 Total arena spending (construction public+private, renovations public+private, ongoing public) = $26.85B
 PUBLIC SHARE OF TOTAL ARENA SPENDING ........... 33.2%
   construction only: public $5.14B of $19.43B = 26.4%  (private construction $14.30B)
   renovations only: public $3.05B of $6.89B = 44.2%
-Pending public money on current arenas (not in core): $1.06B  (Memphis $470M awaiting lease; Portland $586.6M SB1501/county/city)
+Pending public money on current arenas (not in core): $1.04B  (MEM $470M; POR $573M; see the renovation items in arena_ledger.csv)
 Method: public share = public money / (max(reported cost, public+private construction) + renovation totals + ongoing public). Public purchases count as
 public money but not as new spending (they reimburse private builders). Debt service on counted bonds is NOT added (no double counting).
 
@@ -84,16 +84,17 @@ Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, arena_ta
 
 F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$)
 ------------------------------------------------------------------------------
-Binding: OKC new arena $850M public (sales tax; $900M minimum cost - Thunder $50M); Utah Delta Center district $375M (sales-tax bonds issued 2025) -> $1.225B
-Voter-approved, agreements pending: Bexar County $311M venue tax for Spurs arena
-Pending/non-binding: San Antonio city $489M (Spurs); Portland $586.6M; Memphis $470M (last two sit in team rows as pending)
-No public deal: 76ers/Comcast South Philly arena (billed "fully privately funded"); Mavericks Valley View arena (no financing deal)
-Core + binding new = $10.15B; + all approved/pending = $12.01B
+Binding: OKC New Oklahoma City arena (Continental Coliseum, Paycom Center replacement) $910M; UTA Delta Center district (Jazz/Mammoth) $375M -> $1.28B
+Voter-approved, agreements pending: SAS Spurs downtown arena (Project Marvel) $311M -> $311M
+Pending/non-binding, new arenas: SAS Spurs downtown arena (Project Marvel) $549M -> $549M; pending on current arenas (team rows): $1.04B
+No public deal: PHI 76ers-Comcast Spectacor South Philadelphia arena; DAL Mavericks planned arena (Valley View site)
+OKC binding total includes $60M of 2025 GO bonds for a garage and team offices outside the $900M arena budget; Bexar County $311M is the voter-approved cap.
+Core + binding new = $10.21B; + all approved/pending = $12.11B
 
 G. COST PER HOUSEHOLD - LARGEST PUBLIC DEALS (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)
 ------------------------------------------------------------------------------
 UTA: Delta Center 2025 deal (arena $525M + district $375M), 0.5% Salt Lake City sales tax: $900M | Salt Lake City, UT 98,916 hh -> $9,099/hh (share 100%) | City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound
-OKC: New Thunder arena ($850M) + Paycom 2002 & 2008 money ($292M), OKC city sales tax: $1.14B | Oklahoma City, OK 290,311 hh -> $3,934/hh (share 100%) | City sales tax (also paid by commuters/visitors)
+OKC: New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($292M), OKC city sales tax and GO bonds: $1.20B | Oklahoma City, OK 290,311 hh -> $4,141/hh (share 100%) | City sales tax (also paid by commuters/visitors) and GO bonds
 WAS: Capital One Arena all public money since 1997: $763M | District of Columbia 329,687 hh -> $2,315/hh (share 100%) | District of Columbia general fund/GO
 ORL: Kia Center (2010 build + 2025 renovation): $880M | Orange County, FL 560,020 hh -> $1,571/hh (share 100%) | Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional
 IND: Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23): $716M | Marion County, IN 408,907 hh -> $1,384/hh (share 79%) ; Indiana 2,775,637 hh -> $54/hh (share 21%) | Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)
@@ -104,7 +105,7 @@ BKN: Barclays Center direct capital (city $205M, state $100M): $441M | New York,
 SAS: Frost Bank Center (2002, 2015) + county $311M for new arena: $700M | Bexar County, TX 774,392 hh -> $904/hh (share 100%) | Bexar County visitor taxes (paid mostly by visitors)
 DET: Little Caesars Arena DDA TIF: $387M | Detroit, MI 268,048 hh -> $1,444/hh (share 100%) | City of Detroit (TIF also captures county/school taxes; schools backfilled by state)
 CLE: Rocket Arena (1994, 2017-19, 2019 repairs): $369M | Cuyahoga County, OH 551,960 hh -> $668/hh (share 100%) | Cuyahoga County (sin tax, county bonds)
-POR: Moda Center pending rebuild ($586.6M) + past ($82.6M): $669M | Oregon 1,744,270 hh -> $209/hh (share 55%) ; Multnomah County, OR 353,080 hh -> $288/hh (share 15%) ; Portland, OR 294,419 hh -> $688/hh (share 30%) | Oregon (income-tax capture) + Multnomah County + City of Portland
+POR: Moda Center pending rebuild ($573M) + past ($83M): $656M | Oregon 1,744,270 hh -> $209/hh (share 56%) ; Multnomah County, OR 353,080 hh -> $249/hh (share 13%) ; Portland, OR 294,419 hh -> $688/hh (share 31%) | Oregon (income-tax capture) + Multnomah County + City of Portland
 MIL: Fiserv Forum: $330M | Milwaukee County, WI 396,211 hh -> $653/hh (share 78%) ; Wisconsin 2,535,198 hh -> $28/hh (share 22%) | Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)
 NOP: Smoothie King Center: $334M | Louisiana 1,848,965 hh -> $181/hh (share 100%) | State of Louisiana (LSED/state)
 SAC: Golden 1 Center: $308M | Sacramento, CA 198,965 hh -> $1,549/hh (share 100%) | City of Sacramento general fund/parking

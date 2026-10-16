@@ -13,7 +13,7 @@ Figures are as of October 11, 2026, in 2026 dollars unless noted.
 | Public money in the 30 current arenas | $8.93B of $26.85B total spending (33.2%) | `data/ledger/totals.txt`, section A |
 | Construction / purchases / renovations / ongoing subsidies | $5.14B / $219M / $3.05B / $524M | same |
 | Public total with tax-break financing added | at least $10.61B (38.2%) | section E: Barclays PILOT bonds $738M, MSG exemption $947M |
-| New public commitments outside the 30-arena total | $3.08B binding, approved or pending (OKC, Salt Lake City, San Antonio, Portland, Memphis) | section F |
+| New public commitments outside the 30-arena total | $3.19B binding, approved or pending (OKC, Salt Lake City, San Antonio, Portland, Memphis) | section F |
 | Share of public money in the top 10 arenas | 63% | section C |
 | Public capital paid mostly by residents / visitors / other | 46.1% / 41.6% / 12.2% of $8.40B | section B |
 | Federal cost of tax-exempt arena bonds (present value, not added) | $1.32B | section E memo; `data/tax_mechanisms/nba_arena_bond_federal_cost.csv` |

@@ -2,6 +2,9 @@ import sys
 import json, csv, os
 ROOT=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA=ROOT+'/data'
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ledger_inputs import TEAMS, PROJECTS
+TI={t['team']:t for t in TEAMS}
 C=json.load(open(DATA+'/ledger/_calc.json'))
 agg=C['agg']; aggp=C['aggp']; det=C['detail']; CPI={int(k):v for k,v in C['CPI'].items()}; HH=C['HH']
 HH2=json.load(open(DATA+'/inputs/census/acs2024_B11001_states2.json'))
@@ -14,9 +17,22 @@ BN={'general':'General taxes / GO bonds / appropriations / state grants / public
     'infra':'Infrastructure / parking / site work (funding stream not specified)','sin':'Sin taxes (alcohol/tobacco, Cleveland)','mixed':'Public, mechanism split not documented'}
 f=lambda x: f"${x/1000:.2f}B" if abs(x)>=1000 else f"${x:.0f}M"
 def fac(y): return 1.0 if y>=2026 else CPI[2026]/CPI[y]
+def years(ys):
+    # compress [2014,2015,2016,2021] -> '2014-16, 2021'
+    ys=sorted(ys); runs=[]
+    for y in ys:
+        if runs and y==runs[-1][1]+1: runs[-1][1]=y
+        else: runs.append([y,y])
+    return ', '.join(str(a) if a==b else f"{a}-{str(b)[2:]}" for a,b in runs)
+def reno_pub(team, desc_has, bucket=None):
+    # nominal public money of one renovation item of a team, found by a word in its description
+    r=[r for r in TI[team]['renos'] if desc_has in r['desc']]
+    assert len(r)==1, (team, desc_has)
+    return r[0]['pub'][bucket] if bucket else sum(r[0]['pub'].values())
+PJ={(p['team'],p['in_team_row']):p for p in C['projects']}
 out=[]
 P=out.append
-P('NBA ARENA LEDGER - COMPUTED TOTALS (built 2026-10-11)')
+P(f"NBA ARENA LEDGER - COMPUTED TOTALS (built {C['as_of']})")
 P('='*78)
 P('CPI: BLS CPI-U, U.S. city average, all items, NOT seasonally adjusted (FRED CPIAUCNS = BLS CUUR0000SA0).')
 P(f"Annual averages = mean of monthly values. 2026 base = Jan-Aug 2026 average {CPI[2026]:.3f} (Sep 2026 not yet released);")
@@ -31,13 +47,15 @@ core=agg['core26']; spend=agg['spend26']
 P(f"Public construction contributions ............ {f(agg['pub26'])}")
 P(f"Public purchases of existing arenas ........... {f(agg['acq26'])}  (Minneapolis 1995, Portland 2024, DC 2024)")
 P(f"Public renovation money (completed + binding).. {f(agg['ren_pub26'])}")
-P(f"Documented ongoing cash subsidies to date ..... {f(agg['og26'])}  (IND 2014-23, MIA FY2000-26, MEM 2021-26, NOP partial, MIN 2024)")
+ogt=[(k,d['og_years']) for k,d in det.items() if d['og_years']]
+P(f"Documented ongoing cash subsidies to date ..... {f(agg['og26'])}  ({'; '.join(f'{k} {years(v)}' for k,v in sorted(ogt))})")
 P(f"ALL PUBLIC MONEY (core) ....................... {f(core)}")
 P(f"Total arena spending (construction public+private, renovations public+private, ongoing public) = {f(spend)}")
 P(f"PUBLIC SHARE OF TOTAL ARENA SPENDING ........... {100*core/spend:.1f}%")
 P(f"  construction only: public {f(agg['pub26'])} of {f(agg['con26'])} = {100*agg['pub26']/agg['con26']:.1f}%  (private construction {f(agg['priv26'])})")
 P(f"  renovations only: public {f(agg['ren_pub26'])} of {f(agg['ren_tot26'])} = {100*agg['ren_pub26']/agg['ren_tot26']:.1f}%")
-P(f"Pending public money on current arenas (not in core): {f(agg['pend26'])}  (Memphis $470M awaiting lease; Portland $586.6M SB1501/county/city)")
+pend=[(k,d['pend26']) for k,d in det.items() if d['pend26']]
+P(f"Pending public money on current arenas (not in core): {f(agg['pend26'])}  ({'; '.join(f'{k} {f(v)}' for k,v in sorted(pend))}; see the renovation items in arena_ledger.csv)")
 P('Method: public share = public money / (max(reported cost, public+private construction) + renovation totals + ongoing public). Public purchases count as')
 P('public money but not as new spending (they reimburse private builders). Debt service on counted bonds is NOT added (no double counting).')
 P('')
@@ -100,31 +118,38 @@ P(f"Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, aren
 P('')
 P('F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$)')
 P('-'*78)
-P('Binding: OKC new arena $850M public (sales tax; $900M minimum cost - Thunder $50M); Utah Delta Center district $375M (sales-tax bonds issued 2025) -> $1.225B')
-P('Voter-approved, agreements pending: Bexar County $311M venue tax for Spurs arena')
-P('Pending/non-binding: San Antonio city $489M (Spurs); Portland $586.6M; Memphis $470M (last two sit in team rows as pending)')
-P('No public deal: 76ers/Comcast South Philly arena (billed "fully privately funded"); Mavericks Valley View arena (no financing deal)')
-allin=core+1225+311+489+agg['pend26']
-P(f"Core + binding new = {f(core+1225)}; + all approved/pending = {f(allin)}")
+NEW=[p for p in C['projects'] if not p['in_team_row']]
+bind=[p for p in NEW if p['pub'] and p['status'].startswith('binding')]
+vote=[p for p in NEW if p['pub'] and p['status'].startswith('voter-approved')]
+pnew=[p for p in NEW if p['pend']]
+none=[p for p in NEW if not p['pub'] and not p['pend']]
+sb=sum(p['pub'] for p in bind); sv=sum(p['pub'] for p in vote); sp=sum(p['pend'] for p in pnew)
+P('Binding: '+'; '.join(f"{p['team']} {p['arena']} {f(p['pub'])}" for p in bind)+f" -> {f(sb)}")
+P('Voter-approved, agreements pending: '+'; '.join(f"{p['team']} {p['arena']} {f(p['pub'])}" for p in vote)+f" -> {f(sv)}")
+P('Pending/non-binding, new arenas: '+'; '.join(f"{p['team']} {p['arena']} {f(p['pend'])}" for p in pnew)+f" -> {f(sp)}; pending on current arenas (team rows): {f(agg['pend26'])}")
+P('No public deal: '+'; '.join(f"{p['team']} {p['arena']}" for p in none))
+P('OKC binding total includes $60M of 2025 GO bonds for a garage and team offices outside the $900M arena budget; Bexar County $311M is the voter-approved cap.')
+allin=core+sb+sv+sp+agg['pend26']
+P(f"Core + binding new = {f(core+sb)}; + all approved/pending = {f(allin)}")
 P('')
 P('G. COST PER HOUSEHOLD - LARGEST PUBLIC DEALS (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)')
 P('-'*78)
 hh=lambda g: HH[g][1]
 D=[
- ('UTA','Delta Center 2025 deal (arena $525M + district $375M), 0.5% Salt Lake City sales tax',900.0,[('16000US4967000',1.0)],'City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound'),
- ('OKC','New Thunder arena ($850M) + Paycom 2002 & 2008 money ($292M), OKC city sales tax',850.0+det['OKC']['core26'],[('16000US4055000',1.0)],'City sales tax (also paid by commuters/visitors)'),
+ ('UTA',f"Delta Center 2025 deal (arena {f(reno_pub('UTA','sales tax'))} + district {f(PJ[('UTA',False)]['pub'])}), 0.5% Salt Lake City sales tax",reno_pub('UTA','sales tax')+PJ[('UTA',False)]['pub'],[('16000US4967000',1.0)],'City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound'),
+ ('OKC',f"New Thunder arena and related 2025 GO projects ({f(PJ[('OKC',False)]['pub'])}) + Paycom 2002 & 2008 money ({f(det['OKC']['core26'])}), OKC city sales tax and GO bonds",PJ[('OKC',False)]['pub']+det['OKC']['core26'],[('16000US4055000',1.0)],'City sales tax (also paid by commuters/visitors) and GO bonds'),
  ('WAS','Capital One Arena all public money since 1997',det['WAS']['core26'],[('04000US11',1.0)],'District of Columbia general fund/GO'),
  ('ORL','Kia Center (2010 build + 2025 renovation)',det['ORL']['core26'],[('05000US12095',1.0)],'Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional'),
- ('IND','Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23)',det['IND']['core26'],[('05000US18097',(det['IND']['core26']-122.4*CPI[2026]/CPI[2021])/det['IND']['core26']),('04000US18',122.4*CPI[2026]/CPI[2021]/det['IND']['core26'])],'Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)'),
+ ('IND','Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23)',det['IND']['core26'],[('05000US18097',(det['IND']['core26']-reno_pub('IND','2019-22','tif')*CPI[2026]/CPI[2021])/det['IND']['core26']),('04000US18',reno_pub('IND','2019-22','tif')*CPI[2026]/CPI[2021]/det['IND']['core26'])],'Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)'),
  ('CHA','Spectrum Center (2005, 2014, 2022-25)',det['CHA']['core26'],[('16000US3712000',1.0)],'City of Charlotte hotel/car-rental taxes'),
- ('MEM','FedExForum (2004 bonds, $80M state, subsidies)',det['MEM']['core26'],[('05000US47157',(det['MEM']['core26']-80*CPI[2026]/CPI[2025])/det['MEM']['core26']),('04000US47',80*CPI[2026]/CPI[2025]/det['MEM']['core26'])],'Shelby County (city+county) + Tennessee ($80M state)'),
- ('HOU','Toyota Center (2003 + 2026 state grant)',det['HOU']['core26'],[('05000US48201',(det['HOU']['core26']-95)/det['HOU']['core26']),('04000US48',95/det['HOU']['core26'])],'Harris County (HCHSA hotel/car taxes) + Texas ($95M)'),
+ ('MEM','FedExForum (2004 bonds, $80M state, subsidies)',det['MEM']['core26'],[('05000US47157',(det['MEM']['core26']-reno_pub('MEM','allocated')*CPI[2026]/CPI[2025])/det['MEM']['core26']),('04000US47',reno_pub('MEM','allocated')*CPI[2026]/CPI[2025]/det['MEM']['core26'])],'Shelby County (city+county) + Tennessee ($80M state)'),
+ ('HOU','Toyota Center (2003 + 2026 state grant)',det['HOU']['core26'],[('05000US48201',(det['HOU']['core26']-reno_pub('HOU','2026'))/det['HOU']['core26']),('04000US48',reno_pub('HOU','2026')/det['HOU']['core26'])],'Harris County (HCHSA hotel/car taxes) + Texas ($95M)'),
  ('BKN','Barclays Center direct capital (city $205M, state $100M)',det['BKN']['core26'],[('16000US3651000',205/305),('04000US36',100/305)],'New York City + New York State'),
  ('SAS','Frost Bank Center (2002, 2015) + county $311M for new arena',det['SAS']['core26']+311,[('05000US48029',1.0)],'Bexar County visitor taxes (paid mostly by visitors)'),
  ('DET','Little Caesars Arena DDA TIF',det['DET']['core26'],[('16000US2622000',1.0)],'City of Detroit (TIF also captures county/school taxes; schools backfilled by state)'),
  ('CLE','Rocket Arena (1994, 2017-19, 2019 repairs)',det['CLE']['core26'],[('05000US39035',1.0)],'Cuyahoga County (sin tax, county bonds)'),
- ('POR','Moda Center pending rebuild ($586.6M) + past ($82.6M)',586.6+det['POR']['core26'],[('04000US41',365/(586.6+det['POR']['core26'])),('05000US41051',101.6/(586.6+det['POR']['core26'])),('16000US4159000',(120+det['POR']['core26'])/(586.6+det['POR']['core26']))],'Oregon (income-tax capture) + Multnomah County + City of Portland'),
- ('MIL','Fiserv Forum',det['MIL']['core26'],[('05000US55079',(330.2-54.05*CPI[2026]/CPI[2018])/330.2),('04000US55',54.05*CPI[2026]/CPI[2018]/330.2)],'Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)'),
+ ('POR',f"Moda Center pending rebuild ({f(det['POR']['pend26'])}) + past ({f(det['POR']['core26'])})",det['POR']['pend26']+det['POR']['core26'],[('04000US41',reno_pub('POR','State of Oregon')/(det['POR']['pend26']+det['POR']['core26'])),('05000US41051',reno_pub('POR','Multnomah')/(det['POR']['pend26']+det['POR']['core26'])),('16000US4159000',(reno_pub('POR','City of Portland')+det['POR']['core26'])/(det['POR']['pend26']+det['POR']['core26']))],'Oregon (income-tax capture) + Multnomah County + City of Portland'),
+ ('MIL','Fiserv Forum',det['MIL']['core26'],[('05000US55079',(det['MIL']['core26']-TI['MIL']['pub']['general']/2*CPI[2026]/CPI[2018])/det['MIL']['core26']),('04000US55',TI['MIL']['pub']['general']/2*CPI[2026]/CPI[2018]/det['MIL']['core26'])],'Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)'),
  ('NOP','Smoothie King Center',det['NOP']['core26'],[('04000US22',1.0)],'State of Louisiana (LSED/state)'),
  ('SAC','Golden 1 Center',det['SAC']['core26'],[('16000US0664000',1.0)],'City of Sacramento general fund/parking'),
 ]

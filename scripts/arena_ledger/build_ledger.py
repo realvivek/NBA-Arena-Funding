@@ -4,7 +4,7 @@ from collections import defaultdict, OrderedDict
 ROOT=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA=ROOT+'/data'
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ledger_inputs import TEAMS, PROJECTS, U
+from ledger_inputs import TEAMS, PROJECTS, U, AS_OF
 
 BUCKETS=['general','sales','tourist','tif','leaserev','land','infra','sin','mixed']
 BNAME={'general':'general taxes/GO/appropriations & state grants','sales':'dedicated general sales tax','tourist':'hotel/car-rental/F&B/ticket (visitor) taxes',
@@ -85,7 +85,7 @@ for t in TEAMS:
     le=dict(lease.get(T,{}))
     OVR={'SAS':dict(term_end_year='2032',term_and_nonrelocation='Lease expires 2032 (Bexar County)',outs_penalties_notes='Break fees up to $124M (per Bexar 2015 deal, renovation file)',label='b/c',source=U['bexar15']),
          'WAS':dict(term_end_year='2050',term_and_nonrelocation='Lease-back to DCALP through June 30, 2050 + up to five 4-yr renewals; Wizards/Capitals must play home games there; no-shop to 2045',outs_penalties_notes='Damages not quantified in FIS',label='b',source=U['dc_fis']),
-         'OKC':dict(term_and_nonrelocation='Through at least 2050; new-arena commitment 25 yrs from move-in (okc.gov 2023)',outs_penalties_notes='Early-exit penalties > $1B (KGOU 2025-06-18)',label='b/c',source=U['okc_loi']+' ; https://www.kgou.org/sports/2025-06-18/oklahoma-city-inks-deal-to-keep-thunder-through-2053-nails-down-new-arena-policies')}
+         'OKC':dict(term_end_year='2053',term_and_nonrelocation='Through at least 2053: 25 years from move-in to the new arena (okc.gov 2023; KGOU 2025-06-18; Bond Buyer 2026-04-06); earlier reports said at least 2050',outs_penalties_notes='Early-exit penalties > $1B (KGOU 2025-06-18)',label='b/c',source=U['okc_loi']+' ; https://www.kgou.org/sports/2025-06-18/oklahoma-city-inks-deal-to-keep-thunder-through-2053-nails-down-new-arena-policies')}
     if T in OVR: le.update(OVR[T])
     if le.get('term_end_year'):
         try: le['term_end_year']=str(int(float(le['term_end_year'])))
@@ -127,7 +127,8 @@ for t in TEAMS:
         notes_and_gaps=''
     )
     rows.append(row)
-    detail[T]=dict(core26=core26, spend26=spend26, pub26=pub26, priv26=priv26, acq26=acq26, ren_pub26=ren_pub26, ren_tot26=ren_tot26, og26=og26, pend26=pend26, con26=con_total26, pilot26=pilot26, tb=dict(tb))
+    detail[T]=dict(core26=core26, spend26=spend26, pub26=pub26, priv26=priv26, acq26=acq26, ren_pub26=ren_pub26, ren_tot26=ren_tot26, og26=og26, pend26=pend26, con26=con_total26, pilot26=pilot26, tb=dict(tb),
+                   og_years=[y for y,a in og], pend_items=[(r['desc'], sum(r['pub'].values())*f26(r['cpi_year'])) for r in rp])
     for k,v in dict(core26=core26, spend26=spend26, pub26=pub26, priv26=priv26, acq26=acq26, ren_pub26=ren_pub26, ren_tot26=ren_tot26, og26=og26, pend26=pend26, con26=con_total26, pilot26=pilot26).items():
         agg[k]+=v
         if T in PRIVATE_BUILT: aggp[k]+=v
@@ -154,7 +155,7 @@ GAPS={
 'MIN':'1995 purchase price from a 2003 legislative committee agenda; only 2024 operating supplements documented.',
 'NOP':'1999 construction mechanism from press; ongoing payments partial (audited FY2014, FY2021-23, QJ FY2024-26 only); team revenue entitlements excluded.',
 'NYK':'Exemption cumulative ($946.7M) from Reinvent Albany citing IBO July 2023 (nominal, through ~2023) - not converted to 2026$.',
-'OKC':'2008 renovation arena share computed pro rata from plan; MAPS 4 transfer to new arena $70M vs $78M.',
+'OKC':'2008 renovation arena share computed pro rata from plan; MAPS 4 money for the new arena reported as $70M, $78M, $89M (okc.gov 2026-10-12) and ~$99M.',
 'ORL':'2007 split between TDT bonds and CRA ($100M) from secondary sources; PFM says public $430M.',
 'PHI':'No public money found in sources reached (contemporaneous 1994-96 records not reached).',
 'PHX':'1992 city $35M mechanism not documented; 2019 $175M includes $25M capital reserve paid over time.',
@@ -168,15 +169,18 @@ GAPS={
 for r in rows: r['notes_and_gaps']=GAPS.get(r['team'],'')
 
 # ---------- projects ----------
-prow=[]; proj_agg=defaultdict(float)
+prow=[]; proj_agg=defaultdict(float); projects=[]
 for p in PROJECTS:
-    pub=p.get('pub',{}); pubn=sum(pub.values()); pp=p.get('pub_pending',{}); ppn=sum(pp.values())
+    pub=dict(p.get('pub',{}))
+    for b,v in p.get('pub_extra',{}).items(): pub[b]=pub.get(b,0)+v  # binding public money outside the arena budget (e.g. OKC 2025 GO garage and offices)
+    pubn=sum(pub.values()); pp=p.get('pub_pending',{}); ppn=sum(pp.values())
     row=OrderedDict((k,'') for k in rows[0].keys())
     row.update(row_type='project'+(' (memo: included in team row)' if p['in_team_row'] else ''), team=p['team'], arena=p['arena'], city=p['city'], opened=p['opened'], owner=p['owner'], owner_type=p['owner_type'],
         built_privately_majority='',
         construction_cost_nominal_m=r1(p.get('cost')), construction_cost_currency_note='USD (budget, nominal)', construction_cost_label=p['cost_label'], construction_cost_source=p['cost_src'], construction_cost_other_reports=p.get('cost_alt',''),
         public_construction_nominal_m=r1(pubn) if pub else ('0' if not pp else ''),
-        public_construction_label=p['pub_label'], public_construction_source=p['pub_src'], public_construction_notes=p['pub_note']+(' PENDING: '+p.get('pending_note','') if pp else ''),
+        public_construction_label=p['pub_label']+(' ; outside-budget '+p['extra_label'] if p.get('pub_extra') else ''), public_construction_source=p['pub_src']+(' ; '+p['extra_src'] if p.get('pub_extra') else ''),
+        public_construction_notes=p['pub_note']+(' OUTSIDE THE ARENA BUDGET: '+p['extra_note'] if p.get('pub_extra') else '')+(' PENDING: '+p.get('pending_note','') if pp else ''),
         private_construction_nominal_m=r1(p.get('priv')), private_construction_label=p.get('priv_label',''), private_construction_source=p.get('priv_src',''),
         public_renovation_pending_nominal_m=r1(ppn) if pp else '',
         lease_terms=p.get('lease',''),
@@ -188,6 +192,7 @@ for p in PROJECTS:
     for b in BUCKETS:
         if pub.get(b): row[f'pubcon_{b}_m']=r1(pub[b]); row[f'pubcap_{b}_2026_m']=r1(pub[b])
     prow.append(row)
+    projects.append(dict(team=p['team'], arena=p['arena'], status=p['status'], in_team_row=p['in_team_row'], pub=pubn, pend=ppn))
     if not p['in_team_row']:
         proj_agg['binding_or_approved_new']+=pubn
         proj_agg['pending_new']+=ppn
@@ -199,7 +204,7 @@ with open(DATA+'/ledger/arena_ledger.csv','w',newline='') as f:
     w=csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader()
     for r in rows+prow: w.writerow(r)
 
-json.dump(dict(agg=agg, aggp=aggp, bucket26=bucket26, bucket26_priv=bucket26_priv, detail=detail, proj_agg=proj_agg, CPI={k:CPI[k] for k in sorted(CPI) if k>=1960}, CAD1999=CAD1999, HH=HH, fedpv=dict(fedpv)), open(DATA+'/ledger/_calc.json','w'), indent=1, default=float)
+json.dump(dict(as_of=AS_OF, projects=projects, agg=agg, aggp=aggp, bucket26=bucket26, bucket26_priv=bucket26_priv, detail=detail, proj_agg=proj_agg, CPI={k:CPI[k] for k in sorted(CPI) if k>=1960}, CAD1999=CAD1999, HH=HH, fedpv=dict(fedpv)), open(DATA+'/ledger/_calc.json','w'), indent=1, default=float)
 print('rows',len(rows),'projects',len(prow))
 print('CPI2026 (Jan-Aug avg)',round(C26,3),'n months',len(cpi_m[2026]), '2025 months',len(cpi_m[2025]))
 for k,v in agg.items(): print(k, round(v,1))
