@@ -17,7 +17,7 @@ Figures are as of October 16, 2026, in 2026 dollars unless noted.
 | New public commitments outside the 30-arena total | $3.19B binding, approved or pending (OKC, Salt Lake City, San Antonio, Portland, Memphis) | section F |
 | Share of public money in the top 10 arenas | 63% | section C |
 | Public capital paid mostly by residents / visitors / other | 44.9% / 41.2% / 13.9% of $8.55B | section B |
-| Federal cost of tax-exempt arena bonds (present value, not added) | $1.32B | section E memo; `data/tax_mechanisms/nba_arena_bond_federal_cost.csv` |
+| Federal cost of tax-exempt arena bonds (present value at issue, 2026 dollars, not added) | $1.91B | section E memo; `data/tax_mechanisms/nba_arena_bond_federal_cost.csv` |
 | Documented owner or league relocation threats since 1994 | 20; 13 followed by same-city public money, median 11.2 months later | `data/threats/comparison.txt` |
 | Median deal after a threat vs without one | $340M, 64% public vs $239M, 76% public (2025 dollars); Mann-Whitney p = 0.70 and 0.52 | same |
 

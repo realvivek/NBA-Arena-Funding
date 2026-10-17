@@ -1,0 +1,99 @@
+{
+ "id": "slc-monthly",
+ "title": "Salt Lake City's arena sales tax, monthly distributions",
+ "sources": [
+  "utah-tax-distributions"
+ ],
+ "columns": [
+  "month",
+  "usd"
+ ],
+ "rows": [
+  {
+   "month": "2025-01",
+   "usd": 1811.78
+  },
+  {
+   "month": "2025-02",
+   "usd": 198724.08
+  },
+  {
+   "month": "2025-03",
+   "usd": 4194415.11
+  },
+  {
+   "month": "2025-04",
+   "usd": 4224583.3
+  },
+  {
+   "month": "2025-05",
+   "usd": 5527937.0
+  },
+  {
+   "month": "2025-06",
+   "usd": 3838803.55
+  },
+  {
+   "month": "2025-07",
+   "usd": 4434341.49
+  },
+  {
+   "month": "2025-08",
+   "usd": 5277144.11
+  },
+  {
+   "month": "2025-09",
+   "usd": 4415803.71
+  },
+  {
+   "month": "2025-10",
+   "usd": 4933921.3
+  },
+  {
+   "month": "2025-11",
+   "usd": 4454781.15
+  },
+  {
+   "month": "2025-12",
+   "usd": 4732875.83
+  },
+  {
+   "month": "2026-01",
+   "usd": 4976703.91
+  },
+  {
+   "month": "2026-02",
+   "usd": 5458049.26
+  },
+  {
+   "month": "2026-03",
+   "usd": 4634962.8
+  },
+  {
+   "month": "2026-04",
+   "usd": 4560015.29
+  },
+  {
+   "month": "2026-05",
+   "usd": 5351033.57
+  },
+  {
+   "month": "2026-06",
+   "usd": 4765097.92
+  },
+  {
+   "month": "2026-07",
+   "usd": 4374509.21
+  },
+  {
+   "month": "2026-08",
+   "usd": 5337310.75
+  },
+  {
+   "month": "2026-09",
+   "usd": 5096472.18
+  }
+ ],
+ "note": "Final distributions from the Utah State Tax Commission's monthly reports (Salt Lake City, code 18122).",
+ "method": "select month, usd from slc_monthly order by month"
+}

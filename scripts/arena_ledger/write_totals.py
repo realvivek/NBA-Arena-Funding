@@ -75,18 +75,22 @@ top=sorted(cur,key=lambda r:-float(r['PUBLIC_TOTAL_2026_m'] or 0))
 for i,r in enumerate(top[:10],1):
     P(f"{i:>2}. {r['team']} {r['arena']:<34} public {f(float(r['PUBLIC_TOTAL_2026_m'])):>8} | share {r['public_share_pct']:>5}% | constr {r['public_construction_2026_m']} + acq {r['public_acquisition_2026_m'] or 0} + reno {r['public_renovation_2026_m']} + ongoing {r['ongoing_to_date_2026_m'] or 0}")
 P('')
-P('D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (14): GSW, LAC, BOS, NYK, CHI, LAL, DEN, PHI, TOR, BKN, DET, WAS, UTA, POR')
+pb=[r['team'] for r in cur if r['built_privately_majority']=='Y']
+P(f"D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (public money under half of construction cost) ({len(pb)}): {', '.join(pb)}")
 P('-'*78)
 P(f"Construction: private {f(aggp['priv26'])} vs public {f(aggp['pub26'])} ({100*aggp['pub26']/aggp['con26']:.1f}% public); plus public purchases {f(aggp['acq26'])} and public renovation {f(aggp['ren_pub26'])}")
 P(f"Core public money {f(aggp['core26'])} of {f(aggp['spend26'])} total spending = {100*aggp['core26']/aggp['spend26']:.1f}%")
-ex=[t for t in ['GSW','LAC','BOS','NYK','CHI','LAL','DEN','PHI','TOR','BKN','DET']]
+later=[t for t in pb if det[t]['acq26']+det[t]['ren_pub26']+det[t]['pend26']>0]
+ex=[t for t in pb if t not in later]
 s_core=sum(det[t]['core26'] for t in ex); s_sp=sum(det[t]['spend26'] for t in ex)
-P(f"Excluding the three later public takeovers/rebuilds (WAS, UTA, POR): public {f(s_core)} of {f(s_sp)} = {100*s_core/s_sp:.1f}%")
+s_later=sum(det[t]['acq26']+det[t]['ren_pub26']+det[t]['pend26'] for t in later); s_pend=sum(det[t]['pend26'] for t in later)
+P(f"Later bought or rebuilt with public money ({len(later)}): "+', '.join(f"{t} {f(det[t]['acq26']+det[t]['ren_pub26']+det[t]['pend26'])}" for t in sorted(later,key=lambda t:-(det[t]['acq26']+det[t]['ren_pub26']+det[t]['pend26'])))+f" = {f(s_later)}, of which {f(s_pend)} pending")
+P(f"Excluding those {len(later)}: public {f(s_core)} of {f(s_sp)} = {100*s_core/s_sp:.1f}%")
 bp=C['bucket26_priv']; btp=sum(bp.values())
 P('Mechanism split of their public capital money (2026$): '+'; '.join(f"{BN[b].split(' (')[0]} {f(bp[b])} ({100*bp[b]/btp:.0f}%)" for b in sorted(bp,key=lambda b:-bp[b]) if bp[b]))
 te={'BKN':'PILOT bonds $511M (2009; refunded 2016: $478.7M tax-exempt + $15M taxable)','DET':'MSF 2014A $250M tax-exempt (2014B $200M taxable authorized, $188.5M drawn, Olympia-paid); DDA 2018A refunding $287.4M','UTA':'PID sales-tax bonds 2025A/B/C $900M tax-exempt','WAS':'DC GO-funded $515M (tax status of specific bonds not confirmed)'}
 P('Tax-exempt bonds behind privately built arenas: '+'; '.join(f"{k}: {v}" for k,v in te.items())+f". Federal PV cost of new-money issues (GDG method, tau .28): BKN ${C['fedpv'].get('BKN',0):.0f}M, DET ${C['fedpv'].get('DET',0):.0f}M, UTA ${C['fedpv'].get('UTA',0):.0f}M, WAS ${C['fedpv'].get('WAS',0):.0f}M.")
-P('Hidden public money still received:')
+P('Other public money and tax breaks at arenas built and owned privately:')
 H={
 'BKN':'City $205M (IBO) + State $100M (press) capital for land/infrastructure + MTA rail yard $10M (IBO arena share of the $50M bid gap), counted in core; $511M tax-exempt PILOT bonds (property taxes diverted to arena debt; expanded total); full property-tax exemption (would-be $99M/yr 2023 vs $39M PILOT)',
 'DET':'$286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia rent-free',
@@ -119,7 +123,7 @@ P(f"= EXPANDED PUBLIC TOTAL .................................... >= {f(exp)}  ({
 P('Not added (future): DC extended property/possessory-interest tax exemption for Capital One Arena valued by OCFO at $49.8M FY2025-28 + $262.9M FY2029-50 = $312.7M (OCFO: "not financially necessary").')
 for k,d in sorted(det.items()):
     if d.get('tb_memo'): P(f"Memo, not added: {d['tb_short']}: about {f(d['tb_memo'])} nominal, from one unverified press figure (range in arena_ledger.csv tax_break_notes).")
-P(f"Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, arena_tax file; new-money issues only, refundings excluded) = {f(fed)} - not added (different payer, overlapping with local bonds).")
+P(f"Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, arena_tax file; new-money issues only, refundings excluded) = {f(fed)} as a sum of issue-year present values, {f(sum(C['fedpv26'].values()))} with each issue's present value in 2026 dollars - not added (different payer, overlapping with local bonds).")
 P('')
 P('F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$)')
 P('-'*78)

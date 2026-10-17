@@ -1,0 +1,115 @@
+# Sources the site cites that are not URLs inside the data files: research, reference data series,
+# and this project's own ledgers (cited by every figure computed from them). Same fields as sources.yaml.
+sources:
+- id: ledger
+  url: https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger
+  title: Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page
+  title_from: curated
+  publisher: This site
+  origin: independent
+  date: 2026-10-16
+  checked: 2026-10-16
+- id: threat-ledger
+  url: https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats
+  title: Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site
+  title_from: curated
+  publisher: This site
+  origin: independent
+  date: 2026-10-11
+  checked: 2026-10-16
+- id: uc-formula-method
+  url: https://github.com/realvivek/NBA-Arena-Funding/blob/main/data/property_tax/united_center_formula_savings.md
+  title: United Center stadium valuation formula, taxes forgone 2002-2016 (method and yearly series)
+  title_from: curated
+  publisher: This site
+  origin: independent
+  date: 2026-10-16
+  checked: 2026-10-16
+- id: fred-cpiaucns
+  url: https://fred.stlouisfed.org/series/CPIAUCNS
+  title: Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)
+  title_from: curated
+  publisher: U.S. Bureau of Labor Statistics (via FRED, Federal Reserve Bank of St. Louis)
+  origin: government
+  date: 2026-10
+  checked: 2026-10-16
+- id: fred-excaus
+  url: https://fred.stlouisfed.org/series/EXCAUS
+  title: Canadian Dollars to U.S. Dollar Spot Exchange Rate (EXCAUS)
+  title_from: curated
+  publisher: Board of Governors of the Federal Reserve System (via FRED)
+  origin: government
+  date: 2026-10
+  checked: 2026-10-11
+- id: census-b11001-2024
+  url: https://censusreporter.org/tables/B11001/
+  title: 'American Community Survey 2024 1-year estimates, table B11001: Household Type'
+  title_from: curated
+  publisher: U.S. Census Bureau (via Census Reporter)
+  origin: government
+  date: 2025-09
+  checked: 2026-10-11
+- id: bradbury-2023
+  url: https://doi.org/10.1111/joes.12533
+  title: 'The impact of professional sports franchises and venues on local economies: A comprehensive survey'
+  title_from: curated
+  publisher: Journal of Economic Surveys (John Charles Bradbury, Dennis Coates and Brad R. Humphreys)
+  origin: independent
+  date: 2023
+  checked: 2026-10-11
+- id: gayer-2016
+  url: https://www.brookings.edu/wp-content/uploads/2016/09/gayerdrukkergold_stadiumsubsidies_090816.pdf
+  title: Tax-Exempt Municipal Bonds and the Financing of Professional Sports Stadiums
+  title_from: curated
+  publisher: Brookings Institution (Ted Gayer, Austin J. Drukker and Alexander K. Gold)
+  origin: independent
+  date: 2016-09
+  checked: 2026-10-11
+- id: nba-cba-2023
+  url: https://imgix.cosmicjs.com/25da5eb0-15eb-11ee-b5b3-fbd321202bdf-Final-2023-NBA-Collective-Bargaining-Agreement-6-28-23.pdf
+  title: 2023 NBA Collective Bargaining Agreement
+  title_from: curated
+  publisher: NBA and National Basketball Players Association
+  origin: team_or_league
+  date: 2023-06-28
+  checked: 2026-10-11
+- id: utah-tax-distributions
+  url: https://tax.utah.gov/sales/distributions/
+  title: Sales and Use Tax Distributions
+  title_from: curated
+  publisher: Utah State Tax Commission
+  origin: government
+  date: 2026-09
+  checked: 2026-10-11
+- id: wi-dor-expo-tax
+  url: https://www.revenue.wi.gov/DORReports/Expo-tax-distributions.pdf
+  title: Expo Tax Distributions (Wisconsin Center District)
+  title_from: curated
+  publisher: Wisconsin Department of Revenue
+  origin: government
+  date: 2026
+  checked: 2026-10-11
+- id: ptaxsim-2024
+  url: https://ccao-data-public-us-east-1.s3.amazonaws.com/ptaxsim/ptaxsim-2024.0.0.db.bz2
+  title: PTAXSIM database v2024.0.0 (Cook County property tax bills, rates and equalization factors)
+  title_from: curated
+  publisher: Cook County Assessor's Office
+  origin: government
+  date: 2026-05-06
+  checked: 2026-10-16
+- id: ctu-2013
+  url: https://www.ctulocal1.org/wp-content/uploads/2013/01/NothingButNet.pdf
+  title: 'Nothing but Net Profit: Jerry Reinsdorf, Property Tax Relief, and Corporate School Reform on Chicago''s Near West Side'
+  title_from: curated
+  publisher: Chicago Teachers Union
+  origin: independent
+  date: 2013-01
+  checked: 2026-10-16
+- id: house-lda
+  url: https://lobbyingdisclosure.house.gov/
+  title: Lobbying Disclosure Act filings (bulk XML)
+  title_from: curated
+  publisher: Clerk of the U.S. House of Representatives
+  origin: government
+  date: 2025
+  checked: 2026-10-11

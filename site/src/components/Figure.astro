@@ -1,0 +1,90 @@
+---
+/**
+ * A chart frame: the finding as its title, what is plotted, a legend, the wide and narrow SVG layouts (slots),
+ * notes, sources and a table of the data. Copy comes from src/content/figures.yaml and passes the copy check.
+ */
+import { getEntry } from 'astro:content';
+import DataTable, { type Column, type Cell } from './DataTable.astro';
+import Cites from './Cites.astro';
+import { paragraph, ids } from '../lib/content';
+import { source, ORIGIN_LABEL, type Citations } from '../lib/sources';
+
+interface Props {
+  id: string;
+  dataset: { id: string; title: string; sources: string[] };
+  table: { columns: Column[]; rows: Record<string, Cell>[] };
+  cites?: Citations;
+}
+const { id, dataset, table, cites } = Astro.props;
+const fig = await getEntry('figures', id);
+if (!fig) throw new Error(`figure ${id} is not in src/content/figures.yaml`);
+if (fig.data.dataset !== dataset.id) throw new Error(`figure ${id} expects dataset ${fig.data.dataset}, got ${dataset.id}`);
+
+const own = ids(fig.data.sources);
+const all = [...new Set([...own, ...dataset.sources])];
+const where = `figure ${id}`;
+const title = paragraph(fig.data.title, all, `${where} title`);
+const sub = paragraph(fig.data.sub, all, `${where} subtitle`);
+const notes = fig.data.notes.map((n, i) => paragraph(n, all, `${where} note ${i + 1}`));
+const numbers = cites ? cites.add(all) : [];
+const swatch: Record<string, string> = {
+  public: 'background: var(--public)',
+  'public-soft': 'background: var(--public-soft)',
+  orange: 'background: var(--orange)',
+  aqua: 'background: var(--aqua)',
+  private: 'background: var(--private)',
+  other: 'background: var(--other)',
+};
+const few = all.length <= 3;
+---
+<figure class="chart" id={`fig-${id}`} aria-labelledby={`fig-${id}-title`}>
+  <h3 class="chart-title" id={`fig-${id}-title`} set:html={title.html} />
+  <p class="chart-sub" set:html={sub.html} />
+  {fig.data.legend.length > 0 && (
+    <ul class="legend">
+      {fig.data.legend.map((l) => (
+        <li>
+          {l.key === 'pending' ? (
+            <span class="key key-outline" />
+          ) : l.key.startsWith('line-') ? (
+            <span class="key key-line" style={swatch[l.key.slice(5)]} />
+          ) : (
+            <span class="key" style={swatch[l.key]} />
+          )}
+          {l.label}
+        </li>
+      ))}
+    </ul>
+  )}
+  <div class="v-wide"><slot name="wide" /></div>
+  <div class="v-narrow"><slot name="narrow" /></div>
+  <figcaption class="chart-notes">
+    {notes.map((n) => <p set:html={n.html} />)}
+    <p class="chart-source">
+      {few ? (
+        <>
+          {all.length > 1 ? 'Sources: ' : 'Source: '}
+          {all.map((sid, i) => {
+            const s = source(sid);
+            return (
+              <>
+                {i > 0 && '; '}
+                <a href={s.url} rel="noopener">{s.title}</a> ({s.publisher}, {ORIGIN_LABEL[s.origin].toLowerCase()})
+              </>
+            );
+          })}
+        </>
+      ) : (
+        <>
+          Sources: {all.length} documents, listed with the story's sources
+          {cites ? ' ' : '. '}
+          {cites && <Cites ids={all} numbers={numbers} />}
+        </>
+      )}
+    </p>
+  </figcaption>
+  <details class="data">
+    <summary>Show the data</summary>
+    <DataTable columns={table.columns} rows={table.rows} caption={dataset.title} />
+  </details>
+</figure>

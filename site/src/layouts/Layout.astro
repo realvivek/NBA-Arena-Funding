@@ -1,0 +1,93 @@
+---
+import '@fontsource-variable/source-serif-4/opsz.css';
+import '@fontsource-variable/source-serif-4/opsz-italic.css';
+import '@fontsource-variable/public-sans/index.css';
+import '../styles/global.css';
+import meta from '../generated/meta.json';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+}
+const { title, description, path } = Astro.props;
+const nav = [
+  ['/', 'Story'],
+  ['/arenas/', 'Arenas'],
+  ['/taxes/', 'Taxes'],
+  ['/tax-breaks/', 'Tax breaks'],
+  ['/threats/', 'Threats'],
+  ['/leases/', 'Leases'],
+  ['/households/', 'Households'],
+  ['/sources/', 'Sources'],
+  ['/fact-check/', 'Fact check'],
+];
+const canonical = new URL(path, Astro.site).href;
+const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%232a78d6'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to the story</a>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="site-name" href="/">Who Paid for the NBA's Arenas</a>
+        <nav class="site-nav" aria-label="Pages">
+          {nav.map(([href, label]) => <a href={href} aria-current={href === path ? 'page' : undefined}>{label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-foot">
+      <div class="col">
+        Ledger as of {asOf}. Dollars are 2026 dollars (BLS CPI-U) unless marked. Every number links to its entry in
+        the <a href="/fact-check/">fact-check ledger</a>; the data and the code that builds this site are in
+        the <a href="https://github.com/realvivek/NBA-Arena-Funding">project repository</a>.
+      </div>
+    </footer>
+    <div class="tip" role="status" hidden></div>
+    <script is:inline>
+      // Tooltips for chart marks. Optional: every value is also in the chart's data table.
+      (function () {
+        var tip = document.querySelector('.tip');
+        if (!tip) return;
+        function show(el, x, y) {
+          tip.textContent = el.getAttribute('data-tip');
+          tip.hidden = false;
+          var r = tip.getBoundingClientRect();
+          var left = Math.min(Math.max(8, x + 12), window.innerWidth - r.width - 8);
+          var top = y - r.height - 12 < 8 ? y + 16 : y - r.height - 12;
+          tip.style.left = left + 'px';
+          tip.style.top = top + 'px';
+        }
+        document.addEventListener('pointermove', function (e) {
+          var el = e.target instanceof Element ? e.target.closest('[data-tip]') : null;
+          if (el) show(el, e.clientX, e.clientY);
+          else tip.hidden = true;
+        });
+        document.addEventListener('focusin', function (e) {
+          var el = e.target instanceof Element ? e.target.closest('[data-tip]') : null;
+          if (!el) return;
+          var r = el.getBoundingClientRect();
+          show(el, r.left + r.width / 2, r.top);
+        });
+        document.addEventListener('focusout', function () { tip.hidden = true; });
+        window.addEventListener('scroll', function () { tip.hidden = true; }, { passive: true });
+      })();
+    </script>
+  </body>
+</html>

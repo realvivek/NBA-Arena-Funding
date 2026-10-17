@@ -1,0 +1,450 @@
+{
+ "id": "takeovers",
+ "title": "Arenas built mainly with private money that were later bought or rebuilt with public money",
+ "sources": [
+  "ledger",
+  "fred-cpiaucns",
+  "law-sfr-v13-nba",
+  "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
+  "wiki-state-farm-arena",
+  "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
+  "indyencyclopedia-bankers-life-fieldhouse",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "leg-other",
+  "leg-031209-agenda",
+  "lrl-target",
+  "sportsbusinessdaily-state-of-the-arena-america-west-arena",
+  "phoenix-phoenix",
+  "phoenix-phoenix-2",
+  "webapi-texts",
+  "sportsbusinessdaily-morning-buzz",
+  "si-phoenix-city-council-approves-suns-arena-rennova",
+  "wiki-moda-center",
+  "portland-2024-annual-comprehensive-financial-report",
+  "wweek-proposed-city-purchase-of-moda-center-would-trig",
+  "olis-enrolled",
+  "efiles",
+  "multco-news-release-board-commissioners-advances-framew",
+  "portland-adopted",
+  "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+  "wiki-delta-center",
+  "slc-slc-acfr-06-30-2025",
+  "utah-pmn",
+  "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+  "govinfo-gaoreports-aimd-98-223",
+  "cfo-arena-tax-revenue-clarification",
+  "wiki-capital-one-arena",
+  "cfo-fis-downtown-arena-revitalization",
+  "dccouncil-4-2-24-arena-funding-memo",
+  "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+ ],
+ "columns": [
+  "team",
+  "arena",
+  "opened",
+  "item_id",
+  "kind",
+  "description",
+  "year",
+  "status",
+  "core",
+  "public_2026_m",
+  "private_2026_m",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "ATL",
+   "arena": "State Farm Arena",
+   "opened": 1999,
+   "item_id": "ATL-construction",
+   "kind": "construction",
+   "description": "State Farm Arena construction",
+   "year": 1999,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 124.439207,
+   "private_2026_m": 300.645125,
+   "sources": [
+    "law-sfr-v13-nba",
+    "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
+    "wiki-state-farm-arena"
+   ]
+  },
+  {
+   "team": "ATL",
+   "arena": "State Farm Arena",
+   "opened": 1999,
+   "item_id": "ATL-renovation-1",
+   "kind": "renovation",
+   "description": "2017-18 renovation",
+   "year": 2018,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 188.210294,
+   "private_2026_m": 66.0387,
+   "sources": [
+    "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
+   ]
+  },
+  {
+   "team": "IND",
+   "arena": "Gainbridge Fieldhouse",
+   "opened": 1999,
+   "item_id": "IND-construction",
+   "kind": "construction",
+   "description": "Gainbridge Fieldhouse construction",
+   "year": 1999,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 157.291158,
+   "private_2026_m": 207.066841,
+   "sources": [
+    "indyencyclopedia-bankers-life-fieldhouse",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "IND",
+   "arena": "Gainbridge Fieldhouse",
+   "opened": 1999,
+   "item_id": "IND-renovation-1",
+   "kind": "renovation",
+   "description": "2019-22 renovation (25-yr deal)",
+   "year": 2021,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 361.067372,
+   "private_2026_m": 79.557218,
+   "sources": [
+    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "arena": "Target Center",
+   "opened": 1990,
+   "item_id": "MIN-construction",
+   "kind": "construction",
+   "description": "Target Center construction",
+   "year": 1990,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 58.381838,
+   "private_2026_m": 263.98744,
+   "sources": [
+    "leg-other",
+    "leg-031209-agenda",
+    "lrl-target"
+   ]
+  },
+  {
+   "team": "MIN",
+   "arena": "Target Center",
+   "opened": 1990,
+   "item_id": "MIN-purchase",
+   "kind": "purchase",
+   "description": "Public purchase of Target Center",
+   "year": 1995,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 118.83441,
+   "private_2026_m": 0.0,
+   "sources": [
+    "leg-other",
+    "leg-031209-agenda"
+   ]
+  },
+  {
+   "team": "MIN",
+   "arena": "Target Center",
+   "opened": 1990,
+   "item_id": "MIN-renovation-1",
+   "kind": "renovation",
+   "description": "2016-17 renovation",
+   "year": 2017,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 100.12459,
+   "private_2026_m": 89.30031,
+   "sources": [
+    "lrl-target",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "PHX",
+   "arena": "Mortgage Matchup Center",
+   "opened": 1992,
+   "item_id": "PHX-construction",
+   "kind": "construction",
+   "description": "Mortgage Matchup Center construction",
+   "year": 1992,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 82.726724,
+   "private_2026_m": 129.999137,
+   "sources": [
+    "sportsbusinessdaily-state-of-the-arena-america-west-arena",
+    "phoenix-phoenix"
+   ]
+  },
+  {
+   "team": "PHX",
+   "arena": "Mortgage Matchup Center",
+   "opened": 1992,
+   "item_id": "PHX-renovation-1",
+   "kind": "renovation",
+   "description": "2019-20 renovation",
+   "year": 2020,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 192.218546,
+   "private_2026_m": 108.795698,
+   "sources": [
+    "phoenix-phoenix-2",
+    "webapi-texts",
+    "sportsbusinessdaily-morning-buzz",
+    "si-phoenix-city-council-approves-suns-arena-rennova"
+   ]
+  },
+  {
+   "team": "PHX",
+   "arena": "Mortgage Matchup Center",
+   "opened": 1992,
+   "item_id": "PHX-renovation-2",
+   "kind": "renovation",
+   "description": "Renewal and replacement account (from about FY2023)",
+   "year": 2026,
+   "status": "binding",
+   "core": true,
+   "public_2026_m": 25.0,
+   "private_2026_m": 12.5,
+   "sources": [
+    "webapi-texts"
+   ]
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center",
+   "opened": 1995,
+   "item_id": "POR-construction",
+   "kind": "construction",
+   "description": "Moda Center construction",
+   "year": 1995,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 75.087677,
+   "private_2026_m": 495.143374,
+   "sources": [
+    "wiki-moda-center",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center",
+   "opened": 1995,
+   "item_id": "POR-purchase",
+   "kind": "purchase",
+   "description": "Public purchase of Moda Center",
+   "year": 2024,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 7.538371,
+   "private_2026_m": 0.0,
+   "sources": [
+    "portland-2024-annual-comprehensive-financial-report",
+    "wweek-proposed-city-purchase-of-moda-center-would-trig"
+   ]
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center",
+   "opened": 1995,
+   "item_id": "POR-renovation-1",
+   "kind": "renovation",
+   "description": "SB 1501 rebuild: State of Oregon bonds",
+   "year": 2026,
+   "status": "pending",
+   "core": false,
+   "public_2026_m": 365.0,
+   "private_2026_m": 0.0,
+   "sources": [
+    "olis-enrolled"
+   ]
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center",
+   "opened": 1995,
+   "item_id": "POR-renovation-2",
+   "kind": "renovation",
+   "description": "Rebuild: Multnomah County",
+   "year": 2026,
+   "status": "pending",
+   "core": false,
+   "public_2026_m": 88.0,
+   "private_2026_m": 0.0,
+   "sources": [
+    "efiles",
+    "multco-news-release-board-commissioners-advances-framew"
+   ]
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center",
+   "opened": 1995,
+   "item_id": "POR-renovation-3",
+   "kind": "renovation",
+   "description": "Rebuild: City of Portland",
+   "year": 2026,
+   "status": "pending",
+   "core": false,
+   "public_2026_m": 120.0,
+   "private_2026_m": 0.0,
+   "sources": [
+    "efiles",
+    "portland-adopted"
+   ]
+  },
+  {
+   "team": "UTA",
+   "arena": "Delta Center",
+   "opened": 1991,
+   "item_id": "UTA-construction",
+   "kind": "construction",
+   "description": "Delta Center construction",
+   "year": 1991,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 0.0,
+   "private_2026_m": 226.474575,
+   "sources": [
+    "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+    "wiki-delta-center"
+   ]
+  },
+  {
+   "team": "UTA",
+   "arena": "Delta Center",
+   "opened": 1991,
+   "item_id": "UTA-renovation-1",
+   "kind": "renovation",
+   "description": "2017 renovation (private part)",
+   "year": 2017,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 0.0,
+   "private_2026_m": 138.41548,
+   "sources": [
+    "wiki-delta-center"
+   ]
+  },
+  {
+   "team": "UTA",
+   "arena": "Delta Center",
+   "opened": 1991,
+   "item_id": "UTA-renovation-2",
+   "kind": "renovation",
+   "description": "2017 renovation: city CRA reimbursement to 2040",
+   "year": 2026,
+   "status": "binding",
+   "core": true,
+   "public_2026_m": 22.7,
+   "private_2026_m": 0.0,
+   "sources": [
+    "slc-slc-acfr-06-30-2025"
+   ]
+  },
+  {
+   "team": "UTA",
+   "arena": "Delta Center",
+   "opened": 1991,
+   "item_id": "UTA-renovation-3",
+   "kind": "renovation",
+   "description": "2025- renovation (0.5% city sales tax)",
+   "year": 2026,
+   "status": "binding",
+   "core": true,
+   "public_2026_m": 525.0,
+   "private_2026_m": 0.0,
+   "sources": [
+    "utah-pmn",
+    "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar"
+   ]
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena",
+   "opened": 1997,
+   "item_id": "WAS-construction",
+   "kind": "construction",
+   "description": "Capital One Arena construction",
+   "year": 1997,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 155.996143,
+   "private_2026_m": 413.234814,
+   "sources": [
+    "govinfo-gaoreports-aimd-98-223",
+    "cfo-arena-tax-revenue-clarification",
+    "wiki-capital-one-arena"
+   ]
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena",
+   "opened": 1997,
+   "item_id": "WAS-renovation-1",
+   "kind": "renovation",
+   "description": "2007 TIF notes (Verizon Center)",
+   "year": 2007,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 79.977696,
+   "private_2026_m": 0.0,
+   "sources": [
+    "cfo-fis-downtown-arena-revitalization"
+   ]
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena",
+   "opened": 1997,
+   "item_id": "WAS-purchase",
+   "kind": "purchase",
+   "description": "Public purchase of Capital One Arena",
+   "year": 2024,
+   "status": "completed",
+   "core": true,
+   "public_2026_m": 92.511566,
+   "private_2026_m": 0.0,
+   "sources": [
+    "cfo-fis-downtown-arena-revitalization"
+   ]
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena",
+   "opened": 1997,
+   "item_id": "WAS-renovation-2",
+   "kind": "renovation",
+   "description": "2024- renovation (Monumental deal)",
+   "year": 2026,
+   "status": "binding",
+   "core": true,
+   "public_2026_m": 427.5,
+   "private_2026_m": 285.0,
+   "sources": [
+    "cfo-fis-downtown-arena-revitalization",
+    "dccouncil-4-2-24-arena-funding-memo",
+    "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+   ]
+  }
+ ],
+ "note": "",
+ "method": "with t as (select distinct i.team from items i join arenas a using (team) where a.built_privately_majority = 'Y' and i.kind in ('renovation', 'purchase') and (i.core or i.status = 'pending') and i.public_2026_m > 0) select i.team, a.arena, cast(a.opened as integer) as opened, i.item_id, i.kind, i.description, i.year, i.status, i.core, i.public_2026_m, case when i.kind = 'purchase' then 0 else greatest(i.spending_2026_m - i.public_2026_m, 0) end as private_2026_m, coalesce((select list(s.source_id order by s.role desc, s.ord) from item_sources s where s.item_id = i.item_id), []) as sources from items i join t using (team) join arenas a using (team) where i.kind in ('construction', 'purchase', 'renovation') and (i.core or i.status = 'pending') order by i.team, i.year, i.item_id"
+}

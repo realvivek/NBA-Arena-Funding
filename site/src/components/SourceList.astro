@@ -1,0 +1,30 @@
+---
+import { source, ORIGIN_LABEL, ORIGIN_ORDER } from '../lib/sources';
+interface Props {
+  ids: string[];
+  numbered?: boolean;
+  start?: number;
+  group?: boolean;
+}
+const { ids, numbered = false, group = false } = Astro.props;
+const items = ids.map((id, i) => ({ n: i + 1, s: source(id) }));
+const groups = group
+  ? ORIGIN_ORDER.map((o) => ({ origin: o, items: items.filter((x) => x.s.origin === o) })).filter((g) => g.items.length)
+  : [{ origin: null, items }];
+---
+{groups.map((g) => (
+  <>
+    {g.origin && <h3>{ORIGIN_LABEL[g.origin]} ({g.items.length})</h3>}
+    <ol class="source-group">
+      {g.items.map(({ n, s }) => (
+        <li id={`src-${s.id}`} value={numbered ? n : undefined}>
+          <a class="s-title" href={s.url} rel="noopener">{s.title}</a>
+          {!group && <span class="origin">{ORIGIN_LABEL[s.origin]}</span>}
+          <span class="s-meta">
+            {s.publisher}. {s.date === 'n.d.' ? 'Undated' : `Dated ${s.date}`}. Figures last checked {s.checked}.
+          </span>
+        </li>
+      ))}
+    </ol>
+  </>
+))}

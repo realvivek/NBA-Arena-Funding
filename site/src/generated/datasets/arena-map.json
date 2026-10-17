@@ -1,0 +1,411 @@
+{
+ "id": "arena-map",
+ "title": "Where the public money went, arena by arena",
+ "sources": [
+  "ledger",
+  "wiki-kia-center",
+  "wiki-capital-one-arena",
+  "wiki-gainbridge-fieldhouse",
+  "wiki-spectrum-center",
+  "wiki-fedexforum",
+  "wiki-delta-center",
+  "wiki-smoothie-king-center",
+  "wiki-barclays-center",
+  "wiki-toyota-center",
+  "wiki-rocket-arena",
+  "wiki-frost-bank-center",
+  "wiki-kaseya-center",
+  "wiki-little-caesars-arena",
+  "wiki-fiserv-forum",
+  "wiki-state-farm-arena",
+  "wiki-golden-1-center",
+  "wiki-paycom-center",
+  "wiki-mortgage-matchup-center",
+  "wiki-target-center",
+  "wiki-american-airlines-center",
+  "wiki-moda-center",
+  "wiki-ball-arena",
+  "wiki-td-garden",
+  "wiki-united-center",
+  "wiki-chase-center",
+  "wiki-intuit-dome",
+  "wiki-crypto-com-arena",
+  "wiki-madison-square-garden",
+  "wiki-xfinity-mobile-arena",
+  "wiki-scotiabank-arena"
+ ],
+ "columns": [
+  "team",
+  "arena",
+  "city",
+  "lat",
+  "lon",
+  "public_2026_m",
+  "public_share_pct",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "ORL",
+   "arena": "Kia Center",
+   "city": "Orlando, FL",
+   "lat": 28.53917,
+   "lon": -81.38361,
+   "public_2026_m": 880.016116,
+   "public_share_pct": 92.045685,
+   "sources": [
+    "wiki-kia-center"
+   ]
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena",
+   "city": "Washington, DC",
+   "lat": 38.89806,
+   "lon": -77.02083,
+   "public_2026_m": 755.985405,
+   "public_share_pct": 55.517412,
+   "sources": [
+    "wiki-capital-one-arena"
+   ]
+  },
+  {
+   "team": "IND",
+   "arena": "Gainbridge Fieldhouse",
+   "city": "Indianapolis, IN",
+   "lat": 39.76389,
+   "lon": -86.15556,
+   "public_2026_m": 747.425938,
+   "public_share_pct": 72.281412,
+   "sources": [
+    "wiki-gainbridge-fieldhouse"
+   ]
+  },
+  {
+   "team": "CHA",
+   "arena": "Spectrum Center",
+   "city": "Charlotte, NC",
+   "lat": 35.225,
+   "lon": -80.83917,
+   "public_2026_m": 565.319268,
+   "public_share_pct": 91.732852,
+   "sources": [
+    "wiki-spectrum-center"
+   ]
+  },
+  {
+   "team": "MEM",
+   "arena": "FedExForum",
+   "city": "Memphis, TN",
+   "lat": 35.13833,
+   "lon": -90.05056,
+   "public_2026_m": 556.461684,
+   "public_share_pct": 100.0,
+   "sources": [
+    "wiki-fedexforum"
+   ]
+  },
+  {
+   "team": "UTA",
+   "arena": "Delta Center",
+   "city": "Salt Lake City, UT",
+   "lat": 40.76833,
+   "lon": -111.90111,
+   "public_2026_m": 547.7,
+   "public_share_pct": 60.015995,
+   "sources": [
+    "wiki-delta-center"
+   ]
+  },
+  {
+   "team": "NOP",
+   "arena": "Smoothie King Center",
+   "city": "New Orleans, LA",
+   "lat": 29.94889,
+   "lon": -90.08194,
+   "public_2026_m": 458.761418,
+   "public_share_pct": 100.0,
+   "sources": [
+    "wiki-smoothie-king-center"
+   ]
+  },
+  {
+   "team": "BKN",
+   "arena": "Barclays Center",
+   "city": "Brooklyn, NY",
+   "lat": 40.68266,
+   "lon": -73.97522,
+   "public_2026_m": 455.027052,
+   "public_share_pct": 23.000424,
+   "sources": [
+    "wiki-barclays-center"
+   ]
+  },
+  {
+   "team": "HOU",
+   "arena": "Toyota Center",
+   "city": "Houston, TX",
+   "lat": 29.75083,
+   "lon": -95.36222,
+   "public_2026_m": 446.56221,
+   "public_share_pct": 69.804227,
+   "sources": [
+    "wiki-toyota-center"
+   ]
+  },
+  {
+   "team": "CLE",
+   "arena": "Rocket Arena",
+   "city": "Cleveland, OH",
+   "lat": 41.49639,
+   "lon": -81.68806,
+   "public_2026_m": 432.583988,
+   "public_share_pct": 64.656356,
+   "sources": [
+    "wiki-rocket-arena"
+   ]
+  },
+  {
+   "team": "SAS",
+   "arena": "Frost Bank Center",
+   "city": "San Antonio, TX",
+   "lat": 29.42694,
+   "lon": -98.4375,
+   "public_2026_m": 413.764864,
+   "public_share_pct": 84.545035,
+   "sources": [
+    "wiki-frost-bank-center"
+   ]
+  },
+  {
+   "team": "MIA",
+   "arena": "Kaseya Center",
+   "city": "Miami, FL",
+   "lat": 25.78139,
+   "lon": -80.18806,
+   "public_2026_m": 410.144553,
+   "public_share_pct": 49.164247,
+   "sources": [
+    "wiki-kaseya-center"
+   ]
+  },
+  {
+   "team": "DET",
+   "arena": "Little Caesars Arena",
+   "city": "Detroit, MI",
+   "lat": 42.34111,
+   "lon": -83.055,
+   "public_2026_m": 386.968009,
+   "public_share_pct": 30.765921,
+   "sources": [
+    "wiki-little-caesars-arena"
+   ]
+  },
+  {
+   "team": "MIL",
+   "arena": "Fiserv Forum",
+   "city": "Milwaukee, WI",
+   "lat": 43.04503,
+   "lon": -87.91817,
+   "public_2026_m": 330.193498,
+   "public_share_pct": 47.70082,
+   "sources": [
+    "wiki-fiserv-forum"
+   ]
+  },
+  {
+   "team": "ATL",
+   "arena": "State Farm Arena",
+   "city": "Atlanta, GA",
+   "lat": 33.75722,
+   "lon": -84.39639,
+   "public_2026_m": 312.649501,
+   "public_share_pct": 46.022989,
+   "sources": [
+    "wiki-state-farm-arena"
+   ]
+  },
+  {
+   "team": "SAC",
+   "arena": "Golden 1 Center",
+   "city": "Sacramento, CA",
+   "lat": 38.58036,
+   "lon": -121.49961,
+   "public_2026_m": 308.292103,
+   "public_share_pct": 39.89628,
+   "sources": [
+    "wiki-golden-1-center"
+   ]
+  },
+  {
+   "team": "OKC",
+   "arena": "Paycom Center",
+   "city": "Oklahoma City, OK",
+   "lat": 35.46333,
+   "lon": -97.515,
+   "public_2026_m": 301.738673,
+   "public_share_pct": 100.0,
+   "sources": [
+    "wiki-paycom-center"
+   ]
+  },
+  {
+   "team": "PHX",
+   "arena": "Mortgage Matchup Center",
+   "city": "Phoenix, AZ",
+   "lat": 33.44583,
+   "lon": -112.07139,
+   "public_2026_m": 299.94527,
+   "public_share_pct": 54.412817,
+   "sources": [
+    "wiki-mortgage-matchup-center"
+   ]
+  },
+  {
+   "team": "MIN",
+   "arena": "Target Center",
+   "city": "Minneapolis, MN",
+   "lat": 44.97944,
+   "lon": -93.27611,
+   "public_2026_m": 296.822623,
+   "public_share_pct": 55.869763,
+   "sources": [
+    "wiki-target-center"
+   ]
+  },
+  {
+   "team": "DAL",
+   "arena": "American Airlines Center",
+   "city": "Dallas, TX",
+   "lat": 32.79056,
+   "lon": -96.81028,
+   "public_2026_m": 234.131712,
+   "public_share_pct": 29.761905,
+   "sources": [
+    "wiki-american-airlines-center"
+   ]
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center",
+   "city": "Portland, OR",
+   "lat": 45.53167,
+   "lon": -122.66667,
+   "public_2026_m": 82.626048,
+   "public_share_pct": 14.489924,
+   "sources": [
+    "wiki-moda-center"
+   ]
+  },
+  {
+   "team": "DEN",
+   "arena": "Ball Arena",
+   "city": "Denver, CO",
+   "lat": 39.74861,
+   "lon": -105.0075,
+   "public_2026_m": 81.63212,
+   "public_share_pct": 20.0489,
+   "sources": [
+    "wiki-ball-arena"
+   ]
+  },
+  {
+   "team": "BOS",
+   "arena": "TD Garden",
+   "city": "Boston, MA",
+   "lat": 42.36639,
+   "lon": -71.06222,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-td-garden"
+   ]
+  },
+  {
+   "team": "CHI",
+   "arena": "United Center",
+   "city": "Chicago, IL",
+   "lat": 41.88056,
+   "lon": -87.67417,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-united-center"
+   ]
+  },
+  {
+   "team": "GSW",
+   "arena": "Chase Center",
+   "city": "San Francisco, CA",
+   "lat": 37.76806,
+   "lon": -122.3875,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-chase-center"
+   ]
+  },
+  {
+   "team": "LAC",
+   "arena": "Intuit Dome",
+   "city": "Inglewood, CA",
+   "lat": 33.9451,
+   "lon": -118.3431,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-intuit-dome"
+   ]
+  },
+  {
+   "team": "LAL",
+   "arena": "Crypto.com Arena",
+   "city": "Los Angeles, CA",
+   "lat": 34.04306,
+   "lon": -118.26722,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-crypto-com-arena"
+   ]
+  },
+  {
+   "team": "NYK",
+   "arena": "Madison Square Garden",
+   "city": "New York, NY",
+   "lat": 40.75056,
+   "lon": -73.99361,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-madison-square-garden"
+   ]
+  },
+  {
+   "team": "PHI",
+   "arena": "Xfinity Mobile Arena (formerly Wells Fargo Center)",
+   "city": "Philadelphia, PA",
+   "lat": 39.90111,
+   "lon": -75.17194,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-xfinity-mobile-arena"
+   ]
+  },
+  {
+   "team": "TOR",
+   "arena": "Scotiabank Arena",
+   "city": "Toronto, ON",
+   "lat": 43.64333,
+   "lon": -79.37917,
+   "public_2026_m": 0.0,
+   "public_share_pct": 0.0,
+   "sources": [
+    "wiki-scotiabank-arena"
+   ]
+  }
+ ],
+ "note": "Locations from each arena's Wikipedia article; money from the ledger.",
+ "method": "select a.team, a.arena, a.city, c.lat, c.lon, m.public_2026_m, 100 * m.public_2026_m / m.spending_2026_m as public_share_pct, coalesce((select list(s.source_id order by s.ord) from coord_sources s where s.team = a.team), []) as sources from arenas a join coords c using (team) join (select team, sum(public_2026_m) public_2026_m, sum(spending_2026_m) spending_2026_m from items where core group by team) m using (team) order by m.public_2026_m desc, a.team"
+}

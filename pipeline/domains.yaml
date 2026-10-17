@@ -1,0 +1,168 @@
+# Publisher and origin for each source domain. Origin is who published the document:
+#   government: governments, their agencies, legislatures, auditors, courts' administrative bodies, and reports they publish
+#   court: court filings and rulings
+#   team_or_league: teams, owners, arena operators and developers tied to them, the league, the players' union, their filings and releases
+#   independent: journalism, research, advocacy groups and reference works
+# A URL can override its domain's entry in sources.yaml.
+en.wikipedia.org: {publisher: Wikipedia, origin: independent}
+bondbuyer.com: {publisher: The Bond Buyer, origin: independent}
+espn.com: {publisher: ESPN, origin: independent}
+sec.gov: {publisher: U.S. Securities and Exchange Commission (EDGAR filing), origin: team_or_league}
+okc.gov: {publisher: City of Oklahoma City, origin: government}
+vision.okc.gov: {publisher: City of Oklahoma City, origin: government}
+sportsbusinessdaily.com: {publisher: Sports Business Daily, origin: independent}
+axios.com: {publisher: Axios, origin: independent}
+lla.la.gov: {publisher: Louisiana Legislative Auditor, origin: government}
+app.lla.state.la.us: {publisher: Louisiana Legislative Auditor, origin: government}
+app.lla.la.gov: {publisher: Louisiana Legislative Auditor, origin: government}
+bexar.org: {publisher: Bexar County, Texas, origin: government}
+nba.com: {publisher: NBA, origin: team_or_league}
+chron.com: {publisher: Houston Chronicle, origin: independent}
+ibo.nyc.gov: {publisher: New York City Independent Budget Office, origin: government}
+ibo.nyc.ny.us: {publisher: New York City Independent Budget Office, origin: government}
+degc.org: {publisher: Detroit Downtown Development Authority (posted by the Detroit Economic Growth Corp.), origin: government}
+memphistn.gov: {publisher: City of Memphis, origin: government}
+dailymemphian.com: {publisher: The Daily Memphian, origin: independent}
+miaminewtimes.com: {publisher: Miami New Times, origin: independent}
+wtop.com: {publisher: WTOP, origin: independent}
+tpr.org: {publisher: Texas Public Radio, origin: independent}
+ksat.com: {publisher: KSAT, origin: independent}
+fieldofschemes.com: {publisher: Field of Schemes, origin: independent}
+archive.org: {publisher: Internet Archive (copy of a Boston Redevelopment Authority record), origin: government}
+atlanticyardsreport.blogspot.com: {publisher: Atlantic Yards Report, origin: independent}
+wfae.org: {publisher: WFAE, origin: independent}
+ohioauditor.gov: {publisher: Ohio Auditor of State, origin: government}
+houstonsports.org: {publisher: Harris County-Houston Sports Authority, origin: government}
+oregon.gov: {publisher: Oregon Department of Administrative Services, origin: government}
+in.gov: {publisher: Indiana State Board of Accounts, origin: government}
+audit.sboa.in.gov: {publisher: Indiana State Board of Accounts, origin: government}
+miamidade.gov: {publisher: Miami-Dade County, origin: government}
+minneapolismn.gov: {publisher: City of Minneapolis, origin: government}
+occompt.legistar1.com: {publisher: Orange County, Florida, origin: government}
+phoenix.legistar1.com: {publisher: City of Phoenix, origin: government}
+portland.gov: {publisher: City of Portland, origin: government}
+efiles.portlandoregon.gov: {publisher: City of Portland, origin: government}
+cityofsacramento.gov: {publisher: City of Sacramento, origin: government}
+ksl.com: {publisher: KSL, origin: independent}
+app.cfo.dc.gov: {publisher: District of Columbia Office of the Chief Financial Officer, origin: government}
+cfo.dc.gov: {publisher: District of Columbia Office of the Chief Financial Officer, origin: government}
+spectrumlocalnews.com: {publisher: Spectrum News, origin: independent}
+portal.assessor.lacounty.gov: {publisher: Los Angeles County Assessor, origin: government}
+news.pollstar.com: {publisher: Pollstar, origin: independent}
+usatoday.com: {publisher: USA Today, origin: independent}
+opb.org: {publisher: Oregon Public Broadcasting, origin: independent}
+law.marquette.edu: {publisher: Marquette University Law School, National Sports Law Institute, origin: independent}
+archives.lib.state.ma.us: {publisher: Massachusetts State Library, origin: government}
+gothamgazette.com: {publisher: Gotham Gazette, origin: independent}
+nolandgrab.org: {publisher: Metropolitan Transportation Authority (copy posted by Develop Don't Destroy Brooklyn), origin: government}
+lgreports.nctreasurer.com: {publisher: City of Charlotte (filed with the N.C. Local Government Commission), origin: government}
+carolinajournal.com: {publisher: Carolina Journal, origin: independent}
+wbtv.com: {publisher: WBTV, origin: independent}
+charlottenc.gov: {publisher: City of Charlotte, origin: government}
+encyclopedia.chicagohistory.org: {publisher: Encyclopedia of Chicago, origin: independent}
+signalcleveland.org: {publisher: Signal Cleveland, origin: independent}
+ideastream.org: {publisher: Ideastream Public Media, origin: independent}
+upi.com: {publisher: UPI, origin: independent}
+renewdenver.org: {publisher: Denver Urban Renewal Authority, origin: government}
+texaspolitics.utexas.edu: {publisher: University of Texas at Austin, Texas Politics Project, origin: independent}
+stadiumjourney.com: {publisher: Stadium Journey, origin: independent}
+indyencyclopedia.org: {publisher: Encyclopedia of Indianapolis, origin: independent}
+wfyi.org: {publisher: WFYI, origin: independent}
+capitalimprovementboard.org: {publisher: Capital Improvement Board of Managers of Marion County, origin: government}
+commercialobserver.com: {publisher: Commercial Observer, origin: independent}
+seattle.gov: {publisher: City of Seattle, origin: government}
+cao.lacity.gov: {publisher: City of Los Angeles, City Administrative Officer, origin: government}
+tri-statedefender.com: {publisher: Tri-State Defender, origin: independent}
+audacy.com: {publisher: 92.9 ESPN (Audacy), origin: independent}
+sports.yahoo.com: {publisher: Yahoo Sports, origin: independent}
+news.yahoo.com: {publisher: Yahoo News, origin: independent}
+wapp.capitol.tn.gov: {publisher: Tennessee General Assembly, origin: government}
+miamidadeig.org: {publisher: Miami-Dade County Office of the Inspector General, origin: government}
+miamidadeclerk.gov: {publisher: Miami-Dade County Clerk of the Court and Comptroller, origin: government}
+oppaga.fl.gov: {publisher: Florida Legislature, OPPAGA, origin: government}
+docs-preview.legis.wisconsin.gov: {publisher: Wisconsin Legislative Fiscal Bureau, origin: government}
+docs.legis.wisconsin.gov: {publisher: Wisconsin Legislative Fiscal Bureau, origin: government}
+leg.state.mn.us: {publisher: Minnesota Office of the Legislative Auditor, origin: government}
+leg.mn.gov: {publisher: Minnesota Legislature, origin: government}
+lrl.mn.gov: {publisher: Minnesota Legislative Reference Library, origin: government}
+myneworleans.com: {publisher: New Orleans Magazine, origin: independent}
+senate.la.gov: {publisher: Louisiana Senate Fiscal Services, origin: government}
+doa.la.gov: {publisher: Louisiana Division of Administration, origin: government}
+news9.com: {publisher: News 9 (Oklahoma City), origin: independent}
+sai.ok.gov: {publisher: Oklahoma State Auditor and Inspector, origin: government}
+cfpublic.org: {publisher: Central Florida Public Media, origin: independent}
+phillymag.com: {publisher: Philadelphia Magazine, origin: independent}
+webapi.legistar.com: {publisher: City of Phoenix (Legistar records), origin: government}
+si.com: {publisher: Sports Illustrated, origin: independent}
+wweek.com: {publisher: Willamette Week, origin: independent}
+olis.oregonlegislature.gov: {publisher: Oregon Legislative Assembly, origin: government}
+multco.us: {publisher: Multnomah County, origin: government}
+scotiabankarena.com: {publisher: Scotiabank Arena (Maple Leaf Sports & Entertainment), origin: team_or_league}
+nsnews.com: {publisher: North Shore News (The Canadian Press), origin: independent}
+slc.gov: {publisher: Salt Lake City Corporation, origin: government}
+utah.gov: {publisher: Utah Public Notice Website, origin: government}
+govinfo.gov: {publisher: U.S. General Accounting Office (via GovInfo), origin: government}
+dccouncil.gov: {publisher: Council of the District of Columbia, origin: government}
+kutakrock.com: {publisher: Kutak Rock LLP, origin: independent}
+data.boston.gov: {publisher: City of Boston Assessing Department, origin: government}
+bostonglobe.com: {publisher: The Boston Globe, origin: independent}
+ilga.gov: {publisher: Illinois General Assembly, origin: government}
+datacatalog.cookcountyil.gov: {publisher: Cook County Assessor's Office, origin: government}
+cookcountytreasurer.com: {publisher: Cook County Treasurer, origin: government}
+api.municode.com: {publisher: City and County of Denver (Revised Municipal Code, via Municode), origin: government}
+9news.com: {publisher: 9News (Denver), origin: independent}
+data.sf.gov: {publisher: San Francisco Assessor-Recorder (DataSF), origin: government}
+deadspin.com: {publisher: Deadspin, origin: independent}
+reinventalbany.org: {publisher: Reinvent Albany, origin: independent}
+kgou.org: {publisher: KGOU, origin: independent}
+whyy.org: {publisher: WHYY, origin: independent}
+apps.saltlakecounty.gov: {publisher: Salt Lake County Assessor, origin: government}
+maps2.dcgis.dc.gov: {publisher: District of Columbia Office of Tax and Revenue (DC GIS), origin: government}
+okgazette.com: {publisher: Oklahoma Gazette, origin: independent}
+6abc.com: {publisher: 6abc (WPVI), origin: independent}
+keranews.org: {publisher: KERA News, origin: independent}
+dmagazine.com: {publisher: D Magazine, origin: independent}
+cbssports.com: {publisher: CBS Sports, origin: independent}
+tampabay.com: {publisher: Tampa Bay Times, origin: independent}
+voiceofoc.org: {publisher: Voice of OC, origin: independent}
+hillwood.com: {publisher: Hillwood (developer of Victory Park), origin: team_or_league}
+www2.ljworld.com: {publisher: Lawrence Journal-World, origin: independent}
+latimes.com: {publisher: Los Angeles Times, origin: independent}
+seattletimes.nwsource.com: {publisher: The Seattle Times, origin: independent}
+seattletimes.com: {publisher: The Seattle Times, origin: independent}
+seattlepi.com: {publisher: Seattle Post-Intelligencer, origin: independent}
+ibj.com: {publisher: Indianapolis Business Journal, origin: independent}
+businessreport.com: {publisher: Greater Baton Rouge Business Report, origin: independent}
+sacbee.com: {publisher: The Sacramento Bee, origin: independent}
+biztimes.com: {publisher: BizTimes Milwaukee, origin: independent}
+knpr.org: {publisher: Nevada Public Radio (KNPR), origin: independent}
+wpr.org: {publisher: Wisconsin Public Radio, origin: independent}
+fox6now.com: {publisher: FOX6 Milwaukee, origin: independent}
+hoopsrumors.com: {publisher: Hoops Rumors, origin: independent}
+athleticbusiness.com: {publisher: Athletic Business, origin: independent}
+actionnews5.com: {publisher: Action News 5 (Memphis), origin: independent}
+washingtonpost.com: {publisher: The Washington Post, origin: independent}
+communityaffairs.dc.gov: {publisher: District of Columbia government, origin: government}
+katu.com: {publisher: KATU, origin: independent}
+pbs.org: {publisher: PBS NewsHour, origin: independent}
+news5cleveland.com: {publisher: News 5 Cleveland, origin: independent}
+therealdeal.com: {publisher: The Real Deal, origin: independent}
+tennesseelookout.com: {publisher: Tennessee Lookout, origin: independent}
+casino.org: {publisher: Casino.org, origin: independent}
+freep.com: {publisher: Detroit Free Press, origin: independent}
+cbsnews.com: {publisher: CBS News, origin: independent}
+kcur.org: {publisher: KCUR, origin: independent}
+council.seattle.gov: {publisher: Seattle City Council, origin: government}
+arenadigest.com: {publisher: Arena Digest, origin: independent}
+ktvu.com: {publisher: KTVU, origin: independent}
+lockerroom.johnlocke.org: {publisher: John Locke Foundation, origin: independent}
+reason.com: {publisher: Reason, origin: independent}
+fred.stlouisfed.org: {publisher: Federal Reserve Bank of St. Louis (FRED), origin: government}
+api.censusreporter.org: {publisher: U.S. Census Bureau (via Census Reporter), origin: government}
+tax.utah.gov: {publisher: Utah State Tax Commission, origin: government}
+revenue.wi.gov: {publisher: Wisconsin Department of Revenue, origin: government}
+ccao-data-public-us-east-1.s3.amazonaws.com: {publisher: Cook County Assessor's Office (PTAXSIM), origin: government}
+doi.org: {publisher: Journal of Economic Surveys (via DOI), origin: independent}
+brookings.edu: {publisher: Brookings Institution, origin: independent}
+imgix.cosmicjs.com: {publisher: NBA and National Basketball Players Association, origin: team_or_league}
+lobbyingdisclosure.house.gov: {publisher: Clerk of the U.S. House of Representatives, origin: government}

@@ -1,0 +1,186 @@
+{
+ "id": "left-behind",
+ "title": "Cities that kept paying after a team left",
+ "sources": [
+  "threat-ledger",
+  "wiki-rogers-arena",
+  "lockerroom-state-refuses-to-aid-panthers-stadium-upgrades",
+  "reason-building-buzz",
+  "espn-nba",
+  "wiki-memphis-pyramid",
+  "wiki-paycom-center",
+  "arenadigest-sonics-settlement-to-pay-off-keyarena-debt",
+  "bondbuyer-seattle-to-pay-off-arena-gos",
+  "seattlepi-sonics-are-oklahoma-city-bound-1278241",
+  "wiki-meadowlands-arena",
+  "wiki-prudential-center",
+  "voiceofoc-anaheim-council-approves-bond-deal-for-basketbal",
+  "wiki-arco-arena",
+  "bondbuyer-golden-state-warriors-lose-bid-to-escape-oakland",
+  "ktvu-warriors-ordered-to-pay-40m-for-oracle-arena-upg",
+  "kcur-projects-kansas-city-taxpayers-are-still-paying",
+  "yahoo-kansas-city-may-spend-millions-100000159",
+  "bondbuyer-kansas-city-on-track-to-sell-53m-for-performing"
+ ],
+ "columns": [
+  "city",
+  "arena",
+  "team_left",
+  "year_left",
+  "public_obligation",
+  "amount_usd_m",
+  "period",
+  "who_paid",
+  "notes",
+  "label",
+  "sources"
+ ],
+ "rows": [
+  {
+   "city": "Vancouver",
+   "arena": "General Motors Place (Rogers Arena)",
+   "team_left": "Grizzlies -> Memphis",
+   "year_left": 2001,
+   "public_obligation": "None identified: arena built 1995 with C$160M private financing (Orca Bay)",
+   "amount_usd_m": 0.0,
+   "period": null,
+   "who_paid": "n/a",
+   "notes": "No public arena debt left behind found.",
+   "label": "c",
+   "sources": [
+    "wiki-rogers-arena"
+   ]
+  },
+  {
+   "city": "Charlotte",
+   "arena": "Charlotte Coliseum (1988)",
+   "team_left": "Hornets -> New Orleans",
+   "year_left": 2002,
+   "public_obligation": "$52M city arena financed with $47M general-obligation bonds approved by voters in 1984; debt still outstanding in the 1990s; payoff date not found",
+   "amount_usd_m": 47.0,
+   "period": "original GO bonds (1984)",
+   "who_paid": "City of Charlotte",
+   "notes": "Coliseum (14 yrs old at departure) demolished June 2007. City then built a ~$260-265M uptown arena (approved 2002-11-11) for the expansion Bobcats; city finance dept put total cost incl. debt at ~$430M over the building's life; 2022 added $275M more.",
+   "label": "c (payoff not verified)",
+   "sources": [
+    "lockerroom-state-refuses-to-aid-panthers-stadium-upgrades",
+    "reason-building-buzz",
+    "espn-nba"
+   ]
+  },
+  {
+   "city": "Memphis",
+   "arena": "Pyramid Arena (1991)",
+   "team_left": "Grizzlies -> FedExForum (same city)",
+   "year_left": 2004,
+   "public_obligation": "$65M public arena; city spent $7M to adapt it for the Grizzlies (2001); team contract barred competing use, building went dark 2004-2015 until Bass Pro lease",
+   "amount_usd_m": 7.0,
+   "period": "2001 adaptation spending",
+   "who_paid": "City of Memphis",
+   "notes": "Within-city move.",
+   "label": "c",
+   "sources": [
+    "wiki-memphis-pyramid"
+   ]
+  },
+  {
+   "city": "Oklahoma City (temporary host)",
+   "arena": "Ford Center",
+   "team_left": "Hornets -> New Orleans",
+   "year_left": 2007,
+   "public_obligation": "$200,000 renovation for Hornets lease; no debt found",
+   "amount_usd_m": 0.2,
+   "period": "2005",
+   "who_paid": "City",
+   "notes": null,
+   "label": "c",
+   "sources": [
+    "wiki-paycom-center"
+   ]
+  },
+  {
+   "city": "Seattle",
+   "arena": "KeyArena (Seattle Center Coliseum)",
+   "team_left": "SuperSonics -> Oklahoma City",
+   "year_left": 2008,
+   "public_obligation": "1995 renovation financed by city (city $74.5M); remaining KeyArena GO debt (Series 2002B, 2003, 2005) defeased in 2008",
+   "amount_usd_m": 34.2,
+   "period": "defeased 2008",
+   "who_paid": "Paid from the team's $45M lease-break settlement, not taxpayers; rest of settlement: legal $2.8M, improvements $2.3M, other Seattle Center $3.8M, lost revenue $1.4M",
+   "notes": "Contingent extra $30M (tied to 2009 state renovation funding and no new team in 5 years) - payment not confirmed. Seattle Center budget later reported thin arena reserves after the Sonics left.",
+   "label": "c",
+   "sources": [
+    "arenadigest-sonics-settlement-to-pay-off-keyarena-debt",
+    "bondbuyer-seattle-to-pay-off-arena-gos",
+    "seattlepi-sonics-are-oklahoma-city-bound-1278241"
+   ]
+  },
+  {
+   "city": "New Jersey (East Rutherford / Newark)",
+   "arena": "Meadowlands (Izod) Arena; Prudential Center",
+   "team_left": "Nets -> Brooklyn",
+   "year_left": 2012,
+   "public_obligation": "State-owned Meadowlands arena (NJSEA) lost tenants; projected $8.5M loss for 2015; NJSEA voted 2015-01-15 to close it. Newark had pledged $210M (airport-lease settlement money) toward the $375M Prudential Center, originally also meant for the Nets, who played there only 2010-12",
+   "amount_usd_m": 210.0,
+   "period": "Newark pledge (2000s)",
+   "who_paid": "City of Newark; NJSEA/State",
+   "notes": "NBA-specific share of NJSEA debt not quantified.",
+   "label": "c",
+   "sources": [
+    "wiki-meadowlands-arena",
+    "wiki-prudential-center"
+   ]
+  },
+  {
+   "city": "Sacramento",
+   "arena": "ARCO / Sleep Train Arena",
+   "team_left": "Kings -> Golden 1 Center (same city)",
+   "year_left": 2016,
+   "public_obligation": "City loan to team (1997, ~$70M; $77M balance in 2011)",
+   "amount_usd_m": 77.0,
+   "period": "2011 balance",
+   "who_paid": "Loan owed by team to city; resolution not verified here",
+   "notes": "Within-city move; old arena site later donated for a medical campus (2021).",
+   "label": "u",
+   "sources": [
+    "voiceofoc-anaheim-council-approves-bond-deal-for-basketbal",
+    "wiki-arco-arena"
+   ]
+  },
+  {
+   "city": "Oakland / Alameda County",
+   "arena": "Oracle (Oakland) Arena",
+   "team_left": "Warriors -> San Francisco",
+   "year_left": 2019,
+   "public_obligation": "Coliseum Authority $140M lease-revenue bonds (Aug 1996) for $121M renovation; $80M refunded 2015 (taxable); final maturity 2026; debt service $5.1-10.5M/yr FY2020-26 (Moody's)",
+   "amount_usd_m": 55.7,
+   "period": "par outstanding 2019-06-30",
+   "who_paid": "Arbitrator (2018) held the Warriors liable for the shortfall between arena net revenue and remaining debt (reported ~ $40M); upheld by Superior Court, Court of Appeal (Aug 2020); Cal. Supreme Court denied review 2020-12-09. City and county (50/50 JPA owners) remain the backstop.",
+   "notes": "Taxpayer exposure was limited by the arbitration win; arena lost its NBA tenant.",
+   "label": "c",
+   "sources": [
+    "bondbuyer-golden-state-warriors-lose-bid-to-escape-oakland",
+    "ktvu-warriors-ordered-to-pay-40m-for-oracle-arena-upg"
+   ]
+  },
+  {
+   "city": "Kansas City",
+   "arena": "Sprint (T-Mobile) Center (2007)",
+   "team_left": "(built to attract NBA/NHL; none came; Kings had left KC in 1985)",
+   "year_left": null,
+   "public_obligation": "Arena bonds repaid from $4/day rental-car and $1.50/night hotel fees (2004 vote); ~$213M variable-rate bonds later restructured",
+   "amount_usd_m": 202.9,
+   "period": "outstanding per KCUR list (date unclear); payoff 2040",
+   "who_paid": "Visitor fees; general fund tapped for the first time (~$4.2M) in FY2021-22 for repairs",
+   "notes": "No anchor tenant 17+ years after opening.",
+   "label": "c (figure date unclear)",
+   "sources": [
+    "kcur-projects-kansas-city-taxpayers-are-still-paying",
+    "yahoo-kansas-city-may-spend-millions-100000159",
+    "bondbuyer-kansas-city-on-track-to-sell-53m-for-performing"
+   ]
+  }
+ ],
+ "note": "",
+ "method": "select l.city, l.arena, l.team_left, l.year_left, l.public_obligation, l.amount_usd_m, l.period, l.who_paid, l.notes, l.label, coalesce((select list(s.source_id order by s.ord) from left_behind_sources s where s.city = l.city), []) as sources from left_behind l order by l.year_left, l.city"
+}

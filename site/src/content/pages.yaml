@@ -1,0 +1,10 @@
+home:
+  path: /
+  kicker: Public money and NBA arenas
+  title: Taxpayers Are Now Paying to Rebuild the NBA's Arenas
+  deck: Since 2014, public money to renovate or buy existing NBA arenas has been {{rebuild_ratio}} times the public money in the arenas that opened. Another {{pending_existing}} is pending, and {{leases_by_2036}} leases end by 2036.
+  description: How the 30 NBA arenas were paid for, what taxpayers put in, through which taxes, and what owners got after threatening to move.
+  tiles:
+    - { value: '{{core_public:short}}', label: 'Public money in the {{arenas_n}} arenas in use, {{public_share}} of all spending on them' }
+    - { value: '{{rebuild_since_2014:short}}', label: 'To renovate or buy existing arenas since 2014, against {{build_since_2014:short}} for new ones' }
+    - { value: '{{leases_by_2036}}', label: 'Leases that end by 2036, when the next round of asks comes due' }

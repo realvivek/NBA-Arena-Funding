@@ -1,0 +1,39 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Prose from '../components/Prose.astro';
+import Figure from '../components/Figure.astro';
+import Rebuild from '../components/charts/Rebuild.svelte';
+import { Citations } from '../lib/sources';
+import { dataset } from '../lib/data';
+import { rebuildTable } from '../lib/tables';
+import { paragraph, ids } from '../lib/content';
+import { plain } from '../lib/copy';
+
+const cites = new Citations();
+const page = (await getEntry('pages', 'home'))!.data;
+const sections = (await getCollection('story')).sort((a, b) => a.data.n - b.data.n);
+const rebuild = dataset('rebuild-by-year');
+const title = plain(page.title, { where: 'home title' });
+const deck = paragraph(page.deck, page.sources, 'home deck', cites);
+---
+<Layout title={title} description={page.description} path="/">
+  <article>
+    <header class="head col">
+      <p class="kicker">{page.kicker}</p>
+      <h1>{title}</h1>
+      <p class="deck" set:html={deck.html} />
+    </header>
+    <div class="col prose">
+      {sections.map((s) => s.data.blocks.map((b, i) =>
+        'p' in b ? <Prose text={b.p} sources={b.sources} where={`story ${s.id} block ${i + 1}`} cites={cites} /> :
+        'fig' in b && b.fig === 'rebuild' ? (
+          <Figure id="rebuild" dataset={rebuild} table={rebuildTable(rebuild.rows)} cites={cites}>
+            <Rebuild slot="wide" rows={rebuild.rows} variant="wide" label="Public money by year" />
+            <Rebuild slot="narrow" rows={rebuild.rows} variant="narrow" label="Public money by period" />
+          </Figure>
+        ) : null
+      ))}
+    </div>
+  </article>
+</Layout>

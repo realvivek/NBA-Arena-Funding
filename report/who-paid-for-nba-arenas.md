@@ -75,13 +75,13 @@ Five loopholes show up again and again:
 
 ## What taxpayers carry
 
-The public money is concentrated: ten arenas hold 63% of it. The four costliest buildings, in New York, the Los Angeles area, San Francisco and Brooklyn, were built mostly with private money.
+The public money is concentrated: ten arenas hold 63% of it. The five costliest buildings in 2026 dollars, in the Los Angeles area, San Francisco, Brooklyn, Detroit and New York, were built mostly with private money.
 
 ![Ten arenas hold 63% of the public money in NBA arenas: public and private spending on each of the 30 current arenas](charts/public-vs-private-by-arena.png)
 
 *Funding ledger compiled for this report from audits, bond documents and press. 30 current arenas, 2026 dollars (CPI-U). Data: [arena_ledger.csv](../data/ledger/arena_ledger.csv).*
 
-The $8.93B leaves out public money that never shows up as a check. Federal taxpayers add about $1.32B (present value) by exempting arena bond interest from tax. New York has excused Madison Square Garden from property tax since 1982, about $42M a year ([NYC Independent Budget Office](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf)).
+The $9.30B leaves out public money that never shows up as a check. Federal taxpayers add about $1.91B (present value at issue, in 2026 dollars) by exempting arena bond interest from tax. New York has excused Madison Square Garden from property tax since 1982, about $42M a year ([NYC Independent Budget Office](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf)).
 
 DC extended Capital One Arena's tax exemption to 2050. Its own finance office valued the tax relief at $312.7M and found it "not financially necessary" ([DC CFO](https://cfo.dc.gov/sites/default/files/dc/sites/ocfo/publication/attachments/TAFA_Capital%20One%20Arena%20112624.pdf)). The United Center's owners paid property tax under a 1989 state formula based on the arena's net income. We estimate it cut their taxes by $46.6M in 2002-2016 alone ([method](../data/property_tax/united_center_formula_savings.md)). Counting the exemptions, that formula and the property tax redirected to Barclays Center's bonds lifts the public total past $11.0B.
 

@@ -1,0 +1,493 @@
+{
+ "id": "leases",
+ "title": "When each arena lease ends, and what leaving costs",
+ "sources": [
+  "ledger",
+  "dailymemphian-2",
+  "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+  "audacy-fedexforum",
+  "lla-0000454ba",
+  "senate-01-124-lsed-fy-26-final",
+  "portland-adopted",
+  "spectrumlocalnews-south-texas-el-paso",
+  "whyy-south-philadelphia-new-arena-design-76ers-comcas",
+  "ksat-spurs-consider-a-downtown-move",
+  "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
+  "houstonsports-toyota-center-arena-lease",
+  "houstonsports-hchsa-special-bod-agenda-4-8-26",
+  "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
+  "gateway-edc-audit-2022",
+  "gwcomplex-board-packet-12-17-25",
+  "sportsbusinessdaily-twolves",
+  "law-orlando-magic-lease-summary-8-14",
+  "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+  "bostonglobe-celtics-extend-their-lease-td-garden-through-203",
+  "si-phoenix-city-council-approves-suns-arena-rennova",
+  "miamidade-volume-1",
+  "upi-heat-commit-to-miami-through-2040",
+  "nbcmiami-county-approves-new-heat-deal",
+  "miamidadeclerk-cafr2025-complete",
+  "in-83950a",
+  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
+  "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
+  "fieldofschemes",
+  "wi-lfb-informational-paper-18",
+  "dailyreporter-bucks-sign-30-year-lease-with-arena-owner",
+  "biztimes-bucks-sign-30-year-lease-agreement-with-wisconsi",
+  "wpr-milwaukee-bucks-sign-30-year-lease-new-arena-sit",
+  "cfo-fis-downtown-arena-revitalization",
+  "cityofsacramento-city-of-sacramento-2025-acfr",
+  "cbsnews-sacramento-council-approves-kings-arena-deal-7-2",
+  "okc-city-council-approves-letter-of-intent-with-the",
+  "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
+  "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
+  "cbssports-thunder-will-stay-in-oklahoma-city-through-at-le",
+  "sec-msgs-20260630",
+  "ksl",
+  "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b",
+  "detroit-dda-fs-2024"
+ ],
+ "columns": [
+  "team",
+  "arena",
+  "owner",
+  "term_end_year",
+  "term_and_nonrelocation",
+  "outs_penalties_notes",
+  "label",
+  "exit_penalty",
+  "pending_2026_m",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "MEM",
+   "arena": "FedExForum",
+   "owner": "Memphis-Shelby Co. PBA (public)",
+   "term_end_year": 2029,
+   "term_and_nonrelocation": "Current lease ends after 2028-29 season; $550M renovation/new lease still unsigned as of Oct 16 2026 (the Oct 8 2026 Sports Authority agenda lists a construction agreement and a funding-agreement amendment; press reports approval)",
+   "outs_penalties_notes": "(Attendance clause/2022 settlement already known - excluded)",
+   "label": "c",
+   "exit_penalty": "(Attendance clause/2022 settlement already known - excluded)",
+   "pending_2026_m": 470.0,
+   "sources": [
+    "dailymemphian-2",
+    "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+    "audacy-fedexforum"
+   ]
+  },
+  {
+   "team": "NOP",
+   "arena": "Smoothie King Center",
+   "owner": "LSED / State of Louisiana (public)",
+   "term_end_year": 2029,
+   "term_and_nonrelocation": "Initial term to June 30, 2029 (amended June 13, 2023); State agreement \"set to expire in FY 2029\"",
+   "outs_penalties_notes": "State must keep paying $3.65M/yr Quality Jobs equivalent through FY2029",
+   "label": "b",
+   "exit_penalty": "State must keep paying $3.65M/yr Quality Jobs equivalent through FY2029",
+   "pending_2026_m": null,
+   "sources": [
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final"
+   ]
+  },
+  {
+   "team": "POR",
+   "arena": "Moda Center",
+   "owner": "City of Portland (public since 2024: building bought for $1, land under it for $7.13M)",
+   "term_end_year": 2030,
+   "term_and_nonrelocation": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026",
+   "outs_penalties_notes": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves",
+   "label": "b/c",
+   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves",
+   "pending_2026_m": 573.0,
+   "sources": [
+    "portland-adopted"
+   ]
+  },
+  {
+   "team": "DAL",
+   "arena": "American Airlines Center",
+   "owner": "City of Dallas (public)",
+   "term_end_year": 2031,
+   "term_and_nonrelocation": "Mavs and Stars leases expire 2031",
+   "outs_penalties_notes": "Mavs pursuing new arena (Valley View site, June 2026); Stars to Plano",
+   "label": "c",
+   "exit_penalty": "Mavs pursuing new arena (Valley View site, June 2026); Stars to Plano",
+   "pending_2026_m": null,
+   "sources": [
+    "spectrumlocalnews-south-texas-el-paso"
+   ]
+  },
+  {
+   "team": "PHI",
+   "arena": "Wells Fargo Center",
+   "owner": "Comcast Spectacor (private)",
+   "term_end_year": 2031,
+   "term_and_nonrelocation": "Moving to new private South Philly arena (target 2030-31) with Comcast; WFC lease end not confirmed",
+   "outs_penalties_notes": "Not public",
+   "label": "c/u",
+   "exit_penalty": "Not public",
+   "pending_2026_m": null,
+   "sources": [
+    "whyy-south-philadelphia-new-arena-design-76ers-comcas"
+   ]
+  },
+  {
+   "team": "SAS",
+   "arena": "Frost Bank Center",
+   "owner": "Bexar County (public)",
+   "term_end_year": 2032,
+   "term_and_nonrelocation": "Lease of the Frost Bank (AT&T) Center ends in 2032 (KSAT 2023); downtown arena targeted to open for the 2032-33 season (TPR 2025)",
+   "outs_penalties_notes": "Break fees of up to $124M, depending on the year (KSAT 2023)",
+   "label": "c",
+   "exit_penalty": "Break fees of up to $124M, depending on the year (KSAT 2023)",
+   "pending_2026_m": 549.0,
+   "sources": [
+    "ksat-spurs-consider-a-downtown-move",
+    "tpr-heres-whats-in-the-downtown-arena-term-sheet-the"
+   ]
+  },
+  {
+   "team": "HOU",
+   "arena": "Toyota Center",
+   "owner": "Harris Co.-Houston Sports Authority (public)",
+   "term_end_year": 2033,
+   "term_and_nonrelocation": "Term = 360 months from Oct-2003 commencement (ends after 2032-33); no extension reported with Apr-2026 $180M renovation ($95M State of Texas)",
+   "outs_penalties_notes": "Landlord duty to renovate to \"first-class, state of the art\" standard (s8.6) limited to Renovation Fund",
+   "label": "b/c",
+   "exit_penalty": "Landlord duty to renovate to \"first-class, state of the art\" standard (s8.6) limited to Renovation Fund",
+   "pending_2026_m": null,
+   "sources": [
+    "houstonsports-toyota-center-arena-lease",
+    "houstonsports-hchsa-special-bod-agenda-4-8-26",
+    "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+   ]
+  },
+  {
+   "team": "CLE",
+   "arena": "Rocket Arena",
+   "owner": "Gateway EDC (public non-profit)",
+   "term_end_year": 2034,
+   "term_and_nonrelocation": "Through 2033-34 season + two successive 5-yr TEAM options",
+   "outs_penalties_notes": "Gateway owes Major Capital Repairs; told City/County it lacks funds",
+   "label": "b",
+   "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds",
+   "pending_2026_m": null,
+   "sources": [
+    "gateway-edc-audit-2022",
+    "gwcomplex-board-packet-12-17-25"
+   ]
+  },
+  {
+   "team": "MIN",
+   "arena": "Target Center",
+   "owner": "City of Minneapolis (public)",
+   "term_end_year": 2035,
+   "term_and_nonrelocation": "Play through 2034-35 season (2016 agreement)",
+   "outs_penalties_notes": "$50M payment to city if not fulfilled; $53.5M city debt service 2026-35",
+   "label": "c",
+   "exit_penalty": "$50M payment to city if not fulfilled; $53.5M city debt service 2026-35",
+   "pending_2026_m": null,
+   "sources": [
+    "sportsbusinessdaily-twolves"
+   ]
+  },
+  {
+   "team": "ORL",
+   "arena": "Kia Center",
+   "owner": "City of Orlando (public)",
+   "term_end_year": 2035,
+   "term_and_nonrelocation": "Use Agreement ends after 25th Contract Year from 2010 commencement; no extension reported with Nov-2024 $226M TDT package",
+   "outs_penalties_notes": "Rent $1M/contract year",
+   "label": "b-/c",
+   "exit_penalty": "Rent $1M/contract year",
+   "pending_2026_m": null,
+   "sources": [
+    "law-orlando-magic-lease-summary-8-14",
+    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
+   ]
+  },
+  {
+   "team": "BOS",
+   "arena": "TD Garden",
+   "owner": "Delaware North (private)",
+   "term_end_year": 2036,
+   "term_and_nonrelocation": "Lease through 2035-36 season (2021 15-yr extension)",
+   "outs_penalties_notes": "Not public",
+   "label": "c",
+   "exit_penalty": "Not public",
+   "pending_2026_m": null,
+   "sources": [
+    "bostonglobe-celtics-extend-their-lease-td-garden-through-203"
+   ]
+  },
+  {
+   "team": "PHX",
+   "arena": "Mortgage Matchup Center",
+   "owner": "City of Phoenix (public)",
+   "term_end_year": 2037,
+   "term_and_nonrelocation": "Lease to 2037, option to 2042",
+   "outs_penalties_notes": "Up to $200M if team leaves before 2037",
+   "label": "c",
+   "exit_penalty": "Up to $200M if team leaves before 2037",
+   "pending_2026_m": null,
+   "sources": [
+    "si-phoenix-city-council-approves-suns-arena-rennova"
+   ]
+  },
+  {
+   "team": "MIA",
+   "arena": "Kaseya Center",
+   "owner": "Miami-Dade County (public)",
+   "term_end_year": 2040,
+   "term_and_nonrelocation": "2014 extension through 2039-40 season (UPI); NBC Miami cites subsidy schedule only to 2035",
+   "outs_penalties_notes": "County subsidy $6.4M/yr (FY26 budget) rising to $8.5M 2031-35",
+   "label": "b/c",
+   "exit_penalty": "County subsidy $6.4M/yr (FY26 budget) rising to $8.5M 2031-35",
+   "pending_2026_m": null,
+   "sources": [
+    "miamidade-volume-1",
+    "upi-heat-commit-to-miami-through-2040",
+    "nbcmiami-county-approves-new-heat-deal",
+    "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "IND",
+   "arena": "Gainbridge Fieldhouse",
+   "owner": "Capital Improvement Board (public)",
+   "term_end_year": 2044,
+   "term_and_nonrelocation": "25-yr agreement 2019-2044 + 1-yr team option",
+   "outs_penalties_notes": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games",
+   "label": "b",
+   "exit_penalty": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games",
+   "pending_2026_m": null,
+   "sources": [
+    "in-83950a"
+   ]
+  },
+  {
+   "team": "CHA",
+   "arena": "Spectrum Center",
+   "owner": "City of Charlotte (public)",
+   "term_end_year": 2045,
+   "term_and_nonrelocation": "Extended from 2030 to 2045 (June 2022, 10-1 vote)",
+   "outs_penalties_notes": "City was already obligated to spend $173M under old lease; Hornets $0 rent until 2030 then $2M/yr",
+   "label": "c",
+   "exit_penalty": "City was already obligated to spend $173M under old lease; Hornets $0 rent until 2030 then $2M/yr",
+   "pending_2026_m": null,
+   "sources": [
+    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
+   ]
+  },
+  {
+   "team": "ATL",
+   "arena": "State Farm Arena",
+   "owner": "Atlanta-Fulton Co. Recreation Authority (public)",
+   "term_end_year": 2046,
+   "term_and_nonrelocation": "Non-relocation to 2046 (matches bond maturity)",
+   "outs_penalties_notes": "Break-up fee up to $200M before 2046; Hawks pay $5.9M/yr lease after bonds retire 2028",
+   "label": "c",
+   "exit_penalty": "Break-up fee up to $200M before 2046; Hawks pay $5.9M/yr lease after bonds retire 2028",
+   "pending_2026_m": null,
+   "sources": [
+    "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
+    "fieldofschemes"
+   ]
+  },
+  {
+   "team": "MIL",
+   "arena": "Fiserv Forum",
+   "owner": "Wisconsin Center District (public)",
+   "term_end_year": 2046,
+   "term_and_nonrelocation": "30-yr lease (signed Apr 2016) + two 5-yr TEAM options; team may negotiate with third parties in last 5 yrs of term",
+   "outs_penalties_notes": "Non-relocation damages of at least $553M in year 1, declining; the floor is reported as $20M (BizTimes) or $200M (WPR, quoting the district chair)",
+   "label": "b/c",
+   "exit_penalty": "Non-relocation damages of at least $553M in year 1, declining; the floor is reported as $20M (BizTimes) or $200M (WPR, quoting the district chair)",
+   "pending_2026_m": null,
+   "sources": [
+    "wi-lfb-informational-paper-18",
+    "dailyreporter-bucks-sign-30-year-lease-with-arena-owner",
+    "biztimes-bucks-sign-30-year-lease-agreement-with-wisconsi",
+    "wpr-milwaukee-bucks-sign-30-year-lease-new-arena-sit"
+   ]
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena",
+   "owner": "District of Columbia (since the 2024 purchase); Monumental leases it back",
+   "term_end_year": 2050,
+   "term_and_nonrelocation": "Lease-back to DCALP through June 30, 2050, with up to five 4-yr renewals; Wizards and Capitals must play home games there; no-shop to 2045",
+   "outs_penalties_notes": "Damages not quantified in the fiscal impact statement",
+   "label": "b",
+   "exit_penalty": "Damages not quantified in the fiscal impact statement",
+   "pending_2026_m": null,
+   "sources": [
+    "cfo-fis-downtown-arena-revitalization"
+   ]
+  },
+  {
+   "team": "SAC",
+   "arena": "Golden 1 Center",
+   "owner": "City of Sacramento (public title; \"sold\" to Kings for accounting)",
+   "term_end_year": 2051,
+   "term_and_nonrelocation": "35-yr non-relocation + two 5-yr extensions (term sheet); ~2051 inferred",
+   "outs_penalties_notes": "Kings minimum lease payments $406.2M over 35 yrs",
+   "label": "c/u + b",
+   "exit_penalty": "Kings minimum lease payments $406.2M over 35 yrs",
+   "pending_2026_m": null,
+   "sources": [
+    "cityofsacramento-city-of-sacramento-2025-acfr",
+    "cbsnews-sacramento-council-approves-kings-arena-deal-7-2"
+   ]
+  },
+  {
+   "team": "OKC",
+   "arena": "Paycom Center / new arena",
+   "owner": "City of Oklahoma City (public)",
+   "term_end_year": 2053,
+   "term_and_nonrelocation": "Through at least 2053: 25 years from move-in to the new arena (KGOU 2025-06-18; Bond Buyer 2026-04-06); earlier reports said at least 2050",
+   "outs_penalties_notes": "Early-exit penalties of more than $1B (KGOU 2025-06-18)",
+   "label": "b/c",
+   "exit_penalty": "Early-exit penalties of more than $1B (KGOU 2025-06-18)",
+   "pending_2026_m": null,
+   "sources": [
+    "okc-city-council-approves-letter-of-intent-with-the",
+    "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
+    "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
+    "cbssports-thunder-will-stay-in-oklahoma-city-through-at-le"
+   ]
+  },
+  {
+   "team": "NYK",
+   "arena": "Madison Square Garden",
+   "owner": "MSG Entertainment (private, affiliated)",
+   "term_end_year": 2055,
+   "term_and_nonrelocation": "Arena license to June 30, 2055, fees +3%/yr",
+   "outs_penalties_notes": "n/a",
+   "label": "b",
+   "exit_penalty": "n/a",
+   "pending_2026_m": null,
+   "sources": [
+    "sec-msgs-20260630"
+   ]
+  },
+  {
+   "team": "UTA",
+   "arena": "Delta Center",
+   "owner": "Smith Entertainment Group (private) + SLC participation agreement",
+   "term_end_year": 2055,
+   "term_and_nonrelocation": "30-yr non-relocation tied to SLC 0.5% sales tax from 2025 (~2054-55 inferred)",
+   "outs_penalties_notes": "Damages $250M if both teams leave, $125M if one (draft terms)",
+   "label": "c/u",
+   "exit_penalty": "Damages $250M if both teams leave, $125M if one (draft terms)",
+   "pending_2026_m": null,
+   "sources": [
+    "ksl"
+   ]
+  },
+  {
+   "team": "BKN",
+   "arena": "Barclays Center",
+   "owner": "Brooklyn Arena LDC (public LDC; BSE operates)",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Non-relocation agreement cited by Moody's as PILOT-bond credit positive; PILOT bonds final debt service 2046",
+   "outs_penalties_notes": "Term/penalty not confirmed",
+   "label": "c/u",
+   "exit_penalty": "Term/penalty not confirmed",
+   "pending_2026_m": null,
+   "sources": [
+    "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b"
+   ]
+  },
+  {
+   "team": "CHI",
+   "arena": "United Center",
+   "owner": "Reinsdorf/Wirtz JV (private)",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Team-affiliated owner; no public lease",
+   "outs_penalties_notes": "n/a",
+   "label": "c",
+   "exit_penalty": "n/a",
+   "pending_2026_m": null,
+   "sources": []
+  },
+  {
+   "team": "DEN",
+   "arena": "Ball Arena",
+   "owner": "KSE (private)",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Team-affiliated owner",
+   "outs_penalties_notes": "n/a",
+   "label": "c",
+   "exit_penalty": "n/a",
+   "pending_2026_m": 0.0,
+   "sources": []
+  },
+  {
+   "team": "DET",
+   "arena": "Little Caesars Arena",
+   "owner": "Detroit DDA (public); Olympia operates rent-free",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Pistons MOU with DDA (2016); 35-yr term widely reported but not verified (MOU PDF 403)",
+   "outs_penalties_notes": "$36M 2017 DDA bonds to make arena NBA-compliant",
+   "label": "b/u",
+   "exit_penalty": "$36M 2017 DDA bonds to make arena NBA-compliant",
+   "pending_2026_m": null,
+   "sources": [
+    "detroit-dda-fs-2024"
+   ]
+  },
+  {
+   "team": "GSW",
+   "arena": "Chase Center",
+   "owner": "Warriors (private)",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Team-owned",
+   "outs_penalties_notes": "n/a",
+   "label": "c",
+   "exit_penalty": "n/a",
+   "pending_2026_m": null,
+   "sources": []
+  },
+  {
+   "team": "LAC",
+   "arena": "Intuit Dome",
+   "owner": "Ballmer (private)",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Team-owned",
+   "outs_penalties_notes": "n/a",
+   "label": "c",
+   "exit_penalty": "n/a",
+   "pending_2026_m": null,
+   "sources": []
+  },
+  {
+   "team": "LAL",
+   "arena": "Crypto.com Arena",
+   "owner": "AEG (private)",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Lease end not confirmed (2041 often cited)",
+   "outs_penalties_notes": "Not public",
+   "label": "u",
+   "exit_penalty": "Not public",
+   "pending_2026_m": null,
+   "sources": []
+  },
+  {
+   "team": "TOR",
+   "arena": "Scotiabank Arena",
+   "owner": "MLSE (private)",
+   "term_end_year": null,
+   "term_and_nonrelocation": "Team-affiliated owner",
+   "outs_penalties_notes": "n/a",
+   "label": "c",
+   "exit_penalty": "n/a",
+   "pending_2026_m": null,
+   "sources": []
+  }
+ ],
+ "note": "",
+ "method": "select l.team, l.arena, l.owner, l.term_end_year, l.term_and_nonrelocation, l.outs_penalties_notes, l.label, a.exit_penalty, (select sum(public_2026_m) from items i where i.team = l.team and i.status = 'pending') as pending_2026_m, coalesce((select list(s.source_id order by s.ord) from lease_sources s where s.team = l.team), []) as sources from leases l left join arenas a using (team) order by l.term_end_year nulls last, l.team"
+}

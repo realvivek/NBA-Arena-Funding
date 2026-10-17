@@ -1,0 +1,6 @@
+rebuild:
+  n: 1
+  blocks:
+    - p: Test paragraph with {{core_public}} and a year, 2014.
+      sources: [ledger]
+    - fig: rebuild

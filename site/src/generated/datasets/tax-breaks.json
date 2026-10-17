@@ -1,0 +1,153 @@
+{
+ "id": "tax-breaks",
+ "title": "Property-tax breaks and taxes diverted to arena debt",
+ "sources": [
+  "ledger",
+  "ibo-2023-march-description-of-public-subsidies-for-m",
+  "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave",
+  "datacatalog-uzyt-m557",
+  "cookcountytreasurer-pappasportalnewsletter",
+  "ilga-003502000k10-220",
+  "sec-0001047469-98-001379",
+  "sec-0000927356-99-000502",
+  "municode-codescontent",
+  "9news-next-question-what-incentives-did-ball-arena-get",
+  "dcgis-mapserver",
+  "cfo-tafa-capital-one-arena-112624"
+ ],
+ "columns": [
+  "team",
+  "arena",
+  "tax_break_desc",
+  "tax_break_annual_m",
+  "tax_break_annual_year",
+  "tax_break_annual_2026_m",
+  "tax_break_cumulative_nominal_m",
+  "tax_break_cumulative_2026_m",
+  "tax_break_in_expanded_total",
+  "tax_break_future_committed_m",
+  "tax_break_memo_estimate_m",
+  "tax_break_notes",
+  "pilot_or_tax_diversion_financing_m",
+  "pilot_2026_m",
+  "pilot_note",
+  "property_tax_status",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "NYK",
+   "arena": "Madison Square Garden",
+   "tax_break_desc": "Full property-tax exemption since 1982 (RPTL s429)",
+   "tax_break_annual_m": 42.0,
+   "tax_break_annual_year": 2023,
+   "tax_break_annual_2026_m": 45.7,
+   "tax_break_cumulative_nominal_m": 946.7,
+   "tax_break_cumulative_2026_m": 946.7,
+   "tax_break_in_expanded_total": "Y",
+   "tax_break_future_committed_m": null,
+   "tax_break_memo_estimate_m": null,
+   "tax_break_notes": null,
+   "pilot_or_tax_diversion_financing_m": null,
+   "pilot_2026_m": null,
+   "pilot_note": null,
+   "property_tax_status": "Exempt by state law since 1982; IBO: $42M forgone in FY2023 (DOF FMV $867M), conservative",
+   "sources": [
+    "ibo-2023-march-description-of-public-subsidies-for-m",
+    "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave"
+   ]
+  },
+  {
+   "team": "BKN",
+   "arena": "Barclays Center",
+   "tax_break_desc": null,
+   "tax_break_annual_m": null,
+   "tax_break_annual_year": null,
+   "tax_break_annual_2026_m": null,
+   "tax_break_cumulative_nominal_m": null,
+   "tax_break_cumulative_2026_m": null,
+   "tax_break_in_expanded_total": null,
+   "tax_break_future_committed_m": null,
+   "tax_break_memo_estimate_m": null,
+   "tax_break_notes": null,
+   "pilot_or_tax_diversion_financing_m": 511.0,
+   "pilot_2026_m": 738.2,
+   "pilot_note": "Tax-exempt PILOT bonds (2009; refunded 2016 as $478.7M tax-exempt + $15M taxable) repaid from PILOTs in lieu of property tax (would-be tax $99M vs PILOT $39M in 2023 per IBO). Counted only in the expanded total.",
+   "property_tax_status": "Exempt (state LDC owns); PILOTs $39M (2023) service arena bonds; would-be tax $99M (IBO 2023); DOF FY2027 MV $2.54B",
+   "sources": [
+    "ibo-2023-march-description-of-public-subsidies-for-m"
+   ]
+  },
+  {
+   "team": "CHI",
+   "arena": "United Center",
+   "tax_break_desc": "1989 stadium valuation formula (P.A. 86-110; 35 ILCS 200/10-205 to 10-220), tax years through 2016 (end inferred)",
+   "tax_break_annual_m": null,
+   "tax_break_annual_year": null,
+   "tax_break_annual_2026_m": null,
+   "tax_break_cumulative_nominal_m": 46.6,
+   "tax_break_cumulative_2026_m": 74.6,
+   "tax_break_in_expanded_total": "Y",
+   "tax_break_future_committed_m": null,
+   "tax_break_memo_estimate_m": null,
+   "tax_break_notes": "Taxes forgone 2002-2016 at the first post-formula assessment ($32.31M AV, 2017) x each year's equalizer and rate, minus taxes paid: $46.6M nominal (a, from Assessor, PTAXSIM and IDOR data); $36.1M at the 2021 market value; about $77M if extended to 1994-2001 (rough); a floor because 1994-2001 inputs were not reachable",
+   "pilot_or_tax_diversion_financing_m": null,
+   "pilot_2026_m": null,
+   "pilot_note": null,
+   "property_tax_status": "Taxable; 2024 AV mailed $125.0M -> certified $92.1M -> BOR $50.3M; est. tax ~$10.4M (a); Treasurer: $10.8M paid in 2024 incl. the adjacent Advocate Center (b)",
+   "sources": [
+    "datacatalog-uzyt-m557",
+    "cookcountytreasurer-pappasportalnewsletter",
+    "ilga-003502000k10-220"
+   ]
+  },
+  {
+   "team": "DEN",
+   "arena": "Ball Arena",
+   "tax_break_desc": "Exemption from the Facilities Development Admissions (\"seat\") tax (1997 Arena Agreement s.5.7); 10% under the current code (DRMC 53-306, 2020), 1997 rate not confirmed",
+   "tax_break_annual_m": 4.0,
+   "tax_break_annual_year": 1999,
+   "tax_break_annual_2026_m": 8.0,
+   "tax_break_cumulative_nominal_m": null,
+   "tax_break_cumulative_2026_m": null,
+   "tax_break_in_expanded_total": "memo",
+   "tax_break_future_committed_m": null,
+   "tax_break_memo_estimate_m": 96.0,
+   "tax_break_notes": "Memo, not added: about $4M a year at McNichols (c, 9News; page returned 403, quote from search index only) x 24 seasons of the agreement's Operation Term (1999-2023) = $96M nominal (a); range $28M (7 seasons, to the end of the Nuggets' McNichols lease) to $108M (27 seasons to date)",
+   "pilot_or_tax_diversion_financing_m": null,
+   "pilot_2026_m": null,
+   "pilot_note": null,
+   "property_tax_status": "Building privately owned on city-owned land during a 23-year ground lease ($10 a year); property-tax increment paid back to the developer through DURA (the counted $36.5M TIF, repaid 2016)",
+   "sources": [
+    "sec-0001047469-98-001379",
+    "sec-0000927356-99-000502",
+    "municode-codescontent",
+    "9news-next-question-what-incentives-did-ball-arena-get"
+   ]
+  },
+  {
+   "team": "WAS",
+   "arena": "Capital One Arena",
+   "tax_break_desc": "Real-property & possessory-interest tax exemption since construction, extended through 2050 (+ FY2025 deed transfer/recordation abatements)",
+   "tax_break_annual_m": 10.0,
+   "tax_break_annual_year": 2026,
+   "tax_break_annual_2026_m": 10.0,
+   "tax_break_cumulative_nominal_m": null,
+   "tax_break_cumulative_2026_m": null,
+   "tax_break_in_expanded_total": "N",
+   "tax_break_future_committed_m": 312.7,
+   "tax_break_memo_estimate_m": null,
+   "tax_break_notes": "OCFO: $49.8M FY2025-28 + $262.9M FY2029-50; OCFO found the abatement not financially necessary",
+   "pilot_or_tax_diversion_financing_m": null,
+   "pilot_2026_m": null,
+   "pilot_note": null,
+   "property_tax_status": "District-owned; $0 tax 2016-2026 on $524-528M assessment; OCFO values the extended exemption at ~$10.0M/yr (FY2026) and $312.7M FY2025-2050",
+   "sources": [
+    "dcgis-mapserver",
+    "cfo-tafa-capital-one-arena-112624"
+   ]
+  }
+ ],
+ "note": "",
+ "method": "select a.team, a.arena, a.tax_break_desc, a.tax_break_annual_m, a.tax_break_annual_year, a.tax_break_annual_2026_m, a.tax_break_cumulative_nominal_m, a.tax_break_cumulative_2026_m, a.tax_break_in_expanded_total, a.tax_break_future_committed_m, a.tax_break_memo_estimate_m, a.tax_break_notes, a.pilot_or_tax_diversion_financing_m, a.pilot_2026_m, a.pilot_note, a.property_tax_status, coalesce((select list(s.source_id order by s.field, s.ord) from arena_sources s where s.row_type = 'current_arena' and s.team = a.team and s.field in ('tax_break_source', 'property_tax_source')), []) as sources from arenas a where a.tax_break_desc is not null or a.pilot_2026_m is not null order by coalesce(a.tax_break_cumulative_2026_m, 0) + coalesce(a.pilot_2026_m, 0) desc, a.team"
+}

@@ -1,0 +1,289 @@
+# The rows behind every chart and table on the site. Each dataset is a DuckDB query over pipeline/views.sql;
+# row_sources names a column of source ids per row, and require_row_sources makes the build fail on a row without one.
+# Written to site/src/generated/datasets/<id>.json.
+
+datasets:
+
+# ------------------------------------------------------------------ every money row
+- id: items
+  title: Every public-money item in the ledger
+  sql: |
+    select i.team, i.item_id, i.kind, i.description, i.year, i.status, i.core,
+           i.spending_nominal_m, i.public_nominal_m, i.cpi_factor, i.spending_2026_m, i.public_2026_m,
+           i.cost_label, i.public_label, i.note,
+           coalesce((select list(s.source_id order by s.role desc, s.ord) from item_sources s
+                     where s.item_id = i.item_id and (s.role = 'public' or i.spending_nominal_m > 0)), []) as sources
+    from items i
+    order by i.team, case i.kind when 'construction' then 1 when 'purchase' then 2 when 'renovation' then 3
+                                 when 'ongoing' then 4 else 5 end, i.year, i.item_id
+  sources: [ledger]
+  row_sources: sources
+  require_row_sources: true
+
+- id: item-buckets
+  title: Public money in each item by funding stream
+  sql: |
+    select b.item_id, b.team, b.bucket, g.payer, b.public_nominal_m, b.public_2026_m
+    from buckets b join bucket_groups g using (bucket)
+    order by b.team, b.item_id, g.ord
+  sources: [ledger]
+
+# ------------------------------------------------------------------ chart 1: building versus rebuilding
+- id: rebuild-by-year
+  title: Public money by year, for new arenas and for existing ones
+  sql: |
+    select i.year, i.team, i.item_id, i.description, i.kind,
+           case when i.kind = 'construction' then 'new'
+                when i.kind = 'project' and i.team = 'UTA' then 'district'
+                when i.kind = 'project' then 'new_unopened'
+                else 'existing' end as category,
+           case when i.core then 'counted' when i.status = 'pending' then 'pending' else 'committed' end as status,
+           i.public_2026_m,
+           coalesce((select list(s.source_id order by s.ord) from item_sources s where s.item_id = i.item_id and s.role = 'public'), []) as sources
+    from items i
+    where i.kind <> 'ongoing' and i.public_2026_m > 0
+    order by i.year, category, i.team, i.item_id
+  sources: [ledger, fred-cpiaucns]
+  row_sources: sources
+  require_row_sources: true
+  note: Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year.
+
+# ------------------------------------------------------------------ chart 2 and the arenas page
+- id: arenas
+  title: The 30 current arenas, public and private money
+  sql: |
+    with m as (
+        select team,
+               sum(public_2026_m) filter (where core) as public_2026_m,
+               sum(spending_2026_m) filter (where core) as spending_2026_m,
+               sum(public_2026_m) filter (where core and kind = 'construction') as construction_public_2026_m,
+               sum(public_2026_m) filter (where core and kind = 'purchase') as purchase_public_2026_m,
+               sum(public_2026_m) filter (where core and kind = 'renovation') as renovation_public_2026_m,
+               sum(public_2026_m) filter (where core and kind = 'ongoing') as ongoing_public_2026_m,
+               sum(public_2026_m) filter (where kind = 'renovation' and status = 'pending') as pending_2026_m
+        from items where kind <> 'project' group by team)
+    select a.team, a.arena, a.city, cast(a.opened as integer) as opened, a.owner, a.owner_type,
+           a.built_privately_majority = 'Y' as built_private,
+           a.construction_cost_nominal_m, a.construction_cost_2026_m, a.construction_cost_label,
+           m.public_2026_m, m.spending_2026_m,
+           m.spending_2026_m - (m.public_2026_m - coalesce(m.purchase_public_2026_m, 0)) as private_2026_m,
+           100 * m.public_2026_m / m.spending_2026_m as public_share_pct,
+           coalesce(m.construction_public_2026_m, 0) as construction_public_2026_m,
+           coalesce(m.purchase_public_2026_m, 0) as purchase_public_2026_m,
+           coalesce(m.renovation_public_2026_m, 0) as renovation_public_2026_m,
+           coalesce(m.ongoing_public_2026_m, 0) as ongoing_public_2026_m,
+           coalesce(m.pending_2026_m, 0) as pending_2026_m,
+           coalesce(a.pilot_2026_m, 0)
+             + case when a.tax_break_in_expanded_total = 'Y' then a.tax_break_cumulative_2026_m else 0 end as tax_breaks_2026_m,
+           a.lease_end, a.property_tax_status, a.notes_and_gaps,
+           coalesce((select list(s.source_id order by s.field, s.ord) from arena_sources s
+                     where s.row_type = 'current_arena' and s.team = a.team
+                       and s.field in ('construction_cost_source', 'public_construction_source', 'private_construction_source')), []) as sources
+    from arenas a join m using (team)
+    order by m.public_2026_m desc, a.team
+  sources: [ledger, fred-cpiaucns]
+  row_sources: sources
+  require_row_sources: true
+  note: Private money is construction and renovation spending not paid by the public. Tax breaks are the Barclays Center PILOT bonds and the exemptions counted in the expanded total.
+
+- id: arena-map
+  title: Where the public money went, arena by arena
+  sql: |
+    select a.team, a.arena, a.city, c.lat, c.lon, m.public_2026_m, 100 * m.public_2026_m / m.spending_2026_m as public_share_pct,
+           coalesce((select list(s.source_id order by s.ord) from coord_sources s where s.team = a.team), []) as sources
+    from arenas a join coords c using (team)
+    join (select team, sum(public_2026_m) public_2026_m, sum(spending_2026_m) spending_2026_m from items where core group by team) m using (team)
+    order by m.public_2026_m desc, a.team
+  sources: [ledger]
+  row_sources: sources
+  require_row_sources: true
+  note: Locations from each arena's Wikipedia article; money from the ledger.
+
+- id: arena-fields
+  title: Notes and sources for each arena's construction, renovations, tax status and lease
+  sql: |
+    select a.team, a.construction_cost_other_reports, a.public_construction_notes, a.ongoing_notes, a.tax_break_desc,
+           a.tax_break_notes, a.pilot_note, a.conduit_note, a.bond_detail, a.lease_terms, a.exit_penalty, a.lease_label,
+           coalesce((select list(s.source_id order by s.ord) from arena_sources s where s.row_type = 'current_arena'
+                     and s.team = a.team and s.field = 'property_tax_source'), []) as property_tax_sources,
+           coalesce((select list(s.source_id order by s.ord) from arena_sources s where s.row_type = 'current_arena'
+                     and s.team = a.team and s.field = 'lease_source'), []) as lease_sources,
+           coalesce((select list(s.source_id order by s.ord) from arena_sources s where s.row_type = 'current_arena'
+                     and s.team = a.team and s.field = 'tax_break_source'), []) as tax_break_sources
+    from arenas a order by a.team
+  sources: [ledger]
+  sources_sql: |
+    select source_id from arena_sources where row_type = 'current_arena' and field in ('property_tax_source', 'lease_source', 'tax_break_source')
+    order by team, field, ord
+
+# ------------------------------------------------------------------ chart 4: built privately, rebuilt publicly
+- id: takeovers
+  title: Arenas built mainly with private money that were later bought or rebuilt with public money
+  sql: |
+    with t as (select distinct i.team from items i join arenas a using (team)
+               where a.built_privately_majority = 'Y' and i.kind in ('renovation', 'purchase')
+                 and (i.core or i.status = 'pending') and i.public_2026_m > 0)
+    select i.team, a.arena, cast(a.opened as integer) as opened, i.item_id, i.kind, i.description, i.year, i.status, i.core,
+           i.public_2026_m,
+           case when i.kind = 'purchase' then 0 else greatest(i.spending_2026_m - i.public_2026_m, 0) end as private_2026_m,
+           coalesce((select list(s.source_id order by s.role desc, s.ord) from item_sources s where s.item_id = i.item_id), []) as sources
+    from items i join t using (team) join arenas a using (team)
+    where i.kind in ('construction', 'purchase', 'renovation') and (i.core or i.status = 'pending')
+    order by i.team, i.year, i.item_id
+  sources: [ledger, fred-cpiaucns]
+  row_sources: sources
+  require_row_sources: true
+
+# ------------------------------------------------------------------ chart 5: who pays
+- id: who-pays
+  title: Public capital money by funding stream
+  sql: |
+    select g.bucket, g.name, g.payer, g.ord, sum(b.public_2026_m) as public_2026_m,
+           100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital) as share_pct
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket)
+    group by all order by g.ord
+  sources: [ledger, fred-cpiaucns]
+
+# ------------------------------------------------------------------ chart 6: per household
+- id: households
+  title: Public money in the largest deals, per household in the jurisdictions that pay
+  sql: |
+    select h.team, h.deal, h.amount_2026_m, h.geo_id, h.jurisdiction, h.households, h.share, h.per_household_2026, h.note,
+           coalesce((select list(s.source_id order by s.item_id, s.ord) from item_sources s
+                     where s.team = h.team and s.role = 'public' and s.item_id not like '%-ongoing-%'), []) as sources
+    from households h
+    order by h.per_household_2026 desc, h.team, h.geo_id
+  sources: [ledger, census-b11001-2024]
+  row_sources: sources
+  require_row_sources: true
+
+# ------------------------------------------------------------------ chart 7: the United Center
+- id: uc-bills
+  title: United Center property-tax bills, with and without the 1989 valuation formula
+  sql: |
+    select tax_year, 'formula' as period, paid_with_floor / 1e6 as paid_m, cf_a_tax / 1e6 as without_formula_m,
+           cf_b_tax / 1e6 as without_formula_low_m, rate_label as label
+    from uc_formula
+    union all
+    select tax_year, 'after', bill / 1e6, null, null, label from uc_bills
+    order by tax_year
+  sources: [uc-formula-method, ptaxsim-2024, ctu-2013]
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'CHI' and field in ('tax_break_source', 'property_tax_source') order by field, ord
+  note: Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.
+
+# ------------------------------------------------------------------ chart 8: payments that keep coming
+- id: ongoing
+  title: Yearly public payments to teams or arena operators
+  sql: |
+    select i.team, i.item_id, i.description, i.year, i.public_nominal_m, i.public_2026_m, i.public_label as label,
+           coalesce((select list(s.source_id order by s.ord) from item_sources s where s.item_id = i.item_id and s.role = 'public'), []) as sources
+    from items i where i.kind = 'ongoing'
+    order by i.team, i.year, i.item_id
+  sources: [ledger, fred-cpiaucns]
+  row_sources: sources
+  require_row_sources: true
+
+# ------------------------------------------------------------------ chart 9 and the threats page
+- id: threats
+  title: Relocation threats and what followed
+  sql: |
+    select t.id, t.team, t.owners, t.period, t.threat_class, t.said_or_done, t.alt_city, t.league_role, t.money_after,
+           t.money_usd_m, t.mechanism, t.vote, t.threat_date, t.approval_date, t.approval_date_final,
+           t.months_threat_to_approval, t.outcome, t.label, t.notes,
+           t.id in (select id from comparison_ids where k = 'same_city_money') as same_city_money,
+           t.id in (select id from comparison_ids where k = 'team_left') as team_left,
+           t.id in (select id from comparison_ids where k = 'no_new_money') as no_new_money,
+           (select months from threat_lags l where l.id = t.id) as lag_months,
+           coalesce((select list(s.source_id order by s.ord) from threat_sources s where s.id = t.id), []) as sources
+    from threats t order by t.id
+  sources: [threat-ledger]
+  row_sources: sources
+  require_row_sources: true
+
+- id: threat-deals
+  title: Deals compared, with and without a prior threat
+  sql: |
+    select d.id, d.deal, case d.grp when 'T' then 'threat' else 'no_threat' end as grp, d.flags, d.year,
+           d.public_m, d.public_m_2025 * (select factor_2026 from cpi where year = 2025) as public_2026_m,
+           d.total_m, 100 * d.share as share_pct
+    from threat_deals d order by d.grp desc, d.year, d.id
+  sources: [threat-ledger, fred-cpiaucns]
+  note: Public money at the deal year in 2025 dollars from compare.py, converted to 2026 dollars.
+
+- id: left-behind
+  title: Cities that kept paying after a team left
+  sql: |
+    select l.city, l.arena, l.team_left, l.year_left, l.public_obligation, l.amount_usd_m, l.period, l.who_paid, l.notes, l.label,
+           coalesce((select list(s.source_id order by s.ord) from left_behind_sources s where s.city = l.city), []) as sources
+    from left_behind l order by l.year_left, l.city
+  sources: [threat-ledger]
+  row_sources: sources
+  require_row_sources: true
+
+# ------------------------------------------------------------------ chart 10 and the leases page
+- id: leases
+  title: When each arena lease ends, and what leaving costs
+  sql: |
+    select l.team, l.arena, l.owner, l.term_end_year, l.term_and_nonrelocation, l.outs_penalties_notes, l.label,
+           a.exit_penalty,
+           (select sum(public_2026_m) from items i where i.team = l.team and i.status = 'pending') as pending_2026_m,
+           coalesce((select list(s.source_id order by s.ord) from lease_sources s where s.team = l.team), []) as sources
+    from leases l left join arenas a using (team)
+    order by l.term_end_year nulls last, l.team
+  sources: [ledger]
+  row_sources: sources
+
+- id: projects
+  title: New arenas, districts and pending deals
+  sql: |
+    select p.team, p.arena, p.city, p.opened, p.owner, p.row_type, p.construction_cost_nominal_m, p.construction_cost_label,
+           p.public_construction_nominal_m, p.public_renovation_pending_nominal_m, p.private_construction_nominal_m,
+           p.public_construction_notes, p.lease_terms, p.notes_and_gaps,
+           coalesce((select list(s.source_id order by s.field, s.ord) from arena_sources s
+                     where s.row_type = p.row_type and s.team = p.team), []) as sources
+    from ledger p where p.row_type like 'project%'
+    order by p.team
+  sources: [ledger]
+  row_sources: sources
+
+# ------------------------------------------------------------------ the taxes page
+- id: slc-monthly
+  title: Salt Lake City's arena sales tax, monthly distributions
+  sql: select month, usd from slc_monthly order by month
+  sources: [utah-tax-distributions]
+  note: Final distributions from the Utah State Tax Commission's monthly reports (Salt Lake City, code 18122).
+
+- id: wcd-annual
+  title: Wisconsin Center District taxes by source
+  sql: select year, basic_room, additional_room, food_beverage, car_rental, total, source from wcd_annual order by year
+  sources: [wi-dor-expo-tax]
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'MIL' and field = 'public_construction_source' order by ord
+
+- id: fed-bonds
+  title: Federal cost of tax-exempt arena bonds, by issue
+  sql: |
+    select f.team, f.arena, cast(f.year as integer) as year, f.issuer_series, f.par_m, f.tax_status, f.pv3_30yr_fed_loss_m as pv_m,
+           f.pv3_30yr_fed_loss_m * coalesce((select factor_2026 from cpi where cpi.year = f.year), 1) as pv_2026_m
+    from fed_bond_cost f
+    where f.tau = 0.28 and f.tax_status <> 'planned'
+      and exists (select 1 from arena_bonds b where b.team = f.team and cast(b.year as integer) = f.year
+                  and b.issuer_series = f.issuer_series and b.new_money = 'True')
+    order by f.year, f.team, f.issuer_series
+  sources: [ledger, gayer-2016, fred-cpiaucns]
+  note: New-money issues only; refundings are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate.
+
+- id: tax-breaks
+  title: Property-tax breaks and taxes diverted to arena debt
+  sql: |
+    select a.team, a.arena, a.tax_break_desc, a.tax_break_annual_m, a.tax_break_annual_year, a.tax_break_annual_2026_m,
+           a.tax_break_cumulative_nominal_m, a.tax_break_cumulative_2026_m, a.tax_break_in_expanded_total,
+           a.tax_break_future_committed_m, a.tax_break_memo_estimate_m, a.tax_break_notes,
+           a.pilot_or_tax_diversion_financing_m, a.pilot_2026_m, a.pilot_note, a.property_tax_status,
+           coalesce((select list(s.source_id order by s.field, s.ord) from arena_sources s where s.row_type = 'current_arena'
+                     and s.team = a.team and s.field in ('tax_break_source', 'property_tax_source')), []) as sources
+    from arenas a
+    where a.tax_break_desc is not null or a.pilot_2026_m is not null
+    order by coalesce(a.tax_break_cumulative_2026_m, 0) + coalesce(a.pilot_2026_m, 0) desc, a.team
+  sources: [ledger]
+  row_sources: sources
+  require_row_sources: true

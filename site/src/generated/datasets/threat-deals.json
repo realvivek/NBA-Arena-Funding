@@ -1,0 +1,287 @@
+{
+ "id": "threat-deals",
+ "title": "Deals compared, with and without a prior threat",
+ "sources": [
+  "threat-ledger",
+  "fred-cpiaucns"
+ ],
+ "columns": [
+  "id",
+  "deal",
+  "grp",
+  "flags",
+  "year",
+  "public_m",
+  "public_2026_m",
+  "total_m",
+  "share_pct"
+ ],
+ "rows": [
+  {
+   "id": "E01",
+   "deal": "MIN Target Center purchase",
+   "grp": "threat",
+   "flags": "explicit;league opposed",
+   "year": 1994,
+   "public_m": 48.0,
+   "public_2026_m": 107.446522,
+   "total_m": null,
+   "share_pct": null
+  },
+  {
+   "id": "E03",
+   "deal": "MIA AmericanAirlines Arena (land)",
+   "grp": "threat",
+   "flags": "explicit; + $6.4M/yr county operating (not in capital)",
+   "year": 1996,
+   "public_m": 38.0,
+   "public_2026_m": 80.353104,
+   "total_m": 251.0,
+   "share_pct": 15.139442
+  },
+  {
+   "id": "E07",
+   "deal": "HOU Toyota Center",
+   "grp": "threat",
+   "flags": "explicit;league-backed",
+   "year": 2000,
+   "public_m": 182.0,
+   "public_2026_m": 350.566169,
+   "total_m": 235.0,
+   "share_pct": 77.446809
+  },
+  {
+   "id": "E10",
+   "deal": "ORL Amway Center",
+   "grp": "threat",
+   "flags": "implied;66-month lag",
+   "year": 2007,
+   "public_m": 430.0,
+   "public_2026_m": 688.049204,
+   "total_m": 480.0,
+   "share_pct": 89.583333
+  },
+  {
+   "id": "E15",
+   "deal": "NOH arena upgrades",
+   "grp": "threat",
+   "flags": "implied;league-owned team",
+   "year": 2012,
+   "public_m": 50.0,
+   "public_2026_m": 72.214776,
+   "total_m": 50.0,
+   "share_pct": 100.0
+  },
+  {
+   "id": "E17",
+   "deal": "SAC Golden 1 Center",
+   "grp": "threat",
+   "flags": "explicit;league opposed move",
+   "year": 2014,
+   "public_m": 255.0,
+   "public_2026_m": 357.365278,
+   "total_m": 507.0,
+   "share_pct": 50.295858
+  },
+  {
+   "id": "E18",
+   "deal": "MIL Fiserv Forum",
+   "grp": "threat",
+   "flags": "explicit;league-backed",
+   "year": 2015,
+   "public_m": 250.0,
+   "public_2026_m": 349.948068,
+   "total_m": 524.1,
+   "share_pct": 47.70082
+  },
+  {
+   "id": "E19",
+   "deal": "PHX arena renovation",
+   "grp": "threat",
+   "flags": "explicit;disputed",
+   "year": 2019,
+   "public_m": 150.0,
+   "public_2026_m": 194.598734,
+   "total_m": 230.0,
+   "share_pct": 65.217391
+  },
+  {
+   "id": "E21",
+   "deal": "WAS Capital One Arena",
+   "grp": "threat",
+   "flags": "explicit",
+   "year": 2024,
+   "public_m": 515.0,
+   "public_2026_m": 544.546802,
+   "total_m": 800.0,
+   "share_pct": 64.375
+  },
+  {
+   "id": "E22",
+   "deal": "POR Moda Center (state)",
+   "grp": "threat",
+   "flags": "implied;weak;pending local",
+   "year": 2026,
+   "public_m": 365.0,
+   "public_2026_m": 366.94584,
+   "total_m": 600.0,
+   "share_pct": 60.833333
+  },
+  {
+   "id": "E02",
+   "deal": "SEA KeyArena renovation",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 1993,
+   "public_m": 74.5,
+   "public_2026_m": 171.007887,
+   "total_m": 95.5,
+   "share_pct": 78.010471
+  },
+  {
+   "id": "E05",
+   "deal": "DAL American Airlines Center",
+   "grp": "no_threat",
+   "flags": "unclear",
+   "year": 1998,
+   "public_m": 125.0,
+   "public_2026_m": 254.348478,
+   "total_m": 420.0,
+   "share_pct": 29.761905
+  },
+  {
+   "id": "E06",
+   "deal": "SAS SBC Center",
+   "grp": "no_threat",
+   "flags": "unclear",
+   "year": 1999,
+   "public_m": 146.5,
+   "public_2026_m": 291.743576,
+   "total_m": 175.0,
+   "share_pct": 83.714286
+  },
+  {
+   "id": "E25",
+   "deal": "SAS AT&T Center renovation",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2015,
+   "public_m": 85.0,
+   "public_2026_m": 118.984403,
+   "total_m": 101.5,
+   "share_pct": 83.743842
+  },
+  {
+   "id": "E26",
+   "deal": "MIN Target Center renovation",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2016,
+   "public_m": 74.0,
+   "public_2026_m": 102.295682,
+   "total_m": 140.0,
+   "share_pct": 52.857143
+  },
+  {
+   "id": "E27",
+   "deal": "ATL Philips Arena renovation",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2016,
+   "public_m": 142.5,
+   "public_2026_m": 196.968121,
+   "total_m": 192.5,
+   "share_pct": 74.025974
+  },
+  {
+   "id": "E28",
+   "deal": "CLE Q transformation",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2017,
+   "public_m": 70.0,
+   "public_2026_m": 94.775456,
+   "total_m": 140.0,
+   "share_pct": 50.0
+  },
+  {
+   "id": "E29",
+   "deal": "IND Fieldhouse renovation",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2019,
+   "public_m": 295.0,
+   "public_2026_m": 382.70741,
+   "total_m": 360.0,
+   "share_pct": 81.944444
+  },
+  {
+   "id": "E30",
+   "deal": "CHA Spectrum Center + practice",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2022,
+   "public_m": 275.0,
+   "public_2026_m": 311.625819,
+   "total_m": null,
+   "share_pct": null
+  },
+  {
+   "id": "E23",
+   "deal": "OKC new arena",
+   "grp": "no_threat",
+   "flags": "official_cited",
+   "year": 2023,
+   "public_m": 900.0,
+   "public_2026_m": 979.792781,
+   "total_m": 950.0,
+   "share_pct": 94.736842
+  },
+  {
+   "id": "E31",
+   "deal": "UTA Delta Center (sales tax)",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2024,
+   "public_m": 525.0,
+   "public_2026_m": 555.157533,
+   "total_m": null,
+   "share_pct": null
+  },
+  {
+   "id": "E32",
+   "deal": "ORL Kia Center package",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2024,
+   "public_m": 226.0,
+   "public_2026_m": 238.998975,
+   "total_m": 226.0,
+   "share_pct": 100.0
+  },
+  {
+   "id": "E24",
+   "deal": "SAS new arena (county binding; share uses city term sheet)",
+   "grp": "no_threat",
+   "flags": "none;share 800/1300 planned",
+   "year": 2025,
+   "public_m": 311.0,
+   "public_2026_m": 320.382247,
+   "total_m": 1300.0,
+   "share_pct": 61.538462
+  },
+  {
+   "id": "E33",
+   "deal": "HOU Toyota Center overhaul",
+   "grp": "no_threat",
+   "flags": "none",
+   "year": 2026,
+   "public_m": 95.0,
+   "public_2026_m": 95.496573,
+   "total_m": 180.0,
+   "share_pct": 52.777778
+  }
+ ],
+ "note": "Public money at the deal year in 2025 dollars from compare.py, converted to 2026 dollars.",
+ "method": "select d.id, d.deal, case d.grp when 'T' then 'threat' else 'no_threat' end as grp, d.flags, d.year, d.public_m, d.public_m_2025 * (select factor_2026 from cpi where year = 2025) as public_2026_m, d.total_m, 100 * d.share as share_pct from threat_deals d order by d.grp desc, d.year, d.id"
+}

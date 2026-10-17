@@ -37,9 +37,10 @@ for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bonds.csv')):
     elif r['tax_status']!='planned': k['par_te']+=p
     k['rows'].append(f"{r['year']} {r['issuer_series'][:60]} ${p:g}M {r['tax_status']}")
 newmoney={(r['team'],r['year'],r['issuer_series']) for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bonds.csv')) if r['new_money']=='True'}
-fedpv=defaultdict(float)
+fedpv=defaultdict(float); fedpv26=defaultdict(float)  # present value at issue, in issue-year dollars and in 2026 dollars
 for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bond_federal_cost.csv')):
-    if r['tau']=='0.28' and r['tax_status']!='planned' and (r['team'],r['year'],r['issuer_series']) in newmoney: fedpv[r['team']]+=float(r['pv3_30yr_fed_loss_m'])
+    if r['tau']=='0.28' and r['tax_status']!='planned' and (r['team'],r['year'],r['issuer_series']) in newmoney:
+        fedpv[r['team']]+=float(r['pv3_30yr_fed_loss_m']); fedpv26[r['team']]+=float(r['pv3_30yr_fed_loss_m'])*f26(int(r['year']))
 
 hh=json.load(open(DATA+'/inputs/census/acs2024_B11001.json'))
 HH={k:(hh['geography'][k]['name'], int(v['B11001']['estimate']['B11001001'])) for k,v in hh['data'].items()}
@@ -59,7 +60,7 @@ def add_item(T, item_id, kind, desc, year, status, in_core, spend_n, pub_n, fac,
         ibuckets.append(OrderedDict(item_id=item_id, team=T, bucket=b, public_nominal_m=r6(v), public_2026_m=r6(v*fac)))
 
 rows=[]; agg=defaultdict(float); aggp=defaultdict(float); bucket26=defaultdict(float); bucket26_priv=defaultdict(float)
-PRIVATE_BUILT={'GSW','LAC','BOS','NYK','CHI','LAL','DEN','PHI','TOR','BKN','DET','WAS','UTA','POR'}
+PRIVATE_BUILT=set()  # arenas whose construction was less than half public money (filled below, by rule)
 detail={}
 for t in TEAMS:
     T=t['team']; yr=t['opened']; fac=f26(yr)
@@ -70,6 +71,7 @@ for t in TEAMS:
     if priv is None and cad: priv=cost  # private arena, CAD converted
     # construction spending base: max(reported cost, public+private) to avoid understating when public sits outside reported cost
     con_total=max(cost or 0, (pubn or 0)+(priv or 0))
+    if pubn < 0.5*con_total: PRIVATE_BUILT.add(T)
     acq=t.get('acq'); acqn=acq['amt'] if acq else 0.0; acq26=acqn*f26(acq['year']) if acq else 0.0
     rb=[r for r in t.get('renos',[]) if r['status'] in ('completed','binding')]
     rp=[r for r in t.get('renos',[]) if r['status']=='pending']
@@ -104,10 +106,6 @@ for t in TEAMS:
     exp26=tb_cum26 if (tbk and tbk.get('expanded') and tb_cum26) else 0.0
     conduit=t.get('conduit')
     le=dict(lease.get(T,{}))
-    OVR={'SAS':dict(term_end_year='2032',term_and_nonrelocation='Lease expires 2032 (Bexar County)',outs_penalties_notes='Break fees up to $124M (per Bexar 2015 deal, renovation file)',label='b/c',source=U['bexar15']),
-         'WAS':dict(term_end_year='2050',term_and_nonrelocation='Lease-back to DCALP through June 30, 2050 + up to five 4-yr renewals; Wizards/Capitals must play home games there; no-shop to 2045',outs_penalties_notes='Damages not quantified in FIS',label='b',source=U['dc_fis']),
-         'OKC':dict(term_end_year='2053',term_and_nonrelocation='Through at least 2053: 25 years from move-in to the new arena (okc.gov 2023; KGOU 2025-06-18; Bond Buyer 2026-04-06); earlier reports said at least 2050',outs_penalties_notes='Early-exit penalties > $1B (KGOU 2025-06-18)',label='b/c',source=U['okc_loi']+' ; https://www.kgou.org/sports/2025-06-18/oklahoma-city-inks-deal-to-keep-thunder-through-2053-nails-down-new-arena-policies')}
-    if T in OVR: le.update(OVR[T])
     if le.get('term_end_year'):
         try: le['term_end_year']=str(int(float(le['term_end_year'])))
         except Exception: pass
@@ -138,7 +136,7 @@ for t in TEAMS:
         pilot_or_tax_diversion_financing_m=r1(pilot) if pilot else '', pilot_note=t.get('pilot_note',''),
         conduit_public_financing_repaid_privately_m=r1(conduit) if conduit else '', conduit_2026_m=r1(conduit*fac) if conduit else '', conduit_note=t.get('conduit_note',''),
         tax_exempt_bonds_par_m_from_arena_tax=r1(bd['par_te']) if bd else '', taxable_bonds_par_m=r1(bd['par_tax']) if bd else '', bond_detail=' | '.join(bd['rows']) if bd else '',
-        fed_tax_expenditure_pv_m_tau028=r1(fedpv.get(T)) if fedpv.get(T) else '',
+        fed_tax_expenditure_pv_m_tau028=r1(fedpv.get(T)) if fedpv.get(T) else '', fed_tax_expenditure_pv_2026_m=r1(fedpv26.get(T)) if fedpv26.get(T) else '',
         property_tax_status=t['ptax'], property_tax_source=t['ptax_src'],
         lease_end=le.get('term_end_year',''), lease_terms=le.get('term_and_nonrelocation',''), exit_penalty=le.get('outs_penalties_notes',''), lease_label=le.get('label',''), lease_source=le.get('source',''),
         cpi_year_construction=yr, cpi_factor_construction=round(fac,4),
@@ -231,8 +229,10 @@ for p in PROJECTS:
         if pub.get(b): row[f'pubcon_{b}_m']=r1(pub[b]); row[f'pubcap_{b}_2026_m']=r1(pub[b])
     prow.append(row)
     if not p['in_team_row']:
-        if pubn: add_item(p['team'], f"{p['team']}-project", 'project', p['arena'], 2026, p['status'], 'N', pubn, pubn, 1.0, p['cost_label'], p['pub_label'], p['cost_src'], p['pub_src'], p['pub_note'], pub)
-        if ppn: add_item(p['team'], f"{p['team']}-project-pending", 'project pending', p['arena'], 2026, 'pending', 'N', ppn, ppn, 1.0, p['cost_label'], p['pub_label'], p['cost_src'], p['pub_src'], p.get('pending_note',''), pp)
+        # a project item's spending is its public money, so it carries the public label and source
+        plab=p['pub_label']+(' ; '+p['extra_label'] if p.get('pub_extra') else ''); psrc=row['public_construction_source']
+        if pubn: add_item(p['team'], f"{p['team']}-project", 'project', p['arena'], 2026, p['status'], 'N', pubn, pubn, 1.0, plab, plab, psrc, psrc, p['pub_note'], pub)
+        if ppn: add_item(p['team'], f"{p['team']}-project-pending", 'project', p['arena'], 2026, 'pending', 'N', ppn, ppn, 1.0, p['pub_label'], p['pub_label'], p['pub_src'], p['pub_src'], p.get('pending_note',''), pp)
     projects.append(dict(team=p['team'], arena=p['arena'], status=p['status'], in_team_row=p['in_team_row'], pub=pubn, pend=ppn))
     if not p['in_team_row']:
         proj_agg['binding_or_approved_new']+=pubn
@@ -251,7 +251,7 @@ assert abs(core_items-agg['core26'])<0.01 and abs(spend_items-agg['spend26'])<0.
 for fn,data in (('ledger_items.csv',items),('ledger_buckets.csv',ibuckets)):
     with open(DATA+'/ledger/'+fn,'w',newline='') as f:
         w=csv.DictWriter(f, fieldnames=list(data[0].keys()), lineterminator='\n'); w.writeheader(); w.writerows(data)
-json.dump(dict(as_of=AS_OF, projects=projects, agg=agg, aggp=aggp, bucket26=bucket26, bucket26_priv=bucket26_priv, detail=detail, proj_agg=proj_agg, CPI={k:CPI[k] for k in sorted(CPI) if k>=1960}, CAD1999=CAD1999, HH=HH, fedpv=dict(fedpv)), open(DATA+'/ledger/_calc.json','w'), indent=1, default=float)
+json.dump(dict(as_of=AS_OF, projects=projects, agg=agg, aggp=aggp, bucket26=bucket26, bucket26_priv=bucket26_priv, detail=detail, proj_agg=proj_agg, CPI={k:CPI[k] for k in sorted(CPI) if k>=1960}, CAD1999=CAD1999, HH=HH, fedpv=dict(fedpv), fedpv26=dict(fedpv26)), open(DATA+'/ledger/_calc.json','w'), indent=1, default=float)
 print('rows',len(rows),'projects',len(prow))
 print('CPI2026 (Jan-Aug avg)',round(C26,3),'n months',len(cpi_m[2026]), '2025 months',len(cpi_m[2025]))
 for k,v in agg.items(): print(k, round(v,1))

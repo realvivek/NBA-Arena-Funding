@@ -1,0 +1,20 @@
+# Chart frames. Titles state the finding; numbers are tokens from pipeline/stats.yaml.
+# Text fields are folded block scalars (>-) so colons and braces need no quoting.
+rebuild:
+  title: >-
+    Since 2014, most public arena money has gone to existing arenas
+  sub: >-
+    Public money committed each year, completed or binding, for new arenas and for existing ones, in 2026 dollars
+  dataset: rebuild-by-year
+  legend:
+    - { label: New arenas (construction), key: public }
+    - { label: Existing arenas (renovations and purchases), key: orange }
+  notes:
+    - >-
+      Construction money is counted in the year an arena opened, renovations in the middle year of the work and
+      purchases in the year of the sale. Work still under way is counted at face value in 2026.
+    - >-
+      Not shown, because the money is not yet spent or the arena is not among the {{arenas_n}} in use:
+      {{pending_existing}} pending for Memphis and Portland, {{new_arenas_committed}} committed and
+      {{sas_pending}} pending for new arenas in Oklahoma City and San Antonio, and {{uta_district}} for the
+      district around Salt Lake City's arena.

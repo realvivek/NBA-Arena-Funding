@@ -1,0 +1,869 @@
+# Every number the site's copy uses. Each is a DuckDB query over pipeline/views.sql (or, rarely, a value entered by
+# hand that the build confirms against the data), with a label and sources. The copy refers to them as {{key}}.
+# Units: usd_m (millions of dollars), usd, pct (0-100), count, number, year. Labels: (a) computed, (b) primary
+# document, (c) press or secondary. Aggregates over the ledger cite the ledger, which cites a source for every row.
+
+stats:
+
+# ------------------------------------------------------------------ the whole bill
+- key: core_public
+  title: Public money in the 30 current arenas
+  sql: select sum(public_2026_m) from items where core
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+  note: Construction, public purchases, completed or binding renovations, and yearly cash payments documented to date. Pending deals are not counted.
+
+- key: total_spending
+  title: All money spent on the 30 current arenas
+  sql: select sum(spending_2026_m) from items where core
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+  note: Construction (public and private), renovations (public and private) and public yearly payments. Public purchases count as public money but not as new spending, since they pay back private builders.
+
+- key: public_share
+  title: Public share of all arena spending
+  sql: select 100 * sum(public_2026_m) / sum(spending_2026_m) from items where core
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
+- key: construction_public
+  title: Public money for construction
+  sql: select sum(public_2026_m) from items where core and kind = 'construction'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+- key: purchase_public
+  title: Public money to buy existing arenas
+  sql: select sum(public_2026_m) from items where core and kind = 'purchase'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+  note: Minneapolis (1995), Portland (2024) and Washington (2024).
+
+- key: renovation_public
+  title: Public money for completed or binding renovations
+  sql: select sum(public_2026_m) from items where core and kind = 'renovation'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+- key: ongoing_public
+  title: Yearly public payments to teams or arena operators, documented to date
+  sql: select sum(public_2026_m) from items where core and kind = 'ongoing'
+  unit: usd_m
+  basis: 2026 dollars, each payment at its year
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+- key: ongoing_teams
+  title: Teams with documented yearly public payments
+  sql: select count(distinct team) from items where core and kind = 'ongoing'
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: capital_public
+  title: Public capital money (construction, purchases, renovations)
+  sql: select sum(public_2026_m) from capital
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+- key: expanded_public
+  title: Public money including property-tax breaks and taxes diverted to arena debt
+  sql: |
+    select (select sum(public_2026_m) from items where core)
+         + sum(coalesce(pilot_2026_m, 0))
+         + sum(case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end)
+    from arenas
+  unit: usd_m
+  basis: 2026 dollars; a floor
+  label: a
+  sources: [ledger]
+  note: Adds Barclays Center's PILOT bonds, Madison Square Garden's property-tax exemption since 1982 and the United Center's valuation formula, 2002-2016. A floor, because the Garden's exemption is a nominal sum and the United Center's 1994-2001 years could not be computed.
+
+- key: expanded_share
+  title: Public share with tax breaks added to both sides
+  sql: |
+    select 100 * ((select sum(public_2026_m) from items where core) + sum(coalesce(pilot_2026_m, 0))
+                  + sum(case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end))
+         / ((select sum(spending_2026_m) from items where core)
+            + sum(case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end))
+    from arenas
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+  note: The PILOT bonds already sit inside Barclays Center's construction cost, so only the other breaks are added to the spending base.
+
+- key: arenas_n
+  title: Current NBA arenas
+  sql: select count(*) from arenas
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: top10_share
+  title: Share of public money in the 10 arenas with the most
+  sql: |
+    with t as (select team, sum(public_2026_m) p from items where core group by team order by p desc limit 10)
+    select 100 * sum(p) / (select sum(public_2026_m) from items where core) from t
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
+- key: top_n
+  title: Arenas in the top group
+  sql: select 10
+  unit: count
+  label: a
+  sources: [ledger]
+  note: The size of the group in top10_share.
+
+- key: orl_public
+  title: Public money in Orlando's Kia Center, the most of any arena
+  sql: select sum(public_2026_m) from items where core and team = 'ORL'
+  check: select (select team from items where core group by team order by sum(public_2026_m) desc limit 1) = 'ORL'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger]
+  sources_sql: select source_id from item_sources where team = 'ORL' and role = 'public' order by item_id, ord
+
+- key: orl_share
+  title: Public share of all spending on the Kia Center
+  sql: select 100 * sum(public_2026_m) / sum(spending_2026_m) from items where core and team = 'ORL'
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
+- key: costliest_private_n
+  title: The costliest arenas, in a row, that were built mainly with private money
+  sql: |
+    with r as (select team, built_privately_majority = 'Y' as p,
+                      row_number() over (order by construction_cost_2026_m desc) as rn from arenas)
+    select min(rn) - 1 from r where not p
+  unit: count
+  label: a
+  sources: [ledger]
+  note: Arenas ranked by construction cost in 2026 dollars; Intuit Dome, Chase Center, Barclays Center, Little Caesars Arena and Madison Square Garden.
+
+- key: private_built_n
+  title: Arenas built mainly with private money
+  sql: select count(*) from arenas where built_privately_majority = 'Y'
+  unit: count
+  label: a
+  sources: [ledger]
+  note: Public money was under half of the construction cost.
+
+# ------------------------------------------------------------------ building versus rebuilding
+- key: rebuild_since_2014
+  title: Public money to renovate or buy existing arenas since 2014
+  sql: select sum(public_2026_m) from items where core and kind in ('renovation', 'purchase') and year >= 2014
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+  note: Completed or binding. Renovations at their mid-construction year, work still under way at face value, purchases at the purchase year.
+
+- key: build_since_2014
+  title: Public money in the arenas that opened since 2014
+  sql: select sum(public_2026_m) from items where core and kind = 'construction' and year >= 2014
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+  note: Sacramento (2016), Detroit (2017) and Milwaukee (2018), at their opening years. Intuit Dome (2024) had no public construction money.
+
+- key: rebuild_ratio
+  title: Rebuilding money as a multiple of building money, since 2014
+  sql: |
+    select (select sum(public_2026_m) from items where core and kind in ('renovation', 'purchase') and year >= 2014)
+         / (select sum(public_2026_m) from items where core and kind = 'construction' and year >= 2014)
+  unit: number
+  digits: 1
+  label: a
+  sources: [ledger]
+
+- key: opened_public_since_2014
+  title: Arenas opened since 2014 with public construction money
+  sql: select count(*) from items where core and kind = 'construction' and year >= 2014 and public_2026_m > 0
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: rebuild_arenas_since_2014
+  title: Existing arenas that got public money to renovate or buy them since 2014
+  sql: select count(distinct team) from items where core and kind in ('renovation', 'purchase') and year >= 2014 and public_2026_m > 0
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: pending_existing
+  title: Public money pending for current arenas
+  sql: select sum(public_2026_m) from items where kind = 'renovation' and status = 'pending'
+  unit: usd_m
+  basis: face value
+  label: a
+  sources: [ledger]
+  note: Memphis and Portland. Not counted in the totals.
+
+- key: new_arenas_committed
+  title: Public money committed to new arenas not yet open
+  sql: select sum(public_2026_m) from items where kind = 'project' and team in ('OKC', 'SAS') and status <> 'pending'
+  unit: usd_m
+  basis: face value
+  label: a
+  sources: [ledger]
+  sources_sql: select source_id from item_sources where item_id in ('OKC-project', 'SAS-project') and role = 'public' order by item_id, ord
+  note: Oklahoma City's replacement arena (binding) and Bexar County's voter-approved share of a San Antonio arena. Outside the 30-arena totals.
+
+- key: okc_new_arena
+  title: Public money for Oklahoma City's replacement arena
+  sql: select public_2026_m from items where item_id = 'OKC-project'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'OKC-project'
+  sources_sql: select source_id from item_sources where item_id = 'OKC-project' and role = 'public' order by ord
+
+- key: sas_county
+  title: Bexar County's voter-approved money for a new Spurs arena
+  sql: select public_2026_m from items where item_id = 'SAS-project'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'SAS-project'
+  sources_sql: select source_id from item_sources where item_id = 'SAS-project' and role = 'public' order by ord
+
+- key: sas_pending
+  title: San Antonio city money for a new Spurs arena, pending
+  sql: select public_2026_m from items where item_id = 'SAS-project-pending'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'SAS-project-pending'
+  sources_sql: select source_id from item_sources where item_id = 'SAS-project-pending' and role = 'public' order by ord
+
+- key: uta_district
+  title: Salt Lake City sales-tax money for the district around the Delta Center
+  sql: select public_2026_m from items where item_id = 'UTA-project'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'UTA-project'
+  sources_sql: select source_id from item_sources where item_id = 'UTA-project' and role = 'public' order by ord
+
+# ------------------------------------------------------------------ the 2024-26 deals
+- key: uta_arena_2025
+  title: Salt Lake City sales-tax money for the Delta Center renovation
+  sql: select public_2026_m from items where item_id = 'UTA-renovation-3'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'UTA-renovation-3'
+  sources_sql: select source_id from item_sources where item_id = 'UTA-renovation-3' and role = 'public' order by ord
+
+- key: slc_sales_tax_rate
+  title: Salt Lake City sales tax that pays for the Delta Center deal
+  value: 0.5
+  evidence: {file: data/ledger/ledger_items.csv, where: {item_id: UTA-renovation-3}, column: desc, contains: '0.5% city sales tax'}
+  unit: pct
+  digits: 1
+  label: b
+  sources_sql: select source_id from item_sources where item_id = 'UTA-renovation-3' and role = 'public' order by ord
+
+- key: was_2024_deal
+  title: DC money to buy and renovate Capital One Arena under the 2024 deal
+  sql: select sum(public_2026_m) from items where item_id in ('WAS-purchase', 'WAS-renovation-2')
+  unit: usd_m
+  basis: 2026 dollars
+  label: b/a
+  sources_sql: select source_id from item_sources where item_id in ('WAS-purchase', 'WAS-renovation-2') and role = 'public' order by item_id, ord
+  note: $87.5 million purchase (2024) and $427.5 million renovation (face value).
+
+- key: was_purchase
+  title: DC purchase of Capital One Arena
+  sql: select public_2026_m from items where item_id = 'WAS-purchase'
+  unit: usd_m
+  basis: 2026 dollars
+  label_sql: select conv_label(public_label, cpi_factor) from items where item_id = 'WAS-purchase'
+  sources_sql: select source_id from item_sources where item_id = 'WAS-purchase' and role = 'public' order by ord
+
+- key: orl_2024
+  title: Orange County tourist-tax money for the Kia Center renovation
+  sql: select public_2026_m from items where item_id = 'ORL-renovation-1'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'ORL-renovation-1'
+  sources_sql: select source_id from item_sources where item_id = 'ORL-renovation-1' and role = 'public' order by ord
+
+- key: hou_2026
+  title: State of Texas grant for the Toyota Center renovation
+  sql: select public_2026_m from items where item_id = 'HOU-renovation-1'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'HOU-renovation-1'
+  sources_sql: select source_id from item_sources where item_id = 'HOU-renovation-1' and role = 'public' order by ord
+
+- key: mem_state_2025
+  title: Tennessee money allocated to the FedExForum renovation
+  sql: select public_2026_m from items where item_id = 'MEM-renovation-1'
+  unit: usd_m
+  basis: 2026 dollars
+  label_sql: select conv_label(public_label, cpi_factor) from items where item_id = 'MEM-renovation-1'
+  sources_sql: select source_id from item_sources where item_id = 'MEM-renovation-1' and role = 'public' order by ord
+
+- key: mem_pending
+  title: Public money for the FedExForum renovation held until a new lease is signed
+  sql: select public_2026_m from items where item_id = 'MEM-renovation-2'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'MEM-renovation-2'
+  sources_sql: select source_id from item_sources where item_id = 'MEM-renovation-2' and role = 'public' order by ord
+
+- key: mem_renovation_cost
+  title: Cost of the FedExForum renovation
+  sql: select sum(spending_nominal_m) from items where item_id in ('MEM-renovation-1', 'MEM-renovation-2')
+  unit: usd_m
+  basis: nominal budget
+  label: c
+  sources_sql: select source_id from item_sources where item_id = 'MEM-renovation-2' and role = 'cost' order by ord
+
+- key: por_pending
+  title: Pending public money to rebuild the Moda Center
+  sql: select sum(public_2026_m) from items where team = 'POR' and kind = 'renovation' and status = 'pending'
+  unit: usd_m
+  basis: face value
+  label: b
+  sources_sql: select s.source_id from item_sources s join items i using (item_id) where i.team = 'POR' and i.kind = 'renovation' and s.role = 'public' order by s.item_id, s.ord
+  note: State of Oregon up to $365 million, Multnomah County up to $88 million, City of Portland up to $120 million.
+
+- key: por_state
+  title: State of Oregon bonds for the Moda Center, repaid from income taxes withheld at the arena
+  sql: select public_2026_m from items where item_id = 'POR-renovation-1'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'POR-renovation-1'
+  sources_sql: select source_id from item_sources where item_id = 'POR-renovation-1' and role = 'public' order by ord
+
+# ------------------------------------------------------------------ built privately, rebuilt publicly
+- key: takeover_n
+  title: Arenas built mainly with private money that were later bought or rebuilt with public money
+  sql: |
+    select count(distinct i.team) from items i join arenas a using (team)
+    where a.built_privately_majority = 'Y' and i.kind in ('renovation', 'purchase') and (i.core or i.status = 'pending')
+      and i.public_2026_m > 0
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: takeover_public
+  title: Public money to buy or rebuild arenas built mainly with private money
+  sql: |
+    select sum(i.public_2026_m) from items i join arenas a using (team)
+    where a.built_privately_majority = 'Y' and i.kind in ('renovation', 'purchase') and (i.core or i.status = 'pending')
+  unit: usd_m
+  basis: 2026 dollars; pending money at face value
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+- key: takeover_pending
+  title: Of that, pending
+  sql: |
+    select sum(i.public_2026_m) from items i join arenas a using (team)
+    where a.built_privately_majority = 'Y' and i.kind = 'renovation' and i.status = 'pending'
+  unit: usd_m
+  basis: face value
+  label: a
+  sources: [ledger]
+
+- key: takeover_construction_public
+  title: Public money in the construction of those arenas
+  sql: |
+    select sum(i.public_2026_m) from items i join arenas a using (team)
+    where a.built_privately_majority = 'Y' and i.kind = 'construction'
+      and i.team in (select team from items where kind in ('renovation', 'purchase') and (core or status = 'pending') and public_2026_m > 0)
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+# ------------------------------------------------------------------ who pays
+- key: residents_share
+  title: Share of public capital from taxes residents mostly pay
+  sql: |
+    select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital)
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'residents'
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+  note: General funds and general-obligation bonds, dedicated sales taxes, tax increment and other tax capture, lease-revenue bonds, and alcohol and tobacco taxes.
+
+- key: visitors_share
+  title: Share of public capital from taxes on visitors
+  sql: |
+    select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital)
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'visitors'
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+  note: Taxes on hotel rooms, car rentals, restaurant food and drink, and tickets.
+
+- key: other_share
+  title: Share of public capital given as land, or with no documented funding stream
+  sql: |
+    select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital)
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'other'
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
+- key: visitors_public
+  title: Public capital from taxes on visitors
+  sql: |
+    select sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket)
+    where g.payer = 'visitors'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+- key: hh_uta
+  title: Salt Lake City's Delta Center deal per household in the city
+  sql: select per_household_2026 from households where team = 'UTA' and share = 1
+  check: select max(per_household_2026) = (select per_household_2026 from households where team = 'UTA') from households
+  unit: usd
+  basis: 2026 dollars per household; an upper bound
+  label: a
+  sources: [ledger, census-b11001-2024]
+  sources_sql: select source_id from item_sources where item_id in ('UTA-renovation-3', 'UTA-project') and role = 'public' order by item_id, ord
+  note: The arena's $525 million and the district's $375 million, over the city's households. People who live elsewhere pay part of the city's sales tax, so this is an upper bound.
+
+- key: hh_okc
+  title: Oklahoma City's arena money per household in the city
+  sql: select per_household_2026 from households where team = 'OKC' and share = 1
+  unit: usd
+  basis: 2026 dollars per household
+  label: a
+  sources: [ledger, census-b11001-2024]
+  note: The replacement arena and 2025 bond projects tied to it, plus the money for Paycom Center in 2002 and 2008.
+
+- key: hh_was
+  title: DC's money for Capital One Arena since 1997, per household
+  sql: select per_household_2026 from households where team = 'WAS' and share = 1
+  unit: usd
+  basis: 2026 dollars per household
+  label: a
+  sources: [ledger, census-b11001-2024]
+
+# ------------------------------------------------------------------ money that never shows up as a check
+- key: nyk_exemption
+  title: Madison Square Garden's property-tax exemption since 1982
+  sql: select tax_break_cumulative_2026_m from arenas where team = 'NYK'
+  unit: usd_m
+  digits: 0
+  basis: nominal sum, a floor in 2026 dollars
+  label: c
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'NYK' and field = 'tax_break_source' order by ord
+  note: Reinvent Albany's sum of the Independent Budget Office's yearly estimates.
+
+- key: nyk_exemption_fy2023
+  title: Madison Square Garden's exemption in fiscal 2023
+  sql: select tax_break_annual_m from arenas where team = 'NYK'
+  unit: usd_m
+  basis: nominal, fiscal 2023
+  label: b
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'NYK' and field = 'tax_break_source' order by ord
+
+- key: bkn_pilot
+  title: Barclays Center PILOT bonds, repaid with property taxes diverted to arena debt
+  sql: select pilot_2026_m from arenas where team = 'BKN'
+  unit: usd_m
+  basis: 2026 dollars
+  label: b/a
+  sources_sql: select source_id from item_sources where item_id = 'BKN-construction' order by role desc, ord
+  note: $511 million issued in 2009, converted at the 2012 opening year.
+
+- key: chi_formula
+  title: Property tax the United Center did not pay under the 1989 formula, 2002-2016
+  sql: select tax_break_cumulative_2026_m from arenas where team = 'CHI'
+  unit: usd_m
+  basis: 2026 dollars, each year deflated
+  label: a
+  sources: [uc-formula-method, ptaxsim-2024, ctu-2013]
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'CHI' and field in ('tax_break_source', 'property_tax_source') order by field, ord
+
+- key: chi_formula_nominal
+  title: The same, in the dollars of each year
+  sql: select sum(saving_a) / 1e6 from uc_formula
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: a
+  sources: [uc-formula-method, ptaxsim-2024, ctu-2013]
+
+- key: uc_formula_bill_min
+  title: Lowest United Center tax bill under the formula, 2002-2016
+  sql: select min(paid_with_floor) / 1e6 from uc_formula
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b/a
+  sources: [uc-formula-method, ptaxsim-2024]
+  note: The statute's $1 million minimum applied in 2005-2008.
+
+- key: uc_formula_bill_max
+  title: Highest United Center tax bill under the formula, 2002-2016
+  sql: select max(paid_with_floor) / 1e6 from uc_formula
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b
+  sources: [uc-formula-method, ptaxsim-2024]
+
+- key: uc_normal_min
+  title: Lowest estimated bill without the formula, 2002-2016
+  sql: select min(cf_a_tax) / 1e6 from uc_formula
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: a
+  sources: [uc-formula-method, ptaxsim-2024]
+  note: The first assessed value after the formula ended, at each year's equalization factor and tax rate.
+
+- key: uc_normal_max
+  title: Highest estimated bill without the formula, 2002-2016
+  sql: select max(cf_a_tax) / 1e6 from uc_formula
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: a
+  sources: [uc-formula-method, ptaxsim-2024]
+
+- key: uc_after_min
+  title: Lowest United Center tax bill after the formula ended, 2017-2024
+  sql: select min(bill) / 1e6 from uc_bills
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b
+  sources: [ptaxsim-2024]
+
+- key: uc_after_max
+  title: Highest United Center tax bill after the formula ended, 2017-2024
+  sql: select max(bill) / 1e6 from uc_bills
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b
+  sources: [ptaxsim-2024]
+
+- key: was_exemption_future
+  title: Value of DC's property-tax exemption for Capital One Arena, fiscal 2025-2050
+  sql: select tax_break_future_committed_m from arenas where team = 'WAS'
+  unit: usd_m
+  digits: 1
+  basis: future years, as valued by DC's chief financial officer
+  label: b
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'WAS' and field = 'tax_break_source' order by ord
+  note: $49.8 million for fiscal 2025-2028 and $262.9 million for fiscal 2029-2050 (Table 1). Not added to any total.
+
+- key: den_seat_tax_memo
+  title: Ball Arena's exemption from Denver's seat tax, 1999-2023 (memo)
+  sql: select tax_break_memo_estimate_m from arenas where team = 'DEN'
+  unit: usd_m
+  basis: nominal; one press figure
+  label: c
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'DEN' and field = 'tax_break_source' order by ord
+  note: Not added to any total; the press figure could not be opened.
+
+- key: fed_bond_cost
+  title: Federal cost of tax-exempt arena bonds
+  sql: select sum(fed_tax_expenditure_pv_2026_m) from arenas
+  unit: usd_m
+  basis: present value at issue, in 2026 dollars
+  label: a
+  sources: [ledger, gayer-2016]
+  note: New-money bond issues only, at a 28 percent marginal tax rate (the Gayer, Drukker and Gold method). Paid by all U.S. taxpayers; not added to any total.
+
+- key: tax_breaks_added
+  title: Tax breaks added to the expanded total
+  sql: |
+    select (select sum(coalesce(pilot_2026_m, 0)) from arenas)
+         + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y')
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger]
+
+# ------------------------------------------------------------------ payments that keep coming
+- key: ind_ongoing
+  title: Capital Improvement Board payments to the Pacers, documented
+  sql: select sum(public_2026_m) from items where team = 'IND' and kind = 'ongoing'
+  unit: usd_m
+  basis: 2026 dollars
+  label: b/a
+  sources_sql: select source_id from item_sources where team = 'IND' and item_id like 'IND-ongoing%' order by item_id, role desc, ord
+
+- key: ind_yearly_min
+  title: Smallest yearly payment to the Pacers, 2015-2025
+  sql: select min(v) from (select year, sum(public_nominal_m) v from items where team = 'IND' and kind = 'ongoing' and year between 2015 and 2025 group by year)
+  unit: usd_m
+  basis: nominal
+  label: b
+  sources_sql: select source_id from item_sources where team = 'IND' and item_id like 'IND-ongoing%' order by item_id, role desc, ord
+
+- key: ind_yearly_max
+  title: Largest yearly payment to the Pacers, 2015-2025
+  sql: select max(v) from (select year, sum(public_nominal_m) v from items where team = 'IND' and kind = 'ongoing' and year between 2015 and 2025 group by year)
+  unit: usd_m
+  basis: nominal
+  label: b
+  sources_sql: select source_id from item_sources where team = 'IND' and item_id like 'IND-ongoing%' order by item_id, role desc, ord
+
+- key: mia_ongoing
+  title: County and state payments to the Kaseya Center's operator, documented
+  sql: select sum(public_2026_m) from items where team = 'MIA' and kind = 'ongoing'
+  unit: usd_m
+  basis: 2026 dollars
+  label: b/a
+  sources_sql: select source_id from item_sources where team = 'MIA' and item_id like 'MIA-ongoing%' order by item_id, role desc, ord
+
+- key: nop_ongoing
+  title: Louisiana stadium district payments to the Pelicans, documented
+  sql: select sum(public_2026_m) from items where team = 'NOP' and kind = 'ongoing'
+  unit: usd_m
+  basis: 2026 dollars
+  label: b/a
+  sources_sql: select source_id from item_sources where team = 'NOP' and item_id like 'NOP-ongoing%' order by item_id, role desc, ord
+
+# ------------------------------------------------------------------ threats
+- key: threat_episodes
+  title: Episodes in the threat ledger
+  sql: select count(*) from threats
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: threats_counted
+  title: Explicit or implied relocation threats by owners or the league
+  sql: select v from comparison where k = 'episodes_explicit_or_implied'
+  check: select count(*) = (select v from comparison where k = 'episodes_explicit_or_implied') from threats where threat_class in ('explicit', 'implied')
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: threats_same_city
+  title: Threats followed by public money in the same city
+  sql: select v from comparison where k = 'same_city_money.n'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: threats_team_left
+  title: Threats after which the team left
+  sql: select v from comparison where k = 'team_left.n'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: lag_median
+  title: Median months from a threat to the approval of public money
+  sql: select v from comparison where k = 'lag_median'
+  unit: number
+  digits: 1
+  basis: months
+  label: a
+  sources: [threat-ledger]
+
+- key: lag_n
+  title: Threats with dated approvals in the same city
+  sql: select v from comparison where k = 'lag_months.n'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: lag_within_24
+  title: Of those, approvals within 24 months
+  sql: select v from comparison where k = 'lag_within_24'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: threat_deals_n
+  title: Deals that followed a threat
+  sql: select v from comparison where k = 'threat.n'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: nothreat_deals_n
+  title: Deals with no threat
+  sql: select v from comparison where k = 'no_threat.n'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: threat_median_share
+  title: Median public share of deals that followed a threat
+  sql: select 100 * v from comparison where k = 'threat.median_share'
+  unit: pct
+  digits: 0
+  label: a
+  sources: [threat-ledger]
+
+- key: nothreat_median_share
+  title: Median public share of deals with no threat
+  sql: select 100 * v from comparison where k = 'no_threat.median_share'
+  unit: pct
+  digits: 0
+  label: a
+  sources: [threat-ledger]
+
+- key: threat_median_public
+  title: Median public money in deals that followed a threat
+  sql: select v * (select factor_2026 from cpi where year = 2025) from comparison where k = 'threat.median_public_m_2025'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [threat-ledger, fred-cpiaucns]
+
+- key: nothreat_median_public
+  title: Median public money in deals with no threat
+  sql: select v * (select factor_2026 from cpi where year = 2025) from comparison where k = 'no_threat.median_public_m_2025'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [threat-ledger, fred-cpiaucns]
+
+- key: p_share
+  title: Chance of a difference in public share at least this large if threats made no difference
+  sql: select v from comparison where k = 'p_share'
+  unit: number
+  digits: 2
+  basis: two-sided Mann-Whitney U test
+  label: a
+  sources: [threat-ledger]
+
+- key: p_dollars
+  title: The same test for public money
+  sql: select v from comparison where k = 'p_dollars'
+  unit: number
+  digits: 2
+  basis: two-sided Mann-Whitney U test
+  label: a
+  sources: [threat-ledger]
+
+# ------------------------------------------------------------------ leases
+- key: leases_by_2036
+  title: Current arena leases that end by 2036
+  sql: select count(*) from leases where term_end_year <= 2036
+  unit: count
+  label: a
+  sources: [ledger]
+  sources_sql: select source_id from lease_sources l join leases using (team) where term_end_year <= 2036 order by term_end_year, team, ord
+
+- key: leases_by_2031
+  title: Leases that end by 2031
+  sql: select count(*) from leases where term_end_year <= 2031
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: first_lease_end
+  title: Year the first current lease ends
+  sql: select min(term_end_year) from leases
+  unit: year
+  label: a
+  sources: [ledger]
+
+- key: okc_exit_penalty
+  title: Oklahoma City's early-exit penalties
+  value: 1000
+  evidence: {file: data/authorities/lease_clock.csv, where: {team: OKC}, column: outs_penalties_notes, contains: 'more than $1B'}
+  unit: usd_m
+  digits: 0
+  basis: nominal; more than
+  label: c
+  sources_sql: select source_id from lease_sources where team = 'OKC' order by ord
+
+- key: mil_exit_penalty
+  title: Milwaukee's non-relocation damages in the first year of the lease
+  value: 553
+  evidence: {file: data/authorities/lease_clock.csv, where: {team: MIL}, column: outs_penalties_notes, contains: 'at least $553M in year 1'}
+  unit: usd_m
+  basis: nominal; at least
+  label: c
+  sources_sql: select source_id from lease_sources where team = 'MIL' order by ord
+
+- key: ind_exit_penalty
+  title: What the Pacers owe if they stop playing home games at the Fieldhouse
+  value: 750
+  evidence: {file: data/authorities/lease_clock.csv, where: {team: IND}, column: outs_penalties_notes, contains: 'up to $750M'}
+  unit: usd_m
+  basis: nominal; up to
+  label: b
+  sources_sql: select source_id from lease_sources where team = 'IND' order by ord
+
+# ------------------------------------------------------------------ how this was made
+- key: cpi_base
+  title: 2026 CPI-U base (January-August average)
+  sql: select cpi from cpi where year = 2026
+  unit: number
+  digits: 3
+  label: b/a
+  sources: [fred-cpiaucns]
+
+- key: items_n
+  title: Money rows in the ledger
+  sql: select count(*) from items
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: sources_n
+  title: Sources in the bibliography
+  sql: select count(*) from sources
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: sources_government
+  title: Government sources
+  sql: select count(*) from sources where origin = 'government'
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: sources_court
+  title: Court sources
+  sql: select count(*) from sources where origin = 'court'
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: sources_team
+  title: Team or league sources
+  sql: select count(*) from sources where origin = 'team_or_league'
+  unit: count
+  label: a
+  sources: [ledger]
+
+- key: sources_independent
+  title: Independent sources
+  sql: select count(*) from sources where origin = 'independent'
+  unit: count
+  label: a
+  sources: [ledger]

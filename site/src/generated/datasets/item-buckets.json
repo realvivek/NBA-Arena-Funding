@@ -1,0 +1,619 @@
+{
+ "id": "item-buckets",
+ "title": "Public money in each item by funding stream",
+ "sources": [
+  "ledger"
+ ],
+ "columns": [
+  "item_id",
+  "team",
+  "bucket",
+  "payer",
+  "public_nominal_m",
+  "public_2026_m"
+ ],
+ "rows": [
+  {
+   "item_id": "ATL-construction",
+   "team": "ATL",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 62.5,
+   "public_2026_m": 124.439207
+  },
+  {
+   "item_id": "ATL-renovation-1",
+   "team": "ATL",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 110.0,
+   "public_2026_m": 145.285139
+  },
+  {
+   "item_id": "ATL-renovation-1",
+   "team": "ATL",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 32.5,
+   "public_2026_m": 42.925155
+  },
+  {
+   "item_id": "BKN-construction",
+   "team": "BKN",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 305.0,
+   "public_2026_m": 440.581749
+  },
+  {
+   "item_id": "BKN-construction",
+   "team": "BKN",
+   "bucket": "land",
+   "payer": "other",
+   "public_nominal_m": 10.0,
+   "public_2026_m": 14.445303
+  },
+  {
+   "item_id": "CHA-construction",
+   "team": "CHA",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 170.0,
+   "public_2026_m": 288.703633
+  },
+  {
+   "item_id": "CHA-renovation-1",
+   "team": "CHA",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 33.5,
+   "public_2026_m": 46.931803
+  },
+  {
+   "item_id": "CHA-renovation-2",
+   "team": "CHA",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 215.0,
+   "public_2026_m": 227.314134
+  },
+  {
+   "item_id": "CLE-construction",
+   "team": "CLE",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 120.0,
+   "public_2026_m": 268.501569
+  },
+  {
+   "item_id": "CLE-renovation-1",
+   "team": "CLE",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 70.0,
+   "public_2026_m": 92.45418
+  },
+  {
+   "item_id": "CLE-renovation-2",
+   "team": "CLE",
+   "bucket": "sin",
+   "payer": "residents",
+   "public_nominal_m": 40.5,
+   "public_2026_m": 52.539226
+  },
+  {
+   "item_id": "CLE-renovation-3",
+   "team": "CLE",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 18.53,
+   "public_2026_m": 19.089013
+  },
+  {
+   "item_id": "DAL-construction",
+   "team": "DAL",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 125.0,
+   "public_2026_m": 234.131712
+  },
+  {
+   "item_id": "DEN-construction",
+   "team": "DEN",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 36.5,
+   "public_2026_m": 72.672497
+  },
+  {
+   "item_id": "DEN-construction",
+   "team": "DEN",
+   "bucket": "infra",
+   "payer": "other",
+   "public_nominal_m": 4.5,
+   "public_2026_m": 8.959623
+  },
+  {
+   "item_id": "DET-construction",
+   "team": "DET",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 286.0,
+   "public_2026_m": 386.968009
+  },
+  {
+   "item_id": "HOU-construction",
+   "team": "HOU",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 175.0,
+   "public_2026_m": 315.504547
+  },
+  {
+   "item_id": "HOU-construction",
+   "team": "HOU",
+   "bucket": "infra",
+   "payer": "other",
+   "public_nominal_m": 20.0,
+   "public_2026_m": 36.057663
+  },
+  {
+   "item_id": "HOU-renovation-1",
+   "team": "HOU",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 95.0,
+   "public_2026_m": 95.0
+  },
+  {
+   "item_id": "IND-construction",
+   "team": "IND",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 79.0,
+   "public_2026_m": 157.291158
+  },
+  {
+   "item_id": "IND-renovation-1",
+   "team": "IND",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 147.6,
+   "public_2026_m": 180.656082
+  },
+  {
+   "item_id": "IND-renovation-1",
+   "team": "IND",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 25.0,
+   "public_2026_m": 30.59893
+  },
+  {
+   "item_id": "IND-renovation-1",
+   "team": "IND",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 122.4,
+   "public_2026_m": 149.812361
+  },
+  {
+   "item_id": "MEM-construction",
+   "team": "MEM",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 12.0,
+   "public_2026_m": 21.070491
+  },
+  {
+   "item_id": "MEM-construction",
+   "team": "MEM",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 32.0,
+   "public_2026_m": 56.187975
+  },
+  {
+   "item_id": "MEM-construction",
+   "team": "MEM",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 206.0,
+   "public_2026_m": 361.710089
+  },
+  {
+   "item_id": "MEM-renovation-1",
+   "team": "MEM",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 80.0,
+   "public_2026_m": 82.41344
+  },
+  {
+   "item_id": "MEM-renovation-2",
+   "team": "MEM",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 320.0,
+   "public_2026_m": 320.0
+  },
+  {
+   "item_id": "MEM-renovation-2",
+   "team": "MEM",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 150.0,
+   "public_2026_m": 150.0
+  },
+  {
+   "item_id": "MIA-construction",
+   "team": "MIA",
+   "bucket": "land",
+   "payer": "other",
+   "public_nominal_m": 37.6,
+   "public_2026_m": 74.862627
+  },
+  {
+   "item_id": "MIL-construction",
+   "team": "MIL",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 94.9,
+   "public_2026_m": 125.341452
+  },
+  {
+   "item_id": "MIL-construction",
+   "team": "MIL",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 108.1,
+   "public_2026_m": 142.775669
+  },
+  {
+   "item_id": "MIL-construction",
+   "team": "MIL",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 47.0,
+   "public_2026_m": 62.076378
+  },
+  {
+   "item_id": "MIN-construction",
+   "team": "MIN",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 20.0,
+   "public_2026_m": 50.766815
+  },
+  {
+   "item_id": "MIN-construction",
+   "team": "MIN",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 3.0,
+   "public_2026_m": 7.615022
+  },
+  {
+   "item_id": "MIN-purchase",
+   "team": "MIN",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 54.6,
+   "public_2026_m": 118.83441
+  },
+  {
+   "item_id": "MIN-renovation-1",
+   "team": "MIN",
+   "bucket": "sales",
+   "payer": "residents",
+   "public_nominal_m": 74.0,
+   "public_2026_m": 100.12459
+  },
+  {
+   "item_id": "NOP-construction",
+   "team": "NOP",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 114.0,
+   "public_2026_m": 226.977114
+  },
+  {
+   "item_id": "NOP-renovation-1",
+   "team": "NOP",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 9.957659,
+   "public_2026_m": 17.952495
+  },
+  {
+   "item_id": "NOP-renovation-2",
+   "team": "NOP",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 2.59931,
+   "public_2026_m": 4.414296
+  },
+  {
+   "item_id": "NOP-renovation-3",
+   "team": "NOP",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 2.146013,
+   "public_2026_m": 3.432664
+  },
+  {
+   "item_id": "NOP-renovation-4",
+   "team": "NOP",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 1.799818,
+   "public_2026_m": 2.599892
+  },
+  {
+   "item_id": "NOP-renovation-5",
+   "team": "NOP",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 2.571429,
+   "public_2026_m": 3.96107
+  },
+  {
+   "item_id": "NOP-renovation-6",
+   "team": "NOP",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 50.0,
+   "public_2026_m": 71.183793
+  },
+  {
+   "item_id": "OKC-construction",
+   "team": "OKC",
+   "bucket": "sales",
+   "payer": "residents",
+   "public_nominal_m": 89.2,
+   "public_2026_m": 164.467877
+  },
+  {
+   "item_id": "OKC-project",
+   "team": "OKC",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 60.0,
+   "public_2026_m": 60.0
+  },
+  {
+   "item_id": "OKC-project",
+   "team": "OKC",
+   "bucket": "sales",
+   "payer": "residents",
+   "public_nominal_m": 850.0,
+   "public_2026_m": 850.0
+  },
+  {
+   "item_id": "OKC-renovation-1",
+   "team": "OKC",
+   "bucket": "sales",
+   "payer": "residents",
+   "public_nominal_m": 82.6,
+   "public_2026_m": 127.692351
+  },
+  {
+   "item_id": "ORL-construction",
+   "team": "ORL",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 270.0,
+   "public_2026_m": 410.661282
+  },
+  {
+   "item_id": "ORL-construction",
+   "team": "ORL",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 141.0,
+   "public_2026_m": 214.456447
+  },
+  {
+   "item_id": "ORL-construction",
+   "team": "ORL",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 19.0,
+   "public_2026_m": 28.898387
+  },
+  {
+   "item_id": "ORL-renovation-1",
+   "team": "ORL",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 226.0,
+   "public_2026_m": 226.0
+  },
+  {
+   "item_id": "PHX-construction",
+   "team": "PHX",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 35.0,
+   "public_2026_m": 82.726724
+  },
+  {
+   "item_id": "PHX-renovation-1",
+   "team": "PHX",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 150.0,
+   "public_2026_m": 192.218546
+  },
+  {
+   "item_id": "PHX-renovation-2",
+   "team": "PHX",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 25.0,
+   "public_2026_m": 25.0
+  },
+  {
+   "item_id": "POR-construction",
+   "team": "POR",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 34.5,
+   "public_2026_m": 75.087677
+  },
+  {
+   "item_id": "POR-purchase",
+   "team": "POR",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 7.13,
+   "public_2026_m": 7.538371
+  },
+  {
+   "item_id": "POR-renovation-1",
+   "team": "POR",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 365.0,
+   "public_2026_m": 365.0
+  },
+  {
+   "item_id": "POR-renovation-2",
+   "team": "POR",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 88.0,
+   "public_2026_m": 88.0
+  },
+  {
+   "item_id": "POR-renovation-3",
+   "team": "POR",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 120.0,
+   "public_2026_m": 120.0
+  },
+  {
+   "item_id": "SAC-construction",
+   "team": "SAC",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 2.7,
+   "public_2026_m": 3.731012
+  },
+  {
+   "item_id": "SAC-construction",
+   "team": "SAC",
+   "bucket": "leaserev",
+   "payer": "residents",
+   "public_nominal_m": 220.4,
+   "public_2026_m": 304.561092
+  },
+  {
+   "item_id": "SAS-construction",
+   "team": "SAS",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 159.9,
+   "public_2026_m": 294.825265
+  },
+  {
+   "item_id": "SAS-project",
+   "team": "SAS",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 311.0,
+   "public_2026_m": 311.0
+  },
+  {
+   "item_id": "SAS-project-pending",
+   "team": "SAS",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 60.0,
+   "public_2026_m": 60.0
+  },
+  {
+   "item_id": "SAS-project-pending",
+   "team": "SAS",
+   "bucket": "mixed",
+   "payer": "other",
+   "public_nominal_m": 489.0,
+   "public_2026_m": 489.0
+  },
+  {
+   "item_id": "SAS-renovation-1",
+   "team": "SAS",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 85.0,
+   "public_2026_m": 118.939599
+  },
+  {
+   "item_id": "UTA-project",
+   "team": "UTA",
+   "bucket": "sales",
+   "payer": "residents",
+   "public_nominal_m": 375.0,
+   "public_2026_m": 375.0
+  },
+  {
+   "item_id": "UTA-renovation-2",
+   "team": "UTA",
+   "bucket": "tif",
+   "payer": "residents",
+   "public_nominal_m": 22.7,
+   "public_2026_m": 22.7
+  },
+  {
+   "item_id": "UTA-renovation-3",
+   "team": "UTA",
+   "bucket": "sales",
+   "payer": "residents",
+   "public_nominal_m": 525.0,
+   "public_2026_m": 525.0
+  },
+  {
+   "item_id": "WAS-construction",
+   "team": "WAS",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 38.3,
+   "public_2026_m": 79.134467
+  },
+  {
+   "item_id": "WAS-construction",
+   "team": "WAS",
+   "bucket": "land",
+   "payer": "other",
+   "public_nominal_m": 37.2,
+   "public_2026_m": 76.861676
+  },
+  {
+   "item_id": "WAS-purchase",
+   "team": "WAS",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 87.5,
+   "public_2026_m": 92.511566
+  },
+  {
+   "item_id": "WAS-renovation-1",
+   "team": "WAS",
+   "bucket": "tourist",
+   "payer": "visitors",
+   "public_nominal_m": 50.0,
+   "public_2026_m": 79.977696
+  },
+  {
+   "item_id": "WAS-renovation-2",
+   "team": "WAS",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 427.5,
+   "public_2026_m": 427.5
+  }
+ ],
+ "note": "",
+ "method": "select b.item_id, b.team, b.bucket, g.payer, b.public_nominal_m, b.public_2026_m from buckets b join bucket_groups g using (bucket) order by b.team, b.item_id, g.ord"
+}

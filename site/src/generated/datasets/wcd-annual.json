@@ -1,0 +1,66 @@
+{
+ "id": "wcd-annual",
+ "title": "Wisconsin Center District taxes by source",
+ "sources": [
+  "wi-dor-expo-tax",
+  "wi-lfb-informational-paper-18"
+ ],
+ "columns": [
+  "year",
+  "basic_room",
+  "additional_room",
+  "food_beverage",
+  "car_rental",
+  "total",
+  "source"
+ ],
+ "rows": [
+  {
+   "year": "2019",
+   "basic_room": null,
+   "additional_room": null,
+   "food_beverage": null,
+   "car_rental": null,
+   "total": "38500000",
+   "source": "LFB Informational Paper 18 (Jan 2021)"
+  },
+  {
+   "year": "2023",
+   "basic_room": "10227644.38",
+   "additional_room": "17372208.29",
+   "food_beverage": "14625261.45",
+   "car_rental": "3329214.56",
+   "total": "45554328.68",
+   "source": "revenue.wi.gov/DORReports/Expo-tax-distributions.pdf"
+  },
+  {
+   "year": "2024",
+   "basic_room": "11228592.44",
+   "additional_room": "19154163.49",
+   "food_beverage": "15001152.19",
+   "car_rental": "3623691.97",
+   "total": "49007600.09",
+   "source": "same"
+  },
+  {
+   "year": "2025",
+   "basic_room": "11323832.81",
+   "additional_room": "19445351.11",
+   "food_beverage": "15660996.76",
+   "car_rental": "3537239.25",
+   "total": "49967419.95",
+   "source": "same"
+  },
+  {
+   "year": "2026 Jan-Sep",
+   "basic_room": "7809225.23",
+   "additional_room": "13460582.91",
+   "food_beverage": "11551788.58",
+   "car_rental": "2668734.52",
+   "total": "35490331.28",
+   "source": "same (2025 Jan-Sep = 35,017,794.32)"
+  }
+ ],
+ "note": "",
+ "method": "select year, basic_room, additional_room, food_beverage, car_rental, total, source from wcd_annual order by year"
+}

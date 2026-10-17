@@ -1,0 +1,377 @@
+{
+ "deals": [
+  {
+   "deal": "MIN Target Center purchase",
+   "flags": "explicit;league opposed",
+   "group": "T",
+   "id": "E01",
+   "public_m": 48,
+   "public_m_2025": 104.3,
+   "share": null,
+   "total_m": null,
+   "year": 1994
+  },
+  {
+   "deal": "MIA AmericanAirlines Arena (land)",
+   "flags": "explicit; + $6.4M/yr county operating (not in capital)",
+   "group": "T",
+   "id": "E03",
+   "public_m": 38,
+   "public_m_2025": 78.0,
+   "share": 0.15139442231075698,
+   "total_m": 251,
+   "year": 1996
+  },
+  {
+   "deal": "HOU Toyota Center",
+   "flags": "explicit;league-backed",
+   "group": "T",
+   "id": "E07",
+   "public_m": 182,
+   "public_m_2025": 340.3,
+   "share": 0.774468085106383,
+   "total_m": 235,
+   "year": 2000
+  },
+  {
+   "deal": "ORL Amway Center",
+   "flags": "implied;66-month lag",
+   "group": "T",
+   "id": "E10",
+   "public_m": 430,
+   "public_m_2025": 667.9,
+   "share": 0.8958333333333334,
+   "total_m": 480,
+   "year": 2007
+  },
+  {
+   "deal": "NOH arena upgrades",
+   "flags": "implied;league-owned team",
+   "group": "T",
+   "id": "E15",
+   "public_m": 50,
+   "public_m_2025": 70.1,
+   "share": 1.0,
+   "total_m": 50,
+   "year": 2012
+  },
+  {
+   "deal": "SAC Golden 1 Center",
+   "flags": "explicit;league opposed move",
+   "group": "T",
+   "id": "E17",
+   "public_m": 255,
+   "public_m_2025": 346.9,
+   "share": 0.5029585798816568,
+   "total_m": 507,
+   "year": 2014
+  },
+  {
+   "deal": "MIL Fiserv Forum",
+   "flags": "explicit;league-backed",
+   "group": "T",
+   "id": "E18",
+   "public_m": 250,
+   "public_m_2025": 339.7,
+   "share": 0.4770082045411181,
+   "total_m": 524.1,
+   "year": 2015
+  },
+  {
+   "deal": "PHX arena renovation",
+   "flags": "explicit;disputed",
+   "group": "T",
+   "id": "E19",
+   "public_m": 150,
+   "public_m_2025": 188.9,
+   "share": 0.6521739130434783,
+   "total_m": 230,
+   "year": 2019
+  },
+  {
+   "deal": "WAS Capital One Arena",
+   "flags": "explicit",
+   "group": "T",
+   "id": "E21",
+   "public_m": 515,
+   "public_m_2025": 528.6,
+   "share": 0.64375,
+   "total_m": 800,
+   "year": 2024
+  },
+  {
+   "deal": "POR Moda Center (state)",
+   "flags": "implied;weak;pending local",
+   "group": "T",
+   "id": "E22",
+   "public_m": 365,
+   "public_m_2025": 356.2,
+   "share": 0.6083333333333333,
+   "total_m": 600,
+   "year": 2026
+  },
+  {
+   "deal": "SEA KeyArena renovation",
+   "flags": "none",
+   "group": "N",
+   "id": "E02",
+   "public_m": 74.5,
+   "public_m_2025": 166.0,
+   "share": 0.7801047120418848,
+   "total_m": 95.5,
+   "year": 1993
+  },
+  {
+   "deal": "DAL American Airlines Center",
+   "flags": "unclear",
+   "group": "N",
+   "id": "E05",
+   "public_m": 125,
+   "public_m_2025": 246.9,
+   "share": 0.2976190476190476,
+   "total_m": 420,
+   "year": 1998
+  },
+  {
+   "deal": "SAS SBC Center",
+   "flags": "unclear",
+   "group": "N",
+   "id": "E06",
+   "public_m": 146.5,
+   "public_m_2025": 283.2,
+   "share": 0.8371428571428572,
+   "total_m": 175,
+   "year": 1999
+  },
+  {
+   "deal": "SAS AT&T Center renovation",
+   "flags": "none",
+   "group": "N",
+   "id": "E25",
+   "public_m": 85,
+   "public_m_2025": 115.5,
+   "share": 0.8374384236453202,
+   "total_m": 101.5,
+   "year": 2015
+  },
+  {
+   "deal": "MIN Target Center renovation",
+   "flags": "none",
+   "group": "N",
+   "id": "E26",
+   "public_m": 74,
+   "public_m_2025": 99.3,
+   "share": 0.5285714285714286,
+   "total_m": 140,
+   "year": 2016
+  },
+  {
+   "deal": "ATL Philips Arena renovation",
+   "flags": "none",
+   "group": "N",
+   "id": "E27",
+   "public_m": 142.5,
+   "public_m_2025": 191.2,
+   "share": 0.7402597402597403,
+   "total_m": 192.5,
+   "year": 2016
+  },
+  {
+   "deal": "CLE Q transformation",
+   "flags": "none",
+   "group": "N",
+   "id": "E28",
+   "public_m": 70,
+   "public_m_2025": 92.0,
+   "share": 0.5,
+   "total_m": 140,
+   "year": 2017
+  },
+  {
+   "deal": "IND Fieldhouse renovation",
+   "flags": "none",
+   "group": "N",
+   "id": "E29",
+   "public_m": 295,
+   "public_m_2025": 371.5,
+   "share": 0.8194444444444444,
+   "total_m": 360,
+   "year": 2019
+  },
+  {
+   "deal": "CHA Spectrum Center + practice",
+   "flags": "none",
+   "group": "N",
+   "id": "E30",
+   "public_m": 275,
+   "public_m_2025": 302.5,
+   "share": null,
+   "total_m": null,
+   "year": 2022
+  },
+  {
+   "deal": "OKC new arena",
+   "flags": "official_cited",
+   "group": "N",
+   "id": "E23",
+   "public_m": 900,
+   "public_m_2025": 951.1,
+   "share": 0.9473684210526315,
+   "total_m": 950,
+   "year": 2023
+  },
+  {
+   "deal": "UTA Delta Center (sales tax)",
+   "flags": "none",
+   "group": "N",
+   "id": "E31",
+   "public_m": 525,
+   "public_m_2025": 538.9,
+   "share": null,
+   "total_m": null,
+   "year": 2024
+  },
+  {
+   "deal": "ORL Kia Center package",
+   "flags": "none",
+   "group": "N",
+   "id": "E32",
+   "public_m": 226,
+   "public_m_2025": 232.0,
+   "share": 1.0,
+   "total_m": 226,
+   "year": 2024
+  },
+  {
+   "deal": "SAS new arena (county binding; share uses city term sheet)",
+   "flags": "none;share 800/1300 planned",
+   "group": "N",
+   "id": "E24",
+   "public_m": 311,
+   "public_m_2025": 311.0,
+   "share": 0.6153846153846154,
+   "total_m": 1300,
+   "year": 2025
+  },
+  {
+   "deal": "HOU Toyota Center overhaul",
+   "flags": "none",
+   "group": "N",
+   "id": "E33",
+   "public_m": 95,
+   "public_m_2025": 92.7,
+   "share": 0.5277777777777778,
+   "total_m": 180,
+   "year": 2026
+  }
+ ],
+ "episodes_explicit_or_implied": 20,
+ "lag_median": 11.15,
+ "lag_months": [
+  {
+   "id": "E19",
+   "months": 1.4,
+   "team": "PHX Suns"
+  },
+  {
+   "id": "E01",
+   "months": 2.9,
+   "team": "MIN Timberwolves"
+  },
+  {
+   "id": "E21",
+   "months": 3.6,
+   "team": "WAS Wizards (and NHL Capitals)"
+  },
+  {
+   "id": "E03",
+   "months": 4.7,
+   "team": "MIA Heat"
+  },
+  {
+   "id": "E22",
+   "months": 6.7,
+   "team": "POR Trail Blazers"
+  },
+  {
+   "id": "E07",
+   "months": 7.0,
+   "team": "HOU Rockets"
+  },
+  {
+   "id": "E15",
+   "months": 15.3,
+   "team": "NOH Hornets (NBA-owned)"
+  },
+  {
+   "id": "E18",
+   "months": 15.7,
+   "team": "MIL Bucks"
+  },
+  {
+   "id": "E17",
+   "months": 15.9,
+   "team": "SAC Kings (Seattle sale)"
+  },
+  {
+   "id": "E20",
+   "months": 21.6,
+   "team": "MEM Grizzlies"
+  },
+  {
+   "id": "E14",
+   "months": 24.1,
+   "team": "IND Pacers"
+  },
+  {
+   "id": "E10",
+   "months": 66.4,
+   "team": "ORL Magic"
+  }
+ ],
+ "lag_within_24": 10,
+ "no_new_money": [
+  "E11",
+  "E12",
+  "E16"
+ ],
+ "no_threat": {
+  "mean_public_m_2025": 285.27142857142854,
+  "mean_share": 0.7025926223283123,
+  "median_public_m_2025": 239.45,
+  "median_share": 0.7601822261508125,
+  "n": 14,
+  "n_share": 12
+ },
+ "p_dollars": 0.7034993180411209,
+ "p_share": 0.522296186933991,
+ "same_city_money": [
+  "E01",
+  "E03",
+  "E04",
+  "E07",
+  "E10",
+  "E14",
+  "E15",
+  "E17",
+  "E18",
+  "E19",
+  "E20",
+  "E21",
+  "E22"
+ ],
+ "team_left": [
+  "E08",
+  "E09",
+  "E13",
+  "E36"
+ ],
+ "threat": {
+  "mean_public_m_2025": 302.09,
+  "mean_share": 0.6339910968388955,
+  "median_public_m_2025": 340.0,
+  "median_share": 0.64375,
+  "n": 10,
+  "n_share": 9
+ }
+}

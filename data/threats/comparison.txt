@@ -12,7 +12,7 @@ id | year | deal | group | public $M nominal | 2025$ | share | flags
 E02 | 1993 | SEA KeyArena renovation | N | 74.5 | 166 | 78% | none
 E05 | 1998 | DAL American Airlines Center | N | 125.0 | 247 | 30% | unclear
 E06 | 1999 | SAS SBC Center | N | 146.5 | 283 | 84% | unclear
-E25 | 2014 | SAS AT&T Center renovation | N | 85.0 | 116 | 84% | none
+E25 | 2015 | SAS AT&T Center renovation | N | 85.0 | 116 | 84% | none
 E26 | 2016 | MIN Target Center renovation | N | 74.0 | 99 | 53% | none
 E27 | 2016 | ATL Philips Arena renovation | N | 142.5 | 191 | 74% | none
 E28 | 2017 | CLE Q transformation | N | 70.0 | 92 | 50% | none

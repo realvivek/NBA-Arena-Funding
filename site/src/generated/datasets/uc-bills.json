@@ -1,0 +1,208 @@
+{
+ "id": "uc-bills",
+ "title": "United Center property-tax bills, with and without the 1989 valuation formula",
+ "sources": [
+  "uc-formula-method",
+  "ptaxsim-2024",
+  "ctu-2013",
+  "datacatalog-uzyt-m557",
+  "cookcountytreasurer-pappasportalnewsletter",
+  "ilga-003502000k10-220"
+ ],
+ "columns": [
+  "tax_year",
+  "period",
+  "paid_m",
+  "without_formula_m",
+  "without_formula_low_m",
+  "label"
+ ],
+ "rows": [
+  {
+   "tax_year": 2002,
+   "period": "formula",
+   "paid_m": 1.58414,
+   "without_formula_m": 5.804939,
+   "without_formula_low_m": 5.052975,
+   "label": "c"
+  },
+  {
+   "tax_year": 2003,
+   "period": "formula",
+   "paid_m": 1.698594,
+   "without_formula_m": 5.112757,
+   "without_formula_low_m": 4.450457,
+   "label": "c"
+  },
+  {
+   "tax_year": 2004,
+   "period": "formula",
+   "paid_m": 1.425727,
+   "without_formula_m": 5.226329,
+   "without_formula_low_m": 4.549317,
+   "label": "c"
+  },
+  {
+   "tax_year": 2005,
+   "period": "formula",
+   "paid_m": 1.0,
+   "without_formula_m": 5.279542,
+   "without_formula_low_m": 4.595637,
+   "label": "c"
+  },
+  {
+   "tax_year": 2006,
+   "period": "formula",
+   "paid_m": 1.0,
+   "without_formula_m": 4.638377,
+   "without_formula_low_m": 4.037527,
+   "label": "b"
+  },
+  {
+   "tax_year": 2007,
+   "period": "formula",
+   "paid_m": 1.0,
+   "without_formula_m": 4.588858,
+   "without_formula_low_m": 3.994424,
+   "label": "b"
+  },
+  {
+   "tax_year": 2008,
+   "period": "formula",
+   "paid_m": 1.0,
+   "without_formula_m": 4.634901,
+   "without_formula_low_m": 4.034502,
+   "label": "b"
+  },
+  {
+   "tax_year": 2009,
+   "period": "formula",
+   "paid_m": 1.517726,
+   "without_formula_m": 5.038301,
+   "without_formula_low_m": 4.385646,
+   "label": "b"
+  },
+  {
+   "tax_year": 2010,
+   "period": "formula",
+   "paid_m": 1.343621,
+   "without_formula_m": 5.257639,
+   "without_formula_low_m": 4.576571,
+   "label": "b"
+  },
+  {
+   "tax_year": 2011,
+   "period": "formula",
+   "paid_m": 2.466956,
+   "without_formula_m": 5.235772,
+   "without_formula_low_m": 4.557537,
+   "label": "b"
+  },
+  {
+   "tax_year": 2012,
+   "period": "formula",
+   "paid_m": 2.816559,
+   "without_formula_m": 5.79797,
+   "without_formula_low_m": 5.046909,
+   "label": "b"
+  },
+  {
+   "tax_year": 2013,
+   "period": "formula",
+   "paid_m": 3.631281,
+   "without_formula_m": 5.876436,
+   "without_formula_low_m": 5.11521,
+   "label": "b"
+  },
+  {
+   "tax_year": 2014,
+   "period": "formula",
+   "paid_m": 4.567865,
+   "without_formula_m": 5.994813,
+   "without_formula_low_m": 5.218253,
+   "label": "b"
+  },
+  {
+   "tax_year": 2015,
+   "period": "formula",
+   "paid_m": 4.553969,
+   "without_formula_m": 5.920741,
+   "without_formula_low_m": 5.153776,
+   "label": "b"
+  },
+  {
+   "tax_year": 2016,
+   "period": "formula",
+   "paid_m": 4.667721,
+   "without_formula_m": 6.471398,
+   "without_formula_low_m": 5.633101,
+   "label": "b"
+  },
+  {
+   "tax_year": 2017,
+   "period": "after",
+   "paid_m": 6.979375,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  },
+  {
+   "tax_year": 2018,
+   "period": "after",
+   "paid_m": 7.009267,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  },
+  {
+   "tax_year": 2019,
+   "period": "after",
+   "paid_m": 7.129841,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  },
+  {
+   "tax_year": 2020,
+   "period": "after",
+   "paid_m": 6.909786,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  },
+  {
+   "tax_year": 2021,
+   "period": "after",
+   "paid_m": 5.674242,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  },
+  {
+   "tax_year": 2022,
+   "period": "after",
+   "paid_m": 5.804532,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  },
+  {
+   "tax_year": 2023,
+   "period": "after",
+   "paid_m": 5.954442,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  },
+  {
+   "tax_year": 2024,
+   "period": "after",
+   "paid_m": 10.146542,
+   "without_formula_m": null,
+   "without_formula_low_m": null,
+   "label": "b"
+  }
+ ],
+ "note": "Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.",
+ "method": "select tax_year, 'formula' as period, paid_with_floor / 1e6 as paid_m, cf_a_tax / 1e6 as without_formula_m, cf_b_tax / 1e6 as without_formula_low_m, rate_label as label from uc_formula union all select tax_year, 'after', bill / 1e6, null, null, label from uc_bills order by tax_year"
+}

@@ -24,7 +24,7 @@ D=[
  ('SEA KeyArena renovation','E02',1993,74.5,95.5,'N','none'),
  ('DAL American Airlines Center','E05',1998,125,420,'N','unclear'),
  ('SAS SBC Center','E06',1999,146.5,175,'N','unclear'),
- ('SAS AT&T Center renovation','E25',2014,85,101.5,'N','none'),
+ ('SAS AT&T Center renovation','E25',2015,85,101.5,'N','none'),
  ('MIN Target Center renovation','E26',2016,74,140,'N','none'),
  ('ATL Philips Arena renovation','E27',2016,142.5,192.5,'N','none'),
  ('CLE Q transformation','E28',2017,70,140,'N','none'),
@@ -117,4 +117,15 @@ out.append('  2) Little Caesars Arena / District Detroit (Pistons since 2017): D
 out.append('  3) American Airlines Center / Victory Park (Mavericks): public $185.3M ($125M arena + >$60M infrastructure); by 2006 the district was "less than half completed, and its taxable value about one-third, when compared with original outlooks" (Dallas Morning News, 2006-07-30).')
 out.append('  (Also: Oklahoma City 2008 arena tax collected $103.5M vs $121M projected; Kansas City arena still without an anchor tenant.)')
 open(OUT+'comparison.txt','w').write('\n'.join(out)+'\n')
+# machine-readable copy of the main results, for the site
+import json
+def stats(sel):
+    a=[r['public_m_2025'] for r in sel]; sh=[r['share'] for r in sel if r['share'] is not None]
+    return dict(n=len(a), median_public_m_2025=st.median(a), mean_public_m_2025=st.mean(a), n_share=len(sh), median_share=st.median(sh), mean_share=st.mean(sh))
+res=dict(deals=rows, threat=stats(T), no_threat=stats(N),
+         p_dollars=mannwhitneyu([r['public_m_2025'] for r in T],[r['public_m_2025'] for r in N],alternative='two-sided').pvalue,
+         p_share=mannwhitneyu([r['share'] for r in T if r['share'] is not None],[r['share'] for r in N if r['share'] is not None],alternative='two-sided').pvalue,
+         episodes_explicit_or_implied=len(th), same_city_money=same, team_left=left, no_new_money=nomoney,
+         lag_months=[dict(id=i,team=t,months=v) for i,t,v in sorted(lag,key=lambda z:z[2])], lag_median=st.median(lv), lag_within_24=sum(v<=24 for v in lv))
+json.dump(res, open(OUT+'comparison.json','w'), indent=1, sort_keys=True)
 print('\n'.join(out))

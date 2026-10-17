@@ -50,14 +50,15 @@ C. TOP 10 ARENAS BY PUBLIC MONEY (core, 2026$)
  9. HOU Toyota Center                      public    $447M | share  69.8% | constr 351.6 + acq 0 + reno 95.0 + ongoing 0
 10. CLE Rocket Arena                       public    $433M | share  64.7% | constr 268.5 + acq 0 + reno 164.1 + ongoing 0
 
-D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (14): GSW, LAC, BOS, NYK, CHI, LAL, DEN, PHI, TOR, BKN, DET, WAS, UTA, POR
+D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (public money under half of construction cost) (22): ATL, BOS, BKN, CHI, DAL, DEN, DET, GSW, IND, LAC, LAL, MIA, MIL, MIN, NYK, PHI, PHX, POR, SAC, TOR, UTA, WAS
 ------------------------------------------------------------------------------
-Construction: private $11.12B vs public $1.15B (9.4% public); plus public purchases $100M and public renovation $1.06B
-Core public money $2.31B of $16.61B total spending = 13.9%
-Excluding the three later public takeovers/rebuilds (WAS, UTA, POR): public $924M of $13.77B = 6.7%
-Mechanism split of their public capital money (2026$): General taxes / GO bonds / appropriations / state grants / public asset sales $1.05B (45%); Dedicated general sales tax $525M (23%); Tax increment & tax capture $482M (21%); Land contributed or sold below value $91M (4%); Hotel, car-rental, F&B, ticket $80M (3%); Public, mechanism split not documented $75M (3%); Infrastructure / parking / site work $9M (0%)
+Construction: private $13.83B vs public $2.53B (15.4% public); plus public purchases $219M and public renovation $1.92B
+Core public money $5.25B of $22.49B total spending = 23.3%
+Later bought or rebuilt with public money (7): WAS $600M, POR $581M, UTA $548M, IND $361M, MIN $219M, PHX $217M, ATL $188M = $2.71B, of which $573M pending
+Excluding those 7: public $2.21B of $16.85B = 13.1%
+Mechanism split of their public capital money (2026$): Hotel, car-rental, F&B, ticket $1.35B (29%); General taxes / GO bonds / appropriations / state grants / public asset sales $1.27B (27%); Tax increment & tax capture $745M (16%); Dedicated general sales tax $625M (13%); Lease-revenue bonds $305M (7%); Public, mechanism split not documented $202M (4%); Land contributed or sold below value $166M (4%); Infrastructure / parking / site work $9M (0%)
 Tax-exempt bonds behind privately built arenas: BKN: PILOT bonds $511M (2009; refunded 2016: $478.7M tax-exempt + $15M taxable); DET: MSF 2014A $250M tax-exempt (2014B $200M taxable authorized, $188.5M drawn, Olympia-paid); DDA 2018A refunding $287.4M; UTA: PID sales-tax bonds 2025A/B/C $900M tax-exempt; WAS: DC GO-funded $515M (tax status of specific bonds not confirmed). Federal PV cost of new-money issues (GDG method, tau .28): BKN $164M, DET $64M, UTA $264M, WAS $151M.
-Hidden public money still received:
+Other public money and tax breaks at arenas built and owned privately:
   BKN: City $205M (IBO) + State $100M (press) capital for land/infrastructure + MTA rail yard $10M (IBO arena share of the $50M bid gap), counted in core; $511M tax-exempt PILOT bonds (property taxes diverted to arena debt; expanded total); full property-tax exemption (would-be $99M/yr 2023 vs $39M PILOT)
   DET: $286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia rent-free
   WAS: 1997 public money $75.5M (GAO: District $61.5M for land, site and Metro match + $14M federal and WMATA); $50M 2007 TIF notes (arena ticket tax); 2024 $87.5M purchase + $427.5M renovation; property/possessory-interest tax exemption since construction, ~$10M/yr now, extended to 2050 ($312.7M FY2025-50 per OCFO)
@@ -82,7 +83,7 @@ Core public money .......................................... $9.30B
 = EXPANDED PUBLIC TOTAL .................................... >= $11.06B  (39.2% of a spending base that adds the tax breaks)
 Not added (future): DC extended property/possessory-interest tax exemption for Capital One Arena valued by OCFO at $49.8M FY2025-28 + $262.9M FY2029-50 = $312.7M (OCFO: "not financially necessary").
 Memo, not added: DEN Ball Arena seat-tax exemption, 1999-2023: about $96M nominal, from one unverified press figure (range in arena_ledger.csv tax_break_notes).
-Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, arena_tax file; new-money issues only, refundings excluded) = $1.32B - not added (different payer, overlapping with local bonds).
+Memo: federal cost of tax-exempt arena bonds (PV, GDG method, tau=0.28, arena_tax file; new-money issues only, refundings excluded) = $1.32B as a sum of issue-year present values, $1.91B with each issue's present value in 2026 dollars - not added (different payer, overlapping with local bonds).
 
 F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$)
 ------------------------------------------------------------------------------

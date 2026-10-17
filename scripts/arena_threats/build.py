@@ -233,8 +233,8 @@ add(id='E24',team='SAS Spurs',owners='Peter J. Holt / Julianna Hawn Holt (Spurs 
  label='c', notes='Ambiguous (Austin games) but no owner threat by the stated rule.')
 
 add(id='E25',team='SAS Spurs',owners='Peter M. Holt group',period='2014',threat_class='none',said_or_done='None documented.',alt_city='',league_role='none documented',
- money_after='Bexar County $85M of $101.5M AT&T Center renovation (2014-12-09); lease to 2032 with break fees up to $124M',money_usd_m=85,mechanism='County venue tax',vote='Commissioners Court',threat_date='',approval_date='2014-12-09',outcome='stayed',
- sources='https://www.bexar.org/Archive.aspx?ADID=1520 ; https://en.wikipedia.org/wiki/Frost_Bank_Center',label='b/c',notes='')
+ money_after='Bexar County $85M of $101.5M AT&T Center renovation (development agreement approved by Commissioners Court 2015-04-21); lease to 2032 with break fees up to $124M',money_usd_m=85,mechanism='County venue tax',vote='Commissioners Court',threat_date='',approval_date='2015-04-21',outcome='stayed',
+ sources='https://www.bexar.org/Archive.aspx?ADID=1520 (Bexar County release, April 22 2015: Commissioners Court approved the development agreement on Tuesday, April 21) ; https://en.wikipedia.org/wiki/Frost_Bank_Center',label='b/c',notes='The ledger earlier dated the approval 2014-12-09, a date not found in the cited sources; corrected to the county release (Oct. 17, 2026).')
 
 add(id='E26',team='MIN Timberwolves',owners='Glen Taylor',period='2015-2016',threat_class='none',said_or_done='None documented.',alt_city='',league_role='none documented',
  money_after='Target Center renovation: city $74M of ~$140M (final approval Mar 2016); team ~$58M; AEG ~$6M',money_usd_m=74,mechanism='City sales taxes redirected under 2012 Vikings stadium law',vote='City Council',threat_date='',approval_date='2016-03-15',outcome='stayed',
@@ -260,7 +260,7 @@ add(id='E30',team='CHA Hornets (current)',owners='Michael Jordan (seller 2023) -
 
 add(id='E31',team='UTA Jazz',owners='Ryan & Ashley Smith (Smith Entertainment Group)',period='2024',threat_class='none',said_or_done='None documented for the Jazz (district deal paired with the NHL team relocated from Arizona).',alt_city='',league_role='none documented',
  money_after='Utah SB 272 (2024) + Salt Lake City 0.5% sales tax: ~$900M over 30 yrs ($525M Delta Center, $375M district); referendum drive dropped 2024-10-04',money_usd_m=525,mechanism='City sales tax',vote='No public vote',threat_date='',approval_date='2024-10-04',outcome='stayed',
- sources='prior round r4_gov/out/arena_votes.csv (Utah News Dispatch; SL Tribune 2024-10-04)',label='c',notes='Arena privately owned -> public share n/a.')
+ sources='https://www.utah.gov/pmn/files/1261183.pdf (Capital City Revitalization Zone PID bond notice) ; https://bondbuyer.com/news/new-issuer-will-sell-bonds-for-salt-lake-city-arena-project ; https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years ; Utah News Dispatch and SL Tribune 2024-10-04 on the dropped referendum (prior round r4_gov/out/arena_votes.csv)',label='c',notes='Arena privately owned -> public share n/a.')
 
 add(id='E32',team='ORL Magic',owners='DeVos family',period='2024',threat_class='none',said_or_done='None documented.',alt_city='',league_role='none documented',
  money_after='$226M Orange County tourist-tax package for Kia Center (Nov 2024); Magic $0',money_usd_m=226,mechanism='Tourist development tax',vote='County/City (Nov 2024)',threat_date='',approval_date='2024-11-20',outcome='stayed',
@@ -307,7 +307,13 @@ for tid,team,txt in [('E41','BOS Celtics','TD Garden privately owned (Delaware N
                      ('E46','TOR Raptors','Scotiabank (Air Canada) Centre privately financed by MLSE (1999). No threat found.'),
                      ('E47','NOP Pelicans','2023-06-13 amendment extended Smoothie King Center term to 2029; state pays $3.65M/yr Quality-Jobs-equivalent FY2023-29 plus ongoing LSED entitlements (FY2027 budget $17.7M). No threat found.')]:
     add(id=tid,team=team,owners='',period='1990-2026',threat_class='none',said_or_done=txt,alt_city='',league_role='none documented',money_after='',money_usd_m='',mechanism='',vote='',threat_date='',approval_date='',outcome='stayed',
-        sources={'E42':'https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf','E47':'La. Senate Fiscal Services LSED FY26/FY27 presentations (prior round)'}.get(tid,'https://en.wikipedia.org (arena pages)'),label='c',notes='')
+        sources={'E41':'https://en.wikipedia.org/wiki/TD_Garden',
+                 'E42':'https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf',
+                 'E43':'https://en.wikipedia.org/wiki/Crypto.com_Arena',
+                 'E44':'https://encyclopedia.chicagohistory.org/pages/1285.html',
+                 'E45':'https://en.wikipedia.org/wiki/Ball_Arena',
+                 'E46':'https://www.scotiabankarena.com/venue-information/history',
+                 'E47':'https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf (LSED FY26 presentation) ; https://www.senate.la.gov/FiscalServices/Presentations/2026/01%20-%20124%20LSED%20FY%2027%20FINAL.pdf (LSED FY27 presentation)'}[tid],label='c',notes='')
 
 # lures without a team (context rows)
 add(id='E48',team='(lure) Kansas City',owners='AEG (operator)',period='2004-2007',threat_class='lure_only',said_or_done='Sprint (T-Mobile) Center built without a tenant; used as relocation leverage by others (e.g., NHL Penguins 2006-07). No NBA team came.',alt_city='Kansas City',league_role='',

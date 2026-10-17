@@ -1,0 +1,105 @@
+# Constraints added to the inferred table schemas in data/datapackage.json (written by pipeline/datapackage.py).
+# Field types for every CSV are inferred; the files the site reads get the rules below. Row rules that depend on
+# other columns (for example, a source URL on every row that shows a figure) are checked by pipeline/build.py.
+
+ledger/ledger_items.csv:
+  primaryKey: [item_id]
+  fields:
+    team: {type: string, constraints: {required: true, pattern: '^[A-Z]{3}$'}}
+    item_id: {type: string, constraints: {required: true, unique: true, pattern: '^[A-Z]{3}-[a-z]+(-[a-z0-9]+)*$'}}
+    kind: {type: string, constraints: {required: true, enum: [construction, purchase, renovation, ongoing, project]}}
+    year: {type: integer, constraints: {required: true, minimum: 1960, maximum: 2026}}
+    status: {type: string, constraints: {required: true}}
+    in_core: {type: string, constraints: {required: true, enum: ['Y', 'N']}}
+    spending_nominal_m: {type: number, constraints: {required: true, minimum: 0}}
+    public_nominal_m: {type: number, constraints: {required: true, minimum: 0}}
+    cpi_factor: {type: number, constraints: {required: true, minimum: 1}}
+    spending_2026_m: {type: number, constraints: {required: true, minimum: 0}}
+    public_2026_m: {type: number, constraints: {required: true, minimum: 0}}
+    public_label: {type: string, constraints: {required: true, pattern: '^[abc](/[abc])*( ; [abc](/[abc])*)*$'}}
+    cost_label: {type: string, constraints: {pattern: '^[abc](/[abc])*( ; [abc](/[abc])*)*$'}}
+    public_source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+
+ledger/ledger_buckets.csv:
+  fields:
+    item_id: {type: string, constraints: {required: true}}
+    bucket: {type: string, constraints: {required: true, enum: [general, sales, tourist, tif, leaserev, land, infra, sin, mixed]}}
+    public_nominal_m: {type: number, constraints: {required: true, minimum: 0}}
+    public_2026_m: {type: number, constraints: {required: true, minimum: 0}}
+
+ledger/arena_ledger.csv:
+  fields:
+    row_type: {type: string, constraints: {required: true, pattern: '^(current_arena|project.*)$'}}
+    team: {type: string, constraints: {required: true, pattern: '^[A-Z]{3}$'}}
+    arena: {type: string, constraints: {required: true}}
+    built_privately_majority: {type: string, constraints: {enum: ['Y', 'N']}}
+    construction_cost_label: {type: string, constraints: {pattern: '^[abc](/[abc])*$'}}
+    PUBLIC_TOTAL_2026_m: {type: number, constraints: {minimum: 0}}
+    public_share_pct: {type: number, constraints: {minimum: 0, maximum: 100}}
+
+ledger/households.csv:
+  fields:
+    team: {type: string, constraints: {required: true, pattern: '^[A-Z]{3}$'}}
+    geo_id: {type: string, constraints: {required: true, pattern: '^[0-9]{5}US[0-9]+$'}}
+    households: {type: integer, constraints: {required: true, minimum: 1}}
+    share: {type: number, constraints: {required: true, minimum: 0, maximum: 1}}
+    per_household_2026: {type: number, constraints: {required: true, minimum: 0}}
+
+threats/threat_ledger.csv:
+  primaryKey: [id]
+  fields:
+    id: {type: string, constraints: {required: true, unique: true, pattern: '^E[0-9]{2}$'}}
+    threat_class: {type: string, constraints: {required: true, enum: [explicit, implied, official_cited, lure_only, unclear, none]}}
+    sources: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+    label: {type: string, constraints: {required: true, pattern: '^[abcu].*'}}
+
+threats/left_behind.csv:
+  fields:
+    city: {type: string, constraints: {required: true, unique: true}}
+    sources: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+    label: {type: string, constraints: {required: true, pattern: '^[abcu].*'}}
+
+authorities/lease_clock.csv:
+  primaryKey: [team]
+  fields:
+    team: {type: string, constraints: {required: true, unique: true, pattern: '^[A-Z]{3}$'}}
+    term_end_year: {type: number, constraints: {minimum: 2026, maximum: 2100}}
+    label: {type: string, constraints: {required: true, pattern: '^[abcu].*'}}
+
+property_tax/united_center_formula_savings.csv:
+  primaryKey: [tax_year]
+  fields:
+    tax_year: {type: integer, constraints: {required: true, minimum: 2002, maximum: 2016}}
+    paid_with_floor: {type: integer, constraints: {required: true, minimum: 1000000}}
+    rate_label: {type: string, constraints: {required: true, enum: [b, c]}}
+
+property_tax/united_center_tax_bills_2017_2024.csv:
+  primaryKey: [tax_year]
+  fields:
+    tax_year: {type: integer, constraints: {required: true, minimum: 2017, maximum: 2024}}
+    bill: {type: integer, constraints: {required: true, minimum: 0}}
+    label: {type: string, constraints: {required: true, enum: [b]}}
+
+dedicated_taxes/slc_ccr_monthly.csv:
+  fields:
+    month: {type: string, constraints: {required: true, unique: true, pattern: '^20[0-9]{2}-[01][0-9]$'}}
+    slc_ccr_final_distribution_usd: {type: number, constraints: {required: true, minimum: 0}}
+
+tax_mechanisms/nba_arena_bond_federal_cost.csv:
+  fields:
+    tau: {type: number, constraints: {required: true, enum: [0.28, 0.35]}}
+    pv3_30yr_fed_loss_m: {type: number, constraints: {required: true, minimum: 0}}
+
+inputs/cpi/CPIAUCNS.csv:
+  primaryKey: [observation_date]
+  fields:
+    observation_date: {type: date, constraints: {required: true, unique: true}}
+    CPIAUCNS: {type: number}
+
+inputs/arena_coordinates.csv:
+  primaryKey: [team]
+  fields:
+    team: {type: string, constraints: {required: true, unique: true, pattern: '^[A-Z]{3}$'}}
+    lat: {type: number, constraints: {required: true, minimum: 24, maximum: 50}}
+    lon: {type: number, constraints: {required: true, minimum: -125, maximum: -66}}
+    source: {type: string, constraints: {required: true, pattern: '^https://en[.]wikipedia[.]org/wiki/.+'}}

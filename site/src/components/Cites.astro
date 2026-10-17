@@ -1,0 +1,25 @@
+---
+import { source, ORIGIN_LABEL } from '../lib/sources';
+interface Props {
+  ids: string[];
+  numbers: number[];
+}
+const { ids, numbers } = Astro.props;
+const shown = numbers.length <= 3 ? numbers.join(', ') : `${numbers.slice(0, 2).join(', ')} +${numbers.length - 2}`;
+---
+{ids.length > 0 && (
+  <details class="cites">
+    <summary aria-label={`${ids.length} ${ids.length === 1 ? 'source' : 'sources'} for this paragraph`}>[{shown}]</summary>
+    <ol class="cite-list">
+      {ids.map((id, i) => {
+        const s = source(id);
+        return (
+          <li value={numbers[i]}>
+            <a href={s.url} rel="noopener">{s.title}</a>, {s.publisher}{s.date !== 'n.d.' ? `, ${s.date}` : ''}
+            <span class="origin">{ORIGIN_LABEL[s.origin]}</span>
+          </li>
+        );
+      })}
+    </ol>
+  </details>
+)}

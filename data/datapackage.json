@@ -1,0 +1,3077 @@
+{
+ "name": "nba-arena-funding",
+ "title": "NBA arena funding ledgers",
+ "description": "Every CSV in data/. Field types are inferred; constraints for the files the site reads come from pipeline/schemas.yaml.",
+ "resources": [
+  {
+   "name": "authorities-evidence-quotes",
+   "type": "table",
+   "path": "authorities/evidence_quotes.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "document",
+      "type": "string"
+     },
+     {
+      "name": "local_file",
+      "type": "string"
+     },
+     {
+      "name": "pdf_page",
+      "type": "integer"
+     },
+     {
+      "name": "verbatim_snippet",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "authorities-indianapolis-cib-pacers-2014-2023",
+   "type": "table",
+   "path": "authorities/indianapolis_cib_pacers_2014_2023.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "fieldhouse_operating_reimbursements",
+      "type": "integer"
+     },
+     {
+      "name": "pacers_note_forgiveness",
+      "type": "number"
+     },
+     {
+      "name": "total",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "authorities-lease-clock",
+   "type": "table",
+   "path": "authorities/lease_clock.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "owner",
+      "type": "string"
+     },
+     {
+      "name": "term_end_year",
+      "type": "number",
+      "constraints": {
+       "minimum": 2026,
+       "maximum": 2100
+      }
+     },
+     {
+      "name": "term_and_nonrelocation",
+      "type": "string"
+     },
+     {
+      "name": "outs_penalties_notes",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[abcu].*"
+      }
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "ends_before_2032",
+      "type": "boolean"
+     },
+     {
+      "name": "ends_2032_2036",
+      "type": "boolean"
+     }
+    ],
+    "primaryKey": [
+     "team"
+    ]
+   }
+  },
+  {
+   "name": "authorities-net-public-cost",
+   "type": "table",
+   "path": "authorities/net_public_cost.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "owner",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "paid_to_team_$M",
+      "type": "number"
+     },
+     {
+      "name": "capital_annualized_$M",
+      "type": "number"
+     },
+     {
+      "name": "rent_and_offsets_$M",
+      "type": "number"
+     },
+     {
+      "name": "net_$M",
+      "type": "number"
+     },
+     {
+      "name": "net_per_home_game_$K",
+      "type": "number"
+     },
+     {
+      "name": "rank_basis",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "src",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "dedicated-taxes-cib-indy-taxes-2013-2022",
+   "type": "table",
+   "path": "dedicated_taxes/cib_indy_taxes_2013_2022.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "local_deposit_pledged",
+      "type": "integer"
+     },
+     {
+      "name": "state_deposit_pledged",
+      "type": "integer"
+     },
+     {
+      "name": "2009_new_tax_and_psda",
+      "type": "integer"
+     },
+     {
+      "name": "total",
+      "type": "integer"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "dedicated-taxes-drpid-slc-budget-extract",
+   "type": "table",
+   "path": "dedicated_taxes/drpid_slc_budget_extract.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "line",
+      "type": "string"
+     },
+     {
+      "name": "2025_actual",
+      "type": "integer"
+     },
+     {
+      "name": "2026_adopted",
+      "type": "integer"
+     },
+     {
+      "name": "2026_actual_thru_6_30",
+      "type": "integer"
+     },
+     {
+      "name": "2026_projected",
+      "type": "integer"
+     },
+     {
+      "name": "2027_proposed",
+      "type": "integer"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "dedicated-taxes-findings-table",
+   "type": "table",
+   "path": "dedicated_taxes/findings_table.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "stream",
+      "type": "string"
+     },
+     {
+      "name": "tax",
+      "type": "string"
+     },
+     {
+      "name": "promise_or_projection",
+      "type": "string"
+     },
+     {
+      "name": "actual_collections",
+      "type": "string"
+     },
+     {
+      "name": "key_gap_or_structure",
+      "type": "string"
+     },
+     {
+      "name": "backstop",
+      "type": "string"
+     },
+     {
+      "name": "who_pays",
+      "type": "string"
+     },
+     {
+      "name": "labels",
+      "type": "string"
+     },
+     {
+      "name": "sources",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "dedicated-taxes-slc-ccr-monthly",
+   "type": "table",
+   "path": "dedicated_taxes/slc_ccr_monthly.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "month",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^20[0-9]{2}-[01][0-9]$"
+      }
+     },
+     {
+      "name": "slc_ccr_final_distribution_usd",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "dedicated-taxes-wcd-expo-tax-annual",
+   "type": "table",
+   "path": "dedicated_taxes/wcd_expo_tax_annual.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "basic_room",
+      "type": "number"
+     },
+     {
+      "name": "additional_room",
+      "type": "number"
+     },
+     {
+      "name": "food_beverage",
+      "type": "number"
+     },
+     {
+      "name": "car_rental",
+      "type": "number"
+     },
+     {
+      "name": "total",
+      "type": "number"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "inputs-arena-coordinates",
+   "type": "table",
+   "path": "inputs/arena_coordinates.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "lat",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 24,
+       "maximum": 50
+      }
+     },
+     {
+      "name": "lon",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": -125,
+       "maximum": -66
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^https://en[.]wikipedia[.]org/wiki/.+"
+      }
+     }
+    ],
+    "primaryKey": [
+     "team"
+    ]
+   }
+  },
+  {
+   "name": "inputs-cpi-cpiaucns",
+   "type": "table",
+   "path": "inputs/cpi/CPIAUCNS.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "observation_date",
+      "type": "date",
+      "constraints": {
+       "required": true,
+       "unique": true
+      }
+     },
+     {
+      "name": "CPIAUCNS",
+      "type": "number"
+     }
+    ],
+    "primaryKey": [
+     "observation_date"
+    ]
+   }
+  },
+  {
+   "name": "inputs-cpi-excaus",
+   "type": "table",
+   "path": "inputs/cpi/EXCAUS.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "observation_date",
+      "type": "date"
+     },
+     {
+      "name": "EXCAUS",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "labor-contract-cba-arena-clauses",
+   "type": "table",
+   "path": "labor_contract/cba_arena_clauses.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "treatment",
+      "type": "string"
+     },
+     {
+      "name": "section",
+      "type": "string"
+     },
+     {
+      "name": "pdf_page",
+      "type": "integer"
+     },
+     {
+      "name": "printed_page",
+      "type": "integer"
+     },
+     {
+      "name": "provision",
+      "type": "string"
+     },
+     {
+      "name": "application_note",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "labor-contract-naming-rights-public-arenas",
+   "type": "table",
+   "path": "labor_contract/naming_rights_public_arenas.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "public_owner",
+      "type": "string"
+     },
+     {
+      "name": "sponsor",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "deal_terms",
+      "type": "string"
+     },
+     {
+      "name": "annual_to_team_usd_m",
+      "type": "number"
+     },
+     {
+      "name": "annual_to_public_usd_m",
+      "type": "number"
+     },
+     {
+      "name": "recipient",
+      "type": "string"
+     },
+     {
+      "name": "related_party",
+      "type": "string"
+     },
+     {
+      "name": "basis",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "labor-contract-pelicans-lsed-payments",
+   "type": "table",
+   "path": "labor_contract/pelicans_lsed_payments.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "fiscal_year",
+      "type": "integer"
+     },
+     {
+      "name": "item",
+      "type": "string"
+     },
+     {
+      "name": "amount_usd",
+      "type": "integer"
+     },
+     {
+      "name": "cba_clause",
+      "type": "string"
+     },
+     {
+      "name": "bri_view",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "labor-contract-renovation-treadmill",
+   "type": "table",
+   "path": "labor_contract/renovation_treadmill.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "opened",
+      "type": "integer"
+     },
+     {
+      "name": "deal_year",
+      "type": "integer"
+     },
+     {
+      "name": "public_usd_m",
+      "type": "number"
+     },
+     {
+      "name": "status",
+      "type": "string"
+     },
+     {
+      "name": "components",
+      "type": "string"
+     },
+     {
+      "name": "original_public_share",
+      "type": "string"
+     },
+     {
+      "name": "lease_clause_or_term",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "arena_age_at_deal",
+      "type": "integer"
+     }
+    ]
+   }
+  },
+  {
+   "name": "ledger-arena-ledger",
+   "type": "table",
+   "path": "ledger/arena_ledger.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "row_type",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^(current_arena|project.*)$"
+      }
+     },
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "arena",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "city",
+      "type": "string"
+     },
+     {
+      "name": "opened",
+      "type": "string"
+     },
+     {
+      "name": "owner",
+      "type": "string"
+     },
+     {
+      "name": "owner_type",
+      "type": "string"
+     },
+     {
+      "name": "built_privately_majority",
+      "type": "string",
+      "constraints": {
+       "enum": [
+        "Y",
+        "N"
+       ]
+      }
+     },
+     {
+      "name": "construction_cost_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "construction_cost_currency_note",
+      "type": "string"
+     },
+     {
+      "name": "construction_cost_label",
+      "type": "string",
+      "constraints": {
+       "pattern": "^[abc](/[abc])*$"
+      }
+     },
+     {
+      "name": "construction_cost_source",
+      "type": "string"
+     },
+     {
+      "name": "construction_cost_other_reports",
+      "type": "string"
+     },
+     {
+      "name": "public_construction_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_general_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_sales_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_tourist_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_tif_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_leaserev_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_land_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_infra_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcon_sin_m",
+      "type": "any"
+     },
+     {
+      "name": "pubcon_mixed_m",
+      "type": "number"
+     },
+     {
+      "name": "public_construction_label",
+      "type": "string"
+     },
+     {
+      "name": "public_construction_source",
+      "type": "string"
+     },
+     {
+      "name": "public_construction_notes",
+      "type": "string"
+     },
+     {
+      "name": "private_construction_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "private_construction_label",
+      "type": "string"
+     },
+     {
+      "name": "private_construction_source",
+      "type": "string"
+     },
+     {
+      "name": "public_acquisition_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "public_acquisition_year",
+      "type": "integer"
+     },
+     {
+      "name": "public_acquisition_label",
+      "type": "string"
+     },
+     {
+      "name": "public_acquisition_source",
+      "type": "string"
+     },
+     {
+      "name": "public_renovation_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "renovation_total_cost_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "public_renovation_pending_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "renovation_items",
+      "type": "string"
+     },
+     {
+      "name": "renovation_sources",
+      "type": "string"
+     },
+     {
+      "name": "ongoing_annual_from_net_cost_file",
+      "type": "string"
+     },
+     {
+      "name": "ongoing_to_date_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "ongoing_to_date_years",
+      "type": "string"
+     },
+     {
+      "name": "ongoing_label",
+      "type": "string"
+     },
+     {
+      "name": "ongoing_source",
+      "type": "string"
+     },
+     {
+      "name": "ongoing_notes",
+      "type": "string"
+     },
+     {
+      "name": "tax_break_desc",
+      "type": "string"
+     },
+     {
+      "name": "tax_break_annual_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_break_annual_year",
+      "type": "integer"
+     },
+     {
+      "name": "tax_break_annual_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_break_cumulative_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_break_cumulative_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_break_in_expanded_total",
+      "type": "string"
+     },
+     {
+      "name": "tax_break_future_committed_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_break_memo_estimate_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_break_notes",
+      "type": "string"
+     },
+     {
+      "name": "tax_break_source",
+      "type": "string"
+     },
+     {
+      "name": "pilot_or_tax_diversion_financing_m",
+      "type": "number"
+     },
+     {
+      "name": "pilot_note",
+      "type": "string"
+     },
+     {
+      "name": "conduit_public_financing_repaid_privately_m",
+      "type": "number"
+     },
+     {
+      "name": "conduit_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "conduit_note",
+      "type": "string"
+     },
+     {
+      "name": "tax_exempt_bonds_par_m_from_arena_tax",
+      "type": "number"
+     },
+     {
+      "name": "taxable_bonds_par_m",
+      "type": "number"
+     },
+     {
+      "name": "bond_detail",
+      "type": "string"
+     },
+     {
+      "name": "fed_tax_expenditure_pv_m_tau028",
+      "type": "number"
+     },
+     {
+      "name": "fed_tax_expenditure_pv_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "property_tax_status",
+      "type": "string"
+     },
+     {
+      "name": "property_tax_source",
+      "type": "string"
+     },
+     {
+      "name": "lease_end",
+      "type": "integer"
+     },
+     {
+      "name": "lease_terms",
+      "type": "string"
+     },
+     {
+      "name": "exit_penalty",
+      "type": "string"
+     },
+     {
+      "name": "lease_label",
+      "type": "string"
+     },
+     {
+      "name": "lease_source",
+      "type": "string"
+     },
+     {
+      "name": "cpi_year_construction",
+      "type": "string"
+     },
+     {
+      "name": "cpi_factor_construction",
+      "type": "number"
+     },
+     {
+      "name": "construction_cost_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "public_construction_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "private_construction_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "public_acquisition_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "public_renovation_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "renovation_total_cost_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "public_renovation_pending_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "ongoing_to_date_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "PUBLIC_TOTAL_2026_m",
+      "type": "number",
+      "constraints": {
+       "minimum": 0
+      }
+     },
+     {
+      "name": "total_arena_spending_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "public_share_pct",
+      "type": "number",
+      "constraints": {
+       "minimum": 0,
+       "maximum": 100
+      }
+     },
+     {
+      "name": "pubcap_general_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_sales_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_tourist_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_tif_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_leaserev_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_land_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_infra_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_sin_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pubcap_mixed_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pilot_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "notes_and_gaps",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "ledger-households",
+   "type": "table",
+   "path": "ledger/households.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "deal",
+      "type": "string"
+     },
+     {
+      "name": "amount_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "geo_id",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[0-9]{5}US[0-9]+$"
+      }
+     },
+     {
+      "name": "jurisdiction",
+      "type": "string"
+     },
+     {
+      "name": "households",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1
+      }
+     },
+     {
+      "name": "share",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     {
+      "name": "per_household_2026",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "note",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "ledger-ledger-buckets",
+   "type": "table",
+   "path": "ledger/ledger_buckets.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "item_id",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "bucket",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "general",
+        "sales",
+        "tourist",
+        "tif",
+        "leaserev",
+        "land",
+        "infra",
+        "sin",
+        "mixed"
+       ]
+      }
+     },
+     {
+      "name": "public_nominal_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "public_2026_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "ledger-ledger-items",
+   "type": "table",
+   "path": "ledger/ledger_items.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "item_id",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^[A-Z]{3}-[a-z]+(-[a-z0-9]+)*$"
+      }
+     },
+     {
+      "name": "kind",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "construction",
+        "purchase",
+        "renovation",
+        "ongoing",
+        "project"
+       ]
+      }
+     },
+     {
+      "name": "desc",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1960,
+       "maximum": 2026
+      }
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "in_core",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "Y",
+        "N"
+       ]
+      }
+     },
+     {
+      "name": "spending_nominal_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "public_nominal_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "cpi_factor",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 1
+      }
+     },
+     {
+      "name": "spending_2026_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "public_2026_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "cost_label",
+      "type": "string",
+      "constraints": {
+       "pattern": "^[abc](/[abc])*( ; [abc](/[abc])*)*$"
+      }
+     },
+     {
+      "name": "public_label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[abc](/[abc])*( ; [abc](/[abc])*)*$"
+      }
+     },
+     {
+      "name": "cost_source",
+      "type": "string"
+     },
+     {
+      "name": "public_source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "note",
+      "type": "string"
+     }
+    ],
+    "primaryKey": [
+     "item_id"
+    ]
+   }
+  },
+  {
+   "name": "property-tax-arena-property-tax-privately-used",
+   "type": "table",
+   "path": "property_tax/arena_property_tax_privately_used.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "owner",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "record",
+      "type": "string"
+     },
+     {
+      "name": "assessed_or_market",
+      "type": "number"
+     },
+     {
+      "name": "est_tax",
+      "type": "number"
+     },
+     {
+      "name": "basis",
+      "type": "string"
+     },
+     {
+      "name": "eff_rate_vs_assessor_mv",
+      "type": "number"
+     },
+     {
+      "name": "cost_basis",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-forgone-tax-public-arenas-illustrative",
+   "type": "table",
+   "path": "property_tax/forgone_tax_public_arenas_illustrative.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "public_owner",
+      "type": "string"
+     },
+     {
+      "name": "orig_cost_musd",
+      "type": "number"
+     },
+     {
+      "name": "opened",
+      "type": "integer"
+     },
+     {
+      "name": "forgone_at_1.0pct_musd",
+      "type": "number"
+     },
+     {
+      "name": "forgone_at_1.5pct_musd",
+      "type": "number"
+     },
+     {
+      "name": "forgone_at_2.0pct_musd",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-intuit-dome-site-parcels-2026roll",
+   "type": "table",
+   "path": "property_tax/intuit_dome_site_parcels_2026roll.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "OBJECTID",
+      "type": "integer"
+     },
+     {
+      "name": "AIN",
+      "type": "integer"
+     },
+     {
+      "name": "APN",
+      "type": "string"
+     },
+     {
+      "name": "SitusHouseNo",
+      "type": "number"
+     },
+     {
+      "name": "SitusFraction",
+      "type": "string"
+     },
+     {
+      "name": "SitusDirection",
+      "type": "string"
+     },
+     {
+      "name": "SitusUnit",
+      "type": "string"
+     },
+     {
+      "name": "SitusStreet",
+      "type": "string"
+     },
+     {
+      "name": "SitusAddress",
+      "type": "string"
+     },
+     {
+      "name": "SitusCity",
+      "type": "string"
+     },
+     {
+      "name": "SitusZIP",
+      "type": "string"
+     },
+     {
+      "name": "SitusFullAddress",
+      "type": "string"
+     },
+     {
+      "name": "TaxRateArea",
+      "type": "number"
+     },
+     {
+      "name": "TaxRateCity",
+      "type": "string"
+     },
+     {
+      "name": "AgencyClassNo",
+      "type": "number"
+     },
+     {
+      "name": "AgencyName",
+      "type": "any"
+     },
+     {
+      "name": "AgencyType",
+      "type": "any"
+     },
+     {
+      "name": "UseCode",
+      "type": "string"
+     },
+     {
+      "name": "UseCode_2",
+      "type": "number"
+     },
+     {
+      "name": "UseType",
+      "type": "string"
+     },
+     {
+      "name": "UseDescription",
+      "type": "string"
+     },
+     {
+      "name": "DesignType1",
+      "type": "integer"
+     },
+     {
+      "name": "YearBuilt1",
+      "type": "number"
+     },
+     {
+      "name": "EffectiveYear1",
+      "type": "number"
+     },
+     {
+      "name": "Units1",
+      "type": "number"
+     },
+     {
+      "name": "Bedrooms1",
+      "type": "number"
+     },
+     {
+      "name": "Bathrooms1",
+      "type": "number"
+     },
+     {
+      "name": "SQFTmain1",
+      "type": "number"
+     },
+     {
+      "name": "DesignType2",
+      "type": "integer"
+     },
+     {
+      "name": "YearBuilt2",
+      "type": "number"
+     },
+     {
+      "name": "EffectiveYear2",
+      "type": "number"
+     },
+     {
+      "name": "Units2",
+      "type": "number"
+     },
+     {
+      "name": "Bedrooms2",
+      "type": "number"
+     },
+     {
+      "name": "Bathrooms2",
+      "type": "number"
+     },
+     {
+      "name": "SQFTmain2",
+      "type": "number"
+     },
+     {
+      "name": "DesignType3",
+      "type": "any"
+     },
+     {
+      "name": "YearBuilt3",
+      "type": "any"
+     },
+     {
+      "name": "EffectiveYear3",
+      "type": "any"
+     },
+     {
+      "name": "Units3",
+      "type": "any"
+     },
+     {
+      "name": "Bedrooms3",
+      "type": "any"
+     },
+     {
+      "name": "Bathrooms3",
+      "type": "any"
+     },
+     {
+      "name": "SQFTmain3",
+      "type": "any"
+     },
+     {
+      "name": "DesignType4",
+      "type": "any"
+     },
+     {
+      "name": "YearBuilt4",
+      "type": "any"
+     },
+     {
+      "name": "EffectiveYear4",
+      "type": "any"
+     },
+     {
+      "name": "Units4",
+      "type": "any"
+     },
+     {
+      "name": "Bedrooms4",
+      "type": "any"
+     },
+     {
+      "name": "Bathrooms4",
+      "type": "any"
+     },
+     {
+      "name": "SQFTmain4",
+      "type": "any"
+     },
+     {
+      "name": "DesignType5",
+      "type": "any"
+     },
+     {
+      "name": "YearBuilt5",
+      "type": "any"
+     },
+     {
+      "name": "EffectiveYear5",
+      "type": "any"
+     },
+     {
+      "name": "Units5",
+      "type": "any"
+     },
+     {
+      "name": "Bedrooms5",
+      "type": "any"
+     },
+     {
+      "name": "Bathrooms5",
+      "type": "any"
+     },
+     {
+      "name": "SQFTmain5",
+      "type": "any"
+     },
+     {
+      "name": "Roll_Year",
+      "type": "number"
+     },
+     {
+      "name": "Roll_LandValue",
+      "type": "number"
+     },
+     {
+      "name": "Roll_ImpValue",
+      "type": "number"
+     },
+     {
+      "name": "Roll_PersPropValue",
+      "type": "number"
+     },
+     {
+      "name": "Roll_FixtureValue",
+      "type": "number"
+     },
+     {
+      "name": "Roll_HomeOwnersExemp",
+      "type": "number"
+     },
+     {
+      "name": "Roll_RealEstateExemp",
+      "type": "number"
+     },
+     {
+      "name": "Roll_PersPropExemp",
+      "type": "number"
+     },
+     {
+      "name": "Roll_FixtureExemp",
+      "type": "number"
+     },
+     {
+      "name": "Roll_LandBaseYear",
+      "type": "number"
+     },
+     {
+      "name": "Roll_ImpBaseYear",
+      "type": "number"
+     },
+     {
+      "name": "SpatialChangeDate",
+      "type": "number"
+     },
+     {
+      "name": "ParcelCreateDate",
+      "type": "number"
+     },
+     {
+      "name": "ParcelTypeCode",
+      "type": "integer"
+     },
+     {
+      "name": "Assr_Map",
+      "type": "yearmonth"
+     },
+     {
+      "name": "Assr_Index_Map",
+      "type": "string"
+     },
+     {
+      "name": "QualityClass1",
+      "type": "string"
+     },
+     {
+      "name": "QualityClass2",
+      "type": "string"
+     },
+     {
+      "name": "QualityClass3",
+      "type": "any"
+     },
+     {
+      "name": "QualityClass4",
+      "type": "any"
+     },
+     {
+      "name": "QualityClass5",
+      "type": "any"
+     },
+     {
+      "name": "LegalDescLine1",
+      "type": "string"
+     },
+     {
+      "name": "LegalDescLine2",
+      "type": "any"
+     },
+     {
+      "name": "LegalDescLine3",
+      "type": "any"
+     },
+     {
+      "name": "LegalDescLine4",
+      "type": "any"
+     },
+     {
+      "name": "LegalDescLine5",
+      "type": "any"
+     },
+     {
+      "name": "LegalDescLineLast",
+      "type": "string"
+     },
+     {
+      "name": "LegalDescription",
+      "type": "string"
+     },
+     {
+      "name": "CENTER_LAT",
+      "type": "number"
+     },
+     {
+      "name": "CENTER_LON",
+      "type": "number"
+     },
+     {
+      "name": "CENTER_X",
+      "type": "number"
+     },
+     {
+      "name": "CENTER_Y",
+      "type": "number"
+     },
+     {
+      "name": "LAT_LON",
+      "type": "string"
+     },
+     {
+      "name": "Shape.STArea()",
+      "type": "number"
+     },
+     {
+      "name": "Shape.STLength()",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-oz-arena-sites-combined",
+   "type": "table",
+   "path": "property_tax/oz_arena_sites_combined.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "site",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "kind",
+      "type": "string"
+     },
+     {
+      "name": "tract2010",
+      "type": "integer"
+     },
+     {
+      "name": "in_qoz",
+      "type": "boolean"
+     },
+     {
+      "name": "adjacent_qoz",
+      "type": "string"
+     },
+     {
+      "name": "tract2020",
+      "type": "integer"
+     },
+     {
+      "name": "oz2_eligible",
+      "type": "integer"
+     },
+     {
+      "name": "poverty",
+      "type": "number"
+     },
+     {
+      "name": "mfi_ratio",
+      "type": "number"
+     },
+     {
+      "name": "oz2_state_nomination",
+      "type": "string"
+     },
+     {
+      "name": "adj_oz2_nominated",
+      "type": "string"
+     },
+     {
+      "name": "lat",
+      "type": "number"
+     },
+     {
+      "name": "lon",
+      "type": "number"
+     },
+     {
+      "name": "coord_src",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-sources",
+   "type": "table",
+   "path": "property_tax/sources.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "claim",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-svog-nba-related",
+   "type": "table",
+   "path": "property_tax/svog_nba_related.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "grantee",
+      "type": "string"
+     },
+     {
+      "name": "amt",
+      "type": "number"
+     },
+     {
+      "name": "award_date",
+      "type": "date"
+     },
+     {
+      "name": "addr",
+      "type": "string"
+     },
+     {
+      "name": "city",
+      "type": "string"
+     },
+     {
+      "name": "state",
+      "type": "string"
+     },
+     {
+      "name": "type",
+      "type": "string"
+     },
+     {
+      "name": "nba_link",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-united-center-av-history",
+   "type": "table",
+   "path": "property_tax/united_center_av_history.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "mailed_tot",
+      "type": "number"
+     },
+     {
+      "name": "certified_tot",
+      "type": "number"
+     },
+     {
+      "name": "board_tot",
+      "type": "number"
+     },
+     {
+      "name": "arena597_mailed_tot",
+      "type": "number"
+     },
+     {
+      "name": "arena597_certified_tot",
+      "type": "number"
+     },
+     {
+      "name": "arena597_board_tot",
+      "type": "number"
+     },
+     {
+      "name": "assessor_market_value_note",
+      "type": "string"
+     },
+     {
+      "name": "est_tax_bor_at_0.067",
+      "type": "number"
+     },
+     {
+      "name": "est_tax_bor_at_0.068",
+      "type": "number"
+     },
+     {
+      "name": "est_tax_bor_at_0.07",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-united-center-formula-savings",
+   "type": "table",
+   "path": "property_tax/united_center_formula_savings.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "tax_year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 2002,
+       "maximum": 2016
+      }
+     },
+     {
+      "name": "board_av",
+      "type": "integer"
+     },
+     {
+      "name": "eq_factor",
+      "type": "number"
+     },
+     {
+      "name": "rate_pct",
+      "type": "number"
+     },
+     {
+      "name": "bill",
+      "type": "integer"
+     },
+     {
+      "name": "paid_with_floor",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1000000
+      }
+     },
+     {
+      "name": "cf_a_tax",
+      "type": "integer"
+     },
+     {
+      "name": "saving_a",
+      "type": "integer"
+     },
+     {
+      "name": "cf_b_tax",
+      "type": "integer"
+     },
+     {
+      "name": "saving_b",
+      "type": "integer"
+     },
+     {
+      "name": "rate_label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "b",
+        "c"
+       ]
+      }
+     }
+    ],
+    "primaryKey": [
+     "tax_year"
+    ]
+   }
+  },
+  {
+   "name": "property-tax-united-center-tax-bills-2017-2024",
+   "type": "table",
+   "path": "property_tax/united_center_tax_bills_2017_2024.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "tax_year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 2017,
+       "maximum": 2024
+      }
+     },
+     {
+      "name": "board_av",
+      "type": "integer"
+     },
+     {
+      "name": "eq_factor",
+      "type": "number"
+     },
+     {
+      "name": "rate_pct",
+      "type": "number"
+     },
+     {
+      "name": "bill",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "b"
+       ]
+      }
+     }
+    ],
+    "primaryKey": [
+     "tax_year"
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-income-tax-capture-mechanisms",
+   "type": "table",
+   "path": "tax_mechanisms/income_tax_capture_mechanisms.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "state",
+      "type": "string"
+     },
+     {
+      "name": "team_arena",
+      "type": "string"
+     },
+     {
+      "name": "mechanism",
+      "type": "string"
+     },
+     {
+      "name": "what_is_captured",
+      "type": "string"
+     },
+     {
+      "name": "actual_amounts",
+      "type": "string"
+     },
+     {
+      "name": "visiting_player_share",
+      "type": "string"
+     },
+     {
+      "name": "notes",
+      "type": "string"
+     },
+     {
+      "name": "labels",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-indiana-psda-revenue",
+   "type": "table",
+   "path": "tax_mechanisms/indiana_psda_revenue.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "original_sports_psda",
+      "type": "integer"
+     },
+     {
+      "name": "sports_psda_2005_allocation",
+      "type": "integer"
+     },
+     {
+      "name": "hotel_psda",
+      "type": "integer"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "sports_psda_total",
+      "type": "integer"
+     },
+     {
+      "name": "state_cap_sports_psda",
+      "type": "integer"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-lsed-budget-team-payments",
+   "type": "table",
+   "path": "tax_mechanisms/lsed_budget_team_payments.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "item",
+      "type": "string"
+     },
+     {
+      "name": "FY21",
+      "type": "integer"
+     },
+     {
+      "name": "FY22",
+      "type": "string"
+     },
+     {
+      "name": "FY23",
+      "type": "string"
+     },
+     {
+      "name": "FY24",
+      "type": "string"
+     },
+     {
+      "name": "FY25",
+      "type": "integer"
+     },
+     {
+      "name": "FY26",
+      "type": "integer"
+     },
+     {
+      "name": "FY27_rec",
+      "type": "integer"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-lsed-players-tax-payments",
+   "type": "table",
+   "path": "tax_mechanisms/lsed_players_tax_payments.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "fiscal_year",
+      "type": "string"
+     },
+     {
+      "name": "players_tax_revenue",
+      "type": "integer"
+     },
+     {
+      "name": "paid_to_pelicans",
+      "type": "integer"
+     },
+     {
+      "name": "paid_to_saints",
+      "type": "integer"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "paid_to_teams",
+      "type": "integer"
+     },
+     {
+      "name": "share_passed_to_teams",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-nba-arena-bond-federal-cost",
+   "type": "table",
+   "path": "tax_mechanisms/nba_arena_bond_federal_cost.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "issuer_series",
+      "type": "string"
+     },
+     {
+      "name": "par_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_status",
+      "type": "string"
+     },
+     {
+      "name": "tau",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "enum": [
+        0.28,
+        0.35
+       ]
+      }
+     },
+     {
+      "name": "aaa",
+      "type": "number"
+     },
+     {
+      "name": "annual_fed_loss_m",
+      "type": "number"
+     },
+     {
+      "name": "pv3_30yr_fed_loss_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-nba-arena-bonds",
+   "type": "table",
+   "path": "tax_mechanisms/nba_arena_bonds.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "issuer_series",
+      "type": "string"
+     },
+     {
+      "name": "par_m",
+      "type": "number"
+     },
+     {
+      "name": "tax_status",
+      "type": "string"
+     },
+     {
+      "name": "status_basis",
+      "type": "string"
+     },
+     {
+      "name": "security",
+      "type": "string"
+     },
+     {
+      "name": "why_not_private_activity_bond",
+      "type": "string"
+     },
+     {
+      "name": "new_money",
+      "type": "boolean"
+     },
+     {
+      "name": "outstanding_2026",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "aaa_yield_issue_yr",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-nba-control-sales-sec197",
+   "type": "table",
+   "path": "tax_mechanisms/nba_control_sales_sec197.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "buyer",
+      "type": "string"
+     },
+     {
+      "name": "closing",
+      "type": "string"
+     },
+     {
+      "name": "valuation_b",
+      "type": "number"
+     },
+     {
+      "name": "stake_case",
+      "type": "string"
+     },
+     {
+      "name": "stake",
+      "type": "number"
+     },
+     {
+      "name": "consideration_b",
+      "type": "number"
+     },
+     {
+      "name": "amortizable_b",
+      "type": "number"
+     },
+     {
+      "name": "annual_deduction_m",
+      "type": "number"
+     },
+     {
+      "name": "annual_fed_tax_value_m",
+      "type": "number"
+     },
+     {
+      "name": "total_fed_tax_value_nominal_b",
+      "type": "number"
+     },
+     {
+      "name": "pv5_fed_tax_value_b",
+      "type": "number"
+     },
+     {
+      "name": "after_enactment",
+      "type": "boolean"
+     },
+     {
+      "name": "house_50pct_limit_loss_nominal_b",
+      "type": "number"
+     },
+     {
+      "name": "house_limit_loss_10yr_window_b",
+      "type": "number"
+     },
+     {
+      "name": "note",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tax-mechanisms-visiting-player-tax-model",
+   "type": "table",
+   "path": "tax_mechanisms/visiting_player_tax_model.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "state",
+      "type": "string"
+     },
+     {
+      "name": "season",
+      "type": "string"
+     },
+     {
+      "name": "days_per_visit",
+      "type": "number"
+     },
+     {
+      "name": "avg_opp_payroll_m",
+      "type": "number"
+     },
+     {
+      "name": "home_payroll_m",
+      "type": "number"
+     },
+     {
+      "name": "visitor_state_source_wages_m",
+      "type": "number"
+     },
+     {
+      "name": "rate",
+      "type": "number"
+     },
+     {
+      "name": "visitor_tax_m",
+      "type": "number"
+     },
+     {
+      "name": "home_nonres_tax_if_55pct_m",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "threats-left-behind",
+   "type": "table",
+   "path": "threats/left_behind.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "city",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true
+      }
+     },
+     {
+      "name": "arena",
+      "type": "string"
+     },
+     {
+      "name": "team_left",
+      "type": "string"
+     },
+     {
+      "name": "year_left",
+      "type": "integer"
+     },
+     {
+      "name": "public_obligation",
+      "type": "string"
+     },
+     {
+      "name": "amount_usd_m",
+      "type": "number"
+     },
+     {
+      "name": "period",
+      "type": "string"
+     },
+     {
+      "name": "who_paid",
+      "type": "string"
+     },
+     {
+      "name": "notes",
+      "type": "string"
+     },
+     {
+      "name": "sources",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[abcu].*"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "threats-threat-ledger",
+   "type": "table",
+   "path": "threats/threat_ledger.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "id",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^E[0-9]{2}$"
+      }
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "owners",
+      "type": "string"
+     },
+     {
+      "name": "period",
+      "type": "string"
+     },
+     {
+      "name": "threat_class",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "explicit",
+        "implied",
+        "official_cited",
+        "lure_only",
+        "unclear",
+        "none"
+       ]
+      }
+     },
+     {
+      "name": "said_or_done",
+      "type": "string"
+     },
+     {
+      "name": "alt_city",
+      "type": "string"
+     },
+     {
+      "name": "league_role",
+      "type": "string"
+     },
+     {
+      "name": "money_after",
+      "type": "string"
+     },
+     {
+      "name": "money_usd_m",
+      "type": "number"
+     },
+     {
+      "name": "mechanism",
+      "type": "string"
+     },
+     {
+      "name": "vote",
+      "type": "string"
+     },
+     {
+      "name": "threat_date",
+      "type": "date"
+     },
+     {
+      "name": "approval_date",
+      "type": "date"
+     },
+     {
+      "name": "approval_date_final",
+      "type": "date"
+     },
+     {
+      "name": "months_threat_to_approval",
+      "type": "number"
+     },
+     {
+      "name": "months_threat_to_final",
+      "type": "number"
+     },
+     {
+      "name": "outcome",
+      "type": "string"
+     },
+     {
+      "name": "sources",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[abcu].*"
+      }
+     },
+     {
+      "name": "notes",
+      "type": "string"
+     }
+    ],
+    "primaryKey": [
+     "id"
+    ]
+   }
+  },
+  {
+   "name": "votes-lobbying-arena-votes",
+   "type": "table",
+   "path": "votes_lobbying/arena_votes.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "case",
+      "type": "string"
+     },
+     {
+      "name": "metric",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "votes-lobbying-host-payments",
+   "type": "table",
+   "path": "votes_lobbying/host_payments.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "payer",
+      "type": "string"
+     },
+     {
+      "name": "event",
+      "type": "string"
+     },
+     {
+      "name": "amount",
+      "type": "string"
+     },
+     {
+      "name": "notes",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "votes-lobbying-lda-annual-by-group",
+   "type": "table",
+   "path": "votes_lobbying/lda_annual_by_group.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "group",
+      "type": "string"
+     },
+     {
+      "name": "2015",
+      "type": "string"
+     },
+     {
+      "name": "2016",
+      "type": "string"
+     },
+     {
+      "name": "2017",
+      "type": "string"
+     },
+     {
+      "name": "2018",
+      "type": "string"
+     },
+     {
+      "name": "2019",
+      "type": "string"
+     },
+     {
+      "name": "2020",
+      "type": "string"
+     },
+     {
+      "name": "2021",
+      "type": "string"
+     },
+     {
+      "name": "2022",
+      "type": "string"
+     },
+     {
+      "name": "2023",
+      "type": "string"
+     },
+     {
+      "name": "2024",
+      "type": "string"
+     },
+     {
+      "name": "2025",
+      "type": "string"
+     },
+     {
+      "name": "2026",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "votes-lobbying-lda-nba-nbpa-owner-filings",
+   "type": "table",
+   "path": "votes_lobbying/lda_nba_nbpa_owner_filings.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer"
+     },
+     {
+      "name": "quarter_type",
+      "type": "string"
+     },
+     {
+      "name": "registrant",
+      "type": "string"
+     },
+     {
+      "name": "client",
+      "type": "string"
+     },
+     {
+      "name": "income_or_expenses(blank=<$5k)",
+      "type": "number"
+     },
+     {
+      "name": "issue_codes",
+      "type": "string"
+     },
+     {
+      "name": "issues_text",
+      "type": "string"
+     },
+     {
+      "name": "agencies",
+      "type": "string"
+     },
+     {
+      "name": "house_xml_file",
+      "type": "string"
+     },
+     {
+      "name": "source_zip",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "votes-lobbying-msg-related-party",
+   "type": "table",
+   "path": "votes_lobbying/msg_related_party.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "item",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "label(a=computed,b=primary,c=press)",
+      "type": "string"
+     }
+    ]
+   }
+  }
+ ]
+}

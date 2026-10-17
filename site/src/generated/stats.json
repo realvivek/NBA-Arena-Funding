@@ -1,0 +1,2116 @@
+{
+ "core_public": {
+  "key": "core_public",
+  "title": "Public money in the 30 current arenas",
+  "value": 9304.752053,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$9.30 billion",
+   "short": "$9.30B",
+   "title": "$9.30 Billion",
+   "cap": "$9.30 billion"
+  },
+  "note": "Construction, public purchases, completed or binding renovations, and yearly cash payments documented to date. Pending deals are not counted.",
+  "method": "select sum(public_2026_m) from items where core"
+ },
+ "total_spending": {
+  "key": "total_spending",
+  "title": "All money spent on the 30 current arenas",
+  "value": 27181.050501,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$27.18 billion",
+   "short": "$27.18B",
+   "title": "$27.18 Billion",
+   "cap": "$27.18 billion"
+  },
+  "note": "Construction (public and private), renovations (public and private) and public yearly payments. Public purchases count as public money but not as new spending, since they pay back private builders.",
+  "method": "select sum(spending_2026_m) from items where core"
+ },
+ "public_share": {
+  "key": "public_share",
+  "title": "Public share of all arena spending",
+  "value": 34.232496,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "34.2 percent",
+   "short": "34.2%",
+   "title": "34.2%",
+   "cap": "34.2 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(public_2026_m) / sum(spending_2026_m) from items where core"
+ },
+ "construction_public": {
+  "key": "construction_public",
+  "title": "Public money for construction",
+  "value": 5213.052206,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$5.21 billion",
+   "short": "$5.21B",
+   "title": "$5.21 Billion",
+   "cap": "$5.21 billion"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where core and kind = 'construction'"
+ },
+ "purchase_public": {
+  "key": "purchase_public",
+  "title": "Public money to buy existing arenas",
+  "value": 218.884347,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$219 million",
+   "short": "$219M",
+   "title": "$219 Million",
+   "cap": "$219 million"
+  },
+  "note": "Minneapolis (1995), Portland (2024) and Washington (2024).",
+  "method": "select sum(public_2026_m) from items where core and kind = 'purchase'"
+ },
+ "renovation_public": {
+  "key": "renovation_public",
+  "title": "Public money for completed or binding renovations",
+  "value": 3113.716454,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$3.11 billion",
+   "short": "$3.11B",
+   "title": "$3.11 Billion",
+   "cap": "$3.11 billion"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where core and kind = 'renovation'"
+ },
+ "ongoing_public": {
+  "key": "ongoing_public",
+  "title": "Yearly public payments to teams or arena operators, documented to date",
+  "value": 759.099046,
+  "unit": "usd_m",
+  "basis": "2026 dollars, each payment at its year",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$759 million",
+   "short": "$759M",
+   "title": "$759 Million",
+   "cap": "$759 million"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where core and kind = 'ongoing'"
+ },
+ "ongoing_teams": {
+  "key": "ongoing_teams",
+  "title": "Teams with documented yearly public payments",
+  "value": 7.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "seven",
+   "short": "7",
+   "title": "Seven",
+   "cap": "Seven"
+  },
+  "note": "",
+  "method": "select count(distinct team) from items where core and kind = 'ongoing'"
+ },
+ "capital_public": {
+  "key": "capital_public",
+  "title": "Public capital money (construction, purchases, renovations)",
+  "value": 8545.653007,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$8.55 billion",
+   "short": "$8.55B",
+   "title": "$8.55 Billion",
+   "cap": "$8.55 billion"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from capital"
+ },
+ "expanded_public": {
+  "key": "expanded_public",
+  "title": "Public money including property-tax breaks and taxes diverted to arena debt",
+  "value": 11064.252053,
+  "unit": "usd_m",
+  "basis": "2026 dollars; a floor",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "$11.06 billion",
+   "short": "$11.06B",
+   "title": "$11.06 Billion",
+   "cap": "$11.06 billion"
+  },
+  "note": "Adds Barclays Center's PILOT bonds, Madison Square Garden's property-tax exemption since 1982 and the United Center's valuation formula, 2002-2016. A floor, because the Garden's exemption is a nominal sum and the United Center's 1994-2001 years could not be computed.",
+  "method": "select (select sum(public_2026_m) from items where core) + sum(coalesce(pilot_2026_m, 0)) + sum(case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end) from arenas"
+ },
+ "expanded_share": {
+  "key": "expanded_share",
+  "title": "Public share with tax breaks added to both sides",
+  "value": 39.231666,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "39.2 percent",
+   "short": "39.2%",
+   "title": "39.2%",
+   "cap": "39.2 percent"
+  },
+  "note": "The PILOT bonds already sit inside Barclays Center's construction cost, so only the other breaks are added to the spending base.",
+  "method": "select 100 * ((select sum(public_2026_m) from items where core) + sum(coalesce(pilot_2026_m, 0)) + sum(case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end)) / ((select sum(spending_2026_m) from items where core) + sum(case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end)) from arenas"
+ },
+ "arenas_n": {
+  "key": "arenas_n",
+  "title": "Current NBA arenas",
+  "value": 30.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "30",
+   "short": "30",
+   "title": "30",
+   "cap": "30"
+  },
+  "note": "",
+  "method": "select count(*) from arenas"
+ },
+ "top10_share": {
+  "key": "top10_share",
+  "title": "Share of public money in the 10 arenas with the most",
+  "value": 62.826425,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "62.8 percent",
+   "short": "62.8%",
+   "title": "62.8%",
+   "cap": "62.8 percent"
+  },
+  "note": "",
+  "method": "with t as (select team, sum(public_2026_m) p from items where core group by team order by p desc limit 10) select 100 * sum(p) / (select sum(public_2026_m) from items where core) from t"
+ },
+ "top_n": {
+  "key": "top_n",
+  "title": "Arenas in the top group",
+  "value": 10.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "10",
+   "short": "10",
+   "title": "10",
+   "cap": "10"
+  },
+  "note": "The size of the group in top10_share.",
+  "method": "select 10"
+ },
+ "orl_public": {
+  "key": "orl_public",
+  "title": "Public money in Orlando's Kia Center, the most of any arena",
+  "value": 880.016116,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "occompt-occompt",
+   "occompt-occompt-2",
+   "oppaga-15-01",
+   "oregon-moda-center-arena-comparable-structure-overview",
+   "cfpublic-orlando-kia-center-camping-world-stadium-improve"
+  ],
+  "display": {
+   "long": "$880 million",
+   "short": "$880M",
+   "title": "$880 Million",
+   "cap": "$880 million"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where core and team = 'ORL'"
+ },
+ "orl_share": {
+  "key": "orl_share",
+  "title": "Public share of all spending on the Kia Center",
+  "value": 92.045685,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "92.0 percent",
+   "short": "92.0%",
+   "title": "92.0%",
+   "cap": "92.0 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(public_2026_m) / sum(spending_2026_m) from items where core and team = 'ORL'"
+ },
+ "costliest_private_n": {
+  "key": "costliest_private_n",
+  "title": "The costliest arenas, in a row, that were built mainly with private money",
+  "value": 8.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "eight",
+   "short": "8",
+   "title": "Eight",
+   "cap": "Eight"
+  },
+  "note": "Arenas ranked by construction cost in 2026 dollars; Intuit Dome, Chase Center, Barclays Center, Little Caesars Arena and Madison Square Garden.",
+  "method": "with r as (select team, built_privately_majority = 'Y' as p, row_number() over (order by construction_cost_2026_m desc) as rn from arenas) select min(rn) - 1 from r where not p"
+ },
+ "private_built_n": {
+  "key": "private_built_n",
+  "title": "Arenas built mainly with private money",
+  "value": 22.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "22",
+   "short": "22",
+   "title": "22",
+   "cap": "22"
+  },
+  "note": "Public money was under half of the construction cost.",
+  "method": "select count(*) from arenas where built_privately_majority = 'Y'"
+ },
+ "rebuild_since_2014": {
+  "key": "rebuild_since_2014",
+  "title": "Public money to renovate or buy existing arenas since 2014",
+  "value": 2902.552134,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$2.90 billion",
+   "short": "$2.90B",
+   "title": "$2.90 Billion",
+   "cap": "$2.90 billion"
+  },
+  "note": "Completed or binding. Renovations at their mid-construction year, work still under way at face value, purchases at the purchase year.",
+  "method": "select sum(public_2026_m) from items where core and kind in ('renovation', 'purchase') and year >= 2014"
+ },
+ "build_since_2014": {
+  "key": "build_since_2014",
+  "title": "Public money in the arenas that opened since 2014",
+  "value": 1025.45361,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$1.03 billion",
+   "short": "$1.03B",
+   "title": "$1.03 Billion",
+   "cap": "$1.03 billion"
+  },
+  "note": "Sacramento (2016), Detroit (2017) and Milwaukee (2018), at their opening years. Intuit Dome (2024) had no public construction money.",
+  "method": "select sum(public_2026_m) from items where core and kind = 'construction' and year >= 2014"
+ },
+ "rebuild_ratio": {
+  "key": "rebuild_ratio",
+  "title": "Rebuilding money as a multiple of building money, since 2014",
+  "value": 2.830506,
+  "unit": "number",
+  "basis": "",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "2.8",
+   "short": "2.8",
+   "title": "2.8",
+   "cap": "2.8"
+  },
+  "note": "",
+  "method": "select (select sum(public_2026_m) from items where core and kind in ('renovation', 'purchase') and year >= 2014) / (select sum(public_2026_m) from items where core and kind = 'construction' and year >= 2014)"
+ },
+ "opened_public_since_2014": {
+  "key": "opened_public_since_2014",
+  "title": "Arenas opened since 2014 with public construction money",
+  "value": 3.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "three",
+   "short": "3",
+   "title": "Three",
+   "cap": "Three"
+  },
+  "note": "",
+  "method": "select count(*) from items where core and kind = 'construction' and year >= 2014 and public_2026_m > 0"
+ },
+ "rebuild_arenas_since_2014": {
+  "key": "rebuild_arenas_since_2014",
+  "title": "Existing arenas that got public money to renovate or buy them since 2014",
+  "value": 13.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "13",
+   "short": "13",
+   "title": "13",
+   "cap": "13"
+  },
+  "note": "",
+  "method": "select count(distinct team) from items where core and kind in ('renovation', 'purchase') and year >= 2014 and public_2026_m > 0"
+ },
+ "pending_existing": {
+  "key": "pending_existing",
+  "title": "Public money pending for current arenas",
+  "value": 1043.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "$1.04 billion",
+   "short": "$1.04B",
+   "title": "$1.04 Billion",
+   "cap": "$1.04 billion"
+  },
+  "note": "Memphis and Portland. Not counted in the totals.",
+  "method": "select sum(public_2026_m) from items where kind = 'renovation' and status = 'pending'"
+ },
+ "new_arenas_committed": {
+  "key": "new_arenas_committed",
+  "title": "Public money committed to new arenas not yet open",
+  "value": 1221.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "okc-city-council-approves-letter-of-intent-with-the",
+   "bondbuyer-financing-team-in-place-for-oklahoma-city-arena",
+   "kutakrock-kutak-rock-tax-counsel-disclosure-counsel",
+   "okc-okc-voters-approve-2025-bond",
+   "vision-transit",
+   "vision-economic-community-development",
+   "okgazette-wait-whos-paying-for-the-new-arena-2",
+   "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
+   "ksat-results-props-a-and-b-for-coliseum-complex-downt",
+   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
+   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
+   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+  ],
+  "display": {
+   "long": "$1.22 billion",
+   "short": "$1.22B",
+   "title": "$1.22 Billion",
+   "cap": "$1.22 billion"
+  },
+  "note": "Oklahoma City's replacement arena (binding) and Bexar County's voter-approved share of a San Antonio arena. Outside the 30-arena totals.",
+  "method": "select sum(public_2026_m) from items where kind = 'project' and team in ('OKC', 'SAS') and status <> 'pending'"
+ },
+ "okc_new_arena": {
+  "key": "okc_new_arena",
+  "title": "Public money for Oklahoma City's replacement arena",
+  "value": 910.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "a/b/c ; b/c",
+  "sources": [
+   "okc-city-council-approves-letter-of-intent-with-the",
+   "bondbuyer-financing-team-in-place-for-oklahoma-city-arena",
+   "kutakrock-kutak-rock-tax-counsel-disclosure-counsel",
+   "okc-okc-voters-approve-2025-bond",
+   "vision-transit",
+   "vision-economic-community-development",
+   "okgazette-wait-whos-paying-for-the-new-arena-2",
+   "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun"
+  ],
+  "display": {
+   "long": "$910 million",
+   "short": "$910M",
+   "title": "$910 Million",
+   "cap": "$910 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'OKC-project'"
+ },
+ "sas_county": {
+  "key": "sas_county",
+  "title": "Bexar County's voter-approved money for a new Spurs arena",
+  "value": 311.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "ksat-results-props-a-and-b-for-coliseum-complex-downt",
+   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
+   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
+   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+  ],
+  "display": {
+   "long": "$311 million",
+   "short": "$311M",
+   "title": "$311 Million",
+   "cap": "$311 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'SAS-project'"
+ },
+ "sas_pending": {
+  "key": "sas_pending",
+  "title": "San Antonio city money for a new Spurs arena, pending",
+  "value": 549.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "ksat-results-props-a-and-b-for-coliseum-complex-downt",
+   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
+   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
+   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+  ],
+  "display": {
+   "long": "$549 million",
+   "short": "$549M",
+   "title": "$549 Million",
+   "cap": "$549 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'SAS-project-pending'"
+ },
+ "uta_district": {
+  "key": "uta_district",
+  "title": "Salt Lake City sales-tax money for the district around the Delta Center",
+  "value": 375.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "b/c",
+  "sources": [
+   "utah-pmn",
+   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar"
+  ],
+  "display": {
+   "long": "$375 million",
+   "short": "$375M",
+   "title": "$375 Million",
+   "cap": "$375 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'UTA-project'"
+ },
+ "uta_arena_2025": {
+  "key": "uta_arena_2025",
+  "title": "Salt Lake City sales-tax money for the Delta Center renovation",
+  "value": 525.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "b/c",
+  "sources": [
+   "utah-pmn",
+   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar"
+  ],
+  "display": {
+   "long": "$525 million",
+   "short": "$525M",
+   "title": "$525 Million",
+   "cap": "$525 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'UTA-renovation-3'"
+ },
+ "slc_sales_tax_rate": {
+  "key": "slc_sales_tax_rate",
+  "title": "Salt Lake City sales tax that pays for the Delta Center deal",
+  "value": 0.5,
+  "unit": "pct",
+  "basis": "",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "utah-pmn",
+   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar"
+  ],
+  "display": {
+   "long": "0.5 percent",
+   "short": "0.5%",
+   "title": "0.5%",
+   "cap": "0.5 percent"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/ledger/ledger_items.csv (item_id=UTA-renovation-3, column desc: \"0.5% city sales tax\")"
+ },
+ "was_2024_deal": {
+  "key": "was_2024_deal",
+  "title": "DC money to buy and renovate Capital One Arena under the 2024 deal",
+  "value": 520.011566,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "cfo-fis-downtown-arena-revitalization",
+   "dccouncil-4-2-24-arena-funding-memo",
+   "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+  ],
+  "display": {
+   "long": "$520 million",
+   "short": "$520M",
+   "title": "$520 Million",
+   "cap": "$520 million"
+  },
+  "note": "$87.5 million purchase (2024) and $427.5 million renovation (face value).",
+  "method": "select sum(public_2026_m) from items where item_id in ('WAS-purchase', 'WAS-renovation-2')"
+ },
+ "was_purchase": {
+  "key": "was_purchase",
+  "title": "DC purchase of Capital One Arena",
+  "value": 92.511566,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "cfo-fis-downtown-arena-revitalization"
+  ],
+  "display": {
+   "long": "$93 million",
+   "short": "$93M",
+   "title": "$93 Million",
+   "cap": "$93 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'WAS-purchase'"
+ },
+ "orl_2024": {
+  "key": "orl_2024",
+  "title": "Orange County tourist-tax money for the Kia Center renovation",
+  "value": 226.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+   "oregon-moda-center-arena-comparable-structure-overview"
+  ],
+  "display": {
+   "long": "$226 million",
+   "short": "$226M",
+   "title": "$226 Million",
+   "cap": "$226 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'ORL-renovation-1'"
+ },
+ "hou_2026": {
+  "key": "hou_2026",
+  "title": "State of Texas grant for the Toyota Center renovation",
+  "value": 95.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+  ],
+  "display": {
+   "long": "$95 million",
+   "short": "$95M",
+   "title": "$95 Million",
+   "cap": "$95 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'HOU-renovation-1'"
+ },
+ "mem_state_2025": {
+  "key": "mem_state_2025",
+  "title": "Tennessee money allocated to the FedExForum renovation",
+  "value": 82.41344,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "c/a",
+  "sources": [
+   "tri-statedefender-p-349496"
+  ],
+  "display": {
+   "long": "$82 million",
+   "short": "$82M",
+   "title": "$82 Million",
+   "cap": "$82 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'MEM-renovation-1'"
+ },
+ "mem_pending": {
+  "key": "mem_pending",
+  "title": "Public money for the FedExForum renovation held until a new lease is signed",
+  "value": 470.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "tri-statedefender-p-349496",
+   "dailymemphian",
+   "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+   "audacy-fedexforum",
+   "sports-fedexforum-documents-offer-strong-clue-194527628",
+   "wapp-billinfo"
+  ],
+  "display": {
+   "long": "$470 million",
+   "short": "$470M",
+   "title": "$470 Million",
+   "cap": "$470 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'MEM-renovation-2'"
+ },
+ "mem_renovation_cost": {
+  "key": "mem_renovation_cost",
+  "title": "Cost of the FedExForum renovation",
+  "value": 550.0,
+  "unit": "usd_m",
+  "basis": "nominal budget",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "tri-statedefender-p-349496",
+   "dailymemphian",
+   "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+   "audacy-fedexforum",
+   "sports-fedexforum-documents-offer-strong-clue-194527628",
+   "wapp-billinfo"
+  ],
+  "display": {
+   "long": "$550 million",
+   "short": "$550M",
+   "title": "$550 Million",
+   "cap": "$550 million"
+  },
+  "note": "",
+  "method": "select sum(spending_nominal_m) from items where item_id in ('MEM-renovation-1', 'MEM-renovation-2')"
+ },
+ "por_pending": {
+  "key": "por_pending",
+  "title": "Pending public money to rebuild the Moda Center",
+  "value": 573.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "olis-enrolled",
+   "efiles",
+   "multco-news-release-board-commissioners-advances-framew",
+   "portland-adopted"
+  ],
+  "display": {
+   "long": "$573 million",
+   "short": "$573M",
+   "title": "$573 Million",
+   "cap": "$573 million"
+  },
+  "note": "State of Oregon up to $365 million, Multnomah County up to $88 million, City of Portland up to $120 million.",
+  "method": "select sum(public_2026_m) from items where team = 'POR' and kind = 'renovation' and status = 'pending'"
+ },
+ "por_state": {
+  "key": "por_state",
+  "title": "State of Oregon bonds for the Moda Center, repaid from income taxes withheld at the arena",
+  "value": 365.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "olis-enrolled"
+  ],
+  "display": {
+   "long": "$365 million",
+   "short": "$365M",
+   "title": "$365 Million",
+   "cap": "$365 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'POR-renovation-1'"
+ },
+ "takeover_n": {
+  "key": "takeover_n",
+  "title": "Arenas built mainly with private money that were later bought or rebuilt with public money",
+  "value": 7.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "seven",
+   "short": "7",
+   "title": "Seven",
+   "cap": "Seven"
+  },
+  "note": "",
+  "method": "select count(distinct i.team) from items i join arenas a using (team) where a.built_privately_majority = 'Y' and i.kind in ('renovation', 'purchase') and (i.core or i.status = 'pending') and i.public_2026_m > 0"
+ },
+ "takeover_public": {
+  "key": "takeover_public",
+  "title": "Public money to buy or rebuild arenas built mainly with private money",
+  "value": 2713.682845,
+  "unit": "usd_m",
+  "basis": "2026 dollars; pending money at face value",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$2.71 billion",
+   "short": "$2.71B",
+   "title": "$2.71 Billion",
+   "cap": "$2.71 billion"
+  },
+  "note": "",
+  "method": "select sum(i.public_2026_m) from items i join arenas a using (team) where a.built_privately_majority = 'Y' and i.kind in ('renovation', 'purchase') and (i.core or i.status = 'pending')"
+ },
+ "takeover_pending": {
+  "key": "takeover_pending",
+  "title": "Of that, pending",
+  "value": 573.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "$573 million",
+   "short": "$573M",
+   "title": "$573 Million",
+   "cap": "$573 million"
+  },
+  "note": "",
+  "method": "select sum(i.public_2026_m) from items i join arenas a using (team) where a.built_privately_majority = 'Y' and i.kind = 'renovation' and i.status = 'pending'"
+ },
+ "takeover_construction_public": {
+  "key": "takeover_construction_public",
+  "title": "Public money in the construction of those arenas",
+  "value": 653.922747,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$654 million",
+   "short": "$654M",
+   "title": "$654 Million",
+   "cap": "$654 million"
+  },
+  "note": "",
+  "method": "select sum(i.public_2026_m) from items i join arenas a using (team) where a.built_privately_majority = 'Y' and i.kind = 'construction' and i.team in (select team from items where kind in ('renovation', 'purchase') and (core or status = 'pending') and public_2026_m > 0)"
+ },
+ "residents_share": {
+  "key": "residents_share",
+  "title": "Share of public capital from taxes residents mostly pay",
+  "value": 44.86865,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "44.9 percent",
+   "short": "44.9%",
+   "title": "44.9%",
+   "cap": "44.9 percent"
+  },
+  "note": "General funds and general-obligation bonds, dedicated sales taxes, tax increment and other tax capture, lease-revenue bonds, and alcohol and tobacco taxes.",
+  "method": "select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'residents'"
+ },
+ "visitors_share": {
+  "key": "visitors_share",
+  "title": "Share of public capital from taxes on visitors",
+  "value": 41.237288,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "41.2 percent",
+   "short": "41.2%",
+   "title": "41.2%",
+   "cap": "41.2 percent"
+  },
+  "note": "Taxes on hotel rooms, car rentals, restaurant food and drink, and tickets.",
+  "method": "select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'visitors'"
+ },
+ "other_share": {
+  "key": "other_share",
+  "title": "Share of public capital given as land, or with no documented funding stream",
+  "value": 13.894062,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "13.9 percent",
+   "short": "13.9%",
+   "title": "13.9%",
+   "cap": "13.9 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'other'"
+ },
+ "visitors_public": {
+  "key": "visitors_public",
+  "title": "Public capital from taxes on visitors",
+  "value": 3523.995584,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$3.52 billion",
+   "short": "$3.52B",
+   "title": "$3.52 Billion",
+   "cap": "$3.52 billion"
+  },
+  "note": "",
+  "method": "select sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'visitors'"
+ },
+ "hh_uta": {
+  "key": "hh_uta",
+  "title": "Salt Lake City's Delta Center deal per household in the city",
+  "value": 9098.63,
+  "unit": "usd",
+  "basis": "2026 dollars per household; an upper bound",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "census-b11001-2024",
+   "utah-pmn",
+   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar"
+  ],
+  "display": {
+   "long": "$9,099",
+   "short": "$9,099",
+   "title": "$9,099",
+   "cap": "$9,099"
+  },
+  "note": "The arena's $525 million and the district's $375 million, over the city's households. People who live elsewhere pay part of the city's sales tax, so this is an upper bound.",
+  "method": "select per_household_2026 from households where team = 'UTA' and share = 1"
+ },
+ "hh_okc": {
+  "key": "hh_okc",
+  "title": "Oklahoma City's arena money per household in the city",
+  "value": 4173.93,
+  "unit": "usd",
+  "basis": "2026 dollars per household",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "census-b11001-2024"
+  ],
+  "display": {
+   "long": "$4,174",
+   "short": "$4,174",
+   "title": "$4,174",
+   "cap": "$4,174"
+  },
+  "note": "The replacement arena and 2025 bond projects tied to it, plus the money for Paycom Center in 2002 and 2008.",
+  "method": "select per_household_2026 from households where team = 'OKC' and share = 1"
+ },
+ "hh_was": {
+  "key": "hh_was",
+  "title": "DC's money for Capital One Arena since 1997, per household",
+  "value": 2293.04,
+  "unit": "usd",
+  "basis": "2026 dollars per household",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "census-b11001-2024"
+  ],
+  "display": {
+   "long": "$2,293",
+   "short": "$2,293",
+   "title": "$2,293",
+   "cap": "$2,293"
+  },
+  "note": "",
+  "method": "select per_household_2026 from households where team = 'WAS' and share = 1"
+ },
+ "nyk_exemption": {
+  "key": "nyk_exemption",
+  "title": "Madison Square Garden's property-tax exemption since 1982",
+  "value": 946.7,
+  "unit": "usd_m",
+  "basis": "nominal sum, a floor in 2026 dollars",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "ibo-2023-march-description-of-public-subsidies-for-m",
+   "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave"
+  ],
+  "display": {
+   "long": "$947 million",
+   "short": "$947M",
+   "title": "$947 Million",
+   "cap": "$947 million"
+  },
+  "note": "Reinvent Albany's sum of the Independent Budget Office's yearly estimates.",
+  "method": "select tax_break_cumulative_2026_m from arenas where team = 'NYK'"
+ },
+ "nyk_exemption_fy2023": {
+  "key": "nyk_exemption_fy2023",
+  "title": "Madison Square Garden's exemption in fiscal 2023",
+  "value": 42.0,
+  "unit": "usd_m",
+  "basis": "nominal, fiscal 2023",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "ibo-2023-march-description-of-public-subsidies-for-m",
+   "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave"
+  ],
+  "display": {
+   "long": "$42 million",
+   "short": "$42M",
+   "title": "$42 Million",
+   "cap": "$42 million"
+  },
+  "note": "",
+  "method": "select tax_break_annual_m from arenas where team = 'NYK'"
+ },
+ "bkn_pilot": {
+  "key": "bkn_pilot",
+  "title": "Barclays Center PILOT bonds, repaid with property taxes diverted to arena debt",
+  "value": 738.2,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "ibo-2009-may-atlantic-yards-testimony",
+   "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
+   "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
+   "nolandgrab-mtastaffsummaryvdyard062209",
+   "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
+   "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
+   "sec-fce-131201310k"
+  ],
+  "display": {
+   "long": "$738 million",
+   "short": "$738M",
+   "title": "$738 Million",
+   "cap": "$738 million"
+  },
+  "note": "$511 million issued in 2009, converted at the 2012 opening year.",
+  "method": "select pilot_2026_m from arenas where team = 'BKN'"
+ },
+ "chi_formula": {
+  "key": "chi_formula",
+  "title": "Property tax the United Center did not pay under the 1989 formula, 2002-2016",
+  "value": 74.6,
+  "unit": "usd_m",
+  "basis": "2026 dollars, each year deflated",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "uc-formula-method",
+   "ptaxsim-2024",
+   "ctu-2013",
+   "datacatalog-uzyt-m557",
+   "cookcountytreasurer-pappasportalnewsletter",
+   "ilga-003502000k10-220"
+  ],
+  "display": {
+   "long": "$75 million",
+   "short": "$75M",
+   "title": "$75 Million",
+   "cap": "$75 million"
+  },
+  "note": "",
+  "method": "select tax_break_cumulative_2026_m from arenas where team = 'CHI'"
+ },
+ "chi_formula_nominal": {
+  "key": "chi_formula_nominal",
+  "title": "The same, in the dollars of each year",
+  "value": 46.604614,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "uc-formula-method",
+   "ptaxsim-2024",
+   "ctu-2013"
+  ],
+  "display": {
+   "long": "$46.6 million",
+   "short": "$46.6M",
+   "title": "$46.6 Million",
+   "cap": "$46.6 million"
+  },
+  "note": "",
+  "method": "select sum(saving_a) / 1e6 from uc_formula"
+ },
+ "uc_formula_bill_min": {
+  "key": "uc_formula_bill_min",
+  "title": "Lowest United Center tax bill under the formula, 2002-2016",
+  "value": 1.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b/a",
+  "sources": [
+   "uc-formula-method",
+   "ptaxsim-2024"
+  ],
+  "display": {
+   "long": "$1.0 million",
+   "short": "$1.0M",
+   "title": "$1.0 Million",
+   "cap": "$1.0 million"
+  },
+  "note": "The statute's $1 million minimum applied in 2005-2008.",
+  "method": "select min(paid_with_floor) / 1e6 from uc_formula"
+ },
+ "uc_formula_bill_max": {
+  "key": "uc_formula_bill_max",
+  "title": "Highest United Center tax bill under the formula, 2002-2016",
+  "value": 4.667721,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "uc-formula-method",
+   "ptaxsim-2024"
+  ],
+  "display": {
+   "long": "$4.7 million",
+   "short": "$4.7M",
+   "title": "$4.7 Million",
+   "cap": "$4.7 million"
+  },
+  "note": "",
+  "method": "select max(paid_with_floor) / 1e6 from uc_formula"
+ },
+ "uc_normal_min": {
+  "key": "uc_normal_min",
+  "title": "Lowest estimated bill without the formula, 2002-2016",
+  "value": 4.588858,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "uc-formula-method",
+   "ptaxsim-2024"
+  ],
+  "display": {
+   "long": "$4.6 million",
+   "short": "$4.6M",
+   "title": "$4.6 Million",
+   "cap": "$4.6 million"
+  },
+  "note": "The first assessed value after the formula ended, at each year's equalization factor and tax rate.",
+  "method": "select min(cf_a_tax) / 1e6 from uc_formula"
+ },
+ "uc_normal_max": {
+  "key": "uc_normal_max",
+  "title": "Highest estimated bill without the formula, 2002-2016",
+  "value": 6.471398,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "uc-formula-method",
+   "ptaxsim-2024"
+  ],
+  "display": {
+   "long": "$6.5 million",
+   "short": "$6.5M",
+   "title": "$6.5 Million",
+   "cap": "$6.5 million"
+  },
+  "note": "",
+  "method": "select max(cf_a_tax) / 1e6 from uc_formula"
+ },
+ "uc_after_min": {
+  "key": "uc_after_min",
+  "title": "Lowest United Center tax bill after the formula ended, 2017-2024",
+  "value": 5.674242,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "ptaxsim-2024"
+  ],
+  "display": {
+   "long": "$5.7 million",
+   "short": "$5.7M",
+   "title": "$5.7 Million",
+   "cap": "$5.7 million"
+  },
+  "note": "",
+  "method": "select min(bill) / 1e6 from uc_bills"
+ },
+ "uc_after_max": {
+  "key": "uc_after_max",
+  "title": "Highest United Center tax bill after the formula ended, 2017-2024",
+  "value": 10.146542,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "ptaxsim-2024"
+  ],
+  "display": {
+   "long": "$10.1 million",
+   "short": "$10.1M",
+   "title": "$10.1 Million",
+   "cap": "$10.1 million"
+  },
+  "note": "",
+  "method": "select max(bill) / 1e6 from uc_bills"
+ },
+ "was_exemption_future": {
+  "key": "was_exemption_future",
+  "title": "Value of DC's property-tax exemption for Capital One Arena, fiscal 2025-2050",
+  "value": 312.7,
+  "unit": "usd_m",
+  "basis": "future years, as valued by DC's chief financial officer",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "cfo-tafa-capital-one-arena-112624"
+  ],
+  "display": {
+   "long": "$312.7 million",
+   "short": "$312.7M",
+   "title": "$312.7 Million",
+   "cap": "$312.7 million"
+  },
+  "note": "$49.8 million for fiscal 2025-2028 and $262.9 million for fiscal 2029-2050 (Table 1). Not added to any total.",
+  "method": "select tax_break_future_committed_m from arenas where team = 'WAS'"
+ },
+ "den_seat_tax_memo": {
+  "key": "den_seat_tax_memo",
+  "title": "Ball Arena's exemption from Denver's seat tax, 1999-2023 (memo)",
+  "value": 96.0,
+  "unit": "usd_m",
+  "basis": "nominal; one press figure",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "sec-0001047469-98-001379",
+   "municode-codescontent",
+   "9news-next-question-what-incentives-did-ball-arena-get"
+  ],
+  "display": {
+   "long": "$96 million",
+   "short": "$96M",
+   "title": "$96 Million",
+   "cap": "$96 million"
+  },
+  "note": "Not added to any total; the press figure could not be opened.",
+  "method": "select tax_break_memo_estimate_m from arenas where team = 'DEN'"
+ },
+ "fed_bond_cost": {
+  "key": "fed_bond_cost",
+  "title": "Federal cost of tax-exempt arena bonds",
+  "value": 1910.1,
+  "unit": "usd_m",
+  "basis": "present value at issue, in 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "gayer-2016"
+  ],
+  "display": {
+   "long": "$1.91 billion",
+   "short": "$1.91B",
+   "title": "$1.91 Billion",
+   "cap": "$1.91 billion"
+  },
+  "note": "New-money bond issues only, at a 28 percent marginal tax rate (the Gayer, Drukker and Gold method). Paid by all U.S. taxpayers; not added to any total.",
+  "method": "select sum(fed_tax_expenditure_pv_2026_m) from arenas"
+ },
+ "tax_breaks_added": {
+  "key": "tax_breaks_added",
+  "title": "Tax breaks added to the expanded total",
+  "value": 1759.5,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "$1.76 billion",
+   "short": "$1.76B",
+   "title": "$1.76 Billion",
+   "cap": "$1.76 billion"
+  },
+  "note": "",
+  "method": "select (select sum(coalesce(pilot_2026_m, 0)) from arenas) + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y')"
+ },
+ "ind_ongoing": {
+  "key": "ind_ongoing",
+  "title": "Capital Improvement Board payments to the Pacers, documented",
+  "value": 229.067408,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "in-83950a",
+   "sboa-84595a",
+   "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+   "in-b37170"
+  ],
+  "display": {
+   "long": "$229 million",
+   "short": "$229M",
+   "title": "$229 Million",
+   "cap": "$229 million"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where team = 'IND' and kind = 'ongoing'"
+ },
+ "ind_yearly_min": {
+  "key": "ind_yearly_min",
+  "title": "Smallest yearly payment to the Pacers, 2015-2025",
+  "value": 13.286113,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "in-83950a",
+   "sboa-84595a",
+   "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+   "in-b37170"
+  ],
+  "display": {
+   "long": "$13 million",
+   "short": "$13M",
+   "title": "$13 Million",
+   "cap": "$13 million"
+  },
+  "note": "",
+  "method": "select min(v) from (select year, sum(public_nominal_m) v from items where team = 'IND' and kind = 'ongoing' and year between 2015 and 2025 group by year)"
+ },
+ "ind_yearly_max": {
+  "key": "ind_yearly_max",
+  "title": "Largest yearly payment to the Pacers, 2015-2025",
+  "value": 18.019353,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "in-83950a",
+   "sboa-84595a",
+   "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+   "in-b37170"
+  ],
+  "display": {
+   "long": "$18 million",
+   "short": "$18M",
+   "title": "$18 Million",
+   "cap": "$18 million"
+  },
+  "note": "",
+  "method": "select max(v) from (select year, sum(public_nominal_m) v from items where team = 'IND' and kind = 'ongoing' and year between 2015 and 2025 group by year)"
+ },
+ "mia_ongoing": {
+  "key": "mia_ongoing",
+  "title": "County and state payments to the Kaseya Center's operator, documented",
+  "value": 335.281926,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "miamidadeig-ig11-34finalbasketball",
+   "miamidadeclerk-cafr2025-complete",
+   "miamidade-archives",
+   "miamidade-home-page",
+   "oppaga-15-01"
+  ],
+  "display": {
+   "long": "$335 million",
+   "short": "$335M",
+   "title": "$335 Million",
+   "cap": "$335 million"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where team = 'MIA' and kind = 'ongoing'"
+ },
+ "nop_ongoing": {
+  "key": "nop_ongoing",
+  "title": "Louisiana stadium district payments to the Pelicans, documented",
+  "value": 128.240094,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "lla-vwprbyagencyjson",
+   "lla-000040e2",
+   "lla-0002644e",
+   "lla-00000f4f",
+   "lla-0000454ba",
+   "senate-01-124-lsed-fy-26-final",
+   "doa-otherrequirements"
+  ],
+  "display": {
+   "long": "$128 million",
+   "short": "$128M",
+   "title": "$128 Million",
+   "cap": "$128 million"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where team = 'NOP' and kind = 'ongoing'"
+ },
+ "threat_episodes": {
+  "key": "threat_episodes",
+  "title": "Episodes in the threat ledger",
+  "value": 49.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "49",
+   "short": "49",
+   "title": "49",
+   "cap": "49"
+  },
+  "note": "",
+  "method": "select count(*) from threats"
+ },
+ "threats_counted": {
+  "key": "threats_counted",
+  "title": "Explicit or implied relocation threats by owners or the league",
+  "value": 20.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "20",
+   "short": "20",
+   "title": "20",
+   "cap": "20"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'episodes_explicit_or_implied'"
+ },
+ "threats_same_city": {
+  "key": "threats_same_city",
+  "title": "Threats followed by public money in the same city",
+  "value": 13.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "13",
+   "short": "13",
+   "title": "13",
+   "cap": "13"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'same_city_money.n'"
+ },
+ "threats_team_left": {
+  "key": "threats_team_left",
+  "title": "Threats after which the team left",
+  "value": 4.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "four",
+   "short": "4",
+   "title": "Four",
+   "cap": "Four"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'team_left.n'"
+ },
+ "lag_median": {
+  "key": "lag_median",
+  "title": "Median months from a threat to the approval of public money",
+  "value": 11.15,
+  "unit": "number",
+  "basis": "months",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "11.2",
+   "short": "11.2",
+   "title": "11.2",
+   "cap": "11.2"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'lag_median'"
+ },
+ "lag_n": {
+  "key": "lag_n",
+  "title": "Threats with dated approvals in the same city",
+  "value": 12.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "12",
+   "short": "12",
+   "title": "12",
+   "cap": "12"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'lag_months.n'"
+ },
+ "lag_within_24": {
+  "key": "lag_within_24",
+  "title": "Of those, approvals within 24 months",
+  "value": 10.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "10",
+   "short": "10",
+   "title": "10",
+   "cap": "10"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'lag_within_24'"
+ },
+ "threat_deals_n": {
+  "key": "threat_deals_n",
+  "title": "Deals that followed a threat",
+  "value": 10.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "10",
+   "short": "10",
+   "title": "10",
+   "cap": "10"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'threat.n'"
+ },
+ "nothreat_deals_n": {
+  "key": "nothreat_deals_n",
+  "title": "Deals with no threat",
+  "value": 14.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "14",
+   "short": "14",
+   "title": "14",
+   "cap": "14"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'no_threat.n'"
+ },
+ "threat_median_share": {
+  "key": "threat_median_share",
+  "title": "Median public share of deals that followed a threat",
+  "value": 64.375,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "64 percent",
+   "short": "64%",
+   "title": "64%",
+   "cap": "64 percent"
+  },
+  "note": "",
+  "method": "select 100 * v from comparison where k = 'threat.median_share'"
+ },
+ "nothreat_median_share": {
+  "key": "nothreat_median_share",
+  "title": "Median public share of deals with no threat",
+  "value": 76.018223,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "76 percent",
+   "short": "76%",
+   "title": "76%",
+   "cap": "76 percent"
+  },
+  "note": "",
+  "method": "select 100 * v from comparison where k = 'no_threat.median_share'"
+ },
+ "threat_median_public": {
+  "key": "threat_median_public",
+  "title": "Median public money in deals that followed a threat",
+  "value": 350.257118,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$350 million",
+   "short": "$350M",
+   "title": "$350 Million",
+   "cap": "$350 million"
+  },
+  "note": "",
+  "method": "select v * (select factor_2026 from cpi where year = 2025) from comparison where k = 'threat.median_public_m_2025'"
+ },
+ "nothreat_median_public": {
+  "key": "nothreat_median_public",
+  "title": "Median public money in deals with no threat",
+  "value": 246.673727,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$247 million",
+   "short": "$247M",
+   "title": "$247 Million",
+   "cap": "$247 million"
+  },
+  "note": "",
+  "method": "select v * (select factor_2026 from cpi where year = 2025) from comparison where k = 'no_threat.median_public_m_2025'"
+ },
+ "p_share": {
+  "key": "p_share",
+  "title": "Chance of a difference in public share at least this large if threats made no difference",
+  "value": 0.522296,
+  "unit": "number",
+  "basis": "two-sided Mann-Whitney U test",
+  "digits": 2,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "0.52",
+   "short": "0.52",
+   "title": "0.52",
+   "cap": "0.52"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'p_share'"
+ },
+ "p_dollars": {
+  "key": "p_dollars",
+  "title": "The same test for public money",
+  "value": 0.703499,
+  "unit": "number",
+  "basis": "two-sided Mann-Whitney U test",
+  "digits": 2,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "0.70",
+   "short": "0.70",
+   "title": "0.70",
+   "cap": "0.70"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'p_dollars'"
+ },
+ "leases_by_2036": {
+  "key": "leases_by_2036",
+  "title": "Current arena leases that end by 2036",
+  "value": 11.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "dailymemphian-2",
+   "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+   "audacy-fedexforum",
+   "lla-0000454ba",
+   "senate-01-124-lsed-fy-26-final",
+   "portland-adopted",
+   "spectrumlocalnews-south-texas-el-paso",
+   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
+   "ksat-spurs-consider-a-downtown-move",
+   "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
+   "houstonsports-toyota-center-arena-lease",
+   "houstonsports-hchsa-special-bod-agenda-4-8-26",
+   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
+   "gateway-edc-audit-2022",
+   "gwcomplex-board-packet-12-17-25",
+   "sportsbusinessdaily-twolves",
+   "law-orlando-magic-lease-summary-8-14",
+   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+   "bostonglobe-celtics-extend-their-lease-td-garden-through-203"
+  ],
+  "display": {
+   "long": "11",
+   "short": "11",
+   "title": "11",
+   "cap": "11"
+  },
+  "note": "",
+  "method": "select count(*) from leases where term_end_year <= 2036"
+ },
+ "leases_by_2031": {
+  "key": "leases_by_2031",
+  "title": "Leases that end by 2031",
+  "value": 5.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "five",
+   "short": "5",
+   "title": "Five",
+   "cap": "Five"
+  },
+  "note": "",
+  "method": "select count(*) from leases where term_end_year <= 2031"
+ },
+ "first_lease_end": {
+  "key": "first_lease_end",
+  "title": "Year the first current lease ends",
+  "value": 2029.0,
+  "unit": "year",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "2029",
+   "short": "2029",
+   "title": "2029",
+   "cap": "2029"
+  },
+  "note": "",
+  "method": "select min(term_end_year) from leases"
+ },
+ "okc_exit_penalty": {
+  "key": "okc_exit_penalty",
+  "title": "Oklahoma City's early-exit penalties",
+  "value": 1000.0,
+  "unit": "usd_m",
+  "basis": "nominal; more than",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "okc-city-council-approves-letter-of-intent-with-the",
+   "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
+   "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
+   "cbssports-thunder-will-stay-in-oklahoma-city-through-at-le"
+  ],
+  "display": {
+   "long": "$1 billion",
+   "short": "$1B",
+   "title": "$1 Billion",
+   "cap": "$1 billion"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/authorities/lease_clock.csv (team=OKC, column outs_penalties_notes: \"more than $1B\")"
+ },
+ "mil_exit_penalty": {
+  "key": "mil_exit_penalty",
+  "title": "Milwaukee's non-relocation damages in the first year of the lease",
+  "value": 553.0,
+  "unit": "usd_m",
+  "basis": "nominal; at least",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "wi-lfb-informational-paper-18",
+   "dailyreporter-bucks-sign-30-year-lease-with-arena-owner",
+   "biztimes-bucks-sign-30-year-lease-agreement-with-wisconsi",
+   "wpr-milwaukee-bucks-sign-30-year-lease-new-arena-sit"
+  ],
+  "display": {
+   "long": "$553 million",
+   "short": "$553M",
+   "title": "$553 Million",
+   "cap": "$553 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/authorities/lease_clock.csv (team=MIL, column outs_penalties_notes: \"at least $553M in year 1\")"
+ },
+ "ind_exit_penalty": {
+  "key": "ind_exit_penalty",
+  "title": "What the Pacers owe if they stop playing home games at the Fieldhouse",
+  "value": 750.0,
+  "unit": "usd_m",
+  "basis": "nominal; up to",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "in-83950a"
+  ],
+  "display": {
+   "long": "$750 million",
+   "short": "$750M",
+   "title": "$750 Million",
+   "cap": "$750 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/authorities/lease_clock.csv (team=IND, column outs_penalties_notes: \"up to $750M\")"
+ },
+ "cpi_base": {
+  "key": "cpi_base",
+  "title": "2026 CPI-U base (January-August average)",
+  "value": 331.655375,
+  "unit": "number",
+  "basis": "",
+  "digits": 3,
+  "label": "b/a",
+  "sources": [
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "331.655",
+   "short": "331.655",
+   "title": "331.655",
+   "cap": "331.655"
+  },
+  "note": "",
+  "method": "select cpi from cpi where year = 2026"
+ },
+ "items_n": {
+  "key": "items_n",
+  "title": "Money rows in the ledger",
+  "value": 192.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "192",
+   "short": "192",
+   "title": "192",
+   "cap": "192"
+  },
+  "note": "",
+  "method": "select count(*) from items"
+ },
+ "sources_n": {
+  "key": "sources_n",
+  "title": "Sources in the bibliography",
+  "value": 312.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "312",
+   "short": "312",
+   "title": "312",
+   "cap": "312"
+  },
+  "note": "",
+  "method": "select count(*) from sources"
+ },
+ "sources_government": {
+  "key": "sources_government",
+  "title": "Government sources",
+  "value": 109.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "109",
+   "short": "109",
+   "title": "109",
+   "cap": "109"
+  },
+  "note": "",
+  "method": "select count(*) from sources where origin = 'government'"
+ },
+ "sources_court": {
+  "key": "sources_court",
+  "title": "Court sources",
+  "value": 0.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "zero",
+   "short": "0",
+   "title": "Zero",
+   "cap": "Zero"
+  },
+  "note": "",
+  "method": "select count(*) from sources where origin = 'court'"
+ },
+ "sources_team": {
+  "key": "sources_team",
+  "title": "Team or league sources",
+  "value": 14.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "14",
+   "short": "14",
+   "title": "14",
+   "cap": "14"
+  },
+  "note": "",
+  "method": "select count(*) from sources where origin = 'team_or_league'"
+ },
+ "sources_independent": {
+  "key": "sources_independent",
+  "title": "Independent sources",
+  "value": 189.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "189",
+   "short": "189",
+   "title": "189",
+   "cap": "189"
+  },
+  "note": "",
+  "method": "select count(*) from sources where origin = 'independent'"
+ }
+}

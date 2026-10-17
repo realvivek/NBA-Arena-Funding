@@ -4,7 +4,7 @@
 
 Columns, all for the Assessor's 75-PIN United Center valuation unit (keypin 17-07-426-007-0000), nominal dollars:
 
-- `board_av`: Board of Review assessed value, summed over the 75 PINs. Cook County Assessor, Historic Assessed Values (Socrata `uzyt-m557`), https://datacatalog.cookcountyil.gov/resource/uzyt-m557.json (b).
+- `board_av`: Board of Review assessed value, summed over the 75 PINs. Cook County Assessor, "Assessor - Assessed Values" (Socrata `uzyt-m557`; titled "Historic Assessed Values" when first used), https://datacatalog.cookcountyil.gov/resource/uzyt-m557.json (b).
 - `eq_factor`: final state equalization factor (IDOR, via the Assessor's PTAXSIM database v2024.0.0, table `eq_factor`), https://ccao-data-public-us-east-1.s3.amazonaws.com/ptaxsim/ptaxsim-2024.0.0.db.bz2 (b).
 - `rate_pct`: composite tax rate of tax code 77001. PTAXSIM `tax_code` table for 2006-2016 (b); for 2002-2005, Chicago Teachers Union, "Nothing but Net Profit" (2013), Table 3, taken from Clerk data (c; its 2006-2007 rates match PTAXSIM exactly). `rate_label` marks which.
 - `bill`: tax billed. PTAXSIM `pin.tax_bill_total` for 2006-2016 (b); `board_av` x `eq_factor` x `rate_pct` for 2002-2005 (a).

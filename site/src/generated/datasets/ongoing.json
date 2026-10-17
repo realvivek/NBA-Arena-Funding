@@ -1,0 +1,1742 @@
+{
+ "id": "ongoing",
+ "title": "Yearly public payments to teams or arena operators",
+ "sources": [
+  "ledger",
+  "fred-cpiaucns",
+  "charlottenc-adopted-fy-2027-budget-print",
+  "in-83950a",
+  "sboa-84595a",
+  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+  "in-b37170",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "oppaga-15-01",
+  "miamidadeig-ig11-34finalbasketball",
+  "miamidadeclerk-cafr2025-complete",
+  "miamidade-archives",
+  "miamidade-home-page",
+  "minneapolismn-www-content-assets",
+  "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+  "lla-vwprbyagencyjson",
+  "lla-000040e2",
+  "lla-0002644e",
+  "lla-00000f4f",
+  "lla-0000454ba",
+  "senate-01-124-lsed-fy-26-final",
+  "doa-otherrequirements",
+  "okc-audit-of-certain-public-ev",
+  "sai-ocppa-final-2023-9hvg",
+  "okc-ocppa-2024-final-web"
+ ],
+ "columns": [
+  "team",
+  "item_id",
+  "description",
+  "year",
+  "public_nominal_m",
+  "public_2026_m",
+  "label",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "CHA",
+   "item_id": "CHA-ongoing-2-2020",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "year": 2020,
+   "public_nominal_m": 0.472588,
+   "public_2026_m": 0.605601,
+   "label": "a",
+   "sources": [
+    "charlottenc-adopted-fy-2027-budget-print"
+   ]
+  },
+  {
+   "team": "CHA",
+   "item_id": "CHA-ongoing-2-2021",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "year": 2021,
+   "public_nominal_m": 0.496018,
+   "public_2026_m": 0.607105,
+   "label": "a",
+   "sources": [
+    "charlottenc-adopted-fy-2027-budget-print"
+   ]
+  },
+  {
+   "team": "CHA",
+   "item_id": "CHA-ongoing-2-2022",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "year": 2022,
+   "public_nominal_m": 0.540705,
+   "public_2026_m": 0.612762,
+   "label": "a",
+   "sources": [
+    "charlottenc-adopted-fy-2027-budget-print"
+   ]
+  },
+  {
+   "team": "CHA",
+   "item_id": "CHA-ongoing-2-2023",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "year": 2023,
+   "public_nominal_m": 0.5,
+   "public_2026_m": 0.54423,
+   "label": "a",
+   "sources": [
+    "charlottenc-adopted-fy-2027-budget-print"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2001",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2001,
+   "public_nominal_m": 1.141247,
+   "public_2026_m": 2.137617,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2014",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2014,
+   "public_nominal_m": 7.921022,
+   "public_2026_m": 11.09695,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2015",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2015,
+   "public_nominal_m": 14.255037,
+   "public_2026_m": 19.946922,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2016",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2016,
+   "public_nominal_m": 14.474999,
+   "public_2026_m": 20.002366,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2017",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2017,
+   "public_nominal_m": 18.019353,
+   "public_2026_m": 24.380815,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2018",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2018,
+   "public_nominal_m": 16.312931,
+   "public_2026_m": 21.545695,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2019",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2019,
+   "public_nominal_m": 17.276092,
+   "public_2026_m": 22.411667,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2020",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2020,
+   "public_nominal_m": 17.416795,
+   "public_2026_m": 22.318873,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2021",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2021,
+   "public_nominal_m": 17.960468,
+   "public_2026_m": 21.982844,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2022",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2022,
+   "public_nominal_m": 15.783251,
+   "public_2026_m": 17.886595,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2023",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2023,
+   "public_nominal_m": 14.709638,
+   "public_2026_m": 16.010847,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2024",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2024,
+   "public_nominal_m": 14.810989,
+   "public_2026_m": 15.659289,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-ongoing-1-2025",
+   "description": "Capital Improvement Board payments to the Pacers",
+   "year": 2025,
+   "public_nominal_m": 13.286113,
+   "public_2026_m": 13.686928,
+   "label": "b",
+   "sources": [
+    "in-83950a",
+    "sboa-84595a",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "in-b37170"
+   ]
+  },
+  {
+   "team": "MEM",
+   "item_id": "MEM-ongoing-1-2021",
+   "description": "City and county operating subsidy (press only)",
+   "year": 2021,
+   "public_nominal_m": 4.95,
+   "public_2026_m": 6.058588,
+   "label": "c/a",
+   "sources": [
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MEM",
+   "item_id": "MEM-ongoing-1-2022",
+   "description": "City and county operating subsidy (press only)",
+   "year": 2022,
+   "public_nominal_m": 4.95,
+   "public_2026_m": 5.609658,
+   "label": "c/a",
+   "sources": [
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MEM",
+   "item_id": "MEM-ongoing-1-2023",
+   "description": "City and county operating subsidy (press only)",
+   "year": 2023,
+   "public_nominal_m": 4.95,
+   "public_2026_m": 5.387875,
+   "label": "c/a",
+   "sources": [
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MEM",
+   "item_id": "MEM-ongoing-1-2024",
+   "description": "City and county operating subsidy (press only)",
+   "year": 2024,
+   "public_nominal_m": 4.95,
+   "public_2026_m": 5.233511,
+   "label": "c/a",
+   "sources": [
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MEM",
+   "item_id": "MEM-ongoing-1-2025",
+   "description": "City and county operating subsidy (press only)",
+   "year": 2025,
+   "public_nominal_m": 6.3,
+   "public_2026_m": 6.490058,
+   "label": "c/a",
+   "sources": [
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MEM",
+   "item_id": "MEM-ongoing-1-2026",
+   "description": "City and county operating subsidy (press only)",
+   "year": 2026,
+   "public_nominal_m": 6.3,
+   "public_2026_m": 6.3,
+   "label": "c/a",
+   "sources": [
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-1998",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 1998,
+   "public_nominal_m": 1.5,
+   "public_2026_m": 3.051887,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-1999",
+   "description": "County payments to the arena manager",
+   "year": 1999,
+   "public_nominal_m": 5.0,
+   "public_2026_m": 9.955137,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-1999",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 1999,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.982055,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2000",
+   "description": "County payments to the arena manager",
+   "year": 2000,
+   "public_nominal_m": 3.2,
+   "public_2026_m": 6.163166,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2000",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2000,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.851979,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2001",
+   "description": "County payments to the arena manager",
+   "year": 2001,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 11.987544,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2001",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2001,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.746107,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2002",
+   "description": "County payments to the arena manager",
+   "year": 2002,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 11.800386,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2002",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2002,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.687621,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2003",
+   "description": "County payments to the arena manager",
+   "year": 2003,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 11.538452,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2003",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2003,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.605766,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2004",
+   "description": "County payments to the arena manager",
+   "year": 2004,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 11.237595,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2004",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2004,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.511748,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2005",
+   "description": "County payments to the arena manager",
+   "year": 2005,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 10.868843,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2005",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2005,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.396513,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2006",
+   "description": "County payments to the arena manager",
+   "year": 2006,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 10.529177,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2006",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2006,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.290368,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2007",
+   "description": "County payments to the arena manager",
+   "year": 2007,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 10.237145,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2007",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2007,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.199108,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2008",
+   "description": "County payments to the arena manager",
+   "year": 2008,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 9.858661,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2008",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2008,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.080832,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2009",
+   "description": "County payments to the arena manager",
+   "year": 2009,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 9.893838,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2009",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2009,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.091824,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2010",
+   "description": "County payments to the arena manager",
+   "year": 2010,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 9.734193,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2010",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2010,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 3.041935,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2011",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2011,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.948845,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2012",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2012,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.889061,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2013",
+   "description": "County payments to the arena manager",
+   "year": 2013,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 9.111525,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2013",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2013,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.847352,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2014",
+   "description": "County payments to the arena manager",
+   "year": 2014,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 8.966076,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2014",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2014,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.801899,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2015",
+   "description": "County payments to the arena manager",
+   "year": 2015,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 8.955452,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2015",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2015,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.798579,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2016",
+   "description": "County payments to the arena manager",
+   "year": 2016,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 8.843879,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2016",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2016,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.763712,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2017",
+   "description": "County payments to the arena manager",
+   "year": 2017,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 8.659424,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2017",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2017,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.70607,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2018",
+   "description": "County payments to the arena manager",
+   "year": 2018,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 8.452954,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2018",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2018,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.641548,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2019",
+   "description": "County payments to the arena manager",
+   "year": 2019,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 8.302495,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2019",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2019,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.59453,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2020",
+   "description": "County payments to the arena manager",
+   "year": 2020,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 8.201325,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2020",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2020,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.562914,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2021",
+   "description": "County payments to the arena manager",
+   "year": 2021,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 7.833326,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-2-2021",
+   "description": "County naming-rights payments to the arena manager",
+   "year": 2021,
+   "public_nominal_m": 4.0,
+   "public_2026_m": 4.895829,
+   "label": "b/a",
+   "sources": [
+    "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2021",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2021,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.447914,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2022",
+   "description": "County payments to the arena manager",
+   "year": 2022,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 7.252892,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-2-2022",
+   "description": "County naming-rights payments to the arena manager",
+   "year": 2022,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.266529,
+   "label": "b/a",
+   "sources": [
+    "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2022",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2022,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.266529,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2023",
+   "description": "County payments to the arena manager",
+   "year": 2023,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 6.966142,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-2-2023",
+   "description": "County naming-rights payments to the arena manager",
+   "year": 2023,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.176919,
+   "label": "b/a",
+   "sources": [
+    "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2023",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2023,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.176919,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2024",
+   "description": "County payments to the arena manager",
+   "year": 2024,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 6.76656,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-2-2024",
+   "description": "County naming-rights payments to the arena manager",
+   "year": 2024,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.11455,
+   "label": "b/a",
+   "sources": [
+    "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2024",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2024,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.11455,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2025",
+   "description": "County payments to the arena manager",
+   "year": 2025,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 6.593075,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-2-2025",
+   "description": "County naming-rights payments to the arena manager",
+   "year": 2025,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.060336,
+   "label": "b/a",
+   "sources": [
+    "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2025",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2025,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.060336,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-1-2026",
+   "description": "County payments to the arena manager",
+   "year": 2026,
+   "public_nominal_m": 6.4,
+   "public_2026_m": 6.4,
+   "label": "b/a",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-archives",
+    "miamidade-home-page"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-2-2026",
+   "description": "County naming-rights payments to the arena manager",
+   "year": 2026,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.0,
+   "label": "b/a",
+   "sources": [
+    "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "MIA",
+   "item_id": "MIA-ongoing-3-2026",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "year": 2026,
+   "public_nominal_m": 1.5,
+   "public_2026_m": 1.5,
+   "label": "b/a",
+   "sources": [
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2010",
+   "description": "City payments to the arena operator",
+   "year": 2010,
+   "public_nominal_m": 1.367,
+   "public_2026_m": 2.079163,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2011",
+   "description": "City payments to the arena operator",
+   "year": 2011,
+   "public_nominal_m": 1.563,
+   "public_2026_m": 2.304522,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2012",
+   "description": "City payments to the arena operator",
+   "year": 2012,
+   "public_nominal_m": 1.483,
+   "public_2026_m": 2.142238,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2013",
+   "description": "City payments to the arena operator",
+   "year": 2013,
+   "public_nominal_m": 1.476,
+   "public_2026_m": 2.101346,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2014",
+   "description": "City payments to the arena operator",
+   "year": 2014,
+   "public_nominal_m": 1.265,
+   "public_2026_m": 1.772201,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2015",
+   "description": "City payments to the arena operator",
+   "year": 2015,
+   "public_nominal_m": 1.441,
+   "public_2026_m": 2.016376,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2016",
+   "description": "City payments to the arena operator",
+   "year": 2016,
+   "public_nominal_m": 1.6,
+   "public_2026_m": 2.21097,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2017",
+   "description": "City payments to the arena operator",
+   "year": 2017,
+   "public_nominal_m": 2.0,
+   "public_2026_m": 2.70607,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIN",
+   "item_id": "MIN-ongoing-1-2018",
+   "description": "City payments to the arena operator",
+   "year": 2018,
+   "public_nominal_m": 1.627,
+   "public_2026_m": 2.148899,
+   "label": "b",
+   "sources": [
+    "minneapolismn-www-content-assets",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2003",
+   "description": "Stadium district payments to the team",
+   "year": 2003,
+   "public_nominal_m": 1.5,
+   "public_2026_m": 2.704325,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2004",
+   "description": "Stadium district payments to the team",
+   "year": 2004,
+   "public_nominal_m": 1.575,
+   "public_2026_m": 2.765502,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2005",
+   "description": "Stadium district payments to the team",
+   "year": 2005,
+   "public_nominal_m": 2.321192,
+   "public_2026_m": 3.94198,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2006",
+   "description": "Stadium district payments to the team",
+   "year": 2006,
+   "public_nominal_m": 0.972003,
+   "public_2026_m": 1.599124,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2007",
+   "description": "Stadium district payments to the team",
+   "year": 2007,
+   "public_nominal_m": 0.619573,
+   "public_2026_m": 0.99104,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2008",
+   "description": "Stadium district payments to the team",
+   "year": 2008,
+   "public_nominal_m": 6.708182,
+   "public_2026_m": 10.33339,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2009",
+   "description": "Stadium district payments to the team",
+   "year": 2009,
+   "public_nominal_m": 0.859184,
+   "public_2026_m": 1.328223,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2010",
+   "description": "Stadium district payments to the team",
+   "year": 2010,
+   "public_nominal_m": 3.447166,
+   "public_2026_m": 5.243028,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2011",
+   "description": "Stadium district payments to the team",
+   "year": 2011,
+   "public_nominal_m": 8.937565,
+   "public_2026_m": 13.177747,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2012",
+   "description": "Stadium district payments to the team",
+   "year": 2012,
+   "public_nominal_m": 4.026768,
+   "public_2026_m": 5.816788,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2013",
+   "description": "Stadium district payments to the team",
+   "year": 2013,
+   "public_nominal_m": 4.250658,
+   "public_2026_m": 6.051559,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2014",
+   "description": "Stadium district payments to the team",
+   "year": 2014,
+   "public_nominal_m": 4.940876,
+   "public_2026_m": 6.921917,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2015",
+   "description": "Stadium district payments to the team",
+   "year": 2015,
+   "public_nominal_m": 3.559222,
+   "public_2026_m": 4.980382,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2016",
+   "description": "Stadium district payments to the team",
+   "year": 2016,
+   "public_nominal_m": 3.417116,
+   "public_2026_m": 4.721963,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2017",
+   "description": "Stadium district payments to the team",
+   "year": 2017,
+   "public_nominal_m": 3.895722,
+   "public_2026_m": 5.271048,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2018",
+   "description": "Stadium district payments to the team",
+   "year": 2018,
+   "public_nominal_m": 4.51476,
+   "public_2026_m": 5.962978,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2019",
+   "description": "Stadium district payments to the team",
+   "year": 2019,
+   "public_nominal_m": 4.56059,
+   "public_2026_m": 5.916293,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2020",
+   "description": "Stadium district payments to the team",
+   "year": 2020,
+   "public_nominal_m": 4.040155,
+   "public_2026_m": 5.177285,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2021",
+   "description": "Stadium district payments to the team",
+   "year": 2021,
+   "public_nominal_m": 3.708917,
+   "public_2026_m": 4.539556,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2022",
+   "description": "Stadium district payments to the team",
+   "year": 2022,
+   "public_nominal_m": 4.917944,
+   "public_2026_m": 5.57333,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2023",
+   "description": "Stadium district payments to the team",
+   "year": 2023,
+   "public_nominal_m": 5.398144,
+   "public_2026_m": 5.875662,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2024",
+   "description": "Stadium district payments to the team",
+   "year": 2024,
+   "public_nominal_m": 5.653854,
+   "public_2026_m": 5.977679,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2025",
+   "description": "Stadium district payments to the team",
+   "year": 2025,
+   "public_nominal_m": 9.43467,
+   "public_2026_m": 9.719295,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-ongoing-1-2026",
+   "description": "Stadium district payments to the team",
+   "year": 2026,
+   "public_nominal_m": 3.65,
+   "public_2026_m": 3.65,
+   "label": "b/a",
+   "sources": [
+    "lla-vwprbyagencyjson",
+    "lla-000040e2",
+    "lla-0002644e",
+    "lla-00000f4f",
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final",
+    "doa-otherrequirements"
+   ]
+  },
+  {
+   "team": "OKC",
+   "item_id": "OKC-ongoing-2-2023",
+   "description": "City operating subsidy to ASM Global for the Paycom Center",
+   "year": 2023,
+   "public_nominal_m": 8.8,
+   "public_2026_m": 9.578445,
+   "label": "b",
+   "sources": [
+    "okc-audit-of-certain-public-ev",
+    "sai-ocppa-final-2023-9hvg",
+    "okc-ocppa-2024-final-web"
+   ]
+  }
+ ],
+ "note": "",
+ "method": "select i.team, i.item_id, i.description, i.year, i.public_nominal_m, i.public_2026_m, i.public_label as label, coalesce((select list(s.source_id order by s.ord) from item_sources s where s.item_id = i.item_id and s.role = 'public'), []) as sources from items i where i.kind = 'ongoing' order by i.team, i.year, i.item_id"
+}

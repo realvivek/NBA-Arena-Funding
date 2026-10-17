@@ -1,0 +1,705 @@
+{
+ "id": "arena-fields",
+ "title": "Notes and sources for each arena's construction, renovations, tax status and lease",
+ "sources": [
+  "ledger",
+  "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
+  "fieldofschemes",
+  "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b",
+  "ibo-2023-march-description-of-public-subsidies-for-m",
+  "bostonglobe-celtics-extend-their-lease-td-garden-through-203",
+  "boston-datastore-search",
+  "archive-doc5530-1992-10-22-2",
+  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
+  "datacatalog-uzyt-m557",
+  "cookcountytreasurer-pappasportalnewsletter",
+  "ilga-003502000k10-220",
+  "gateway-edc-audit-2022",
+  "gwcomplex-board-packet-12-17-25",
+  "spectrumlocalnews-south-texas-el-paso",
+  "sec-0001047469-98-001379",
+  "sec-0000927356-99-000502",
+  "municode-codescontent",
+  "9news-next-question-what-incentives-did-ball-arena-get",
+  "detroit-dda-fs-2024",
+  "sf-wv5m-vpq2",
+  "houstonsports-toyota-center-arena-lease",
+  "houstonsports-hchsa-special-bod-agenda-4-8-26",
+  "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
+  "in-83950a",
+  "portal-parceldetail",
+  "portal-parceldetail-2",
+  "dailymemphian-2",
+  "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+  "audacy-fedexforum",
+  "miamidade-volume-1",
+  "upi-heat-commit-to-miami-through-2040",
+  "nbcmiami-county-approves-new-heat-deal",
+  "miamidadeclerk-cafr2025-complete",
+  "wi-lfb-informational-paper-18",
+  "dailyreporter-bucks-sign-30-year-lease-with-arena-owner",
+  "biztimes-bucks-sign-30-year-lease-agreement-with-wisconsi",
+  "wpr-milwaukee-bucks-sign-30-year-lease-new-arena-sit",
+  "sportsbusinessdaily-twolves",
+  "lla-0000454ba",
+  "senate-01-124-lsed-fy-26-final",
+  "sec-msgs-20260630",
+  "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave",
+  "okc-city-council-approves-letter-of-intent-with-the",
+  "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
+  "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
+  "cbssports-thunder-will-stay-in-oklahoma-city-through-at-le",
+  "law-orlando-magic-lease-summary-8-14",
+  "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+  "whyy-south-philadelphia-new-arena-design-76ers-comcas",
+  "si-phoenix-city-council-approves-suns-arena-rennova",
+  "portland-adopted",
+  "wweek-proposed-city-purchase-of-moda-center-would-trig",
+  "efiles",
+  "cityofsacramento-city-of-sacramento-2025-acfr",
+  "cbsnews-sacramento-council-approves-kings-arena-deal-7-2",
+  "ksat-spurs-consider-a-downtown-move",
+  "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
+  "ksl",
+  "saltlakecounty-valuationinfoexpanded-cfm",
+  "cfo-fis-downtown-arena-revitalization",
+  "dcgis-mapserver",
+  "cfo-tafa-capital-one-arena-112624"
+ ],
+ "columns": [
+  "team",
+  "construction_cost_other_reports",
+  "public_construction_notes",
+  "ongoing_notes",
+  "tax_break_desc",
+  "tax_break_notes",
+  "pilot_note",
+  "conduit_note",
+  "bond_detail",
+  "lease_terms",
+  "exit_penalty",
+  "lease_label",
+  "property_tax_sources",
+  "lease_sources",
+  "tax_break_sources"
+ ],
+ "rows": [
+  {
+   "team": "ATL",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "3% car-rental tax paid for $62.5M of public infrastructure (Bond Buyer: $70.7M car-rental-tax bonds sold 1996, refunded 2005). Arena itself financed by $130.75M Recreation Authority bonds repaid by Turner ($12.5M/yr) -> treated as private (conduit). Time Warner $20M toward infrastructure.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": "Recreation Authority arena bonds repaid by Turner/arena revenues (c, Marquette via search; Bond Buyer reports $147.5M taxable 1997)",
+   "bond_detail": "2017 City of Atlanta revenue bonds (car rental tax) $110M not confirmed",
+   "lease_terms": "Non-relocation to 2046 (matches bond maturity)",
+   "exit_penalty": "Break-up fee up to $200M before 2046; Hawks pay $5.9M/yr lease after bonds retire 2028",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
+    "fieldofschemes"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "BKN",
+   "construction_cost_other_reports": "Developer's \"Total Cost\" at opening, scope not defined (FCE 10-K FY2012). Alternatives: $890.2M recorded building cost with land at zero (b, same 10-K Schedule III; includes capitalized interest, amount not given); $940.0M recorded at Dec 31 2014 after post-opening work (b); pre-opening estimates $904.3M-$911.1M (b, FCE 10-Ks FY2009-FY2011); ~$1.0B (c, Wikipedia)",
+   "public_construction_notes": "City capital contribution \"has grown from $100 million to $205 million\" (b, IBO testimony May 2009) + State $100M (c, Doctoroff via Gotham Gazette), for land acquisition and infrastructure for the arena block, outside the arena cost. MTA Vanderbilt Yard: IBO (Sept 2009) puts the subsidy at the $50M gap between Extell's $150M cash bid and Forest City's $100M and attributes $10M (present value) of it to the arena, using the 2009 terms' $20M of $100M for the arena block (b) -> land bucket (a public asset sold below the competing bid). Extell's $150M is computed from IBO's $50M gap (a). Whole-project alternatives, not counted: $50M bid gap (b); IBO's $214M appraisal ($214.5M per Atlantic Yards Report, c) minus the $100M present value of the 2009 payment stream at the MTA's 6.5% = $114.0M (a); replacement yard cut from $240-250M (MTA CFO via Atlantic Yards Report, c) or $182M (developer's figure via Atlantic Yards Report, c) to $147M (b, MTA staff summary) = $35M-$103M (a). The $10M is a present value as of FY2010 but is deflated with the construction money at the 2012 opening year (at 2010 it would be about $0.7M higher in 2026 dollars).",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": "Tax-exempt PILOT bonds (2009; refunded 2016 as $478.7M tax-exempt + $15M taxable) repaid from PILOTs in lieu of property tax (would-be tax $99M vs PILOT $39M in 2023 per IBO). Counted only in the expanded total.",
+   "conduit_note": null,
+   "bond_detail": "2009 Brooklyn Arena Local Development Corp PILOT bonds $564M tax-exempt | 2016 BALDC PILOT Revenue Refunding Bonds Series 2016A $478.665M tax-exempt | 2016 BALDC PILOT Revenue Refunding Bonds Series 2016B $15M TAXABLE",
+   "lease_terms": "Non-relocation agreement cited by Moody's as PILOT-bond credit positive; PILOT bonds final debt service 2046",
+   "exit_penalty": "Term/penalty not confirmed",
+   "lease_label": "c/u",
+   "property_tax_sources": [
+    "ibo-2023-march-description-of-public-subsidies-for-m"
+   ],
+   "lease_sources": [
+    "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "BOS",
+   "construction_cost_other_reports": "BRA-approved estimate: \"The total capital required to complete the Project is estimated to be $160,000,000\" (Report and Decision); the Application says the $160M is \"inclusive of pre-development and property acquisition costs\" (1992); $161.9M arena-only projection incl. $23.1M construction-period interest, taxes, loan fees and linkage (b, team-filed 1990 Draft Project Impact Report Table IV-1); $160M (c, Wikipedia); no as-built cost found",
+   "public_construction_notes": "No public construction money found. Financed by a $120M bank loan and $40M developer equity (BRA 1992); the Commonwealth paid compensation for taking the developer's 150 Causeway St leasehold (not a subsidy). Approved as a Chapter 121A project with negotiated tax payments of $1.0M a year rising $0.1M a year to $1.5M, which the BRA called necessary for the financing (not quantified as a break). The 1993 House bill had the developer repay $5.126M of MBTA work by a note starting in year 11 (deferred, not a grant; enacted text not checked).",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Lease through 2035-36 season (2021 15-yr extension)",
+   "exit_penalty": "Not public",
+   "lease_label": "c",
+   "property_tax_sources": [
+    "boston-datastore-search",
+    "archive-doc5530-1992-10-22-2"
+   ],
+   "lease_sources": [
+    "bostonglobe-celtics-extend-their-lease-td-garden-through-203"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "CHA",
+   "construction_cost_other_reports": "City ACFR: \"The $200 million project\" (not itemized). $265M (c, Carolina Journal); $260M (c, Charlotte Observer via SBD; Wikipedia); $182M (c, Athletic Business); $200M (2002 plan). The $60-65M gap may be land, parking or financing costs; no document reached says so",
+   "public_construction_notes": "City ACFR FY2020: the project \"was funded primarily through a combination of installment financing obligations supported by a portion of an occupancy tax and a dedicated rental car tax, private contributions and the sale of City assets\" (b, no amounts). Carolina Journal: taxpayers ~$170M, owner Johnson ~$23M (c). 2002 plan also had banks/utility underwrite $100M recovered ~$50M via sale of city land, a 3% seat tax (~$15M) and $16.8M F&B rights. $170M used as the explicitly attributed figure.",
+   "ongoing_notes": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match: Arena Maintenance Reserve (tourism taxes) less the Hornets' contribution, less $0.6M a year already in the 2014 row; actual budget years FY2020-23; FY2024-26 net zero; FY2006-19 not reachable",
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2003 City of Charlotte COPs $229M tax-exempt | 2023 City of Charlotte variable-rate COPs (converted 2024) $110M not confirmed",
+   "lease_terms": "Extended from 2030 to 2045 (June 2022, 10-1 vote)",
+   "exit_penalty": "City was already obligated to spend $173M under old lease; Hornets $0 rent until 2030 then $2M/yr",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "CHI",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "Privately financed. The 1989 state law (P.A. 86-110) valued the arena by a formula (20% of 4 x owners' net income after interest, income taxes and capital repairs) with a $1M minimum tax, for 22 years after the base year; taxes forgone 2002-2016 estimated at $46.6M nominal (expanded total only; 1994-2001 not computed). 2024 Board of Review cut AV from $92.1M to $50.3M on owner appeal.",
+   "ongoing_notes": null,
+   "tax_break_desc": "1989 stadium valuation formula (P.A. 86-110; 35 ILCS 200/10-205 to 10-220), tax years through 2016 (end inferred)",
+   "tax_break_notes": "Taxes forgone 2002-2016 at the first post-formula assessment ($32.31M AV, 2017) x each year's equalizer and rate, minus taxes paid: $46.6M nominal (a, from Assessor, PTAXSIM and IDOR data); $36.1M at the 2021 market value; about $77M if extended to 1994-2001 (rough); a floor because 1994-2001 inputs were not reachable",
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Team-affiliated owner; no public lease",
+   "exit_penalty": "n/a",
+   "lease_label": "c",
+   "property_tax_sources": [
+    "datacatalog-uzyt-m557",
+    "cookcountytreasurer-pappasportalnewsletter"
+   ],
+   "lease_sources": [],
+   "tax_break_sources": [
+    "ilga-003502000k10-220"
+   ]
+  },
+  {
+   "team": "CLE",
+   "construction_cost_other_reports": "Recorded cost of the arena building incl. allocated joint costs, excluding land, shared site work ($40.2M for the complex) and capitalized interest and other construction-period costs ($23.7M for the complex) (Gateway FY1999 balance sheet \"Arena 157,816,726\"). ~$198.5M with a pro-rata share of those shared items (a, illustrative); $152M (c, PFM); $148M (c, SBD Dec 1994); $100M (c, Wikipedia); whole Gateway complex $425.0M (b)",
+   "public_construction_notes": "Gateway FY1999 audit Note 7D: Cuyahoga County issued $75M (1992) and $45M (1994) of taxable economic development revenue bonds and lent the proceeds to Gateway \"to pay Arena construction costs\" ($120M is the par of the two issues; the $161.5M owed at Dec 31 1999 included about $45.1M of interest and $3.6M of financing costs, leaving about $112.8M of principal, a); Gateway \"does not expect to be able to pay back\" the county notes (FY2024 audit) -> public; repayment source not documented -> mixed. The 1990 bonds (~$148M, sin-tax backed per press) paid \"primarily\" for the stadium, so the earlier attribution of $100M of sin-tax bonds to the arena (PFM) is not used. Cavaliers advanced $7.8M for arena overruns, $7M later forgiven (private).",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Through 2033-34 season + two successive 5-yr TEAM options",
+   "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds",
+   "lease_label": "b",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "gateway-edc-audit-2022",
+    "gwcomplex-board-packet-12-17-25"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "DAL",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "City share capped at $125M, repaid by 2% hotel-occupancy + 5% car-rental taxes approved by voters (1998, 62,861-61,237); teams (Hicks/Cuban) paid the rest.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "1998 City of Dallas $152M tax-exempt",
+   "lease_terms": "Mavs and Stars leases expire 2031",
+   "exit_penalty": "Mavs pursuing new arena (Valley View site, June 2026); Stars to Plano",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "spectrumlocalnews-south-texas-el-paso"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "DEN",
+   "construction_cost_other_reports": "Owner's completed \"development and construction costs ... including financing costs\" (Ascent 10-K405 FY1999). $169.1M 1998 budget incl. $5.7M contingency (b, Ascent 10-K405 FY1998); $160M \"Total Project Cost\" (b, DURA, scope not defined); $187M (c, Wikipedia)",
+   "public_construction_notes": "Denver Urban Renewal Authority: $36.5M developer reimbursement through TIF (demolition, remediation, site work; repaid 2016) + $4.5M City funds for public infrastructure. The 1997 Arena Agreement also gave: city title to the land with a 23-year ground lease back at $10 a year; payments based on the arena's property tax increment (the \"rebates on property taxes for a 23-year term\" in Ascent's FY1998 10-K, which appear to be the DURA reimbursement above, repaid in 2016, not a separate break); sales and use tax rebates during construction (amount not found); $2.25M of city business incentive payments during construction (s.5.9; relation to the $4.5M not established, not added); and exemption from the city's admissions (seat) tax (s.5.7; memo estimate only, not counted).",
+   "ongoing_notes": null,
+   "tax_break_desc": "Exemption from the Facilities Development Admissions (\"seat\") tax (1997 Arena Agreement s.5.7); 10% under the current code (DRMC 53-306, 2020), 1997 rate not confirmed",
+   "tax_break_notes": "Memo, not added: about $4M a year at McNichols (c, 9News; page returned 403, quote from search index only) x 24 seasons of the agreement's Operation Term (1999-2023) = $96M nominal (a); range $28M (7 seasons, to the end of the Nuggets' McNichols lease) to $108M (27 seasons to date)",
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Team-affiliated owner",
+   "exit_penalty": "n/a",
+   "lease_label": "c",
+   "property_tax_sources": [
+    "sec-0001047469-98-001379",
+    "sec-0000927356-99-000502"
+   ],
+   "lease_sources": [],
+   "tax_break_sources": [
+    "sec-0001047469-98-001379",
+    "municode-codescontent",
+    "9news-next-question-what-incentives-did-ball-arena-get"
+   ]
+  },
+  {
+   "team": "DET",
+   "construction_cost_other_reports": "Recorded historical cost of the arena building incl. Olympia-donated construction, excluding $8.4M of land (DDA FY2019 Note E). $934.9M construction in progress at completion incl. $8.4M land (b, FY2018); $938.0M building plus that land (a); $862.9M (c, Wikipedia); not the FY2021 MD&A \"roughly $985 million\", which adds all DDA land",
+   "public_construction_notes": "MSF Series 2014A $250M (repaid from DDA catalyst tax increment, incl. captured school taxes) + DDA Series 2017 $36M \"to incentivize the Detroit Pistons to relocate\" (NBA compliance). 2014B ($200M authorized, $188.5M drawn) was serviced by Olympia concession payments and retired by Olympia in 2017 -> private. Olympia donated land + construction valued at $47.8M.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": "MSF Series 2014B: $200M authorized, $188.5M drawn, retired in 2017 through prepayment of base concession fees (b, DDA FY2018 Note G)",
+   "bond_detail": "2014 Michigan Strategic Fund LO Revenue Bonds Series 2014A $250M tax-exempt | 2014 Michigan Strategic Fund Series 2014B $200M TAXABLE | 2017 Detroit DDA (Pistons relocation work) $34.5M not confirmed | 2018 Detroit DDA Tax Increment Revenue Refunding Bonds 2018A + su $311M not confirmed (refunds tax-exempt 2014A)",
+   "lease_terms": "Pistons MOU with DDA (2016); 35-yr term widely reported but not verified (MOU PDF 403)",
+   "exit_penalty": "$36M 2017 DDA bonds to make arena NBA-compliant",
+   "lease_label": "b/u",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "detroit-dda-fs-2024"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "GSW",
+   "construction_cost_other_reports": "Wikipedia figure tagged citation needed",
+   "public_construction_notes": "Privately financed; team bought the land. City event-day costs (e.g., ~$2.5M/yr for parking control officers, SF Chronicle 2019) not counted.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Team-owned",
+   "exit_penalty": "n/a",
+   "lease_label": "c",
+   "property_tax_sources": [
+    "sf-wv5m-vpq2"
+   ],
+   "lease_sources": [],
+   "tax_break_sources": []
+  },
+  {
+   "team": "HOU",
+   "construction_cost_other_reports": "HCHSA \"Arena Bonds\" (Series 2001 G/H/I) $255.94M incl. garage & financing costs (b, lease; par, not cost); floor from primary budgets $195M = $175M Arena Budget + $20M city site and infrastructure cap (a)",
+   "public_construction_notes": "2000 Letter Agreement: Sports Authority funds the $175M Arena Budget (+ garage + financing costs) from hotel-occupancy/car-rental-tax bonds; City acquires site (Marquette 2005: ~$20M land). Rockets pay overruns + up to $8M concessions, and their $8.5M/yr rent is pledged to a separate \"Rent Supported Debt\" issue that also financed construction, principal capped at $30.4M without the tenant's approval (b, lease App. A p.A-4) -> public figure overstates net public cost. City site and infrastructure money is a not-to-exceed $20M cash appropriation for \"Site Acquisition and the Infrastructure Work\" (b, 2000 Interlocal Arena Development Agreement s.2); no land/infrastructure split or funding stream stated -> infrastructure bucket. Public range in press: $125M-$175M.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": "Rent Supported Debt backed by Rockets rent: principal capped at $30.4M without tenant approval (b, lease App. A p.A-4); a $57.54M 2014 taxable \"Toyota Center Project\" refunding is listed in the HCHSA debt worksheet, link to the rent-supported debt not confirmed",
+   "bond_detail": "2001 Harris County-Houston Sports Authority $304M tax-exempt",
+   "lease_terms": "Term = 360 months from Oct-2003 commencement (ends after 2032-33); no extension reported with Apr-2026 $180M renovation ($95M State of Texas)",
+   "exit_penalty": "Landlord duty to renovate to \"first-class, state of the art\" standard (s8.6) limited to Renovation Fund",
+   "lease_label": "b/c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "houstonsports-toyota-center-arena-lease",
+    "houstonsports-hchsa-special-bod-agenda-4-8-26",
+    "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "IND",
+   "construction_cost_other_reports": "$230.7M MCCRFA 1997A/B excise-tax lease rental bonds \"to fund the construction of the Conseco Fieldhouse ... and an attached garage facility\" (b, MCCRFA 2009 audit p.19; CIB FY2023 ACFR Note 5; par, not cost); $200M (Bond Buyer, search index only)",
+   "public_construction_notes": "$79M \"from taxes\" (Indiana Encyclopedia); PFM: local 43%, excise-tax lease-rental revenue (CIB hotel/F&B/admissions taxes). Conflict not resolved: the 1997A/B bond par ($230.7M, b) exceeds the reported cost, and the CIB says the bonds are secured by lease rentals paid from pledged state and local taxes; no primary split of public and private money was found.",
+   "ongoing_notes": "CIB \"Fieldhouse operating expenses and reimbursements\" + Pacers note-receivable forgiveness ($40M of 2010-13 operating loans forgiven 2015-24), 2014-2025 (ACFR ten-year tables), and the 2001 pass-through of cable franchise fees to the Pacers. 2002-2013 tables show no payment line; 1999-2000 not available (pre-GASB 34). Later tables restated 2017-18 upward by about $3.3M a year to include CIB-paid utilities, insurance and security (8.70 and 8.93 in the original ACFRs); 2014-16 were not restated, so they run low by about that much",
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2021 MCCRFA Excise Taxes Lease Rental Revenue Bonds Series 2021A  $401.41M not stated (5% coupons) | 2021 CIB Excise Taxes Revenue Subordinate Bonds Series 2021A $22.925M not stated (5%)",
+   "lease_terms": "25-yr agreement 2019-2044 + 1-yr team option",
+   "exit_penalty": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games",
+   "lease_label": "b",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "in-83950a"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "LAC",
+   "construction_cost_other_reports": "$1.8B (Bisnow 2021)",
+   "public_construction_notes": "Privately financed. Team bought publicly owned site parcels (city, FAA/LAWA, school district) for $66.25M; no appraisal found showing a below-market price.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Team-owned",
+   "exit_penalty": "n/a",
+   "lease_label": "c",
+   "property_tax_sources": [
+    "portal-parceldetail"
+   ],
+   "lease_sources": [],
+   "tax_break_sources": []
+  },
+  {
+   "team": "LAL",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "Privately financed building on city-owned land. City advanced about $70M (b, CAO) or ~$58M (c, Seattle 2017) of bonds and cash, which the developer must offset under the Gap Funding Agreement (in 2003 the developer paid the City $16.5M for shortfalls and inducement) -> treated as conduit financing, not public money.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": "City advanced \"approximately $70 million towards the project\", which the developer must fully offset under the Gap Funding Agreement (b, CAO FY2022-23 budget p.379); ~$58M of city bonds and reserves guaranteed by AEG (c, Seattle 2017 evaluation)",
+   "bond_detail": null,
+   "lease_terms": "Lease end not confirmed (2041 often cited)",
+   "exit_penalty": "Not public",
+   "lease_label": "u",
+   "property_tax_sources": [
+    "portal-parceldetail-2"
+   ],
+   "lease_sources": [],
+   "tax_break_sources": []
+  },
+  {
+   "team": "MEM",
+   "construction_cost_other_reports": "2002 series A-E bond par $224.8M (GDG Table 2, from EMMA; par, not cost; larger than the $206M of bond proceeds applied to construction); Wikipedia $250M",
+   "public_construction_notes": "City CAFR FY2005: \"The total construction cost of $250,000 [thousand] is to be funded from $186,000 from Senior Lien Revenue Bonds, $20,000 from Subordinate Lien Revenue Bonds, $12,000 each by the City and the County from non-ad valorem revenues, and $20,000 from the State of Tennessee for a parking structure and intermodal transfer station.\" Sports Authority bonds ($206M) are repaid from seat fees, state sales-tax rebates on Grizzlies-generated taxes (2001-2031), county car-rental fees, city and county hotel-motel taxes and MLGW in-lieu-of-tax payments (FY2015 CAFR; split not documented -> mixed). City $12M for site and infrastructure, to be repaid from hotel-motel taxes (-> tourist); County $12M (general); State $20M parking structure (general). Total includes site, infrastructure and the parking structure; no team contribution in the funding table.",
+   "ongoing_notes": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); year boundary assumed (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2002 Memphis & Shelby County (sports authority) $296M tax-exempt",
+   "lease_terms": "Current lease ends after 2028-29 season; $550M renovation/new lease still unsigned as of Oct 16 2026 (the Oct 8 2026 Sports Authority agenda lists a construction agreement and a funding-agreement amendment; press reports approval)",
+   "exit_penalty": "(Attendance clause/2022 settlement already known - excluded)",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "dailymemphian-2",
+    "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+    "audacy-fedexforum"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "MIA",
+   "construction_cost_other_reports": "$240M (Miami New Times); \"cost over $200 million to construct\" (b, Miami-Dade OIG IG11-34 p.5)",
+   "public_construction_notes": "County bought about 17 acres of waterfront land from the City of Miami for $37.6M in fall 1997, \"in part\" for the arena site (b, OIG IG11-34 p.2 and report p.9); the operator (BPL) financed and built the arena and recovers its cost through yearly amortization ($156.6M deducted through FY2010).",
+   "ongoing_notes": "County payments to the arena manager (BPL): $8.5M a year less $2.1M of American Airlines naming money = $6.4M net (1997 agreement); FY2000 $3.2M (half year); $5.0M pre-opening subsidy paid Oct 1998-Jul 1999 (OIG report p.13 note 2), booked in 1999; FY2001-10 $6.4M a year (a, from the Inspector General's $72.2M total); FY2011-12 not documented (contract $6.4M, not counted); FY2013-14 and FY2026 budgeted; FY2015-25 actual (ACFR liability reductions). The 2014 amendment fixes $6.4M through FY2029, then $8.5M a year July 2030-June 2035 (future, not counted) | County naming-rights payments to the arena manager: FTX and Kaseya deals: county pays BPL up to $2M a year through 2040; FY2021 $4.0M, FY2022 $2.0M (a), FY2023-25 $2.0M actual, FY2026 $2.0M budgeted | State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028: OPPAGA 15-01 Exhibit B-2: $60M over 30 years, $32,500,070 paid through June 30 2014 (b), spread 1998 $1.5M (an April 1998 start is assumed: 195 payments by June 2014, although Exhibit B-2 says March), 1999-2013 $2.0M a year, Jan-Jun 2014 $1.0M; calendar years, while the county series uses fiscal years; later years at the scheduled $2.0M a year through Sept 2026 (a, actuals not verified). Not in the county figures",
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "2014 extension through 2039-40 season (UPI); NBC Miami cites subsidy schedule only to 2035",
+   "exit_penalty": "County subsidy $6.4M/yr (FY26 budget) rising to $8.5M 2031-35",
+   "lease_label": "b/c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "miamidade-volume-1",
+    "upi-heat-commit-to-miami-through-2040",
+    "nbcmiami-county-approves-new-heat-deal",
+    "miamidadeclerk-cafr2025-complete"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "MIL",
+   "construction_cost_other_reports": "$524.1M is the April 2016 development-agreement estimate incl. plaza, parking structure and an estimated $24.1M owner overrun (LFB); WCD recorded the arena at about $416M-$422M with $221.1M of private capital contributions (b/a, WCD 2018 audit Note 6), against $274.1M of private money in LFB; not reconciled",
+   "public_construction_notes": "WCD $203M = $108.1M appropriation bonds (state $4M/yr GPR grant + $4M/yr GPR offset by cut in Milwaukee County aid, to 2035-36) + dedicated-tax bonds ($54.3M + $37.9M refunding) from extended WCD room/F&B/car-rental taxes (residual $94.9M); City TIF $35M parking structure + $12M plaza. Bradley Center site conveyed to team free (value not documented).",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2016 Wisconsin Center District appropriation revenue bonds $108.1M tax-exempt | 2016 WCD dedicated tax revenue bonds $54.3M tax-exempt | 2016 WCD dedicated tax revenue refunding bonds (Nov 29 2016) $37.9M tax-exempt (assumed) | 2016 WCD Subordinate Revenue Bonds Series 2016 (Taxable), BCPL pr $45M TAXABLE",
+   "lease_terms": "30-yr lease (signed Apr 2016) + two 5-yr TEAM options; team may negotiate with third parties in last 5 yrs of term",
+   "exit_penalty": "Non-relocation damages of at least $553M in year 1, declining; the floor is reported as $20M (BizTimes) or $200M (WPR, quoting the district chair)",
+   "lease_label": "b/c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "wi-lfb-informational-paper-18",
+    "dailyreporter-bucks-sign-30-year-lease-with-arena-owner",
+    "biztimes-bucks-sign-30-year-lease-agreement-with-wisconsi",
+    "wpr-milwaukee-bucks-sign-30-year-lease-new-arena-sit"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "MIN",
+   "construction_cost_other_reports": "$104M construction + $23M city subsidy (LRL timeline); $126M = $104M private + $22M city land and infrastructure (b, 2003 Stadium Screening Committee packet p.3); $103M = $20M MCDA TIF bonds (public) + $80M team financing + a $3M MCDA loan repaid from team revenues (b, same packet, p.8 case study)",
+   "public_construction_notes": "OLA 2017 Exhibit 1: total initial cost $127M, public $23M (18%), \"entirely of subsidies from the City of Minneapolis\". The 2003 packet funds the public part with $20M of MCDA tax-increment bonds (p.8, -> tif) and says it bought $22M of land and infrastructure (p.3); it counts a $3M MCDA loan as private (repaid from team revenues). The other $3M of the OLA total has no documented stream (-> mixed). Built and owned privately (Ratner/Wolfenson) until 1995.",
+   "ongoing_notes": "City Operator Reimbursement to the arena operator (AEG), 2010-2018 actuals from adopted-budget financial plans (2011 may be the maximum rather than the amount paid). Not counted: transfers into the Arena Reserve fund ($4.602M in 2024 per the ACFR, the basis of the earlier PFM figure; $20.40M gross 2021-25), which also pay for capital and city administration; reimbursements for unamortized improvements in 2016-17 ($3.83M), likely inside the renovation; 1995-2009 and 2019-2025 operator payments not found",
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Play through 2034-35 season (2016 agreement)",
+   "exit_penalty": "$50M payment to city if not fulfilled; $53.5M city debt service 2026-35",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "sportsbusinessdaily-twolves"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "NOP",
+   "construction_cost_other_reports": "$84M (New Orleans Magazine). An earlier \"$112M incl. site work (La. state presentation)\" alternative had no URL and could not be located (Oct 16 2026), so it was dropped",
+   "public_construction_notes": "State-owned arena built by LSED on Superdome land before the NBA arrived (2002); paid with refinanced Superdome bonds backed by the LSED hotel-occupancy tax (New Orleans Magazine). Low-confidence split elsewhere ($50M state, $30M Hornets operating rights, $20M PSLs) not used.",
+   "ongoing_notes": "Audited LSED payments to the team outside the lease revenue split, by state fiscal year: naming-rights payments FY2003-05 and a FY2005 attendance credit; nonresident players' income tax passed through (FY2006 on); revenue-benchmark payments (FY2008, FY2010-11) and, from FY2012, the fixed additional annual payment (cash portions only; FY2012-13 deferrals went to the training facility); the state's $3.65M Quality Jobs equivalent for FY2025 and FY2026 (budgeted appropriations). Not counted: the $3.65M for FY2023-24 (obligation, no appropriation found), relocation-fee reimbursements, the suite-revenue payment ($4.89M FY2012-25) and home-game revenue entitlements. FY2026 audit not issued",
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Initial term to June 30, 2029 (amended June 13, 2023); State agreement \"set to expire in FY 2029\"",
+   "exit_penalty": "State must keep paying $3.65M/yr Quality Jobs equivalent through FY2029",
+   "lease_label": "b",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "NYK",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "Privately built and owned; 2011-13 ~$1B renovation privately funded (c).",
+   "ongoing_notes": null,
+   "tax_break_desc": "Full property-tax exemption since 1982 (RPTL s429)",
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Arena license to June 30, 2055, fees +3%/yr",
+   "exit_penalty": "n/a",
+   "lease_label": "b",
+   "property_tax_sources": [
+    "ibo-2023-march-description-of-public-subsidies-for-m"
+   ],
+   "lease_sources": [
+    "sec-msgs-20260630"
+   ],
+   "tax_break_sources": [
+    "ibo-2023-march-description-of-public-subsidies-for-m",
+    "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave"
+   ]
+  },
+  {
+   "team": "OKC",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "Built with the MAPS (1993) one-cent sales tax before the NBA arrived.",
+   "ongoing_notes": "City operating subsidy to ASM Global for the Paycom Center: FY2023 only (City Auditor, Exhibit 3); other years are reported only combined with other city venues: $16.96M FY2022 and $15.64M FY2023 across ASM-managed facilities (OCPPA audited statements)",
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Through at least 2053: 25 years from move-in to the new arena (KGOU 2025-06-18; Bond Buyer 2026-04-06); earlier reports said at least 2050",
+   "exit_penalty": "Early-exit penalties of more than $1B (KGOU 2025-06-18)",
+   "lease_label": "b/c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "okc-city-council-approves-letter-of-intent-with-the",
+    "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
+    "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
+    "cbssports-thunder-will-stay-in-oklahoma-city-through-at-le"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "ORL",
+   "construction_cost_other_reports": "Plan of finance (2016 restated interlocal, draft exhibit, not an audited final cost): $380M gross construction + $40M property, acquisition and site prep + $60M parking, roads and site improvements; Wikipedia: $380M arena + $100M land/infrastructure (c)",
+   "public_construction_notes": "Sources of funds, Event Center column (b): tourist development tax bonds $270M (senior $170M, subordinate $50M, completion $50M; capped at $270M of net proceeds, s.5.5) -> tourist; proceeds from the sale of city land $62M, City covenant bonds $37M and state and other government sources $30M -> general (the state's $2M-a-year sales-tax payment for 30 years, $60M nominal, OPPAGA 15-01, is bonded inside these lines and not added again); interest earnings $19M -> mixed (part of it accrued on the Magic's $50M deposit, s.5.4.3; not separable). The $12M \"Present Value of Magic Use Payments\" is city cash (\"The City has provided $12 million in cash which is to be applied to the construction of the Events Center\", s.5.4.8), recovered over time from the Magic's use payments -> counted as public (general), as Houston's rent-supported debt is, so the public figure overstates the net public cost. Public = $480M - Magic $50M = $430M (a), matching PFM. The earlier split ($100M Community Redevelopment Agency tax increment + $330M tourist tax; Business View 2017) is not supported: CRA bonds appear only in the performing arts center column. Magic also guaranteed $100M of bonds.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2008 Orange County TDT / City of Orlando $342M tax-exempt",
+   "lease_terms": "Use Agreement ends after 25th Contract Year from 2010 commencement; no extension reported with Nov-2024 $226M TDT package",
+   "exit_penalty": "Rent $1M/contract year",
+   "lease_label": "b-/c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "law-orlando-magic-lease-summary-8-14",
+    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "PHI",
+   "construction_cost_other_reports": "$206M often cited",
+   "public_construction_notes": "Privately financed by Snider/Spectacor; no public construction money found in sources reached. 2018-20 ~$250M renovation private (c).",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Moving to new private South Philly arena (target 2030-31) with Comcast; WFC lease end not confirmed",
+   "exit_penalty": "Not public",
+   "lease_label": "c/u",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "whyy-south-philadelphia-new-arena-design-76ers-comcas"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "PHX",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "City $35M through bond sales (c, SBD 1995); Suns affiliate (PADLP) paid the rest. The city paid its share from a 1% hotel and 2% rental-car excise tax earmarked for a Sports Facilities Fund (b, 2019 council backup) -> tourist. A 1998 \"Multipurpose Arena Refunding\" of $48.74M (b, FY2007 CAFR) makes the $35M doubtful; the city says it invested about $80M in the arena through 2018, construction and later capital combined (b).",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Lease to 2037, option to 2042",
+   "exit_penalty": "Up to $200M if team leaves before 2037",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "si-phoenix-city-council-approves-suns-arena-rennova"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "POR",
+   "construction_cost_other_reports": null,
+   "public_construction_notes": "City of Portland $34.5M; Allen $46M; $155M TIAA-CREF-led loan; $10M bond backed by box office/parking.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2027 State of Oregon debt (SB 1501, Oregon Laws 2026 ch. 74) - pl $365M planned",
+   "lease_terms": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026",
+   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves",
+   "lease_label": "b/c",
+   "property_tax_sources": [
+    "wweek-proposed-city-purchase-of-moda-center-would-trig",
+    "efiles"
+   ],
+   "lease_sources": [
+    "portland-adopted"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "SAC",
+   "construction_cost_other_reports": "Construction monitor's last posted total project budget, incl. $34.5M land, 99.5% complete; excludes $49.2M of financing and other costs outside the construction budget and the ~$21M Kings-funded plaza. $507.1M estimate incl. $34.9M land and site and $11.3M financing costs (b, Aug 2015 official statement); $558.6M (b, monitor Report 31, Feb 2017); $558.2M (c, Wikipedia); $524.6M excluding land (a)",
+   "public_construction_notes": "City Contribution $223,130,100 = $220,426,649 of Series 2015 (federally taxable) lease-revenue bond proceeds + $2,703,451 other City moneys; City has no obligation beyond it. City also transferred development parcels/billboard rights (value not documented). City CAFR FY2017 records the arena as \"sold to the Sacramento Kings\" under the arena lease (sales-type lease accounting; minimum lease payments $407.7M over 36 years).",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2015 Sacramento Public Financing Authority Lease Revenue Bonds Se $272.87M TAXABLE",
+   "lease_terms": "35-yr non-relocation + two 5-yr extensions (term sheet); ~2051 inferred",
+   "exit_penalty": "Kings minimum lease payments $406.2M over 35 yrs",
+   "lease_label": "c/u + b",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "cityofsacramento-city-of-sacramento-2025-acfr",
+    "cbsnews-sacramento-council-approves-kings-arena-deal-7-2"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "SAS",
+   "construction_cost_other_reports": "Recorded cost of the arena building and equipment in the county's Arena Venue fund, no land, probably incl. capitalized interest ($188,452,905 FY2006; $188,371,540 FY2010). $175M (c, Wikipedia text); $186M (c, infobox); 2000 venue bonds $148.845M par + Spurs $28.5M = $177.3M for the whole 2000 Project incl. Coliseum and grounds work (b/a)",
+   "public_construction_notes": "Venue-tax (hotel-occupancy and car-rental) bonds and cash (voters Nov 1999). Public = $188.4M recorded cost - Spurs $28.5M (b, 2019 official statement) = $159.9M (a). The recorded arena cost exceeds the $148.845M of 2000 bond proceeds plus the Spurs' $28.5M that funded the whole 2000 Project (arena, Coliseum, livestock facilities), so the public figure includes capitalized interest and venue-tax cash spent directly.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2000 Bexar County venue project bonds $169M tax-exempt",
+   "lease_terms": "Lease of the Frost Bank (AT&T) Center ends in 2032 (KSAT 2023); downtown arena targeted to open for the 2032-33 season (TPR 2025)",
+   "exit_penalty": "Break fees of up to $124M, depending on the year (KSAT 2023)",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [
+    "ksat-spurs-consider-a-downtown-move",
+    "tpr-heres-whats-in-the-downtown-arena-term-sheet-the"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "TOR",
+   "construction_cost_other_reports": "C$265M budget (MLGL); C$288M final; converted at 1999 avg 1.4858 CAD/USD (FRED EXCAUS)",
+   "public_construction_notes": "\"No public funding was used\" (arena history page). ~C$13M of nearby public infrastructure was built early with private financing. Site bought from Canada Post (federal Crown corp.) for C$60M; no evidence of below-market price.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": null,
+   "lease_terms": "Team-affiliated owner",
+   "exit_penalty": "n/a",
+   "lease_label": "c",
+   "property_tax_sources": [],
+   "lease_sources": [],
+   "tax_break_sources": []
+  },
+  {
+   "team": "UTA",
+   "construction_cost_other_reports": "$66M Sumitomo loan (Deseret News 1991)",
+   "public_construction_notes": "Built privately by Larry H. Miller on RDA-owned land leased at $1/yr to 2060 (land value not documented for 1990; 2026 assessed land $68.77M, exempt). RDA cash/TIF help in 1990 reported but unverified (forum citing ~$18.7M) -> blank.",
+   "ongoing_notes": null,
+   "tax_break_desc": null,
+   "tax_break_notes": null,
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2025 Downtown Revitalization PID Sales Tax Revenue Bonds (SEG Red $899.99M tax-exempt",
+   "lease_terms": "30-yr non-relocation tied to SLC 0.5% sales tax from 2025 (~2054-55 inferred)",
+   "exit_penalty": "Damages $250M if both teams leave, $125M if one (draft terms)",
+   "lease_label": "c/u",
+   "property_tax_sources": [
+    "saltlakecounty-valuationinfoexpanded-cfm"
+   ],
+   "lease_sources": [
+    "ksl"
+   ],
+   "tax_break_sources": []
+  },
+  {
+   "team": "WAS",
+   "construction_cost_other_reports": "Developer estimate \"about $175 million\" (b, GAO 1998); Pollin-funded building $200M (c); also reported $220M (c)",
+   "public_construction_notes": "GAO AIMD-98-223 Table 1 (Apr 30 1998): District predevelopment spending $61.49M, financed by arena-tax revenue bonds (a gross-receipts fee on D.C. businesses, ended FY2001): land $37.2M (-> land: bought with arena-tax bonds and contributed under the ground lease, the ledger's in-kind convention); Metro match $3.0M, employee relocation $4.0M, demolition, remediation and fees $15.1M, bank and issuance costs $2.2M (-> general). Plus a $12M federal transportation grant and $2M from WMATA for the Metro connection (-> general). Total $75.5M (a); District only $61.5M (b). The earlier ~$79M (c, Wikipedia) is not in any primary document reached. Building privately funded by Pollin.",
+   "ongoing_notes": null,
+   "tax_break_desc": "Real-property & possessory-interest tax exemption since construction, extended through 2050 (+ FY2025 deed transfer/recordation abatements)",
+   "tax_break_notes": "OCFO: $49.8M FY2025-28 + $262.9M FY2029-50; OCFO found the abatement not financially necessary",
+   "pilot_note": null,
+   "conduit_note": null,
+   "bond_detail": "2025 DC capital budget FY2025-27 funded by GO bonds $515M not confirmed",
+   "lease_terms": "Lease-back to DCALP through June 30, 2050, with up to five 4-yr renewals; Wizards and Capitals must play home games there; no-shop to 2045",
+   "exit_penalty": "Damages not quantified in the fiscal impact statement",
+   "lease_label": "b",
+   "property_tax_sources": [
+    "dcgis-mapserver",
+    "cfo-tafa-capital-one-arena-112624"
+   ],
+   "lease_sources": [
+    "cfo-fis-downtown-arena-revitalization"
+   ],
+   "tax_break_sources": [
+    "cfo-tafa-capital-one-arena-112624"
+   ]
+  }
+ ],
+ "note": "",
+ "method": "select a.team, a.construction_cost_other_reports, a.public_construction_notes, a.ongoing_notes, a.tax_break_desc, a.tax_break_notes, a.pilot_note, a.conduit_note, a.bond_detail, a.lease_terms, a.exit_penalty, a.lease_label, coalesce((select list(s.source_id order by s.ord) from arena_sources s where s.row_type = 'current_arena' and s.team = a.team and s.field = 'property_tax_source'), []) as property_tax_sources, coalesce((select list(s.source_id order by s.ord) from arena_sources s where s.row_type = 'current_arena' and s.team = a.team and s.field = 'lease_source'), []) as lease_sources, coalesce((select list(s.source_id order by s.ord) from arena_sources s where s.row_type = 'current_arena' and s.team = a.team and s.field = 'tax_break_source'), []) as tax_break_sources from arenas a order by a.team"
+}
