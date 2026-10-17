@@ -5,57 +5,99 @@ import Blocks from '../components/Blocks.astro';
 import SourceList from '../components/SourceList.astro';
 import { Citations } from '../lib/sources';
 import { paragraph } from '../lib/content';
-import { prepare } from '../lib/prepare';
+import { prepare, type Prepared } from '../lib/prepare';
 import { plain } from '../lib/copy';
 import meta from '../generated/meta.json';
 
 const ORDER = ['arenas', 'taxes', 'tax-breaks', 'threats', 'leases', 'households', 'sources', 'fact-check'];
 const cites = new Citations();
 const page = (await getEntry('pages', 'home'))!.data;
+const pages = await getCollection('pages');
+const pagePath = Object.fromEntries(pages.map((p) => [p.id, p.data.path]));
 const sections = (await getCollection('story')).sort((a, b) => a.data.n - b.data.n);
-const refs = (await getCollection('pages')).filter((p) => p.id !== 'home').sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+const refs = pages.filter((p) => p.id !== 'home').sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-// Everything that cites a source is rendered here, in reading order, so the numbers follow the story.
+// Everything that cites a source is rendered here, in reading order, so the numbers follow the story: the deck,
+// the opening (the lead graphic and its steps), then each chapter. The findings link their numbers to the fact
+// check and point to the chapters, so they take no citation numbers of their own.
 const title = plain(page.title, { where: 'home title' });
 const deck = paragraph(page.deck, page.sources, 'home deck', cites);
-const tiles = page.tiles.map((t, i) => ({
-  value: paragraph(t.value, page.sources, `home tile ${i + 1} value`, cites),
-  label: paragraph(t.label, page.sources, `home tile ${i + 1} label`, cites),
-}));
-const body = [];
-for (const s of sections) body.push({ id: s.id, title: s.data.title, blocks: await prepare(s.data.blocks, cites, `story ${s.id}`) });
-const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const [opening, ...rest] = sections;
+if (opening.data.title) throw new Error('the story opens with its lead graphic, without a chapter title');
+const openBlocks = await prepare(opening.data.blocks, cites, `story ${opening.id}`);
+const chapters: { id: string; title: string; slug: string; blocks: Prepared[]; more: { href: string; text: string }[] }[] = [];
+for (const s of rest) {
+  if (!s.data.title) throw new Error(`story ${s.id}: a chapter needs a title`);
+  const more = s.data.more.map((m) => {
+    if (!pagePath[m.page]) throw new Error(`story ${s.id}: unknown page ${m.page}`);
+    return { href: pagePath[m.page], text: plain(m.text, { where: `story ${s.id} link` }) };
+  });
+  chapters.push({ id: s.id, title: s.data.title, slug: slug(s.data.title), blocks: await prepare(s.data.blocks, cites, `story ${s.id}`), more });
+}
+
+// each finding points to a chapter or to a figure on this page
+const anchors = new Set(chapters.map((c) => c.slug));
+for (const b of [...openBlocks, ...chapters.flatMap((c) => c.blocks)]) if (b.kind === 'fig' || b.kind === 'scrolly') anchors.add(`fig-${b.id}`);
+const findings = page.findings.map((f, i) => {
+  if (!anchors.has(f.to)) throw new Error(`home finding ${i + 1}: no chapter or figure "${f.to}" on the page`);
+  return { to: f.to, ...paragraph(f.p, f.sources, `home finding ${i + 1}`) };
+});
+
+// reading time, from the words of the story's paragraphs and steps
+const text = [...openBlocks, ...chapters.flatMap((c) => c.blocks)]
+  .flatMap((b) => (b.kind === 'p' || b.kind === 'quote' ? [b.html] : b.kind === 'scrolly' ? b.steps.map((s) => s.html) : []))
+  .join(' ')
+  .replace(/<[^>]+>/g, ' ');
+const minutes = Math.max(1, Math.round(text.split(/\s+/).filter(Boolean).length / 230));
 const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 <Layout title={title} description={page.description} path="/">
   <article>
-    <header class="head col">
+    <header class="hero">
       <p class="kicker">{page.kicker}</p>
       <h1>{title}</h1>
       <p class="deck" set:html={deck.html} />
-      <p class="meta">
-        <span>Data as of {asOf}</span>
+      <p class="dateline">
+        <span>Data through <time datetime={meta.as_of}>{asOf}</time></span>
         <span>Dollars in 2026 terms</span>
+        <span>{minutes} minute read</span>
         <a href="#how-this-was-made">How this was made</a>
       </p>
-      <ul class="tiles">
-        {tiles.map((t) => (
-          <li class="tile">
-            <span class="tile-value" set:html={t.value.html} />
-            <span class="tile-label" set:html={t.label.html} />
-          </li>
-        ))}
-      </ul>
     </header>
     <div class="col prose">
-      {body.map((s) => (
-        <section>
-          {s.title && <h2 id={slug(s.title)}>{s.title}</h2>}
-          <Blocks blocks={s.blocks} />
+      <Blocks blocks={openBlocks} />
+    </div>
+    <section class="findings col" aria-labelledby="what-we-found">
+      <h2 id="what-we-found">What we found</h2>
+      <ol>
+        {findings.map((f) => (
+          <li>
+            <span set:html={f.html} />
+            <a class="go" href={`#${f.to}`}>Read more</a>
+          </li>
+        ))}
+      </ol>
+    </section>
+    <div class="col prose">
+      {chapters.map((c) => (
+        <section class="chapter">
+          <h2 id={c.slug}>{c.title}</h2>
+          <Blocks blocks={c.blocks} />
+          {c.more.length > 0 && (
+            <p class="chapter-more">
+              {c.more.map((m, i) => (
+                <>
+                  {i > 0 && <span aria-hidden="true"> · </span>}
+                  <a href={m.href}>{m.text} →</a>
+                </>
+              ))}
+            </p>
+          )}
         </section>
       ))}
     </div>
-    <div class="col">
+    <div class="col endmatter">
       <h2 id="the-full-record">The full record</h2>
       <ul class="cards">
         {refs.map((r) => (

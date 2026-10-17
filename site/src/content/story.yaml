@@ -5,28 +5,39 @@
 rebuild:
   n: 1
   blocks:
+    - scrolly: rebuild
+      steps:
+        - step: new
+          p: >-
+            For most of the years since 1990, the public money in NBA arenas went into new buildings.
+          sources: [ledger]
+        - step: shift
+          p: >-
+            That has changed. Since 2014, cities, counties and states have committed {{rebuild_since_2014}} to
+            renovate or buy existing arenas. That is {{rebuild_ratio}} times the {{build_since_2014}} of public money
+            in the arenas that opened in those years, all of it in Sacramento, Detroit and Milwaukee.
+          sources: [ledger]
+        - step: largest
+          p: >-
+            Salt Lake City and Washington made the largest of these deals, both since 2024. Salt Lake City is
+            putting up to {{uta_arena_2025}} from a {{slc_sales_tax_rate}} city sales tax into the Delta Center,
+            whose building a private company owns. Washington bought Capital One Arena from its owner and is paying
+            to renovate it, {{was_2024_deal}} in all.
+          sources: [ksl, cfo-fis-downtown-arena-revitalization]
+        - step: pending
+          p: >-
+            Another {{pending_existing}} is pending. In Memphis, the city has given {{mem_state_2025}} of a state
+            grant to the city and county sports authority for the first phase of a {{mem_renovation_cost}}
+            renovation of FedExForum; the other {{mem_pending}} waits on a new lease with the Grizzlies. In Portland,
+            {{por_pending}} for the Moda Center is pending, including up to {{por_state}} in state bonds that would
+            be repaid with an amount equal to the income taxes on work in the Rose Quarter around the arena,
+            players' pay included.
+          sources: [tri-statedefender-p-349496, downtownmemphis-city-council-approves-two-key-funding-m, olis-enrolled]
     - p: >-
-        For most of the years since 1990, the public money in NBA arenas went into new buildings. That has
-        changed. Since 2014, cities, counties and states have committed {{rebuild_since_2014}} to renovate or
-        buy existing arenas. That is {{rebuild_ratio}} times the {{build_since_2014}} of public money in arenas
-        that opened in the same years, all of it in Sacramento, Detroit and Milwaukee.
-      sources: [ledger]
-    - p: >-
-        Salt Lake City and Washington made the largest of these deals, both since 2024. Salt Lake City is
-        putting up to {{uta_arena_2025}} from a {{slc_sales_tax_rate}} city sales tax into the Delta Center,
-        whose building a private company owns, plus {{uta_district}} into the district around it. Washington
-        bought Capital One Arena from its owner and is paying to renovate it, {{was_2024_deal}} in all. Orange
-        County is spending {{orl_2024}} of tourist taxes on Orlando's Kia Center, and the State of Texas is
-        expected to cover about {{hou_2026}} of a renovation of Houston's Toyota Center.
-      sources: [ksl, cfo-fis-downtown-arena-revitalization, cfpublic-orlando-kia-center-camping-world-stadium-improve, stadiumjourney-toyota-center-gets-approval-for-180-million-r]
-    - p: >-
-        In Memphis, the city has given {{mem_state_2025}} of a state grant to the city and county sports
-        authority for the first phase of a {{mem_renovation_cost}} renovation of FedExForum; the other
-        {{mem_pending}} waits on a new lease with the Grizzlies. In Portland, {{por_pending}} for the Moda Center
-        is pending, including up to {{por_state}} in state bonds that would be repaid with an amount equal to
-        the income taxes on work in the Rose Quarter around the arena, players' pay included.
-      sources: [tri-statedefender-p-349496, downtownmemphis-city-council-approves-two-key-funding-m, olis-enrolled]
-    - fig: rebuild
+        Smaller deals keep coming. Salt Lake City's sales tax also pays {{uta_district}} for the district around
+        its arena. Orange County is spending {{orl_2024}} of tourist taxes on Orlando's Kia Center, and the State
+        of Texas is expected to cover about {{hou_2026}} of a renovation of Houston's Toyota Center.
+      sources: [ksl, cfpublic-orlando-kia-center-camping-world-stadium-improve, stadiumjourney-toyota-center-gets-approval-for-180-million-r]
     - p: >-
         A new round of building has begun as well. Oklahoma City has committed {{okc_new_arena}} to replace an
         arena that opened in 2002, along with a garage and team offices, and Bexar County voters approved up to
@@ -62,6 +73,14 @@ bill:
       sources: [ledger]
     - fig: arenas
     - fig: map
+    - lookup: arenas
+      title: Look up an arena
+      intro: >-
+        Choose a team to see what the public has put into its arena, in 2026 dollars, and how that compares with
+        the private money spent on it.
+      sources: [ledger]
+  more:
+    - { page: arenas, text: 'Every arena, item by item' }
 
 private:
   n: 3
@@ -103,6 +122,8 @@ private:
         with private money, have since paid for most of their renovations.
       sources: [lrl-target, leg-other, tampabay-timberwolves-sold-to-louisiana-group]
     - fig: takeovers
+  more:
+    - { page: arenas, text: 'The record for each arena' }
 
 pays:
   n: 4
@@ -123,6 +144,9 @@ pays:
         per-household figure measures the size of the deal more than what residents pay.
       sources: [ledger, census-b11001-2024]
     - fig: households
+  more:
+    - { page: taxes, text: 'Every funding stream' }
+    - { page: households, text: 'Every deal, per household' }
 
 breaks:
   n: 5
@@ -149,6 +173,8 @@ breaks:
         relief the District's chief financial officer valued at {{was_exemption_future}} and found was not
         financially necessary.
       sources: [cfo-tafa-capital-one-arena-112624]
+  more:
+    - { page: tax-breaks, text: 'Every tax break found' }
 
 payments:
   n: 6
@@ -167,6 +193,8 @@ payments:
         other teams were incomplete or could not be reached, so the true figure is higher.
       sources: [ledger]
     - fig: ongoing
+  more:
+    - { page: taxes, text: 'The yearly payments, team by team' }
 
 threats:
   n: 7
@@ -187,6 +215,8 @@ threats:
         share).
       sources: [threat-ledger]
     - fig: threats
+  more:
+    - { page: threats, text: 'All the threat episodes' }
 
 next:
   n: 8
@@ -205,6 +235,8 @@ next:
         lease's first year was at least {{mil_exit_penalty}}.
       sources: [ledger, okc-okc-and-thunder-approve-agreements-to-keep-the-thu]
     - fig: leases
+  more:
+    - { page: leases, text: 'Every lease and its exit terms' }
 
 research:
   n: 9
@@ -214,8 +246,12 @@ research:
         Economists have studied stadium and arena subsidies for decades. A 2023 survey of that research by John
         Charles Bradbury, Dennis Coates and Brad R. Humphreys, covering more than {{research_studies}} studies
         over {{research_years}} years, found "very limited economic impacts of professional sports teams and
-        stadiums." It concluded that "the large subsidies commonly devoted to constructing professional sports
-        venues are not justified as worthwhile public investments."
+        stadiums." Its conclusion:
+      sources: [bradbury-2023]
+    - quote: >-
+        The large subsidies commonly devoted to constructing professional sports venues are not justified as
+        worthwhile public investments.
+      by: John Charles Bradbury, Dennis Coates and Brad R. Humphreys, Journal of Economic Surveys, 2023
       sources: [bradbury-2023]
 
 method:
@@ -242,3 +278,6 @@ method:
         number on this site with its sources, the corrections made during the work and the sites that could not
         be reached.
       sources: [ledger]
+  more:
+    - { page: fact-check, text: 'Every number and its sources' }
+    - { page: sources, text: 'The documents' }

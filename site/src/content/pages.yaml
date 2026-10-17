@@ -14,16 +14,30 @@ home:
     How the NBA's arenas were paid for: what the public put in, through which taxes, and what followed when
     owners threatened to move.
   sources: [ledger]
-  tiles:
-    - value: '{{core_public:short}}'
-      label: >-
-        Public money in the {{arenas_n}} arenas in use, {{public_share}} of all spending on them
-    - value: '{{rebuild_since_2014:short}}'
-      label: >-
-        To renovate or buy existing arenas since 2014, against {{build_since_2014:short}} for arenas that opened
-    - value: '{{leases_by_2036}}'
-      label: >-
-        Leases that end by 2036
+  findings:
+    - p: >-
+        Since 2014, public money to renovate or buy existing arenas has been {{rebuild_ratio}} times the public
+        money in the arenas that opened, and another {{pending_existing}} is pending.
+      to: fig-rebuild
+    - p: >-
+        The public has put or committed {{core_public}} to the {{arenas_n}} arenas in use, {{public_share}} of
+        everything spent on them, and tax breaks add {{tax_breaks_added}}.
+      to: the-whole-bill
+    - p: >-
+        {{takeover_n:cap}} arenas built mainly with private money were later bought or rebuilt with public money,
+        {{takeover_public}} in all.
+      to: built-privately-rebuilt-publicly
+    - p: >-
+        Taxes that fall mostly on visitors paid {{visitors_share}} of public arena capital, and taxes residents
+        mostly pay supplied {{residents_share}}.
+      to: who-pays
+    - p: >-
+        {{threats_same_city:cap}} of {{threats_counted}} relocation threats by owners or the league were followed
+        by public money in the same city.
+      to: threats-as-deadlines
+    - p: >-
+        {{leases_by_2036:cap}} arena leases end by 2036, so more deals are coming.
+      to: the-next-round
 
 arenas:
   path: /arenas/

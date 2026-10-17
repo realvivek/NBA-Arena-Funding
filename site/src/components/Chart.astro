@@ -18,12 +18,15 @@ import * as T from '../lib/tables';
 import { plain } from '../lib/copy';
 import { ALLOW } from '../lib/content';
 import { FIG_DATA } from '../lib/figures';
+import type { PreparedStep } from '../lib/prepare';
 
 interface Props {
   id: string;
   numbers?: number[];
+  steps?: PreparedStep[];
 }
-const { id, numbers = [] } = Astro.props;
+const { id, numbers = [], steps = [] } = Astro.props;
+const XWIDE = new Set<string>();
 const REG: Record<string, { C: any; data: string; table: (rows: any[]) => any; props?: Record<string, unknown> }> = {
   rebuild: { C: Rebuild, data: 'rebuild-by-year', table: T.rebuildTable },
   arenas: { C: Arenas, data: 'arenas', table: T.arenasTable },
@@ -47,7 +50,7 @@ if (!fig) throw new Error(`figure ${id} is not in src/content/figures.yaml`);
 const label = plain(fig.data.title, { where: `figure ${id} label`, sources: ds.sources, allow: ALLOW });
 const C = spec.C;
 ---
-<Figure id={id} dataset={ds} table={spec.table(ds.rows)} numbers={numbers}>
+<Figure id={id} dataset={ds} table={spec.table(ds.rows)} numbers={numbers} steps={steps} xwide={XWIDE.has(id)}>
   <C slot="wide" rows={ds.rows} variant="wide" label={label} {...spec.props} />
   <C slot="narrow" rows={ds.rows} variant="narrow" label={label} {...spec.props} />
 </Figure>

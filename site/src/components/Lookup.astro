@@ -1,0 +1,92 @@
+---
+/**
+ * Look up an arena: a card for each of the arenas, drawn at build time from the same rows as the arenas chart.
+ * A small script shows the card for the team picked in the menu; without it the menu is hidden, the first card
+ * shows, and a list of links leads to every arena's record.
+ */
+import { dataset } from '../lib/data';
+import { money, TEAM_CITY, TEAM_NAME } from '../lib/chart';
+
+interface Props {
+  data: string;
+  title: string;
+  intro: string;
+}
+const { data, title, intro } = Astro.props;
+if (data !== 'arenas') throw new Error(`lookup: unknown dataset ${data}`);
+const rows = dataset('arenas').rows as any[];
+const leases = Object.fromEntries((dataset('leases').rows as any[]).map((r) => [r.team, r]));
+// the construction item carries the ledger's spending base: the larger of the reported cost and public plus private
+const built = Object.fromEntries((dataset('items').rows as any[]).filter((i) => i.kind === 'construction').map((i) => [i.team, i]));
+const n = rows.length;
+const pct = (v: number) => `${Math.round(v)}%`;
+const cards = rows.map((r, i) => {
+  const total = r.public_2026_m + r.tax_breaks_2026_m + r.private_2026_m;
+  const w = (v: number) => (total > 0 ? (100 * v) / total : 0);
+  const con = built[r.team];
+  const conShare = con && con.spending_2026_m > 0 ? (100 * con.public_2026_m) / con.spending_2026_m : 0;
+  const later = [
+    r.purchase_public_2026_m > 0 && `${money(r.purchase_public_2026_m)} to buy it`,
+    r.renovation_public_2026_m > 0 && `${money(r.renovation_public_2026_m)} for renovations`,
+    r.ongoing_public_2026_m > 0 && `${money(r.ongoing_public_2026_m)} in yearly payments`,
+  ].filter(Boolean) as string[];
+  const lease = leases[r.team];
+  return {
+    team: r.team,
+    label: `${TEAM_NAME[r.team]}, ${r.arena}`,
+    name: r.arena,
+    where: `${TEAM_NAME[r.team]} · ${TEAM_CITY[r.team]} · opened ${r.opened} · owned by ${r.owner}`,
+    pub: money(r.public_2026_m),
+    rank: i + 1,
+    share: pct(r.public_share_pct),
+    bar: { pub: w(r.public_2026_m), brk: w(r.tax_breaks_2026_m), prv: w(r.private_2026_m) },
+    breaks: r.tax_breaks_2026_m > 0 ? money(r.tax_breaks_2026_m) : '',
+    private: money(r.private_2026_m),
+    built: `${money(r.construction_cost_nominal_m)} in ${r.opened} (${money(r.construction_cost_2026_m)} in 2026 dollars), ${
+      r.split_unresolved ? 'with a public and private split the records do not settle' : `${pct(conShare)} of it public`
+    }`,
+    later: later.length ? later.join(', ') : 'None found',
+    pending: r.pending_2026_m > 0 ? `${money(r.pending_2026_m)}, not counted` : 'None',
+    lease: lease?.term_end_year ? `${lease.term_end_year}` : 'Team-owned, or no public lease',
+  };
+});
+const byCity = [...cards].sort((a, b) => a.label.localeCompare(b.label));
+const first = cards[0];
+---
+<section class="lookup" aria-labelledby="lookup-title">
+  <h3 id="lookup-title">{title}</h3>
+  <p class="lookup-intro" set:html={intro} />
+  <div class="lookup-pick" hidden>
+    <label for="lookup-team">Team</label>
+    <select id="lookup-team">
+      {byCity.map((c) => <option value={c.team} selected={c.team === first.team}>{c.label}</option>)}
+    </select>
+  </div>
+  <ul class="lookup-teams" aria-label="Every arena's record">
+    {byCity.map((c) => <li><a href={`/arenas/#${c.team.toLowerCase()}`}>{TEAM_NAME[c.team]}</a></li>)}
+  </ul>
+  {cards.map((c) => (
+    <article class="arena-card" data-team={c.team} hidden={c.team !== first.team} aria-live="polite">
+      <h4>{c.name}</h4>
+      <p class="where">{c.where}</p>
+      <p class="big"><strong>{c.pub}</strong><span>of public money in 2026 dollars, {c.share} of all spending on it. No. {c.rank} of {n}.</span></p>
+      <div class="share-bar" role="img" aria-label={`Public ${c.pub}, ${c.breaks ? `tax breaks ${c.breaks}, ` : ''}private ${c.private}`}>
+        {c.bar.pub > 0 && <span class="pub" style={`width: ${c.bar.pub}%`} />}
+        {c.bar.brk > 0 && <span class="brk" style={`width: ${c.bar.brk}%`} />}
+        {c.bar.prv > 0 && <span class="prv" style={`width: ${c.bar.prv}%`} />}
+      </div>
+      <p class="share-key">
+        <span><i style="background: var(--public)" />Public {c.pub}</span>
+        {c.breaks && <span><i style="background: var(--public-soft)" />Tax breaks {c.breaks}</span>}
+        <span><i style="background: var(--private)" />Private {c.private}</span>
+      </p>
+      <dl>
+        <div><dt>Built</dt><dd>{c.built}</dd></div>
+        <div><dt>Public money since</dt><dd>{c.later}</dd></div>
+        <div><dt>Pending</dt><dd>{c.pending}</dd></div>
+        <div><dt>Lease ends</dt><dd>{c.lease}</dd></div>
+      </dl>
+      <p class="more"><a href={`/arenas/#${c.team.toLowerCase()}`}>The full record for {c.name}</a></p>
+    </article>
+  ))}
+</section>

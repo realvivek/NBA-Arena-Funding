@@ -1,6 +1,8 @@
 ---
 import Prose from './Prose.astro';
 import Chart from './Chart.astro';
+import Lookup from './Lookup.astro';
+import Cites from './Cites.astro';
 import type { Prepared } from '../lib/prepare';
 interface Props {
   blocks: Prepared[];
@@ -10,5 +12,13 @@ const { blocks } = Astro.props;
 {blocks.map((b) =>
   b.kind === 'p' ? <Prose html={b.html} sources={b.sources} numbers={b.numbers} /> :
   b.kind === 'fig' ? <Chart id={b.id} numbers={b.numbers} /> :
+  b.kind === 'scrolly' ? <Chart id={b.id} numbers={b.numbers} steps={b.steps} /> :
+  b.kind === 'quote' ? (
+    <blockquote class="pullquote">
+      <p set:html={b.html} />
+      <footer>{b.by} <Cites ids={b.sources} numbers={b.numbers} /></footer>
+    </blockquote>
+  ) :
+  b.kind === 'lookup' ? <Lookup data={b.data} title={b.title} intro={b.intro} /> :
   <h2>{b.text}</h2>
 )}

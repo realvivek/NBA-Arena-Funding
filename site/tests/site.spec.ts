@@ -88,7 +88,49 @@ test('every number in the copy links to its fact-check entry', async ({ page }) 
 test('the story renders its headline, key figures and every chart', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('h1')).toHaveText("Taxpayers Are Now Paying to Rebuild the NBA’s Arenas");
-  await expect(page.locator('.tile')).toHaveCount(3);
+  await expect(page.locator('.findings li')).toHaveCount(6);
+  for (const href of await page.$$eval('.findings a.go', (as) => as.map((a) => a.getAttribute('href') ?? '')))
+    await expect(page.locator(href), href).toHaveCount(1);
   for (const id of ['rebuild', 'arenas', 'map', 'takeovers', 'whopays', 'households', 'uc', 'ongoing', 'threats', 'leases'])
     await expect(page.locator(`#fig-${id}`)).toHaveCount(1);
+});
+
+test('the lead graphic follows the steps as the reader scrolls', async ({ browser }) => {
+  for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 }]) {
+    const ctx = await browser.newContext({ viewport });
+    const page = await ctx.newPage();
+    await page.goto('/');
+    const fig = page.locator('figure.scrolly');
+    const steps = await fig.locator('.step').evaluateAll((els) => els.map((e) => (e as HTMLElement).dataset.step ?? ''));
+    expect(steps.length).toBeGreaterThan(1);
+    for (const s of steps) {
+      await fig.locator(`.step[data-step="${s}"]`).evaluate((e) => e.scrollIntoView({ block: 'center' }));
+      await expect(fig, `${viewport.width}px, step ${s}`).toHaveAttribute('data-step', s);
+    }
+    await ctx.close();
+  }
+});
+
+test('the lookup shows the card for the team picked', async ({ page }) => {
+  await page.goto('/');
+  const pick = page.locator('#lookup-team');
+  await expect(pick).toBeVisible();
+  await expect(page.locator('.lookup-teams')).toBeHidden();
+  await expect(page.locator('.arena-card:visible')).toHaveCount(1);
+  await pick.selectOption('UTA');
+  await expect(page.locator('.arena-card:visible')).toHaveCount(1);
+  await expect(page.locator('.arena-card[data-team="UTA"]')).toBeVisible();
+});
+
+test('without JavaScript the lead graphic shows its last step and the lookup lists every arena', async ({ browser }) => {
+  const ctx = await browser.newContext({ javaScriptEnabled: false });
+  const page = await ctx.newPage();
+  await page.goto('/');
+  const fig = page.locator('figure.scrolly');
+  const last = await fig.locator('.step').last().getAttribute('data-step');
+  await expect(fig).toHaveAttribute('data-step', last ?? '');
+  await expect(page.locator('.lookup-pick')).toBeHidden();
+  await expect(page.locator('.lookup-teams li')).toHaveCount(await page.locator('.arena-card').count());
+  await expect(page.locator('.arena-card:visible')).toHaveCount(1);
+  await ctx.close();
 });

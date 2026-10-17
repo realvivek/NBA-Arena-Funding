@@ -6,6 +6,8 @@
 import { getEntry } from 'astro:content';
 import DataTable, { type Column, type Cell } from './DataTable.astro';
 import Cites from './Cites.astro';
+import Prose from './Prose.astro';
+import type { PreparedStep } from '../lib/prepare';
 import { paragraph, ids } from '../lib/content';
 import { source, ORIGIN_LABEL } from '../lib/sources';
 import { FIG_RECORD } from '../lib/figures';
@@ -15,8 +17,14 @@ interface Props {
   dataset: { id: string; title: string; sources: string[]; base_sources: string[] };
   table: { columns: Column[]; rows: Record<string, Cell>[] };
   numbers?: number[];
+  /** Steps for a scroll-driven figure: the chart holds still while they scroll past, each setting its state. */
+  steps?: PreparedStep[];
+  /** Break out to the full page width (the lead graphic and the map). */
+  xwide?: boolean;
 }
-const { id, dataset, table, numbers = [] } = Astro.props;
+const { id, dataset, table, numbers = [], steps = [], xwide = false } = Astro.props;
+const scrolly = steps.length > 0;
+const cls = ['chart', xwide || scrolly ? 'xwide' : '', scrolly ? 'scrolly' : ''].filter(Boolean).join(' ');
 const fig = await getEntry('figures', id);
 if (!fig) throw new Error(`figure ${id} is not in src/content/figures.yaml`);
 if (fig.data.dataset !== dataset.id) throw new Error(`figure ${id} expects dataset ${fig.data.dataset}, got ${dataset.id}`);
@@ -38,28 +46,52 @@ const swatch: Record<string, string> = {
   other: 'background: var(--other)',
 };
 const few = all.length <= 4;
+const keyClass: Record<string, string> = { pending: 'key key-outline', 'pending-orange': 'key key-outline-orange' };
+const legendItems = fig.data.legend.map((l) => ({
+  label: l.label,
+  cls: keyClass[l.key] ?? (l.key.startsWith('line-') ? 'key key-line' : 'key'),
+  style: keyClass[l.key] ? undefined : swatch[l.key.startsWith('line-') ? l.key.slice(5) : l.key],
+}));
 ---
-<figure class="chart" id={`fig-${id}`} aria-labelledby={`fig-${id}-title`}>
-  <p class="chart-title" id={`fig-${id}-title`} set:html={title.html} />
-  <p class="chart-sub" set:html={sub.html} />
-  {fig.data.legend.length > 0 && (
-    <ul class="legend">
-      {fig.data.legend.map((l) => (
-        <li>
-          {l.key === 'pending' ? (
-            <span class="key key-outline" />
-          ) : l.key.startsWith('line-') ? (
-            <span class="key key-line" style={swatch[l.key.slice(5)]} />
-          ) : (
-            <span class="key" style={swatch[l.key]} />
+<figure class={cls} id={`fig-${id}`} aria-labelledby={`fig-${id}-title`} data-step={scrolly ? steps[steps.length - 1].step : undefined}>
+  {scrolly ? (
+    <div class="scrolly-body">
+      <div class="scrolly-plot">
+        <div class="fig-head">
+          <p class="chart-title" id={`fig-${id}-title`} set:html={title.html} />
+          <p class="chart-sub" set:html={sub.html} />
+        </div>
+        <div class="scrolly-sticky">
+          {legendItems.length > 0 && (
+            <ul class="legend">
+              {legendItems.map((l) => <li><span class={l.cls} style={l.style} />{l.label}</li>)}
+            </ul>
           )}
-          {l.label}
-        </li>
-      ))}
-    </ul>
+          <div class="v-wide"><slot name="wide" /></div>
+          <div class="v-narrow"><slot name="narrow" /></div>
+        </div>
+      </div>
+      <div class="scrolly-steps">
+        {steps.map((st) => (
+          <div class="step" data-step={st.step}>
+            <Prose html={st.html} sources={st.sources} numbers={st.numbers} />
+          </div>
+        ))}
+      </div>
+    </div>
+  ) : (
+    <>
+      <p class="chart-title" id={`fig-${id}-title`} set:html={title.html} />
+      <p class="chart-sub" set:html={sub.html} />
+      {legendItems.length > 0 && (
+        <ul class="legend">
+          {legendItems.map((l) => <li><span class={l.cls} style={l.style} />{l.label}</li>)}
+        </ul>
+      )}
+      <div class="v-wide"><slot name="wide" /></div>
+      <div class="v-narrow"><slot name="narrow" /></div>
+    </>
   )}
-  <div class="v-wide"><slot name="wide" /></div>
-  <div class="v-narrow"><slot name="narrow" /></div>
   <figcaption class="chart-notes">
     {notes.map((n) => <p set:html={n.html} />)}
     <div class="chart-source">

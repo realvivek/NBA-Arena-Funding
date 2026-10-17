@@ -1,146 +1,168 @@
 <script>
-  // Chart 1: public money by year for new arenas and for existing ones (counted money only).
-  // Wide: columns by year. Narrow: horizontal bars by five-year period.
+  // Chart 1, the lead graphic: public money by year, one stacked column per year with a segment per arena, for
+  // new arenas, existing ones and pending money on existing ones. Told in steps as the reader scrolls (see the
+  // [data-step] rules in global.css): marks and labels carry classes the steps show or fade (.seg.new,
+  // .seg.existing, .seg.pending, .hl for the two largest deals since 2014; .ann.a-new, .a-shift, .a-largest,
+  // .a-pending for the labels). Without scripts the chart rests in its last state, where everything is drawn.
   import { LayerCake, Svg } from 'layercake';
   import { scaleBand, scaleLinear } from 'd3-scale';
-  import { WIDE, NARROW, FONT, money, moneyTick, vbar, hbar } from '../../lib/chart';
+  import { WIDE, NARROW, FONT, money, moneyTick, vbar, TEAM_CITY } from '../../lib/chart';
   import { STATS } from '../../lib/copy';
 
   let { rows, variant = 'wide', label = '' } = $props();
+  const narrow = variant === 'narrow';
 
-  const counted = rows.filter((r) => r.status === 'counted' && (r.category === 'new' || r.category === 'existing'));
+  const SINCE = 2014;
   const first = 1990;
-  const last = Math.max(...counted.map((r) => r.year));
+  const keep = rows.filter((r) => (r.category === 'new' || r.category === 'existing') && (r.status === 'counted' || r.status === 'pending'));
+  const last = Math.max(...keep.map((r) => r.year));
   const years = Array.from({ length: last - first + 1 }, (_, i) => first + i);
 
-  function sumBy(filter) {
-    const out = { new: 0, existing: 0, newTeams: [], existingTeams: [] };
-    for (const r of counted) {
-      if (!filter(r)) continue;
-      out[r.category] += r.public_2026_m;
-      const list = r.category === 'new' ? out.newTeams : out.existingTeams;
-      if (!list.includes(r.team)) list.push(r.team);
+  // one segment per year, arena, category and status
+  const groups = new Map();
+  for (const r of keep) {
+    const k = `${r.year}|${r.team}|${r.category}|${r.status}`;
+    if (!groups.has(k)) groups.set(k, { year: r.year, team: r.team, category: r.category, pending: r.status === 'pending', value: 0, what: [] });
+    const g = groups.get(k);
+    g.value += r.public_2026_m;
+    g.what.push(r.description);
+  }
+  const rank = (g) => (g.category === 'new' ? 0 : g.pending ? 2 : 1);
+  const segs = [];
+  for (const year of years) {
+    const list = [...groups.values()].filter((g) => g.year === year).sort((a, b) => rank(a) - rank(b) || b.value - a.value);
+    let base = 0;
+    for (const [i, g] of list.entries()) {
+      segs.push({ ...g, y0: base, y1: base + g.value, top: i === list.length - 1 });
+      base += g.value;
     }
-    return out;
   }
-  const byYear = years.map((year) => ({ year, ...sumBy((r) => r.year === year) }));
-  const bins = [];
-  for (let y0 = first; y0 <= last; y0 += 5) {
-    const y1 = Math.min(y0 + 4, last);
-    bins.push({ name: y1 === y0 ? `${y0}` : `${y0}-${String(y1).slice(2)}`, ...sumBy((r) => r.year >= y0 && r.year <= y1) });
-  }
+  const total = (year) => segs.filter((s) => s.year === year).reduce((a, s) => a + s.value, 0);
+  const ymax = Math.max(...years.map(total));
+  const yTop = Math.ceil(ymax / 500) * 500;
 
-  const tip = (when, kind, v, teams) =>
-    `${when}: ${money(v)} of public money for ${kind === 'new' ? 'new arenas' : 'existing arenas'} (${teams.join(', ')})`;
+  // the two largest deals for existing arenas since 2014, by arena
+  const byTeam = new Map();
+  for (const s of segs) if (s.category === 'existing' && !s.pending && s.year >= SINCE) byTeam.set(s.team, (byTeam.get(s.team) ?? 0) + s.value);
+  const largest = [...byTeam.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2);
+  const hl = new Set(largest.map(([t]) => t));
+  // the two largest new-arena columns before 2014
+  // (at least five years apart, so their labels do not collide)
+  const bigNew = [];
+  for (const s of segs.filter((g) => g.category === 'new' && g.year < SINCE).sort((a, b) => b.value - a.value))
+    if (bigNew.length < 2 && bigNew.every((b) => Math.abs(b.year - s.year) >= 5)) bigNew.push(s);
+  const pendingTotal = segs.filter((s) => s.pending).reduce((a, s) => a + s.value, 0);
+  const pendingCities = [...new Set(segs.filter((s) => s.pending).map((s) => TEAM_CITY[s.team]))];
 
-  // wide layout
-  const W = WIDE, H = 330, ml = 58, mr = 10, mt = 46, mb = 30;
-  const ymaxW = Math.max(...byYear.map((d) => d.new + d.existing));
-  const yTop = Math.ceil(ymaxW / 250) * 250;
-  const since = 2014;
+  const cls = (s) =>
+    ['seg', s.category === 'new' ? 'new' : s.pending ? 'pending' : 'existing', s.year >= SINCE ? 'late' : 'early', hl.has(s.team) && s.year >= SINCE && !s.pending ? 'hl' : '']
+      .filter(Boolean)
+      .join(' ');
+  const tip = (s) =>
+    `${s.year}: ${TEAM_CITY[s.team]}, ${s.what.join('; ').toLowerCase()}: ${money(s.value)}${s.pending ? ', pending' : ''} (2026 dollars)`;
+
+  const W = narrow ? NARROW : WIDE;
+  const H = narrow ? 300 : 430;
+  const ml = narrow ? 38 : 48;
+  const mr = narrow ? 98 : 128;
+  const mt = narrow ? 58 : 64;
+  const mb = 26;
   const rebuild = STATS.rebuild_since_2014.display.short;
   const build = STATS.build_since_2014.display.short;
-
-  // narrow layout
-  const NW = NARROW, rowH = 34, nmt = 6, nml = 70, nmr = 58;
-  const NH = nmt + bins.length * rowH + 4;
-  const xmaxN = Math.max(...bins.map((d) => d.new + d.existing));
+  const ticksX = narrow ? [1990, 2000, 2010, 2020] : [1990, 1995, 2000, 2005, 2010, 2014, 2020, 2026];
+  const ticksY = narrow ? [0, 1000, 2000] : Array.from({ length: yTop / 500 + 1 }, (_, i) => i * 500);
 </script>
 
-{#if variant === 'wide'}
-  <div class="plot" style="aspect-ratio: {W} / {H}">
-    <LayerCake
-      ssr
-      data={byYear}
-      x="year"
-      y={(d) => d.new + d.existing}
-      xScale={scaleBand().paddingInner(0.3)}
-      xDomain={years}
-      xRange={[ml, W - mr]}
-      yScale={scaleLinear()}
-      yDomain={[0, yTop]}
-      yRange={[H - mb, mt]}
-      containerWidth={W}
-      containerHeight={H}
-    >
-      {#snippet children(k)}
-        {@const x = k.xScale}
-        {@const y = k.yScale}
-        {@const bw = Math.min(x.bandwidth(), 14)}
-        {@const off = (x.bandwidth() - bw) / 2}
-        <Svg viewBox="0 0 {W} {H}" {label}>
-          {#each y.ticks(4) as t}
-            <line class={t === 0 ? 'baseline' : 'grid'} x1={ml} x2={W - mr} y1={y(t)} y2={y(t)} />
-            <text class="tick t-muted" x={ml - 6} y={y(t)} dy="0.32em" text-anchor="end" font-size={FONT}>{moneyTick(t)}</text>
+<div class="plot" style="aspect-ratio: {W} / {H}">
+  <LayerCake
+    ssr
+    data={segs}
+    x="year"
+    xScale={scaleBand().paddingInner(narrow ? 0.25 : 0.3)}
+    xDomain={years}
+    xRange={[ml, W - mr]}
+    yScale={scaleLinear()}
+    yDomain={[0, yTop]}
+    yRange={[H - mb, mt]}
+    containerWidth={W}
+    containerHeight={H}
+  >
+    {#snippet children(k)}
+      {@const x = k.xScale}
+      {@const y = k.yScale}
+      {@const bw = x.bandwidth()}
+      {@const xr = x(last) + bw}
+      <Svg viewBox="0 0 {W} {H}" {label}>
+        <!-- the years since 2014 -->
+        <rect class="band" x={x(SINCE) - (x.step() - bw) / 2} y={mt - 8} width={xr + 4 - (x(SINCE) - (x.step() - bw) / 2)} height={H - mb - mt + 8} />
+        {#each ticksY as t}
+          <line class={t === 0 ? 'baseline' : 'grid'} x1={ml} x2={xr} y1={y(t)} y2={y(t)} />
+          <text class="tick t-muted" x={ml - 6} y={y(t)} dy="0.32em" text-anchor="end" font-size={FONT}>{moneyTick(t)}</text>
+        {/each}
+        {#each ticksX as t}
+          <text class="tick t-muted" x={x(t) + bw / 2} y={H - mb + 17} text-anchor="middle" font-size={FONT}>{t}</text>
+        {/each}
+
+        {#each segs as s}
+          {@const ya = y(s.y0) - (s.y0 > 0 ? 1 : 0)}
+          {@const yb = y(s.y1)}
+          {#if s.pending}
+            <rect class="{cls(s)} f-pending-dash" x={x(s.year) + 0.6} y={yb + 0.6} width={bw - 1.2} height={Math.max(ya - yb - 1.2, 0.5)} rx="1.5" data-tip={tip(s)} />
+          {:else if s.top}
+            <path class="{cls(s)} {s.category === 'new' ? 'f-public' : 'f-orange'}" d={vbar(x(s.year), bw, ya, Math.min(yb, ya - 1), narrow ? 2 : 3)} data-tip={tip(s)} />
+          {:else}
+            <rect class="{cls(s)} {s.category === 'new' ? 'f-public' : 'f-orange'}" x={x(s.year)} y={yb} width={bw} height={Math.max(ya - yb, 0.75)} data-tip={tip(s)} />
+          {/if}
+        {/each}
+
+        <!-- step 1: the largest new arenas before 2014 -->
+        <g class="ann a-new">
+          {#each bigNew as s}
+            {@const cx = x(s.year) + bw / 2}
+            <text class="ann-text halo" x={cx} y={y(s.y1) - 22} text-anchor="middle" font-size={FONT}>{TEAM_CITY[s.team]}</text>
+            <text class="ann-sub halo" x={cx} y={y(s.y1) - 7} text-anchor="middle" font-size={FONT}>{money(s.value)}, {s.year}</text>
           {/each}
-          {#each byYear as d}
-            {@const x0 = x(d.year) + off}
-            {#if d.new > 0}
-              {#if d.existing > 0}
-                <rect class="f-public" x={x0} width={bw} y={y(d.new)} height={y(0) - y(d.new)} data-tip={tip(d.year, 'new', d.new, d.newTeams)} />
-              {:else}
-                <path class="f-public" d={vbar(x0, bw, y(0), y(d.new))} data-tip={tip(d.year, 'new', d.new, d.newTeams)} />
-              {/if}
-            {/if}
-            {#if d.existing > 0}
-              {@const base = d.new > 0 ? y(d.new) - 2 : y(0)}
-              <path class="f-orange" d={vbar(x0, bw, base, Math.min(base - 1, y(d.new + d.existing) - (d.new > 0 ? 2 : 0)))} data-tip={tip(d.year, 'existing', d.existing, d.existingTeams)} />
+        </g>
+
+        <!-- step 2: since 2014 -->
+        <g class="ann a-shift">
+          <path class="ann-line" d="M{x(SINCE)},{mt - 2}V{mt - 8}H{xr}V{mt - 2}" />
+          {#if narrow}
+            <text class="ann-text halo" x={xr} y={mt - 38} text-anchor="end" font-size={FONT}>Since {SINCE}: {rebuild} to rebuild</text>
+            <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} to build</text>
+          {:else}
+            <text class="ann-text halo" x={xr} y={mt - 38} text-anchor="end" font-size={FONT}>Since {SINCE}: {rebuild} to renovate or buy</text>
+            <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} for arenas that opened</text>
+          {/if}
+        </g>
+
+        <!-- step 3: the two largest deals for existing arenas -->
+        <g class="ann a-largest">
+          {#each largest as [team, value]}
+            {@const s = segs.filter((g) => g.team === team && g.year === last && !g.pending && g.category === 'existing').sort((a, b) => b.value - a.value)[0]}
+            {#if s}
+              {@const my = (y(s.y0) + y(s.y1)) / 2}
+              <path class="ann-line" d="M{xr + 2},{my}H{xr + 8}" />
+              <text class="ann-text" x={xr + 11} y={my - 3} font-size={FONT}>{TEAM_CITY[team]}</text>
+              <text class="ann-sub" x={xr + 11} y={my + 12} font-size={FONT}>{money(value)}</text>
             {/if}
           {/each}
-          {#each years.filter((yr) => (yr % 5 === 0 && last - yr >= 3) || yr === last) as yr}
-            <text class="tick t-muted" x={x(yr) + x.bandwidth() / 2} y={H - mb + 18} text-anchor="middle" font-size={FONT}>{yr}</text>
-          {/each}
-          <!-- the 2014-2026 bracket -->
-          {@const bx0 = x(since)}
-          {@const bx1 = x(last) + x.bandwidth()}
-          <path class="s-ink" d="M{bx0},{mt - 6}V{mt - 12}H{bx1}V{mt - 6}" />
-          <text class="t-ink" x={bx1} y={mt - 20} text-anchor="end" font-size={FONT}>
-            Since {since}: <tspan class="t-strong">{rebuild}</tspan> to rebuild, <tspan class="t-strong">{build}</tspan> to build
-          </text>
-        </Svg>
-      {/snippet}
-    </LayerCake>
-  </div>
-{:else}
-  <div class="plot" style="aspect-ratio: {NW} / {NH}">
-    <LayerCake
-      ssr
-      data={bins}
-      x={(d) => d.new + d.existing}
-      y="name"
-      xScale={scaleLinear()}
-      xDomain={[0, xmaxN]}
-      xRange={[nml, NW - nmr]}
-      yScale={scaleBand().paddingInner(0.35)}
-      yDomain={bins.map((b) => b.name)}
-      yRange={[nmt, NH - 4]}
-      containerWidth={NW}
-      containerHeight={NH}
-    >
-      {#snippet children(k)}
-        {@const x = k.xScale}
-        {@const y = k.yScale}
-        {@const bh = Math.min(y.bandwidth(), 18)}
-        <Svg viewBox="0 0 {NW} {NH}" {label}>
-          <line class="baseline" x1={nml} x2={nml} y1={nmt} y2={NH - 4} />
-          {#each bins as d}
-            {@const y0 = y(d.name) + (y.bandwidth() - bh) / 2}
-            <text class="tick t-muted" x={nml - 8} y={y0 + bh / 2} dy="0.32em" text-anchor="end" font-size={FONT}>{d.name}</text>
-            {#if d.new > 0}
-              {#if d.existing > 0}
-                <rect class="f-public" x={nml} y={y0} width={x(d.new) - nml} height={bh} data-tip={tip(d.name, 'new', d.new, d.newTeams)} />
-              {:else}
-                <path class="f-public" d={hbar(nml, x(d.new), y0, bh)} data-tip={tip(d.name, 'new', d.new, d.newTeams)} />
-              {/if}
-            {/if}
-            {#if d.existing > 0}
-              {@const s = d.new > 0 ? x(d.new) + 2 : nml}
-              <path class="f-orange" d={hbar(s, Math.max(s + 1, x(d.new + d.existing) + (d.new > 0 ? 2 : 0)), y0, bh)} data-tip={tip(d.name, 'existing', d.existing, d.existingTeams)} />
-            {/if}
-            <text class="t-ink" x={x(d.new + d.existing) + (d.new > 0 && d.existing > 0 ? 8 : 6)} y={y0 + bh / 2} dy="0.32em" font-size={FONT}>{money(d.new + d.existing)}</text>
-          {/each}
-        </Svg>
-      {/snippet}
-    </LayerCake>
-  </div>
-{/if}
+        </g>
+
+        <!-- step 4: pending money on existing arenas -->
+        <g class="ann a-pending">
+          {#if pendingTotal > 0}
+            {@const p = segs.filter((s) => s.pending)}
+            {@const my = (y(Math.min(...p.map((s) => s.y0))) + y(Math.max(...p.map((s) => s.y1)))) / 2}
+            {@const top = my - 8 * (pendingCities.length + 1)}
+            <path class="ann-line" d="M{xr + 2},{my}H{xr + 8}" />
+            <text class="ann-text" x={xr + 11} y={top} font-size={FONT}>Pending, {money(pendingTotal)}</text>
+            {#each pendingCities as c, i}
+              <text class="ann-sub" x={xr + 11} y={top + 15 * (i + 1)} font-size={FONT}>{c}</text>
+            {/each}
+          {/if}
+        </g>
+      </Svg>
+    {/snippet}
+  </LayerCake>
+</div>

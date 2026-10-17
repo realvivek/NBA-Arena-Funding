@@ -9,8 +9,9 @@ export const FONT = 13;
 export const FONT_SMALL = 13;
 export type Variant = 'wide' | 'narrow';
 
-// Approximate advance widths for Public Sans, in em, for laying out labels without a browser.
-const NARROW_CH = /[ijlt.,:;'|!()[\]1 ]/;
+// Approximate advance widths for Libre Franklin, in em, for laying out labels without a browser. Its figures are
+// proportional: the one is narrow, the others wide.
+const NARROW_CH = /[ijlt.,:;'|!()[\] ]/;
 const WIDE_CH = /[MWmw@%]/;
 export function textWidth(s: string, size = FONT, weight = 400): number {
   let em = 0;
@@ -18,7 +19,9 @@ export function textWidth(s: string, size = FONT, weight = 400): number {
     if (NARROW_CH.test(ch)) em += 0.3;
     else if (WIDE_CH.test(ch)) em += 0.85;
     else if (/[A-Z]/.test(ch)) em += 0.66;
-    else if (/[0-9$]/.test(ch)) em += 0.62;
+    else if (ch === '1') em += 0.47;
+    else if (/[0-9]/.test(ch)) em += 0.69;
+    else if (ch === '$') em += 0.6;
     else em += 0.53;
   }
   return em * size * (weight >= 600 ? 1.05 : 1);
@@ -70,4 +73,15 @@ export const TEAM_CITY: Record<string, string> = {
   LAL: 'Los Angeles', MEM: 'Memphis', MIA: 'Miami', MIL: 'Milwaukee', MIN: 'Minneapolis', NOP: 'New Orleans',
   NYK: 'New York', OKC: 'Oklahoma City', ORL: 'Orlando', PHI: 'Philadelphia', PHX: 'Phoenix', POR: 'Portland',
   SAC: 'Sacramento', SAS: 'San Antonio', TOR: 'Toronto', UTA: 'Salt Lake City', WAS: 'Washington',
+};
+
+/** Each team's full name (its market, not its arena's city: the Clippers play in Inglewood). */
+export const TEAM_NAME: Record<string, string> = {
+  ATL: 'Atlanta Hawks', BOS: 'Boston Celtics', BKN: 'Brooklyn Nets', CHA: 'Charlotte Hornets', CHI: 'Chicago Bulls',
+  CLE: 'Cleveland Cavaliers', DAL: 'Dallas Mavericks', DEN: 'Denver Nuggets', DET: 'Detroit Pistons',
+  GSW: 'Golden State Warriors', HOU: 'Houston Rockets', IND: 'Indiana Pacers', LAC: 'Los Angeles Clippers',
+  LAL: 'Los Angeles Lakers', MEM: 'Memphis Grizzlies', MIA: 'Miami Heat', MIL: 'Milwaukee Bucks',
+  MIN: 'Minnesota Timberwolves', NOP: 'New Orleans Pelicans', NYK: 'New York Knicks', OKC: 'Oklahoma City Thunder',
+  ORL: 'Orlando Magic', PHI: 'Philadelphia 76ers', PHX: 'Phoenix Suns', POR: 'Portland Trail Blazers',
+  SAC: 'Sacramento Kings', SAS: 'San Antonio Spurs', TOR: 'Toronto Raptors', UTA: 'Utah Jazz', WAS: 'Washington Wizards',
 };

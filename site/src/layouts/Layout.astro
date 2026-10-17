@@ -1,7 +1,7 @@
 ---
-import '@fontsource-variable/source-serif-4/opsz.css';
-import '@fontsource-variable/source-serif-4/opsz-italic.css';
-import '@fontsource-variable/public-sans/index.css';
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/newsreader/opsz-italic.css';
+import '@fontsource-variable/libre-franklin/index.css';
 import '../styles/global.css';
 import meta from '../generated/meta.json';
 
@@ -54,9 +54,10 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
     </main>
     <footer class="site-foot">
       <div class="col">
+        <p class="foot-name">Who Paid for the NBA's Arenas</p>
         Ledger as of {asOf}. Dollars are 2026 dollars (BLS CPI-U) unless marked. Every number links to its entry in
-        the <a href="/fact-check/">fact-check ledger</a>; the data and the code that builds this site are in
-        the <a href="https://github.com/realvivek/NBA-Arena-Funding">project repository</a>.
+        the <a href="/fact-check/">fact-check ledger</a>, and every paragraph lists its sources. The data and the code
+        that builds this site are in the <a href="https://github.com/realvivek/NBA-Arena-Funding">project repository</a>.
       </div>
     </footer>
     <div class="tip" role="status" hidden></div>
@@ -87,6 +88,54 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
         });
         document.addEventListener('focusout', function () { tip.hidden = true; });
         window.addEventListener('scroll', function () { tip.hidden = true; }, { passive: true });
+      })();
+      // Scroll-driven figures: the step the reader has scrolled to sets the chart's state. Without this script the
+      // chart rests in its last state and every step reads as a paragraph.
+      (function () {
+        document.querySelectorAll('figure.scrolly').forEach(function (fig) {
+          var steps = Array.prototype.slice.call(fig.querySelectorAll('.step'));
+          if (!steps.length) return;
+          fig.classList.add('js');
+          function activate(el) {
+            steps.forEach(function (s) { s.classList.toggle('is-active', s === el); });
+            fig.setAttribute('data-step', el.getAttribute('data-step'));
+          }
+          // The active step is the last one whose top has passed a line across the screen, so a jump (a link, a
+          // key, a fast fling) lands on the right state. On phones the chart holds the top of the screen, so the
+          // line sits lower down.
+          var phone = window.matchMedia('(max-width: 63.99rem)');
+          var current = null, queued = false;
+          function update() {
+            queued = false;
+            var line = window.innerHeight * (phone.matches ? 0.62 : 0.5), el = steps[0];
+            steps.forEach(function (s) { if (s.getBoundingClientRect().top < line) el = s; });
+            if (el !== current) { current = el; activate(el); }
+          }
+          function queue() {
+            if (!queued) { queued = true; requestAnimationFrame(update); }
+          }
+          update();
+          requestAnimationFrame(function () { requestAnimationFrame(function () { fig.classList.add('ready'); }); });
+          window.addEventListener('scroll', queue, { passive: true });
+          window.addEventListener('resize', queue);
+        });
+      })();
+      // Look up an arena: the menu shows one card at a time. Without this script the first card and a list of
+      // links to every arena's record are shown.
+      (function () {
+        document.querySelectorAll('.lookup').forEach(function (box) {
+          var pick = box.querySelector('.lookup-pick');
+          var sel = box.querySelector('select');
+          var list = box.querySelector('.lookup-teams');
+          if (!pick || !sel) return;
+          pick.hidden = false;
+          if (list) list.hidden = true;
+          function show() {
+            box.querySelectorAll('.arena-card').forEach(function (c) { c.hidden = c.getAttribute('data-team') !== sel.value; });
+          }
+          sel.addEventListener('change', show);
+          show();
+        });
       })();
     </script>
   </body>

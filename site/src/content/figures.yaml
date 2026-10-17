@@ -5,18 +5,20 @@ rebuild:
   title: >-
     Since 2014, most public arena money has gone to existing arenas
   sub: >-
-    Public money committed each year, completed or binding, for new arenas and for existing ones, in 2026 dollars
+    Public money committed each year to build new arenas and to renovate or buy existing ones, one segment per
+    arena, in 2026 dollars
   dataset: rebuild-by-year
   legend:
-    - { label: New arenas (construction), key: public }
-    - { label: Existing arenas (renovations and purchases), key: orange }
+    - { label: New arenas, key: public }
+    - { label: Existing arenas, key: orange }
+    - { label: Pending, key: pending-orange }
   notes:
     - >-
       Construction money is counted in the year an arena opened, renovations in the middle year of the work and
-      purchases in the year of the sale. Work still under way is counted at face value in 2026.
+      purchases in the year of the sale. Money for work still under way, and pending money, is counted at face
+      value in 2026.
     - >-
-      Not shown, because the money is not yet spent or the arena is not among the {{arenas_n}} in use:
-      {{pending_existing}} pending for Memphis and Portland, {{new_arenas_committed}} committed and
+      Not shown, because the arenas are not among the {{arenas_n}} in use: {{new_arenas_committed}} committed and
       {{sas_pending}} pending for new arenas in Oklahoma City and San Antonio, and {{uta_district}} for the
       district around Salt Lake City's arena.
 
@@ -52,7 +54,7 @@ takeovers:
     Built with private money, then bought or rebuilt with public money
   sub: >-
     The {{takeover_n}} arenas built mainly with private money that later got public money to buy or renovate
-    them, in 2026 dollars
+    them. Each row is an arena's life: what it cost to build, then public money as it came, in 2026 dollars
   dataset: takeovers
   legend:
     - { label: Public money, key: public }
@@ -60,9 +62,12 @@ takeovers:
     - { label: Pending, key: pending }
   notes:
     - >-
-      Construction is the arena's cost when it opened. Later money is public purchases and renovations, completed,
-      binding or pending; private money for later renovations is not shown. Indianapolis is not shown, because
-      its records conflict on who paid to build its arena.
+      Circles are sized by dollars on one scale. The first circle in each row is the arena's construction, with
+      the public share as a wedge; later circles are public money to buy or renovate it, and deals close together
+      in time are drawn as one circle, labeled with their years. Money for work still under way is counted at face
+      value in 2026. Private money for later renovations is not shown.
+    - >-
+      Indianapolis is not shown, because its records conflict on who paid to build its arena.
 
 whopays:
   title: >-
