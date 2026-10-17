@@ -13,14 +13,14 @@
     tif: 'Tax increment and tax capture',
     leaserev: 'Lease-revenue bonds',
     sin: 'Alcohol and tobacco taxes',
-    mixed: 'Stream not documented',
+    mixed: 'Not split by stream',
     land: 'Land',
     infra: 'Infrastructure, stream not stated',
   };
   const GROUPS = [
     { payer: 'visitors', name: 'Taxes mostly paid by visitors', cls: 'f-orange' },
     { payer: 'residents', name: 'Taxes mostly paid by residents', cls: 'f-public' },
-    { payer: 'other', name: 'Land, or no documented stream', cls: 'f-other' },
+    { payer: 'other', name: 'Land, or not split by stream', cls: 'f-other' },
   ];
   const groups = GROUPS.map((g) => {
     const items = rows.filter((r) => r.payer === g.payer).sort((a, b) => b.public_2026_m - a.public_2026_m);

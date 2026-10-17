@@ -95,7 +95,7 @@ export function takeoversTable(rows: any[]): Table {
 }
 
 export function whoPaysTable(rows: any[]): Table {
-  const PAYER: Record<string, string> = { visitors: 'Mostly visitors', residents: 'Mostly residents', other: 'Land or not documented' };
+  const PAYER: Record<string, string> = { visitors: 'Mostly visitors', residents: 'Mostly residents', other: 'Land, or not split by stream' };
   return {
     columns: [
       { key: 'name', label: 'Funding stream' },

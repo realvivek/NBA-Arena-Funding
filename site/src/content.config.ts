@@ -60,7 +60,8 @@ const figures = defineCollection({
     title: z.string(),
     sub: z.string(),
     dataset: z.string(),
-    legend: z.array(z.object({ label: z.string(), key: z.string() })).default([]),
+    // strict: an unquoted comma in a YAML flow mapping would otherwise split a label into a stray key
+    legend: z.array(z.object({ label: z.string(), key: z.string() }).strict()).default([]),
     notes: z.array(z.string()).default([]),
     sources: cites,
   }),

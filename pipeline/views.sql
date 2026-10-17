@@ -24,7 +24,7 @@ select * from (values
     ('tif',      'Tax increment and other tax capture', 'residents', 4),
     ('leaserev', 'Lease-revenue bonds backed by the general fund or parking', 'residents', 5),
     ('sin',      'Alcohol and tobacco taxes', 'residents', 6),
-    ('mixed',    'Public money, funding stream not documented', 'other', 7),
+    ('mixed',    'Public money not split among its funding streams', 'other', 7),
     ('land',     'Land contributed or sold below value', 'other', 8),
     ('infra',    'Infrastructure and site work, funding stream not stated', 'other', 9)
 ) t(bucket, name, payer, ord);

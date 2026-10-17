@@ -10,7 +10,6 @@
   "senate-01-124-lsed-fy-26-final",
   "portland-adopted",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
-  "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
   "ksat-spurs-consider-a-downtown-move",
   "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
@@ -39,6 +38,7 @@
   "cfo-fis-downtown-arena-revitalization",
   "cityofsacramento-city-of-sacramento-2025-acfr",
   "cbsnews-sacramento-council-approves-kings-arena-deal-7-2",
+  "okc-okc-and-thunder-approve-agreements-to-keep-the-thu",
   "okc-city-council-approves-letter-of-intent-with-the",
   "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
   "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
@@ -130,8 +130,7 @@
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
-    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
-    "keranews-dallas-mavericks-valley-view-mall-new-arena-city"
+    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w"
    ]
   },
   {
@@ -393,13 +392,14 @@
    "owner": "City of Oklahoma City (public)",
    "term_end_year": 2053,
    "term_and_nonrelocation": "Through at least 2053: 25 years from move-in to the new arena (KGOU 2025-06-18; Bond Buyer 2026-04-06); earlier reports said at least 2050",
-   "outs_penalties_notes": "Early-exit penalties of more than $1B (KGOU 2025-06-18)",
+   "outs_penalties_notes": "Early-exit penalties of up to $1B, declining over the term: $1B if the team leaves in the first five years after moving into the new arena, $850M in years 6-10, and a scale that continues for the 25 years (city release, June 17 2025); KGOU: \"up to $1 billion\"",
    "label": "b/c",
-   "exit_penalty": "Early-exit penalties of more than $1B (KGOU 2025-06-18)",
+   "exit_penalty": "Early-exit penalties of up to $1B, declining over the term: $1B if the team leaves in the first five years after moving into the new arena, $850M in years 6-10, and a scale that continues for the 25 years (city release, June 17 2025); KGOU: \"up to $1 billion\"",
    "pending_2026_m": null,
    "new_arena_2026_m": 910.0,
    "new_arena_pending_2026_m": null,
    "sources": [
+    "okc-okc-and-thunder-approve-agreements-to-keep-the-thu",
     "okc-city-council-approves-letter-of-intent-with-the",
     "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
     "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",

@@ -807,7 +807,8 @@
       "constraints": {
        "enum": [
         "Y",
-        "N"
+        "N",
+        "unresolved"
        ]
       }
      },
@@ -2572,6 +2573,18 @@
      {
       "name": "aaa_yield_issue_yr",
       "type": "number"
+     },
+     {
+      "name": "par_dollars_year",
+      "type": "integer"
+     },
+     {
+      "name": "fed_cost_par_m",
+      "type": "number"
+     },
+     {
+      "name": "fed_cost_basis",
+      "type": "string"
      }
     ]
    }

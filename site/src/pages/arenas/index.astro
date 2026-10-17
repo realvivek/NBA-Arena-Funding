@@ -107,7 +107,7 @@ const byCity = [...arenas].sort((a: any, b: any) => TEAM_CITY[a.team].localeComp
             <dl class="facts">
               <dt>Opened</dt><dd>{a.opened}</dd>
               <dt>Owner</dt><dd>{a.owner}</dd>
-              <dt>Built for</dt><dd>{money(a.construction_cost_nominal_m)} then, {money(a.construction_cost_2026_m)} in 2026 dollars <span class="label" title={labelText(a.construction_cost_label)}>{a.construction_cost_label}</span>, mainly with {a.built_private ? 'private' : 'public'} money</dd>
+              <dt>Built for</dt><dd>{money(a.construction_cost_nominal_m)} then, {money(a.construction_cost_2026_m)} in 2026 dollars <span class="label" title={labelText(a.construction_cost_label)}>{a.construction_cost_label}</span>, {a.split_unresolved ? 'with a public and private split the records do not settle' : `mainly with ${a.built_private ? 'private' : 'public'} money`}</dd>
               <dt>Public money</dt><dd>{money(a.public_2026_m)}, {pct(a.public_share_pct)} of {money(a.spending_2026_m)} spent (2026 dollars)</dd>
               {a.pending_2026_m > 0 && <><dt>Pending</dt><dd>{money(a.pending_2026_m)}, not counted</dd></>}
               <dt>Lease</dt><dd>{l?.term_and_nonrelocation || 'Team-owned or no public lease'}{l?.outs_penalties_notes && l.outs_penalties_notes !== 'n/a' ? `. ${l.outs_penalties_notes}` : ''}</dd>

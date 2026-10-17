@@ -64,6 +64,7 @@ datasets:
         from items where kind <> 'project' group by team)
     select a.team, a.arena, a.city, cast(a.opened as integer) as opened, a.owner, a.owner_type,
            a.built_privately_majority = 'Y' as built_private,
+           a.built_privately_majority = 'unresolved' as split_unresolved,
            a.construction_cost_nominal_m, a.construction_cost_2026_m, a.construction_cost_label,
            m.public_2026_m, m.spending_2026_m,
            m.spending_2026_m - (m.public_2026_m - coalesce(m.purchase_public_2026_m, 0)) as private_2026_m,
@@ -281,15 +282,18 @@ datasets:
 - id: fed-bonds
   title: Federal cost of tax-exempt arena bonds, by issue
   sql: |
-    select f.team, f.arena, cast(f.year as integer) as year, f.issuer_series, f.par_m, f.tax_status, f.pv3_30yr_fed_loss_m as pv_m,
-           f.pv3_30yr_fed_loss_m * coalesce((select factor_2026 from cpi where cpi.year = f.year), 1) as pv_2026_m
-    from fed_bond_cost f
-    where f.tau = 0.28 and f.tax_status <> 'planned'
-      and exists (select 1 from arena_bonds b where b.team = f.team and cast(b.year as integer) = f.year
-                  and b.issuer_series = f.issuer_series and b.new_money = 'True')
+    with b as (select team, cast(year as integer) as year, issuer_series, cast(par_dollars_year as integer) as par_dollars_year,
+                      cast(fed_cost_par_m as double) as counted_par_m, fed_cost_basis
+               from arena_bonds where coalesce(fed_cost_par_m, '') <> '')
+    select f.team, f.arena, f.year, f.issuer_series, f.par_m, b.par_dollars_year, b.counted_par_m, b.fed_cost_basis,
+           f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m as pv_m,
+           f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m
+             * coalesce((select factor_2026 from cpi where cpi.year = b.par_dollars_year), 1) as pv_2026_m
+    from fed_bond_cost f join b on b.team = f.team and b.year = f.year and b.issuer_series = f.issuer_series
+    where f.tau = 0.28
     order by f.year, f.team, f.issuer_series
   sources: [ledger, gayer-2016, fred-cpiaucns]
-  note: New-money issues only; refundings are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate.
+  note: New money for the arena only; refundings, taxable issues and the district's share of Salt Lake City's 2025 issue are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate, in the dollars the par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3), then in 2026 dollars.
 
 - id: tax-breaks
   title: Property-tax breaks and taxes diverted to arena debt

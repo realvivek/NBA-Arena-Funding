@@ -70,10 +70,12 @@
   "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
   "portland-2024-annual-comprehensive-financial-report",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
-  "tri-statedefender-p-349496",
+  "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
   "utah-pmn",
   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
+  "tri-statedefender-p-349496",
+  "downtownmemphis-city-council-approves-two-key-funding-m",
   "dailymemphian",
   "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
   "audacy-fedexforum",
@@ -686,7 +688,8 @@
    "status": "counted",
    "public_2026_m": 92.511566,
    "sources": [
-    "cfo-fis-downtown-arena-revitalization"
+    "cfo-fis-downtown-arena-revitalization",
+    "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena"
    ]
   },
   {
@@ -700,19 +703,6 @@
    "public_2026_m": 19.089013,
    "sources": [
     "ohioauditor-auditsearch"
-   ]
-  },
-  {
-   "year": 2025,
-   "team": "MEM",
-   "item_id": "MEM-renovation-1",
-   "description": "$550M renovation: state funds allocated by council",
-   "kind": "renovation",
-   "category": "existing",
-   "status": "counted",
-   "public_2026_m": 82.41344,
-   "sources": [
-    "tri-statedefender-p-349496"
    ]
   },
   {
@@ -740,6 +730,20 @@
    "public_2026_m": 95.0,
    "sources": [
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+   ]
+  },
+  {
+   "year": 2026,
+   "team": "MEM",
+   "item_id": "MEM-renovation-1",
+   "description": "$550M renovation: first phase, from the state grant",
+   "kind": "renovation",
+   "category": "existing",
+   "status": "counted",
+   "public_2026_m": 80.0,
+   "sources": [
+    "tri-statedefender-p-349496",
+    "downtownmemphis-city-council-approves-two-key-funding-m"
    ]
   },
   {

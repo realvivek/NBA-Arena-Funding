@@ -1,6 +1,6 @@
 # Verification notes
 
-Claims in the report that were checked against primary records, with what each record shows. Last updated October 16, 2026.
+Claims in the report that were checked against primary records, with what each record shows. Last updated October 17, 2026.
 
 ## Checked against primary records
 
@@ -18,7 +18,7 @@ Claims in the report that were checked against primary records, with what each r
 | Salt Lake City's 0.5% arena sales tax raised $57.99M in FY2026 | Utah State Tax Commission sales-tax distributions | FY2026 $57.99M; the 12 months to September 2026 brought in $58.68M. Monthly series in `data/dedicated_taxes/slc_ccr_monthly.csv`. |
 | Wisconsin Center District taxes: $49.97M in 2025, 62% from hotel rooms | Wisconsin DOR expo tax distributions | 2025 total $49,967,419.95. Basic plus additional room tax was $30,769,184 (61.6%). |
 | DC's tax relief for Capital One Arena: $312.7M, "not financially necessary" | DC OCFO Tax Abatement Financial Analysis, Bill 25-1004, November 26, 2024, Table 1 | Total exemption value is $49,817,695 for FY2025-2028 and $262,896,844 for FY2029-2050, or $312.7M through the lease's base term ending June 30, 2050. OCFO "finds that the abatement is not financially necessary". |
-| MSG property-tax exemption of about $42M a year | NYC Independent Budget Office, March 2023 | $42M in FY2023. The cumulative $946.7M since 1982 comes via Reinvent Albany and is used only in the expanded total. |
+| MSG property-tax exemption of about $42M a year | NYC Independent Budget Office, March 2023 and release of July 11, 2023 | $42M in FY2023. The cumulative estimate is the office's own: "more than $946.7 million (in 2023 dollars)" forgone since 1982. Converted to 2026 dollars ($1.03B), it is used only in the expanded total. |
 | MLB's lobbyist was the only one on record on the Section 197 cap | House Clerk lobbying disclosures (bulk XML) | Ernst & Young for the Office of the Commissioner of Baseball: $50,000 in each of Q1 and Q2 2025, on sports franchise amortization under Section 197 (H.R. 1). The Senate LDA site was down for maintenance, so the House files were used. |
 
 ## Construction costs moved to primary documents (October 16, 2026)
@@ -109,6 +109,42 @@ The documented series now covers seven teams and $759M (2026 dollars), up from f
 - **Washington lease owner (Oct. 17, 2026).** The lease table called the owner "Monumental (private) with DC funding". The District bought the arena for $87.5M in 2024 and leases it back to Monumental (fiscal impact statement, p.2).
 - **Dallas lease citation (Oct. 17, 2026).** The lease row cited a Spectrum News date folder, not an article, and said both the Mavericks' and the Stars' leases end in 2031 and that the Stars are moving to Plano. The AP story (via WTOP, June 1, 2026) confirms the Mavericks' American Airlines Center lease expires in 2031 and the Valley View site; the Stars clause had no source and was removed.
 - **Cook County query.** A first query used a wrong PIN prefix and returned small totals. The main arena PIN 17182010350000 confirmed the 2024 cut.
+- **Madison Square Garden's exemption is in 2023 dollars (Oct. 17, 2026).** The ledger added the $946.7M cumulative exemption as a nominal sum and credited it to Reinvent Albany. The Independent Budget Office's own release (July 11, 2023) says the city "has foregone more than $946.7 million (in 2023 dollars)" since 1982. The figure now cites that release, is labeled (b) and is converted from 2023 to 2026 dollars: $1.03B. The breaks added to the expanded total rise from $1.76B to $1.84B, and the expanded total from $11.06B (39.2%) to $11.15B (39.4%). Fiscal years after 2023 are still not added.
+- **Federal cost of tax-exempt bonds, again (Oct. 17, 2026).** This replaces the $1.91B above. Three problems:
+  - The seven issues taken from Gayer, Drukker and Gold's Table 3 (Dallas 1998, San Antonio 2000, Houston 2001, Memphis 2002, Charlotte 2003, Orlando 2008, Barclays 2009) state par in 2014 dollars. The table's note says "Estimates are in 2014 dollars", and Barclays' $564M is the $511M issued in 2009. Their present values had been converted to 2026 dollars from the issue year; they are now converted from 2014.
+  - Salt Lake City's whole $900M district issue was counted, though $375M of it pays for the district around the arena. Only the arena's $525M is counted now, pro rata.
+  - Indianapolis's whole $401.4M 2021A issue was counted. It also refunded the 2011A bonds and retired earlier Fieldhouse and CIB bonds (CIB FY2025, Note 5), so only its new money, about $254M (Bond Buyer), is counted now.
+
+  New columns in `nba_arena_bonds.csv` (`par_dollars_year`, `fed_cost_par_m`, `fed_cost_basis`) record the counted par and the year its dollars are in. The memo figure falls from $1.91B to $1.53B and is still not added to any total.
+- **Indianapolis's construction split (Oct. 17, 2026).** The ledger counted Gainbridge Fieldhouse as built mainly with private money ($79M public of a $183M press cost). The CIB's FY2025 statements say MCCRFA issued about $230.7M of 1997A/B excise-tax lease rental bonds, repaid from pledged state and local taxes, "to fund the construction of the then Conseco Fieldhouse and an attached garage facility". That is more than the reported cost. With no primary split, the arena is now in neither group (`built_privately_majority` = unresolved). The changes:
+  - arenas built mainly with private money: 22 to 21;
+  - those later bought or rebuilt with public money: seven ($2.71B) to six ($2.35B, $573M of it pending);
+  - those arenas' public construction money: $654M to $497M.
+
+  The core total does not change. The $79M press figure stays as the value used, and the bond par is recorded as an alternative.
+- **Amounts paid shown in 2026 dollars (Oct. 17, 2026).** Where the story described amounts paid, it gave 2026-dollar conversions. The copy now gives the amounts paid; the totals still count them in 2026 dollars.
+  - DC's purchase of Capital One Arena: shown as $93M, paid $87.5M.
+  - DC's 2024 deal: $520M, against $515M.
+  - Portland's land: $7.5M, against $7.13M.
+  - Barclays Center's PILOT bonds: $738M, against $511M issued in 2009.
+- **Memphis (Oct. 17, 2026).** The story said Tennessee had put $82M into the FedExForum renovation. In fact the state gave the city a $350M grant in FY2024 for four venues, $230M of it earmarked for FedExForum (Memphis ACFR FY2025, Arenas Funding Account). The city council approved $80M on a first vote on Feb. 18, 2025 (Tri-State Defender). On March 18, 2025 it passed a resolution transferring the money to the Memphis and Shelby County Sports Authority for capital work (Downtown Memphis Commission). The work is under way, so the $80M is now counted at face value rather than in 2025 dollars. The core total falls by $2.4M and is still $9.30B.
+- **Portland's state bonds (Oct. 17, 2026).** The copy said the bonds would be repaid with tax "withheld at the arena". SB 1501 (§4) counts income tax on wages for work anywhere in the Rose Quarter and on the renovation, plus visiting performers' tax. Section 3(4) states only the legislature's current intention to sell the bonds, not an agreement. The copy now says both.
+- **Oklahoma City's exit penalty (Oct. 17, 2026).** The lease table said "more than $1B", citing KGOU, but KGOU says "up to $1 billion". The city's release (June 17, 2025) sets $1B if the team leaves in the first five years after moving into the new arena and $850M in years 6 to 10, on a scale that continues for the 25 years. The row, the stat and the copy now say up to $1B, declining over the term.
+- **DC's exemption and purchase (Oct. 17, 2026).** The OCFO's $312.7M covers all the relief in the 2024 law for FY2025-2050, including $8.9M of transfer and recordation tax. Its analysis calls the arena's exemption a continuation, so the copy now says the law "continues" the exemptions to June 2050. The same analysis (Nov. 26, 2024) still says the District "will initially purchase" the arena. The District's counsel reported on Jan. 13, 2025 that "the District purchased the arena" (Kutak Rock). The copy says "Under a 2024 law". The purchase stays dated 2024, the year of the law, because the closing date was not found.
+- **Wording checked against the documents (Oct. 17, 2026).**
+  - Houston: the $95M is the mayor's figure for an expected state grant (Stadium Journey, citing the Houston Chronicle), so the copy says the state "is expected to cover about" it.
+  - San Antonio: Bexar County's Prop B is "up to $311 million or 25% of the cost, whichever is lower" (KSAT). The cap is now in the copy and the ledger note.
+  - Salt Lake City: the Delta Center's land belongs to the city's redevelopment agency, so the copy says a private company owns the building.
+  - Minneapolis: the purchase law was signed on May 10, 1994 and required a sale to local owners. The owners agreed later that month to sell to a New Orleans group, and an NBA panel blocked that sale in June (Legislative Reference Library timeline).
+  - Threats: the threats page's definition now matches the comparison's rule, which also counts talks with another city, sales to out-of-town buyers or with no limit on moving, and league buy-back terms.
+  - Threat comparison: "median size" meant median public money.
+  - Largest deals: "The latest deals are the largest" was not true of Houston or Orlando. The copy now names Salt Lake City and Washington, and a check in the build confirms theirs are the two largest deals since 2014 for existing arenas.
+  - Costliest arenas: the eight costliest were all built mainly with private money, but four of them got $234M-$455M of public money. The copy says so, and the stat's note lists all eight (it listed five).
+  - The "other" stream: about $500M of the 13.9% is money whose records name its sources without splitting it among them (Memphis's 2004 bonds, Minneapolis's 1995 purchase, Cleveland's 2024-25 repairs). The copy now says the records "do not split" it, not that its source is unknown.
+  - Indianapolis payments: the yearly series includes costs the CIB pays directly and $40M of forgiven loans. Its 2015-2025 total is $216M; the $229M also includes 2001 and 2014. The chart title gave nominal dollars over 2026-dollar bars and now uses 2026 dollars.
+  - Totals: "The totals are floors" now reads "probably low, though some items are counted at their caps", and "has put" reads "has put or committed".
+- **Dallas citations (Oct. 17, 2026).** The KERA link now redirects to kera.org/news, so the lease row and the Dallas project cite only the AP story via WTOP. D Magazine's post was the other source for the project note's owner's-representative and TIF-district details. It returned 403 and could not be re-read, and the note says so.
+- **A legend label split by a comma (Oct. 17, 2026).** A chart legend written as `{ label: Land, or not split by stream, key: other }` was read as the label "Land" plus a stray key. Legend entries are now strict in the content schema, so a stray key fails the build.
 
 ## Figures not checked against a saved copy
 
@@ -120,6 +156,7 @@ These figures were read through a summarizing fetch tool or come from press page
 - San Antonio's 2026 council votes and tax-increment land deal (KSAT, TPR), Portland's county release and the $585M AP figure, and Memphis's "nearly $500 million" (Yahoo).
 - Press and Wikipedia alternatives kept in `construction_cost_other_reports`.
 - Lease table (Oct. 17, 2026): the Heat's commitment through 2040 (UPI), Milwaukee's $553M first-year penalty (The Daily Reporter) and the Madison Square Garden license to June 2055 (MSG Sports Form 10-K, fiscal 2026) were read through the summarizing fetch tool only.
+- Wording check (Oct. 17, 2026): Oklahoma City's penalty schedule (okc.gov refuses downloads), the Downtown Memphis Commission's report of the March 18, 2025 resolution, Kutak Rock's Jan. 13, 2025 release and KSAT's Prop B cap were read through the summarizing fetch tool only.
 
 ## Not reachable from the build environment
 
@@ -154,3 +191,4 @@ The web-search allowance shared by the October 16 research ran out partway throu
 - upi.com and dailyreporter.com (HTTP 403 to direct downloads), sanantonioreport.org (HTTP 403).
 - docs-preview.legis.wisconsin.gov returns a "Website Blocked" page; docs.legis.wisconsin.gov serves the same Legislative Fiscal Bureau paper byte for byte, and the ledger now cites that host.
 - en.wikipedia.org and wikidata.org rate-limit scripted requests (HTTP 429); arena coordinates for the map were fetched slowly from Wikipedia's page-summary API.
+- dmagazine.com and therealdeal.com (HTTP 403, Oct. 17, 2026). The cited KERA story now redirects to kera.org/news.

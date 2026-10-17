@@ -56,6 +56,13 @@ def test_expanded_total(built):
     assert s['expanded_public'].value == pytest.approx(s['core_public'].value + s['tax_breaks_added'].value, abs=0.01)
 
 
+def test_federal_cost_matches_ledger(built):
+    """The per-issue federal cost (new money for the arena, converted from the dollars its par is stated in) adds up to the ledger's."""
+    ledger = sum(built['calc']['fedpv26'].values())
+    assert sum(r['pv_2026_m'] for r in built['datasets']['fed-bonds'].rows) == pytest.approx(ledger, abs=0.01)
+    assert built['stats']['fed_bond_cost'].value == pytest.approx(ledger, abs=0.5)  # the stat adds the ledger's rounded rows
+
+
 def test_threat_stats_match_comparison(built):
     comp, s = built['comp'], built['stats']
     assert s['threats_counted'].value == comp['episodes_explicit_or_implied']

@@ -8,12 +8,10 @@
   "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
   "wiki-state-farm-arena",
   "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
-  "indyencyclopedia-bankers-life-fieldhouse",
-  "oregon-moda-center-arena-comparable-structure-overview",
-  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
   "leg-other",
   "leg-031209-agenda",
   "lrl-target",
+  "oregon-moda-center-arena-comparable-structure-overview",
   "sportsbusinessdaily-state-of-the-arena-america-west-arena",
   "phoenix-phoenix",
   "phoenix-phoenix-2",
@@ -36,6 +34,7 @@
   "cfo-arena-tax-revenue-clarification",
   "wiki-capital-one-arena",
   "cfo-fis-downtown-arena-revitalization",
+  "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
   "dccouncil-4-2-24-arena-funding-memo",
   "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
  ],
@@ -90,40 +89,6 @@
    "private_2026_m": 66.0387,
    "sources": [
     "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
-   ]
-  },
-  {
-   "team": "IND",
-   "arena": "Gainbridge Fieldhouse",
-   "opened": 1999,
-   "item_id": "IND-construction",
-   "kind": "construction",
-   "description": "Gainbridge Fieldhouse construction",
-   "year": 1999,
-   "status": "completed",
-   "core": true,
-   "public_2026_m": 157.291158,
-   "private_2026_m": 207.066841,
-   "sources": [
-    "indyencyclopedia-bankers-life-fieldhouse",
-    "oregon-moda-center-arena-comparable-structure-overview"
-   ]
-  },
-  {
-   "team": "IND",
-   "arena": "Gainbridge Fieldhouse",
-   "opened": 1999,
-   "item_id": "IND-renovation-1",
-   "kind": "renovation",
-   "description": "2019-22 renovation (25-yr deal)",
-   "year": 2021,
-   "status": "completed",
-   "core": true,
-   "public_2026_m": 361.067372,
-   "private_2026_m": 79.557218,
-   "sources": [
-    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
-    "oregon-moda-center-arena-comparable-structure-overview"
    ]
   },
   {
@@ -427,7 +392,8 @@
    "public_2026_m": 92.511566,
    "private_2026_m": 0.0,
    "sources": [
-    "cfo-fis-downtown-arena-revitalization"
+    "cfo-fis-downtown-arena-revitalization",
+    "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena"
    ]
   },
   {

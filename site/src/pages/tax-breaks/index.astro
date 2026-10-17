@@ -38,17 +38,21 @@ const ft = {
     { key: 'arena', label: 'Arena' },
     { key: 'year', label: 'Issued', num: true },
     { key: 'issuer', label: 'Issuer' },
-    { key: 'par', label: 'Par (then-year $)', num: true },
+    { key: 'par', label: 'Par', num: true },
+    { key: 'counted', label: 'Counted', num: true },
     { key: 'pv', label: 'Federal cost at issue', num: true },
     { key: 'pv26', label: 'In 2026 $', num: true },
+    { key: 'basis', label: 'What is counted' },
   ],
   rows: fed.map((r: any) => ({
     arena: `${r.arena}, ${TEAM_CITY[r.team]}`,
     year: r.year,
     issuer: r.issuer_series,
-    par: money(r.par_m),
+    par: r.par_dollars_year === r.year ? money(r.par_m) : `${money(r.par_m)} (${r.par_dollars_year} $)`,
+    counted: money(r.counted_par_m),
     pv: money(r.pv_m),
     pv26: money(r.pv_2026_m),
+    basis: r.fed_cost_basis,
   })),
 };
 ---

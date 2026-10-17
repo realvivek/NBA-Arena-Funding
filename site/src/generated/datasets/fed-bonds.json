@@ -17,7 +17,9 @@
   "year",
   "issuer_series",
   "par_m",
-  "tax_status",
+  "par_dollars_year",
+  "counted_par_m",
+  "fed_cost_basis",
   "pv_m",
   "pv_2026_m"
  ],
@@ -28,9 +30,11 @@
    "year": 1998,
    "issuer_series": "City of Dallas",
    "par_m": 152.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 152.0,
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
    "pv_m": 54.5,
-   "pv_2026_m": 110.885239
+   "pv_2026_m": 76.351739
   },
   {
    "team": "SAS",
@@ -38,9 +42,11 @@
    "year": 2000,
    "issuer_series": "Bexar County venue project bonds",
    "par_m": 169.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 169.0,
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
    "pv_m": 70.7,
-   "pv_2026_m": 136.167451
+   "pv_2026_m": 99.047118
   },
   {
    "team": "HOU",
@@ -48,9 +54,11 @@
    "year": 2001,
    "issuer_series": "Harris County-Houston Sports Authority",
    "par_m": 304.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 304.0,
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
    "pv_m": 118.1,
-   "pv_2026_m": 221.207642
+   "pv_2026_m": 165.452116
   },
   {
    "team": "MEM",
@@ -58,9 +66,11 @@
    "year": 2002,
    "issuer_series": "Memphis & Shelby County (sports authority)",
    "par_m": 296.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 296.0,
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
    "pv_m": 105.4,
-   "pv_2026_m": 194.337604
+   "pv_2026_m": 147.66006
   },
   {
    "team": "CHA",
@@ -68,9 +78,11 @@
    "year": 2003,
    "issuer_series": "City of Charlotte COPs",
    "par_m": 229.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 229.0,
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
    "pv_m": 71.3,
-   "pv_2026_m": 128.545567
+   "pv_2026_m": 99.887688
   },
   {
    "team": "ORL",
@@ -78,9 +90,11 @@
    "year": 2008,
    "issuer_series": "Orange County TDT / City of Orlando",
    "par_m": 342.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 342.0,
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
    "pv_m": 105.7,
-   "pv_2026_m": 162.821951
+   "pv_2026_m": 148.080345
   },
   {
    "team": "BKN",
@@ -88,9 +102,11 @@
    "year": 2009,
    "issuer_series": "Brooklyn Arena Local Development Corp PILOT bonds",
    "par_m": 564.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 564.0,
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
    "pv_m": 164.4,
-   "pv_2026_m": 254.147973
+   "pv_2026_m": 230.31607
   },
   {
    "team": "DET",
@@ -98,29 +114,11 @@
    "year": 2014,
    "issuer_series": "Michigan Strategic Fund LO Revenue Bonds Series 2014A",
    "par_m": 250.0,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2014,
+   "counted_par_m": 250.0,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 57.1,
    "pv_2026_m": 79.994207
-  },
-  {
-   "team": "SAC",
-   "arena": "Golden 1 Center",
-   "year": 2015,
-   "issuer_series": "Sacramento Public Financing Authority Lease Revenue Bonds Series 2015 (Golden 1 Center)",
-   "par_m": 272.87,
-   "tax_status": "TAXABLE",
-   "pv_m": 0.0,
-   "pv_2026_m": 0.0
-  },
-  {
-   "team": "MIL",
-   "arena": "Fiserv Forum",
-   "year": 2016,
-   "issuer_series": "WCD Subordinate Revenue Bonds Series 2016 (Taxable), BCPL private placement",
-   "par_m": 45.0,
-   "tax_status": "TAXABLE",
-   "pv_m": 0.0,
-   "pv_2026_m": 0.0
   },
   {
    "team": "MIL",
@@ -128,7 +126,9 @@
    "year": 2016,
    "issuer_series": "WCD dedicated tax revenue bonds",
    "par_m": 54.3,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2016,
+   "counted_par_m": 54.3,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 10.9,
    "pv_2026_m": 15.062232
   },
@@ -138,7 +138,9 @@
    "year": 2016,
    "issuer_series": "Wisconsin Center District appropriation revenue bonds",
    "par_m": 108.1,
-   "tax_status": "tax-exempt",
+   "par_dollars_year": 2016,
+   "counted_par_m": 108.1,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 21.8,
    "pv_2026_m": 30.124464
   },
@@ -148,7 +150,9 @@
    "year": 2017,
    "issuer_series": "City of Atlanta revenue bonds (car rental tax)",
    "par_m": 110.0,
-   "tax_status": "not confirmed",
+   "par_dollars_year": 2017,
+   "counted_par_m": 110.0,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 22.6,
    "pv_2026_m": 30.578591
   },
@@ -158,7 +162,9 @@
    "year": 2017,
    "issuer_series": "Detroit DDA (Pistons relocation work)",
    "par_m": 34.5,
-   "tax_status": "not confirmed",
+   "par_dollars_year": 2017,
+   "counted_par_m": 34.5,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 7.1,
    "pv_2026_m": 9.606548
   },
@@ -168,7 +174,9 @@
    "year": 2021,
    "issuer_series": "CIB Excise Taxes Revenue Subordinate Bonds Series 2021A",
    "par_m": 22.925,
-   "tax_status": "not stated (5%)",
+   "par_dollars_year": 2021,
+   "counted_par_m": 22.925,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 3.4,
    "pv_2026_m": 4.161454
   },
@@ -178,9 +186,11 @@
    "year": 2021,
    "issuer_series": "MCCRFA Excise Taxes Lease Rental Revenue Bonds Series 2021A (via Indianapolis Bond Bank)",
    "par_m": 401.41,
-   "tax_status": "not stated (5% coupons)",
-   "pv_m": 59.5,
-   "pv_2026_m": 72.825453
+   "par_dollars_year": 2021,
+   "counted_par_m": 254.0,
+   "fed_cost_basis": "New money only: about $254M for the renovation (Bond Buyer, c); the rest refunded or retired earlier Fieldhouse and CIB bonds (CIB FY2025 Note 5)",
+   "pv_m": 37.649785,
+   "pv_2026_m": 46.081725
   },
   {
    "team": "CHA",
@@ -188,7 +198,9 @@
    "year": 2023,
    "issuer_series": "City of Charlotte variable-rate COPs (converted 2024)",
    "par_m": 110.0,
-   "tax_status": "not confirmed",
+   "par_dollars_year": 2023,
+   "counted_par_m": 110.0,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 29.0,
    "pv_2026_m": 31.565329
   },
@@ -198,9 +210,11 @@
    "year": 2025,
    "issuer_series": "Downtown Revitalization PID Sales Tax Revenue Bonds (SEG Redevelopment Project) 2025A $651.26M / 2025B $217.73M / 2025C $31M",
    "par_m": 899.99,
-   "tax_status": "tax-exempt",
-   "pv_m": 264.3,
-   "pv_2026_m": 272.273401
+   "par_dollars_year": 2025,
+   "counted_par_m": 525.0,
+   "fed_cost_basis": "The arena's share: up to $525M of the $899.99M issue; the $375M for the district is left out (pro rata, a)",
+   "pv_m": 154.176713,
+   "pv_2026_m": 158.827915
   },
   {
    "team": "WAS",
@@ -208,11 +222,13 @@
    "year": 2025,
    "issuer_series": "DC capital budget FY2025-27 funded by GO bonds",
    "par_m": 515.0,
-   "tax_status": "not confirmed",
+   "par_dollars_year": 2025,
+   "counted_par_m": 515.0,
+   "fed_cost_basis": "Whole issue (new money)",
    "pv_m": 151.2,
    "pv_2026_m": 155.761401
   }
  ],
- "note": "New-money issues only; refundings are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate.",
- "method": "select f.team, f.arena, cast(f.year as integer) as year, f.issuer_series, f.par_m, f.tax_status, f.pv3_30yr_fed_loss_m as pv_m, f.pv3_30yr_fed_loss_m * coalesce((select factor_2026 from cpi where cpi.year = f.year), 1) as pv_2026_m from fed_bond_cost f where f.tau = 0.28 and f.tax_status <> 'planned' and exists (select 1 from arena_bonds b where b.team = f.team and cast(b.year as integer) = f.year and b.issuer_series = f.issuer_series and b.new_money = 'True') order by f.year, f.team, f.issuer_series"
+ "note": "New money for the arena only; refundings, taxable issues and the district's share of Salt Lake City's 2025 issue are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate, in the dollars the par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3), then in 2026 dollars.",
+ "method": "with b as (select team, cast(year as integer) as year, issuer_series, cast(par_dollars_year as integer) as par_dollars_year, cast(fed_cost_par_m as double) as counted_par_m, fed_cost_basis from arena_bonds where coalesce(fed_cost_par_m, '') <> '') select f.team, f.arena, f.year, f.issuer_series, f.par_m, b.par_dollars_year, b.counted_par_m, b.fed_cost_basis, f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m as pv_m, f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m * coalesce((select factor_2026 from cpi where cpi.year = b.par_dollars_year), 1) as pv_2026_m from fed_bond_cost f join b on b.team = f.team and b.year = f.year and b.issuer_series = f.issuer_series where f.tau = 0.28 order by f.year, f.team, f.issuer_series"
 }

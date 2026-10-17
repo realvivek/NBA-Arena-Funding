@@ -22,6 +22,7 @@
   "govinfo-gaoreports-aimd-98-223",
   "cfo-arena-tax-revenue-clarification",
   "cfo-fis-downtown-arena-revitalization",
+  "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
   "dccouncil-4-2-24-arena-funding-memo",
   "wtop-take-a-look-at-the-newest-renderings-of-the-capi",
   "occompt-occompt",
@@ -41,6 +42,7 @@
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
   "tri-statedefender-p-349496",
+  "downtownmemphis-city-council-approves-two-key-funding-m",
   "dailymemphian",
   "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
   "audacy-fedexforum",
@@ -166,6 +168,7 @@
     "govinfo-gaoreports-aimd-98-223",
     "cfo-arena-tax-revenue-clarification",
     "cfo-fis-downtown-arena-revitalization",
+    "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
     "dccouncil-4-2-24-arena-funding-memo",
     "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
    ]
@@ -212,7 +215,7 @@
   },
   {
    "team": "IND",
-   "deal": "Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23)",
+   "deal": "Gainbridge Fieldhouse (1999, 2019-22, CIB payments 2001 and 2014-25)",
    "jurisdiction": "Marion County, IN",
    "per_household_2026": 1515.46,
    "parts": [
@@ -279,29 +282,30 @@
   },
   {
    "team": "MEM",
-   "deal": "FedExForum (2004 build, $80M state 2025, subsidies)",
+   "deal": "FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",
    "jurisdiction": "Shelby County, TN",
-   "per_household_2026": 1260.43,
+   "per_household_2026": 1259.61,
    "parts": [
     {
      "jurisdiction": "Shelby County, TN",
      "level": 2,
      "per_household_2026": 1220.3,
      "households": 359692,
-     "share": 0.788789
+     "share": 0.792225
     },
     {
      "jurisdiction": "Tennessee",
      "level": 3,
-     "per_household_2026": 40.13,
+     "per_household_2026": 39.31,
      "households": 2928765,
-     "share": 0.211211
+     "share": 0.207775
     }
    ],
    "sources": [
     "memphistn-fy05-annual-report",
     "memphistn-fy15-annual-report",
     "tri-statedefender-p-349496",
+    "downtownmemphis-city-council-approves-two-key-funding-m",
     "dailymemphian",
     "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
     "audacy-fedexforum",

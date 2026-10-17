@@ -138,5 +138,10 @@ Decisions in section 7 were taken as recommended: the January-August 2026 CPI ba
 - **Chart 2** shows the eight costliest arenas were all built mainly with private money (the proposal said four).
 - **Chart 6** adds the shares of nested governments (a Portland household pays city, county and state shares).
 - **The federal cost of tax-exempt bonds** is $1.91B in 2026 dollars; the $1.32B in the proposal was a sum of issue-year present values.
+- **After a check of the copy against its documents** (`notes/verification.md`, Oct. 17), several figures changed:
+  - Madison Square Garden's exemption is the Independent Budget Office's estimate in 2023 dollars, $1.03B in 2026 dollars, so the expanded total is $11.15B.
+  - The federal bond cost counts only new money for the arenas and converts the Brookings issues from 2014 dollars: $1.53B.
+  - Indianapolis's arena is in neither the privately nor the publicly built group, so 21 arenas were built mainly with private money and six were later bought or rebuilt with public money ($2.35B).
+  - The copy gives the amounts paid where it describes payments, and the tax-breaks headline reads "More Than $1.03 Billion".
 - **The sources page** headline names team filings rather than court records: no source in the bibliography is a court record.
 - **Chart text** is set at 13 units in both layouts so it stays at 11px or more down to a 320px screen; chart titles are text inside each figure rather than headings, which keeps the heading order clean.

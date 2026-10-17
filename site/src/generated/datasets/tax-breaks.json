@@ -4,7 +4,7 @@
  "sources": [
   "ledger",
   "ibo-2023-march-description-of-public-subsidies-for-m",
-  "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave",
+  "ibo-2023-july-ibo-reviews-the-madison-square-garden-ta",
   "datacatalog-uzyt-m557",
   "cookcountytreasurer-pappasportalnewsletter",
   "ilga-003502000k10-220",
@@ -46,18 +46,18 @@
    "tax_break_annual_year": 2023,
    "tax_break_annual_2026_m": 45.7,
    "tax_break_cumulative_nominal_m": 946.7,
-   "tax_break_cumulative_2026_m": 946.7,
+   "tax_break_cumulative_2026_m": 1030.4,
    "tax_break_in_expanded_total": "Y",
    "tax_break_future_committed_m": null,
    "tax_break_memo_estimate_m": null,
-   "tax_break_notes": null,
+   "tax_break_notes": "IBO (July 11, 2023): \"more than $946.7 million (in 2023 dollars)\" forgone since 1982, converted to 2026 dollars from 2023; fiscal years after 2023 are not added",
    "pilot_or_tax_diversion_financing_m": null,
    "pilot_2026_m": null,
    "pilot_note": null,
    "property_tax_status": "Exempt by state law since 1982; IBO: $42M forgone in FY2023 (DOF FMV $867M), conservative",
    "sources": [
     "ibo-2023-march-description-of-public-subsidies-for-m",
-    "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave"
+    "ibo-2023-july-ibo-reviews-the-madison-square-garden-ta"
    ]
   },
   {
@@ -131,7 +131,7 @@
   {
    "team": "WAS",
    "arena": "Capital One Arena",
-   "tax_break_desc": "Real-property & possessory-interest tax exemption since construction, extended through 2050 (+ FY2025 deed transfer/recordation abatements)",
+   "tax_break_desc": "Real-property & possessory-interest tax exemption since construction, continued to June 2050 by the 2024 arena law (+ FY2025 deed transfer/recordation abatements)",
    "tax_break_annual_m": 10.0,
    "tax_break_annual_year": 2026,
    "tax_break_annual_2026_m": 10.0,
@@ -144,7 +144,7 @@
    "pilot_or_tax_diversion_financing_m": null,
    "pilot_2026_m": null,
    "pilot_note": null,
-   "property_tax_status": "District-owned; $0 tax 2016-2026 on $524-528M assessment; OCFO values the extended exemption at ~$10.0M/yr (FY2026) and $312.7M FY2025-2050",
+   "property_tax_status": "District-owned; $0 tax 2016-2026 on $524-528M assessment; OCFO values the continued exemption at ~$10.0M/yr (FY2026) and all relief in the 2024 law at $312.7M FY2025-2050",
    "sources": [
     "dcgis-mapserver",
     "cfo-tafa-capital-one-arena-112624"

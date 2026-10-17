@@ -605,6 +605,14 @@ sources:
   origin: government
   date: 2025-03
   checked: '2026-10-16'
+- id: downtownmemphis-city-council-approves-two-key-funding-m
+  url: https://downtownmemphis.com/post/city-council-approves-two-key-funding-measures-for-550-million-fedexforum-renovations
+  title: City Council approves two key funding measures for $550 million FedExForum renovations
+  title_from: curated
+  publisher: Downtown Memphis Commission
+  origin: government
+  date: '2025-03-18'
+  checked: '2026-10-17'
 - id: efiles
   url: https://efiles.portlandoregon.gov/record/18127836/file/document/
   title: 'Moda Center: Arena Renovation and Post-Renovation Operations Term Sheet (Exhibit A, as amended)'
@@ -832,6 +840,14 @@ sources:
   origin: government
   date: '2009-09-10'
   checked: '2026-10-16'
+- id: ibo-2023-july-ibo-reviews-the-madison-square-garden-ta
+  url: https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/press-releases/2023/2023-july-ibo-reviews-the-madison-square-garden-tax-exemption.pdf
+  title: IBO Reviews the Madison Square Garden Tax Exemption
+  title_from: curated
+  publisher: New York City Independent Budget Office
+  origin: government
+  date: '2023-07-11'
+  checked: '2026-10-17'
 - id: ibo-2023-march-description-of-public-subsidies-for-m
   url: https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf
   title: Description of Public Subsidies for Madison Square Garden, Yankee Stadium, Citi Field & Barclays Center
@@ -896,15 +912,6 @@ sources:
   origin: independent
   date: '2015-07-21'
   checked: '2026-10-11'
-- id: keranews-dallas-mavericks-valley-view-mall-new-arena-city
-  url: https://www.keranews.org/text/sports/2026-06-01/dallas-mavericks-valley-view-mall-new-arena-city-hall
-  title: Dallas Mavericks Valley View mall new arena city hall
-  title_from: url
-  publisher: KERA News
-  origin: independent
-  date: '2026-06-01'
-  checked: '2026-10-16'
-  review: not reached (HTTP 403, Cloudflare challenge); title and date from the URL
 - id: kgou-oklahoma-city-inks-deal-to-keep-thunder-through
   url: https://www.kgou.org/sports/2025-06-18/oklahoma-city-inks-deal-to-keep-thunder-through-2053-nails-down-new-arena-policies
   title: Oklahoma City inks deal to keep Thunder through 2053, nails down new arena policies
@@ -977,6 +984,14 @@ sources:
   origin: independent
   date: '2018-10-29'
   checked: '2026-10-11'
+- id: kutakrock-kutak-rock-lead-counsel-for-capital-one-arena
+  url: https://www.kutakrock.com/newspublications/news/2025/january/kutak-rock-lead-counsel-for-capital-one-arena-deal
+  title: Kutak Rock lead counsel for Capital One Arena deal
+  title_from: curated
+  publisher: Kutak Rock LLP
+  origin: independent
+  date: '2025-01-13'
+  checked: '2026-10-17'
 - id: kutakrock-kutak-rock-tax-counsel-disclosure-counsel
   url: https://www.kutakrock.com/newspublications/news/2026/june/kutak-rock-tax-counsel-disclosure-counsel
   title: Kutak Rock Serves as Special Tax Counsel & Disclosure Counsel for OKC Thunder Continental Coliseum Project
@@ -1392,6 +1407,14 @@ sources:
   origin: government
   date: '2025-09-05'
   checked: '2026-10-16'
+- id: okc-okc-and-thunder-approve-agreements-to-keep-the-thu
+  url: https://www.okc.gov/News-articles/OKC-and-Thunder-approve-agreements-to-keep-the-Thunder-in-OKC-through-at-least-2053
+  title: OKC and Thunder approve agreements to keep the Thunder in OKC through at least 2053
+  title_from: curated
+  publisher: City of Oklahoma City
+  origin: government
+  date: '2025-06-17'
+  checked: '2026-10-17'
 - id: okc-okc-voters-approve-2025-bond
   url: https://www.okc.gov/News-articles/OKC-voters-approve-2025-bond
   title: OKC voters approve 2025 bond
@@ -1552,14 +1575,6 @@ sources:
   publisher: Reason
   origin: independent
   date: 1997-07
-  checked: '2026-10-11'
-- id: reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave
-  url: https://reinventalbany.org/2023/07/subsidy-sheet-nyc-budget-watchdog-state-gave-dolans-msg-1-billion-of-nyc-tax-revenue/
-  title: 'Subsidy Sheet: NYC Budget Watchdog: State Gave Dolan’s MSG $1 billion of NYC Tax Revenue'
-  title_from: curated
-  publisher: Reinvent Albany
-  origin: independent
-  date: '2023-07-14'
   checked: '2026-10-11'
 - id: renewdenver-pepsi-center
   url: https://renewdenver.org/projects/pepsi-center/

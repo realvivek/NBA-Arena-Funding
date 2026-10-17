@@ -17,7 +17,6 @@
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
-  "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
   "sec-0001047469-98-001379",
   "sec-0000927356-99-000502",
   "municode-codescontent",
@@ -45,7 +44,8 @@
   "lla-0000454ba",
   "senate-01-124-lsed-fy-26-final",
   "sec-msgs-20260630",
-  "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave",
+  "ibo-2023-july-ibo-reviews-the-madison-square-garden-ta",
+  "okc-okc-and-thunder-approve-agreements-to-keep-the-thu",
   "okc-city-council-approves-letter-of-intent-with-the",
   "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
   "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
@@ -83,7 +83,6 @@
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
-  "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
   "sec-0001047469-98-001379",
   "sec-0000927356-99-000502",
   "municode-codescontent",
@@ -111,7 +110,8 @@
   "lla-0000454ba",
   "senate-01-124-lsed-fy-26-final",
   "sec-msgs-20260630",
-  "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave",
+  "ibo-2023-july-ibo-reviews-the-madison-square-garden-ta",
+  "okc-okc-and-thunder-approve-agreements-to-keep-the-thu",
   "okc-city-council-approves-letter-of-intent-with-the",
   "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
   "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
@@ -290,8 +290,7 @@
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
-    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
-    "keranews-dallas-mavericks-valley-view-mall-new-arena-city"
+    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w"
    ],
    "tax_break_sources": []
   },
@@ -381,7 +380,7 @@
   {
    "team": "IND",
    "construction_cost_other_reports": "$230.7M MCCRFA 1997A/B excise-tax lease rental bonds \"to fund the construction of the Conseco Fieldhouse ... and an attached garage facility\" (b, MCCRFA 2009 audit p.19; CIB FY2023 ACFR Note 5; par, not cost); $200M (Bond Buyer, search index only)",
-   "public_construction_notes": "$79M \"from taxes\" (Indiana Encyclopedia); PFM: local 43%, excise-tax lease-rental revenue (CIB hotel/F&B/admissions taxes). Conflict not resolved: the 1997A/B bond par ($230.7M, b) exceeds the reported cost, and the CIB says the bonds are secured by lease rentals paid from pledged state and local taxes; no primary split of public and private money was found.",
+   "public_construction_notes": "$79M \"from taxes\" (Indiana Encyclopedia); PFM: local 43%, excise-tax lease-rental revenue (CIB hotel/F&B/admissions taxes). Conflict not resolved: the CIB says MCCRFA issued about $230.7M of 1997A/B excise-tax lease rental bonds \"to fund the construction of the then Conseco Fieldhouse and an attached garage facility\" (b, CIB FY2025 Note 5), more than the reported $183M cost, and that the lease rentals are paid from pledged state and local taxes; no primary split of public and private money was found, so the arena is counted in neither the privately nor the publicly built group.",
    "ongoing_notes": "CIB \"Fieldhouse operating expenses and reimbursements\" + Pacers note-receivable forgiveness ($40M of 2010-13 operating loans forgiven 2015-24), 2014-2025 (ACFR ten-year tables), and the 2001 pass-through of cable franchise fees to the Pacers. 2002-2013 tables show no payment line; 1999-2000 not available (pre-GASB 34). Later tables restated 2017-18 upward by about $3.3M a year to include CIB-paid utilities, insurance and security (8.70 and 8.93 in the original ACFRs); 2014-16 were not restated, so they run low by about that much",
    "tax_break_desc": null,
    "tax_break_notes": null,
@@ -545,7 +544,7 @@
    "public_construction_notes": "Privately built and owned; 2011-13 ~$1B renovation privately funded (c).",
    "ongoing_notes": null,
    "tax_break_desc": "Full property-tax exemption since 1982 (RPTL s429)",
-   "tax_break_notes": null,
+   "tax_break_notes": "IBO (July 11, 2023): \"more than $946.7 million (in 2023 dollars)\" forgone since 1982, converted to 2026 dollars from 2023; fiscal years after 2023 are not added",
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": null,
@@ -560,7 +559,7 @@
    ],
    "tax_break_sources": [
     "ibo-2023-march-description-of-public-subsidies-for-m",
-    "reinventalbany-subsidy-sheet-nyc-budget-watchdog-state-gave"
+    "ibo-2023-july-ibo-reviews-the-madison-square-garden-ta"
    ]
   },
   {
@@ -574,10 +573,11 @@
    "conduit_note": null,
    "bond_detail": null,
    "lease_terms": "Through at least 2053: 25 years from move-in to the new arena (KGOU 2025-06-18; Bond Buyer 2026-04-06); earlier reports said at least 2050",
-   "exit_penalty": "Early-exit penalties of more than $1B (KGOU 2025-06-18)",
+   "exit_penalty": "Early-exit penalties of up to $1B, declining over the term: $1B if the team leaves in the first five years after moving into the new arena, $850M in years 6-10, and a scale that continues for the 25 years (city release, June 17 2025); KGOU: \"up to $1 billion\"",
    "lease_label": "b/c",
    "property_tax_sources": [],
    "lease_sources": [
+    "okc-okc-and-thunder-approve-agreements-to-keep-the-thu",
     "okc-city-council-approves-letter-of-intent-with-the",
     "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
     "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
@@ -748,7 +748,7 @@
    "construction_cost_other_reports": "Developer estimate \"about $175 million\" (b, GAO 1998); Pollin-funded building $200M (c); also reported $220M (c)",
    "public_construction_notes": "GAO AIMD-98-223 Table 1 (Apr 30 1998): District predevelopment spending $61.49M, financed by arena-tax revenue bonds (a gross-receipts fee on D.C. businesses, ended FY2001): land $37.2M (-> land: bought with arena-tax bonds and contributed under the ground lease, the ledger's in-kind convention); Metro match $3.0M, employee relocation $4.0M, demolition, remediation and fees $15.1M, bank and issuance costs $2.2M (-> general). Plus a $12M federal transportation grant and $2M from WMATA for the Metro connection (-> general). Total $75.5M (a); District only $61.5M (b). The earlier ~$79M (c, Wikipedia) is not in any primary document reached. Building privately funded by Pollin.",
    "ongoing_notes": null,
-   "tax_break_desc": "Real-property & possessory-interest tax exemption since construction, extended through 2050 (+ FY2025 deed transfer/recordation abatements)",
+   "tax_break_desc": "Real-property & possessory-interest tax exemption since construction, continued to June 2050 by the 2024 arena law (+ FY2025 deed transfer/recordation abatements)",
    "tax_break_notes": "OCFO: $49.8M FY2025-28 + $262.9M FY2029-50; OCFO found the abatement not financially necessary",
    "pilot_note": null,
    "conduit_note": null,

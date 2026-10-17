@@ -61,7 +61,8 @@ takeovers:
   notes:
     - >-
       Construction is the arena's cost when it opened. Later money is public purchases and renovations, completed,
-      binding or pending; private money for later renovations is not shown.
+      binding or pending; private money for later renovations is not shown. Indianapolis is not shown, because
+      its records conflict on who paid to build its arena.
 
 whopays:
   title: >-
@@ -73,11 +74,12 @@ whopays:
   legend:
     - { label: Mostly visitors, key: orange }
     - { label: Mostly residents, key: public }
-    - { label: Land or not documented, key: other }
+    - { label: 'Land, or not split by stream', key: other }
   notes:
     - >-
-      Each dollar is assigned to one stream, as documented in the arena's records. Yearly payments to teams and
-      operators, {{ongoing_public}}, are not included.
+      Each dollar is assigned to one stream, as documented in the arena's records. Money that the records tie to
+      several streams without splitting it is shown as not split. Yearly payments to teams and operators,
+      {{ongoing_public}}, are not included.
 
 households:
   title: >-
@@ -113,14 +115,15 @@ uc:
 
 ongoing:
   title: >-
-    Indianapolis has paid the Pacers {{ind_yearly_min}} to {{ind_yearly_max}} a year since 2015
+    Since 2015, Indianapolis has spent {{ind_yearly_min_2026}} to {{ind_yearly_max_2026}} a year under its Pacers agreements
   sub: >-
-    Documented yearly public payments to teams or arena operators, in 2026 dollars
+    Documented yearly public payments to teams or arena operators, and costs paid for them, in 2026 dollars
   dataset: ongoing
   notes:
     - >-
       Each column is one year's payments. Years with no bar have no record in the documents reached, which does
-      not always mean nothing was paid.
+      not always mean nothing was paid. Indianapolis's figures are the Capital Improvement Board's spending on
+      the Fieldhouse's operating costs, including costs it pays directly, and its forgiveness of team loans.
 
 threats:
   title: >-
@@ -134,8 +137,9 @@ threats:
     - { label: Public money approved, key: public }
   notes:
     - >-
-      A threat is a public statement, sale term or lease clause by an owner or the league that tied a team's
-      future in a city to public money. Medians of public share are for deals with a known total cost.
+      A threat is a statement, sale, sale term, talks with another city or lease clause by an owner or the
+      league that tied a team's future in a city to public money, openly or by implication. Medians of public
+      share are for deals with a known total cost.
 
 leases:
   title: >-

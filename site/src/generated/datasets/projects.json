@@ -3,7 +3,7 @@
  "title": "New arenas, districts and pending deals",
  "sources": [
   "ledger",
-  "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
+  "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
   "dmagazine-the-one-post-you-need-to-read-about-the-mavs-goi",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "tri-statedefender-p-349496",
@@ -69,11 +69,11 @@
    "public_construction_nominal_m": 0.0,
    "public_renovation_pending_nominal_m": null,
    "private_construction_nominal_m": null,
-   "public_construction_notes": "Option agreements on ~104 acres of the former Valley View Mall (June 2026); Legends hired as owner rep; no public financing deal reported; site lies in the Mall Area Redevelopment TIF district.",
+   "public_construction_notes": "Preliminary agreement on 104 acres of the former Valley View Mall site, about 10 miles north of downtown, for an arena to open by 2031, when the American Airlines Center lease expires (AP via WTOP, June 1 2026); no public financing deal reported. A D Magazine post read earlier reported that Legends was hired as owner's representative and that the site lies in the Mall Area Redevelopment TIF district; it could not be re-read on Oct. 17 2026 (403).",
    "lease_terms": "AAC lease ends 2031",
    "notes_and_gaps": "Status: planned (no financing deal)",
    "sources": [
-    "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
+    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
     "dmagazine-the-one-post-you-need-to-read-about-the-mavs-goi"
    ]
   },
@@ -217,7 +217,7 @@
    "public_construction_nominal_m": 311.0,
    "public_renovation_pending_nominal_m": 549.0,
    "private_construction_nominal_m": 500.0,
-   "public_construction_notes": "Bexar County Prop B (Nov 2025, 52.1%): venue tax (hotel 1.75%->2% + 5% car rental) up to $311M. PENDING: City up to $489M under a non-binding term sheet (Aug 2025, 7-4); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); definitive agreements targeted by Dec 31 2026, not signed as of Oct 16 2026",
+   "public_construction_notes": "Bexar County Prop B (Nov 2025, 52.1%): venue tax (hotel 1.75%->2% + 5% car rental) up to $311M or 25% of the cost, whichever is lower (KSAT). PENDING: City up to $489M under a non-binding term sheet (Aug 2025, 7-4); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); definitive agreements targeted by Dec 31 2026, not signed as of Oct 16 2026",
    "lease_terms": "30-yr non-relocation in non-binding term sheet",
    "notes_and_gaps": "Status: voter-approved (county) / pending (city)",
    "sources": [

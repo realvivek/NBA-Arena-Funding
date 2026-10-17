@@ -36,11 +36,15 @@ for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bonds.csv')):
     if 'TAXABLE' in r['tax_status']: k['par_tax']+=p
     elif r['tax_status']!='planned': k['par_te']+=p
     k['rows'].append(f"{r['year']} {r['issuer_series'][:60]} ${p:g}M {r['tax_status']}")
-newmoney={(r['team'],r['year'],r['issuer_series']) for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bonds.csv')) if r['new_money']=='True'}
-fedpv=defaultdict(float); fedpv26=defaultdict(float)  # present value at issue, in issue-year dollars and in 2026 dollars
+# federal cost of tax-exempt bonds: only each issue's new money for the arena (fed_cost_par_m), converted from the year
+# whose dollars its par is stated in (2014 for the issues taken from Gayer, Drukker and Gold's Table 3)
+counted={(r['team'],r['year'],r['issuer_series']):r for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bonds.csv')) if r['fed_cost_par_m']}
+fedpv=defaultdict(float); fedpv26=defaultdict(float)  # present value at issue, in the dollars of the par and in 2026 dollars
 for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bond_federal_cost.csv')):
-    if r['tau']=='0.28' and r['tax_status']!='planned' and (r['team'],r['year'],r['issuer_series']) in newmoney:
-        fedpv[r['team']]+=float(r['pv3_30yr_fed_loss_m']); fedpv26[r['team']]+=float(r['pv3_30yr_fed_loss_m'])*f26(int(r['year']))
+    b=counted.get((r['team'],r['year'],r['issuer_series']))
+    if r['tau']=='0.28' and b:
+        pv=float(r['pv3_30yr_fed_loss_m'])*float(b['fed_cost_par_m'])/float(b['par_m'])
+        fedpv[r['team']]+=pv; fedpv26[r['team']]+=pv*f26(int(b['par_dollars_year']))
 
 hh=json.load(open(DATA+'/inputs/census/acs2024_B11001.json'))
 HH={k:(hh['geography'][k]['name'], int(v['B11001']['estimate']['B11001001'])) for k,v in hh['data'].items()}
@@ -61,6 +65,7 @@ def add_item(T, item_id, kind, desc, year, status, in_core, spend_n, pub_n, fac,
 
 rows=[]; agg=defaultdict(float); aggp=defaultdict(float); bucket26=defaultdict(float); bucket26_priv=defaultdict(float)
 PRIVATE_BUILT=set()  # arenas whose construction was less than half public money (filled below, by rule)
+SPLIT_UNRESOLVED=set()  # arenas whose public-private construction split conflicts across sources: in neither group
 detail={}
 for t in TEAMS:
     T=t['team']; yr=t['opened']; fac=f26(yr)
@@ -71,7 +76,8 @@ for t in TEAMS:
     if priv is None and cad: priv=cost  # private arena, CAD converted
     # construction spending base: max(reported cost, public+private) to avoid understating when public sits outside reported cost
     con_total=max(cost or 0, (pubn or 0)+(priv or 0))
-    if pubn < 0.5*con_total: PRIVATE_BUILT.add(T)
+    if t.get('split_unresolved'): SPLIT_UNRESOLVED.add(T)
+    elif pubn < 0.5*con_total: PRIVATE_BUILT.add(T)
     acq=t.get('acq'); acqn=acq['amt'] if acq else 0.0; acq26=acqn*f26(acq['year']) if acq else 0.0
     rb=[r for r in t.get('renos',[]) if r['status'] in ('completed','binding')]
     rp=[r for r in t.get('renos',[]) if r['status']=='pending']
@@ -102,7 +108,7 @@ for t in TEAMS:
     if tbk and tbk.get('series_file'):
         ser=[(int(r['tax_year']), float(r[tbk['series_col']])/1e6) for r in csv.DictReader(open(DATA+'/'+tbk['series_file']))]
         tb_cum=sum(a for y,a in ser); tb_cum26=sum(a*f26(y) for y,a in ser); tb_years=f"{ser[0][0]}-{ser[-1][0]}"
-    elif tb_cum: tb_cum26=tb_cum  # nominal cumulative with no yearly series (MSG): counted at face value, a floor in 2026 dollars
+    elif tb_cum: tb_cum26=tb_cum*f26(tbk.get('cum_year'))  # one cumulative figure stated in one year's dollars (MSG: IBO, 2023 dollars)
     exp26=tb_cum26 if (tbk and tbk.get('expanded') and tb_cum26) else 0.0
     conduit=t.get('conduit')
     le=dict(lease.get(T,{}))
@@ -116,7 +122,7 @@ for t in TEAMS:
     reno_src=' | '.join(r['src'] for r in t.get('renos',[]))
     row=OrderedDict(
         row_type='current_arena', team=T, arena=t['arena'], city=t['city'], opened=yr, owner=t['owner'], owner_type=t['owner_type'],
-        built_privately_majority='Y' if T in PRIVATE_BUILT else 'N',
+        built_privately_majority='Y' if T in PRIVATE_BUILT else ('unresolved' if T in SPLIT_UNRESOLVED else 'N'),
         construction_cost_nominal_m=r1(cost), construction_cost_currency_note=('C$%.0fM converted at 1999 avg %.4f CAD/USD' % (cad,CAD1999)) if cad else 'USD', construction_cost_label=t['cost_label'], construction_cost_source=t['cost_src'], construction_cost_other_reports=t.get('cost_alt',''),
         public_construction_nominal_m=r1(pubn),
         **{f'pubcon_{b}_m':r1(pub.get(b)) if pub.get(b) else '' for b in BUCKETS},
@@ -182,7 +188,7 @@ GAPS={
 'DET':'Public share excludes DDA land/infrastructure outside bond-funded costs and the ongoing school-tax capture beyond debt service.',
 'GSW':'City event-day service costs not counted.',
 'HOU':'Final cost not found ($235M press; $195M floor from primary budgets); the city $20M for site and infrastructure is in the infrastructure bucket (no split); Rent Supported Debt capped at $30.4M but actual size not found, so net public share overstated; 2020 rent abatements ($2.975M) and pre-opening maintenance deposits ($4.5M, payment unconfirmed) not counted.',
-'IND':'1997A/B bond par ($230.7M) exceeds the reported $183M cost and no primary public/private split was found; ongoing CIB payments documented only 2014-2023 (ACFR ten-year table).',
+'IND':'1997A/B bond par ($230.7M), which the CIB says funded the construction of the Fieldhouse and an attached garage, exceeds the reported $183M cost and no primary public/private split was found, so the arena is counted as neither privately nor publicly built; the $79M public figure is press. Ongoing CIB payments documented 2014-2025 (ACFR ten-year tables) and 2001.',
 'LAC':'No public money found; land purchased at $66.25M.',
 'LAL':"City's ~$70M advance treated as conduit (developer must offset it under the Gap Funding Agreement); 1997 deal documents not reached.",
 'MEM':'Cost and funding split from the City CAFR (FY2005); Sports Authority bond repayment streams not split (mixed); $470M of the $550M renovation pending lease.',
@@ -190,7 +196,7 @@ GAPS={
 'MIL':'Value of the Bradley Center site conveyed to the team not documented; state GPR to 2035-36 is debt service on counted bonds.',
 'MIN':'City subsidy split (TIF bonds vs land and infrastructure) not settled (mixed); only 2024 operating supplements documented.',
 'NOP':'1999 construction cost and mechanism from press; ongoing payments audited FY2003-FY2025 plus budgeted Quality Jobs equivalent FY2025-26 (FY2026 audit not issued); QJ FY2023-24, suite payments and home-game entitlements excluded.',
-'NYK':'Exemption cumulative ($946.7M) from Reinvent Albany citing IBO July 2023 (nominal, through ~2023) - not converted to 2026$.',
+'NYK':'Exemption cumulative: IBO (July 2023) estimates more than $946.7M in 2023 dollars forgone since 1982, converted to 2026 dollars; fiscal years after 2023 not added.',
 'OKC':'2002 cost from press; 2008 renovation arena share computed pro rata from plan; operating subsidy documented for FY2023 only; MAPS 4 money for the new arena reported as $70M, $78M, $89M and ~$99M.',
 'ORL':"Cost is a plan-of-finance figure (2016), not an audited final cost; the $12M of city cash repaid from Magic use payments is counted as public, so net public cost is overstated; interest earnings partly on the Magic's deposit (mixed).",
 'PHI':'No public money found in sources reached (contemporaneous 1994-96 records not reached).',

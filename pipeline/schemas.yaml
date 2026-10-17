@@ -32,7 +32,7 @@ ledger/arena_ledger.csv:
     row_type: {type: string, constraints: {required: true, pattern: '^(current_arena|project.*)$'}}
     team: {type: string, constraints: {required: true, pattern: '^[A-Z]{3}$'}}
     arena: {type: string, constraints: {required: true}}
-    built_privately_majority: {type: string, constraints: {enum: ['Y', 'N']}}
+    built_privately_majority: {type: string, constraints: {enum: ['Y', 'N', 'unresolved']}}
     construction_cost_label: {type: string, constraints: {pattern: '^[abc](/[abc])*$'}}
     PUBLIC_TOTAL_2026_m: {type: number, constraints: {minimum: 0}}
     public_share_pct: {type: number, constraints: {minimum: 0, maximum: 100}}

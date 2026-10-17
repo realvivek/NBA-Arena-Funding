@@ -61,13 +61,14 @@ taxes:
     - p: >-
         Every dollar of public capital money in the ledger is assigned to one funding stream, as the arena's
         records document it. Taxes residents mostly pay supplied {{residents_share}}, taxes on visitors
-        {{visitors_share}}, and land or money with no documented stream {{other_share}}.
+        {{visitors_share}}, and land, or money the records do not split among its streams, {{other_share}}.
       sources: [ledger]
     - fig: whopays
     - h3: Salt Lake City's arena sales tax
     - p: >-
-        The {{slc_sales_tax_rate}} city sales tax that repays the Delta Center bonds is reported by the Utah State
-        Tax Commission, which publishes what it distributes to the city each month.
+        The {{slc_sales_tax_rate}} city sales tax that repays the bonds for the Delta Center and the blocks
+        around it is reported by the Utah State Tax Commission, which publishes what it distributes to the city
+        each month.
       sources: [utah-tax-distributions, utah-pmn]
     - fig: slc
     - h3: Milwaukee's district taxes
@@ -83,27 +84,31 @@ tax-breaks:
   path: /tax-breaks/
   kicker: The tax breaks
   title: >-
-    Madison Square Garden's Exemption Has Cost New York About {{nyk_exemption:title}}
+    Madison Square Garden's Exemption Has Cost New York More Than {{nyk_exemption:title}}
   deck: >-
     Property-tax exemptions, payments in lieu of taxes and tax-exempt bonds cost the public money that never
-    appears in a budget as spending. Together, the breaks this project could measure add {{tax_breaks_added}}.
+    appears in a budget as spending. The {{tax_breaks_n}} breaks in the expanded total add {{tax_breaks_added}}
+    in 2026 dollars.
   description: >-
     Every tax break found, counted or not: Madison Square Garden, Barclays Center, the United Center, Capital One
     Arena, Ball Arena and the federal cost of tax-exempt bonds.
   sources: [ledger]
   notes:
     - p: >-
-        The federal cost counts new-money bond issues only. It is the present value, at issue, of the federal
-        income tax lost on the bonds' interest at a {{fed_tau}} marginal rate, following Gayer, Drukker and Gold,
-        converted to 2026 dollars from each issue's year. All U.S. taxpayers bear it, so it is not added to any
-        city's total.
+        The federal cost counts only new money for the arenas. Refundings and taxable bonds are left out, and so
+        is the part of Salt Lake City's 2025 bonds that pays for the district around its arena. The cost is the
+        present value, at issue, of the federal income tax forgone on the bonds' interest at a {{fed_tau}}
+        marginal rate, following Gayer, Drukker and Gold. Issues taken from their table are stated in 2014
+        dollars and are converted to 2026 dollars from 2014; the others are converted from the year of issue. All
+        U.S. taxpayers bear it, so it is not added to any city's total.
       sources: [gayer-2016, ledger]
   blocks:
     - p: >-
-        The expanded total adds {{tax_breaks_added}} of breaks to the {{core_public}} of public money: Barclays
-        Center's PILOT bonds, {{bkn_pilot}}; Madison Square Garden's exemption since 1982, {{nyk_exemption}}; and
-        the United Center's valuation formula, {{chi_formula}} for 2002 to 2016. Breaks that are still to come,
-        or that rest on a single figure that could not be checked, are listed but not added.
+        The expanded total adds {{tax_breaks_added}} of breaks to the {{core_public}} of public money, all in
+        2026 dollars: Barclays Center's PILOT bonds, {{bkn_pilot}} ({{bkn_pilot_issued}} when they were sold in
+        2009); Madison Square Garden's exemption since 1982, {{nyk_exemption}}; and the United Center's valuation
+        formula, {{chi_formula}} for 2002 to 2016. Breaks that are still to come, or that rest on a single figure
+        that could not be checked, are listed but not added.
       sources: [ledger]
     - fig: uc
 
@@ -121,10 +126,11 @@ threats:
   sources: [threat-ledger]
   blocks:
     - p: >-
-        An episode counts as a threat when an owner or the league said or did something that tied a team's future
-        in a city to public money: a public statement, a sale to buyers planning a move, a relocation application,
-        or a lease clause that let the team leave. Statements by local officials alone, and other cities' offers,
-        are recorded but not counted as threats.
+        An episode counts as a threat when an owner or the league tied a team's future in a city to public money,
+        openly or by implication: naming another city or announcing a move, a sale to buyers who planned to move
+        the team or came from another city, a sale offered with no limit on moving, league terms letting it buy
+        back or move the team, talks with another city, or a lease clause that let the team leave. Statements by
+        local officials alone, and other cities' offers, are recorded but not counted as threats.
       sources: [threat-ledger]
     - fig: threats
 

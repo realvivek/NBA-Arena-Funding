@@ -24,15 +24,15 @@
    "payer": "visitors",
    "ord": 1,
    "public_2026_m": 3523.995584,
-   "share_pct": 41.237288
+   "share_pct": 41.248938
   },
   {
    "bucket": "general",
    "name": "General taxes, general-obligation bonds, appropriations, state grants and sales of public assets",
    "payer": "residents",
    "ord": 2,
-   "public_2026_m": 1814.937921,
-   "share_pct": 21.238142
+   "public_2026_m": 1812.524481,
+   "share_pct": 21.215892
   },
   {
    "bucket": "sales",
@@ -40,7 +40,7 @@
    "payer": "residents",
    "ord": 3,
    "public_2026_m": 917.284818,
-   "share_pct": 10.733935
+   "share_pct": 10.736967
   },
   {
    "bucket": "tif",
@@ -48,7 +48,7 @@
    "payer": "residents",
    "ord": 4,
    "public_2026_m": 744.99606,
-   "share_pct": 8.717837
+   "share_pct": 8.720299
   },
   {
    "bucket": "leaserev",
@@ -56,7 +56,7 @@
    "payer": "residents",
    "ord": 5,
    "public_2026_m": 304.561092,
-   "share_pct": 3.56393
+   "share_pct": 3.564937
   },
   {
    "bucket": "sin",
@@ -64,15 +64,15 @@
    "payer": "residents",
    "ord": 6,
    "public_2026_m": 52.539226,
-   "share_pct": 0.614806
+   "share_pct": 0.61498
   },
   {
    "bucket": "mixed",
-   "name": "Public money, funding stream not documented",
+   "name": "Public money not split among its funding streams",
    "payer": "other",
    "ord": 7,
    "public_2026_m": 976.151417,
-   "share_pct": 11.422783
+   "share_pct": 11.42601
   },
   {
    "bucket": "land",
@@ -80,7 +80,7 @@
    "payer": "other",
    "ord": 8,
    "public_2026_m": 166.169606,
-   "share_pct": 1.944493
+   "share_pct": 1.945042
   },
   {
    "bucket": "infra",
@@ -88,7 +88,7 @@
    "payer": "other",
    "ord": 9,
    "public_2026_m": 45.017286,
-   "share_pct": 0.526786
+   "share_pct": 0.526935
   }
  ],
  "note": "",
