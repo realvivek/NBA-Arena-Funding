@@ -49,30 +49,36 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
 
       <h2 id="computed">Computed figures</h2>
       <div class="table-wrap" style="max-height: none">
-        <table>
+        <table class="stack">
           <thead>
             <tr><th scope="col">Figure</th><th scope="col" class="n">Shown as</th><th scope="col">Label</th><th scope="col">Sources</th><th scope="col">Used in</th></tr>
           </thead>
           <tbody>
             {stats.map((s) => (
               <tr id={s.key}>
-                <td>
-                  <strong>{s.title}</strong>
-                  <div class="note"><code>{s.key}</code> = {unit(s)}{s.basis ? `; ${s.basis}` : ''}</div>
-                  {s.note && <div class="note">{s.note}</div>}
-                  <details><summary class="note">Method</summary><code class="method">{s.method}</code></details>
+                <td data-label="Figure">
+                  <span>
+                    <strong>{s.title}</strong>
+                    <span class="note block"><code>{s.key}</code> = {unit(s)}{s.basis ? `; ${s.basis}` : ''}</span>
+                    {s.note && <span class="note block">{s.note}</span>}
+                    <details><summary class="note">Method</summary><code class="method">{s.method}</code></details>
+                  </span>
                 </td>
-                <td class="n">{s.display.long}</td>
-                <td><span class="label" title={labelText(s.label)}>{s.label}</span></td>
-                <td class="src-links">
-                  {s.sources.map((id, i) => {
-                    const src = source(id);
-                    return <>{i > 0 && '; '}<a href={src.url} rel="noopener" title={src.title}>{shortName(src)}</a></>;
-                  })}
+                <td class="n" data-label="Shown as"><span>{s.display.long}</span></td>
+                <td data-label="Label"><span><span class="label" title={labelText(s.label)}>{s.label}</span></span></td>
+                <td class="src-links" data-label="Sources">
+                  <span>
+                    {s.sources.map((id, i) => {
+                      const src = source(id);
+                      return <>{i > 0 && '; '}<a href={src.url} rel="noopener" title={src.title}>{shortName(src)}</a></>;
+                    })}
+                  </span>
                 </td>
-                <td>
-                  {(usedIn.get(s.key) ?? []).map((u, i) => <>{i > 0 && '; '}<a href={u.href}>{u.where}</a></>)}
-                  {!usedIn.has(s.key) && <span class="note">Kept for the record; not in the copy</span>}
+                <td data-label="Used in">
+                  <span>
+                    {(usedIn.get(s.key) ?? []).map((u, i) => <>{i > 0 && '; '}<a href={u.href}>{u.where}</a></>)}
+                    {!usedIn.has(s.key) && <span class="note">Kept for the record; not in the copy</span>}
+                  </span>
                 </td>
               </tr>
             ))}
@@ -83,18 +89,20 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
       <h2 id="typed">Numbers typed in the copy</h2>
       <p class="note">Years and dates written into the copy, with the sources of the passage they appear in. Every other number in the copy is one of the computed figures above.</p>
       <div class="table-wrap" style="max-height: none">
-        <table>
+        <table class="stack">
           <thead><tr><th scope="col">Where</th><th scope="col">Numbers</th><th scope="col">Sources of the passage</th></tr></thead>
           <tbody>
             {typedRows.map((c) => (
               <tr>
-                <td><a href={c.href}>{c.where}</a></td>
-                <td>{[...new Set(c.typed)].join(', ')}</td>
-                <td class="src-links">
-                  {c.sources.map((id, i) => {
-                    const src = source(id);
-                    return <>{i > 0 && '; '}<a href={src.url} rel="noopener" title={src.title}>{shortName(src)}</a></>;
-                  })}
+                <td data-label="Where"><span><a href={c.href}>{c.where}</a></span></td>
+                <td data-label="Numbers"><span>{[...new Set(c.typed)].join(', ')}</span></td>
+                <td class="src-links" data-label="Sources">
+                  <span>
+                    {c.sources.map((id, i) => {
+                      const src = source(id);
+                      return <>{i > 0 && '; '}<a href={src.url} rel="noopener" title={src.title}>{shortName(src)}</a></>;
+                    })}
+                  </span>
                 </td>
               </tr>
             ))}
@@ -122,6 +130,9 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
     padding: 6px 8px;
     border-radius: 4px;
     margin-top: 4px;
+  }
+  .block {
+    display: block;
   }
   .notes-md {
     font-family: var(--sans);

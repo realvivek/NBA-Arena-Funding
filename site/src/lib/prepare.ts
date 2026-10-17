@@ -2,7 +2,8 @@
  * Copy blocks rendered ahead of the page template, in reading order, so citation numbers follow the order a
  * reader meets the sources (components may render concurrently).
  */
-import { paragraph } from './content';
+import { paragraph, ALLOW } from './content';
+import { plain } from './copy';
 import { figureSources } from './figures';
 import type { Citations } from './sources';
 
@@ -18,7 +19,7 @@ export async function prepare(blocks: Block[], cites: Citations, where: string):
   for (const [i, b] of blocks.entries()) {
     if ('p' in b) out.push({ kind: 'p', ...paragraph(b.p, b.sources ?? [], `${where} block ${i + 1}`, cites) });
     else if ('fig' in b) out.push({ kind: 'fig', id: b.fig, numbers: cites.add(await figureSources(b.fig)) });
-    else if ('h3' in b) out.push({ kind: 'h3', text: b.h3 });
+    else if ('h3' in b) out.push({ kind: 'h3', text: plain(b.h3, { where: `${where} block ${i + 1}`, allow: ALLOW }) });
     else throw new Error(`${where} block ${i + 1}: unsupported block`);
   }
   return out;

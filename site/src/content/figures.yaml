@@ -167,3 +167,7 @@ wcd:
     - { label: Hotel rooms, key: public }
     - { label: Food and drink, key: orange }
     - { label: Car rentals, key: aqua }
+  notes:
+    - >-
+      Hotel rooms combine the basic and additional room taxes. The 2026 column, marked with an asterisk, covers January
+      through September.

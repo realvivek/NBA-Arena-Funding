@@ -16,7 +16,7 @@ const { columns, rows, caption, id } = Astro.props;
 const isObj = (c: Cell): c is Exclude<Cell, string | number | null | undefined> => typeof c === 'object' && c !== null;
 ---
 <div class="table-wrap">
-  <table id={id}>
+  <table id={id} class="stack">
     {caption && <caption>{caption}</caption>}
     <thead>
       <tr>{columns.map((c) => <th scope="col" class={c.num ? 'n' : undefined}>{c.label}</th>)}</tr>
@@ -28,21 +28,23 @@ const isObj = (c: Cell): c is Exclude<Cell, string | number | null | undefined> 
             const v = r[c.key];
             if (isObj(v) && 'sources' in v)
               return (
-                <td class="src-links">
-                  {v.sources.map((sid, i) => {
-                    const s = source(sid);
-                    return (
-                      <>
-                        {i > 0 && '; '}
-                        <a href={s.url} rel="noopener" title={s.title}>{shortName(s)}</a>
-                      </>
-                    );
-                  })}
+                <td class="src-links" data-label={c.label}>
+                  <span>
+                    {v.sources.map((sid, i) => {
+                      const s = source(sid);
+                      return (
+                        <>
+                          {i > 0 && '; '}
+                          <a href={s.url} rel="noopener" title={s.title}>{shortName(s)}</a>
+                        </>
+                      );
+                    })}
+                  </span>
                 </td>
               );
-            if (isObj(v) && 'href' in v) return <td><a href={v.href}>{v.text}</a></td>;
-            if (isObj(v) && 'label' in v) return <td><span class="label">{v.label}</span></td>;
-            return <td class={c.num ? 'n' : undefined}>{v ?? ''}</td>;
+            if (isObj(v) && 'href' in v) return <td data-label={c.label}><span><a href={v.href}>{v.text}</a></span></td>;
+            if (isObj(v) && 'label' in v) return <td data-label={c.label}><span><span class="label">{v.label}</span></span></td>;
+            return <td class={c.num ? 'n' : undefined} data-label={c.label}>{v === null || v === undefined || v === '' ? '' : <span>{v}</span>}</td>;
           })}
         </tr>
       ))}

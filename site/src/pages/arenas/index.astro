@@ -16,7 +16,6 @@ const fields = Object.fromEntries(dataset('arena-fields').rows.map((r: any) => [
 const leases = Object.fromEntries(dataset('leases').rows.map((r: any) => [r.team, r]));
 const breaks = Object.fromEntries(dataset('tax-breaks').rows.map((r: any) => [r.team, r]));
 const pct = (v: number) => `${Math.round(v)}%`;
-const KIND: Record<string, string> = { construction: 'Construction', purchase: 'Public purchase', renovation: 'Renovation', ongoing: 'Yearly payments', project: 'New arena or district' };
 const STATUS: Record<string, string> = { completed: 'Completed', binding: 'Binding', pending: 'Pending', paid: 'Paid' };
 
 const summary = {

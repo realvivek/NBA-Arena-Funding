@@ -605,6 +605,43 @@ th.n {
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+/* On phones each row stacks into labeled lines, so no table needs sideways scrolling */
+@media (max-width: 40rem) {
+  .table-wrap {
+    max-height: none;
+    overflow: visible;
+  }
+  table.stack thead {
+    display: none;
+  }
+  table.stack tr {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  table.stack td {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 10px;
+    padding: 2px 0;
+    border: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  table.stack td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-weight: 600;
+  }
+  table.stack td:empty {
+    display: none;
+  }
+  table.stack .src-links a,
+  table.stack td a {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
 .label {
   display: inline-block;
   font-size: 0.6875rem;

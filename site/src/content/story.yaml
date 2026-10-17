@@ -71,8 +71,8 @@ private:
       sources: [ledger]
     - p: >-
         Washington is the clearest case. Abe Pollin's company paid for the arena's construction in 1997, and the
-        District, with federal and transit money, spent {{was_1997_public}} on land, site work and a Metro
-        connection. In 2024 the District bought the building for {{was_purchase}}, agreed to spend
+        District, with federal and transit money, spent {{was_1997_public}} in today's dollars on land, site work
+        and a Metro connection. In 2024 the District bought the building for {{was_purchase}}, agreed to spend
         {{was_renovation}} renovating it for the Wizards and Capitals, and extended its exemption from property
         tax through 2050.
       sources: [govinfo-gaoreports-aimd-98-223, cfo-fis-downtown-arena-revitalization, wiki-capital-one-arena]
@@ -83,13 +83,13 @@ private:
       sources: [wiki-delta-center, ksl, utah-pmn, bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar]
     - p: >-
         Portland's arena was built by the Trail Blazers' owner, Paul Allen, and opened in 1995 with
-        {{por_1995_public}} from the city. The city took over the building in 2024 for a nominal price and paid
+        {{por_1995_public}} from the city, in today's dollars. The city took over the building in 2024 for a nominal price and paid
         {{por_purchase}} for the land under it. Oregon has agreed to sell up to {{por_state}} of bonds for a
         rebuild if the city and county commit their shares and the team signs a long lease.
       sources: [wiki-moda-center, portland-2024-annual-comprehensive-financial-report, olis-enrolled, portland-adopted]
     - p: >-
-        It has happened before. Minneapolis bought Target Center for {{min_purchase}} in 1995, after its
-        owners agreed to sell the Timberwolves to a group that planned to move them to New Orleans. Indianapolis,
+        It has happened before. Minneapolis bought Target Center in 1995 for the equivalent of {{min_purchase}} today,
+        after its owners agreed to sell the Timberwolves to a group that planned to move them to New Orleans. Indianapolis,
         Phoenix and Atlanta, whose arenas were built mainly with private money, have since paid for most of their
         renovations.
       sources: [leg-other, lrl-target, tampabay-timberwolves-sold-to-louisiana-group]
@@ -129,7 +129,8 @@ breaks:
     - p: >-
         Chicago's United Center paid property tax under a 1989 state formula that valued the arena by its
         owners' income. From 2002 to 2016 its bills ran {{uc_formula_bill_min}} to {{uc_formula_bill_max}} a
-        year, against an estimated {{uc_normal_min}} to {{uc_normal_max}} without the formula. The difference
+        year in the dollars of the day, against an estimated {{uc_normal_min}} to {{uc_normal_max}} without the
+        formula. The difference
         comes to {{chi_formula_nominal}} in taxes not paid, or {{chi_formula}} in 2026 dollars. The formula's
         first years, 1994 to 2001, could not be computed.
       sources: [ilga-003502000k10-220, uc-formula-method]
@@ -146,8 +147,8 @@ payments:
   blocks:
     - p: >-
         Some governments also pay teams or arena operators every year. Indianapolis's Capital Improvement Board
-        has paid the Pacers {{ind_yearly_min}} to {{ind_yearly_max}} a year since 2015, in reimbursements for
-        running Gainbridge Fieldhouse and other payments, {{ind_ongoing}} in all in 2026 dollars. Miami-Dade
+        has paid the Pacers {{ind_yearly_min}} to {{ind_yearly_max}} a year since 2015, in the dollars of each
+        year, in reimbursements for running Gainbridge Fieldhouse and other payments, {{ind_ongoing}} in all in 2026 dollars. Miami-Dade
         County and the State of Florida have paid the operator of the Kaseya Center {{mia_ongoing}}, and
         Louisiana's stadium district has paid the Pelicans {{nop_ongoing}}.
       sources: [ledger]
