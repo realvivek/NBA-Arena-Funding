@@ -16,7 +16,8 @@
   "ilga-003502000k10-220",
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
-  "spectrumlocalnews-south-texas-el-paso",
+  "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
+  "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
   "sec-0001047469-98-001379",
   "sec-0000927356-99-000502",
   "municode-codescontent",
@@ -81,7 +82,8 @@
   "ilga-003502000k10-220",
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
-  "spectrumlocalnews-south-texas-el-paso",
+  "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
+  "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
   "sec-0001047469-98-001379",
   "sec-0000927356-99-000502",
   "municode-codescontent",
@@ -283,12 +285,13 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "1998 City of Dallas $152M tax-exempt",
-   "lease_terms": "Mavs and Stars leases expire 2031",
-   "exit_penalty": "Mavs pursuing new arena (Valley View site, June 2026); Stars to Plano",
+   "lease_terms": "Mavericks' lease at American Airlines Center expires in 2031",
+   "exit_penalty": "Mavericks pursuing a new arena on the former Valley View Mall site (June 2026)",
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
-    "spectrumlocalnews-south-texas-el-paso"
+    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
+    "keranews-dallas-mavericks-valley-view-mall-new-arena-city"
    ],
    "tax_break_sources": []
   },

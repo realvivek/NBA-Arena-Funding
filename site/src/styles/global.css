@@ -434,6 +434,7 @@ figure.chart {
 }
 details.data {
   margin: 10px 0 0;
+  font-family: var(--sans);
   font-size: 0.875rem;
 }
 details.data > summary {
@@ -654,7 +655,10 @@ th.n {
   margin-top: 6px;
 }
 
-/* Reference pages */
+/* Reference pages: tables get more room than the story's text column */
+.ref .col-wide {
+  max-width: 66rem;
+}
 .ref h2 {
   margin-top: 48px;
 }

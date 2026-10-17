@@ -317,16 +317,16 @@
   "value": 92.045685,
   "unit": "pct",
   "basis": "share of 2026 dollars",
-  "digits": null,
+  "digits": 0,
   "label": "a",
   "sources": [
    "ledger"
   ],
   "display": {
-   "long": "92.0 percent",
-   "short": "92.0%",
-   "title": "92.0%",
-   "cap": "92.0 percent"
+   "long": "92 percent",
+   "short": "92%",
+   "title": "92%",
+   "cap": "92 percent"
   },
   "note": "",
   "method": "select 100 * sum(public_2026_m) / sum(spending_2026_m) from items where core and team = 'ORL'"
@@ -1990,7 +1990,8 @@
    "lla-0000454ba",
    "senate-01-124-lsed-fy-26-final",
    "portland-adopted",
-   "spectrumlocalnews-south-texas-el-paso",
+   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
+   "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
    "whyy-south-philadelphia-new-arena-design-76ers-comcas",
    "ksat-spurs-consider-a-downtown-move",
    "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
@@ -2202,7 +2203,7 @@
  "sources_n": {
   "key": "sources_n",
   "title": "Documents in the bibliography (not counting this site's own ledgers)",
-  "value": 309.0,
+  "value": 308.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2211,10 +2212,10 @@
    "ledger"
   ],
   "display": {
-   "long": "309",
-   "short": "309",
-   "title": "309",
-   "cap": "309"
+   "long": "308",
+   "short": "308",
+   "title": "308",
+   "cap": "308"
   },
   "note": "",
   "method": "select count(*) from sources where publisher <> 'This site'"
@@ -2282,7 +2283,7 @@
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 186.0,
+  "value": 185.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2291,10 +2292,10 @@
    "ledger"
   ],
   "display": {
-   "long": "186",
-   "short": "186",
-   "title": "186",
-   "cap": "186"
+   "long": "185",
+   "short": "185",
+   "title": "185",
+   "cap": "185"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"

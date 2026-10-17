@@ -1,0 +1,51 @@
+# The site
+
+A long-form data story on the home page and eight reference pages, built as a static site from the ledgers in
+`data/`. Every number on it is computed from the data at build time, every number links to its entry in the
+fact-check ledger, and every chart is drawn at build time as SVG, in a wide and a narrow layout.
+
+## How it is built
+
+```
+data/*.csv  ->  pipeline/build.py  ->  site/src/generated/*.json, docs/fact-check.md  ->  astro build  ->  site/dist
+```
+
+### Pipeline (`pipeline/`, Python 3.11)
+
+| File | Role |
+| --- | --- |
+| `datapackage.py`, `schemas.yaml` | Write `data/datapackage.json`: a Frictionless schema for every CSV, with required fields, allowed values, patterns and keys for the files the site reads. |
+| `registry.py`, `sources.yaml`, `sources_extra.yaml`, `domains.yaml` | The bibliography. One entry per cited URL with an id, title, publisher, origin (government, court, team_or_league or independent), document date and the date its figures were last checked. `registry.py check` fails if any URL in the data has no entry or an entry is no longer cited. `sources_extra.yaml` holds sources cited by id rather than by URL (the CPI series, the Census table, the research and this project's own ledgers). |
+| `views.sql` | DuckDB views over the CSVs. |
+| `stats.yaml` | Every number the copy uses: a SQL query (or, rarely, a hand-entered value the build confirms against a data file), a unit, a label and sources. |
+| `datasets.yaml` | The rows behind every chart and table, with each row's sources. |
+| `models.py`, `fmt.py` | Pydantic models for sources, stats and datasets; how numbers are written (`$9.30 billion`, `$9.30B`, `34.2 percent`, `seven`). |
+| `build.py` | Validates the tables, checks the sources, runs the stats and datasets, and writes `site/src/generated/` and `docs/fact-check.md`. `--check` fails when the committed outputs are stale. |
+| `tests/` | Reconcile the SQL with the ledger scripts' own totals, and test the formats and the citation parser. |
+
+### Site (`site/`, Astro 7, Svelte 5, LayerCake, d3)
+
+| Path | Role |
+| --- | --- |
+| `src/content/story.yaml`, `pages.yaml`, `figures.yaml` | All copy: the story, the reference page heads and notes, and every chart's title, subtitle and notes. Numbers are tokens (`{{core_public}}`, `{{core_public:short}}`, `:title`, `:cap`). |
+| `src/content.config.ts` | Content collections with schemas; paragraph sources are references to the `sources` collection. |
+| `src/lib/copy.ts` | The copy check and the renderer. The build fails on a typed dollar figure, percentage, number word or numeral (other than a year or a date), a number in a block with no source, an unknown token or source, an em or en dash, a tool name, or marketing language. Tokens render as links to the fact-check entry. |
+| `src/components/charts/*.svelte` | The charts, rendered on the server with LayerCake. Each draws a wide layout (680 units, shown from 640px up) and a narrow one (340 units); chart text is at least 13 units, so it stays at 11px or more at every width. |
+| `src/components/Figure.astro`, `Chart.astro` | The chart frame: title, subtitle, legend, both layouts, notes, sources and a "Show the data" table. |
+| `src/pages/` | The story and the reference pages: arenas, taxes, tax breaks, threats, leases, households, sources and fact check. |
+| `tests/site.spec.ts` | Playwright: every page loads with no errors and no requests to other sites, works without JavaScript, fits a 360px phone with no sideways scrolling, keeps chart text at 11px or more, has one h1 and no skipped heading levels, and links every number to an existing fact-check entry. |
+
+Charts follow one palette, validated for color-vision deficiency in light and dark mode: blue for public money,
+orange for the second series (existing arenas, visitor taxes, threats), gray for private money, and a one-hue blue
+ramp for shares on the map. Tooltips are added by a small script and are optional; every value is also in the
+chart's data table.
+
+## Deploy
+
+`render.yaml` defines a Render static site from `main`: `npm ci && npm run build` in `site/`, publishing
+`site/dist`, with a content security policy that allows nothing from other sites. Render runs no Python; the
+pipeline's outputs are committed, and the GitHub Actions workflow (`.github/workflows/checks.yml`) rebuilds the
+ledgers, reruns the pipeline with `--check`, and runs every test on each push.
+
+To deploy, connect the repository to Render as a Blueprint (New, Blueprint, select the repository); Render reads
+`render.yaml` and creates the `nba-arena-funding` service.

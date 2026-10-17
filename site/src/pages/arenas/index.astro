@@ -53,7 +53,7 @@ function itemRows(team: string) {
       continue;
     }
     rows.push({
-      what: `${KIND[i.kind]}: ${i.description}`,
+      what: i.kind === 'construction' ? 'Construction' : i.kind === 'purchase' ? 'Public purchase' : i.description,
       year: i.year,
       status: STATUS[i.status] ?? i.status,
       spending: i.kind === 'purchase' ? '' : money(i.spending_2026_m),
@@ -90,7 +90,6 @@ const itemColumns = [
   { key: 'sources', label: 'Sources' },
 ];
 const byCity = [...arenas].sort((a: any, b: any) => TEAM_CITY[a.team].localeCompare(TEAM_CITY[b.team]));
-const links = (ids: string[]) => ids;
 ---
 <Layout title={title} description={page.description} path="/arenas/">
   <article class="ref">

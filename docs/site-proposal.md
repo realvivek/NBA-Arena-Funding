@@ -1,6 +1,6 @@
 # Site proposal: Who Paid for the NBA's Arenas
 
-Status: proposal for approval. Nothing here is built yet. Figures are from the ledger as of Oct. 16, 2026 (branch `update-2026-10`), in 2026 dollars unless noted, and will be read from the data at build time, not typed into the copy.
+Status: approved Oct. 17, 2026 and built; see section 8 for what changed while building it. Figures are from the ledger as of Oct. 16, 2026 (branch `update-2026-10`), in 2026 dollars unless noted, and will be read from the data at build time, not typed into the copy.
 
 The site is a long-form data story on the home page followed by reference pages that hold the full record. It keeps the sourcing rules in `CLAUDE.md`: every number in the copy comes from a content or data file whose entries cite sources tagged by origin (government, court, team or league, independent), the build fails on an unsourced number, and a fact-check ledger lists every number with its source. Charts are SVG drawn at build time, each with its own phone layout. It deploys on Render.
 
@@ -128,3 +128,15 @@ A Render static site from `main`, defined in `render.yaml`. To keep Render's bui
 5. **Headline.** "Taxpayers Are Now Paying to Rebuild the NBA's Arenas", or a version you prefer.
 6. **Where it lives.** A `site/` folder in this repository (recommended, so the data and the site cannot drift apart) or a separate repository.
 7. **Render service name and domain.**
+
+## 8. Changes made while building (Oct. 17, 2026)
+
+Decisions in section 7 were taken as recommended: the January-August 2026 CPI base, Denver's seat tax as a memo, Memphis's yearly subsidy kept and flagged (c), no `explore/` page, the working headline, the site in `site/`, and the Render service name `nba-arena-funding`. Building the pipeline found problems in the ledger that changed parts of the plan; each is logged in `notes/verification.md`.
+
+- **Built privately, rebuilt publicly.** "Built mainly with private money" is now a rule, public money under half of the construction cost, which covers 22 arenas, not the hand list of 14. The section and chart 4 now cover the seven of them later bought or rebuilt with public money ($2.71B, $573M pending), not three.
+- **Chart 1** shows completed and binding money only, by year; pending deals and new arenas outside the 30 are in its notes, so the earlier years stay readable.
+- **Chart 2** shows the eight costliest arenas were all built mainly with private money (the proposal said four).
+- **Chart 6** adds the shares of nested governments (a Portland household pays city, county and state shares).
+- **The federal cost of tax-exempt bonds** is $1.91B in 2026 dollars; the $1.32B in the proposal was a sum of issue-year present values.
+- **The sources page** headline names team filings rather than court records: no source in the bibliography is a court record.
+- **Chart text** is set at 13 units in both layouts so it stays at 11px or more down to a 320px screen; chart titles are text inside each figure rather than headings, which keeps the heading order clean.

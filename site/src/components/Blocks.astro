@@ -10,5 +10,5 @@ const { blocks } = Astro.props;
 {blocks.map((b) =>
   b.kind === 'p' ? <Prose html={b.html} sources={b.sources} numbers={b.numbers} /> :
   b.kind === 'fig' ? <Chart id={b.id} numbers={b.numbers} /> :
-  <h3>{b.text}</h3>
+  <h2>{b.text}</h2>
 )}

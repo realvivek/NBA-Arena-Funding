@@ -40,7 +40,7 @@ const swatch: Record<string, string> = {
 const few = all.length <= 4;
 ---
 <figure class="chart" id={`fig-${id}`} aria-labelledby={`fig-${id}-title`}>
-  <h3 class="chart-title" id={`fig-${id}-title`} set:html={title.html} />
+  <p class="chart-title" id={`fig-${id}-title`} set:html={title.html} />
   <p class="chart-sub" set:html={sub.html} />
   {fig.data.legend.length > 0 && (
     <ul class="legend">

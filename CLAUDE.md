@@ -20,6 +20,24 @@ Scripts run from any directory. Hand-entered figures live in `scripts/arena_ledg
 
 The helper scripts (`wiki_extract.py`, `wiki_fin.py`, `wx.py`, `g.py`, `pdftxt.py`, `pdf2txt.py`) read raw downloads from `./raw` or `$RAW_DIR`. `pdftxt.py` needs PyMuPDF and `pdf2txt.py` needs pypdfium2.
 
+### The site
+
+The site (`site/`, Astro and Svelte) reads only what `pipeline/build.py` writes to `site/src/generated/`. After any change to the data, `pipeline/*.yaml` or `notes/verification.md`, rerun the pipeline and commit its outputs with the change; CI fails if they are stale. See `docs/site.md`.
+
+```
+uv pip install --python .venv/bin/python -r pipeline/requirements.txt
+.venv/bin/python pipeline/build.py              # validate every CSV, check sources, compute stats and datasets
+.venv/bin/python pipeline/build.py --check      # fail if site/src/generated/ or docs/fact-check.md is stale
+.venv/bin/python pipeline/registry.py seed      # add entries for newly cited URLs to pipeline/sources.yaml, then curate them
+.venv/bin/python pipeline/datapackage.py        # after adding a CSV or a column
+.venv/bin/python -m pytest pipeline/tests -q
+cd site && npm ci && npm run build              # site/dist; fails on any copy that breaks the rules below
+npx astro check && npm test                     # types; copy rules on every content file
+npx playwright test                             # pages; set CHROMIUM_PATH to use a preinstalled browser
+```
+
+Never edit `site/src/generated/` or `docs/fact-check.md` by hand. Copy lives in `site/src/content/` (`story.yaml`, `pages.yaml`, `figures.yaml`). Every number in it is a token, `{{key}}`, for a stat defined in `pipeline/stats.yaml`; years and dates may be typed. Every paragraph cites source ids from `pipeline/sources.yaml` (or `sources_extra.yaml`). Names that contain numerals go in `site/src/content/allow.yaml`.
+
 ## Sourcing rules
 
 - Check every figure against the primary document, tables as well as prose. An earlier draft understated DC's arena tax break by $50 million by reading one column of a table (FY2029-2050) as the total. Read the whole table and its headings before taking a number.

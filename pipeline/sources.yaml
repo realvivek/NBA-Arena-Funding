@@ -1748,15 +1748,6 @@ sources:
   origin: government
   date: '2025-12-31'
   checked: '2026-10-16'
-- id: spectrumlocalnews-south-texas-el-paso
-  url: https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/06/03/
-  title: Spectrum News (South Texas and El Paso) news for June 3, 2026
-  title_from: url
-  publisher: Spectrum News
-  origin: independent
-  date: '2026-06-03'
-  checked: '2026-10-11'
-  review: URL is a date folder, not an article, and returns HTTP 404; the cited article could not be identified
 - id: spectrumlocalnews-spurs-owner-insists-team-will-stay-in-san
   url: https://spectrumlocalnews.com/tx/san-antonio/news/2022/05/10/spurs-owner-insists-team-will-stay-in-san-antonio
   title: Spurs owner insists NBA team will stay in San Antonio

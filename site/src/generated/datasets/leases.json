@@ -9,7 +9,8 @@
   "lla-0000454ba",
   "senate-01-124-lsed-fy-26-final",
   "portland-adopted",
-  "spectrumlocalnews-south-texas-el-paso",
+  "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
+  "keranews-dallas-mavericks-valley-view-mall-new-arena-city",
   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
   "ksat-spurs-consider-a-downtown-move",
   "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
@@ -121,15 +122,16 @@
    "arena": "American Airlines Center",
    "owner": "City of Dallas (public)",
    "term_end_year": 2031,
-   "term_and_nonrelocation": "Mavs and Stars leases expire 2031",
-   "outs_penalties_notes": "Mavs pursuing new arena (Valley View site, June 2026); Stars to Plano",
+   "term_and_nonrelocation": "Mavericks' lease at American Airlines Center expires in 2031",
+   "outs_penalties_notes": "Mavericks pursuing a new arena on the former Valley View Mall site (June 2026)",
    "label": "c",
-   "exit_penalty": "Mavs pursuing new arena (Valley View site, June 2026); Stars to Plano",
+   "exit_penalty": "Mavericks pursuing a new arena on the former Valley View Mall site (June 2026)",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
-    "spectrumlocalnews-south-texas-el-paso"
+    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
+    "keranews-dallas-mavericks-valley-view-mall-new-arena-city"
    ]
   },
   {

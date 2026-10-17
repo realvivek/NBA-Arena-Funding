@@ -1,0 +1,48 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  data:
+    name: Ledgers and site data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: pip install "scipy==1.17.*" "matplotlib==3.10.*" -r pipeline/requirements.txt
+      - name: Rebuild the ledgers; the committed data must not change
+        run: |
+          python scripts/arena_ledger/build_ledger.py
+          python scripts/arena_ledger/write_totals.py
+          python scripts/arena_threats/build.py
+          python scripts/arena_threats/compare.py
+          git diff --exit-code -- data
+      - name: The site's data is current
+        run: python pipeline/build.py --check
+      - name: Pipeline tests
+        run: python -m pytest pipeline/tests -q
+
+  site:
+    name: Site build and tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+      - run: npx astro check
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test

@@ -146,6 +146,7 @@ stats:
   title: Public share of all spending on the Kia Center
   sql: select 100 * sum(public_2026_m) / sum(spending_2026_m) from items where core and team = 'ORL'
   unit: pct
+  digits: 0
   basis: share of 2026 dollars
   label: a
   sources: [ledger]

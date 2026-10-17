@@ -6,7 +6,7 @@ import { z } from 'astro/zod';
 const sources = defineCollection({
   loader: file('src/generated/sources.json'),
   schema: z.object({
-    url: z.string().url(),
+    url: z.url(),
     title: z.string().min(3),
     title_from: z.enum(['ledger description', 'page title', 'url', 'curated']),
     publisher: z.string(),

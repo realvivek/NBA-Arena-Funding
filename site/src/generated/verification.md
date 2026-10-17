@@ -107,6 +107,7 @@ The documented series now covers seven teams and $759M (2026 dollars), up from f
 - **San Antonio lease figures (Oct. 17, 2026).** The 2032 end date and the break fees of up to $124M were cited to Bexar County's April 2015 release, which has neither. They now cite KSAT (July 17, 2023), which has both, and are labeled (c).
 - **Milwaukee exit penalty (Oct. 17, 2026).** The "never below $20M" floor is in neither document the row named. BizTimes reports a $20M floor and Wisconsin Public Radio quotes the district chair saying the penalty never goes below $200M. Both are recorded; the $553M first-year figure is press-only and is labeled (c).
 - **Washington lease owner (Oct. 17, 2026).** The lease table called the owner "Monumental (private) with DC funding". The District bought the arena for $87.5M in 2024 and leases it back to Monumental (fiscal impact statement, p.2).
+- **Dallas lease citation (Oct. 17, 2026).** The lease row cited a Spectrum News date folder, not an article, and said both the Mavericks' and the Stars' leases end in 2031 and that the Stars are moving to Plano. The AP story (via WTOP, June 1, 2026) confirms the Mavericks' American Airlines Center lease expires in 2031 and the Valley View site; the Stars clause had no source and was removed.
 - **Cook County query.** A first query used a wrong PIN prefix and returned small totals. The main arena PIN 17182010350000 confirmed the 2024 cut.
 
 ## Figures not checked against a saved copy

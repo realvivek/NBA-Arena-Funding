@@ -3,7 +3,7 @@ import { marked } from 'marked';
 import Layout from '../../layouts/Layout.astro';
 import PageHead from '../../components/PageHead.astro';
 import { referencePage } from '../../lib/page';
-import { STATS, escapeHtml } from '../../lib/copy';
+import { STATS } from '../../lib/copy';
 import { source, shortName, labelText } from '../../lib/sources';
 import { copyInventory } from '../../lib/inventory';
 import verification from '../../generated/verification.md?raw';
@@ -42,9 +42,9 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
         the repository as docs/fact-check.md.
       </p>
       <nav class="note" aria-label="On this page">
-        <a href="#computed">Computed figures ({stats.length})</a> ·
-        <a href="#typed">Numbers typed in the copy ({typedRows.length} passages)</a> ·
-        {shown.map((s, i) => <>{i > 0 && ' · '}<a href={`#${slug(s.title)}`}>{s.title}</a></>)}
+        <a href="#computed">Computed figures ({stats.length})</a>{' · '}
+        <a href="#typed">Numbers typed in the copy ({typedRows.length} passages)</a>
+        {shown.map((s) => <>{' · '}<a href={`#${slug(s.title)}`}>{s.title}</a></>)}
       </nav>
 
       <h2 id="computed">Computed figures</h2>
