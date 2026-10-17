@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { sitePath } from '../lib/paths';
 ---
 <Layout title="Page not found" description="This page does not exist." path="/404/">
   <article class="head col">
     <p class="kicker">Not found</p>
     <h1>This page does not exist</h1>
-    <p class="deck">Start with <a href="/">the story</a>, or look up an arena on <a href="/arenas/">the arenas page</a>.</p>
+    <p class="deck">Start with <a href={sitePath('/')}>the story</a>, or look up an arena on <a href={sitePath('/arenas/')}>the arenas page</a>.</p>
   </article>
 </Layout>

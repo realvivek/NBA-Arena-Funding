@@ -7,6 +7,7 @@ import SourceList from '../../components/SourceList.astro';
 import { referencePage } from '../../lib/page';
 import { dataset } from '../../lib/data';
 import { money, TEAM_CITY } from '../../lib/chart';
+import { sitePath } from '../../lib/paths';
 
 const { page, cites, blocks, notes, title } = await referencePage('tax-breaks');
 const breaks = dataset('tax-breaks').rows;
@@ -23,7 +24,7 @@ const tb = {
     { key: 'sources', label: 'Sources' },
   ],
   rows: breaks.map((r: any) => ({
-    arena: { text: `${r.arena}, ${TEAM_CITY[r.team]}`, href: `/arenas/#${r.team.toLowerCase()}` },
+    arena: { text: `${r.arena}, ${TEAM_CITY[r.team]}`, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
     what: r.tax_break_desc ?? (r.pilot_note ? `PILOT bonds: ${r.pilot_note}` : ''),
     yearly: r.tax_break_annual_m ? `${money(r.tax_break_annual_m)} (${r.tax_break_annual_year})` : '',
     cum: r.tax_break_cumulative_2026_m ? money(r.tax_break_cumulative_2026_m) : r.pilot_2026_m ? money(r.pilot_2026_m) : '',

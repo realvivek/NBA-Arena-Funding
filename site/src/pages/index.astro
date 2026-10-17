@@ -7,6 +7,7 @@ import { Citations } from '../lib/sources';
 import { paragraph } from '../lib/content';
 import { prepare, type Prepared } from '../lib/prepare';
 import { plain } from '../lib/copy';
+import { sitePath } from '../lib/paths';
 import meta from '../generated/meta.json';
 
 const ORDER = ['arenas', 'taxes', 'tax-breaks', 'threats', 'leases', 'households', 'sources', 'fact-check'];
@@ -31,7 +32,7 @@ for (const s of rest) {
   if (!s.data.title) throw new Error(`story ${s.id}: a chapter needs a title`);
   const more = s.data.more.map((m) => {
     if (!pagePath[m.page]) throw new Error(`story ${s.id}: unknown page ${m.page}`);
-    return { href: pagePath[m.page], text: plain(m.text, { where: `story ${s.id} link` }) };
+    return { href: sitePath(pagePath[m.page]), text: plain(m.text, { where: `story ${s.id} link` }) };
   });
   chapters.push({ id: s.id, title: s.data.title, slug: slug(s.data.title), blocks: await prepare(s.data.blocks, cites, `story ${s.id}`), more });
 }
@@ -102,7 +103,7 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
       <ul class="cards">
         {refs.map((r) => (
           <li class="card">
-            <a href={r.data.path}>
+            <a href={sitePath(r.data.path)}>
               <span class="card-title" set:html={paragraph(r.data.title, r.data.sources, `card ${r.id} title`).html.replace(/<a [^>]*>|<\/a>/g, '')} />
               <span class="card-text">{plain(r.data.description, { where: `card ${r.id} text` })}</span>
             </a>

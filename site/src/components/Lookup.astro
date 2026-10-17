@@ -6,6 +6,7 @@
  */
 import { dataset } from '../lib/data';
 import { money, TEAM_CITY, TEAM_NAME } from '../lib/chart';
+import { sitePath } from '../lib/paths';
 
 interface Props {
   data: string;
@@ -63,7 +64,7 @@ const first = cards[0];
     </select>
   </div>
   <ul class="lookup-teams" aria-label="Every arena's record">
-    {byCity.map((c) => <li><a href={`/arenas/#${c.team.toLowerCase()}`}>{TEAM_NAME[c.team]}</a></li>)}
+    {byCity.map((c) => <li><a href={sitePath(`/arenas/#${c.team.toLowerCase()}`)}>{TEAM_NAME[c.team]}</a></li>)}
   </ul>
   {cards.map((c) => (
     <article class="arena-card" data-team={c.team} hidden={c.team !== first.team} aria-live="polite">
@@ -86,7 +87,7 @@ const first = cards[0];
         <div><dt>Pending</dt><dd>{c.pending}</dd></div>
         <div><dt>Lease ends</dt><dd>{c.lease}</dd></div>
       </dl>
-      <p class="more"><a href={`/arenas/#${c.team.toLowerCase()}`}>The full record for {c.name}</a></p>
+      <p class="more"><a href={sitePath(`/arenas/#${c.team.toLowerCase()}`)}>The full record for {c.name}</a></p>
     </article>
   ))}
 </section>

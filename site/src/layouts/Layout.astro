@@ -4,6 +4,7 @@ import '@fontsource-variable/newsreader/opsz-italic.css';
 import '@fontsource-variable/libre-franklin/index.css';
 import '../styles/global.css';
 import meta from '../generated/meta.json';
+import { sitePath } from '../lib/paths';
 
 interface Props {
   title: string;
@@ -22,7 +23,7 @@ const nav = [
   ['/sources/', 'Sources'],
   ['/fact-check/', 'Fact check'],
 ];
-const canonical = new URL(path, Astro.site).href;
+const canonical = new URL(sitePath(path), Astro.site).href;
 const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 <!doctype html>
@@ -43,9 +44,9 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
     <a class="skip" href="#main">Skip to the story</a>
     <header class="masthead">
       <div class="masthead-inner">
-        <a class="site-name" href="/">Who Paid for the NBA's Arenas</a>
+        <a class="site-name" href={sitePath('/')}>Who Paid for the NBA's Arenas</a>
         <nav class="site-nav" aria-label="Pages">
-          {nav.map(([href, label]) => <a href={href} aria-current={href === path ? 'page' : undefined}>{label}</a>)}
+          {nav.map(([href, label]) => <a href={sitePath(href)} aria-current={href === path ? 'page' : undefined}>{label}</a>)}
         </nav>
       </div>
     </header>
@@ -56,7 +57,7 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
       <div class="col">
         <p class="foot-name">Who Paid for the NBA's Arenas</p>
         Ledger as of {asOf}. Dollars are 2026 dollars (BLS CPI-U) unless marked. Every number links to its entry in
-        the <a href="/fact-check/">fact-check ledger</a>, and every paragraph lists its sources. The data and the code
+        the <a href={sitePath('/fact-check/')}>fact-check ledger</a>, and every paragraph lists its sources. The data and the code
         that builds this site are in the <a href="https://github.com/realvivek/NBA-Arena-Funding">project repository</a>.
       </div>
     </footer>

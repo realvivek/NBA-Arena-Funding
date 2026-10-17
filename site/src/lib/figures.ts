@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import { dataset } from './data';
 import { ids } from './content';
+import { sitePath } from './paths';
 
 export const FIG_DATA: Record<string, string> = {
   rebuild: 'rebuild-by-year',
@@ -20,15 +21,15 @@ export const FIG_DATA: Record<string, string> = {
 
 // Where each row's own sources are listed, for charts whose rows come from many documents.
 export const FIG_RECORD: Record<string, { href: string; label: string }> = {
-  rebuild: { href: '/arenas/', label: "each arena's record" },
-  arenas: { href: '/arenas/', label: "each arena's record" },
-  map: { href: '/arenas/', label: "each arena's record" },
-  takeovers: { href: '/arenas/', label: "each arena's record" },
-  households: { href: '/households/', label: 'the households page' },
-  uc: { href: '/tax-breaks/', label: 'the tax-breaks page' },
-  ongoing: { href: '/arenas/', label: "each arena's record" },
-  threats: { href: '/threats/#ledger', label: 'the threat ledger' },
-  leases: { href: '/leases/#every-lease', label: 'the lease table' },
+  rebuild: { href: sitePath('/arenas/'), label: "each arena's record" },
+  arenas: { href: sitePath('/arenas/'), label: "each arena's record" },
+  map: { href: sitePath('/arenas/'), label: "each arena's record" },
+  takeovers: { href: sitePath('/arenas/'), label: "each arena's record" },
+  households: { href: sitePath('/households/'), label: 'the households page' },
+  uc: { href: sitePath('/tax-breaks/'), label: 'the tax-breaks page' },
+  ongoing: { href: sitePath('/arenas/'), label: "each arena's record" },
+  threats: { href: sitePath('/threats/#ledger'), label: 'the threat ledger' },
+  leases: { href: sitePath('/leases/#every-lease'), label: 'the lease table' },
 };
 
 /** The sources a figure cites in its caption: its own and its dataset's, not each row's. */

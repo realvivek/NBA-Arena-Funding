@@ -1,6 +1,7 @@
 /** "Show the data" tables for each chart: the same rows the chart draws, with their sources. */
 import { money, dollars, TEAM_CITY } from './chart';
 import type { Table } from './data';
+import { sitePath } from './paths';
 
 const STATUS: Record<string, string> = { counted: 'Counted', pending: 'Pending', committed: 'Committed, not open' };
 const CATEGORY: Record<string, string> = {
@@ -24,7 +25,7 @@ export function rebuildTable(rows: any[]): Table {
     ],
     rows: rows.map((r) => ({
       year: r.year,
-      arena: { text: TEAM_CITY[r.team] ?? r.team, href: `/arenas/#${r.team.toLowerCase()}` },
+      arena: { text: TEAM_CITY[r.team] ?? r.team, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
       what: r.description,
       category: CATEGORY[r.category],
       status: STATUS[r.status],
@@ -44,7 +45,7 @@ export function arenasTable(rows: any[]): Table {
       { key: 'share', label: 'Public share', num: true },
     ],
     rows: rows.map((r) => ({
-      arena: { text: `${r.arena}, ${r.city}`, href: `/arenas/#${r.team.toLowerCase()}` },
+      arena: { text: `${r.arena}, ${r.city}`, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
       opened: r.opened,
       public: m(r.public_2026_m),
       breaks: r.tax_breaks_2026_m ? m(r.tax_breaks_2026_m) : '',
@@ -64,7 +65,7 @@ export function mapTable(rows: any[]): Table {
       { key: 'sources', label: 'Location source' },
     ],
     rows: rows.map((r) => ({
-      arena: { text: `${r.arena}, ${r.city}`, href: `/arenas/#${r.team.toLowerCase()}` },
+      arena: { text: `${r.arena}, ${r.city}`, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
       public: m(r.public_2026_m),
       share: pct(r.public_share_pct),
       where: `${r.lat.toFixed(3)}, ${r.lon.toFixed(3)}`,
@@ -84,7 +85,7 @@ export function takeoversTable(rows: any[]): Table {
       { key: 'private', label: 'Private', num: true },
     ],
     rows: rows.map((r) => ({
-      city: { text: TEAM_CITY[r.team], href: `/arenas/#${r.team.toLowerCase()}` },
+      city: { text: TEAM_CITY[r.team], href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
       what: r.description,
       year: r.year,
       status: r.core ? (r.status === 'binding' ? 'Binding' : 'Completed') : 'Pending',
@@ -112,7 +113,7 @@ export function householdsTable(rows: any[]): Table {
   for (const r of rows)
     for (const p of r.parts)
       out.push({
-        deal: { text: r.deal, href: `/arenas/#${r.team.toLowerCase()}` },
+        deal: { text: r.deal, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
         where: p.jurisdiction,
         households: p.households.toLocaleString('en-US'),
         share: pct(100 * p.share),
@@ -171,7 +172,7 @@ export function ongoingTable(rows: any[]): Table {
     rows: [...groups.values()].map((g) => {
       const ys = g.map((r) => r.year);
       return {
-        city: { text: TEAM_CITY[g[0].team], href: `/arenas/#${g[0].team.toLowerCase()}` },
+        city: { text: TEAM_CITY[g[0].team], href: sitePath(`/arenas/#${g[0].team.toLowerCase()}`) },
         what: g[0].description,
         years: `${Math.min(...ys)}-${Math.max(...ys)}`,
         n: g.length,
@@ -202,7 +203,7 @@ export function threatsTable(rows: any[]): Table {
       { key: 'money', label: 'Public money (nominal)', num: true },
     ],
     rows: rows.map((r) => ({
-      id: { text: r.id, href: `/threats/#${r.id.toLowerCase()}` },
+      id: { text: r.id, href: sitePath(`/threats/#${r.id.toLowerCase()}`) },
       team: r.team,
       cls: CLASS[r.threat_class] ?? r.threat_class,
       threat: r.threat_date ?? '',
@@ -225,7 +226,7 @@ export function leasesTable(rows: any[], full = false): Table {
     ],
     rows: rows.map((r) => ({
       __id: full ? r.team.toLowerCase() : undefined,
-      arena: { text: `${r.arena}, ${TEAM_CITY[r.team]}`, href: `/arenas/#${r.team.toLowerCase()}` },
+      arena: { text: `${r.arena}, ${TEAM_CITY[r.team]}`, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
       end: r.term_end_year ?? '',
       terms: r.term_and_nonrelocation ?? '',
       outs: r.outs_penalties_notes ?? '',

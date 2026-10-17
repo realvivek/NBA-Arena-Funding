@@ -53,7 +53,7 @@ docs/
   site.md                        how the site is built, tested and deployed
   site-proposal.md               the approved proposal for the site, with the changes made while building it
   fact-check.md                  every number the site computes, with its label, sources and query (generated)
-render.yaml                      Render static-site blueprint
+render.yaml                      Render static-site blueprint (deployed by .github/workflows/deploy-render.yml)
 ```
 
 Each folder under `data/` that was assembled from several documents has a `sources` file listing them.

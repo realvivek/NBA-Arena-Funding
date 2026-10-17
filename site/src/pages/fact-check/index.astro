@@ -6,6 +6,7 @@ import { referencePage } from '../../lib/page';
 import { STATS } from '../../lib/copy';
 import { source, shortName, labelText } from '../../lib/sources';
 import { copyInventory } from '../../lib/inventory';
+import { sitePath } from '../../lib/paths';
 import verification from '../../generated/verification.md?raw';
 
 const { page, cites, title } = await referencePage('fact-check');
@@ -76,7 +77,7 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
                 </td>
                 <td data-label="Used in">
                   <span>
-                    {(usedIn.get(s.key) ?? []).map((u, i) => <>{i > 0 && '; '}<a href={u.href}>{u.where}</a></>)}
+                    {(usedIn.get(s.key) ?? []).map((u, i) => <>{i > 0 && '; '}<a href={sitePath(u.href)}>{u.where}</a></>)}
                     {!usedIn.has(s.key) && <span class="note">Kept for the record; not in the copy</span>}
                   </span>
                 </td>
@@ -94,7 +95,7 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
           <tbody>
             {typedRows.map((c) => (
               <tr>
-                <td data-label="Where"><span><a href={c.href}>{c.where}</a></span></td>
+                <td data-label="Where"><span><a href={sitePath(c.href)}>{c.where}</a></span></td>
                 <td data-label="Numbers"><span>{[...new Set(c.typed)].join(', ')}</span></td>
                 <td class="src-links" data-label="Sources">
                   <span>

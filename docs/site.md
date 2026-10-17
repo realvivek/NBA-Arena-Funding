@@ -58,10 +58,16 @@ chart's data table.
 
 ## Deploy
 
-`render.yaml` defines a Render static site from `main`: `npm ci && npm run build` in `site/`, publishing
-`site/dist`, with a content security policy that allows nothing from other sites. Render runs no Python; the
-pipeline's outputs are committed, and the GitHub Actions workflow (`.github/workflows/checks.yml`) rebuilds the
-ledgers, reruns the pipeline with `--check`, and runs every test on each push.
+Every push to `main` deploys the site. Neither host runs Python: the pipeline's outputs are committed, and
+`.github/workflows/checks.yml` rebuilds the ledgers, reruns the pipeline with `--check`, checks every link in the
+built site (`site/scripts/check-links.mjs`) and runs every test on each push.
 
-To deploy, connect the repository to Render as a Blueprint (New, Blueprint, select the repository); Render reads
-`render.yaml` and creates the `nba-arena-funding` service.
+- GitHub Pages: `.github/workflows/pages.yml` builds the site under the repository's Pages path and deploys it to
+  https://realvivek.github.io/NBA-Arena-Funding/. The path comes from the Pages settings at build time
+  (`BASE_PATH` and `SITE_URL`), and every link inside the site goes through `sitePath` in `src/lib/paths.ts`, so
+  the same code serves from a domain's root or from a subpath. The workflow fails if any built link leaves the
+  path or leads nowhere.
+- Render: `.github/workflows/deploy-render.yml` creates the `nba-arena-funding` static site on the first run, with
+  the settings in `render.yaml` (`npm ci && npm run build` in `site/`, publishing `site/dist`, with a content
+  security policy that allows nothing from other sites), then deploys and waits for it to go live. It needs the
+  `RENDER_API_KEY` repository secret and does nothing without it. `render.yaml` also works as a Blueprint.

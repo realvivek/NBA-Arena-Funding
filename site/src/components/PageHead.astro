@@ -2,6 +2,7 @@
 import { paragraph } from '../lib/content';
 import type { Citations } from '../lib/sources';
 import meta from '../generated/meta.json';
+import { sitePath } from '../lib/paths';
 interface Props {
   page: { kicker: string; title: string; deck: string; sources: ({ id: string } | string)[] };
   id: string;
@@ -16,5 +17,5 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
   <p class="kicker">{page.kicker}</p>
   <h1 set:html={title.html} />
   <p class="deck" set:html={deck.html} />
-  <p class="meta"><span>Data as of {asOf}</span><span>Dollars in 2026 terms unless marked</span><a href="/">Read the story</a></p>
+  <p class="meta"><span>Data as of {asOf}</span><span>Dollars in 2026 terms unless marked</span><a href={sitePath('/')}>Read the story</a></p>
 </header>

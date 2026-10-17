@@ -11,6 +11,7 @@
  */
 import stats from '../generated/stats.json';
 import sources from '../generated/sources.json';
+import { sitePath } from './paths';
 
 export type Variant = 'long' | 'short' | 'title' | 'cap';
 export interface Stat {
@@ -134,7 +135,7 @@ function inline(s: string): string {
   let h = escapeHtml(s);
   h = h.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_m, txt, href) => {
     const ext = /^https?:/.test(href);
-    return `<a href="${href}"${ext ? ' rel="noopener"' : ''}>${txt}</a>`;
+    return `<a href="${href.startsWith('/') ? sitePath(href) : href}"${ext ? ' rel="noopener"' : ''}>${txt}</a>`;
   });
   h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   h = h.replace(/\*([^*]+)\*/g, '<em>$1</em>');
@@ -154,7 +155,7 @@ export function render(text: string, ctx: Context & { link?: boolean }): string 
     const html =
       ctx.link === false
         ? `<span class="num">${shown}</span>`
-        : `<a class="num" href="/fact-check/#${key}" title="${escapeHtml(s.title)}">${shown}</a>`;
+        : `<a class="num" href="${sitePath(`/fact-check/#${key}`)}" title="${escapeHtml(s.title)}">${shown}</a>`;
     marks.push(html);
     return `\u0000${marks.length - 1}\u0000`;
   });
