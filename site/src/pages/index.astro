@@ -1,21 +1,31 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Prose from '../components/Prose.astro';
-import Figure from '../components/Figure.astro';
-import Rebuild from '../components/charts/Rebuild.svelte';
+import Blocks from '../components/Blocks.astro';
+import SourceList from '../components/SourceList.astro';
 import { Citations } from '../lib/sources';
-import { dataset } from '../lib/data';
-import { rebuildTable } from '../lib/tables';
-import { paragraph, ids } from '../lib/content';
+import { paragraph } from '../lib/content';
+import { prepare } from '../lib/prepare';
 import { plain } from '../lib/copy';
+import meta from '../generated/meta.json';
 
+const ORDER = ['arenas', 'taxes', 'tax-breaks', 'threats', 'leases', 'households', 'sources', 'fact-check'];
 const cites = new Citations();
 const page = (await getEntry('pages', 'home'))!.data;
 const sections = (await getCollection('story')).sort((a, b) => a.data.n - b.data.n);
-const rebuild = dataset('rebuild-by-year');
+const refs = (await getCollection('pages')).filter((p) => p.id !== 'home').sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+
+// Everything that cites a source is rendered here, in reading order, so the numbers follow the story.
 const title = plain(page.title, { where: 'home title' });
 const deck = paragraph(page.deck, page.sources, 'home deck', cites);
+const tiles = page.tiles.map((t, i) => ({
+  value: paragraph(t.value, page.sources, `home tile ${i + 1} value`, cites),
+  label: paragraph(t.label, page.sources, `home tile ${i + 1} label`, cites),
+}));
+const body = [];
+for (const s of sections) body.push({ id: s.id, title: s.data.title, blocks: await prepare(s.data.blocks, cites, `story ${s.id}`) });
+const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 <Layout title={title} description={page.description} path="/">
   <article>
@@ -23,17 +33,43 @@ const deck = paragraph(page.deck, page.sources, 'home deck', cites);
       <p class="kicker">{page.kicker}</p>
       <h1>{title}</h1>
       <p class="deck" set:html={deck.html} />
+      <p class="meta">
+        <span>Data as of {asOf}</span>
+        <span>Dollars in 2026 terms</span>
+        <a href="#how-this-was-made">How this was made</a>
+      </p>
+      <ul class="tiles">
+        {tiles.map((t) => (
+          <li class="tile">
+            <span class="tile-value" set:html={t.value.html} />
+            <span class="tile-label" set:html={t.label.html} />
+          </li>
+        ))}
+      </ul>
     </header>
     <div class="col prose">
-      {sections.map((s) => s.data.blocks.map((b, i) =>
-        'p' in b ? <Prose text={b.p} sources={b.sources} where={`story ${s.id} block ${i + 1}`} cites={cites} /> :
-        'fig' in b && b.fig === 'rebuild' ? (
-          <Figure id="rebuild" dataset={rebuild} table={rebuildTable(rebuild.rows)} cites={cites}>
-            <Rebuild slot="wide" rows={rebuild.rows} variant="wide" label="Public money by year" />
-            <Rebuild slot="narrow" rows={rebuild.rows} variant="narrow" label="Public money by period" />
-          </Figure>
-        ) : null
+      {body.map((s) => (
+        <section>
+          {s.title && <h2 id={slug(s.title)}>{s.title}</h2>}
+          <Blocks blocks={s.blocks} />
+        </section>
       ))}
+    </div>
+    <div class="col">
+      <h2 id="the-full-record">The full record</h2>
+      <ul class="cards">
+        {refs.map((r) => (
+          <li class="card">
+            <a href={r.data.path}>
+              <span class="card-title" set:html={paragraph(r.data.title, r.data.sources, `card ${r.id} title`).html.replace(/<a [^>]*>|<\/a>/g, '')} />
+              <span class="card-text">{plain(r.data.description, { where: `card ${r.id} text` })}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <h2 id="sources-for-this-story">Sources for this story</h2>
+      <p class="note">Numbered in the order the story first cites them; each paragraph's sources open from its bracketed numbers.</p>
+      <SourceList ids={cites.order} numbered />
     </div>
   </article>
 </Layout>

@@ -157,6 +157,23 @@ datasets:
   row_sources: sources
   require_row_sources: true
 
+- id: households-local
+  title: Arena money per household where each arena is, adding the share of every government that pays
+  sql: |
+    with h as (
+        select *, case substr(geo_id, 1, 3) when '160' then 1 when '050' then 2 else 3 end as level from households)
+    select team, any_value(deal) as deal, arg_min(jurisdiction, level) as jurisdiction, sum(per_household_2026) as per_household_2026,
+           list({'jurisdiction': jurisdiction, 'level': level, 'per_household_2026': per_household_2026, 'households': households,
+                 'share': share} order by level) as parts,
+           (select coalesce(list(s.source_id order by s.item_id, s.ord), []) from item_sources s
+             where s.team = h.team and s.role = 'public' and s.item_id not like '%-ongoing-%') as sources
+    from h group by team
+    order by per_household_2026 desc, team
+  sources: [ledger, census-b11001-2024]
+  row_sources: sources
+  require_row_sources: true
+  note: For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.
+
 # ------------------------------------------------------------------ chart 7: the United Center
 - id: uc-bills
   title: United Center property-tax bills, with and without the 1989 valuation formula
@@ -226,7 +243,9 @@ datasets:
   sql: |
     select l.team, l.arena, l.owner, l.term_end_year, l.term_and_nonrelocation, l.outs_penalties_notes, l.label,
            a.exit_penalty,
-           (select sum(public_2026_m) from items i where i.team = l.team and i.status = 'pending') as pending_2026_m,
+           (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'renovation' and i.status = 'pending') as pending_2026_m,
+           (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'project' and i.status <> 'pending' and i.item_id <> 'UTA-project') as new_arena_2026_m,
+           (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'project' and i.status = 'pending') as new_arena_pending_2026_m,
            coalesce((select list(s.source_id order by s.ord) from lease_sources s where s.team = l.team), []) as sources
     from leases l left join arenas a using (team)
     order by l.term_end_year nulls last, l.team

@@ -1,0 +1,21 @@
+---
+import { paragraph } from '../lib/content';
+import { plain } from '../lib/copy';
+import type { Citations } from '../lib/sources';
+import meta from '../generated/meta.json';
+interface Props {
+  page: { kicker: string; title: string; deck: string; sources: ({ id: string } | string)[] };
+  id: string;
+  cites: Citations;
+}
+const { page, id, cites } = Astro.props;
+const title = paragraph(page.title, page.sources, `${id} title`, undefined, { link: false });
+const deck = paragraph(page.deck, page.sources, `${id} deck`, cites);
+const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<header class="head col">
+  <p class="kicker">{page.kicker}</p>
+  <h1 set:html={title.html} />
+  <p class="deck" set:html={deck.html} />
+  <p class="meta"><span>Data as of {asOf}</span><span>Dollars in 2026 terms unless marked</span><a href="/">Read the story</a></p>
+</header>

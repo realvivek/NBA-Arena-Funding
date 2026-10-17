@@ -939,6 +939,112 @@
   "note": "",
   "method": "select sum(i.public_2026_m) from items i join arenas a using (team) where a.built_privately_majority = 'Y' and i.kind = 'construction' and i.team in (select team from items where kind in ('renovation', 'purchase') and (core or status = 'pending') and public_2026_m > 0)"
  },
+ "was_1997_public": {
+  "key": "was_1997_public",
+  "title": "District and federal money for Capital One Arena's land, site work and Metro connection, 1997",
+  "value": 155.996143,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "govinfo-gaoreports-aimd-98-223",
+   "cfo-arena-tax-revenue-clarification"
+  ],
+  "display": {
+   "long": "$156 million",
+   "short": "$156M",
+   "title": "$156 Million",
+   "cap": "$156 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'WAS-construction'"
+ },
+ "was_renovation": {
+  "key": "was_renovation",
+  "title": "DC money to renovate Capital One Arena under the 2024 deal",
+  "value": 427.5,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": 0,
+  "label": "b/a",
+  "sources": [
+   "cfo-fis-downtown-arena-revitalization",
+   "dccouncil-4-2-24-arena-funding-memo",
+   "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+  ],
+  "display": {
+   "long": "$428 million",
+   "short": "$428M",
+   "title": "$428 Million",
+   "cap": "$428 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'WAS-renovation-2'"
+ },
+ "por_1995_public": {
+  "key": "por_1995_public",
+  "title": "City of Portland money for the Rose Garden (now Moda Center), 1995",
+  "value": 75.087677,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "c/a",
+  "sources": [
+   "wiki-moda-center",
+   "oregon-moda-center-arena-comparable-structure-overview"
+  ],
+  "display": {
+   "long": "$75 million",
+   "short": "$75M",
+   "title": "$75 Million",
+   "cap": "$75 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'POR-construction'"
+ },
+ "por_purchase": {
+  "key": "por_purchase",
+  "title": "What Portland paid for the land under the Moda Center, 2024",
+  "value": 7.538371,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "portland-2024-annual-comprehensive-financial-report",
+   "wweek-proposed-city-purchase-of-moda-center-would-trig"
+  ],
+  "display": {
+   "long": "$7.5 million",
+   "short": "$7.5M",
+   "title": "$7.5 Million",
+   "cap": "$7.5 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'POR-purchase'"
+ },
+ "min_purchase": {
+  "key": "min_purchase",
+  "title": "Minneapolis's purchase of Target Center, 1995",
+  "value": 118.83441,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "leg-other",
+   "leg-031209-agenda"
+  ],
+  "display": {
+   "long": "$119 million",
+   "short": "$119M",
+   "title": "$119 Million",
+   "cap": "$119 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'MIN-purchase'"
+ },
  "residents_share": {
   "key": "residents_share",
   "title": "Share of public capital from taxes residents mostly pay",
@@ -1387,6 +1493,26 @@
   "note": "New-money bond issues only, at a 28 percent marginal tax rate (the Gayer, Drukker and Gold method). Paid by all U.S. taxpayers; not added to any total.",
   "method": "select sum(fed_tax_expenditure_pv_2026_m) from arenas"
  },
+ "fed_tau": {
+  "key": "fed_tau",
+  "title": "Marginal tax rate used for the federal cost of tax-exempt bonds",
+  "value": 28.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "gayer-2016"
+  ],
+  "display": {
+   "long": "28 percent",
+   "short": "28%",
+   "title": "28%",
+   "cap": "28 percent"
+  },
+  "note": "The lower of the two rates in the bond file; the 35 percent rate is shown there as a sensitivity.",
+  "method": "select 100 * min(tau) from fed_bond_cost"
+ },
  "tax_breaks_added": {
   "key": "tax_breaks_added",
   "title": "Tax breaks added to the expanded total",
@@ -1665,6 +1791,26 @@
   },
   "note": "",
   "method": "select v from comparison where k = 'lag_within_24'"
+ },
+ "lag_window": {
+  "key": "lag_window",
+  "title": "Window used to count approvals that came soon after a threat",
+  "value": 24.0,
+  "unit": "count",
+  "basis": "months",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "threat-ledger"
+  ],
+  "display": {
+   "long": "24",
+   "short": "24",
+   "title": "24",
+   "cap": "24"
+  },
+  "note": "",
+  "method": "select v from comparison where k = 'lag_window_months'"
  },
  "threat_deals_n": {
   "key": "threat_deals_n",
@@ -1973,6 +2119,46 @@
   "note": "",
   "method": "Entered by hand; confirmed against data/authorities/lease_clock.csv (team=IND, column outs_penalties_notes: \"up to $750M\")"
  },
+ "research_studies": {
+  "key": "research_studies",
+  "title": "Studies covered by the 2023 survey of research on sports venues and local economies",
+  "value": 130.0,
+  "unit": "count",
+  "basis": "more than",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "bradbury-2023"
+  ],
+  "display": {
+   "long": "130",
+   "short": "130",
+   "title": "130",
+   "cap": "130"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=studies, column quote: \"more than 130 studies\")"
+ },
+ "research_years": {
+  "key": "research_years",
+  "title": "Years of research the survey covers",
+  "value": 30.0,
+  "unit": "count",
+  "basis": "more than",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "bradbury-2023"
+  ],
+  "display": {
+   "long": "30",
+   "short": "30",
+   "title": "30",
+   "cap": "30"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=years, column quote: \"spans over 30 years\")"
+ },
  "cpi_base": {
   "key": "cpi_base",
   "title": "2026 CPI-U base (January-August average)",
@@ -2015,8 +2201,8 @@
  },
  "sources_n": {
   "key": "sources_n",
-  "title": "Sources in the bibliography",
-  "value": 312.0,
+  "title": "Documents in the bibliography (not counting this site's own ledgers)",
+  "value": 309.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2025,13 +2211,13 @@
    "ledger"
   ],
   "display": {
-   "long": "312",
-   "short": "312",
-   "title": "312",
-   "cap": "312"
+   "long": "309",
+   "short": "309",
+   "title": "309",
+   "cap": "309"
   },
   "note": "",
-  "method": "select count(*) from sources"
+  "method": "select count(*) from sources where publisher <> 'This site'"
  },
  "sources_government": {
   "key": "sources_government",
@@ -2051,7 +2237,7 @@
    "cap": "109"
   },
   "note": "",
-  "method": "select count(*) from sources where origin = 'government'"
+  "method": "select count(*) from sources where origin = 'government' and publisher <> 'This site'"
  },
  "sources_court": {
   "key": "sources_court",
@@ -2071,7 +2257,7 @@
    "cap": "Zero"
   },
   "note": "",
-  "method": "select count(*) from sources where origin = 'court'"
+  "method": "select count(*) from sources where origin = 'court' and publisher <> 'This site'"
  },
  "sources_team": {
   "key": "sources_team",
@@ -2091,12 +2277,12 @@
    "cap": "14"
   },
   "note": "",
-  "method": "select count(*) from sources where origin = 'team_or_league'"
+  "method": "select count(*) from sources where origin = 'team_or_league' and publisher <> 'This site'"
  },
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 189.0,
+  "value": 186.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2105,12 +2291,12 @@
    "ledger"
   ],
   "display": {
-   "long": "189",
-   "short": "189",
-   "title": "189",
-   "cap": "189"
+   "long": "186",
+   "short": "186",
+   "title": "186",
+   "cap": "186"
   },
   "note": "",
-  "method": "select count(*) from sources where origin = 'independent'"
+  "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"
  }
 }

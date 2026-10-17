@@ -1,0 +1,140 @@
+---
+import { marked } from 'marked';
+import Layout from '../../layouts/Layout.astro';
+import PageHead from '../../components/PageHead.astro';
+import { referencePage } from '../../lib/page';
+import { STATS, escapeHtml } from '../../lib/copy';
+import { source, shortName, labelText } from '../../lib/sources';
+import { copyInventory } from '../../lib/inventory';
+import verification from '../../generated/verification.md?raw';
+
+const { page, cites, title } = await referencePage('fact-check');
+const copy = await copyInventory();
+const usedIn = new Map<string, { where: string; href: string }[]>();
+for (const c of copy) for (const k of c.tokens) {
+  if (!usedIn.has(k)) usedIn.set(k, []);
+  if (!usedIn.get(k)!.some((u) => u.where === c.where)) usedIn.get(k)!.push({ where: c.where, href: c.href });
+}
+const stats = Object.values(STATS);
+const typedRows = copy.filter((c) => c.typed.length);
+const unit = (s: (typeof stats)[number]) =>
+  `${s.value.toLocaleString('en-US', { maximumFractionDigits: 6 })} ${{ usd_m: 'million dollars', usd: 'dollars', pct: 'percent', count: '', number: '', year: '' }[s.unit] ?? ''}`.trim();
+
+// the notes' sections that belong on this page, rendered from the same file the repository keeps
+const sections = verification.split(/^## /m).slice(1).map((s) => {
+  const nl = s.indexOf('\n');
+  return { title: s.slice(0, nl).trim(), body: s.slice(nl + 1) };
+});
+const pick = (t: string) => sections.find((s) => s.title.startsWith(t));
+const shown = ['Corrections made during the work', 'Figures not checked against a saved copy', 'Not reachable from the build environment']
+  .map(pick)
+  .filter(Boolean) as { title: string; body: string }[];
+const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+---
+<Layout title={title} description={page.description} path="/fact-check/">
+  <article class="ref">
+    <PageHead page={page} id="fact-check" cites={cites} />
+    <div class="col-wide">
+      <p class="note">
+        Labels: (a) computed, (b) taken from a primary document, (c) taken from the press or another secondary source.
+        A combination such as b/a is a documented figure converted or combined by computation. The method column is
+        the query that produced each figure from the ledger's files; the same list, with full sources, is kept in
+        the repository as docs/fact-check.md.
+      </p>
+      <nav class="note" aria-label="On this page">
+        <a href="#computed">Computed figures ({stats.length})</a> ·
+        <a href="#typed">Numbers typed in the copy ({typedRows.length} passages)</a> ·
+        {shown.map((s, i) => <>{i > 0 && ' · '}<a href={`#${slug(s.title)}`}>{s.title}</a></>)}
+      </nav>
+
+      <h2 id="computed">Computed figures</h2>
+      <div class="table-wrap" style="max-height: none">
+        <table>
+          <thead>
+            <tr><th scope="col">Figure</th><th scope="col" class="n">Shown as</th><th scope="col">Label</th><th scope="col">Sources</th><th scope="col">Used in</th></tr>
+          </thead>
+          <tbody>
+            {stats.map((s) => (
+              <tr id={s.key}>
+                <td>
+                  <strong>{s.title}</strong>
+                  <div class="note"><code>{s.key}</code> = {unit(s)}{s.basis ? `; ${s.basis}` : ''}</div>
+                  {s.note && <div class="note">{s.note}</div>}
+                  <details><summary class="note">Method</summary><code class="method">{s.method}</code></details>
+                </td>
+                <td class="n">{s.display.long}</td>
+                <td><span class="label" title={labelText(s.label)}>{s.label}</span></td>
+                <td class="src-links">
+                  {s.sources.map((id, i) => {
+                    const src = source(id);
+                    return <>{i > 0 && '; '}<a href={src.url} rel="noopener" title={src.title}>{shortName(src)}</a></>;
+                  })}
+                </td>
+                <td>
+                  {(usedIn.get(s.key) ?? []).map((u, i) => <>{i > 0 && '; '}<a href={u.href}>{u.where}</a></>)}
+                  {!usedIn.has(s.key) && <span class="note">Kept for the record; not in the copy</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="typed">Numbers typed in the copy</h2>
+      <p class="note">Years and dates written into the copy, with the sources of the passage they appear in. Every other number in the copy is one of the computed figures above.</p>
+      <div class="table-wrap" style="max-height: none">
+        <table>
+          <thead><tr><th scope="col">Where</th><th scope="col">Numbers</th><th scope="col">Sources of the passage</th></tr></thead>
+          <tbody>
+            {typedRows.map((c) => (
+              <tr>
+                <td><a href={c.href}>{c.where}</a></td>
+                <td>{[...new Set(c.typed)].join(', ')}</td>
+                <td class="src-links">
+                  {c.sources.map((id, i) => {
+                    const src = source(id);
+                    return <>{i > 0 && '; '}<a href={src.url} rel="noopener" title={src.title}>{shortName(src)}</a></>;
+                  })}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {shown.map((s) => (
+        <section class="notes-md">
+          <h2 id={slug(s.title)}>{s.title}</h2>
+          <Fragment set:html={marked.parse(s.body, { async: false }) as string} />
+        </section>
+      ))}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .method {
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.75rem;
+    background: var(--plane);
+    padding: 6px 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+  .notes-md {
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+  .notes-md :global(ul) {
+    padding-left: 1.2em;
+  }
+  .notes-md :global(li) {
+    margin: 0 0 8px;
+  }
+  .notes-md :global(code) {
+    font-size: 0.8125rem;
+  }
+</style>

@@ -100,6 +100,10 @@
   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
  ],
+ "base_sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
  "columns": [
   "year",
   "team",

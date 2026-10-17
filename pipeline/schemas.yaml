@@ -103,3 +103,10 @@ inputs/arena_coordinates.csv:
     lat: {type: number, constraints: {required: true, minimum: 24, maximum: 50}}
     lon: {type: number, constraints: {required: true, minimum: -125, maximum: -66}}
     source: {type: string, constraints: {required: true, pattern: '^https://en[.]wikipedia[.]org/wiki/.+'}}
+
+inputs/research_claims.csv:
+  primaryKey: [key]
+  fields:
+    key: {type: string, constraints: {required: true, unique: true}}
+    quote: {type: string, constraints: {required: true}}
+    source: {type: string, constraints: {required: true, pattern: '^https?://.+'}}

@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHead from '../../components/PageHead.astro';
+import Blocks from '../../components/Blocks.astro';
+import DataTable from '../../components/DataTable.astro';
+import SourceList from '../../components/SourceList.astro';
+import { referencePage } from '../../lib/page';
+import { dataset } from '../../lib/data';
+import { leasesTable } from '../../lib/tables';
+import { money, TEAM_CITY } from '../../lib/chart';
+
+const { page, cites, blocks, notes, title } = await referencePage('leases');
+const leases = leasesTable(dataset('leases').rows, true);
+const projects = dataset('projects').rows;
+const pt = {
+  columns: [
+    { key: 'team', label: 'Team city' },
+    { key: 'arena', label: 'Project' },
+    { key: 'status', label: 'Status' },
+    { key: 'cost', label: 'Cost (budget)', num: true },
+    { key: 'public', label: 'Public, binding or approved', num: true },
+    { key: 'pending', label: 'Public, pending', num: true },
+    { key: 'notes', label: 'Notes' },
+    { key: 'sources', label: 'Sources' },
+  ],
+  rows: projects.map((p: any) => ({
+    team: TEAM_CITY[p.team],
+    arena: p.arena,
+    status: (p.notes_and_gaps || '').replace(/^Status: /, ''),
+    cost: p.construction_cost_nominal_m ? money(p.construction_cost_nominal_m) : 'Not disclosed',
+    public: p.public_construction_nominal_m ? money(p.public_construction_nominal_m) : '',
+    pending: p.public_renovation_pending_nominal_m ? money(p.public_renovation_pending_nominal_m) : '',
+    notes: p.public_construction_notes,
+    sources: { sources: p.sources },
+  })),
+};
+---
+<Layout title={title} description={page.description} path="/leases/">
+  <article class="ref">
+    <PageHead page={page} id="leases" cites={cites} />
+    <div class="col prose"><Blocks blocks={blocks} /></div>
+    <div class="col-wide">
+      <h2 id="every-lease">Every lease</h2>
+      <DataTable columns={leases.columns} rows={leases.rows} caption="Arena leases: term, exit terms and sources" />
+      <h2 id="pending-deals">New arenas and pending deals</h2>
+      <div class="note"><Blocks blocks={notes} /></div>
+      <DataTable columns={pt.columns} rows={pt.rows} caption="New arenas, districts and pending deals" />
+      <h2 id="sources-for-this-page">Sources for this page</h2>
+      <SourceList ids={cites.order} numbered />
+    </div>
+  </article>
+</Layout>

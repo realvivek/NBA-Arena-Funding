@@ -697,6 +697,14 @@ th.n {
   padding: 8px 0;
   border-bottom: 1px solid var(--rule);
 }
+.source-group.numbered {
+  list-style: decimal;
+  padding-left: 2.6em;
+}
+.source-group.numbered li::marker {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
 .source-group .s-title {
   font-weight: 600;
 }

@@ -6,6 +6,11 @@
   "gayer-2016",
   "fred-cpiaucns"
  ],
+ "base_sources": [
+  "ledger",
+  "gayer-2016",
+  "fred-cpiaucns"
+ ],
  "columns": [
   "team",
   "arena",

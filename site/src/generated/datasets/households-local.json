@@ -1,0 +1,509 @@
+{
+ "id": "households-local",
+ "title": "Arena money per household where each arena is, adding the share of every government that pays",
+ "sources": [
+  "ledger",
+  "census-b11001-2024",
+  "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+  "utah-pmn",
+  "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+  "wiki-delta-center",
+  "slc-slc-acfr-06-30-2025",
+  "wiki-paycom-center",
+  "okc-city-council-approves-letter-of-intent-with-the",
+  "bondbuyer-financing-team-in-place-for-oklahoma-city-arena",
+  "kutakrock-kutak-rock-tax-counsel-disclosure-counsel",
+  "okc-okc-voters-approve-2025-bond",
+  "vision-transit",
+  "vision-economic-community-development",
+  "okgazette-wait-whos-paying-for-the-new-arena-2",
+  "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
+  "news9-voters-approve-sales-tax-extension",
+  "govinfo-gaoreports-aimd-98-223",
+  "cfo-arena-tax-revenue-clarification",
+  "cfo-fis-downtown-arena-revitalization",
+  "dccouncil-4-2-24-arena-funding-memo",
+  "wtop-take-a-look-at-the-newest-renderings-of-the-capi",
+  "occompt-occompt",
+  "occompt-occompt-2",
+  "oppaga-15-01",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+  "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+  "indyencyclopedia-bankers-life-fieldhouse",
+  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "carolinajournal-on-world-class-chumps",
+  "espn-nba",
+  "lgreports-charlotte",
+  "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
+  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
+  "degc-ugd-3",
+  "memphistn-fy05-annual-report",
+  "memphistn-fy15-annual-report",
+  "tri-statedefender-p-349496",
+  "dailymemphian",
+  "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+  "audacy-fedexforum",
+  "sports-fedexforum-documents-offer-strong-clue-194527628",
+  "wapp-billinfo",
+  "wiki-moda-center",
+  "portland-2024-annual-comprehensive-financial-report",
+  "wweek-proposed-city-purchase-of-moda-center-would-trig",
+  "olis-enrolled",
+  "efiles",
+  "multco-news-release-board-commissioners-advances-framew",
+  "portland-adopted",
+  "bexar-adid-1188",
+  "bexar-2019-tax-exempt-venue-project-revenue-refunding",
+  "ksat-results-props-a-and-b-for-coliseum-complex-downt",
+  "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
+  "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
+  "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+  "bexar-adid-1520",
+  "ohioauditor-gateway-economic-development-corporation-of-grea",
+  "ohioauditor-auditsearch",
+  "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll",
+  "axios-cleveland-cavs-impact",
+  "ideastream-county-council-approves-405-million-for-fieldhou",
+  "wi-lfb-informational-paper-18",
+  "wiki-smoothie-king-center",
+  "myneworleans-doing-it-right",
+  "lla-vwprbyagencyjson",
+  "lla-0000b6bd",
+  "lla-00006b8b",
+  "lla-000144e2",
+  "sportsbusinessdaily-new-orleans",
+  "houstonsports-multi-purpose-arena-letter-of-agreement",
+  "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
+  "law-sfr-v13-nba",
+  "texaspolitics-slide4b",
+  "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
+  "ibo-2009-may-atlantic-yards-testimony",
+  "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
+  "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
+  "nolandgrab-mtastaffsummaryvdyard062209",
+  "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
+  "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
+  "wiki-barclays-center"
+ ],
+ "base_sources": [
+  "ledger",
+  "census-b11001-2024"
+ ],
+ "columns": [
+  "team",
+  "deal",
+  "jurisdiction",
+  "per_household_2026",
+  "parts",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "UTA",
+   "deal": "Delta Center 2025 deal (arena $525M + district $375M), 0.5% Salt Lake City sales tax",
+   "jurisdiction": "Salt Lake City, UT",
+   "per_household_2026": 9098.63,
+   "parts": [
+    {
+     "jurisdiction": "Salt Lake City, UT",
+     "level": 1,
+     "per_household_2026": 9098.63,
+     "households": 98916,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+    "utah-pmn",
+    "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+    "wiki-delta-center",
+    "slc-slc-acfr-06-30-2025"
+   ]
+  },
+  {
+   "team": "OKC",
+   "deal": "New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($302M), OKC city sales tax and GO bonds",
+   "jurisdiction": "Oklahoma City, OK",
+   "per_household_2026": 4173.93,
+   "parts": [
+    {
+     "jurisdiction": "Oklahoma City, OK",
+     "level": 1,
+     "per_household_2026": 4173.93,
+     "households": 290311,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "wiki-paycom-center",
+    "okc-city-council-approves-letter-of-intent-with-the",
+    "bondbuyer-financing-team-in-place-for-oklahoma-city-arena",
+    "kutakrock-kutak-rock-tax-counsel-disclosure-counsel",
+    "okc-okc-voters-approve-2025-bond",
+    "vision-transit",
+    "vision-economic-community-development",
+    "okgazette-wait-whos-paying-for-the-new-arena-2",
+    "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
+    "news9-voters-approve-sales-tax-extension"
+   ]
+  },
+  {
+   "team": "WAS",
+   "deal": "Capital One Arena all public money since 1997",
+   "jurisdiction": "District of Columbia",
+   "per_household_2026": 2293.04,
+   "parts": [
+    {
+     "jurisdiction": "District of Columbia",
+     "level": 3,
+     "per_household_2026": 2293.04,
+     "households": 329687,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "govinfo-gaoreports-aimd-98-223",
+    "cfo-arena-tax-revenue-clarification",
+    "cfo-fis-downtown-arena-revitalization",
+    "dccouncil-4-2-24-arena-funding-memo",
+    "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+   ]
+  },
+  {
+   "team": "ORL",
+   "deal": "Kia Center (2010 build + 2025 renovation)",
+   "jurisdiction": "Orange County, FL",
+   "per_household_2026": 1571.4,
+   "parts": [
+    {
+     "jurisdiction": "Orange County, FL",
+     "level": 2,
+     "per_household_2026": 1571.4,
+     "households": 560020,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "occompt-occompt",
+    "occompt-occompt-2",
+    "oppaga-15-01",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
+   ]
+  },
+  {
+   "team": "SAC",
+   "deal": "Golden 1 Center",
+   "jurisdiction": "Sacramento, CA",
+   "per_household_2026": 1549.48,
+   "parts": [
+    {
+     "jurisdiction": "Sacramento, CA",
+     "level": 1,
+     "per_household_2026": 1549.48,
+     "households": 198965,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c"
+   ]
+  },
+  {
+   "team": "IND",
+   "deal": "Gainbridge Fieldhouse (1999, 2019-22, CIB subsidies 2014-23)",
+   "jurisdiction": "Marion County, IN",
+   "per_household_2026": 1515.46,
+   "parts": [
+    {
+     "jurisdiction": "Marion County, IN",
+     "level": 2,
+     "per_household_2026": 1461.49,
+     "households": 408907,
+     "share": 0.799562
+    },
+    {
+     "jurisdiction": "Indiana",
+     "level": 3,
+     "per_household_2026": 53.97,
+     "households": 2775637,
+     "share": 0.200438
+    }
+   ],
+   "sources": [
+    "indyencyclopedia-bankers-life-fieldhouse",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
+   ]
+  },
+  {
+   "team": "CHA",
+   "deal": "Spectrum Center (2005, 2014, 2022-25)",
+   "jurisdiction": "Charlotte, NC",
+   "per_household_2026": 1482.71,
+   "parts": [
+    {
+     "jurisdiction": "Charlotte, NC",
+     "level": 1,
+     "per_household_2026": 1482.71,
+     "households": 381274,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "carolinajournal-on-world-class-chumps",
+    "espn-nba",
+    "lgreports-charlotte",
+    "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
+    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
+   ]
+  },
+  {
+   "team": "DET",
+   "deal": "Little Caesars Arena DDA TIF",
+   "jurisdiction": "Detroit, MI",
+   "per_household_2026": 1443.65,
+   "parts": [
+    {
+     "jurisdiction": "Detroit, MI",
+     "level": 1,
+     "per_household_2026": 1443.65,
+     "households": 268048,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "degc-ugd-3"
+   ]
+  },
+  {
+   "team": "MEM",
+   "deal": "FedExForum (2004 build, $80M state 2025, subsidies)",
+   "jurisdiction": "Shelby County, TN",
+   "per_household_2026": 1260.43,
+   "parts": [
+    {
+     "jurisdiction": "Shelby County, TN",
+     "level": 2,
+     "per_household_2026": 1220.3,
+     "households": 359692,
+     "share": 0.788789
+    },
+    {
+     "jurisdiction": "Tennessee",
+     "level": 3,
+     "per_household_2026": 40.13,
+     "households": 2928765,
+     "share": 0.211211
+    }
+   ],
+   "sources": [
+    "memphistn-fy05-annual-report",
+    "memphistn-fy15-annual-report",
+    "tri-statedefender-p-349496",
+    "dailymemphian",
+    "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
+    "audacy-fedexforum",
+    "sports-fedexforum-documents-offer-strong-clue-194527628",
+    "wapp-billinfo"
+   ]
+  },
+  {
+   "team": "POR",
+   "deal": "Moda Center pending rebuild ($573M) + past ($83M)",
+   "jurisdiction": "Portland, OR",
+   "per_household_2026": 1146.72,
+   "parts": [
+    {
+     "jurisdiction": "Portland, OR",
+     "level": 1,
+     "per_household_2026": 688.22,
+     "households": 294419,
+     "share": 0.309057
+    },
+    {
+     "jurisdiction": "Multnomah County, OR",
+     "level": 2,
+     "per_household_2026": 249.24,
+     "households": 353080,
+     "share": 0.134223
+    },
+    {
+     "jurisdiction": "Oregon",
+     "level": 3,
+     "per_household_2026": 209.26,
+     "households": 1744270,
+     "share": 0.55672
+    }
+   ],
+   "sources": [
+    "wiki-moda-center",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "portland-2024-annual-comprehensive-financial-report",
+    "wweek-proposed-city-purchase-of-moda-center-would-trig",
+    "olis-enrolled",
+    "efiles",
+    "multco-news-release-board-commissioners-advances-framew",
+    "portland-adopted"
+   ]
+  },
+  {
+   "team": "SAS",
+   "deal": "Frost Bank Center (2002, 2015) + county $311M for new arena",
+   "jurisdiction": "Bexar County, TX",
+   "per_household_2026": 935.91,
+   "parts": [
+    {
+     "jurisdiction": "Bexar County, TX",
+     "level": 2,
+     "per_household_2026": 935.91,
+     "households": 774392,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "bexar-adid-1188",
+    "bexar-2019-tax-exempt-venue-project-revenue-refunding",
+    "ksat-results-props-a-and-b-for-coliseum-complex-downt",
+    "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
+    "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
+    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "bexar-adid-1520"
+   ]
+  },
+  {
+   "team": "CLE",
+   "deal": "Rocket Arena (1994, 2017-19, 2019 repairs)",
+   "jurisdiction": "Cuyahoga County, OH",
+   "per_household_2026": 783.72,
+   "parts": [
+    {
+     "jurisdiction": "Cuyahoga County, OH",
+     "level": 2,
+     "per_household_2026": 783.72,
+     "households": 551960,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "ohioauditor-gateway-economic-development-corporation-of-grea",
+    "ohioauditor-auditsearch",
+    "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll",
+    "axios-cleveland-cavs-impact",
+    "ideastream-county-council-approves-405-million-for-fieldhou"
+   ]
+  },
+  {
+   "team": "MIL",
+   "deal": "Fiserv Forum",
+   "jurisdiction": "Milwaukee County, WI",
+   "per_household_2026": 681.36,
+   "parts": [
+    {
+     "jurisdiction": "Milwaukee County, WI",
+     "level": 2,
+     "per_household_2026": 653.2,
+     "households": 396211,
+     "share": 0.7838
+    },
+    {
+     "jurisdiction": "Wisconsin",
+     "level": 3,
+     "per_household_2026": 28.16,
+     "households": 2535198,
+     "share": 0.2162
+    }
+   ],
+   "sources": [
+    "wi-lfb-informational-paper-18"
+   ]
+  },
+  {
+   "team": "NOP",
+   "deal": "Smoothie King Center",
+   "jurisdiction": "Louisiana",
+   "per_household_2026": 248.12,
+   "parts": [
+    {
+     "jurisdiction": "Louisiana",
+     "level": 3,
+     "per_household_2026": 248.12,
+     "households": 1848965,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "wiki-smoothie-king-center",
+    "myneworleans-doing-it-right",
+    "lla-vwprbyagencyjson",
+    "lla-0000b6bd",
+    "lla-00006b8b",
+    "lla-000144e2",
+    "sportsbusinessdaily-new-orleans"
+   ]
+  },
+  {
+   "team": "HOU",
+   "deal": "Toyota Center (2003 + 2026 state grant)",
+   "jurisdiction": "Harris County, TX",
+   "per_household_2026": 203.41,
+   "parts": [
+    {
+     "jurisdiction": "Harris County, TX",
+     "level": 2,
+     "per_household_2026": 195.11,
+     "households": 1801856,
+     "share": 0.787264
+    },
+    {
+     "jurisdiction": "Texas",
+     "level": 3,
+     "per_household_2026": 8.3,
+     "households": 11449769,
+     "share": 0.212736
+    }
+   ],
+   "sources": [
+    "houstonsports-multi-purpose-arena-letter-of-agreement",
+    "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
+    "law-sfr-v13-nba",
+    "texaspolitics-slide4b",
+    "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+   ]
+  },
+  {
+   "team": "BKN",
+   "deal": "Barclays Center direct capital (city $205M, state $100M)",
+   "jurisdiction": "New York, NY",
+   "per_household_2026": 109.55,
+   "parts": [
+    {
+     "jurisdiction": "New York, NY",
+     "level": 1,
+     "per_household_2026": 90.49,
+     "households": 3379651,
+     "share": 0.672131
+    },
+    {
+     "jurisdiction": "New York",
+     "level": 3,
+     "per_household_2026": 19.06,
+     "households": 7828074,
+     "share": 0.327869
+    }
+   ],
+   "sources": [
+    "ibo-2009-may-atlantic-yards-testimony",
+    "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
+    "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
+    "nolandgrab-mtastaffsummaryvdyard062209",
+    "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
+    "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
+    "wiki-barclays-center"
+   ]
+  }
+ ],
+ "note": "For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.",
+ "method": "with h as ( select *, case substr(geo_id, 1, 3) when '160' then 1 when '050' then 2 else 3 end as level from households) select team, any_value(deal) as deal, arg_min(jurisdiction, level) as jurisdiction, sum(per_household_2026) as per_household_2026, list({'jurisdiction': jurisdiction, 'level': level, 'per_household_2026': per_household_2026, 'households': households, 'share': share} order by level) as parts, (select coalesce(list(s.source_id order by s.item_id, s.ord), []) from item_sources s where s.team = h.team and s.role = 'public' and s.item_id not like '%-ongoing-%') as sources from h group by team order by per_household_2026 desc, team"
+}

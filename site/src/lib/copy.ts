@@ -119,6 +119,16 @@ export function escapeHtml(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+/** Typographer's quotes and apostrophes, for copy only (never for data or URLs). */
+export function smartQuotes(s: string): string {
+  return s
+    .replace(/(^|[\s(\[\u2014])"/g, '$1\u201c')
+    .replace(/"/g, '\u201d')
+    .replace(/(\w)'(\w)/g, '$1\u2019$2')
+    .replace(/(^|[\s(\[])'/g, '$1\u2018')
+    .replace(/'/g, '\u2019');
+}
+
 /** Inline markup: *italic*, **bold**, [text](href). Everything else is escaped. */
 function inline(s: string): string {
   let h = escapeHtml(s);
@@ -148,13 +158,17 @@ export function render(text: string, ctx: Context & { link?: boolean }): string 
     marks.push(html);
     return `\u0000${marks.length - 1}\u0000`;
   });
-  return inline(withMarks).replace(/\u0000(\d+)\u0000/g, (_m, i) => marks[Number(i)]);
+  // quotes are curled before escaping; link targets are protected first
+  const links: string[] = [];
+  const protectedText = withMarks.replace(/\]\(([^)\s]+)\)/g, (_m, href) => (links.push(href), `](\u0001${links.length - 1}\u0001)`));
+  const curled = smartQuotes(protectedText).replace(/\u0001(\d+)\u0001/g, (_m, i) => links[Number(i)]);
+  return inline(curled).replace(/\u0000(\d+)\u0000/g, (_m, i) => marks[Number(i)]);
 }
 
 /** Plain text (for <title>, meta descriptions and aria labels). */
 export function plain(text: string, ctx: Context): string {
   assertClean(text, ctx);
-  return text
+  return smartQuotes(text)
     .replace(TOKEN, (_m, key: string, variant: Variant = 'long') => STATS[key].display[variant])
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
     .replace(/\*+/g, '');

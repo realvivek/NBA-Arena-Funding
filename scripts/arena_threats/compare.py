@@ -126,6 +126,6 @@ res=dict(deals=rows, threat=stats(T), no_threat=stats(N),
          p_dollars=mannwhitneyu([r['public_m_2025'] for r in T],[r['public_m_2025'] for r in N],alternative='two-sided').pvalue,
          p_share=mannwhitneyu([r['share'] for r in T if r['share'] is not None],[r['share'] for r in N if r['share'] is not None],alternative='two-sided').pvalue,
          episodes_explicit_or_implied=len(th), same_city_money=same, team_left=left, no_new_money=nomoney,
-         lag_months=[dict(id=i,team=t,months=v) for i,t,v in sorted(lag,key=lambda z:z[2])], lag_median=st.median(lv), lag_within_24=sum(v<=24 for v in lv))
+         lag_months=[dict(id=i,team=t,months=v) for i,t,v in sorted(lag,key=lambda z:z[2])], lag_median=st.median(lv), lag_within_24=sum(v<=24 for v in lv), lag_window_months=24)
 json.dump(res, open(OUT+'comparison.json','w'), indent=1, sort_keys=True)
 print('\n'.join(out))

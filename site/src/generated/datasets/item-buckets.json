@@ -4,6 +4,9 @@
  "sources": [
   "ledger"
  ],
+ "base_sources": [
+  "ledger"
+ ],
  "columns": [
   "item_id",
   "team",

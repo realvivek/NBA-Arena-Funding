@@ -28,6 +28,10 @@
   "sai-ocppa-final-2023-9hvg",
   "okc-ocppa-2024-final-web"
  ],
+ "base_sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
  "columns": [
   "team",
   "item_id",

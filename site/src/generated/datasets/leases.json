@@ -47,6 +47,9 @@
   "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b",
   "detroit-dda-fs-2024"
  ],
+ "base_sources": [
+  "ledger"
+ ],
  "columns": [
   "team",
   "arena",
@@ -57,6 +60,8 @@
   "label",
   "exit_penalty",
   "pending_2026_m",
+  "new_arena_2026_m",
+  "new_arena_pending_2026_m",
   "sources"
  ],
  "rows": [
@@ -70,6 +75,8 @@
    "label": "c",
    "exit_penalty": "(Attendance clause/2022 settlement already known - excluded)",
    "pending_2026_m": 470.0,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "dailymemphian-2",
     "memphistn-0-sports-auth-board-agenda-10-8-2026-mtg",
@@ -86,6 +93,8 @@
    "label": "b",
    "exit_penalty": "State must keep paying $3.65M/yr Quality Jobs equivalent through FY2029",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "lla-0000454ba",
     "senate-01-124-lsed-fy-26-final"
@@ -101,6 +110,8 @@
    "label": "b/c",
    "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves",
    "pending_2026_m": 573.0,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "portland-adopted"
    ]
@@ -115,6 +126,8 @@
    "label": "c",
    "exit_penalty": "Mavs pursuing new arena (Valley View site, June 2026); Stars to Plano",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "spectrumlocalnews-south-texas-el-paso"
    ]
@@ -129,6 +142,8 @@
    "label": "c/u",
    "exit_penalty": "Not public",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "whyy-south-philadelphia-new-arena-design-76ers-comcas"
    ]
@@ -142,7 +157,9 @@
    "outs_penalties_notes": "Break fees of up to $124M, depending on the year (KSAT 2023)",
    "label": "c",
    "exit_penalty": "Break fees of up to $124M, depending on the year (KSAT 2023)",
-   "pending_2026_m": 549.0,
+   "pending_2026_m": null,
+   "new_arena_2026_m": 311.0,
+   "new_arena_pending_2026_m": 549.0,
    "sources": [
     "ksat-spurs-consider-a-downtown-move",
     "tpr-heres-whats-in-the-downtown-arena-term-sheet-the"
@@ -158,6 +175,8 @@
    "label": "b/c",
    "exit_penalty": "Landlord duty to renovate to \"first-class, state of the art\" standard (s8.6) limited to Renovation Fund",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "houstonsports-toyota-center-arena-lease",
     "houstonsports-hchsa-special-bod-agenda-4-8-26",
@@ -174,6 +193,8 @@
    "label": "b",
    "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "gateway-edc-audit-2022",
     "gwcomplex-board-packet-12-17-25"
@@ -189,6 +210,8 @@
    "label": "c",
    "exit_penalty": "$50M payment to city if not fulfilled; $53.5M city debt service 2026-35",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "sportsbusinessdaily-twolves"
    ]
@@ -203,6 +226,8 @@
    "label": "b-/c",
    "exit_penalty": "Rent $1M/contract year",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "law-orlando-magic-lease-summary-8-14",
     "cfpublic-orlando-kia-center-camping-world-stadium-improve"
@@ -218,6 +243,8 @@
    "label": "c",
    "exit_penalty": "Not public",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "bostonglobe-celtics-extend-their-lease-td-garden-through-203"
    ]
@@ -232,6 +259,8 @@
    "label": "c",
    "exit_penalty": "Up to $200M if team leaves before 2037",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "si-phoenix-city-council-approves-suns-arena-rennova"
    ]
@@ -246,6 +275,8 @@
    "label": "b/c",
    "exit_penalty": "County subsidy $6.4M/yr (FY26 budget) rising to $8.5M 2031-35",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "miamidade-volume-1",
     "upi-heat-commit-to-miami-through-2040",
@@ -263,6 +294,8 @@
    "label": "b",
    "exit_penalty": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "in-83950a"
    ]
@@ -277,6 +310,8 @@
    "label": "c",
    "exit_penalty": "City was already obligated to spend $173M under old lease; Hornets $0 rent until 2030 then $2M/yr",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
    ]
@@ -291,6 +326,8 @@
    "label": "c",
    "exit_penalty": "Break-up fee up to $200M before 2046; Hawks pay $5.9M/yr lease after bonds retire 2028",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
     "fieldofschemes"
@@ -306,6 +343,8 @@
    "label": "b/c",
    "exit_penalty": "Non-relocation damages of at least $553M in year 1, declining; the floor is reported as $20M (BizTimes) or $200M (WPR, quoting the district chair)",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "wi-lfb-informational-paper-18",
     "dailyreporter-bucks-sign-30-year-lease-with-arena-owner",
@@ -323,6 +362,8 @@
    "label": "b",
    "exit_penalty": "Damages not quantified in the fiscal impact statement",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "cfo-fis-downtown-arena-revitalization"
    ]
@@ -337,6 +378,8 @@
    "label": "c/u + b",
    "exit_penalty": "Kings minimum lease payments $406.2M over 35 yrs",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "cityofsacramento-city-of-sacramento-2025-acfr",
     "cbsnews-sacramento-council-approves-kings-arena-deal-7-2"
@@ -352,6 +395,8 @@
    "label": "b/c",
    "exit_penalty": "Early-exit penalties of more than $1B (KGOU 2025-06-18)",
    "pending_2026_m": null,
+   "new_arena_2026_m": 910.0,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "okc-city-council-approves-letter-of-intent-with-the",
     "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
@@ -369,6 +414,8 @@
    "label": "b",
    "exit_penalty": "n/a",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "sec-msgs-20260630"
    ]
@@ -383,6 +430,8 @@
    "label": "c/u",
    "exit_penalty": "Damages $250M if both teams leave, $125M if one (draft terms)",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "ksl"
    ]
@@ -397,6 +446,8 @@
    "label": "c/u",
    "exit_penalty": "Term/penalty not confirmed",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b"
    ]
@@ -411,6 +462,8 @@
    "label": "c",
    "exit_penalty": "n/a",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": []
   },
   {
@@ -423,6 +476,8 @@
    "label": "c",
    "exit_penalty": "n/a",
    "pending_2026_m": 0.0,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": []
   },
   {
@@ -435,6 +490,8 @@
    "label": "b/u",
    "exit_penalty": "$36M 2017 DDA bonds to make arena NBA-compliant",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": [
     "detroit-dda-fs-2024"
    ]
@@ -449,6 +506,8 @@
    "label": "c",
    "exit_penalty": "n/a",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": []
   },
   {
@@ -461,6 +520,8 @@
    "label": "c",
    "exit_penalty": "n/a",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": []
   },
   {
@@ -473,6 +534,8 @@
    "label": "u",
    "exit_penalty": "Not public",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": []
   },
   {
@@ -485,9 +548,11 @@
    "label": "c",
    "exit_penalty": "n/a",
    "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
    "sources": []
   }
  ],
  "note": "",
- "method": "select l.team, l.arena, l.owner, l.term_end_year, l.term_and_nonrelocation, l.outs_penalties_notes, l.label, a.exit_penalty, (select sum(public_2026_m) from items i where i.team = l.team and i.status = 'pending') as pending_2026_m, coalesce((select list(s.source_id order by s.ord) from lease_sources s where s.team = l.team), []) as sources from leases l left join arenas a using (team) order by l.term_end_year nulls last, l.team"
+ "method": "select l.team, l.arena, l.owner, l.term_end_year, l.term_and_nonrelocation, l.outs_penalties_notes, l.label, a.exit_penalty, (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'renovation' and i.status = 'pending') as pending_2026_m, (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'project' and i.status <> 'pending' and i.item_id <> 'UTA-project') as new_arena_2026_m, (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'project' and i.status = 'pending') as new_arena_pending_2026_m, coalesce((select list(s.source_id order by s.ord) from lease_sources s where s.team = l.team), []) as sources from leases l left join arenas a using (team) order by l.term_end_year nulls last, l.team"
 }

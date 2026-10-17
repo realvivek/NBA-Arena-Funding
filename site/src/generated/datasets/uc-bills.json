@@ -9,6 +9,14 @@
   "cookcountytreasurer-pappasportalnewsletter",
   "ilga-003502000k10-220"
  ],
+ "base_sources": [
+  "uc-formula-method",
+  "ptaxsim-2024",
+  "ctu-2013",
+  "datacatalog-uzyt-m557",
+  "cookcountytreasurer-pappasportalnewsletter",
+  "ilga-003502000k10-220"
+ ],
  "columns": [
   "tax_year",
   "period",

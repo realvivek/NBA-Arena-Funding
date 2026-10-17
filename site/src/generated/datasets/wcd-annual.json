@@ -5,6 +5,10 @@
   "wi-dor-expo-tax",
   "wi-lfb-informational-paper-18"
  ],
+ "base_sources": [
+  "wi-dor-expo-tax",
+  "wi-lfb-informational-paper-18"
+ ],
  "columns": [
   "year",
   "basic_room",

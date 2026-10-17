@@ -273,6 +273,7 @@ def compute_datasets(con, srcs):
             sources = list(spec.sources)
             if spec.sources_sql:
                 sources += column(con, spec.sources_sql, spec.id + ' sources')
+            base = dedupe(sources)
             if spec.row_sources:
                 for r in rows:
                     rs = r.get(spec.row_sources)
@@ -286,7 +287,7 @@ def compute_datasets(con, srcs):
             missing = [s for s in sources if s not in srcs]
             if missing:
                 raise BuildError(f'{spec.id}: unknown source ids {missing}')
-            out[spec.id] = Dataset(id=spec.id, title=spec.title, sources=sources, columns=cols, rows=rows, note=spec.note,
+            out[spec.id] = Dataset(id=spec.id, title=spec.title, sources=sources, base_sources=base, columns=cols, rows=rows, note=spec.note,
                                    method=' '.join(spec.sql.split()))
         except BuildError as ex:
             problems.append(str(ex))
@@ -362,6 +363,9 @@ def main(argv):
         for e in extra:
             os.remove(os.path.join(OUT, 'datasets', f'{e}.json'))
     write(FACTCHECK, factcheck_md(stats, datasets, srcs, calc), check, stale)
+    # the corrections log and the list of unreachable sites, shown on the site's fact-check page
+    with open(os.path.join(ROOT, 'notes', 'verification.md')) as f:
+        write(os.path.join(OUT, 'verification.md'), f.read(), check, stale)
     if stale:
         fail(['outputs differ from the committed files; run pipeline/build.py and commit:'] + stale)
     print(f'{n_tables} tables valid; {len(srcs)} sources; {len(stats)} stats; {len(datasets)} datasets'

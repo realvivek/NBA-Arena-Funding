@@ -5,6 +5,10 @@
   "ledger",
   "fred-cpiaucns"
  ],
+ "base_sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
  "columns": [
   "bucket",
   "name",

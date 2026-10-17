@@ -1,10 +1,196 @@
+# Heads and copy for the story and the reference pages. Titles state the page's finding. Numbers are tokens
+# from pipeline/stats.yaml; text fields are folded block scalars (>-).
+
 home:
   path: /
   kicker: Public money and NBA arenas
-  title: Taxpayers Are Now Paying to Rebuild the NBA's Arenas
-  deck: Since 2014, public money to renovate or buy existing NBA arenas has been {{rebuild_ratio}} times the public money in the arenas that opened. Another {{pending_existing}} is pending, and {{leases_by_2036}} leases end by 2036.
-  description: How the 30 NBA arenas were paid for, what taxpayers put in, through which taxes, and what owners got after threatening to move.
+  title: >-
+    Taxpayers Are Now Paying to Rebuild the NBA's Arenas
+  deck: >-
+    Since 2014, public money to renovate or buy existing NBA arenas has been {{rebuild_ratio}} times the public
+    money in the arenas that opened. Another {{pending_existing}} is pending, and {{leases_by_2036}} leases end
+    by 2036.
+  description: >-
+    How the NBA's arenas were paid for: what the public put in, through which taxes, and what followed when
+    owners threatened to move.
+  sources: [ledger]
   tiles:
-    - { value: '{{core_public:short}}', label: 'Public money in the {{arenas_n}} arenas in use, {{public_share}} of all spending on them' }
-    - { value: '{{rebuild_since_2014:short}}', label: 'To renovate or buy existing arenas since 2014, against {{build_since_2014:short}} for new ones' }
-    - { value: '{{leases_by_2036}}', label: 'Leases that end by 2036, when the next round of asks comes due' }
+    - value: '{{core_public:short}}'
+      label: >-
+        Public money in the {{arenas_n}} arenas in use, {{public_share}} of all spending on them
+    - value: '{{rebuild_since_2014:short}}'
+      label: >-
+        To renovate or buy existing arenas since 2014, against {{build_since_2014:short}} for arenas that opened
+    - value: '{{leases_by_2036}}'
+      label: >-
+        Leases that end by 2036
+
+arenas:
+  path: /arenas/
+  kicker: The arenas
+  title: >-
+    Orlando's Kia Center Holds the Most Public Money of Any NBA Arena
+  deck: >-
+    The public money in each of the {{arenas_n}} arenas, from construction to yearly payments, with every
+    source. The Kia Center's {{orl_public}} is {{orl_share}} of everything spent on it.
+  description: >-
+    Every arena's construction, purchases, renovations, yearly payments, tax breaks and lease, with labels and
+    sources.
+  sources: [ledger]
+  blocks:
+    - p: >-
+        Each arena below lists every item of public money the ledger holds, in the dollars of its year and in
+        2026 dollars, with the label of the figure and its sources. Purchases count as public money but not as
+        new spending, because they pay back the arena's builders. Pending money is listed but not counted.
+      sources: [ledger]
+    - fig: arenas
+
+taxes:
+  path: /taxes/
+  kicker: The taxes
+  title: >-
+    Visitor Taxes Paid {{visitors_share:short}} of Public Arena Capital
+  deck: >-
+    The public money in NBA arenas comes from taxes on hotel rooms, car rentals and meals, and from general
+    funds, sales taxes and tax increment. Here is each stream, and the records that show how the money is raised.
+  description: >-
+    The funding streams behind public arena money, who mostly pays each one, and the tax series behind the
+    largest deals.
+  sources: [ledger]
+  blocks:
+    - p: >-
+        Every dollar of public capital money in the ledger is assigned to one funding stream, as the arena's
+        records document it. Taxes residents mostly pay supplied {{residents_share}}, taxes on visitors
+        {{visitors_share}}, and land or money with no documented stream {{other_share}}.
+      sources: [ledger]
+    - fig: whopays
+    - h3: Salt Lake City's arena sales tax
+    - p: >-
+        The {{slc_sales_tax_rate}} city sales tax that repays the Delta Center bonds is reported by the Utah State
+        Tax Commission, which publishes what it distributes to the city each month.
+      sources: [utah-tax-distributions, utah-pmn]
+    - fig: slc
+    - h3: Milwaukee's district taxes
+    - p: >-
+        The Wisconsin Center District, which owns Fiserv Forum, collects taxes on hotel rooms, restaurant food and
+        drink, and car rentals in Milwaukee County. Part of those taxes repays the district's arena bonds.
+      sources: [wi-dor-expo-tax, wi-lfb-informational-paper-18]
+    - fig: wcd
+    - h3: Payments to teams and operators
+    - fig: ongoing
+
+tax-breaks:
+  path: /tax-breaks/
+  kicker: The tax breaks
+  title: >-
+    Madison Square Garden's Exemption Has Cost New York About {{nyk_exemption:title}}
+  deck: >-
+    Property-tax exemptions, payments in lieu of taxes and tax-exempt bonds cost the public money that never
+    appears in a budget as spending. Together, the breaks this project could measure add {{tax_breaks_added}}.
+  description: >-
+    Every tax break found, counted or not: Madison Square Garden, Barclays Center, the United Center, Capital One
+    Arena, Ball Arena and the federal cost of tax-exempt bonds.
+  sources: [ledger]
+  notes:
+    - p: >-
+        The federal cost counts new-money bond issues only. It is the present value, at issue, of the federal
+        income tax lost on the bonds' interest at a {{fed_tau}} marginal rate, following Gayer, Drukker and Gold,
+        converted to 2026 dollars from each issue's year. All U.S. taxpayers bear it, so it is not added to any
+        city's total.
+      sources: [gayer-2016, ledger]
+  blocks:
+    - p: >-
+        The expanded total adds {{tax_breaks_added}} of breaks to the {{core_public}} of public money: Barclays
+        Center's PILOT bonds, {{bkn_pilot}}; Madison Square Garden's exemption since 1982, {{nyk_exemption}}; and
+        the United Center's valuation formula, {{chi_formula}} for 2002 to 2016. Breaks that are still to come,
+        or that rest on a single figure that could not be checked, are listed but not added.
+      sources: [ledger]
+    - fig: uc
+
+threats:
+  path: /threats/
+  kicker: The threats
+  title: >-
+    {{threats_same_city:cap}} of {{threats_counted}} Relocation Threats Were Followed by Public Money
+  deck: >-
+    A ledger of {{threat_episodes}} episodes since 1993, from explicit threats to lease clauses and other cities'
+    offers, with what followed in each city.
+  description: >-
+    The relocation threat ledger, how threats were classified, how deals after a threat compare, and the cities
+    that kept paying after a team left.
+  sources: [threat-ledger]
+  blocks:
+    - p: >-
+        An episode counts as a threat when an owner or the league said or did something that tied a team's future
+        in a city to public money: a public statement, a sale to buyers planning a move, a relocation application,
+        or a lease clause that let the team leave. Statements by local officials alone, and other cities' offers,
+        are recorded but not counted as threats.
+      sources: [threat-ledger]
+    - fig: threats
+
+leases:
+  path: /leases/
+  kicker: The leases
+  title: >-
+    {{leases_by_2036:cap}} NBA Leases End by 2036
+  deck: >-
+    The year each arena lease ends, what leaving would cost, and the deals pending or planned in Memphis,
+    Portland, San Antonio, Dallas and Philadelphia, along with Oklahoma City's new arena.
+  description: >-
+    Lease terms, exit penalties and the pending deals, arena by arena.
+  sources: [ledger]
+  notes:
+    - p: >-
+        New arenas and districts are outside the totals for the {{arenas_n}} arenas in use, and pending money on
+        current arenas is not counted until it is binding. Budgets are at face value.
+      sources: [ledger]
+  blocks:
+    - fig: leases
+
+households:
+  path: /households/
+  kicker: The households
+  title: >-
+    In Salt Lake City, the Arena Deal Comes to {{hh_uta}} per Household
+  deck: >-
+    The public money in the largest deals, divided by the households in the jurisdictions that pay.
+  description: >-
+    Per-household figures for the largest arena deals, the paying jurisdictions and their weights.
+  sources: [ledger, census-b11001-2024]
+  blocks:
+    - p: >-
+        Each deal's public money is split among the governments that pay it, by their documented shares, and
+        divided by each one's households in the Census Bureau's 2024 American Community Survey. A household in a
+        city or county also pays its share of the state's part, so the figures add.
+      sources: [census-b11001-2024, ledger]
+    - p: >-
+        A per-household figure is a measure of scale, not a tax bill. Visitor taxes, which paid {{visitors_share}}
+        of public arena capital, fall mostly on people who live elsewhere, and sales taxes fall partly on them.
+      sources: [ledger]
+    - fig: households
+
+sources:
+  path: /sources/
+  kicker: The sources
+  title: >-
+    {{sources_n}} Documents, From City Audits to Team Filings
+  deck: >-
+    Every document this site cites, grouped by who published it: {{sources_government}} from governments,
+    {{sources_team}} from teams, the league or their filings, and {{sources_independent}} from news
+    organizations, researchers and reference works.
+  description: >-
+    The bibliography: every source, with its publisher, date and the date its figures were last checked.
+  sources: [ledger]
+
+fact-check:
+  path: /fact-check/
+  kicker: The fact check
+  title: >-
+    Every Number on This Site and Where It Comes From
+  deck: >-
+    Each figure the site computes, with its value, label, sources and the query that produced it; every number
+    typed into the copy; and the corrections made along the way.
+  description: >-
+    The fact-check ledger: every number on the site, its label and sources, the corrections log and the sites
+    that could not be reached.
+  sources: [ledger]

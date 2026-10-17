@@ -1,0 +1,53 @@
+---
+/** A chart by figure id: its component, its dataset and its data table, drawn wide and narrow inside a Figure. */
+import { getEntry } from 'astro:content';
+import Figure from './Figure.astro';
+import Rebuild from './charts/Rebuild.svelte';
+import Arenas from './charts/Arenas.svelte';
+import ArenaMap from './charts/ArenaMap.svelte';
+import Takeovers from './charts/Takeovers.svelte';
+import WhoPays from './charts/WhoPays.svelte';
+import Households from './charts/Households.svelte';
+import UnitedCenter from './charts/UnitedCenter.svelte';
+import Ongoing from './charts/Ongoing.svelte';
+import Threats from './charts/Threats.svelte';
+import Leases from './charts/Leases.svelte';
+import Columns from './charts/Columns.svelte';
+import { dataset } from '../lib/data';
+import * as T from '../lib/tables';
+import { plain } from '../lib/copy';
+import { ALLOW } from '../lib/content';
+import { FIG_DATA } from '../lib/figures';
+
+interface Props {
+  id: string;
+  numbers?: number[];
+}
+const { id, numbers = [] } = Astro.props;
+const REG: Record<string, { C: any; data: string; table: (rows: any[]) => any; props?: Record<string, unknown> }> = {
+  rebuild: { C: Rebuild, data: 'rebuild-by-year', table: T.rebuildTable },
+  arenas: { C: Arenas, data: 'arenas', table: T.arenasTable },
+  map: { C: ArenaMap, data: 'arena-map', table: T.mapTable },
+  takeovers: { C: Takeovers, data: 'takeovers', table: T.takeoversTable },
+  whopays: { C: WhoPays, data: 'who-pays', table: T.whoPaysTable },
+  households: { C: Households, data: 'households-local', table: T.householdsTable },
+  uc: { C: UnitedCenter, data: 'uc-bills', table: T.ucTable },
+  ongoing: { C: Ongoing, data: 'ongoing', table: T.ongoingTable },
+  threats: { C: Threats, data: 'threats', table: T.threatsTable, props: { deals: dataset('threat-deals').rows } },
+  leases: { C: Leases, data: 'leases', table: T.leasesTable },
+  slc: { C: Columns, data: 'slc-monthly', table: T.slcTable, props: { kind: 'slc' } },
+  wcd: { C: Columns, data: 'wcd-annual', table: T.wcdTable, props: { kind: 'wcd' } },
+};
+const spec = REG[id];
+if (!spec) throw new Error(`no chart registered for figure ${id}`);
+if (spec.data !== FIG_DATA[id]) throw new Error(`figure ${id}: dataset mismatch`);
+const ds = dataset(spec.data);
+const fig = await getEntry('figures', id);
+if (!fig) throw new Error(`figure ${id} is not in src/content/figures.yaml`);
+const label = plain(fig.data.title, { where: `figure ${id} label`, sources: ds.sources, allow: ALLOW });
+const C = spec.C;
+---
+<Figure id={id} dataset={ds} table={spec.table(ds.rows)} numbers={numbers}>
+  <C slot="wide" rows={ds.rows} variant="wide" label={label} {...spec.props} />
+  <C slot="narrow" rows={ds.rows} variant="narrow" label={label} {...spec.props} />
+</Figure>

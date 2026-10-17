@@ -108,6 +108,9 @@
   "council-seattle-city-council-approves-arena-legislation",
   "wiki-sonics-arena"
  ],
+ "base_sources": [
+  "threat-ledger"
+ ],
  "columns": [
   "id",
   "team",

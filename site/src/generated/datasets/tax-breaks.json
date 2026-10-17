@@ -15,6 +15,9 @@
   "dcgis-mapserver",
   "cfo-tafa-capital-one-arena-112624"
  ],
+ "base_sources": [
+  "ledger"
+ ],
  "columns": [
   "team",
   "arena",

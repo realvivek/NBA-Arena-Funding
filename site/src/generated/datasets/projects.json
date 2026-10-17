@@ -36,6 +36,9 @@
   "dccouncil-4-2-24-arena-funding-memo",
   "cfo-fis-downtown-arena-revitalization"
  ],
+ "base_sources": [
+  "ledger"
+ ],
  "columns": [
   "team",
   "arena",

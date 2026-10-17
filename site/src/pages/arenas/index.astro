@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHead from '../../components/PageHead.astro';
+import Blocks from '../../components/Blocks.astro';
+import DataTable from '../../components/DataTable.astro';
+import SourceList from '../../components/SourceList.astro';
+import { referencePage } from '../../lib/page';
+import { dataset } from '../../lib/data';
+import { money, TEAM_CITY } from '../../lib/chart';
+import { labelText } from '../../lib/sources';
+
+const { page, cites, blocks, title } = await referencePage('arenas');
+const arenas = dataset('arenas').rows;
+const items = dataset('items').rows;
+const fields = Object.fromEntries(dataset('arena-fields').rows.map((r: any) => [r.team, r]));
+const leases = Object.fromEntries(dataset('leases').rows.map((r: any) => [r.team, r]));
+const breaks = Object.fromEntries(dataset('tax-breaks').rows.map((r: any) => [r.team, r]));
+const pct = (v: number) => `${Math.round(v)}%`;
+const KIND: Record<string, string> = { construction: 'Construction', purchase: 'Public purchase', renovation: 'Renovation', ongoing: 'Yearly payments', project: 'New arena or district' };
+const STATUS: Record<string, string> = { completed: 'Completed', binding: 'Binding', pending: 'Pending', paid: 'Paid' };
+
+const summary = {
+  columns: [
+    { key: 'arena', label: 'Arena' },
+    { key: 'opened', label: 'Opened', num: true },
+    { key: 'public', label: 'Public (2026 $)', num: true },
+    { key: 'spending', label: 'All spending', num: true },
+    { key: 'share', label: 'Public share', num: true },
+    { key: 'pending', label: 'Pending', num: true },
+    { key: 'breaks', label: 'Tax breaks', num: true },
+    { key: 'lease', label: 'Lease ends', num: true },
+  ],
+  rows: arenas.map((a: any) => ({
+    arena: { text: `${a.arena}, ${TEAM_CITY[a.team]}`, href: `#${a.team.toLowerCase()}` },
+    opened: a.opened,
+    public: money(a.public_2026_m),
+    spending: money(a.spending_2026_m),
+    share: pct(a.public_share_pct),
+    pending: a.pending_2026_m ? money(a.pending_2026_m) : '',
+    breaks: a.tax_breaks_2026_m ? money(a.tax_breaks_2026_m) : '',
+    lease: a.lease_end ?? '',
+  })),
+};
+
+function itemRows(team: string) {
+  const own = items.filter((i: any) => i.team === team);
+  const rows: any[] = [];
+  const ongoing = new Map<string, any[]>();
+  for (const i of own) {
+    if (i.kind === 'ongoing') {
+      if (!ongoing.has(i.description)) ongoing.set(i.description, []);
+      ongoing.get(i.description)!.push(i);
+      continue;
+    }
+    rows.push({
+      what: `${KIND[i.kind]}: ${i.description}`,
+      year: i.year,
+      status: STATUS[i.status] ?? i.status,
+      spending: i.kind === 'purchase' ? '' : money(i.spending_2026_m),
+      nominal: money(i.public_nominal_m),
+      public: i.core ? money(i.public_2026_m) : `${money(i.public_2026_m)} (not counted)`,
+      label: { label: i.public_label },
+      sources: { sources: i.sources },
+    });
+  }
+  for (const [desc, list] of ongoing) {
+    const ys = list.map((i: any) => i.year);
+    const srcs = [...new Set(list.flatMap((i: any) => i.sources))];
+    rows.push({
+      what: `Yearly payments: ${desc}`,
+      year: `${Math.min(...ys)}-${Math.max(...ys)}`,
+      status: `${list.length} years paid`,
+      spending: '',
+      nominal: money(list.reduce((a: number, i: any) => a + i.public_nominal_m, 0)),
+      public: money(list.reduce((a: number, i: any) => a + i.public_2026_m, 0)),
+      label: { label: list[0].public_label },
+      sources: { sources: srcs },
+    });
+  }
+  return rows;
+}
+const itemColumns = [
+  { key: 'what', label: 'Item' },
+  { key: 'year', label: 'Year' },
+  { key: 'status', label: 'Status' },
+  { key: 'spending', label: 'All spending (2026 $)', num: true },
+  { key: 'nominal', label: 'Public (then-year $)', num: true },
+  { key: 'public', label: 'Public (2026 $)', num: true },
+  { key: 'label', label: 'Label' },
+  { key: 'sources', label: 'Sources' },
+];
+const byCity = [...arenas].sort((a: any, b: any) => TEAM_CITY[a.team].localeCompare(TEAM_CITY[b.team]));
+const links = (ids: string[]) => ids;
+---
+<Layout title={title} description={page.description} path="/arenas/">
+  <article class="ref">
+    <PageHead page={page} id="arenas" cites={cites} />
+    <div class="col prose"><Blocks blocks={blocks} /></div>
+    <div class="col-wide">
+      <h2 id="all-arenas">All {arenas.length} arenas</h2>
+      <DataTable columns={summary.columns} rows={summary.rows} caption="Public money in each arena, largest first" />
+      {byCity.map((a: any) => {
+        const f = fields[a.team];
+        const l = leases[a.team];
+        const tb = breaks[a.team];
+        return (
+          <section class="arena" id={a.team.toLowerCase()}>
+            <h2>{a.arena}, {TEAM_CITY[a.team]}</h2>
+            <dl class="facts">
+              <dt>Opened</dt><dd>{a.opened}</dd>
+              <dt>Owner</dt><dd>{a.owner}</dd>
+              <dt>Built for</dt><dd>{money(a.construction_cost_nominal_m)} then, {money(a.construction_cost_2026_m)} in 2026 dollars <span class="label" title={labelText(a.construction_cost_label)}>{a.construction_cost_label}</span>, mainly with {a.built_private ? 'private' : 'public'} money</dd>
+              <dt>Public money</dt><dd>{money(a.public_2026_m)}, {pct(a.public_share_pct)} of {money(a.spending_2026_m)} spent (2026 dollars)</dd>
+              {a.pending_2026_m > 0 && <><dt>Pending</dt><dd>{money(a.pending_2026_m)}, not counted</dd></>}
+              <dt>Lease</dt><dd>{l?.term_and_nonrelocation || 'Team-owned or no public lease'}{l?.outs_penalties_notes && l.outs_penalties_notes !== 'n/a' ? `. ${l.outs_penalties_notes}` : ''}</dd>
+              <dt>Property tax</dt><dd>{a.property_tax_status}</dd>
+            </dl>
+            <DataTable columns={itemColumns} rows={itemRows(a.team)} caption={`Public money items, ${a.arena}`} />
+            {tb && tb.tax_break_desc && (
+              <p class="note"><strong>Tax break.</strong> {tb.tax_break_desc}{tb.tax_break_notes ? `. ${tb.tax_break_notes}` : ''}</p>
+            )}
+            {f.construction_cost_other_reports && <p class="note"><strong>Other reported costs.</strong> {f.construction_cost_other_reports}</p>}
+            {a.notes_and_gaps && <p class="note"><strong>Notes and gaps.</strong> {a.notes_and_gaps}</p>}
+            {(f.lease_sources.length > 0 || f.property_tax_sources.length > 0 || f.tax_break_sources.length > 0) && (
+              <details class="data">
+                <summary>Lease, tax and tax-break sources</summary>
+                <SourceList ids={[...new Set([...f.lease_sources, ...f.property_tax_sources, ...f.tax_break_sources])]} />
+              </details>
+            )}
+          </section>
+        );
+      })}
+      <h2 id="sources-for-this-page">Sources for this page</h2>
+      <SourceList ids={cites.order} numbered />
+    </div>
+  </article>
+</Layout>

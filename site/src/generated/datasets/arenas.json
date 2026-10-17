@@ -79,6 +79,10 @@
   "wiki-xfinity-mobile-arena",
   "scotiabankarena-history"
  ],
+ "base_sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
  "columns": [
   "team",
   "arena",

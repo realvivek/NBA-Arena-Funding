@@ -1,0 +1,14 @@
+---
+import Prose from './Prose.astro';
+import Chart from './Chart.astro';
+import type { Prepared } from '../lib/prepare';
+interface Props {
+  blocks: Prepared[];
+}
+const { blocks } = Astro.props;
+---
+{blocks.map((b) =>
+  b.kind === 'p' ? <Prose html={b.html} sources={b.sources} numbers={b.numbers} /> :
+  b.kind === 'fig' ? <Chart id={b.id} numbers={b.numbers} /> :
+  <h3>{b.text}</h3>
+)}

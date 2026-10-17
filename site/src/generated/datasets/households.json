@@ -86,6 +86,10 @@
   "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
   "wiki-barclays-center"
  ],
+ "base_sources": [
+  "ledger",
+  "census-b11001-2024"
+ ],
  "columns": [
   "team",
   "deal",

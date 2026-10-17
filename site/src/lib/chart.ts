@@ -18,7 +18,7 @@ export function textWidth(s: string, size = FONT, weight = 400): number {
     if (NARROW_CH.test(ch)) em += 0.3;
     else if (WIDE_CH.test(ch)) em += 0.85;
     else if (/[A-Z]/.test(ch)) em += 0.66;
-    else if (/[0-9$]/.test(ch)) em += 0.58;
+    else if (/[0-9$]/.test(ch)) em += 0.62;
     else em += 0.53;
   }
   return em * size * (weight >= 600 ? 1.05 : 1);

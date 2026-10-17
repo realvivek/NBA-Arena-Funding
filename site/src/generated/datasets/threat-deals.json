@@ -5,6 +5,10 @@
   "threat-ledger",
   "fred-cpiaucns"
  ],
+ "base_sources": [
+  "threat-ledger",
+  "fred-cpiaucns"
+ ],
  "columns": [
   "id",
   "deal",

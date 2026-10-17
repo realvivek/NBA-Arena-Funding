@@ -4,6 +4,9 @@
  "sources": [
   "utah-tax-distributions"
  ],
+ "base_sources": [
+  "utah-tax-distributions"
+ ],
  "columns": [
   "month",
   "usd"

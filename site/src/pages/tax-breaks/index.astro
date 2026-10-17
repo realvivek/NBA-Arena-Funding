@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHead from '../../components/PageHead.astro';
+import Blocks from '../../components/Blocks.astro';
+import DataTable from '../../components/DataTable.astro';
+import SourceList from '../../components/SourceList.astro';
+import { referencePage } from '../../lib/page';
+import { dataset } from '../../lib/data';
+import { money, TEAM_CITY } from '../../lib/chart';
+
+const { page, cites, blocks, notes, title } = await referencePage('tax-breaks');
+const breaks = dataset('tax-breaks').rows;
+const fed = dataset('fed-bonds').rows;
+const tb = {
+  columns: [
+    { key: 'arena', label: 'Arena' },
+    { key: 'what', label: 'Break' },
+    { key: 'yearly', label: 'Yearly value', num: true },
+    { key: 'cum', label: 'To date (2026 $)', num: true },
+    { key: 'counted', label: 'In the expanded total' },
+    { key: 'future', label: 'Future value', num: true },
+    { key: 'notes', label: 'Notes' },
+    { key: 'sources', label: 'Sources' },
+  ],
+  rows: breaks.map((r: any) => ({
+    arena: { text: `${r.arena}, ${TEAM_CITY[r.team]}`, href: `/arenas/#${r.team.toLowerCase()}` },
+    what: r.tax_break_desc ?? (r.pilot_note ? `PILOT bonds: ${r.pilot_note}` : ''),
+    yearly: r.tax_break_annual_m ? `${money(r.tax_break_annual_m)} (${r.tax_break_annual_year})` : '',
+    cum: r.tax_break_cumulative_2026_m ? money(r.tax_break_cumulative_2026_m) : r.pilot_2026_m ? money(r.pilot_2026_m) : '',
+    counted: r.tax_break_in_expanded_total === 'Y' || r.pilot_2026_m ? 'Yes' : r.tax_break_in_expanded_total === 'memo' ? 'Memo only' : 'No',
+    future: r.tax_break_future_committed_m ? money(r.tax_break_future_committed_m) : '',
+    notes: r.tax_break_notes ?? r.property_tax_status ?? '',
+    sources: { sources: r.sources },
+  })),
+};
+const ft = {
+  columns: [
+    { key: 'arena', label: 'Arena' },
+    { key: 'year', label: 'Issued', num: true },
+    { key: 'issuer', label: 'Issuer' },
+    { key: 'par', label: 'Par (then-year $)', num: true },
+    { key: 'pv', label: 'Federal cost at issue', num: true },
+    { key: 'pv26', label: 'In 2026 $', num: true },
+  ],
+  rows: fed.map((r: any) => ({
+    arena: `${r.arena}, ${TEAM_CITY[r.team]}`,
+    year: r.year,
+    issuer: r.issuer_series,
+    par: money(r.par_m),
+    pv: money(r.pv_m),
+    pv26: money(r.pv_2026_m),
+  })),
+};
+---
+<Layout title={title} description={page.description} path="/tax-breaks/">
+  <article class="ref">
+    <PageHead page={page} id="tax-breaks" cites={cites} />
+    <div class="col prose"><Blocks blocks={blocks} /></div>
+    <div class="col-wide">
+      <h2 id="every-break">Every break found</h2>
+      <DataTable columns={tb.columns} rows={tb.rows} caption="Property-tax breaks and taxes diverted to arena debt" />
+      <h2 id="federal">The federal cost of tax-exempt arena bonds</h2>
+      <div class="note"><Blocks blocks={notes} /></div>
+      <DataTable columns={ft.columns} rows={ft.rows} caption="Federal cost by bond issue" />
+      <h2 id="sources-for-this-page">Sources for this page</h2>
+      <SourceList ids={cites.order} numbered />
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHead from '../../components/PageHead.astro';
+import Blocks from '../../components/Blocks.astro';
+import DataTable from '../../components/DataTable.astro';
+import SourceList from '../../components/SourceList.astro';
+import { referencePage } from '../../lib/page';
+import { dataset } from '../../lib/data';
+import { money } from '../../lib/chart';
+
+const { page, cites, blocks, title } = await referencePage('threats');
+const threats = dataset('threats').rows;
+const deals = dataset('threat-deals').rows;
+const left = dataset('left-behind').rows;
+const CLASS: Record<string, string> = {
+  explicit: 'Explicit', implied: 'Implied', official_cited: 'Cited by an official', lure_only: 'Another city luring a team', unclear: 'Unclear', none: 'None found',
+};
+const ledger = {
+  columns: [
+    { key: 'id', label: 'ID' },
+    { key: 'team', label: 'Team' },
+    { key: 'period', label: 'Period' },
+    { key: 'cls', label: 'Threat' },
+    { key: 'said', label: 'What was said or done' },
+    { key: 'after', label: 'Public money that followed' },
+    { key: 'lag', label: 'Months', num: true },
+    { key: 'outcome', label: 'Outcome' },
+    { key: 'label', label: 'Label' },
+    { key: 'sources', label: 'Sources' },
+  ],
+  rows: threats.map((r: any) => ({
+    __id: r.id.toLowerCase(),
+    id: r.id,
+    team: r.team,
+    period: r.period,
+    cls: CLASS[r.threat_class] ?? r.threat_class,
+    said: r.said_or_done,
+    after: r.money_after ?? '',
+    lag: r.lag_months != null ? r.lag_months.toFixed(1) : '',
+    outcome: r.outcome,
+    label: { label: r.label.split(' ')[0] },
+    sources: { sources: r.sources },
+  })),
+};
+const comparison = {
+  columns: [
+    { key: 'id', label: 'ID' },
+    { key: 'deal', label: 'Deal' },
+    { key: 'grp', label: 'Group' },
+    { key: 'year', label: 'Year', num: true },
+    { key: 'public', label: 'Public (2026 $)', num: true },
+    { key: 'share', label: 'Public share', num: true },
+  ],
+  rows: deals.map((d: any) => ({
+    id: { text: d.id, href: `#${d.id.toLowerCase()}` },
+    deal: d.deal,
+    grp: d.grp === 'threat' ? 'After a threat' : 'No threat',
+    year: d.year,
+    public: money(d.public_2026_m),
+    share: d.share_pct != null ? `${Math.round(d.share_pct)}%` : '',
+  })),
+};
+const lb = {
+  columns: [
+    { key: 'city', label: 'City' },
+    { key: 'team', label: 'Team that left' },
+    { key: 'year', label: 'Left', num: true },
+    { key: 'what', label: 'Public obligation' },
+    { key: 'amount', label: 'Amount (nominal)', num: true },
+    { key: 'who', label: 'Who paid' },
+    { key: 'sources', label: 'Sources' },
+  ],
+  rows: left.map((r: any) => ({
+    city: r.city,
+    team: r.team_left,
+    year: r.year_left,
+    what: r.public_obligation,
+    amount: r.amount_usd_m != null ? money(r.amount_usd_m) : '',
+    who: r.who_paid,
+    sources: { sources: r.sources },
+  })),
+};
+---
+<Layout title={title} description={page.description} path="/threats/">
+  <article class="ref">
+    <PageHead page={page} id="threats" cites={cites} />
+    <div class="col prose"><Blocks blocks={blocks} /></div>
+    <div class="col-wide">
+      <h2 id="comparison">Deals with and without a prior threat</h2>
+      <DataTable columns={comparison.columns} rows={comparison.rows} caption="Deals compared" />
+      <h2 id="ledger">The threat ledger</h2>
+      <DataTable columns={ledger.columns} rows={ledger.rows} caption="Every episode, 1993 to 2026" />
+      <h2 id="left-behind">Cities that kept paying after a team left</h2>
+      <DataTable columns={lb.columns} rows={lb.rows} caption="Public obligations that outlasted the team" />
+      <h2 id="sources-for-this-page">Sources for this page</h2>
+      <SourceList ids={cites.order} numbered />
+    </div>
+  </article>
+</Layout>

@@ -24,6 +24,7 @@ CITED = {
     'data/threats/threat_ledger.csv': ['sources'],
     'data/threats/left_behind.csv': ['sources'],
     'data/inputs/arena_coordinates.csv': ['source'],
+    'data/inputs/research_claims.csv': ['source'],
 }
 ORIGINS = ('government', 'court', 'team_or_league', 'independent')
 GENERIC = {'download', 'document', 'file', 'content', 'show', 'view', 'index', 'detail', 'details', 'default', 'pdf', 'page',

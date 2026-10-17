@@ -5,6 +5,7 @@ export interface Dataset<R = Record<string, any>> {
   id: string;
   title: string;
   sources: string[];
+  base_sources: string[];
   columns: string[];
   rows: R[];
   note: string;

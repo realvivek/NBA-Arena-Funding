@@ -152,6 +152,9 @@
   "dccouncil-4-2-24-arena-funding-memo",
   "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
  ],
+ "base_sources": [
+  "ledger"
+ ],
  "columns": [
   "team",
   "item_id",

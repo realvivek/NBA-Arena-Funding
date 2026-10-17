@@ -498,6 +498,49 @@
    }
   },
   {
+   "name": "inputs-research-claims",
+   "type": "table",
+   "path": "inputs/research_claims.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "key",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true
+      }
+     },
+     {
+      "name": "value",
+      "type": "integer"
+     },
+     {
+      "name": "quote",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^https?://.+"
+      }
+     }
+    ],
+    "primaryKey": [
+     "key"
+    ]
+   }
+  },
+  {
    "name": "labor-contract-cba-arena-clauses",
    "type": "table",
    "path": "labor_contract/cba_arena_clauses.csv",

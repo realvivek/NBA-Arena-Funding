@@ -329,6 +329,7 @@
    "team": "ORL Magic"
   }
  ],
+ "lag_window_months": 24,
  "lag_within_24": 10,
  "no_new_money": [
   "E11",

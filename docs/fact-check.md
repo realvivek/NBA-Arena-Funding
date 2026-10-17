@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-99 figures, 20 datasets, 312 sources. Ledger as of 2026-10-16.
+108 figures, 21 datasets, 312 sources. Ledger as of 2026-10-16.
 
 ## Figures
 
@@ -376,6 +376,46 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
 - Method: `select sum(i.public_2026_m) from items i join arenas a using (team) where a.built_privately_majority = 'Y' and i.kind = 'construction' and i.team in (select team from items where kind in ('renovation', 'purchase') and (core or status = 'pending') and public_2026_m > 0)`
 
+### `was_1997_public`: District and federal money for Capital One Arena's land, site work and Metro connection, 1997
+
+- Shown as: $156 million ($156M)
+- Value: 155.996 usd_m, 2026 dollars
+- Label: (b/a)
+- Sources: [District of Columbia: Final Status on the Sports Arena (GAO/AIMD-98-223)](https://www.govinfo.gov/content/pkg/GAOREPORTS-AIMD-98-223/pdf/GAOREPORTS-AIMD-98-223.pdf) (government); [Fiscal Impact Statement: Arena Tax Revenue Clarification Emergency Act of 2003](https://app.cfo.dc.gov/services/fiscal_impact/pdf/fall03/Arena%20Tax%20Revenue%20Clarification.pdf) (government)
+- Method: `select public_2026_m from items where item_id = 'WAS-construction'`
+
+### `was_renovation`: DC money to renovate Capital One Arena under the 2024 deal
+
+- Shown as: $428 million ($428M)
+- Value: 427.5 usd_m, face value
+- Label: (b/a)
+- Sources: [Fiscal Impact Statement: Downtown Arena Revitalization Emergency Act of 2024 (and accompanying permanent version)](https://app.cfo.dc.gov/services/fiscal_impact/pdf/spring09/FIS%20Downtown%20Arena%20Revitalization.pdf) (government); [Request to Place Emergency Measures on the Agenda for the April 2, 2024 Legislative Meeting (Downtown Arena Financing Partnership)](https://dccouncil.gov/wp-content/uploads/2024/03/4.2.24-Arena-Funding-MEMO.pdf) (government); [Take a look at the newest renderings of the Capital One Arena renovations](https://wtop.com/dc/2026/08/take-a-look-at-the-newest-renderings-of-the-capital-one-arena-renovations/) (independent)
+- Method: `select public_2026_m from items where item_id = 'WAS-renovation-2'`
+
+### `por_1995_public`: City of Portland money for the Rose Garden (now Moda Center), 1995
+
+- Shown as: $75 million ($75M)
+- Value: 75.0877 usd_m, 2026 dollars
+- Label: (c/a)
+- Sources: [Moda Center](https://en.wikipedia.org/wiki/Moda_Center) (independent); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government)
+- Method: `select public_2026_m from items where item_id = 'POR-construction'`
+
+### `por_purchase`: What Portland paid for the land under the Moda Center, 2024
+
+- Shown as: $7.5 million ($7.5M)
+- Value: 7.53837 usd_m, 2026 dollars
+- Label: (b/a)
+- Sources: [City of Portland, Oregon Annual Comprehensive Financial Report for the Fiscal Year Ended June 30, 2024](https://www.portland.gov/accounting/documents/2024-annual-comprehensive-financial-report/download) (government); [Proposed City Purchase of Moda Center Would Trigger State’s Most Exclusive Tax Break](https://www.wweek.com/news/2024/02/28/proposed-city-purchase-of-moda-center-would-trigger-states-most-exclusive-tax-break/) (independent)
+- Method: `select public_2026_m from items where item_id = 'POR-purchase'`
+
+### `min_purchase`: Minneapolis's purchase of Target Center, 1995
+
+- Shown as: $119 million ($119M)
+- Value: 118.834 usd_m, 2026 dollars
+- Label: (b/a)
+- Sources: [Comparison of Selected Governance and Operations Issues at Minnesota Sports Facilities (Special Review)](https://www.leg.state.mn.us/docs/2017/other/170786.pdf) (government); [Stadium Screening Committee meeting materials, December 9, 2003](https://www.leg.mn.gov/docs/2004/other/040634/Stadium/www.stadium.state.mn.us/meetings/031209/031209_agenda.pdf) (government)
+- Method: `select public_2026_m from items where item_id = 'MIN-purchase'`
+
 ### `residents_share`: Share of public capital from taxes residents mostly pay
 
 - Shown as: 44.9 percent (44.9%)
@@ -555,6 +595,15 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Note: New-money bond issues only, at a 28 percent marginal tax rate (the Gayer, Drukker and Gold method). Paid by all U.S. taxpayers; not added to any total.
 - Method: `select sum(fed_tax_expenditure_pv_2026_m) from arenas`
 
+### `fed_tau`: Marginal tax rate used for the federal cost of tax-exempt bonds
+
+- Shown as: 28 percent (28%)
+- Value: 28 pct
+- Label: (a)
+- Sources: [Tax-Exempt Municipal Bonds and the Financing of Professional Sports Stadiums](https://www.brookings.edu/wp-content/uploads/2016/09/gayerdrukkergold_stadiumsubsidies_090816.pdf) (independent)
+- Note: The lower of the two rates in the bond file; the 35 percent rate is shown there as a sensitivity.
+- Method: `select 100 * min(tau) from fed_bond_cost`
+
 ### `tax_breaks_added`: Tax breaks added to the expanded total
 
 - Shown as: $1.76 billion ($1.76B)
@@ -658,6 +707,14 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Label: (a)
 - Sources: [Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats) (independent)
 - Method: `select v from comparison where k = 'lag_within_24'`
+
+### `lag_window`: Window used to count approvals that came soon after a threat
+
+- Shown as: 24 (24)
+- Value: 24 count, months
+- Label: (a)
+- Sources: [Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats) (independent)
+- Method: `select v from comparison where k = 'lag_window_months'`
 
 ### `threat_deals_n`: Deals that followed a threat
 
@@ -771,6 +828,22 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Financial Statement Audit Report of Capital Improvement Board of Managers, Marion County, Indiana, January 1, 2023 to December 31, 2023 (Report 83950A)](https://www.in.gov/sboa/WebReports/83950A.pdf) (government)
 - Method: `Entered by hand; confirmed against data/authorities/lease_clock.csv (team=IND, column outs_penalties_notes: "up to $750M")`
 
+### `research_studies`: Studies covered by the 2023 survey of research on sports venues and local economies
+
+- Shown as: 130 (130)
+- Value: 130 count, more than
+- Label: (b)
+- Sources: [The impact of professional sports franchises and venues on local economies: A comprehensive survey](https://doi.org/10.1111/joes.12533) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=studies, column quote: "more than 130 studies")`
+
+### `research_years`: Years of research the survey covers
+
+- Shown as: 30 (30)
+- Value: 30 count, more than
+- Label: (b)
+- Sources: [The impact of professional sports franchises and venues on local economies: A comprehensive survey](https://doi.org/10.1111/joes.12533) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=years, column quote: "spans over 30 years")`
+
 ### `cpi_base`: 2026 CPI-U base (January-August average)
 
 - Shown as: 331.655 (331.655)
@@ -787,13 +860,13 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from items`
 
-### `sources_n`: Sources in the bibliography
+### `sources_n`: Documents in the bibliography (not counting this site's own ledgers)
 
-- Shown as: 312 (312)
-- Value: 312 count
+- Shown as: 309 (309)
+- Value: 309 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
-- Method: `select count(*) from sources`
+- Method: `select count(*) from sources where publisher <> 'This site'`
 
 ### `sources_government`: Government sources
 
@@ -801,7 +874,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Value: 109 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
-- Method: `select count(*) from sources where origin = 'government'`
+- Method: `select count(*) from sources where origin = 'government' and publisher <> 'This site'`
 
 ### `sources_court`: Court sources
 
@@ -809,7 +882,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Value: 0 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
-- Method: `select count(*) from sources where origin = 'court'`
+- Method: `select count(*) from sources where origin = 'court' and publisher <> 'This site'`
 
 ### `sources_team`: Team or league sources
 
@@ -817,15 +890,15 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Value: 14 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
-- Method: `select count(*) from sources where origin = 'team_or_league'`
+- Method: `select count(*) from sources where origin = 'team_or_league' and publisher <> 'This site'`
 
 ### `sources_independent`: Independent sources
 
-- Shown as: 189 (189)
-- Value: 189 count
+- Shown as: 186 (186)
+- Value: 186 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
-- Method: `select count(*) from sources where origin = 'independent'`
+- Method: `select count(*) from sources where origin = 'independent' and publisher <> 'This site'`
 
 ## Datasets behind the charts and tables
 
@@ -838,6 +911,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 23 rows; 36 sources.
 - `who-pays`: Public capital money by funding stream. 9 rows; 2 sources.
 - `households`: Public money in the largest deals, per household in the jurisdictions that pay. 23 rows; 83 sources.
+- `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 16 rows; 83 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.
 - `uc-bills`: United Center property-tax bills, with and without the 1989 valuation formula. 23 rows; 6 sources. Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.
 - `ongoing`: Yearly public payments to teams or arena operators. 118 rows; 25 sources.
 - `threats`: Relocation threats and what followed. 49 rows; 105 sources.

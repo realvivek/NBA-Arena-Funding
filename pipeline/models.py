@@ -108,7 +108,8 @@ class Dataset(BaseModel):
     model_config = ConfigDict(extra='forbid')
     id: str
     title: str
-    sources: list[str] = Field(min_length=1)
+    sources: list[str] = Field(min_length=1)  # every source behind the rows
+    base_sources: list[str] = Field(min_length=1)  # the dataset's own sources, without each row's
     columns: list[str]
     rows: list[dict[str, Union[str, int, float, bool, None, list]]]
     note: str

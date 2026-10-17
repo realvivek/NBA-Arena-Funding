@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHead from '../../components/PageHead.astro';
+import Blocks from '../../components/Blocks.astro';
+import SourceList from '../../components/SourceList.astro';
+import { referencePage } from '../../lib/page';
+
+const { page, cites, blocks, title } = await referencePage('taxes');
+---
+<Layout title={title} description={page.description} path="/taxes/">
+  <article class="ref">
+    <PageHead page={page} id="taxes" cites={cites} />
+    <div class="col prose"><Blocks blocks={blocks} /></div>
+    <div class="col">
+      <h2 id="sources-for-this-page">Sources for this page</h2>
+      <SourceList ids={cites.order} numbered />
+    </div>
+  </article>
+</Layout>

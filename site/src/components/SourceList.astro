@@ -15,7 +15,7 @@ const groups = group
 {groups.map((g) => (
   <>
     {g.origin && <h3>{ORIGIN_LABEL[g.origin]} ({g.items.length})</h3>}
-    <ol class="source-group">
+    <ol class={numbered ? 'source-group numbered' : 'source-group'}>
       {g.items.map(({ n, s }) => (
         <li id={`src-${s.id}`} value={numbered ? n : undefined}>
           <a class="s-title" href={s.url} rel="noopener">{s.title}</a>

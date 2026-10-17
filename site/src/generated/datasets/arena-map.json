@@ -34,6 +34,9 @@
   "wiki-xfinity-mobile-arena",
   "wiki-scotiabank-arena"
  ],
+ "base_sources": [
+  "ledger"
+ ],
  "columns": [
   "team",
   "arena",

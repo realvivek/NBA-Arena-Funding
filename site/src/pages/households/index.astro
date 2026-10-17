@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHead from '../../components/PageHead.astro';
+import Blocks from '../../components/Blocks.astro';
+import DataTable from '../../components/DataTable.astro';
+import SourceList from '../../components/SourceList.astro';
+import { referencePage } from '../../lib/page';
+import { dataset } from '../../lib/data';
+import { money, dollars, TEAM_CITY } from '../../lib/chart';
+
+const { page, cites, blocks, title } = await referencePage('households');
+const rows = dataset('households').rows;
+const table = {
+  columns: [
+    { key: 'team', label: 'Arena city' },
+    { key: 'deal', label: 'Deal' },
+    { key: 'amount', label: 'Public money (2026 $)', num: true },
+    { key: 'where', label: 'Paying jurisdiction' },
+    { key: 'share', label: 'Share', num: true },
+    { key: 'hh', label: 'Households', num: true },
+    { key: 'per', label: 'Per household', num: true },
+    { key: 'note', label: 'Who pays' },
+  ],
+  rows: rows.map((r: any) => ({
+    team: TEAM_CITY[r.team],
+    deal: r.deal,
+    amount: money(r.amount_2026_m),
+    where: r.jurisdiction,
+    share: `${Math.round(100 * r.share)}%`,
+    hh: r.households.toLocaleString('en-US'),
+    per: dollars(r.per_household_2026),
+    note: r.note,
+  })),
+};
+---
+<Layout title={title} description={page.description} path="/households/">
+  <article class="ref">
+    <PageHead page={page} id="households" cites={cites} />
+    <div class="col prose"><Blocks blocks={blocks} /></div>
+    <div class="col-wide">
+      <h2 id="every-jurisdiction">Every paying jurisdiction</h2>
+      <DataTable columns={table.columns} rows={table.rows} caption="Public money per household, by paying jurisdiction" />
+      <h2 id="sources-for-this-page">Sources for this page</h2>
+      <SourceList ids={cites.order} numbered />
+    </div>
+  </article>
+</Layout>

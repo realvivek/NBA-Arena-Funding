@@ -1,5 +1,6 @@
 # Chart frames. Titles state the finding; numbers are tokens from pipeline/stats.yaml.
 # Text fields are folded block scalars (>-) so colons and braces need no quoting.
+
 rebuild:
   title: >-
     Since 2014, most public arena money has gone to existing arenas
@@ -18,3 +19,151 @@ rebuild:
       {{pending_existing}} pending for Memphis and Portland, {{new_arenas_committed}} committed and
       {{sas_pending}} pending for new arenas in Oklahoma City and San Antonio, and {{uta_district}} for the
       district around Salt Lake City's arena.
+
+arenas:
+  title: >-
+    The {{top_n}} arenas with the most public money hold {{top10_share}} of it
+  sub: >-
+    Public and private money spent on each of the {{arenas_n}} arenas in use, in 2026 dollars, with each arena's
+    public share of the total
+  dataset: arenas
+  legend:
+    - { label: Public money, key: public }
+    - { label: Tax breaks and taxes diverted to arena debt, key: public-soft }
+    - { label: Private money, key: private }
+  notes:
+    - >-
+      Public money includes construction, purchases, completed or binding renovations and yearly payments.
+      Shares count public money only; the tax breaks are shown but not included in the share. Private money is
+      construction and renovation spending the public did not pay.
+
+map:
+  title: >-
+    The largest public shares are in the South and the middle of the country
+  sub: >-
+    Each arena's public money, in 2026 dollars, and the public share of everything spent on it
+  dataset: arena-map
+  notes:
+    - >-
+      Circles are sized by public money. Arenas with no public money found are shown as small rings.
+
+takeovers:
+  title: >-
+    Built with private money, then bought or rebuilt with public money
+  sub: >-
+    The {{takeover_n}} arenas built mainly with private money that later got public money to buy or renovate
+    them, in 2026 dollars
+  dataset: takeovers
+  legend:
+    - { label: Public money, key: public }
+    - { label: Private money, key: private }
+    - { label: Pending, key: pending }
+  notes:
+    - >-
+      Construction is the arena's cost when it opened. Later money is public purchases and renovations, completed,
+      binding or pending; private money for later renovations is not shown.
+
+whopays:
+  title: >-
+    Visitor taxes paid {{visitors_share}} of public arena capital
+  sub: >-
+    Public money for construction, purchases and renovations, by funding stream, grouped by who mostly pays, in
+    2026 dollars
+  dataset: who-pays
+  legend:
+    - { label: Mostly visitors, key: orange }
+    - { label: Mostly residents, key: public }
+    - { label: Land or not documented, key: other }
+  notes:
+    - >-
+      Each dollar is assigned to one stream, as documented in the arena's records. Yearly payments to teams and
+      operators, {{ongoing_public}}, are not included.
+
+households:
+  title: >-
+    In Salt Lake City, the arena deal comes to {{hh_uta}} per household
+  sub: >-
+    Public money in the largest deals, per household where each arena is, adding the shares of every government
+    that pays, in 2026 dollars
+  dataset: households-local
+  legend:
+    - { label: City or county share, key: public }
+    - { label: State share, key: public-soft }
+  notes:
+    - >-
+      Households are from the Census Bureau's 2024 American Community Survey. Salt Lake City's figure is an upper
+      bound, because people who live elsewhere pay part of the city's sales tax. In Orlando and San Antonio the
+      money comes mostly from visitor taxes.
+
+uc:
+  title: >-
+    A 1989 formula held the United Center's tax bill to {{uc_formula_bill_min}} to {{uc_formula_bill_max}} a year
+  sub: >-
+    Property tax billed on the United Center, and the estimated bill without the stadium valuation formula,
+    nominal dollars
+  dataset: uc-bills
+  legend:
+    - { label: Bill paid, key: line-public }
+    - { label: Estimated bill without the formula, key: line-other }
+  notes:
+    - >-
+      The estimate applies each year's equalization factor and tax rate to the Assessor's first value after the
+      formula ended. Bills for 2002 to 2005 are computed from the Board of Review value, the equalization factor
+      and the tax rate; the statute's minimum tax applied from 2005 to 2008.
+
+ongoing:
+  title: >-
+    Indianapolis has paid the Pacers {{ind_yearly_min}} to {{ind_yearly_max}} a year since 2015
+  sub: >-
+    Documented yearly public payments to teams or arena operators, in 2026 dollars
+  dataset: ongoing
+  notes:
+    - >-
+      Each column is one year's payments. Years with no bar have no record in the documents reached, which does
+      not always mean nothing was paid.
+
+threats:
+  title: >-
+    {{threats_same_city:cap}} of {{threats_counted}} relocation threats were followed by public money in the same city
+  sub: >-
+    Months from a threat to the approval of public money, for the {{lag_n}} cases dated at both ends, and the
+    public share of deals with and without a prior threat
+  dataset: threats
+  legend:
+    - { label: Threat, key: orange }
+    - { label: Public money approved, key: public }
+  notes:
+    - >-
+      A threat is a public statement, sale term or lease clause by an owner or the league that tied a team's
+      future in a city to public money. Medians of public share are for deals with a known total cost.
+
+leases:
+  title: >-
+    {{leases_by_2036:cap}} NBA leases end by 2036
+  sub: >-
+    The year each current arena lease or use agreement ends, with public money pending
+  dataset: leases
+  legend:
+    - { label: Ends by 2036, key: public }
+    - { label: Ends later, key: other }
+  notes:
+    - >-
+      Arenas their teams own, and arenas whose lease term is not public, are not shown.
+
+slc:
+  title: >-
+    Salt Lake City's arena sales tax, month by month
+  sub: >-
+    Final monthly distributions of the city's arena and district sales tax, nominal dollars
+  dataset: slc-monthly
+
+wcd:
+  title: >-
+    The Wisconsin Center District's taxes on hotel rooms, meals and car rentals
+  sub: >-
+    Taxes collected for the district that owns Fiserv Forum, by source, nominal dollars
+  dataset: wcd-annual
+  legend:
+    - { label: Hotel rooms, key: public }
+    - { label: Food and drink, key: orange }
+    - { label: Car rentals, key: aqua }

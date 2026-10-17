@@ -397,6 +397,47 @@ stats:
   label: a
   sources: [ledger, fred-cpiaucns]
 
+- key: was_1997_public
+  title: District and federal money for Capital One Arena's land, site work and Metro connection, 1997
+  sql: select public_2026_m from items where item_id = 'WAS-construction'
+  unit: usd_m
+  basis: 2026 dollars
+  label_sql: select conv_label(public_label, cpi_factor) from items where item_id = 'WAS-construction'
+  sources_sql: select source_id from item_sources where item_id = 'WAS-construction' and role = 'public' order by ord
+
+- key: was_renovation
+  title: DC money to renovate Capital One Arena under the 2024 deal
+  sql: select public_2026_m from items where item_id = 'WAS-renovation-2'
+  unit: usd_m
+  digits: 0
+  basis: face value
+  label_sql: select public_label from items where item_id = 'WAS-renovation-2'
+  sources_sql: select source_id from item_sources where item_id = 'WAS-renovation-2' and role = 'public' order by ord
+
+- key: por_1995_public
+  title: City of Portland money for the Rose Garden (now Moda Center), 1995
+  sql: select public_2026_m from items where item_id = 'POR-construction'
+  unit: usd_m
+  basis: 2026 dollars
+  label_sql: select conv_label(public_label, cpi_factor) from items where item_id = 'POR-construction'
+  sources_sql: select source_id from item_sources where item_id = 'POR-construction' and role = 'public' order by ord
+
+- key: por_purchase
+  title: What Portland paid for the land under the Moda Center, 2024
+  sql: select public_2026_m from items where item_id = 'POR-purchase'
+  unit: usd_m
+  basis: 2026 dollars
+  label_sql: select conv_label(public_label, cpi_factor) from items where item_id = 'POR-purchase'
+  sources_sql: select source_id from item_sources where item_id = 'POR-purchase' and role = 'public' order by ord
+
+- key: min_purchase
+  title: Minneapolis's purchase of Target Center, 1995
+  sql: select public_2026_m from items where item_id = 'MIN-purchase'
+  unit: usd_m
+  basis: 2026 dollars
+  label_sql: select conv_label(public_label, cpi_factor) from items where item_id = 'MIN-purchase'
+  sources_sql: select source_id from item_sources where item_id = 'MIN-purchase' and role = 'public' order by ord
+
 # ------------------------------------------------------------------ who pays
 - key: residents_share
   title: Share of public capital from taxes residents mostly pay
@@ -598,6 +639,15 @@ stats:
   sources: [ledger, gayer-2016]
   note: New-money bond issues only, at a 28 percent marginal tax rate (the Gayer, Drukker and Gold method). Paid by all U.S. taxpayers; not added to any total.
 
+- key: fed_tau
+  title: Marginal tax rate used for the federal cost of tax-exempt bonds
+  sql: select 100 * min(tau) from fed_bond_cost
+  unit: pct
+  digits: 0
+  label: a
+  sources: [gayer-2016]
+  note: The lower of the two rates in the bond file; the 35 percent rate is shown there as a sensitivity.
+
 - key: tax_breaks_added
   title: Tax breaks added to the expanded total
   sql: |
@@ -699,6 +749,14 @@ stats:
   title: Of those, approvals within 24 months
   sql: select v from comparison where k = 'lag_within_24'
   unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: lag_window
+  title: Window used to count approvals that came soon after a threat
+  sql: select v from comparison where k = 'lag_window_months'
+  unit: count
+  basis: months
   label: a
   sources: [threat-ledger]
 
@@ -817,6 +875,25 @@ stats:
   label: b
   sources_sql: select source_id from lease_sources where team = 'IND' order by ord
 
+# ------------------------------------------------------------------ the research
+- key: research_studies
+  title: Studies covered by the 2023 survey of research on sports venues and local economies
+  value: 130
+  evidence: {file: data/inputs/research_claims.csv, where: {key: studies}, column: quote, contains: 'more than 130 studies'}
+  unit: count
+  basis: more than
+  label: b
+  sources: [bradbury-2023]
+
+- key: research_years
+  title: Years of research the survey covers
+  value: 30
+  evidence: {file: data/inputs/research_claims.csv, where: {key: years}, column: quote, contains: 'spans over 30 years'}
+  unit: count
+  basis: more than
+  label: b
+  sources: [bradbury-2023]
+
 # ------------------------------------------------------------------ how this was made
 - key: cpi_base
   title: 2026 CPI-U base (January-August average)
@@ -834,36 +911,36 @@ stats:
   sources: [ledger]
 
 - key: sources_n
-  title: Sources in the bibliography
-  sql: select count(*) from sources
+  title: Documents in the bibliography (not counting this site's own ledgers)
+  sql: select count(*) from sources where publisher <> 'This site'
   unit: count
   label: a
   sources: [ledger]
 
 - key: sources_government
   title: Government sources
-  sql: select count(*) from sources where origin = 'government'
+  sql: select count(*) from sources where origin = 'government' and publisher <> 'This site'
   unit: count
   label: a
   sources: [ledger]
 
 - key: sources_court
   title: Court sources
-  sql: select count(*) from sources where origin = 'court'
+  sql: select count(*) from sources where origin = 'court' and publisher <> 'This site'
   unit: count
   label: a
   sources: [ledger]
 
 - key: sources_team
   title: Team or league sources
-  sql: select count(*) from sources where origin = 'team_or_league'
+  sql: select count(*) from sources where origin = 'team_or_league' and publisher <> 'This site'
   unit: count
   label: a
   sources: [ledger]
 
 - key: sources_independent
   title: Independent sources
-  sql: select count(*) from sources where origin = 'independent'
+  sql: select count(*) from sources where origin = 'independent' and publisher <> 'This site'
   unit: count
   label: a
   sources: [ledger]

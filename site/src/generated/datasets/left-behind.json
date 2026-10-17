@@ -22,6 +22,9 @@
   "yahoo-kansas-city-may-spend-millions-100000159",
   "bondbuyer-kansas-city-on-track-to-sell-53m-for-performing"
  ],
+ "base_sources": [
+  "threat-ledger"
+ ],
  "columns": [
   "city",
   "arena",

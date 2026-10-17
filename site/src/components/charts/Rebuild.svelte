@@ -34,7 +34,7 @@
     `${when}: ${money(v)} of public money for ${kind === 'new' ? 'new arenas' : 'existing arenas'} (${teams.join(', ')})`;
 
   // wide layout
-  const W = WIDE, H = 330, ml = 48, mr = 10, mt = 46, mb = 30;
+  const W = WIDE, H = 330, ml = 58, mr = 10, mt = 46, mb = 30;
   const ymaxW = Math.max(...byYear.map((d) => d.new + d.existing));
   const yTop = Math.ceil(ymaxW / 250) * 250;
   const since = 2014;
@@ -42,7 +42,7 @@
   const build = STATS.build_since_2014.display.short;
 
   // narrow layout
-  const NW = NARROW, rowH = 34, nmt = 6, nml = 58, nmr = 58;
+  const NW = NARROW, rowH = 34, nmt = 6, nml = 70, nmr = 58;
   const NH = nmt + bins.length * rowH + 4;
   const xmaxN = Math.max(...bins.map((d) => d.new + d.existing));
 </script>
