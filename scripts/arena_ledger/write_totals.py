@@ -159,11 +159,15 @@ D=[
  ('NOP','Smoothie King Center',det['NOP']['core26'],[('04000US22',1.0)],'State of Louisiana (LSED/state)'),
  ('SAC','Golden 1 Center',det['SAC']['core26'],[('16000US0664000',1.0)],'City of Sacramento general fund/parking'),
 ]
+hh_rows=[]
 for team,desc,amt,geos,note in D:
     parts=[];
     for g,share in geos:
         nm,n=HH[g]; parts.append(f"{nm} {n:,} hh -> ${amt*share*1e6/n:,.0f}/hh (share {share:.0%})")
+        hh_rows.append(dict(team=team, deal=desc, amount_2026_m=round(amt,6), geo_id=g, jurisdiction=nm, households=n, share=round(share,6), per_household_2026=round(amt*share*1e6/n,2), note=note))
     P(f"{team}: {desc}: {f(amt)} | "+' ; '.join(parts)+f" | {note}")
+with open(DATA+'/ledger/households.csv','w',newline='') as fh:
+    w=csv.DictWriter(fh, fieldnames=list(hh_rows[0].keys()), lineterminator='\n'); w.writeheader(); w.writerows(hh_rows)
 P('')
 P('H. LABELS AND SOURCING')
 P('-'*78)

@@ -46,6 +46,17 @@ HH={k:(hh['geography'][k]['name'], int(v['B11001']['estimate']['B11001001'])) fo
 
 def r1(x):
     return '' if x is None else round(x,1)
+def r6(x):
+    return round(x,6)
+
+# normalized rows for the site pipeline: one row per public-money item, and its funding streams
+items=[]; ibuckets=[]
+def add_item(T, item_id, kind, desc, year, status, in_core, spend_n, pub_n, fac, cost_label, public_label, cost_source, public_source, note='', buckets=None):
+    items.append(OrderedDict(team=T, item_id=item_id, kind=kind, desc=desc, year=year, status=status, in_core=in_core,
+        spending_nominal_m=r6(spend_n), public_nominal_m=r6(pub_n), cpi_factor=r6(fac), spending_2026_m=r6(spend_n*fac), public_2026_m=r6(pub_n*fac),
+        cost_label=cost_label, public_label=public_label, cost_source=cost_source, public_source=public_source, note=note))
+    for b,v in (buckets or {}).items():
+        ibuckets.append(OrderedDict(item_id=item_id, team=T, bucket=b, public_nominal_m=r6(v), public_2026_m=r6(v*fac)))
 
 rows=[]; agg=defaultdict(float); aggp=defaultdict(float); bucket26=defaultdict(float); bucket26_priv=defaultdict(float)
 PRIVATE_BUILT={'GSW','LAC','BOS','NYK','CHI','LAL','DEN','PHI','TOR','BKN','DET','WAS','UTA','POR'}
@@ -140,6 +151,20 @@ for t in TEAMS:
         notes_and_gaps=''
     )
     rows.append(row)
+    add_item(T, f'{T}-construction', 'construction', f"{t['arena']} construction", yr, 'completed', 'Y', con_total, pubn, fac,
+             t['cost_label'], t['pub_label'], t['cost_src'], t['pub_src'], t['pub_note'], pub)
+    if acq:
+        add_item(T, f'{T}-purchase', 'purchase', f"Public purchase of {t['arena']}", acq['year'], 'completed', 'Y', 0.0, acqn, f26(acq['year']),
+                 '', acq['label'], '', acq['src'], acq['note'], {acq['bucket']:acqn})
+    for j,r in enumerate(t.get('renos',[]),1):
+        core='Y' if r['status'] in ('completed','binding') else 'N'
+        add_item(T, f'{T}-renovation-{j}', 'renovation', r['desc'], r['cpi_year'], r['status'], core, r['total'], sum(r['pub'].values()), f26(r['cpi_year']),
+                 r['label'], r['label'], r['src'], r['src'], r['note'], r['pub'])
+    comps=[(t.get('ongoing_component','Ongoing payments'), t.get('ongoing',[]), t.get('ongoing_label',''), t.get('ongoing_src',''), t.get('ongoing_note',''))]
+    comps+=[(e['component'], e['series'], e['label'], e['src'], e['note']) for e in ogx]
+    for ci,(cname,series,clabel,csrc,cnote) in enumerate(comps,1):
+        for y,a in series:
+            add_item(T, f'{T}-ongoing-{ci}-{y}', 'ongoing', cname, y, 'paid', 'Y', a, a, f26(y), clabel, clabel, csrc, csrc, cnote)
     detail[T]=dict(core26=core26, spend26=spend26, pub26=pub26, priv26=priv26, acq26=acq26, ren_pub26=ren_pub26, ren_tot26=ren_tot26, og26=og26, pend26=pend26, con26=con_total26, pilot26=pilot26, tb=dict(tb),
                    og_years=og_years, exp26=exp26, tb_desc=(tbk['desc'] if tbk else ''), tb_short=(tbk.get('short',T) if tbk else ''), tb_memo=(tbk.get('memo') if tbk else None), pend_items=[(r['desc'], sum(r['pub'].values())*f26(r['cpi_year'])) for r in rp])
     for k,v in dict(core26=core26, spend26=spend26, pub26=pub26, priv26=priv26, acq26=acq26, ren_pub26=ren_pub26, ren_tot26=ren_tot26, og26=og26, pend26=pend26, con26=con_total26, pilot26=pilot26).items():
@@ -205,6 +230,9 @@ for p in PROJECTS:
     for b in BUCKETS:
         if pub.get(b): row[f'pubcon_{b}_m']=r1(pub[b]); row[f'pubcap_{b}_2026_m']=r1(pub[b])
     prow.append(row)
+    if not p['in_team_row']:
+        if pubn: add_item(p['team'], f"{p['team']}-project", 'project', p['arena'], 2026, p['status'], 'N', pubn, pubn, 1.0, p['cost_label'], p['pub_label'], p['cost_src'], p['pub_src'], p['pub_note'], pub)
+        if ppn: add_item(p['team'], f"{p['team']}-project-pending", 'project pending', p['arena'], 2026, 'pending', 'N', ppn, ppn, 1.0, p['cost_label'], p['pub_label'], p['cost_src'], p['pub_src'], p.get('pending_note',''), pp)
     projects.append(dict(team=p['team'], arena=p['arena'], status=p['status'], in_team_row=p['in_team_row'], pub=pubn, pend=ppn))
     if not p['in_team_row']:
         proj_agg['binding_or_approved_new']+=pubn
@@ -217,6 +245,12 @@ with open(DATA+'/ledger/arena_ledger.csv','w',newline='') as f:
     w=csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader()
     for r in rows+prow: w.writerow(r)
 
+# the normalized rows must add up to the same core totals
+core_items=sum(i['public_2026_m'] for i in items if i['in_core']=='Y'); spend_items=sum(i['spending_2026_m'] for i in items if i['in_core']=='Y')
+assert abs(core_items-agg['core26'])<0.01 and abs(spend_items-agg['spend26'])<0.01, (core_items, agg['core26'], spend_items, agg['spend26'])
+for fn,data in (('ledger_items.csv',items),('ledger_buckets.csv',ibuckets)):
+    with open(DATA+'/ledger/'+fn,'w',newline='') as f:
+        w=csv.DictWriter(f, fieldnames=list(data[0].keys()), lineterminator='\n'); w.writeheader(); w.writerows(data)
 json.dump(dict(as_of=AS_OF, projects=projects, agg=agg, aggp=aggp, bucket26=bucket26, bucket26_priv=bucket26_priv, detail=detail, proj_agg=proj_agg, CPI={k:CPI[k] for k in sorted(CPI) if k>=1960}, CAD1999=CAD1999, HH=HH, fedpv=dict(fedpv)), open(DATA+'/ledger/_calc.json','w'), indent=1, default=float)
 print('rows',len(rows),'projects',len(prow))
 print('CPI2026 (Jan-Aug avg)',round(C26,3),'n months',len(cpi_m[2026]), '2025 months',len(cpi_m[2025]))
