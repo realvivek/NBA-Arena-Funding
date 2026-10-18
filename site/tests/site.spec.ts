@@ -97,6 +97,14 @@ test('the story renders its headline, every chart and the lead graphic\'s labels
     expect((await k.locator('.bs-num').textContent())?.trim()).toMatch(/^\$[\d.]+ (billion|million)$/);
     expect((await k.locator('.bs-name').textContent())?.trim()).toBeTruthy();
   }
+  // the key findings sit under the head, each linking down to a chapter heading or a chart on the page
+  const findings = page.locator('.findings li');
+  expect(await findings.count()).toBeGreaterThanOrEqual(3);
+  for (const f of await findings.all()) {
+    const href = await f.locator('a.find-go').getAttribute('href');
+    expect(href, await f.textContent() ?? '').toMatch(/^#/);
+    await expect(page.locator(`${href!}:is(h2, figure)`)).toHaveCount(1);
+  }
   // the text carries no citation marks; each chapter names its sources, and each chart its own
   await expect(page.locator('.chapter .para details.cites')).toHaveCount(0);
   expect(await page.locator('.chapter .src-line').count()).toBeGreaterThanOrEqual(6);

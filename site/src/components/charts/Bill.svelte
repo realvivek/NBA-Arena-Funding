@@ -47,7 +47,7 @@
 
   // labels beside the stack: spread apart so they never overlap, from the bottom up
   const NUM = narrow ? 19 : 26, NAME = narrow ? FONT : 14;
-  const minGap = narrow ? 42 : 56;
+  const minGap = narrow ? 45 : 60;
   const lx = narrow ? x0 - 12 : x0 - 34;
   const ly = [];
   for (let k = 0; k < kinds.length; k++) {
@@ -90,7 +90,7 @@
           <path class="bs-lead" d="M{lx + 6},{ly[k] - NUM / 3}H{lx + 16}L{x0 - 5},{l.mid}" />
         {/if}
         <text class="bs-num" x={lx} y={ly[k]} text-anchor="end" font-size={NUM}>{long(l.public_2026_m)}</text>
-        <text class="bs-name" x={lx} y={ly[k] + NAME + 4} text-anchor="end" font-size={NAME}>{nameOf(l)}</text>
+        <text class="bs-name" x={lx} y={ly[k] + NAME + 7} text-anchor="end" font-size={NAME}>{nameOf(l)}</text>
       </g>
     {/each}
 

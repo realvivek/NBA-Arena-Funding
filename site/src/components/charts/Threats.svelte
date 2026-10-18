@@ -62,8 +62,8 @@
           <text class="t-ink" x={lw - 10} y={cy} dy="0.32em" text-anchor="end" font-size={FONT}>{d.city} <tspan class="t-muted">{d.threat_date.slice(0, 4)}</tspan></text>
           <g data-tip={tip(d)}>
             <line x1={x(d.t0)} x2={x(d.t1)} y1={cy} y2={cy} stroke="var(--axis)" stroke-width="2" />
-            <circle class="f-orange dot-ring" cx={x(d.t0)} cy={cy} r="5" />
             <circle class="f-public dot-ring" cx={x(d.t1)} cy={cy} r="5" />
+            <circle class="f-orange dot-ring" cx={x(d.t0)} cy={cy} r="4" />
             <rect x={x(d.t0) - 8} y={cy - 9} width={x(d.t1) - x(d.t0) + 16} height="18" fill="transparent" />
           </g>
           <text class="tick t-muted" x={x(d.t1) + 10} y={cy} dy="0.32em" font-size={FONT}>{narrow ? `${Math.round(d.lag_months)} mo.` : months(d.lag_months)}</text>
@@ -78,10 +78,10 @@
             <text class="t-ink" x="0" y={cy - 18} font-size={FONT}>{g.name}</text>
             <text class="tick t-ink" x={W} y={cy - 18} text-anchor="end" font-size={FONT}>median {Math.round(g.med)}%</text>
             <line class="grid" x1={sx(0)} x2={sx(100)} y1={cy} y2={cy} />
+            <line x1={sx(g.med)} x2={sx(g.med)} y1={cy - 11} y2={cy + 11} stroke="var(--ink)" stroke-width="2" />
             {#each g.deals as d}
               <circle class={g.key === 'threat' ? 'f-orange dot-ring' : 'f-public dot-ring'} cx={sx(d.share_pct)} cy={cy} r="5" data-tip={`${d.deal} (${d.year}): ${Math.round(d.share_pct)}% public`} />
             {/each}
-            <line x1={sx(g.med)} x2={sx(g.med)} y1={cy - 11} y2={cy + 11} stroke="var(--ink)" stroke-width="2" />
           {/each}
           {#each [0, 25, 50, 75, 100] as t, j}
             <text class="tick t-muted" x={sx(t)} y={top + 52 + 44 + 26} text-anchor={j === 0 ? 'start' : j === 4 ? 'end' : 'middle'} font-size={FONT}>{t}%</text>
@@ -95,10 +95,10 @@
             {@const cy = top + 36 + i * 30}
             <text class="t-ink" x={lw - 10} y={cy} dy="0.32em" text-anchor="end" font-size={FONT}>{g.name}</text>
             <line class="grid" x1={sx(0)} x2={sx(100)} y1={cy} y2={cy} />
+            <line x1={sx(g.med)} x2={sx(g.med)} y1={cy - 11} y2={cy + 11} stroke="var(--ink)" stroke-width="2" />
             {#each g.deals as d}
               <circle class={g.key === 'threat' ? 'f-orange dot-ring' : 'f-public dot-ring'} cx={sx(d.share_pct)} cy={cy} r="5" data-tip={`${d.deal} (${d.year}): ${Math.round(d.share_pct)}% public`} />
             {/each}
-            <line x1={sx(g.med)} x2={sx(g.med)} y1={cy - 11} y2={cy + 11} stroke="var(--ink)" stroke-width="2" />
             <text class="tick t-ink" x={W} y={cy} dy="0.32em" text-anchor="end" font-size={FONT}>median {Math.round(g.med)}%</text>
           {/each}
           {#each [0, 25, 50, 75, 100] as t}

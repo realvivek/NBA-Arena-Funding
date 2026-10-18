@@ -1,9 +1,18 @@
-/* Tokens. Chart colors are the validated palette (blue, orange, aqua; see docs/site.md), stepped for each mode.
-   The band is the dark head under the masthead, the same in both modes. Layout: a 600px reading column; figures,
-   key figures and cards break out to 736px, the lead graphic and the map to 1152px. */
+/* Tokens. Chart colors are the validated palette (blue, orange, aqua; see docs/site.md), stepped for each mode and
+   checked against the paper the charts sit on. The page is a maple court floor (a dark stained one in dark mode);
+   charts, tables and cards sit on paper above it; the band is the masthead's navy, the same in both modes. Layout:
+   a 600px reading column; figures, key figures and cards break out to 736px, the lead graphic and the map to
+   1152px. */
 :root {
   color-scheme: light;
-  --surface: #ffffff;
+  --floor: #f6ead5;
+  --floor-img: url('../assets/floor-light.svg');
+  --surface: #fffdf8;
+  --paper-edge: rgba(120, 80, 30, 0.15);
+  --card-shadow: 0 1px 2px rgba(60, 40, 10, 0.06), 0 8px 22px rgba(60, 40, 10, 0.07);
+  --court: rgba(28, 92, 171, 0.22);
+  --court-paint: rgba(28, 92, 171, 0.045);
+  --orange-ink: #b4461a;
   --plane: #f4f3ef;
   --plane-2: #e9e7e0;
   --ink: #121212;
@@ -43,7 +52,14 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --surface: #141413;
+    --floor: #1c1814;
+    --floor-img: url('../assets/floor-dark.svg');
+    --surface: #23201c;
+    --paper-edge: rgba(255, 230, 190, 0.09);
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 22px rgba(0, 0, 0, 0.35);
+    --court: rgba(134, 182, 239, 0.2);
+    --court-paint: rgba(134, 182, 239, 0.04);
+    --orange-ink: #f0895c;
     --plane: #1f1f1d;
     --plane-2: #2a2a27;
     --ink: #f0efec;
@@ -77,7 +93,14 @@
 }
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --surface: #141413;
+  --floor: #1c1814;
+  --floor-img: url('../assets/floor-dark.svg');
+  --surface: #23201c;
+  --paper-edge: rgba(255, 230, 190, 0.09);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 22px rgba(0, 0, 0, 0.35);
+  --court: rgba(134, 182, 239, 0.2);
+  --court-paint: rgba(134, 182, 239, 0.04);
+  --orange-ink: #f0895c;
   --plane: #1f1f1d;
   --plane-2: #2a2a27;
   --ink: #f0efec;
@@ -120,7 +143,8 @@ html {
 }
 body {
   margin: 0;
-  background: var(--surface);
+  background: var(--floor) var(--floor-img);
+  background-size: 336px 672px;
   color: var(--ink);
   font-family: var(--serif);
   font-size: 1.1875rem;
@@ -263,7 +287,7 @@ main {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--public);
+  color: var(--orange-ink);
   margin: 0 0 14px;
 }
 h1 {
@@ -325,6 +349,136 @@ h1 {
   margin-top: 28px;
 }
 
+/* Court lines painted on the floor: the key and the three-point arc at the page's right edge beside the story's
+   head (drawn to scale, 10 units a foot), and a half-court line with its center circle between chapters. They sit
+   under the paper and the text, and the head's only on screens wide enough to keep them clear of it. */
+.story {
+  position: relative;
+}
+.hero-court {
+  position: absolute;
+  z-index: -1;
+  top: 24px;
+  right: calc(-1 * var(--gutter));
+  width: min(300px, calc(50vw - 23rem - 28px));
+  pointer-events: none;
+  fill: none;
+  stroke: var(--court);
+  stroke-width: 2.5;
+}
+.hero-court .paint {
+  fill: var(--court-paint);
+  stroke: none;
+}
+.hero-court .dash {
+  stroke-dasharray: 9 7;
+}
+@media (max-width: 68rem) {
+  .hero-court {
+    display: none;
+  }
+}
+.ch-court {
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin: 0 0 36px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--court);
+  stroke-width: 2;
+}
+@media (max-width: 40rem) {
+  .ch-court {
+    height: 36px;
+    margin-bottom: 28px;
+  }
+  .ch-court circle {
+    r: 16px;
+  }
+}
+
+/* Key findings, under the head: a sheet with an orange rule along its top, an orange dot for each finding and a
+   link down to the chapter that holds it */
+.findings {
+  max-width: var(--wide);
+  margin: 0 auto 64px;
+  padding: 22px 28px 12px;
+}
+.findings h2 {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange-ink);
+  margin: 0 0 14px;
+}
+.findings ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.findings li {
+  position: relative;
+  padding: 0 0 0 24px;
+  margin: 0 0 12px;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  max-width: 40em;
+  text-wrap: pretty;
+}
+.findings li::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.findings strong {
+  font-weight: 700;
+}
+.find-go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  vertical-align: -3px;
+  color: var(--link);
+}
+.find-go svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.find-go:hover {
+  border-color: var(--link);
+  background: var(--public-wash);
+}
+@media (max-width: 40rem) {
+  .findings {
+    padding: 18px 16px 8px;
+    margin-bottom: 48px;
+  }
+  .findings li {
+    font-size: 1rem;
+    padding-left: 20px;
+  }
+  .findings li::before {
+    left: 1px;
+  }
+}
+
 /* Story text: a serif at reading size, short paragraphs, numbers in the text and nothing underlined */
 h2 {
   font-family: var(--serif);
@@ -335,7 +489,7 @@ h2 {
   text-wrap: balance;
 }
 .chapter {
-  margin-top: 96px;
+  margin-top: 60px;
 }
 .ch-head {
   margin: 0 0 14px;
@@ -360,7 +514,7 @@ h3,
 }
 @media (max-width: 40rem) {
   .chapter {
-    margin-top: 72px;
+    margin-top: 44px;
   }
   .ch-head + .para {
     font-size: 1.1875rem;
@@ -630,6 +784,43 @@ details.data > summary {
   border-top: 1px solid var(--rule);
 }
 
+/* Paper: charts, the team list, tables and cards sit on sheets above the floor, so the data reads on a clean
+   ground. A scroll-driven figure's paper is its sticky chart (see .scrolly-sticky). */
+figure.chart:not(.scrolly),
+.teams,
+.cardset-item,
+.fund,
+.findings,
+.card a {
+  background: var(--surface);
+  border: 1px solid var(--paper-edge);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+figure.chart:not(.scrolly) {
+  padding: 20px 22px 14px;
+}
+.teams {
+  padding: 18px 20px 16px;
+}
+.findings {
+  box-shadow: inset 0 3px 0 var(--orange), var(--card-shadow);
+}
+.table-wrap {
+  background: var(--surface);
+}
+@media (max-width: 40rem) {
+  figure.chart:not(.scrolly) {
+    padding: 14px 12px 10px;
+  }
+  .teams {
+    padding: 14px 12px 12px;
+  }
+  .scrolly-sticky {
+    padding: 10px 10px 6px;
+  }
+}
+
 /* Chart marks: colors come from tokens so the SVG follows the theme */
 .chart svg text {
   font-family: var(--sans);
@@ -849,8 +1040,6 @@ th.n {
   display: block;
   height: 100%;
   padding: 14px 16px;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
   text-decoration: none;
   color: var(--ink);
 }
@@ -942,12 +1131,15 @@ tr:target {
 }
 
 footer.site-foot {
-  border-top: 1px solid var(--ink);
+  background: var(--band);
   font-family: var(--sans);
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: var(--muted);
-  padding: 22px var(--gutter) 44px;
+  color: var(--band-muted);
+  padding: 28px var(--gutter) 48px;
+}
+footer.site-foot a {
+  color: var(--band-public);
 }
 footer.site-foot .col {
   max-width: var(--xwide);
@@ -956,7 +1148,7 @@ footer.site-foot .foot-name {
   font-family: var(--serif);
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--band-ink);
   margin: 0 0 6px;
 }
 
@@ -1049,6 +1241,13 @@ figure.chart {
 .head .tiles {
   margin: 4px 0 26px;
 }
+/* four key figures make one row, never three and one (on phones, two rows of two) */
+@media (min-width: 40.0625rem) {
+  .tiles-list:has(> .tile:nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
 @media (max-width: 40rem) {
   .tiles-list {
     grid-template-columns: minmax(0, 1fr);
@@ -1089,8 +1288,6 @@ figure.chart {
   flex-direction: column;
   gap: 6px;
   padding: 16px 18px 14px;
-  background: var(--plane);
-  border-radius: 10px;
 }
 .cs-title {
   margin: 0;
@@ -1168,7 +1365,10 @@ figure.chart {
   position: sticky;
   top: 0;
   background: var(--surface);
-  padding: 10px 0 8px;
+  border: 1px solid var(--paper-edge);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 16px 18px 12px;
 }
 .step {
   font-family: var(--serif);
@@ -1391,9 +1591,12 @@ figure.chart {
   stroke-width: 2;
 }
 .chart svg .db-paid {
-  fill: var(--surface);
+  fill: none;
   stroke: var(--ink-2);
   stroke-width: 1.5;
+}
+.chart svg .band-wash {
+  fill: var(--public-wash);
 }
 .chart svg .db-now,
 .chart svg .trend-dot {
@@ -1691,9 +1894,7 @@ figure.chart {
   flex-direction: column;
   gap: 4px;
   padding: 16px 18px 14px;
-  background: var(--plane);
   border-top: 4px solid var(--orange);
-  border-radius: 10px;
 }
 .fund-type {
   margin: 0;
@@ -1827,7 +2028,7 @@ figure.chart {
 
 /* The full record: cards for the reference pages, then the story's sources, folded */
 .endmatter {
-  margin-top: 104px;
+  margin-top: 64px;
 }
 .endmatter h2 {
   font-size: 1.5rem;

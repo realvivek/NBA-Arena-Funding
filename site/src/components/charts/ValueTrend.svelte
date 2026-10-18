@@ -8,7 +8,7 @@
   const pts = [...rows].sort((a, b) => a.year - b.year);
   const W = narrow ? NARROW : WIDE;
   const H = narrow ? 230 : 280;
-  const ml = narrow ? 40 : 48, mr = narrow ? 14 : 20, mt = 26, mb = 26;
+  const ml = narrow ? 40 : 48, mr = narrow ? 14 : 20, mt = 26, mb = 29;
   const t0 = pts[0].year, t1 = pts[pts.length - 1].year;
   const vmax = Math.ceil(Math.max(...pts.map((p) => p.forbes_avg_b)));
   const sx = (t) => ml + ((t - t0) / (t1 - t0)) * (W - ml - mr);
@@ -31,7 +31,7 @@
       <text class="tick t-muted" x={ml - 6} y={sy(t)} dy="0.32em" text-anchor="end" font-size={FONT}>{moneyTick(t * 1000)}</text>
     {/each}
     {#each ticksX as t, i}
-      <text class="tick t-muted" x={i === ticksX.length - 1 ? W - mr : sx(t)} y={H - mb + 18} text-anchor={i === ticksX.length - 1 ? 'end' : 'middle'} font-size={FONT}>{t}</text>
+      <text class="tick t-muted" x={i === ticksX.length - 1 ? W - mr : sx(t)} y={H - mb + 21} text-anchor={i === ticksX.length - 1 ? 'end' : 'middle'} font-size={FONT}>{t}</text>
     {/each}
     <path class="trend-area" d={area} />
     <path class="trend-line" d={line} />
@@ -43,12 +43,14 @@
       <!-- the national media deals that began with the 2025-26 season -->
       {@const mx = sx(media.year)}
       {@const my = sy(media.forbes_avg_b)}
-      <path class="ann-arrow" d="M{mx - 118},{my - 52} C{mx - 70},{my - 64} {mx - 26},{my - 44} {mx - 9},{my - 9}" />
-      <path class="ann-arrow" d="M{mx - 15},{my - 15} L{mx - 9},{my - 9} L{mx - 17},{my - 8}" />
-      <text class="ann-sub halo" x={mx - 124} y={my - 64} text-anchor="end" font-size={FONT}>New national media deals</text>
-      <text class="ann-sub halo" x={mx - 124} y={my - 48} text-anchor="end" font-size={FONT}>begin with the 2025-26 season</text>
+      <!-- the note sits in the open space left of the climb, its arrow pointing right at the 2025 value -->
+      {@const nx = sx(2021.2)}
+      <text class="ann-sub halo" x={nx} y={my - 6} text-anchor="end" font-size={FONT}>New national media deals</text>
+      <text class="ann-sub halo" x={nx} y={my + 10} text-anchor="end" font-size={FONT}>begin with the 2025-26 season</text>
+      <path class="ann-arrow" d="M{nx + 6},{my - 2} C{nx + 40},{my - 14} {mx - 40},{my - 12} {mx - 9},{my - 1}" />
+      <path class="ann-arrow" d="M{mx - 16},{my - 6} L{mx - 9},{my - 1} L{mx - 17},{my + 2}" />
     {/if}
-    <text class="ann-text halo" x={sx(first.year) + 8} y={sy(first.forbes_avg_b) - 12} font-size={FONT}>{money(first.forbes_avg_b * 1000)} in {first.year}</text>
+    <text class="ann-text halo" x={sx(first.year) + 8} y={sy(first.forbes_avg_b) - (narrow ? 16 : 12)} font-size={FONT}>{money(first.forbes_avg_b * 1000)} in {first.year}</text>
     {#if mark && !narrow}
       <text class="ann-sub halo" x={sx(mark.year) - 6} y={sy(mark.forbes_avg_b) - 10} text-anchor="end" font-size={FONT}>{money(mark.forbes_avg_b * 1000)} in {mark.year}</text>
     {/if}

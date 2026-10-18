@@ -9,7 +9,7 @@
   const narrow = variant === 'narrow';
   const W = narrow ? NARROW : WIDE;
   const H = narrow ? 220 : 260;
-  const ml = narrow ? 44 : 52, mr = 6, mt = 12, mb = 30;
+  const ml = narrow ? 50 : 54, mr = 6, mt = 12, mb = 33;
   const SERIES = kind === 'wcd'
     ? [
         { key: 'room', cls: 'f-public', name: 'Hotel rooms', get: (r) => Number(r.basic_room) + Number(r.additional_room) },
@@ -64,7 +64,7 @@
             {/if}
           {/each}
           {#if i % every === 0}
-            <text class="tick t-muted" x={x(d.name) + x.bandwidth() / 2} y={H - mb + 18} text-anchor="middle" font-size={FONT}>{shortName(d.name)}</text>
+            <text class="tick t-muted" x={x(d.name) + x.bandwidth() / 2} y={H - mb + 21} text-anchor="middle" font-size={FONT}>{shortName(d.name)}</text>
           {/if}
         {/each}
       </Svg>

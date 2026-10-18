@@ -45,8 +45,7 @@
       {@const x = k.xScale}
       {@const y = k.yScale}
       <Svg viewBox="0 0 {W} {H}" {label}>
-        <rect x={x(start)} y={mt - 4} width={x(cutoff + 0.5) - x(start)} height={data.length * rowH + 8} fill="var(--public-wash)" />
-        <text class="ann-text halo" x={x(cutoff + 0.5) - 6} y={mt + data.length * rowH - 6} text-anchor="end" font-size={FONT}>Ending by {cutoff}</text>
+        <rect class="band-wash" x={x(start)} y={mt - 4} width={x(cutoff + 0.5) - x(start)} height={data.length * rowH + 8} />
         {#each ticks as t}
           <line class="grid" x1={x(t)} x2={x(t)} y1={mt - 4} y2={mt + data.length * rowH + 4} />
           <text class="tick t-muted" x={x(t)} y={mt - 10} text-anchor="middle" font-size={FONT}>{t}</text>

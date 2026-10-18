@@ -39,7 +39,7 @@ data/*.csv  ->  pipeline/build.py  ->  site/src/generated/*.json, docs/fact-chec
 
 ## Design
 
-The home page is a short data story, about four minutes to read, set the way a newspaper sets one. Its design
+The home page is a short data story, about five minutes to read, set the way a newspaper sets one. Its design
 follows patterns found in ten New York Times data stories from 2025 and 2026 (among them "What It Would Look Like
 to Pay W.N.B.A. Players What They Deserve", "How Trump Is Getting Richer in Office", "What the Iran War Is Costing
 You" and "U.S. Debt Is on Pace to Set a Record High"): the chart carries the finding, its title states it and notes
@@ -47,16 +47,26 @@ on the chart say it again with an arrow to the mark; one accent color against gr
 for the narrative with the key numbers in bold, sometimes a sentence that ends on a number set large; and almost no
 interface, only a gray source line under each chart.
 
-A kicker, a serif headline that carries the total, a deck and a dateline open it. The lead graphic is the public's
-bill for the arenas as a stack of bills, each worth $100 million, filled from the bottom up as the reader scrolls:
-building the arenas in blue, then renovations, purchases, yearly payments and tax breaks in orange, each starting a
-new row, with its amount printed beside the stack in large serif type and a leader to its bills, and brackets for
-the two shares. Bills the reader has not reached show as outlines. Each chapter is a serif heading, short
-paragraphs and its charts, and ends with one gray line naming its sources (each publisher once, with every
-document in a fold) and plain links to the reference pages. Paragraphs carry no citation marks; the fact-check
-page lists every paragraph with its numbers and sources. The investigation page (`/who-is-behind/`) is set the same
-way, a source line under each section; the full text is one link away. The reference pages keep a citation toggle
-on each paragraph.
+A kicker, a serif headline that carries the total, a deck and a dateline open it, then the key findings: one line
+each, its number in bold, with a link down to the chapter or chart that holds it (`findings` in the home entry of
+`pages.yaml`, each naming its section of `story.yaml`; the build fails on an unknown section). The lead graphic is
+the public's bill for the arenas as a stack of bills, each worth $100 million, filled from the bottom up as the
+reader scrolls: building the arenas in blue, then renovations, purchases, yearly payments and tax breaks in orange,
+each starting a new row, with its amount printed beside the stack in large serif type and a leader to its bills, and
+brackets for the two shares. Bills the reader has not reached show as outlines. Each chapter is a serif heading,
+short paragraphs and its charts, and ends with one gray line naming its sources (each publisher once, with every
+document in a fold) and plain links to the reference pages. Paragraphs carry no citation marks; the fact-check page
+lists every paragraph with its numbers and sources. The investigation page (`/who-is-behind/`) is set the same way,
+a source line under each section; the full text is one link away. The reference pages keep a citation toggle on each
+paragraph.
+
+The page is a maple court floor: a seamless tile of staggered boards with faint seams and grain
+(`src/assets/floor-light.svg`, and a dark stained floor for dark mode, both written by `scripts/floor.py`). Charts,
+the team list, cards and the key findings sit on paper above it, with a hairline edge and a soft shadow, so the data
+reads on a clean ground. Court lines are painted on the floor in a faint blue: the key and the three-point arc at
+the page's right edge beside the story's head, drawn to scale and shown only on screens wide enough to keep them
+clear of the text, and a half-court line with its center circle between chapters. The masthead and the footer are
+the navy band; the kicker and the key findings' top rule and bullets are orange.
 
 Type is Newsreader for headlines and text and Libre Franklin for charts, captions and the interface, both served
 from the site. On the story and the investigation page everything shares one left edge in a 46rem column, and
@@ -64,11 +74,12 @@ paragraphs stop at 37.5rem; the lead graphic breaks out to 72rem. Every script i
 lead graphic rests in its last state and its steps read as paragraphs, the team list shows every team in order of
 public money with every record still opening, and tooltips are not shown.
 
-Charts follow one palette, validated for color-vision deficiency in light and dark mode: blue for public money,
-orange for the second series (existing arenas, visitor taxes, threats, team values, money after building), gray for
-private money, and a one-hue blue ramp for shares on the map. Notes and a table of every value sit in one toggle
-under each chart. Tooltips are added by a small script and are optional; every value is also in the chart's data
-table.
+Charts follow one palette, validated for color-vision deficiency in light and dark mode against the paper they sit
+on: blue for public money, orange for the second series (existing arenas, visitor taxes, threats, team values, money
+after building), gray for private money, and a one-hue blue ramp for shares on the map. Every label is placed to
+clear the marks and the other labels at both chart widths (the map places its city labels itself, with a leader
+where a label has to leave its circle). Notes and a table of every value sit in one toggle under each chart.
+Tooltips are added by a small script and are optional; every value is also in the chart's data table.
 
 ## Deploy
 

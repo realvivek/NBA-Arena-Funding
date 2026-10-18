@@ -86,6 +86,7 @@ describe('every piece of copy in the content files', () => {
   }
   for (const [id, p] of Object.entries<any>(pages)) {
     for (const k of ['title', 'deck', 'description']) items.push([`page ${id} ${k}`, p[k], p.sources ?? []]);
+    for (const [i, f] of (p.findings ?? []).entries()) items.push([`page ${id} finding ${i + 1}`, f.p, f.sources ?? []]);
     for (const t of p.tiles ?? []) items.push([`page ${id} tile`, `${t.value} ${t.label}`, p.sources ?? []]);
     for (const [i, b] of [...(p.blocks ?? []), ...(p.notes ?? [])].entries()) blockCopy(`page ${id} block ${i + 1}`, b);
   }

@@ -27,6 +27,25 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
 const title = plain(page.title, { where: 'home title' });
 const headline = paragraph(page.title, page.sources, 'home headline', cites, { link: false });
 const deck = paragraph(page.deck, page.sources, 'home deck', cites);
+
+// Key findings, under the head: each links to the section that holds it, a chapter by its heading or the
+// opening by its lead graphic
+const leadFigure = (blocks: (typeof sections)[number]['data']['blocks']) => {
+  for (const b of blocks) if ('scrolly' in b || 'fig' in b) return 'scrolly' in b ? b.scrolly : b.fig;
+};
+const findings: { html: string; href: string; label: string }[] = [];
+for (const [i, f] of page.findings.entries()) {
+  const where = `home finding ${i + 1}`;
+  const s = sections.find((x) => x.id === f.to);
+  if (!s) throw new Error(`${where}: unknown story section ${f.to}`);
+  const fig = s.data.title ? undefined : leadFigure(s.data.blocks);
+  if (!s.data.title && !fig) throw new Error(`${where}: section ${f.to} has neither a title nor a chart to link to`);
+  const label = s.data.title
+    ? plain(s.data.title, { where: `${where} link` })
+    : plain((await getEntry('figures', fig!))!.data.title, { where: `${where} link` });
+  const { html } = paragraph(f.p, f.sources, where, cites);
+  findings.push({ html, href: s.data.title ? `#${slug(s.data.title)}` : `#fig-${fig}`, label });
+}
 const [opening, ...rest] = sections;
 if (opening.data.title) throw new Error('the story opens with its lead graphic, without a chapter title');
 const openBlocks = await prepare(opening.data.blocks, cites, `story ${opening.id}`);
@@ -42,13 +61,13 @@ for (const s of rest) {
 
 // reading time, from the words a reader meets
 const strip = (h: string) => h.replace(/<[^>]+>/g, ' ');
-const text = [...openBlocks, ...chapters.flatMap((c) => c.blocks)]
+const text = [...findings.map((f) => f.html), ...[...openBlocks, ...chapters.flatMap((c) => c.blocks)]
   .flatMap((b) =>
     b.kind === 'p' || b.kind === 'quote' ? [b.html] :
     b.kind === 'scrolly' ? b.steps.map((s) => s.html) :
     b.kind === 'reveal' ? [b.lead, b.value] :
     b.kind === 'stats' ? b.tiles.flatMap((t) => [t.value, t.label]) :
-    b.kind === 'cards' ? b.cards.flatMap((c) => [c.title, c.value ?? '', c.text]) : [])
+    b.kind === 'cards' ? b.cards.flatMap((c) => [c.title, c.value ?? '', c.text]) : [])]
   .map(strip)
   .join(' ');
 const minutes = Math.max(1, Math.round(text.split(/\s+/).filter(Boolean).length / 230));
@@ -56,6 +75,12 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
 ---
 <Layout title={title} description={page.description} path="/">
   <article class="story">
+    <svg class="hero-court" viewBox="0 0 300 500" aria-hidden="true" focusable="false">
+      <rect class="paint" x="110" y="170" width="190" height="160" />
+      <path d="M300,170H110V330H300M110,190A60,60 0 0 0 110,310M300,30H158A237.5,237.5 0 0 0 158,470H300M260,210H247.5A40,40 0 0 0 247.5,290H260M260,220V280" />
+      <path class="dash" d="M110,190A60,60 0 0 1 110,310" />
+      <circle cx="247.5" cy="250" r="7.5" />
+    </svg>
     <header class="hero">
       <p class="kicker">{page.kicker}</p>
       <h1 set:html={headline.html} />
@@ -66,12 +91,25 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
         <span>{minutes} minute read</span>
       </p>
     </header>
+    {findings.length > 0 && (
+      <section class="findings" aria-labelledby="key-findings">
+        <h2 id="key-findings">Key findings</h2>
+        <ul>
+          {findings.map((f) => (
+            <li>
+              <Fragment set:html={f.html} />{'\u00a0'}<a class="find-go" href={f.href} aria-label={`Read more: ${f.label}`} title={f.label}><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v7.5M2.75 6.5 6 9.75 9.25 6.5" /></svg></a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
     <div class="col prose opening">
       <Blocks blocks={openBlocks} level={3} quiet />
     </div>
     <div class="col prose">
       {chapters.map((c) => (
         <section class="chapter" aria-labelledby={c.slug}>
+          <svg class="ch-court" aria-hidden="true" focusable="false"><line x1="0" x2="100%" y1="50%" y2="50%" /><circle cx="50%" cy="50%" r="20" /></svg>
           <header class="ch-head">
             <h2 id={c.slug}>{c.title}</h2>
           </header>
@@ -86,6 +124,7 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
       ))}
     </div>
     <div class="col endmatter">
+      <svg class="ch-court" aria-hidden="true" focusable="false"><line x1="0" x2="100%" y1="50%" y2="50%" /><circle cx="50%" cy="50%" r="20" /></svg>
       <h2 id="the-full-record">The full record</h2>
       <ul class="cards">
         {refs.map((r) => (

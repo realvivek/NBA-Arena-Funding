@@ -6,7 +6,7 @@
   // .a-pending for the labels). Without scripts the chart rests in its last state, where everything is drawn.
   import { LayerCake, Svg } from 'layercake';
   import { scaleBand, scaleLinear } from 'd3-scale';
-  import { WIDE, NARROW, FONT, money, moneyTick, vbar, TEAM_CITY } from '../../lib/chart';
+  import { WIDE, NARROW, FONT, money, moneyTick, vbar, textWidth, TEAM_CITY } from '../../lib/chart';
   import { STATS } from '../../lib/copy';
 
   let { rows, variant = 'wide', label = '' } = $props();
@@ -46,11 +46,10 @@
   for (const s of segs) if (s.category === 'existing' && !s.pending && s.year >= SINCE) byTeam.set(s.team, (byTeam.get(s.team) ?? 0) + s.value);
   const largest = [...byTeam.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2);
   const hl = new Set(largest.map(([t]) => t));
-  // the two largest new-arena columns before 2014
-  // (at least five years apart, so their labels do not collide)
+  // the largest new-arena columns before 2014: two on wide screens (at least five years apart), one on phones
   const bigNew = [];
   for (const s of segs.filter((g) => g.category === 'new' && g.year < SINCE).sort((a, b) => b.value - a.value))
-    if (bigNew.length < 2 && bigNew.every((b) => Math.abs(b.year - s.year) >= 5)) bigNew.push(s);
+    if (bigNew.length < (narrow ? 1 : 2) && bigNew.every((b) => Math.abs(b.year - s.year) >= 5)) bigNew.push(s);
   const pendingTotal = segs.filter((s) => s.pending).reduce((a, s) => a + s.value, 0);
   const pendingCities = [...new Set(segs.filter((s) => s.pending).map((s) => TEAM_CITY[s.team]))];
 
@@ -66,7 +65,7 @@
   const ml = narrow ? 40 : 54;
   const mr = narrow ? 98 : 128;
   const mt = narrow ? 58 : 64;
-  const mb = 26;
+  const mb = 29;
   const rebuild = STATS.rebuild_since_2014.display.short;
   const build = STATS.build_since_2014.display.short;
   const ticksX = narrow ? [1990, 2000, 2010, 2020] : [1990, 1995, 2000, 2005, 2010, 2014, 2020, 2026];
@@ -100,7 +99,7 @@
           <text class="tick t-muted" x={ml - 6} y={y(t)} dy="0.32em" text-anchor="end" font-size={FONT}>{moneyTick(t)}</text>
         {/each}
         {#each ticksX as t}
-          <text class="tick t-muted" x={x(t) + bw / 2} y={H - mb + 17} text-anchor="middle" font-size={FONT}>{t}</text>
+          <text class="tick t-muted" x={x(t) + bw / 2} y={H - mb + 20} text-anchor="middle" font-size={FONT}>{t}</text>
         {/each}
 
         {#each segs as s}
@@ -119,8 +118,11 @@
         <g class="ann a-new">
           {#each bigNew as s}
             {@const cx = x(s.year) + bw / 2}
-            <text class="ann-text halo" x={cx} y={y(s.y1) - 22} text-anchor="middle" font-size={FONT}>{TEAM_CITY[s.team]}</text>
-            <text class="ann-sub halo" x={cx} y={y(s.y1) - 7} text-anchor="middle" font-size={FONT}>{money(s.value)}, {s.year}</text>
+            {@const half = Math.max(textWidth(TEAM_CITY[s.team], FONT, 600), textWidth(`${money(s.value)}, ${s.year}`, FONT)) / 2 + 4}
+            <!-- the label clears every column it spans, not only its own -->
+            {@const clear = Math.min(...years.filter((yr) => Math.abs(x(yr) + bw / 2 - cx) <= half + bw / 2).map((yr) => y(total(yr))))}
+            <text class="ann-text halo" x={cx} y={clear - 22} text-anchor="middle" font-size={FONT}>{TEAM_CITY[s.team]}</text>
+            <text class="ann-sub halo" x={cx} y={clear - 7} text-anchor="middle" font-size={FONT}>{money(s.value)}, {s.year}</text>
           {/each}
         </g>
 
@@ -156,7 +158,12 @@
             {@const my = (y(Math.min(...p.map((s) => s.y0))) + y(Math.max(...p.map((s) => s.y1)))) / 2}
             {@const top = my - 8 * (pendingCities.length + 1)}
             <path class="ann-line" d="M{xr + 2},{my}H{xr + 8}" />
-            <text class="ann-text" x={xr + 11} y={top} font-size={FONT}>Pending, {money(pendingTotal)}</text>
+            {#if narrow}
+              <text class="ann-text" x={xr + 11} y={top - 15} font-size={FONT}>Pending</text>
+              <text class="ann-text" x={xr + 11} y={top} font-size={FONT}>{money(pendingTotal)}</text>
+            {:else}
+              <text class="ann-text" x={xr + 11} y={top} font-size={FONT}>Pending, {money(pendingTotal)}</text>
+            {/if}
             {#each pendingCities as c, i}
               <text class="ann-sub" x={xr + 11} y={top + 15 * (i + 1)} font-size={FONT}>{c}</text>
             {/each}

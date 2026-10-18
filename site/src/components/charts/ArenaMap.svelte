@@ -8,7 +8,7 @@
   import { presimplify, simplify } from 'topojson-simplify';
   import us from 'us-atlas/states-10m.json';
   import world from 'world-atlas/countries-50m.json';
-  import { WIDE, NARROW, FONT, money, TEAM_CITY } from '../../lib/chart';
+  import { WIDE, NARROW, FONT, money, textWidth, TEAM_CITY } from '../../lib/chart';
 
   let { rows, variant = 'wide', label = '' } = $props();
   const narrow = variant === 'narrow';
@@ -39,17 +39,47 @@
       return { ...d, px, py, rad: d.public_2026_m > 0 ? Math.max(r(d.public_2026_m), 2.5) : 2.5, city: TEAM_CITY[d.team] };
     })
     .reverse(); // small circles on top
-  // labels for the ten largest; placement tuned where neighbors crowd
-  const LABEL = { ORL: 'right', WAS: 'below-left', IND: 'left', CHA: 'right', MEM: 'left', UTA: 'right', NOP: 'below', BKN: 'right', HOU: 'left', CLE: 'above' };
-  function labelPos(d) {
-    const g = d.rad + 4;
-    switch (LABEL[d.team]) {
-      case 'left': return { x: d.px - g, y: d.py, a: 'end', dy: '0.32em' };
-      case 'above': return { x: d.px, y: d.py - g, a: 'middle', dy: '0' };
-      case 'below': return { x: d.px, y: d.py + g + 9, a: 'middle', dy: '0' };
-      case 'below-left': return { x: d.px - d.rad * 0.6, y: d.py + g + 9, a: 'end', dy: '0' };
-      default: return { x: d.px + g, y: d.py, a: 'start', dy: '0.32em' };
+  // Labels for the ten largest, placed so that none covers a circle or another label: each tries spots around its
+  // circle, near first, then farther out with a leader, and takes the one that collides least.
+  const LH = 14;
+  const boxOf = (x, y, w, a) => {
+    const x0 = a === 'end' ? x - w : a === 'middle' ? x - w / 2 : x;
+    return { x0: x0 - 2, x1: x0 + w + 2, y0: y - LH / 2, y1: y + LH / 2 };
+  };
+  const hitsCircle = (b, c) => {
+    const nx = Math.max(b.x0, Math.min(c.px, b.x1)), ny = Math.max(b.y0, Math.min(c.py, b.y1));
+    const d = Math.hypot(nx - c.px, ny - c.py);
+    return d < c.rad + 1.5 ? c.rad + 1.5 - d + 4 : 0;
+  };
+  const hitsBox = (a, b) => {
+    const ix = Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0), iy = Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0);
+    return ix > 0 && iy > 0 ? ix * iy : 0;
+  };
+  const legendTop = H - 60;
+  const placed = [];
+  const labels = [];
+  const pointOf = Object.fromEntries(points.map((q) => [q.team, q]));
+  for (const d of ranked.slice(0, 10).map((r) => pointOf[r.team])) {
+    const w = textWidth(d.city, FONT) * 1.05;
+    const near = d.rad + 4, far = d.rad + 16;
+    const spots = [];
+    for (const [dist, lead] of [[near, false], [far, true]])
+      for (const [ux, uy] of [[1, 0], [-1, 0], [0, -1], [0, 1], [0.75, -0.75], [-0.75, -0.75], [0.75, 0.75], [-0.75, 0.75]]) {
+        const a = ux > 0.1 ? 'start' : ux < -0.1 ? 'end' : 'middle';
+        const x = d.px + ux * dist, y = d.py + uy * dist + (uy > 0.1 ? LH / 2 - 2 : uy < -0.1 ? -LH / 2 + 2 : 0);
+        spots.push({ x, y, a, lead, ex: d.px + ux * (d.rad + 1), ey: d.py + uy * (d.rad + 1) });
+      }
+    let best = null;
+    for (const [i, s] of spots.entries()) {
+      const b = boxOf(s.x, s.y, w, s.a);
+      let score = i * 0.01 + (s.lead ? 6 : 0);
+      for (const c of points) score += hitsCircle(b, c) * (c.team === d.team ? 3 : 2);
+      for (const q of placed) score += hitsBox(b, q) * 0.5;
+      if (b.x0 < 0 || b.x1 > W || b.y0 < 0 || b.y1 > legendTop) score += 1000;
+      if (!best || score < best.score) best = { ...s, b, score };
     }
+    placed.push(best.b);
+    labels.push({ ...best, city: d.city, team: d.team });
   }
   const tip = (d) => `${d.arena}, ${d.city}: ${money(d.public_2026_m)} public, ${Math.round(d.public_share_pct)}% of all spending`;
   const legendY = H - 52;
@@ -69,9 +99,11 @@
         {/if}
       {/each}
       {#if !narrow}
-        {#each points.filter((d) => LABEL[d.team]) as d}
-          {@const p = labelPos(d)}
-          <text class="t-ink" x={p.x} y={p.y} dy={p.dy} text-anchor={p.a} font-size={FONT} paint-order="stroke" stroke="var(--surface)" stroke-width="3">{d.city}</text>
+        {#each labels as l}
+          {#if l.lead}
+            <line class="ann-line" x1={l.ex} y1={l.ey} x2={l.a === 'start' ? l.b.x0 + 1 : l.a === 'end' ? l.b.x1 - 1 : l.x} y2={l.a === 'middle' ? (l.y > l.ey ? l.b.y0 : l.b.y1) : l.y} />
+          {/if}
+          <text class="t-ink halo" x={l.x} y={l.y} dy="0.32em" text-anchor={l.a} font-size={FONT}>{l.city}</text>
         {/each}
         <g transform="translate(0,{legendY})">
           <text class="t-muted" x="0" y="0" font-size={FONT}>Public share of all spending</text>

@@ -15,7 +15,7 @@
   const x0 = lw + 8, x1 = W - (narrow ? 44 : 52);
   const vmax = Math.ceil(Math.max(...data.map((r) => r.forbes_2026_b)) / 2) * 2;
   const sx = (b) => x0 + (b / vmax) * (x1 - x0);
-  const rowH = narrow ? 21 : 22, mt = 24;
+  const rowH = narrow ? 24 : 25, mt = 24;
   const H = mt + data.length * rowH + 6;
   const ticks = Array.from({ length: vmax / (narrow ? 4 : 2) + 1 }, (_, i) => i * (narrow ? 4 : 2));
   const tipPrice = (r) => `${TEAM_NAME[r.team]}: ${r.owner} paid ${money(r.price_m)} in ${r.price_year} (${money(r.price_2026_m)} in 2026 dollars)`;
@@ -35,13 +35,17 @@
       {@const pub = r.public_2026_m + r.tax_breaks_2026_m}
       <text class="t-ink" x={lw} y={y} dy="0.32em" text-anchor="end" font-size={FONT}>{short(r.team)}</text>
       {#if pub > 0}
-        <rect class="f-public" x={x0} y={y + 3} width={Math.max(sx(pub / 1000) - x0, 1.5)} height="5" rx="1.5" data-tip={tipPublic(r)} />
+        <rect class="f-public" x={x0} y={y + 5} width={Math.max(sx(pub / 1000) - x0, 1.5)} height="5" rx="1.5" data-tip={tipPublic(r)} />
       {/if}
       {#if comparable(r)}
-        <line class="db-line" x1={sx(r.price_2026_m / 1000)} x2={sx(r.forbes_2026_b)} y1={y - 3} y2={y - 3} />
-        <circle class="db-paid" cx={sx(r.price_2026_m / 1000)} cy={y - 3} r="4" data-tip={tipPrice(r)} />
+        <!-- from the ring's edge on the side of the value, so the line never crosses the open ring -->
+        <line class="db-line" x1={sx(r.price_2026_m / 1000) + Math.sign(r.forbes_2026_b * 1000 - r.price_2026_m) * 4} x2={sx(r.forbes_2026_b)} y1={y - 3} y2={y - 3} />
       {/if}
       <circle class="f-orange db-now" cx={sx(r.forbes_2026_b)} cy={y - 3} r="5" data-tip={tipValue(r)} />
+      {#if comparable(r)}
+        <!-- the ring is drawn last, unfilled, so a price close to the value still shows -->
+        <circle class="db-paid" cx={sx(r.price_2026_m / 1000)} cy={y - 3} r="4" data-tip={tipPrice(r)} />
+      {/if}
       <text class="tick t-ink" x={sx(r.forbes_2026_b) + 9} y={y - 3} dy="0.32em" font-size={FONT}>{money(r.forbes_2026_b * 1000, 1)}</text>
     {/each}
   </svg>

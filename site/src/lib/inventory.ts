@@ -54,6 +54,7 @@ export async function copyInventory(): Promise<CopyItem[]> {
     const name = p.id === 'home' ? 'Story' : p.data.kicker.replace(/^The /, '').replace(/^./, (c) => c.toUpperCase());
     out.push(item(`${name}: headline`, p.data.path, p.data.title, own));
     out.push(item(`${name}: deck`, p.data.path, p.data.deck, own));
+    p.data.findings.forEach((f, i) => out.push(item(`${name}: key finding ${i + 1}`, `${p.data.path}#key-findings`, f.p, ids(f.sources))));
     p.data.tiles.forEach((t, i) => {
       out.push(item(`${name}: key figure ${i + 1}`, p.data.path, t.value, own));
       out.push(item(`${name}: key figure ${i + 1} label`, p.data.path, t.label, own));

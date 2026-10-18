@@ -7,13 +7,46 @@ home:
   title: >-
     Taxpayers Put {{expanded_public:title}} Into the NBA's Arenas. Owners Kept the Gains.
   deck: >-
-    Building the arenas was only {{construction_share}} of it; the rest went to renovations, purchases, yearly
-    payments and tax breaks. Team values have soared since, and none of the {{public_deals_reviewed}} public arena
-    deals reviewed here gives the public a share when a team is sold.
+    A review of the public money behind every arena in the league: what governments paid, through which taxes, who
+    gained as team values soared, and which deals come next.
   description: >-
     Who paid for the NBA's arenas, through which taxes, who gains as team values rise, and what the public gets
     back.
   sources: [ledger, team-ledger]
+  # What we found, under the head: one line per finding, each pointing to the section of story.yaml that holds it
+  findings:
+    - p: >-
+        Governments have put **{{expanded_public}}** in public money and tax breaks into the {{arenas_n}} arenas.
+        Building them was only {{construction_share}} of it.
+      to: bill
+      sources: [ledger]
+    - p: >-
+        Since 2014, renovating or buying arenas that already stand has drawn **{{rebuild_ratio}} times** as much
+        public money as building new ones.
+      to: rebuild
+      sources: [ledger]
+    - p: >-
+        Taxes on hotel rooms, car rentals, meals and tickets, which fall mostly on visitors, supplied
+        **{{visitors_share}}** of the money to build, renovate and buy the arenas. Taxes residents mostly pay
+        supplied {{residents_share}}.
+      to: pays
+      sources: [ledger]
+    - p: >-
+        The average team is worth **{{value_mean_2026}}**, {{value_growth_2014}} times the 2014 average before
+        inflation. None of the {{public_deals_reviewed}} public arena deals reviewed gives the public a share when a
+        team is sold.
+      to: gains
+      sources: [team-ledger]
+    - p: >-
+        Owners from finance or investment funds reach **{{finance_teams_n}}** of the {{arenas_n}} teams, and the
+        league itself receives a share of one fund's fees.
+      to: behind
+      sources: [team-ledger, sec-owl-20251231]
+    - p: >-
+        Of the current arena leases, **{{leases_by_2036}}** end by 2036. After {{threats_same_city}} of the
+        {{threats_counted}} relocation threats documented since 1994, public money followed in the same city.
+      to: next
+      sources: [threat-ledger, ledger]
 
 who-is-behind:
   path: /who-is-behind/
