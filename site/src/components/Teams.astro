@@ -2,7 +2,8 @@
 /**
  * Every team, ranked: one row per team with the public money in its arena (tax breaks shown apart), its value and
  * an expandable record: the arena, the public money by kind and the taxes that paid it, the lease, what the owners
- * paid and what the team is worth, and what the public gets back. Rows are drawn at build time from the same
+ * paid and what the team is worth, and what the public gets back. A small outline of an arena beside each name
+ * fills from the bottom with the public's share of all spending on it. Rows are drawn at build time from the same
  * datasets as the charts. A small script adds the sort buttons; without it the rows stay in order of public money.
  */
 import { dataset } from '../lib/data';
@@ -99,6 +100,7 @@ const top = rows[0].total;
     <button type="button" data-sort="name" aria-pressed="false">A to Z</button>
   </div>
   <p class="teams-key" aria-hidden="true">
+    <span><span class="tm-arena" style="--share: 0.5"><i /></span>Public share of all spending on the arena</span>
     <span><i style="background: var(--public)" />Public money</span>
     <span><i style="background: var(--public-soft)" />Tax breaks</span>
     <span class="teams-key-value">Team value, 2026</span>
@@ -109,6 +111,7 @@ const top = rows[0].total;
         <details>
           <summary>
             <span class="tm-rank">{i + 1}</span>
+            <span class="tm-arena" aria-hidden="true" style={`--share: ${(r.share / 100).toFixed(3)}`}><i /></span>
             <span class="tm-name"><b>{r.name}</b><small>{r.arena} · {r.chip}</small></span>
             <span class="tm-bar" aria-hidden="true">
               {r.direct > 0 && <span class="tm-direct" style={`width: ${((100 * r.direct) / top).toFixed(2)}%`} />}

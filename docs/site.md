@@ -66,7 +66,11 @@ the team list, cards and the key findings sit on paper above it, with a hairline
 reads on a clean ground. Court lines are painted on the floor in a faint blue: the key and the three-point arc at
 the page's right edge beside the story's head, drawn to scale and shown only on screens wide enough to keep them
 clear of the text, and a half-court line with its center circle between chapters. The masthead and the footer are
-the navy band; the kicker and the key findings' top rule and bullets are orange.
+the navy band; the kicker and the key findings' top rule and bullets are orange. On the story, a thin line under the
+masthead holds the top of the screen and fills in orange as the reader goes through the story, with a tick where
+each chapter begins; it is drawn by a small script and hidden without one. In the team list, a small outline of an
+arena beside each name fills from the bottom with the public's share of all spending on that arena (the same share
+the row states in words).
 
 Type is Newsreader for headlines and text and Libre Franklin for charts, captions and the interface, both served
 from the site. On the story and the investigation page everything shares one left edge in a 46rem column, and

@@ -138,10 +138,32 @@ test('the lead graphic follows the steps as the reader scrolls', async ({ browse
   }
 });
 
+test('the reading line fills as the reader scrolls, with a tick for each chapter', async ({ page }) => {
+  await page.goto('/');
+  const bar = page.locator('.progress');
+  await expect(bar).toBeVisible();
+  const chapters = await page.locator('.story .chapter').count();
+  await expect(bar.locator('.progress-marks i')).toHaveCount(chapters);
+  const filled = () => bar.locator('.progress-fill').evaluate((e) => new DOMMatrix(getComputedStyle(e).transform).a);
+  expect(await filled()).toBeLessThan(0.02);
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight / 2));
+  await expect.poll(filled).toBeGreaterThan(0.3);
+  // it holds the top of the screen while the story scrolls under it
+  expect((await bar.boundingBox())?.y).toBe(0);
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect.poll(filled).toBeGreaterThan(0.99);
+});
+
 test('the team list sorts and opens each team\'s record', async ({ page }) => {
   await page.goto('/');
   const rows = page.locator('.teams-list > li');
   await expect(rows).toHaveCount(30);
+  // each team's arena outline is filled to its public share
+  for (const r of await rows.all()) {
+    const share = Number(await r.getAttribute('data-share'));
+    const fill = await r.locator('.tm-arena').evaluate((e) => Number((e as HTMLElement).style.getPropertyValue('--share')));
+    expect(Math.abs(fill * 100 - share), (await r.getAttribute('data-name')) ?? '').toBeLessThan(0.1);
+  }
   await expect(page.locator('.teams-list > li:visible')).toHaveCount(10);
   await page.locator('.teams-more').click();
   await expect(page.locator('.teams-list > li:visible')).toHaveCount(30);
@@ -157,7 +179,7 @@ test('the team list sorts and opens each team\'s record', async ({ page }) => {
   await expect(rows.first().locator('.tm-body dt')).toHaveCount(await rows.first().locator('.tm-body dd').count());
 });
 
-test('without JavaScript the lead graphic shows its last step and the team list keeps its order', async ({ browser }) => {
+test('without JavaScript the lead graphic shows its last step, the team list keeps its order and the reading line is hidden', async ({ browser }) => {
   const ctx = await browser.newContext({ javaScriptEnabled: false });
   const page = await ctx.newPage();
   await page.goto('/');
@@ -167,5 +189,6 @@ test('without JavaScript the lead graphic shows its last step and the team list 
   await expect(page.locator('.teams-sort')).toBeHidden();
   await expect(page.locator('.teams-list > li')).toHaveCount(30);
   await expect(page.locator('.teams-list > li').first()).toHaveAttribute('data-name', 'Brooklyn Nets');
+  await expect(page.locator('.progress')).toBeHidden();
   await ctx.close();
 });

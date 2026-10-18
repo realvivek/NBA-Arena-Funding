@@ -398,6 +398,34 @@ h1 {
   }
 }
 
+/* Reading progress on the story: a line under the masthead that holds the top of the screen and fills in orange
+   as the reader goes through the story, with a tick where each chapter begins (see the script in Layout.astro) */
+.progress {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: block;
+  height: 3px;
+  margin: 0 calc(-1 * var(--gutter));
+  background: var(--paper-edge);
+  pointer-events: none;
+}
+.progress-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+.progress-marks i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+
 /* Key findings, under the head: a sheet with an orange rule along its top, an orange dot for each finding and a
    link down to the chapter that holds it */
 .findings {
@@ -1700,7 +1728,7 @@ figure.chart {
   color: var(--ink-2);
   margin: 0 0 6px;
 }
-.teams-key i {
+.teams-key > span > i {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -1741,7 +1769,7 @@ figure.chart {
 }
 .tm summary {
   display: grid;
-  grid-template-columns: 1.75rem minmax(0, 13rem) minmax(0, 1fr) 4.5rem 4rem;
+  grid-template-columns: 1.75rem 28px minmax(0, 13rem) minmax(0, 1fr) 4.5rem 4rem;
   align-items: center;
   gap: 10px;
   padding: 9px 4px;
@@ -1760,6 +1788,42 @@ figure.chart {
   font-size: 0.8125rem;
   font-variant-numeric: tabular-nums;
   text-align: right;
+}
+/* An arena seen from above, its bowl filled from the bottom with the public's share of all spending on it, and
+   the court in the middle */
+.tm-arena {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 28px;
+  height: 20px;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 32%, transparent);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.tm-arena i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--share) * 100%);
+  background: var(--public);
+}
+.tm-arena::after {
+  content: '';
+  position: absolute;
+  inset: 4.5px 7.5px;
+  border: 1px solid color-mix(in srgb, var(--ink) 38%, transparent);
+  border-radius: 1px;
+}
+.teams-key .tm-arena {
+  width: 21px;
+  height: 15px;
+  margin-right: 6px;
+  vertical-align: -3px;
+}
+.teams-key .tm-arena::after {
+  inset: 3px 5.5px;
 }
 .tm-name {
   min-width: 0;
@@ -1837,12 +1901,17 @@ figure.chart {
 }
 @media (max-width: 40rem) {
   .tm summary {
-    grid-template-columns: 1.5rem minmax(0, 1fr) 4.25rem;
-    grid-template-areas: 'rank name amt' '. bar val';
+    grid-template-columns: 1.5rem 26px minmax(0, 1fr) 4.25rem;
+    grid-template-areas: 'rank arena name amt' '. arena bar val';
     row-gap: 4px;
   }
   .tm-rank {
     grid-area: rank;
+  }
+  .tm summary .tm-arena {
+    grid-area: arena;
+    width: 26px;
+    height: 19px;
   }
   .tm-name {
     grid-area: name;
