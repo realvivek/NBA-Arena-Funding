@@ -22,10 +22,13 @@
   "sec-0001047469-98-001379",
   "sec-0000927356-99-000502",
   "indyencyclopedia-bankers-life-fieldhouse",
+  "cao-page379",
+  "seattle-seattle-partners-finance-team-evaluation-5-31-17",
   "miamidadeig-ig11-34finalbasketball",
   "miaminewtimes-the-heats-hot-air-6356397",
   "wiki-smoothie-king-center",
   "myneworleans-doing-it-right",
+  "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
   "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye",
   "wiki-paycom-center",
   "bexar-adid-1188",
@@ -57,22 +60,30 @@
   "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
   "bexar-adid-1520",
   "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+  "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
   "degc-ugd-3",
   "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
   "axios-cleveland-cavs-impact",
   "wi-lfb-informational-paper-18",
   "ideastream-county-council-approves-405-million-for-fieldhou",
+  "sfmta-letter-to-ocii-2015-10-20",
+  "sfmta-board-lrv4-modification-4",
+  "sfmta-board-warriors-supplemental-appropriation",
   "phoenix-phoenix-2",
   "webapi-texts",
   "sportsbusinessdaily-morning-buzz",
   "si-phoenix-city-council-approves-suns-arena-rennova",
   "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
-  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
+  "okc-maps4-downtown-arena-related-facilities",
   "portland-2024-annual-comprehensive-financial-report",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
   "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
+  "wbtv-charlotte-city-council-approves-275-million-spec",
+  "hochtief-turner-completes-spectrum-center-renovation",
   "utah-pmn",
   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+  "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "tri-statedefender-p-349496",
   "downtownmemphis-city-council-approves-two-key-funding-m",
@@ -100,7 +111,8 @@
   "ksat-results-props-a-and-b-for-coliseum-complex-downt",
   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
-  "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+  "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+  "tpr-city-scraps-garage-project-marvel-2027-bond"
  ],
  "base_sources": [
   "ledger",
@@ -114,6 +126,7 @@
   "kind",
   "category",
   "status",
+  "binding",
   "public_2026_m",
   "sources"
  ],
@@ -126,6 +139,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 58.381838,
    "sources": [
     "leg-other",
@@ -141,6 +155,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 82.726724,
    "sources": [
     "sportsbusinessdaily-state-of-the-arena-america-west-arena",
@@ -155,6 +170,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 268.501569,
    "sources": [
     "ohioauditor-gateway-economic-development-corporation-of-grea",
@@ -170,6 +186,7 @@
    "kind": "purchase",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 118.83441,
    "sources": [
     "leg-other",
@@ -184,6 +201,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 75.087677,
    "sources": [
     "wiki-moda-center",
@@ -198,6 +216,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 155.996143,
    "sources": [
     "govinfo-gaoreports-aimd-98-223",
@@ -212,6 +231,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 124.439207,
    "sources": [
     "law-sfr-v13-nba",
@@ -226,6 +246,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 81.63212,
    "sources": [
     "renewdenver-pepsi-center",
@@ -241,10 +262,26 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 157.291158,
    "sources": [
     "indyencyclopedia-bankers-life-fieldhouse",
     "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "year": 1999,
+   "team": "LAL",
+   "item_id": "LAL-construction",
+   "description": "Crypto.com Arena construction",
+   "kind": "construction",
+   "category": "new",
+   "status": "counted",
+   "binding": false,
+   "public_2026_m": 139.371912,
+   "sources": [
+    "cao-page379",
+    "seattle-seattle-partners-finance-team-evaluation-5-31-17"
    ]
   },
   {
@@ -255,6 +292,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 74.862627,
    "sources": [
     "miamidadeig-ig11-34finalbasketball",
@@ -269,6 +307,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 226.977114,
    "sources": [
     "wiki-smoothie-king-center",
@@ -283,8 +322,10 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 234.131712,
    "sources": [
+    "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
     "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye"
    ]
   },
@@ -296,6 +337,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 164.467877,
    "sources": [
     "wiki-paycom-center"
@@ -309,6 +351,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 294.825265,
    "sources": [
     "bexar-adid-1188",
@@ -323,6 +366,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 17.952495,
    "sources": [
     "lla-vwprbyagencyjson",
@@ -337,6 +381,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 351.56221,
    "sources": [
     "houstonsports-multi-purpose-arena-letter-of-agreement",
@@ -353,6 +398,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 438.968554,
    "sources": [
     "memphistn-fy05-annual-report",
@@ -367,6 +413,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 4.414296,
    "sources": [
     "lla-vwprbyagencyjson"
@@ -380,6 +427,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 288.703633,
    "sources": [
     "carolinajournal-on-world-class-chumps",
@@ -394,6 +442,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 3.432664,
    "sources": [
     "lla-vwprbyagencyjson"
@@ -407,6 +456,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 79.977696,
    "sources": [
     "cfo-fis-downtown-arena-revitalization"
@@ -420,6 +470,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 3.96107,
    "sources": [
     "lla-00006b8b",
@@ -434,6 +485,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 127.692351,
    "sources": [
     "wiki-paycom-center",
@@ -448,7 +500,8 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
-   "public_2026_m": 654.016116,
+   "binding": false,
+   "public_2026_m": 635.764504,
    "sources": [
     "occompt-occompt",
     "occompt-occompt-2",
@@ -464,6 +517,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 2.599892,
    "sources": [
     "lla-vwprbyagencyjson",
@@ -478,6 +532,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 455.027052,
    "sources": [
     "ibo-2009-may-atlantic-yards-testimony",
@@ -492,12 +547,14 @@
    "year": 2013,
    "team": "NOP",
    "item_id": "NOP-renovation-6",
-   "description": "2013-14 renovation (2012 lease)",
+   "description": "2012-14 renovation (2012 lease)",
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 71.183793,
    "sources": [
+    "lla-vwprbyagencyjson",
     "sportsbusinessdaily-new-orleans"
    ]
   },
@@ -509,6 +566,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 46.931803,
    "sources": [
     "lgreports-charlotte",
@@ -523,6 +581,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 118.939599,
    "sources": [
     "bexar-adid-1520"
@@ -536,9 +595,25 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 308.292103,
    "sources": [
     "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c"
+   ]
+  },
+  {
+   "year": 2017,
+   "team": "IND",
+   "item_id": "IND-renovation-1",
+   "description": "2014-19 refresh improvements and scheduled capital repairs (2014 agreement)",
+   "kind": "renovation",
+   "category": "existing",
+   "status": "counted",
+   "binding": false,
+   "public_2026_m": 45.326672,
+   "sources": [
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
    ]
   },
   {
@@ -549,6 +624,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 100.12459,
    "sources": [
     "lrl-target",
@@ -563,6 +639,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 386.968009,
    "sources": [
     "degc-ugd-3"
@@ -576,6 +653,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 188.210294,
    "sources": [
     "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
@@ -589,8 +667,10 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 92.45418,
    "sources": [
+    "ohioauditor-auditsearch",
     "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll",
     "axios-cleveland-cavs-impact"
    ]
@@ -603,6 +683,7 @@
    "kind": "construction",
    "category": "new",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 330.193498,
    "sources": [
     "wi-lfb-informational-paper-18"
@@ -616,9 +697,26 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 52.539226,
    "sources": [
     "ideastream-county-council-approves-405-million-for-fieldhou"
+   ]
+  },
+  {
+   "year": 2019,
+   "team": "GSW",
+   "item_id": "GSW-construction",
+   "description": "Chase Center construction",
+   "kind": "construction",
+   "category": "new",
+   "status": "counted",
+   "binding": false,
+   "public_2026_m": 55.081865,
+   "sources": [
+    "sfmta-letter-to-ocii-2015-10-20",
+    "sfmta-board-lrv4-modification-4",
+    "sfmta-board-warriors-supplemental-appropriation"
    ]
   },
   {
@@ -629,6 +727,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 192.218546,
    "sources": [
     "phoenix-phoenix-2",
@@ -640,28 +739,46 @@
   {
    "year": 2021,
    "team": "IND",
-   "item_id": "IND-renovation-1",
-   "description": "2019-22 renovation (25-yr deal)",
+   "item_id": "IND-renovation-2",
+   "description": "2020-22 renovation (25-yr deal; completed 2023)",
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 361.067372,
    "sources": [
     "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
-    "oregon-moda-center-arena-comparable-structure-overview"
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs"
    ]
   },
   {
-   "year": 2024,
-   "team": "CHA",
-   "item_id": "CHA-renovation-2",
-   "description": "2022-25 renovation (arena portion)",
+   "year": 2021,
+   "team": "IND",
+   "item_id": "IND-renovation-3",
+   "description": "2019 agreement: scheduled capital repairs and replacements",
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
-   "public_2026_m": 227.314134,
+   "binding": false,
+   "public_2026_m": 21.571401,
    "sources": [
-    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
+   ]
+  },
+  {
+   "year": 2023,
+   "team": "OKC",
+   "item_id": "OKC-renovation-2",
+   "description": "2022-23 MAPS 4 improvements",
+   "kind": "renovation",
+   "category": "existing",
+   "status": "counted",
+   "binding": false,
+   "public_2026_m": 29.38841,
+   "sources": [
+    "okc-maps4-downtown-arena-related-facilities"
    ]
   },
   {
@@ -672,6 +789,7 @@
    "kind": "purchase",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 7.538371,
    "sources": [
     "portland-2024-annual-comprehensive-financial-report",
@@ -686,10 +804,26 @@
    "kind": "purchase",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 92.511566,
    "sources": [
     "cfo-fis-downtown-arena-revitalization",
     "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena"
+   ]
+  },
+  {
+   "year": 2025,
+   "team": "CHA",
+   "item_id": "CHA-renovation-2",
+   "description": "2024-25 renovation (arena portion, approved 2022)",
+   "kind": "renovation",
+   "category": "existing",
+   "status": "counted",
+   "binding": false,
+   "public_2026_m": 221.486119,
+   "sources": [
+    "wbtv-charlotte-city-council-approves-275-million-spec",
+    "hochtief-turner-completes-spectrum-center-renovation"
    ]
   },
   {
@@ -700,6 +834,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": false,
    "public_2026_m": 19.089013,
    "sources": [
     "ohioauditor-auditsearch"
@@ -713,6 +848,7 @@
    "kind": "project",
    "category": "district",
    "status": "committed",
+   "binding": false,
    "public_2026_m": 375.0,
    "sources": [
     "utah-pmn",
@@ -726,10 +862,27 @@
    "description": "2026 renovation",
    "kind": "renovation",
    "category": "existing",
-   "status": "counted",
+   "status": "pending",
+   "binding": false,
    "public_2026_m": 95.0,
    "sources": [
+    "click2houston-harris-county-approves-180m-toyota-center",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+   ]
+  },
+  {
+   "year": 2026,
+   "team": "IND",
+   "item_id": "IND-renovation-4",
+   "description": "2019 agreement: technology improvements through 2034",
+   "kind": "renovation",
+   "category": "existing",
+   "status": "counted",
+   "binding": true,
+   "public_2026_m": 120.031875,
+   "sources": [
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
    ]
   },
   {
@@ -740,6 +893,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": true,
    "public_2026_m": 80.0,
    "sources": [
     "tri-statedefender-p-349496",
@@ -754,6 +908,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "pending",
+   "binding": false,
    "public_2026_m": 470.0,
    "sources": [
     "tri-statedefender-p-349496",
@@ -772,8 +927,10 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": true,
    "public_2026_m": 226.0,
    "sources": [
+    "occompt-occompt-2",
     "cfpublic-orlando-kia-center-camping-world-stadium-improve",
     "oregon-moda-center-arena-comparable-structure-overview"
    ]
@@ -786,6 +943,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": true,
    "public_2026_m": 25.0,
    "sources": [
     "webapi-texts"
@@ -799,6 +957,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "pending",
+   "binding": false,
    "public_2026_m": 365.0,
    "sources": [
     "olis-enrolled"
@@ -812,6 +971,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "pending",
+   "binding": false,
    "public_2026_m": 88.0,
    "sources": [
     "efiles",
@@ -826,6 +986,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "pending",
+   "binding": false,
    "public_2026_m": 120.0,
    "sources": [
     "efiles",
@@ -840,6 +1001,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": true,
    "public_2026_m": 22.7,
    "sources": [
     "slc-slc-acfr-06-30-2025"
@@ -853,6 +1015,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": true,
    "public_2026_m": 525.0,
    "sources": [
     "utah-pmn",
@@ -867,6 +1030,7 @@
    "kind": "renovation",
    "category": "existing",
    "status": "counted",
+   "binding": true,
    "public_2026_m": 427.5,
    "sources": [
     "cfo-fis-downtown-arena-revitalization",
@@ -882,6 +1046,7 @@
    "kind": "project",
    "category": "new_unopened",
    "status": "committed",
+   "binding": true,
    "public_2026_m": 910.0,
    "sources": [
     "okc-city-council-approves-letter-of-intent-with-the",
@@ -902,12 +1067,14 @@
    "kind": "project",
    "category": "new_unopened",
    "status": "committed",
+   "binding": false,
    "public_2026_m": 311.0,
    "sources": [
     "ksat-results-props-a-and-b-for-coliseum-complex-downt",
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
-    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "tpr-city-scraps-garage-project-marvel-2027-bond"
    ]
   },
   {
@@ -918,15 +1085,17 @@
    "kind": "project",
    "category": "new_unopened",
    "status": "pending",
+   "binding": false,
    "public_2026_m": 549.0,
    "sources": [
     "ksat-results-props-a-and-b-for-coliseum-complex-downt",
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
-    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "tpr-city-scraps-garage-project-marvel-2027-bond"
    ]
   }
  ],
- "note": "Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year.",
- "method": "select i.year, i.team, i.item_id, i.description, i.kind, case when i.kind = 'construction' then 'new' when i.kind = 'project' and i.team = 'UTA' then 'district' when i.kind = 'project' then 'new_unopened' else 'existing' end as category, case when i.core then 'counted' when i.status = 'pending' then 'pending' else 'committed' end as status, i.public_2026_m, coalesce((select list(s.source_id order by s.ord) from item_sources s where s.item_id = i.item_id and s.role = 'public'), []) as sources from items i where i.kind <> 'ongoing' and i.public_2026_m > 0 order by i.year, category, i.team, i.item_id"
+ "note": "Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year. binding marks commitments that are signed, such as Oklahoma City's arena under construction.",
+ "method": "select i.year, i.team, i.item_id, i.description, i.kind, case when i.kind = 'construction' then 'new' when i.kind = 'project' and i.team = 'UTA' then 'district' when i.kind = 'project' then 'new_unopened' else 'existing' end as category, case when i.core then 'counted' when i.status = 'pending' then 'pending' else 'committed' end as status, i.status = 'binding' as binding, i.public_2026_m, coalesce((select list(s.source_id order by s.ord) from item_sources s where s.item_id = i.item_id and s.role = 'public'), []) as sources from items i where i.kind <> 'ongoing' and i.public_2026_m > 0 order by i.year, category, i.team, i.item_id"
 }

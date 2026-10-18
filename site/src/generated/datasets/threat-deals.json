@@ -27,8 +27,8 @@
    "grp": "threat",
    "flags": "explicit;league opposed",
    "year": 1994,
-   "public_m": 48.0,
-   "public_2026_m": 107.446522,
+   "public_m": 54.6,
+   "public_2026_m": 122.177924,
    "total_m": null,
    "share_pct": null
   },
@@ -36,12 +36,12 @@
    "id": "E03",
    "deal": "MIA AmericanAirlines Arena (land)",
    "grp": "threat",
-   "flags": "explicit; + $6.4M/yr county operating (not in capital)",
+   "flags": "explicit; + $6.4M/yr county operating (not in capital); total = county land + the $234.9M the county capitalized",
    "year": 1996,
-   "public_m": 38.0,
-   "public_2026_m": 80.353104,
-   "total_m": 251.0,
-   "share_pct": 15.139442
+   "public_m": 37.6,
+   "public_2026_m": 79.528969,
+   "total_m": 272.5,
+   "share_pct": 13.798165
   },
   {
    "id": "E07",
@@ -49,10 +49,10 @@
    "grp": "threat",
    "flags": "explicit;league-backed",
    "year": 2000,
-   "public_m": 182.0,
-   "public_2026_m": 350.566169,
+   "public_m": 195.0,
+   "public_2026_m": 375.599251,
    "total_m": 235.0,
-   "share_pct": 77.446809
+   "share_pct": 82.978723
   },
   {
    "id": "E10",
@@ -60,10 +60,10 @@
    "grp": "threat",
    "flags": "implied;66-month lag",
    "year": 2007,
-   "public_m": 430.0,
-   "public_2026_m": 688.049204,
+   "public_m": 418.0,
+   "public_2026_m": 668.579029,
    "total_m": 480.0,
-   "share_pct": 89.583333
+   "share_pct": 87.083333
   },
   {
    "id": "E15",
@@ -81,11 +81,11 @@
    "deal": "SAC Golden 1 Center",
    "grp": "threat",
    "flags": "explicit;league opposed move",
-   "year": 2014,
-   "public_m": 255.0,
-   "public_2026_m": 357.365278,
-   "total_m": 507.0,
-   "share_pct": 50.295858
+   "year": 2013,
+   "public_m": 223.1,
+   "public_2026_m": 317.600793,
+   "total_m": 559.2,
+   "share_pct": 39.89628
   },
   {
    "id": "E18",
@@ -94,7 +94,7 @@
    "flags": "explicit;league-backed",
    "year": 2015,
    "public_m": 250.0,
-   "public_2026_m": 349.948068,
+   "public_2026_m": 349.845051,
    "total_m": 524.1,
    "share_pct": 47.70082
   },
@@ -106,8 +106,8 @@
    "year": 2019,
    "public_m": 150.0,
    "public_2026_m": 194.598734,
-   "total_m": 230.0,
-   "share_pct": 65.217391
+   "total_m": 234.9,
+   "share_pct": 63.85696
   },
   {
    "id": "E21",
@@ -119,17 +119,6 @@
    "public_2026_m": 544.546802,
    "total_m": 800.0,
    "share_pct": 64.375
-  },
-  {
-   "id": "E22",
-   "deal": "POR Moda Center (state)",
-   "grp": "threat",
-   "flags": "implied;weak;pending local",
-   "year": 2026,
-   "public_m": 365.0,
-   "public_2026_m": 366.94584,
-   "total_m": 600.0,
-   "share_pct": 60.833333
   },
   {
    "id": "E02",
@@ -159,10 +148,10 @@
    "grp": "no_threat",
    "flags": "unclear",
    "year": 1999,
-   "public_m": 146.5,
-   "public_2026_m": 291.743576,
-   "total_m": 175.0,
-   "share_pct": 83.714286
+   "public_m": 159.9,
+   "public_2026_m": 318.321911,
+   "total_m": 188.4,
+   "share_pct": 84.872611
   },
   {
    "id": "E25",
@@ -193,7 +182,7 @@
    "flags": "none",
    "year": 2016,
    "public_m": 142.5,
-   "public_2026_m": 196.968121,
+   "public_2026_m": 196.865104,
    "total_m": 192.5,
    "share_pct": 74.025974
   },
@@ -204,20 +193,20 @@
    "flags": "none",
    "year": 2017,
    "public_m": 70.0,
-   "public_2026_m": 94.775456,
-   "total_m": 140.0,
-   "share_pct": 50.0
+   "public_2026_m": 94.672439,
+   "total_m": 196.5,
+   "share_pct": 35.62341
   },
   {
    "id": "E29",
-   "deal": "IND Fieldhouse renovation",
+   "deal": "IND Fieldhouse renovation and 2019 agreement capital",
    "grp": "no_threat",
    "flags": "none",
    "year": 2019,
-   "public_m": 295.0,
-   "public_2026_m": 382.70741,
-   "total_m": 360.0,
-   "share_pct": 81.944444
+   "public_m": 432.7,
+   "public_2026_m": 561.338541,
+   "total_m": 497.7,
+   "share_pct": 86.939924
   },
   {
    "id": "E30",
@@ -236,10 +225,10 @@
    "grp": "no_threat",
    "flags": "official_cited",
    "year": 2023,
-   "public_m": 900.0,
-   "public_2026_m": 979.792781,
-   "total_m": 950.0,
-   "share_pct": 94.736842
+   "public_m": 850.0,
+   "public_2026_m": 925.193877,
+   "total_m": 900.0,
+   "share_pct": 94.444444
   },
   {
    "id": "E31",
@@ -248,7 +237,7 @@
    "flags": "none",
    "year": 2024,
    "public_m": 525.0,
-   "public_2026_m": 555.157533,
+   "public_2026_m": 555.054516,
    "total_m": null,
    "share_pct": null
   },
@@ -259,7 +248,7 @@
    "flags": "none",
    "year": 2024,
    "public_m": 226.0,
-   "public_2026_m": 238.998975,
+   "public_2026_m": 238.895958,
    "total_m": 226.0,
    "share_pct": 100.0
   },
@@ -267,23 +256,12 @@
    "id": "E24",
    "deal": "SAS new arena (county binding; share uses city term sheet)",
    "grp": "no_threat",
-   "flags": "none;share 800/1300 planned",
+   "flags": "none;share 860/1300 planned",
    "year": 2025,
    "public_m": 311.0,
    "public_2026_m": 320.382247,
    "total_m": 1300.0,
-   "share_pct": 61.538462
-  },
-  {
-   "id": "E33",
-   "deal": "HOU Toyota Center overhaul",
-   "grp": "no_threat",
-   "flags": "none",
-   "year": 2026,
-   "public_m": 95.0,
-   "public_2026_m": 95.496573,
-   "total_m": 180.0,
-   "share_pct": 52.777778
+   "share_pct": 66.153846
   }
  ],
  "note": "Public money at the deal year in 2025 dollars from compare.py, converted to 2026 dollars.",

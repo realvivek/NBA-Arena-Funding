@@ -11,29 +11,33 @@ bill:
       steps:
         - step: built
           p: >-
-            Governments paid **{{construction_public}}**, in today's dollars, to build the {{arenas_n}} arenas NBA
-            teams play in now. That is only {{construction_share}} of what the public has put into them.
+            Governments paid **{{building_public}}**, in today's dollars, to build the {{arenas_n}} arenas NBA
+            teams play in now, counting {{bkn_pilot}} of Barclays Center bonds repaid with the arena's property
+            taxes. That is {{construction_share}} of what the public has put into them.
           sources: [ledger]
         - step: renovated
           p: >-
             Renovations took **{{renovation_public}}** more. Since 2014, fixing up or buying existing arenas has
-            drawn {{rebuild_ratio}} times as much public money as building new ones.
+            drawn {{rebuild_ratio}} times as much public money as building new ones, counting Oklahoma City's arena
+            under construction.
           sources: [ledger]
         - step: bought
           p: >-
-            Minneapolis, Portland and Washington paid **{{purchase_public}}** to buy arenas from their owners.
+            Minneapolis, Portland and Washington paid the equivalent of **{{purchase_public}}** to buy arenas from
+            their owners.
             Yearly payments to teams and arena operators, most of them in Miami and Indianapolis, add
             **{{ongoing_public}}**.
           sources: [ledger]
         - step: breaks
           p: >-
-            Tax breaks add **{{tax_breaks_added}}**: property taxes never collected, like Madison Square Garden's
-            exemption since 1982, and taxes redirected to arena debt, like Barclays Center's.
-          sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
+            Property-tax breaks add **{{exemptions_added}}**: taxes never collected on Madison Square Garden since
+            1982 and on the United Center under a 1989 formula.
+          sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m, nyc-dof-tax-expenditures-fy2026]
         - step: total
           p: >-
-            That is **{{expanded_public}}** in all. Federal taxpayers carry another {{fed_bond_cost}}: the income
-            tax forgone on the tax-exempt bonds sold for these arenas.
+            That is **{{expanded_public}}** in all, and {{after_opening_share}} of it came after the arenas opened.
+            Federal taxpayers carry an estimated {{fed_bond_cost}} more: the income tax forgone on the tax-exempt
+            bonds sold for these arenas.
           sources: [ledger, gayer-2016]
 
 teams:
@@ -41,9 +45,10 @@ teams:
   title: Every team, ranked
   blocks:
     - p: >-
-        Counting tax breaks, {{arenas_public_n}} of the {{arenas_n}} arenas have taken public money. Brooklyn and
-        New York lead because of tax breaks. In cash, Orlando's Kia Center has taken the most: **{{orl_public}}**,
-        {{orl_share}} of everything spent on it.
+        Counting tax breaks, at least {{arenas_public_n}} of the {{arenas_n}} arenas have taken public money.
+        Brooklyn and New York lead because of tax breaks. In cash, Indianapolis's Gainbridge Fieldhouse has taken
+        the most: **{{ind_public}}**, {{ind_share}} of everything spent on it, from construction to renovations and
+        yearly payments.
       sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
     - teams: all
       title: All the teams
@@ -59,9 +64,11 @@ rebuild:
   title: The bill keeps coming after opening night
   blocks:
     - p: >-
-        The spending does not stop when an arena opens. Since 2014, governments have put **{{rebuild_since_2014}}**
-        into renovating or buying arenas that already stand, {{rebuild_ratio}} times the {{build_since_2014}} that
-        went into the arenas that opened in those years.
+        The spending does not stop when an arena opens. Since 2014, governments have put or committed
+        **{{rebuild_since_2014}}** to renovating or buying arenas that already stand, {{rebuild_ratio}} times the
+        {{build_since_2014}} for new ones: {{build_opened_since_2014}} for the arenas that opened in those years and
+        {{okc_new_arena}} for Oklahoma City's, now under construction. Since then, Indianapolis, Salt Lake City and
+        Washington have each put or committed at least {{rebuild_top3_min}} to an arena that already stands.
       sources: [ledger]
     - fig: rebuild
     - p: >-
@@ -108,7 +115,7 @@ gains:
     - fig: trend
     - p: >-
         Owners who sold recently left with many times what they paid. Paul Allen bought the Trail Blazers for
-        {{por_seller_price}} in 1988; his estate sold them at {{por_price_2026}} in 2026.
+        {{por_seller_price}} in 1988; his estate sold control at a {{por_price_2026}} valuation in 2026.
       sources: [team-ledger]
     - fig: values
     - h3: What the public gets back
@@ -125,8 +132,8 @@ gains:
         owns the Wizards and the Capitals.
       sources: [cfo-tafa-capital-one-arena-112624]
     - p: >-
-        None of the **{{public_deals_reviewed}}** public arena deals reviewed gives the public a share when the team
-        is sold. It can be done: Minnesota's law for the Vikings gives the state and Minneapolis up to
+        None of the **{{public_deals_read}}** public arena deals whose terms could be read gives the public a share
+        when the team is sold. It can be done: Minnesota's law for the Vikings gives the state and Minneapolis up to
         {{vikings_public_share}} of the gain, and the Denver Broncos' stadium lease sent {{broncos_sale_share}} to
         youth programs in the Denver area when the team was sold in 2022.
       sources: [team-ledger, revisor-473j-15]
@@ -155,7 +162,7 @@ behind:
         state bonds for Portland's arena, the Trail Blazers' arena company reported **{{por_lobbying}}** of
         lobbying. San Antonio's study of its new arena district came from CSL International, a subsidiary of
         Legends, whose majority owner, Sixth Street, is an investor in the Spurs.
-      sources: [olis-enrolled, sacurrent-csl-legends-2025]
+      sources: [olis-enrolled, opb-trail-blazers-moda-center-portland-basketball-sp, sacurrent-csl-legends-2025]
   more:
     - { page: who-is-behind, text: 'The investigation: funds, deal makers and federal tax breaks' }
 
@@ -167,20 +174,32 @@ next:
         Leases are where new deals start. Of the current leases, **{{leases_by_2036}}** end by 2036,
         {{leases_by_2031}} of them by 2031. Since 1994, owners or the league threatened, openly or by implication, to
         move a team at least {{threats_counted}} times in the episodes documented here, and public money followed in
-        the same city {{threats_same_city}} times, a median {{lag_median}} months later.
+        the same city {{threats_same_city}} times, {{lag_within_24}} of them within {{lag_window}} months. In
+        Portland, where the team was sold in 2026 to a buyer from Dallas, the state's money is approved but still
+        pending.
       sources: [threat-ledger, ledger]
     - fig: leases
     - p: >-
         The asking has already begun. Memphis is holding **{{mem_pending}}** for a FedExForum renovation until the
         Grizzlies sign a new lease. Portland has **{{por_pending}}** pending for the Moda Center, including up to
         {{por_state}} of state bonds. San Antonio's own share of a new Spurs arena, up to {{sas_pending}}, is
-        pending, on top of up to {{sas_county}} from Bexar County.
-      sources: [tri-statedefender-p-349496, olis-enrolled, ksat-results-props-a-and-b-for-coliseum-complex-downt]
+        pending, on top of up to {{sas_county}} from Bexar County. In Houston, the state is expected to put about
+        {{hou_pending}} into a renovation of the Toyota Center; no agreement has been found.
+      sources: [tri-statedefender-p-349496, olis-enrolled, ksat-results-props-a-and-b-for-coliseum-complex-downt, click2houston-harris-county-approves-180m-toyota-center]
     - p: >-
-        Oklahoma City is already building. Its new arena, with **{{okc_new_arena}}** of public money, is due to open
-        in 2028, and the Thunder's lease runs through at least 2053, with penalties of up to {{okc_exit_penalty}}
+        Oklahoma City is already building. Its new arena, with **{{okc_new_arena}}** of public money counting a
+        garage and team offices, is due to open in 2028, and the Thunder's lease runs through at least 2053, with penalties of up to {{okc_exit_penalty}}
         for leaving early.
       sources: [okc-oklahoma-city-and-thunder-break-ground-on-contin, okc-okc-and-thunder-approve-agreements-to-keep-the-thu]
+    - p: >-
+        Expansion would bring more deals. In March 2026 the league's owners voted to explore adding teams in Las
+        Vegas and Seattle, and the labor contract keeps any expansion fees out of the revenue the league shares with
+        players. Seattle already shares arena-related tax revenue with the company that leases its arena:
+        **{{sea_arena_payments_2024}}** in 2024. Nevada exempts games played by its own professional teams from its
+        {{nv_live_ent_tax}} tax on live entertainment, and it has put public money into stadiums before: up to
+        {{nv_nfl_bonds}} of county bonds for an NFL stadium in 2016 and up to {{nv_mlb_cap}} for a baseball stadium
+        in 2023.
+      sources: [nba-pr-expansion-las-vegas-seattle-2026, nba-cba-2023, seattle-2026-adopted-budget-finance-general, seattle-2025-26-proposed-budget-finance-general, nv-nrs-368a-live-entertainment-tax, nv-sb1-2016-stadium-bonds, nv-sb1-2023-mlb-stadium]
   more:
     - { page: leases, text: 'Every lease and its exit terms' }
     - { page: threats, text: 'All the threat episodes' }
@@ -191,8 +210,8 @@ method:
   blocks:
     - p: >-
         Every figure comes from ledgers built from {{sources_n}} documents: {{sources_government}} from governments,
-        {{sources_team}} from teams, the league or their filings, and {{sources_independent}} from news
-        organizations, researchers and reference works. Each is labeled as computed, taken from a primary document,
+        {{sources_court}} from a court, {{sources_team}} from teams, the league or their filings, and
+        {{sources_independent}} from news organizations, researchers and reference works. Each is labeled as computed, taken from a primary document,
         or taken from the press or another secondary source.
       sources: [ledger, team-ledger]
     - p: >-

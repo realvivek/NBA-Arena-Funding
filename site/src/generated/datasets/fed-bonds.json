@@ -148,7 +148,7 @@
    "team": "ATL",
    "arena": "State Farm Arena",
    "year": 2017,
-   "issuer_series": "City of Atlanta revenue bonds (car rental tax)",
+   "issuer_series": "City of Atlanta and Fulton County Recreation Authority Series 2017A and 2017B (car rental tax)",
    "par_m": 110.0,
    "par_dollars_year": 2017,
    "counted_par_m": 110.0,
@@ -160,13 +160,13 @@
    "team": "DET",
    "arena": "Little Caesars Arena",
    "year": 2017,
-   "issuer_series": "Detroit DDA (Pistons relocation work)",
-   "par_m": 34.5,
+   "issuer_series": "Detroit DDA Series 2017 bonds (Pistons relocation work)",
+   "par_m": 36.0,
    "par_dollars_year": 2017,
-   "counted_par_m": 34.5,
+   "counted_par_m": 36.0,
    "fed_cost_basis": "Whole issue (new money)",
-   "pv_m": 7.1,
-   "pv_2026_m": 9.606548
+   "pv_m": 7.4,
+   "pv_2026_m": 10.012459
   },
   {
    "team": "IND",

@@ -107,8 +107,12 @@ for t in TEAMS:
     tb_cum=tbk.get('cum') if tbk else None; tb_cum26=None
     if tbk and tbk.get('series_file'):
         ser=[(int(r['tax_year']), float(r[tbk['series_col']])/1e6) for r in csv.DictReader(open(DATA+'/'+tbk['series_file']))]
-        tb_cum=sum(a for y,a in ser); tb_cum26=sum(a*f26(y) for y,a in ser); tb_years=f"{ser[0][0]}-{ser[-1][0]}"
-    elif tb_cum: tb_cum26=tb_cum*f26(tbk.get('cum_year'))  # one cumulative figure stated in one year's dollars (MSG: IBO, 2023 dollars)
+        # Cook County bills tax year T in T+1, so each year's forgone tax is deflated at its payment year
+        tb_cum=sum(a for y,a in ser); tb_cum26=sum(a*f26(y+1) for y,a in ser); tb_years=f"{ser[0][0]}-{ser[-1][0]}"
+    elif tb_cum:
+        tb_cum26=tb_cum*f26(tbk.get('cum_year'))  # one cumulative figure stated in one year's dollars (MSG: IBO, 2023 dollars)
+        # later fiscal years stated one by one (MSG: the Department of Finance's tax-expenditure values), each at its year
+        tb_cum+=sum(a for y,a in tbk.get('after',[])); tb_cum26+=sum(a*f26(y) for y,a in tbk.get('after',[]))
     exp26=tb_cum26 if (tbk and tbk.get('expanded') and tb_cum26) else 0.0
     conduit=t.get('conduit')
     le=dict(lease.get(T,{}))
@@ -182,24 +186,24 @@ GAPS={
 'BKN':"State $100M from press (Gotham Gazette); city $205M from IBO 2009 testimony; MTA rail yard counted at IBO's $10M arena share; PILOT bonds counted only in expanded total.",
 'CHA':'City ACFR states a $200M project without itemizing it; the $170M public figure (press) is not split in any primary document; arena reserve contributions before FY2020 not reachable.',
 'CHI':'1989 formula valuation counted in the expanded total for tax years 2002-2016 only; 1994-2001 inputs not reachable; last formula year inferred.',
-'CLE':"Arena cost is the recorded building line, excluding the complex's shared land, site and capitalized costs; repayment source of the county's 1992 and 1994 arena bonds not documented (mixed); 2017 county share mechanism not verified (mixed).",
-'DAL':'Construction cost and $125M public cap from press; 1998A/B arena bonds of $124.4M outstanding in 2002 (City ACFR) are consistent with the cap; land/infrastructure around Victory Park not quantified.',
+'CLE':"Arena cost is the recorded building line, excluding the complex's shared land, site and capitalized costs; repayment source of the county's 1992 and 1994 arena bonds not documented (mixed); of the county's $140M of 2017 bonds, the $70M series the Cavaliers repay through added rent is counted as private, and the other $70M's repayment source is not documented (mixed).",
+'DAL':'Construction cost and $125M public cap from press (Dallas Morning News 2006); 1998A/B arena bonds of $124.4M outstanding in 2002 (City ACFR) are consistent with the cap; the city\'s "more than $60 million" of infrastructure around Victory Park (press) is district-wide and not counted.',
 'DEN':'Cost includes financing costs; construction sales-tax rebates under the 1997 agreement not quantified (its property-tax increment payments are the counted DURA TIF); seat-tax exemption estimated from one unverified press figure (memo only); land the city bought from Southern Pacific not found.',
 'DET':'Public share excludes DDA land/infrastructure outside bond-funded costs and the ongoing school-tax capture beyond debt service.',
-'GSW':'City event-day service costs not counted.',
-'HOU':'Final cost not found ($235M press; $195M floor from primary budgets); the city $20M for site and infrastructure is in the infrastructure bucket (no split); Rent Supported Debt capped at $30.4M but actual size not found, so net public share overstated; 2020 rent abatements ($2.975M) and pre-opening maintenance deposits ($4.5M, payment unconfirmed) not counted.',
-'IND':'1997A/B bond par ($230.7M), which the CIB says funded the construction of the Fieldhouse and an attached garage, exceeds the reported $183M cost and no primary public/private split was found, so the arena is counted as neither privately nor publicly built; the $79M public figure is press. Ongoing CIB payments documented 2014-2025 (ACFR ten-year tables) and 2001.',
+'GSW':'Building cost from press; public transit capital ($42.5M) is the SFMTA\'s 2015 plan, not an audited total; city event-day service costs not counted.',
+'HOU':'Final cost not found ($235M press; $195M floor from primary budgets); the city $20M for site and infrastructure is in the infrastructure bucket (no split); the Rockets\' rent services a separate Rent Supported Debt issue (principal capped at $30.4M) whose share of construction was not found, so it is not netted; the 2026 renovation\'s expected $95M state grant is pending (no agreement found); 2020 rent abatements ($2.975M) and pre-opening maintenance deposits ($4.5M, payment unconfirmed) not counted.',
+'IND':'1997A/B bond par ($230.7M), which the CIB says funded the construction of the Fieldhouse and an attached garage, exceeds the reported $183M cost and no primary public/private split was found, so the arena is counted as neither privately nor publicly built; the $79M public figure is press. CIB capital obligations under the 2014 and 2019 agreements (refresh, repairs, technology) from the CIB\'s notes; the 2010 and 2012 amendments\' up to $3.5M not added. Ongoing CIB payments documented 2014-2025 (ACFR ten-year tables) and 2001.',
 'LAC':'No public money found; land purchased at $66.25M.',
-'LAL':"City's ~$70M advance treated as conduit (developer must offset it under the Gap Funding Agreement); 1997 deal documents not reached.",
+'LAL':"City's ~$70M advance counted as public money: the developer's obligation is offset mainly by credits of city revenue (the arena admissions fee and convention center parking revenue); building cost from press; 1997 deal documents not reached.",
 'MEM':'Cost and funding split from the City CAFR (FY2005); Sports Authority bond repayment streams not split (mixed); $470M of the $550M renovation pending lease.',
-'MIA':'County land $37.6M from the Inspector General; Heat-paid construction per press; county subsidy assumed $6.4M every year FY2000-26; State of Florida payments after June 2014 at the scheduled rate.',
+'MIA':'County land $37.6M from the Inspector General; construction cost $234.9M as capitalized by the county (ACFR), funded by the Heat; county payments $3.2M in FY2000 and $6.4M a year after, with FY2011-12 not documented and not counted; State of Florida payments after June 2014 at the scheduled rate.',
 'MIL':'Value of the Bradley Center site conveyed to the team not documented; state GPR to 2035-36 is debt service on counted bonds.',
 'MIN':'City subsidy split (TIF bonds vs land and infrastructure) not settled (mixed); only 2024 operating supplements documented.',
 'NOP':'1999 construction cost and mechanism from press; ongoing payments audited FY2003-FY2025 plus budgeted Quality Jobs equivalent FY2025-26 (FY2026 audit not issued); QJ FY2023-24, suite payments and home-game entitlements excluded.',
-'NYK':'Exemption cumulative: IBO (July 2023) estimates more than $946.7M in 2023 dollars forgone since 1982, converted to 2026 dollars; fiscal years after 2023 not added.',
+'NYK':'Exemption: IBO (July 2023) estimates more than $946.7M in 2023 dollars forgone in FY1984-FY2023, converted to 2026 dollars, plus the Department of Finance\'s values for FY2024-FY2026; 1982-83 not estimated.',
 'OKC':'2002 cost from press; 2008 renovation arena share computed pro rata from plan; operating subsidy documented for FY2023 only; MAPS 4 money for the new arena reported as $70M, $78M, $89M and ~$99M.',
-'ORL':"Cost is a plan-of-finance figure (2016), not an audited final cost; the $12M of city cash repaid from Magic use payments is counted as public, so net public cost is overstated; interest earnings partly on the Magic's deposit (mixed).",
-'PHI':'No public money found in sources reached (contemporaneous 1994-96 records not reached).',
+'ORL':"Cost is a plan-of-finance figure (2016), not an audited final cost; the $12M of city cash repaid from Magic use payments is counted as private (team-repaid); interest earnings partly on the Magic's deposit (mixed).",
+'PHI':'No public money found in sources reached (contemporaneous 1994-96 records not reached); the city is owner of record of the arena parcel, which is almost fully exempt from property tax (about $3.5M a year, not counted, as for other publicly owned arenas); renovation cost from press.',
 'PHX':'1992 cost and $35M city share from press; a 1998 arena refunding of $48.74M suggests more city debt; 2019 $175M includes the $25M renewal and replacement account paid over time.',
 'POR':'1995 cost and city $34.5M from press, mechanism not documented; $573M rebuild pending; city match of team capital spending during the bridge term not quantified.',
 'SAC':"Cost from the construction monitor's last posted report (99.5% complete), not an audited total; value of city parcels and billboard rights not documented.",

@@ -3,33 +3,33 @@
  "title": "Where the public money went, arena by arena",
  "sources": [
   "ledger",
+  "wiki-gainbridge-fieldhouse",
   "wiki-kia-center",
   "wiki-capital-one-arena",
-  "wiki-gainbridge-fieldhouse",
   "wiki-spectrum-center",
   "wiki-fedexforum",
   "wiki-delta-center",
   "wiki-smoothie-king-center",
   "wiki-barclays-center",
-  "wiki-toyota-center",
   "wiki-rocket-arena",
   "wiki-frost-bank-center",
   "wiki-kaseya-center",
   "wiki-little-caesars-arena",
+  "wiki-toyota-center",
+  "wiki-paycom-center",
   "wiki-fiserv-forum",
   "wiki-state-farm-arena",
   "wiki-golden-1-center",
-  "wiki-paycom-center",
   "wiki-mortgage-matchup-center",
   "wiki-target-center",
   "wiki-american-airlines-center",
+  "wiki-crypto-com-arena",
   "wiki-moda-center",
   "wiki-ball-arena",
+  "wiki-chase-center",
   "wiki-td-garden",
   "wiki-united-center",
-  "wiki-chase-center",
   "wiki-intuit-dome",
-  "wiki-crypto-com-arena",
   "wiki-madison-square-garden",
   "wiki-xfinity-mobile-arena",
   "wiki-scotiabank-arena"
@@ -49,13 +49,25 @@
  ],
  "rows": [
   {
+   "team": "IND",
+   "arena": "Gainbridge Fieldhouse",
+   "city": "Indianapolis, IN",
+   "lat": 39.76389,
+   "lon": -86.15556,
+   "public_2026_m": 934.355886,
+   "public_share_pct": 76.525081,
+   "sources": [
+    "wiki-gainbridge-fieldhouse"
+   ]
+  },
+  {
    "team": "ORL",
    "arena": "Kia Center",
    "city": "Orlando, FL",
    "lat": 28.53917,
    "lon": -81.38361,
-   "public_2026_m": 880.016116,
-   "public_share_pct": 92.045685,
+   "public_2026_m": 861.764504,
+   "public_share_pct": 90.136649,
    "sources": [
     "wiki-kia-center"
    ]
@@ -73,25 +85,13 @@
    ]
   },
   {
-   "team": "IND",
-   "arena": "Gainbridge Fieldhouse",
-   "city": "Indianapolis, IN",
-   "lat": 39.76389,
-   "lon": -86.15556,
-   "public_2026_m": 747.425938,
-   "public_share_pct": 72.281412,
-   "sources": [
-    "wiki-gainbridge-fieldhouse"
-   ]
-  },
-  {
    "team": "CHA",
    "arena": "Spectrum Center",
    "city": "Charlotte, NC",
    "lat": 35.225,
    "lon": -80.83917,
-   "public_2026_m": 565.319268,
-   "public_share_pct": 91.732852,
+   "public_2026_m": 559.491253,
+   "public_share_pct": 91.653924,
    "sources": [
     "wiki-spectrum-center"
    ]
@@ -102,7 +102,7 @@
    "city": "Memphis, TN",
    "lat": 35.13833,
    "lon": -90.05056,
-   "public_2026_m": 554.048244,
+   "public_2026_m": 547.748244,
    "public_share_pct": 100.0,
    "sources": [
     "wiki-fedexforum"
@@ -145,25 +145,13 @@
    ]
   },
   {
-   "team": "HOU",
-   "arena": "Toyota Center",
-   "city": "Houston, TX",
-   "lat": 29.75083,
-   "lon": -95.36222,
-   "public_2026_m": 446.56221,
-   "public_share_pct": 69.804227,
-   "sources": [
-    "wiki-toyota-center"
-   ]
-  },
-  {
    "team": "CLE",
    "arena": "Rocket Arena",
    "city": "Cleveland, OH",
    "lat": 41.49639,
    "lon": -81.68806,
    "public_2026_m": 432.583988,
-   "public_share_pct": 64.656356,
+   "public_share_pct": 63.225409,
    "sources": [
     "wiki-rocket-arena"
    ]
@@ -187,7 +175,7 @@
    "lat": 25.78139,
    "lon": -80.18806,
    "public_2026_m": 410.144553,
-   "public_share_pct": 49.164247,
+   "public_share_pct": 46.722184,
    "sources": [
     "wiki-kaseya-center"
    ]
@@ -202,6 +190,30 @@
    "public_share_pct": 30.765921,
    "sources": [
     "wiki-little-caesars-arena"
+   ]
+  },
+  {
+   "team": "HOU",
+   "arena": "Toyota Center",
+   "city": "Houston, TX",
+   "lat": 29.75083,
+   "lon": -95.36222,
+   "public_2026_m": 351.56221,
+   "public_share_pct": 76.470588,
+   "sources": [
+    "wiki-toyota-center"
+   ]
+  },
+  {
+   "team": "OKC",
+   "arena": "Paycom Center",
+   "city": "Oklahoma City, OK",
+   "lat": 35.46333,
+   "lon": -97.515,
+   "public_2026_m": 331.127083,
+   "public_share_pct": 100.0,
+   "sources": [
+    "wiki-paycom-center"
    ]
   },
   {
@@ -241,18 +253,6 @@
    ]
   },
   {
-   "team": "OKC",
-   "arena": "Paycom Center",
-   "city": "Oklahoma City, OK",
-   "lat": 35.46333,
-   "lon": -97.515,
-   "public_2026_m": 301.738673,
-   "public_share_pct": 100.0,
-   "sources": [
-    "wiki-paycom-center"
-   ]
-  },
-  {
    "team": "PHX",
    "arena": "Mortgage Matchup Center",
    "city": "Phoenix, AZ",
@@ -289,6 +289,18 @@
    ]
   },
   {
+   "team": "LAL",
+   "arena": "Crypto.com Arena",
+   "city": "Los Angeles, CA",
+   "lat": 34.04306,
+   "lon": -118.26722,
+   "public_2026_m": 139.371912,
+   "public_share_pct": 18.666667,
+   "sources": [
+    "wiki-crypto-com-arena"
+   ]
+  },
+  {
    "team": "POR",
    "arena": "Moda Center",
    "city": "Portland, OR",
@@ -310,6 +322,18 @@
    "public_share_pct": 20.0489,
    "sources": [
     "wiki-ball-arena"
+   ]
+  },
+  {
+   "team": "GSW",
+   "arena": "Chase Center",
+   "city": "San Francisco, CA",
+   "lat": 37.76806,
+   "lon": -122.3875,
+   "public_2026_m": 55.081865,
+   "public_share_pct": 2.904519,
+   "sources": [
+    "wiki-chase-center"
    ]
   },
   {
@@ -337,18 +361,6 @@
    ]
   },
   {
-   "team": "GSW",
-   "arena": "Chase Center",
-   "city": "San Francisco, CA",
-   "lat": 37.76806,
-   "lon": -122.3875,
-   "public_2026_m": 0.0,
-   "public_share_pct": 0.0,
-   "sources": [
-    "wiki-chase-center"
-   ]
-  },
-  {
    "team": "LAC",
    "arena": "Intuit Dome",
    "city": "Inglewood, CA",
@@ -358,18 +370,6 @@
    "public_share_pct": 0.0,
    "sources": [
     "wiki-intuit-dome"
-   ]
-  },
-  {
-   "team": "LAL",
-   "arena": "Crypto.com Arena",
-   "city": "Los Angeles, CA",
-   "lat": 34.04306,
-   "lon": -118.26722,
-   "public_2026_m": 0.0,
-   "public_share_pct": 0.0,
-   "sources": [
-    "wiki-crypto-com-arena"
    ]
   },
   {

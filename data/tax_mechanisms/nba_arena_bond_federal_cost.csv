@@ -21,10 +21,10 @@ Little Caesars Arena,DET,2014,Michigan Strategic Fund LO Revenue Bonds Series 20
 Little Caesars Arena,DET,2014,Michigan Strategic Fund LO Revenue Bonds Series 2014A,250.0,tax-exempt,0.35,4.16,3.64,71.3
 Little Caesars Arena,DET,2014,Michigan Strategic Fund Series 2014B,200.0,TAXABLE,0.28,4.16,0.0,0.0
 Little Caesars Arena,DET,2014,Michigan Strategic Fund Series 2014B,200.0,TAXABLE,0.35,4.16,0.0,0.0
-Little Caesars Arena,DET,2017,Detroit DDA (Pistons relocation work),34.5,not confirmed,0.28,3.74,0.36,7.1
-Little Caesars Arena,DET,2017,Detroit DDA (Pistons relocation work),34.5,not confirmed,0.35,3.74,0.45,8.9
-Little Caesars Arena,DET,2018,Detroit DDA Tax Increment Revenue Refunding Bonds 2018A + subordinate,311.0,not confirmed (refunds tax-exempt 2014A),0.28,3.93,3.42,67.1
-Little Caesars Arena,DET,2018,Detroit DDA Tax Increment Revenue Refunding Bonds 2018A + subordinate,311.0,not confirmed (refunds tax-exempt 2014A),0.35,3.93,4.28,83.8
+Little Caesars Arena,DET,2017,Detroit DDA Series 2017 bonds (Pistons relocation work),36.0,not confirmed,0.28,3.74,0.38,7.4
+Little Caesars Arena,DET,2017,Detroit DDA Series 2017 bonds (Pistons relocation work),36.0,not confirmed,0.35,3.74,0.47,9.2
+Little Caesars Arena,DET,2018,Detroit DDA Tax Increment Revenue Refunding Bonds Series 2018A,287.425,not confirmed (refunds tax-exempt 2014A),0.28,3.93,3.16,62.0
+Little Caesars Arena,DET,2018,Detroit DDA Tax Increment Revenue Refunding Bonds Series 2018A,287.425,not confirmed (refunds tax-exempt 2014A),0.35,3.93,3.95,77.5
 Golden 1 Center,SAC,2015,Sacramento Public Financing Authority Lease Revenue Bonds Series 2015 (Golden 1 Center),272.87,TAXABLE,0.28,3.89,0.0,0.0
 Golden 1 Center,SAC,2015,Sacramento Public Financing Authority Lease Revenue Bonds Series 2015 (Golden 1 Center),272.87,TAXABLE,0.35,3.89,0.0,0.0
 Fiserv Forum,MIL,2016,Wisconsin Center District appropriation revenue bonds,108.1,tax-exempt,0.28,3.67,1.11,21.8
@@ -35,8 +35,8 @@ Fiserv Forum,MIL,2016,WCD dedicated tax revenue refunding bonds (Nov 29 2016),37
 Fiserv Forum,MIL,2016,WCD dedicated tax revenue refunding bonds (Nov 29 2016),37.9,tax-exempt (assumed),0.35,3.67,0.49,9.5
 Fiserv Forum,MIL,2016,"WCD Subordinate Revenue Bonds Series 2016 (Taxable), BCPL private placement",45.0,TAXABLE,0.28,3.67,0.0,0.0
 Fiserv Forum,MIL,2016,"WCD Subordinate Revenue Bonds Series 2016 (Taxable), BCPL private placement",45.0,TAXABLE,0.35,3.67,0.0,0.0
-State Farm Arena,ATL,2017,City of Atlanta revenue bonds (car rental tax),110.0,not confirmed,0.28,3.74,1.15,22.6
-State Farm Arena,ATL,2017,City of Atlanta revenue bonds (car rental tax),110.0,not confirmed,0.35,3.74,1.44,28.2
+State Farm Arena,ATL,2017,City of Atlanta and Fulton County Recreation Authority Series 2017A and 2017B (car rental tax),110.0,not confirmed,0.28,3.74,1.15,22.6
+State Farm Arena,ATL,2017,City of Atlanta and Fulton County Recreation Authority Series 2017A and 2017B (car rental tax),110.0,not confirmed,0.35,3.74,1.44,28.2
 Gainbridge Fieldhouse,IND,2021,MCCRFA Excise Taxes Lease Rental Revenue Bonds Series 2021A (via Indianapolis Bond Bank),401.41,not stated (5% coupons),0.28,2.7,3.03,59.5
 Gainbridge Fieldhouse,IND,2021,MCCRFA Excise Taxes Lease Rental Revenue Bonds Series 2021A (via Indianapolis Bond Bank),401.41,not stated (5% coupons),0.35,2.7,3.79,74.4
 Gainbridge Fieldhouse,IND,2021,CIB Excise Taxes Revenue Subordinate Bonds Series 2021A,22.925,not stated (5%),0.28,2.7,0.17,3.4

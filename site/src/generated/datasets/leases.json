@@ -8,8 +8,11 @@
   "audacy-fedexforum",
   "lla-0000454ba",
   "senate-01-124-lsed-fy-26-final",
+  "portland-2024-annual-comprehensive-financial-report",
+  "oregon-moda-center-arena-comparable-structure-overview",
   "portland-adopted",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
+  "frontofficesports-comcasts-400-million-wells-fargo-center-up",
   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
   "ksat-spurs-consider-a-downtown-move",
   "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
@@ -19,17 +22,23 @@
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
   "sportsbusinessdaily-twolves",
+  "hoodline-target-center-if-wolves-move",
+  "occompt-occompt-2",
   "law-orlando-magic-lease-summary-8-14",
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
   "bostonglobe-celtics-extend-their-lease-td-garden-through-203",
   "si-phoenix-city-council-approves-suns-arena-rennova",
   "webapi-texts",
+  "miamidade-2014-06-03-bcc",
   "miamidade-volume-1",
   "upi-heat-commit-to-miami-through-2040",
   "nbcmiami-county-approves-new-heat-deal",
   "miamidadeclerk-cafr2025-complete",
+  "yahoo-latimes-crypto-com-arena-renovation-2022",
   "in-83950a",
-  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
+  "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
+  "wbtv-charlotte-city-council-approves-275-million-spec",
+  "law-charlotte-hornets-lease-summary",
   "ajc-rnrhggeufau2uxmza4cdgi",
   "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
   "fieldofschemes",
@@ -46,8 +55,11 @@
   "bondbuyer-oklahoma-city-eyes-may-for-basketball-arena-fina",
   "cbssports-thunder-will-stay-in-oklahoma-city-through-at-le",
   "sec-msgs-20260630",
+  "slcdocs-updateddraftparticipationagreement070524",
+  "ksl-delta-center-renovation-timeline-key-details",
   "ksl",
   "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b",
+  "milehighcre-rezoning-70-acres-around-ball-arena",
   "detroit-dda-fs-2024"
  ],
  "base_sources": [
@@ -111,15 +123,17 @@
    "arena": "Moda Center",
    "owner": "City of Portland (public since 2024: building bought for $1, land under it for $7.13M)",
    "term_end_year": 2030,
-   "term_and_nonrelocation": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026",
-   "outs_penalties_notes": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves",
+   "term_and_nonrelocation": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); the 2024 bridge agreement has a five-year option to extend through 2035 (City Ordinance 191857, per ACFR FY2024, b); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026 (Resolution 37750)",
+   "outs_penalties_notes": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b)",
    "summary": "Expires Oct. 11, 2030, unless extended; a 20-year lease is being negotiated.",
    "label": "b/c",
-   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves",
+   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b)",
    "pending_2026_m": 573.0,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
+    "portland-2024-annual-comprehensive-financial-report",
+    "oregon-moda-center-arena-comparable-structure-overview",
     "portland-adopted"
    ]
   },
@@ -145,15 +159,16 @@
    "arena": "Wells Fargo Center",
    "owner": "Comcast Spectacor (private)",
    "term_end_year": 2031,
-   "term_and_nonrelocation": "Moving to new private South Philly arena (target 2030-31) with Comcast; WFC lease end not confirmed",
+   "term_and_nonrelocation": "The 76ers plan to leave the arena when their lease expires in 2031 (Front Office Sports, c) and move to a new private South Philadelphia arena with Comcast Spectacor (target 2030-31)",
    "outs_penalties_notes": "Not public",
-   "summary": "The team plans to move to a privately funded arena in 2030.",
-   "label": "c/u",
+   "summary": "The lease runs to 2031; the team plans to move to a privately funded arena in 2030.",
+   "label": "c",
    "exit_penalty": "Not public",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
+    "frontofficesports-comcasts-400-million-wells-fargo-center-up",
     "whyy-south-philadelphia-new-arena-design-76ers-comcas"
    ]
   },
@@ -185,7 +200,7 @@
    "summary": "Runs through the 2032-33 season; no extension reported.",
    "label": "b/c",
    "exit_penalty": "Landlord duty to renovate to \"first-class, state of the art\" standard (s8.6) limited to Renovation Fund",
-   "pending_2026_m": null,
+   "pending_2026_m": 95.0,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
@@ -226,7 +241,8 @@
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
-    "sportsbusinessdaily-twolves"
+    "sportsbusinessdaily-twolves",
+    "hoodline-target-center-if-wolves-move"
    ]
   },
   {
@@ -234,15 +250,16 @@
    "arena": "Kia Center",
    "owner": "City of Orlando (public)",
    "term_end_year": 2035,
-   "term_and_nonrelocation": "Use Agreement ends after 25th Contract Year from 2010 commencement; no extension reported with Nov-2024 $226M TDT package",
+   "term_and_nonrelocation": "Use Agreement ends June 30 2035 (2024 interlocal funding agreement, b); before the county issues its Contract Sixth Cent bonds (2027 at the earliest) the city must negotiate an extension at least as long as those bonds, with non-relocation penalties covering the remaining debt; the 2016 interlocal (s.5.4.7) also gives a five-year renewal option",
    "outs_penalties_notes": "Rent $1M/contract year",
    "summary": "Runs to 2035; no extension reported.",
-   "label": "b-/c",
+   "label": "b",
    "exit_penalty": "Rent $1M/contract year",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
+    "occompt-occompt-2",
     "law-orlando-magic-lease-summary-8-14",
     "cfpublic-orlando-kia-center-camping-world-stadium-improve"
    ]
@@ -269,11 +286,11 @@
    "arena": "Mortgage Matchup Center",
    "owner": "City of Phoenix (public)",
    "term_end_year": 2037,
-   "term_and_nonrelocation": "Lease to 2037, option to 2042",
-   "outs_penalties_notes": "Up to $200M if team leaves before 2037",
+   "term_and_nonrelocation": "Lease to 2037 (15 years beyond the old term), with a five-year option to 2042 at the team's discretion (council report, b)",
+   "outs_penalties_notes": "Up to $200M in liquidated damages if the team relocates before the term ends (council report, b)",
    "summary": "Runs to 2037, with an option to 2042; leaving before 2037 costs up to $200M.",
-   "label": "c",
-   "exit_penalty": "Up to $200M if team leaves before 2037",
+   "label": "b",
+   "exit_penalty": "Up to $200M in liquidated damages if the team relocates before the term ends (council report, b)",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
@@ -287,19 +304,37 @@
    "arena": "Kaseya Center",
    "owner": "Miami-Dade County (public)",
    "term_end_year": 2040,
-   "term_and_nonrelocation": "2014 extension through 2039-40 season (UPI); NBC Miami cites subsidy schedule only to 2035",
+   "term_and_nonrelocation": "Through June 30 2040 under the 2014 agreements (UPI; Commission Auditor notes, b); from 2025 either side may ask to renegotiate the terms for July 2035-June 2040 and, if either elects, terminate from July 1 2035",
    "outs_penalties_notes": "County subsidy $6.4M/yr (FY26 budget) rising to $8.5M 2031-35",
-   "summary": "Runs through the 2039-40 season.",
-   "label": "b/c",
+   "summary": "Runs through the 2039-40 season, but either side may end it from July 2035.",
+   "label": "b",
    "exit_penalty": "County subsidy $6.4M/yr (FY26 budget) rising to $8.5M 2031-35",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
+    "miamidade-2014-06-03-bcc",
     "miamidade-volume-1",
     "upi-heat-commit-to-miami-through-2040",
     "nbcmiami-county-approves-new-heat-deal",
     "miamidadeclerk-cafr2025-complete"
+   ]
+  },
+  {
+   "team": "LAL",
+   "arena": "Crypto.com Arena",
+   "owner": "AEG (private)",
+   "term_end_year": 2041,
+   "term_and_nonrelocation": "About 2041: the Lakers signed a 20-year lease extension with AEG about a year before Aug 2022 (Los Angeles Times via Yahoo, c); the exact end is not public",
+   "outs_penalties_notes": "Not public",
+   "summary": "AEG owns the arena on city land leased to 2053; the Lakers' lease with AEG was extended about 20 years in 2021, to about 2041.",
+   "label": "c",
+   "exit_penalty": "Not public",
+   "pending_2026_m": null,
+   "new_arena_2026_m": null,
+   "new_arena_pending_2026_m": null,
+   "sources": [
+    "yahoo-latimes-crypto-com-arena-renovation-2022"
    ]
   },
   {
@@ -308,15 +343,16 @@
    "owner": "Capital Improvement Board (public)",
    "term_end_year": 2044,
    "term_and_nonrelocation": "25-yr agreement 2019-2044 + 1-yr team option",
-   "outs_penalties_notes": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games",
+   "outs_penalties_notes": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games; if the Pacers and the CIB do not agree on more technology funding by 2036, the Pacers could terminate (IBJ 2019, c)",
    "summary": "Runs from 2019 to 2044; the team owes up to $750M if it fails to play its home games there.",
    "label": "b",
-   "exit_penalty": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games",
+   "exit_penalty": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games; if the Pacers and the CIB do not agree on more technology funding by 2036, the Pacers could terminate (IBJ 2019, c)",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
-    "in-83950a"
+    "in-83950a",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
    ]
   },
   {
@@ -324,16 +360,17 @@
    "arena": "Spectrum Center",
    "owner": "City of Charlotte (public)",
    "term_end_year": 2045,
-   "term_and_nonrelocation": "Extended from 2030 to 2045 (June 2022, 10-1 vote)",
-   "outs_penalties_notes": "City was already obligated to spend $173M under old lease; Hornets $0 rent until 2030 then $2M/yr",
+   "term_and_nonrelocation": "Extended from 2030 to 2045 (council vote of 10-1, June 13 2022)",
+   "outs_penalties_notes": "City was already obligated to spend $173M under the old lease; the Hornets pay a total of $32M in rent through 2045 (start year not stated) and continue a $1.1M-a-year capital fund contribution (WBTV); under the 2005 lease the rent was a capital amount of $250,000 rising to $500,000 (Marquette summary)",
    "summary": "Extended in 2022 from 2030 to 2045.",
    "label": "c",
-   "exit_penalty": "City was already obligated to spend $173M under old lease; Hornets $0 rent until 2030 then $2M/yr",
+   "exit_penalty": "City was already obligated to spend $173M under the old lease; the Hornets pay a total of $32M in rent through 2045 (start year not stated) and continue a $1.1M-a-year capital fund contribution (WBTV); under the 2005 lease the rent was a capital amount of $250,000 rising to $500,000 (Marquette summary)",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
-    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
+    "wbtv-charlotte-city-council-approves-275-million-spec",
+    "law-charlotte-hornets-lease-summary"
    ]
   },
   {
@@ -438,7 +475,7 @@
    "term_end_year": 2055,
    "term_and_nonrelocation": "Arena license to June 30, 2055, fees +3%/yr",
    "outs_penalties_notes": "n/a",
-   "summary": "The team's parent company owns the arena; its tax exemption depends on hosting the Knicks and Rangers.",
+   "summary": "A company under the same family control owns the arena; the Knicks use it under a license to 2055, and the tax exemption depends on hosting the Knicks and Rangers.",
    "label": "b",
    "exit_penalty": "n/a",
    "pending_2026_m": null,
@@ -454,14 +491,16 @@
    "owner": "Smith Entertainment Group (private) + SLC participation agreement",
    "term_end_year": 2055,
    "term_and_nonrelocation": "30-yr non-relocation tied to SLC 0.5% sales tax from 2025 (~2054-55 inferred)",
-   "outs_penalties_notes": "Damages $250M if both teams leave, $125M if one (draft terms)",
-   "summary": "The teams commit to stay 30 years; leaving costs up to $250M, declining over time.",
-   "label": "c/u",
-   "exit_penalty": "Damages $250M if both teams leave, $125M if one (draft terms)",
+   "outs_penalties_notes": "If both teams leave, Smith Entertainment Group must repay the outstanding sales-tax bonds whose proceeds it received; if one team leaves, 50% of a $250M liquidated damages amount in years 1-15, reduced by $16,666,667 a year to zero at year 30, so $125M at most (draft participation agreement of July 5 2024, s.11.8(d), b; the executed agreement of Dec 10 2024 was not read)",
+   "summary": "The teams commit to stay 30 years; if both leave, the owner repays the arena bonds it received, and if one leaves, damages of up to $125M.",
+   "label": "b/c",
+   "exit_penalty": "If both teams leave, Smith Entertainment Group must repay the outstanding sales-tax bonds whose proceeds it received; if one team leaves, 50% of a $250M liquidated damages amount in years 1-15, reduced by $16,666,667 a year to zero at year 30, so $125M at most (draft participation agreement of July 5 2024, s.11.8(d), b; the executed agreement of Dec 10 2024 was not read)",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
+    "slcdocs-updateddraftparticipationagreement070524",
+    "ksl-delta-center-renovation-timeline-key-details",
     "ksl"
    ]
   },
@@ -502,15 +541,17 @@
    "arena": "Ball Arena",
    "owner": "KSE (private)",
    "term_end_year": null,
-   "term_and_nonrelocation": "Team-affiliated owner",
+   "term_and_nonrelocation": "Team-affiliated owner; with the Oct 21 2024 rezoning and development agreement, the Nuggets and Avalanche agreed to remain in the area until June 30 2050 (c); penalty not found",
    "outs_penalties_notes": "n/a",
-   "summary": "No public lease; the owner holds the arena on city land.",
+   "summary": "No public lease; under a 2024 development agreement the Nuggets and Avalanche stay in the area until June 30, 2050.",
    "label": "c",
    "exit_penalty": "n/a",
    "pending_2026_m": 0.0,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
-   "sources": []
+   "sources": [
+    "milehighcre-rezoning-70-acres-around-ball-arena"
+   ]
   },
   {
    "team": "DET",
@@ -554,21 +595,6 @@
    "summary": "No public lease; the team owns the arena.",
    "label": "c",
    "exit_penalty": "n/a",
-   "pending_2026_m": null,
-   "new_arena_2026_m": null,
-   "new_arena_pending_2026_m": null,
-   "sources": []
-  },
-  {
-   "team": "LAL",
-   "arena": "Crypto.com Arena",
-   "owner": "AEG (private)",
-   "term_end_year": null,
-   "term_and_nonrelocation": "Lease end not confirmed (2041 often cited)",
-   "outs_penalties_notes": "Not public",
-   "summary": "No public lease; AEG owns the arena on city land leased to 2053.",
-   "label": "u",
-   "exit_penalty": "Not public",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,

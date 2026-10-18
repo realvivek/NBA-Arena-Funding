@@ -216,3 +216,20 @@ news4jax.com: {publisher: News4JAX, origin: independent}
 privateequitywire.co.uk: {publisher: Private Equity Wire, origin: independent}
 sportcal.com: {publisher: Sportcal, origin: independent}
 cliffordchance.com: {publisher: Clifford Chance, origin: independent}
+archive.kuow.org: {publisher: KUOW, origin: independent}
+click2houston.com: {publisher: KPRC 2 Houston, origin: independent}
+courts.ca.gov: {publisher: California Court of Appeal, origin: court}
+heraldnet.com: {publisher: The Daily Herald (Everett), origin: independent}
+hochtief.de: {publisher: Hochtief (parent of Turner Construction), origin: independent}
+houstonpress.com: {publisher: Houston Press, origin: independent}
+nyc.gov: {publisher: New York City Department of Finance, origin: government}
+oregonlegislature.gov: {publisher: Oregon Legislative Assembly, origin: government}
+phl.carto.com: {publisher: City of Philadelphia, Office of Property Assessment, origin: government}
+sfmta.com: {publisher: San Francisco Municipal Transportation Agency, origin: government}
+spokesman.com: {publisher: The Spokesman-Review, origin: independent}
+blazersedge.com: {publisher: "Blazer's Edge (SB Nation)", origin: independent}
+hoodline.com: {publisher: Hoodline, origin: independent}
+milehighcre.com: {publisher: Mile High CRE, origin: independent}
+sportico.com: {publisher: Sportico, origin: independent}
+dallasobserver.com: {publisher: Dallas Observer, origin: independent}
+leg.state.nv.us: {publisher: Nevada Legislature, origin: government}

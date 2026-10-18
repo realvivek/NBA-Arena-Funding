@@ -5,21 +5,21 @@
    "flags": "explicit;league opposed",
    "group": "T",
    "id": "E01",
-   "public_m": 48,
-   "public_m_2025": 104.3,
+   "public_m": 54.6,
+   "public_m_2025": 118.6,
    "share": null,
    "total_m": null,
    "year": 1994
   },
   {
    "deal": "MIA AmericanAirlines Arena (land)",
-   "flags": "explicit; + $6.4M/yr county operating (not in capital)",
+   "flags": "explicit; + $6.4M/yr county operating (not in capital); total = county land + the $234.9M the county capitalized",
    "group": "T",
    "id": "E03",
-   "public_m": 38,
-   "public_m_2025": 78.0,
-   "share": 0.15139442231075698,
-   "total_m": 251,
+   "public_m": 37.6,
+   "public_m_2025": 77.2,
+   "share": 0.1379816513761468,
+   "total_m": 272.5,
    "year": 1996
   },
   {
@@ -27,9 +27,9 @@
    "flags": "explicit;league-backed",
    "group": "T",
    "id": "E07",
-   "public_m": 182,
-   "public_m_2025": 340.3,
-   "share": 0.774468085106383,
+   "public_m": 195,
+   "public_m_2025": 364.6,
+   "share": 0.8297872340425532,
    "total_m": 235,
    "year": 2000
   },
@@ -38,9 +38,9 @@
    "flags": "implied;66-month lag",
    "group": "T",
    "id": "E10",
-   "public_m": 430,
-   "public_m_2025": 667.9,
-   "share": 0.8958333333333334,
+   "public_m": 418,
+   "public_m_2025": 649.0,
+   "share": 0.8708333333333333,
    "total_m": 480,
    "year": 2007
   },
@@ -60,11 +60,11 @@
    "flags": "explicit;league opposed move",
    "group": "T",
    "id": "E17",
-   "public_m": 255,
-   "public_m_2025": 346.9,
-   "share": 0.5029585798816568,
-   "total_m": 507,
-   "year": 2014
+   "public_m": 223.1,
+   "public_m_2025": 308.3,
+   "share": 0.3989628040057224,
+   "total_m": 559.2,
+   "year": 2013
   },
   {
    "deal": "MIL Fiserv Forum",
@@ -72,7 +72,7 @@
    "group": "T",
    "id": "E18",
    "public_m": 250,
-   "public_m_2025": 339.7,
+   "public_m_2025": 339.6,
    "share": 0.4770082045411181,
    "total_m": 524.1,
    "year": 2015
@@ -84,8 +84,8 @@
    "id": "E19",
    "public_m": 150,
    "public_m_2025": 188.9,
-   "share": 0.6521739130434783,
-   "total_m": 230,
+   "share": 0.6385696040868455,
+   "total_m": 234.9,
    "year": 2019
   },
   {
@@ -98,17 +98,6 @@
    "share": 0.64375,
    "total_m": 800,
    "year": 2024
-  },
-  {
-   "deal": "POR Moda Center (state)",
-   "flags": "implied;weak;pending local",
-   "group": "T",
-   "id": "E22",
-   "public_m": 365,
-   "public_m_2025": 356.2,
-   "share": 0.6083333333333333,
-   "total_m": 600,
-   "year": 2026
   },
   {
    "deal": "SEA KeyArena renovation",
@@ -137,10 +126,10 @@
    "flags": "unclear",
    "group": "N",
    "id": "E06",
-   "public_m": 146.5,
-   "public_m_2025": 283.2,
-   "share": 0.8371428571428572,
-   "total_m": 175,
+   "public_m": 159.9,
+   "public_m_2025": 309.0,
+   "share": 0.8487261146496815,
+   "total_m": 188.4,
    "year": 1999
   },
   {
@@ -171,7 +160,7 @@
    "group": "N",
    "id": "E27",
    "public_m": 142.5,
-   "public_m_2025": 191.2,
+   "public_m_2025": 191.1,
    "share": 0.7402597402597403,
    "total_m": 192.5,
    "year": 2016
@@ -182,20 +171,20 @@
    "group": "N",
    "id": "E28",
    "public_m": 70,
-   "public_m_2025": 92.0,
-   "share": 0.5,
-   "total_m": 140,
+   "public_m_2025": 91.9,
+   "share": 0.356234096692112,
+   "total_m": 196.5,
    "year": 2017
   },
   {
-   "deal": "IND Fieldhouse renovation",
+   "deal": "IND Fieldhouse renovation and 2019 agreement capital",
    "flags": "none",
    "group": "N",
    "id": "E29",
-   "public_m": 295,
-   "public_m_2025": 371.5,
-   "share": 0.8194444444444444,
-   "total_m": 360,
+   "public_m": 432.7,
+   "public_m_2025": 544.9,
+   "share": 0.8693992364878441,
+   "total_m": 497.7,
    "year": 2019
   },
   {
@@ -214,10 +203,10 @@
    "flags": "official_cited",
    "group": "N",
    "id": "E23",
-   "public_m": 900,
-   "public_m_2025": 951.1,
-   "share": 0.9473684210526315,
-   "total_m": 950,
+   "public_m": 850,
+   "public_m_2025": 898.1,
+   "share": 0.9444444444444444,
+   "total_m": 900,
    "year": 2023
   },
   {
@@ -226,7 +215,7 @@
    "group": "N",
    "id": "E31",
    "public_m": 525,
-   "public_m_2025": 538.9,
+   "public_m_2025": 538.8,
    "share": null,
    "total_m": null,
    "year": 2024
@@ -237,46 +226,45 @@
    "group": "N",
    "id": "E32",
    "public_m": 226,
-   "public_m_2025": 232.0,
+   "public_m_2025": 231.9,
    "share": 1.0,
    "total_m": 226,
    "year": 2024
   },
   {
    "deal": "SAS new arena (county binding; share uses city term sheet)",
-   "flags": "none;share 800/1300 planned",
+   "flags": "none;share 860/1300 planned",
    "group": "N",
    "id": "E24",
    "public_m": 311,
    "public_m_2025": 311.0,
-   "share": 0.6153846153846154,
+   "share": 0.6615384615384615,
    "total_m": 1300,
    "year": 2025
-  },
-  {
-   "deal": "HOU Toyota Center overhaul",
-   "flags": "none",
-   "group": "N",
-   "id": "E33",
-   "public_m": 95,
-   "public_m_2025": 92.7,
-   "share": 0.5277777777777778,
-   "total_m": 180,
-   "year": 2026
   }
  ],
  "episodes_explicit_or_implied": 20,
- "lag_median": 11.15,
+ "lag_median": 3.9499999999999997,
  "lag_months": [
+  {
+   "id": "E03",
+   "months": 1.1,
+   "team": "MIA Heat"
+  },
   {
    "id": "E19",
    "months": 1.4,
    "team": "PHX Suns"
   },
   {
-   "id": "E01",
-   "months": 2.9,
-   "team": "MIN Timberwolves"
+   "id": "E17",
+   "months": 2.1,
+   "team": "SAC Kings (Seattle sale)"
+  },
+  {
+   "id": "E14",
+   "months": 3.1,
+   "team": "IND Pacers"
   },
   {
    "id": "E21",
@@ -284,14 +272,14 @@
    "team": "WAS Wizards (and NHL Capitals)"
   },
   {
-   "id": "E03",
-   "months": 4.7,
-   "team": "MIA Heat"
+   "id": "E01",
+   "months": 3.8,
+   "team": "MIN Timberwolves"
   },
   {
-   "id": "E22",
-   "months": 6.7,
-   "team": "POR Trail Blazers"
+   "id": "E50",
+   "months": 4.1,
+   "team": "GSW Warriors (Oakland)"
   },
   {
    "id": "E07",
@@ -299,29 +287,19 @@
    "team": "HOU Rockets"
   },
   {
-   "id": "E15",
-   "months": 15.3,
-   "team": "NOH Hornets (NBA-owned)"
-  },
-  {
    "id": "E18",
    "months": 15.7,
    "team": "MIL Bucks"
   },
   {
-   "id": "E17",
-   "months": 15.9,
-   "team": "SAC Kings (Seattle sale)"
+   "id": "E15",
+   "months": 18.3,
+   "team": "NOH Hornets (NBA-owned)"
   },
   {
    "id": "E20",
    "months": 21.6,
    "team": "MEM Grizzlies"
-  },
-  {
-   "id": "E14",
-   "months": 24.1,
-   "team": "IND Pacers"
   },
   {
    "id": "E10",
@@ -330,26 +308,28 @@
   }
  ],
  "lag_window_months": 24,
- "lag_within_24": 10,
+ "lag_within_24": 11,
  "no_new_money": [
   "E11",
   "E12",
   "E16"
  ],
  "no_threat": {
-  "mean_public_m_2025": 285.27142857142854,
-  "mean_share": 0.7025926223283123,
-  "median_public_m_2025": 239.45,
-  "median_share": 0.7601822261508125,
-  "n": 14,
-  "n_share": 12
+  "mean_public_m_2025": 311.3,
+  "mean_share": 0.714939609631815,
+  "median_public_m_2025": 246.9,
+  "median_share": 0.7801047120418848,
+  "n": 13,
+  "n_share": 11
  },
- "p_dollars": 0.7034993180411209,
- "p_share": 0.522296186933991,
+ "p_dollars": 0.946758392919716,
+ "p_share": 0.5086968557661546,
+ "pending_money": [
+  "E22"
+ ],
  "same_city_money": [
   "E01",
   "E03",
-  "E04",
   "E07",
   "E10",
   "E14",
@@ -359,7 +339,7 @@
   "E19",
   "E20",
   "E21",
-  "E22"
+  "E50"
  ],
  "team_left": [
   "E08",
@@ -368,11 +348,11 @@
   "E36"
  ],
  "threat": {
-  "mean_public_m_2025": 302.09,
-  "mean_share": 0.6339910968388955,
-  "median_public_m_2025": 340.0,
-  "median_share": 0.64375,
-  "n": 10,
-  "n_share": 9
+  "mean_public_m_2025": 293.8777777777778,
+  "mean_share": 0.6246116039232149,
+  "median_public_m_2025": 308.3,
+  "median_share": 0.6411598020434228,
+  "n": 9,
+  "n_share": 8
  }
 }

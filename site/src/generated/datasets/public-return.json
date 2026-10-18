@@ -7,11 +7,13 @@
   "ibo-2023-march-description-of-public-subsidies-for-m",
   "boston-datastore-search",
   "law-charlotte-hornets-lease-summary",
+  "wbtv-charlotte-city-council-approves-275-million-spec",
   "charlottenc-adopted-fy-2027-budget-print",
   "ptaxsim-2024",
   "gateway-edc-audit-2022",
   "law-dallas-mavericks-lease-summary",
   "sec-0001047469-98-001379",
+  "degc-dda-financial-statements-fy2025",
   "detroit-dda-fs-2024",
   "sf-wv5m-vpq2",
   "houstonsports-toyota-center-arena-lease",
@@ -20,6 +22,7 @@
   "cao-page379",
   "memphistn-fy15-annual-report",
   "actionnews5-shelby-county-commissioners-vote-unanimously-kee",
+  "miamidade-2014-06-03-bcc",
   "miamidadeig-ig11-34finalbasketball",
   "miamidadeclerk-cafr2025-complete",
   "wi-lfb-informational-paper-18",
@@ -27,12 +30,14 @@
   "senate-01-124-lsed-fy-27-final",
   "okc-pbcarena-use-license-agreementfinal-6-12-25-1",
   "occompt-occompt",
+  "phl-opa-parcel-788020600",
   "webapi-texts",
   "portland-adopted",
   "cityofsacramento-city-of-sacramento-2025-acfr",
   "headlinersfoundation-spurs-arena-delivers-no-profit-sharing",
   "sa-termsheet",
   "slcdocs-updateddraftparticipationagreement070524",
+  "cfo-fis-downtown-arena-revitalization",
   "cfo-tafa-capital-one-arena-112624"
  ],
  "base_sources": [
@@ -90,11 +95,12 @@
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "A capital payment of $250,000 a year rising to $500,000 under the 2005 agreement, and about $2M a year in rent from 2030. No share of a sale found.",
+   "summary": "A capital payment of $250,000 a year rising to $500,000 under the 2005 agreement; under the 2022 extension, a total of $32M in rent through 2045 plus the team's $1.1M a year into the capital reserve. No share of a sale found.",
    "label": "b/c",
    "note": null,
    "sources": [
     "law-charlotte-hornets-lease-summary",
+    "wbtv-charlotte-city-council-approves-275-million-spec",
     "charlottenc-adopted-fy-2027-budget-print"
    ]
   },
@@ -139,7 +145,7 @@
    "public_deal": true,
    "sale_share": "no",
    "equity_stake": false,
-   "summary": "Ground rent of $10 a year. City concession tax above a benchmark is rebated to the arena company, and a sale needs only the league's approval.",
+   "summary": "Under the 1997 agreement, ground rent of $10 a year, with city concession tax above a benchmark rebated to the arena company, until its operation term ended in 2023; a sale needs only the league's approval.",
    "label": "b",
    "note": null,
    "sources": [
@@ -151,10 +157,11 @@
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "No rent found; the operator runs the publicly owned arena, and the public bonds are repaid from captured taxes.",
+   "summary": "No rent found apart from the operator's concession fees, which were prepaid in 2017 to retire $188.5M of the arena bonds; the rest of the public bonds are repaid from captured taxes.",
    "label": "b",
    "note": null,
    "sources": [
+    "degc-dda-financial-statements-fy2025",
     "detroit-dda-fs-2024"
    ]
   },
@@ -187,7 +194,7 @@
    "public_deal": true,
    "sale_share": "no",
    "equity_stake": false,
-   "summary": "A right of first refusal if the team is sold, which is an option to buy at the buyer's price, not a share of it. The public pays the Pacers about $12.5M a year.",
+   "summary": "Under the 2014 agreement, a right of first refusal if the team is sold, which is an option to buy at the buyer's price, not a share of it; the board's notes do not describe sale terms in the 2019 agreement. The public pays the Pacers about $12.5M a year.",
    "label": "b",
    "note": null,
    "sources": [
@@ -208,12 +215,12 @@
   },
   {
    "team": "LAL",
-   "public_deal": false,
-   "sale_share": "private_arena",
+   "public_deal": true,
+   "sale_share": "none_found",
    "equity_stake": false,
    "summary": "The city recovers its $70M advance from an arena admissions fee. No share of the 2025 sale.",
    "label": "b",
-   "note": "The arena is privately owned on city land; the city's 1997 advance is being repaid. No public share of the 2025 sale.",
+   "note": "The arena is privately owned on city land. The city's 1997 advance is repaid from arena admissions fees and other city revenue, so the ledger counts it as public money. No public share of the 2025 sale was found.",
    "sources": [
     "cao-page379"
    ]
@@ -236,10 +243,11 @@
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "No rent. The county keeps the naming-rights money ($117.4M over 17 years) and pays the Heat's affiliate $2M a year. A 40% share of arena profits paid once, $257,134 in 2013, and was dropped in 2014.",
+   "summary": "No rent for the arena. Since 2014 the operator gives the county $1M a year for parks, rising to $1.25M in 2031-2035, and pays at least $125,000 a year of retail rent. The county keeps the naming-rights money ($117.4M over 17 years) and pays the Heat's affiliate $2M a year. A 40% share of arena profits paid once, $257,134 in 2013, and was dropped in 2014.",
    "label": "b",
    "note": null,
    "sources": [
+    "miamidade-2014-06-03-bcc",
     "miamidadeig-ig11-34finalbasketball",
     "miamidadeclerk-cafr2025-complete"
    ]
@@ -273,7 +281,7 @@
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "No rent. The state's stadium district pays the team instead: $17.7M is budgeted for fiscal 2027.",
+   "summary": "No rent. The state's stadium district pays the team instead: $17.7M of Pelicans lease entitlements is budgeted for fiscal 2027, covering payments to the team, a player-tax allocation and game-day expenses.",
    "label": "b",
    "note": null,
    "sources": [
@@ -297,7 +305,7 @@
    "public_deal": true,
    "sale_share": "no",
    "equity_stake": false,
-   "summary": "A license fee of $58,000 a game, capped at $3.75M a year, plus $1 a ticket. The team keeps the naming rights the city used to share, and can pass to any buyer the league approves.",
+   "summary": "A license fee of $58,000 a game, rising 3% a year in years 2 to 5 and capped at $3.75M a year, plus $1 a ticket (the cheapest seats exempt). The team keeps the naming rights the city used to share, and can pass to any buyer the league approves.",
    "label": "b",
    "note": null,
    "sources": [
@@ -321,17 +329,19 @@
    "public_deal": false,
    "sale_share": "private_arena",
    "equity_stake": false,
-   "summary": "A private arena; its property tax was not verified.",
-   "label": "u",
+   "summary": "A privately run arena on city-owned property: $249.5M of its $253.2M assessed value is exempt from property tax, about $3.49M a year at the 2025 rate (computed).",
+   "label": "b",
    "note": null,
-   "sources": []
+   "sources": [
+    "phl-opa-parcel-788020600"
+   ]
   },
   {
    "team": "PHX",
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "A fixed fee plus a share tied to arena operations, about $4M a year.",
+   "summary": "Fees set by formulas, about $1.5M a year before the renovation and an estimated $4M a year after it, about $60M over the term.",
    "label": "b",
    "note": null,
    "sources": [
@@ -355,7 +365,7 @@
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "Lease payments of $406.2M over 35 years, about $11.6M a year, which cover 61.5% of the arena bonds.",
+   "summary": "Lease payments of $406.2M over 35 years, about $11.6M a year, which go to debt service on the city's 2015 arena bonds.",
    "label": "b",
    "note": null,
    "sources": [
@@ -367,8 +377,8 @@
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "A license fee of $1.3M a year. A 20% share of arena profits above a threshold has never paid. Planned arena: rent of $4M a year rising 2%.",
-   "label": "b",
+   "summary": "A 20% share of arena profits above a threshold has never paid. Planned arena: rent of $4M a year rising 2%.",
+   "label": "b/c",
    "note": null,
    "sources": [
     "headlinersfoundation-spurs-arena-delivers-no-profit-sharing",
@@ -406,6 +416,7 @@
    "label": "b",
    "note": null,
    "sources": [
+    "cfo-fis-downtown-arena-revitalization",
     "cfo-tafa-capital-one-arena-112624"
    ]
   }

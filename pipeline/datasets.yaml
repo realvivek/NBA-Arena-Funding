@@ -33,17 +33,17 @@ datasets:
   title: Public money in the 30 current arenas, by kind
   sql: |
     select * from (
-        select 1 as ord, 'build' as key, 'Building the arenas' as name, sum(public_2026_m) as public_2026_m
-        from items where core and kind = 'construction'
+        select 1 as ord, 'build' as key, 'Building the arenas' as name,
+               (select sum(public_2026_m) from items where core and kind = 'construction')
+               + (select sum(coalesce(pilot_2026_m, 0)) from arenas) as public_2026_m
         union all select 2, 'reno', 'Renovations', sum(public_2026_m) from items where core and kind = 'renovation'
         union all select 3, 'buy', 'Buying arenas', sum(public_2026_m) from items where core and kind = 'purchase'
         union all select 4, 'pay', 'Yearly payments', sum(public_2026_m) from items where core and kind = 'ongoing'
-        union all select 5, 'breaks', 'Tax breaks',
-               (select sum(coalesce(pilot_2026_m, 0)) from arenas)
-               + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))
+        union all select 5, 'breaks', 'Property-tax breaks',
+               (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))
     order by ord
   sources: [ledger, fred-cpiaucns]
-  note: The five parts of the expanded total. Tax breaks are property-tax breaks and taxes diverted to arena debt; the federal cost of tax-exempt bonds is not included.
+  note: The five parts of the expanded total. Building includes Barclays Center's PILOT bonds, which paid for its construction and are repaid with the property tax the arena would otherwise owe. Tax breaks are property-tax exemptions (Madison Square Garden, the United Center's valuation formula); the federal cost of tax-exempt bonds is not included.
 
 # ------------------------------------------------------------------ chart 1: building versus rebuilding
 - id: rebuild-by-year
@@ -55,6 +55,7 @@ datasets:
                 when i.kind = 'project' then 'new_unopened'
                 else 'existing' end as category,
            case when i.core then 'counted' when i.status = 'pending' then 'pending' else 'committed' end as status,
+           i.status = 'binding' as binding,
            i.public_2026_m,
            coalesce((select list(s.source_id order by s.ord) from item_sources s where s.item_id = i.item_id and s.role = 'public'), []) as sources
     from items i
@@ -63,7 +64,7 @@ datasets:
   sources: [ledger, fred-cpiaucns]
   row_sources: sources
   require_row_sources: true
-  note: Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year.
+  note: Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year. binding marks commitments that are signed, such as Oklahoma City's arena under construction.
 
 # ------------------------------------------------------------------ chart 2 and the arenas page
 - id: arenas

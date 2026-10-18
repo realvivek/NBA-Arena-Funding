@@ -23,7 +23,8 @@
   "espn-nba",
   "lgreports-charlotte",
   "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
-  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
+  "wbtv-charlotte-city-council-approves-275-million-spec",
+  "hochtief-turner-completes-spectrum-center-renovation",
   "charlottenc-adopted-fy-2027-budget-print",
   "encyclopedia-pages",
   "ohioauditor-gateway-economic-development-corporation-of-grea",
@@ -31,6 +32,7 @@
   "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll",
   "axios-cleveland-cavs-impact",
   "ideastream-county-council-approves-405-million-for-fieldhou",
+  "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
   "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye",
   "upi-report-dallas-building-costiest-sports-arena",
   "renewdenver-pepsi-center",
@@ -41,23 +43,28 @@
   "degc-ugd-3",
   "degc-ugd",
   "degc-ugd-2",
+  "sfmta-letter-to-ocii-2015-10-20",
+  "sfmta-board-lrv4-modification-4",
+  "sfmta-board-warriors-supplemental-appropriation",
   "wiki-chase-center",
   "houstonsports-multi-purpose-arena-letter-of-agreement",
   "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
   "texaspolitics-slide4b",
   "wiki-toyota-center",
+  "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "indyencyclopedia-bankers-life-fieldhouse",
   "oregon-moda-center-arena-comparable-structure-overview",
+  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+  "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
   "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
   "in-83950a",
   "sboa-84595a",
-  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
   "in-b37170",
   "commercialobserver-los-angeles-inglewood-clippers-win-unanim",
   "wiki-intuit-dome",
-  "seattle-seattle-partners-finance-team-evaluation-5-31-17",
   "cao-page379",
+  "seattle-seattle-partners-finance-team-evaluation-5-31-17",
   "wiki-crypto-com-arena",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
@@ -70,9 +77,8 @@
   "wapp-billinfo",
   "miamidadeig-ig11-34finalbasketball",
   "miaminewtimes-the-heats-hot-air-6356397",
-  "wiki-kaseya-center",
-  "oppaga-15-01",
   "miamidadeclerk-cafr2025-complete",
+  "oppaga-15-01",
   "miamidade-archives",
   "miamidade-home-page",
   "wi-lfb-informational-paper-18",
@@ -100,6 +106,7 @@
   "sec-msg6302013-10k",
   "wiki-paycom-center",
   "news9-voters-approve-sales-tax-extension",
+  "okc-maps4-downtown-arena-related-facilities",
   "okc-audit-of-certain-public-ev",
   "sai-ocppa-final-2023-9hvg",
   "okc-ocppa-2024-final-web",
@@ -115,6 +122,8 @@
   "occompt-occompt-2",
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
   "wiki-xfinity-mobile-arena",
+  "frontofficesports-comcasts-400-million-wells-fargo-center-up",
+  "whyy-sixers-arena-south-philadelphia-timeline",
   "phillymag-wells-fargo-center-renovation",
   "sportsbusinessdaily-state-of-the-arena-america-west-arena",
   "phoenix-phoenix",
@@ -139,6 +148,7 @@
   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+  "tpr-city-scraps-garage-project-marvel-2027-bond",
   "scotiabankarena-history",
   "nsnews-a-look-at-torontos-scotiabank-arena-as-it-underg",
   "ksl-salt-lake-city-approves-new-delta-center-lease-t",
@@ -233,7 +243,7 @@
    "public_2026_m": 455.027052,
    "cost_label": "b",
    "public_label": "b/c",
-   "note": "City capital contribution \"has grown from $100 million to $205 million\" (b, IBO testimony May 2009) + State $100M (c, Doctoroff via Gotham Gazette), for land acquisition and infrastructure for the arena block, outside the arena cost. MTA Vanderbilt Yard: IBO (Sept 2009) puts the subsidy at the $50M gap between Extell's $150M cash bid and Forest City's $100M and attributes $10M (present value) of it to the arena, using the 2009 terms' $20M of $100M for the arena block (b) -> land bucket (a public asset sold below the competing bid). Extell's $150M is computed from IBO's $50M gap (a). Whole-project alternatives, not counted: $50M bid gap (b); IBO's $214M appraisal ($214.5M per Atlantic Yards Report, c) minus the $100M present value of the 2009 payment stream at the MTA's 6.5% = $114.0M (a); replacement yard cut from $240-250M (MTA CFO via Atlantic Yards Report, c) or $182M (developer's figure via Atlantic Yards Report, c) to $147M (b, MTA staff summary) = $35M-$103M (a). The $10M is a present value as of FY2010 but is deflated with the construction money at the 2012 opening year (at 2010 it would be about $0.7M higher in 2026 dollars).",
+   "note": "City capital contribution \"has grown from $100 million to $205 million\" (b, IBO testimony May 2009) + State $100M (b, IBO fiscal brief Sept 2009 p.2: \"direct payments of $100 million each from the city and state\"; also Doctoroff via Gotham Gazette, c). Alternative for the city: $150M, because IBO's Sept 2009 brief (p.3) counts only about half of the $105M addition, $50M, as caused by the project (b), for land acquisition and infrastructure for the arena block, outside the arena cost. MTA Vanderbilt Yard: IBO (Sept 2009) puts the subsidy at the $50M gap between Extell's $150M cash bid and Forest City's $100M and attributes $10M (present value) of it to the arena, using the 2009 terms' $20M of $100M for the arena block (b) -> land bucket (a public asset sold below the competing bid). Extell's $150M is computed from IBO's $50M gap (a). Whole-project alternatives, not counted: $50M bid gap (b); IBO's $214M appraisal ($214.5M per Atlantic Yards Report, c) minus the $100M present value of the 2009 payment stream at the MTA's 6.5% = $114.0M (a); replacement yard cut from $240-250M (MTA CFO via Atlantic Yards Report, c) or $182M (developer's figure via Atlantic Yards Report, c) to $147M (b, MTA staff summary) = $35M-$103M (a). The $10M is a present value as of FY2010 but is deflated with the construction money at the 2012 opening year (at 2010 it would be about $0.7M higher in 2026 dollars).",
    "sources": [
     "ibo-2009-may-atlantic-yards-testimony",
     "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
@@ -353,20 +363,21 @@
    "team": "CHA",
    "item_id": "CHA-renovation-2",
    "kind": "renovation",
-   "description": "2022-25 renovation (arena portion)",
-   "year": 2024,
-   "status": "binding",
+   "description": "2024-25 renovation (arena portion, approved 2022)",
+   "year": 2025,
+   "status": "completed",
    "core": true,
    "spending_nominal_m": 215.0,
    "public_nominal_m": 215.0,
-   "cpi_factor": 1.057275,
-   "spending_2026_m": 227.314134,
-   "public_2026_m": 227.314134,
+   "cpi_factor": 1.030168,
+   "spending_2026_m": 221.486119,
+   "public_2026_m": 221.486119,
    "cost_label": "c",
    "public_label": "c",
-   "note": "City $215M arena + $60M practice facility (excluded: not the arena); hotel/rental-car tax-backed COPs ($110M 2023 per press)",
+   "note": "City $215M arena + $60M practice facility (excluded: not the arena); hotel/rental-car tax-backed COPs ($110M 2023 per press). Council vote 10-1, June 13 2022 (WBTV June 14 2022). Work done in two off-seasons, May-Sept 2024 and May-Sept 2025, finished Oct 2025 (Turner release)",
    "sources": [
-    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
+    "wbtv-charlotte-city-council-approves-275-million-spec",
+    "hochtief-turner-completes-spectrum-center-renovation"
    ]
   },
   {
@@ -499,15 +510,16 @@
    "year": 2018,
    "status": "completed",
    "core": true,
-   "spending_nominal_m": 185.0,
+   "spending_nominal_m": 196.464694,
    "public_nominal_m": 70.0,
    "cpi_factor": 1.320774,
-   "spending_2026_m": 244.343189,
+   "spending_2026_m": 259.485458,
    "public_2026_m": 92.45418,
-   "cost_label": "c",
-   "public_label": "c",
-   "note": "County $70M principal (>= $160M with interest per Axios); Cavs $115M",
+   "cost_label": "b",
+   "public_label": "b",
+   "note": "Gateway FY2024 audit (pdf p.22): Gateway, through three series of county bond issues, \"agreed to pay construction costs up to $140 million. The Cavaliers agreed to pay additional rent to repay one series of bonds of $70 million and pay any construction costs in excess of $140 million. The total cost of the project capitalized in 2020 was $196,464,694.\" Public $70M: the series the Cavaliers repay through added rent is team-repaid financing, counted as private like Atlanta's and Detroit's team-serviced bonds; repayment source of the other $70M not documented (mixed); >= $160M with interest (Axios). Earlier figures: $185M total, Cavs $115M (c)",
    "sources": [
+    "ohioauditor-auditsearch",
     "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll",
     "axios-cleveland-cavs-impact"
    ]
@@ -567,8 +579,9 @@
    "public_2026_m": 234.131712,
    "cost_label": "c",
    "public_label": "c",
-   "note": "City share capped at $125M, repaid by 2% hotel-occupancy + 5% car-rental taxes approved by voters (1998, 62,861-61,237); teams (Hicks/Cuban) paid the rest.",
+   "note": "City share capped at $125M, repaid by 2% hotel-occupancy + 5% car-rental taxes approved by voters (1998, 62,861-61,237) (Dallas Morning News 2006, c); teams (Hicks/Cuban) paid the rest. The Bond Buyer piece gives the 1998 bonds, $140.4M ($104.8M tax-exempt, $35.6M taxable), not the cap. The same 2006 article reports \"more than $60 million in infrastructure and other public improvements\" around the arena, $185.3M public through 2018 per the city (c, district-wide, not counted).",
    "sources": [
+    "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
     "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye",
     "upi-report-dallas-building-costiest-sports-arena"
    ]
@@ -646,15 +659,18 @@
    "year": 2019,
    "status": "completed",
    "core": true,
-   "spending_nominal_m": 1400.0,
-   "public_nominal_m": 0.0,
+   "spending_nominal_m": 1461.86,
+   "public_nominal_m": 42.46,
    "cpi_factor": 1.297265,
-   "spending_2026_m": 1816.170761,
-   "public_2026_m": 0.0,
+   "spending_2026_m": 1896.419563,
+   "public_2026_m": 55.081865,
    "cost_label": "c",
-   "public_label": "c",
-   "note": "Privately financed; team bought the land. City event-day costs (e.g., ~$2.5M/yr for parking control officers, SF Chronicle 2019) not counted.",
+   "public_label": "b",
+   "note": "Privately financed building; the team bought the land. Public transit capital for the arena (b, SFMTA to OCII, Oct 20 2015): \"nearly $61.9 Million\" for four light-rail vehicles ($21.0M), a new center boarding platform ($24.9M), crossovers, power upgrades and signals; $19.4M from the Warriors' in-lieu transit impact fee (private), $7.96M from the General Fund (-> general) and $34.5M financed and repaid from the Mission Bay Transportation Improvement Fund, which holds General Fund revenue the project generates (-> tif). A plan, not an audited total: actuals found are four LRVs \"not to exceed $15,875,000\" (June 2017) and a supplemental appropriation for fiscal 2017-18 of $5.36M plus $0.63M (April 2016). City event-day costs (e.g., ~$2.5M/yr for parking control officers, SF Chronicle 2019; a General Fund deposit of at least $8.1M a year for event services under the ordinance) not counted.",
    "sources": [
+    "sfmta-letter-to-ocii-2015-10-20",
+    "sfmta-board-lrv4-modification-4",
+    "sfmta-board-warriors-supplemental-appropriation",
     "wiki-chase-center"
    ]
   },
@@ -688,8 +704,8 @@
    "kind": "renovation",
    "description": "2026 renovation",
    "year": 2026,
-   "status": "binding",
-   "core": true,
+   "status": "pending",
+   "core": false,
    "spending_nominal_m": 180.0,
    "public_nominal_m": 95.0,
    "cpi_factor": 1.0,
@@ -697,8 +713,9 @@
    "public_2026_m": 95.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "Approved by the Harris County-Houston Sports Authority in Apr 2026; Mayor Whitmire said $95M of the cost would be covered by the State of Texas (Houston Chronicle, via Stadium Journey), the Rockets and Fertitta the rest. An expected state grant: no signed grant agreement found, so the figure is approximate",
+   "note": "Approved by the Harris County-Houston Sports Authority in Apr 2026: $150M of arena upgrades + $30M for the WNBA, finishing fall 2027 (KPRC). \"The State of Texas is expected to contribute approximately $95 million\" (KPRC, Apr 8 2026; Mayor Whitmire via the Houston Chronicle and Stadium Journey); the Rockets and Fertitta the rest. No grant agreement or appropriation found, so pending (not counted); funding stream not documented (mixed)",
    "sources": [
+    "click2houston-harris-county-approves-180m-toyota-center",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
    ]
   },
@@ -727,7 +744,28 @@
    "team": "IND",
    "item_id": "IND-renovation-1",
    "kind": "renovation",
-   "description": "2019-22 renovation (25-yr deal)",
+   "description": "2014-19 refresh improvements and scheduled capital repairs (2014 agreement)",
+   "year": 2017,
+   "status": "completed",
+   "core": true,
+   "spending_nominal_m": 33.5,
+   "public_nominal_m": 33.5,
+   "cpi_factor": 1.353035,
+   "spending_2026_m": 45.326672,
+   "public_2026_m": 45.326672,
+   "cost_label": "b",
+   "public_label": "b",
+   "note": "CIB obligations under the 2014 Amended and Restated Operating Agreement: \"scheduled capital repairs and replacements (aggregating $7,000,000)\" and \"refresh improvements (aggregating $26,500,000)\" (CIB FY2025 notes, pdf p.66): locker rooms, concession stands and video boards (IBJ). About $1.6M unspent rolled into the 2019 refresh total; the 2019 row keeps $295M, so nothing is counted twice. Funded from CIB excise taxes -> tourist. Mid-construction year of 2014-19",
+   "sources": [
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-renovation-2",
+   "kind": "renovation",
+   "description": "2020-22 renovation (25-yr deal; completed 2023)",
    "year": 2021,
    "status": "completed",
    "core": true,
@@ -738,10 +776,53 @@
    "public_2026_m": 361.067372,
    "cost_label": "c/a",
    "public_label": "c/a",
-   "note": "Public $295M (state+CIB $270M, city $25M); split by PFM shares: state ~34% via PSDA tax capture (incl. athletes income tax) -> tif; CIB excise taxes -> tourist; Pacers $65M",
+   "note": "Public $295M (state+CIB $270M, city $25M); split by PFM shares: state ~34% via PSDA tax capture (incl. athletes income tax) -> tif; CIB excise taxes -> tourist; Pacers $65M. The CIB's refresh obligation under the 2019 agreement is $296,641,331 (b), including about $1.6M carried from 2014. \"Between 2020-2022 ... a three year, three phase $360M renovation\" (CIB FY2021 ACFR)",
    "sources": [
     "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
-    "oregon-moda-center-arena-comparable-structure-overview"
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-renovation-3",
+   "kind": "renovation",
+   "description": "2019 agreement: scheduled capital repairs and replacements",
+   "year": 2021,
+   "status": "completed",
+   "core": true,
+   "spending_nominal_m": 17.62431,
+   "public_nominal_m": 17.62431,
+   "cpi_factor": 1.223957,
+   "spending_2026_m": 21.571401,
+   "public_2026_m": 21.571401,
+   "cost_label": "b",
+   "public_label": "b",
+   "note": "\"scheduled capital repairs and replacements (aggregating $17,624,310)\" (CIB FY2025 notes, pdf p.67), done over the first three years (IBJ); separate from the $360M renovation. CIB excise taxes -> tourist",
+   "sources": [
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
+   ]
+  },
+  {
+   "team": "IND",
+   "item_id": "IND-renovation-4",
+   "kind": "renovation",
+   "description": "2019 agreement: technology improvements through 2034",
+   "year": 2026,
+   "status": "binding",
+   "core": true,
+   "spending_nominal_m": 120.031875,
+   "public_nominal_m": 120.031875,
+   "cpi_factor": 1.0,
+   "spending_2026_m": 120.031875,
+   "public_2026_m": 120.031875,
+   "cost_label": "b",
+   "public_label": "b",
+   "note": "\"technology improvements (aggregating $120,031,875)\" (CIB FY2025 notes, pdf p.67; same in FY2023 and FY2024); IBJ: \"a total of $120 million through 2034\", separate from the $360M renovation (\"Combined with additional spending on technology, maintenance and general operating expenses, the deal could cost the CIB nearly $800 million\"). If no further technology funding is agreed by 2036 the Pacers may end the agreement (IBJ). Work under way, so face value. The 2010 and 2012 amendments' \"capital improvements ... of up to $3,500,000\" are not added (spending not confirmed)",
+   "sources": [
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
    ]
   },
   {
@@ -1073,16 +1154,16 @@
    "status": "completed",
    "core": true,
    "spending_nominal_m": 375.0,
-   "public_nominal_m": 0.0,
+   "public_nominal_m": 70.0,
    "cpi_factor": 1.991027,
    "spending_2026_m": 746.635243,
-   "public_2026_m": 0.0,
+   "public_2026_m": 139.371912,
    "cost_label": "c",
-   "public_label": "c",
-   "note": "Privately financed building on city-owned land. City advanced about $70M (b, CAO) or ~$58M (c, Seattle 2017) of bonds and cash, which the developer must offset under the Gap Funding Agreement (in 2003 the developer paid the City $16.5M for shortfalls and inducement) -> treated as conduit financing, not public money.",
+   "public_label": "b",
+   "note": "Privately built on city-owned land. The City \"entered into various agreements with the Arena Developer to advance approximately $70 million towards the project\" (bonds for the arena, property conveyed and cash; b, CAO FY2022-23 budget p.379). Under the Gap Funding Agreement the developer owes the City that debt service and related costs, but the obligation is offset by credits, mainly the City's \"Gross Receipts from Arena Admissions Fee\" ($6.0M FY2022 est., $8.0M FY2023 budget) and incremental Convention Center parking revenue (same page), so the City's own revenue repays most of it -> public (mixed: admissions fee and parking revenue, split not documented). The developer pays shortfalls (in 2003, $16.5M including a $1.8M inducement; not netted). Seattle's 2017 evaluation: \"$58 million in public financing in bonds and reserves\", AEG as guarantor (c). Treated as conduit financing (not public money) until Oct 18, 2026.",
    "sources": [
-    "seattle-seattle-partners-finance-team-evaluation-5-31-17",
     "cao-page379",
+    "seattle-seattle-partners-finance-team-evaluation-5-31-17",
     "wiki-crypto-com-arena"
    ]
   },
@@ -1122,7 +1203,7 @@
    "public_2026_m": 80.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "The city received a $350M state grant in FY2024 for four venues, $230M of it earmarked for FedExForum (Memphis ACFR FY2025, Arenas Funding Account). The council approved $80M on a first vote on Feb. 18, 2025 (Tri-State Defender) and on March 18, 2025 a resolution transferring it to the Memphis and Shelby County Sports Authority for capital work at the arena (Downtown Memphis Commission): elevators, chillers, generators and design work, and possibly reimbursing the Grizzlies for earlier work. Work under way, so counted at face value",
+   "note": "The city received a $350M state grant in FY2024 for four venues (Memphis ACFR FY2025, Arenas Funding Account); the mayor puts $230M of it toward FedExForum (Tri-State Defender; Downtown Memphis Commission), a figure the ACFR does not state. The council approved $80M on a first vote on Feb. 18, 2025 (Tri-State Defender) and on March 18, 2025 a resolution transferring it to the Memphis and Shelby County Sports Authority for capital work at the arena (Downtown Memphis Commission): elevators, chillers, generators and design work, and possibly reimbursing the Grizzlies for earlier work. Work under way, so counted at face value",
    "sources": [
     "tri-statedefender-p-349496",
     "downtownmemphis-city-council-approves-two-key-funding-m"
@@ -1168,7 +1249,7 @@
    "public_2026_m": 6.058588,
    "cost_label": "c/a",
    "public_label": "c/a",
-   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); year boundary assumed (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
+   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); paid per season (Action News 5, 2022), so five payments through the 2025-26 season; the 2026-27 season opened Oct 21 2026, after the as-of date (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
    "sources": [
     "oregon-moda-center-arena-comparable-structure-overview"
    ]
@@ -1188,7 +1269,7 @@
    "public_2026_m": 5.609658,
    "cost_label": "c/a",
    "public_label": "c/a",
-   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); year boundary assumed (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
+   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); paid per season (Action News 5, 2022), so five payments through the 2025-26 season; the 2026-27 season opened Oct 21 2026, after the as-of date (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
    "sources": [
     "oregon-moda-center-arena-comparable-structure-overview"
    ]
@@ -1208,7 +1289,7 @@
    "public_2026_m": 5.387875,
    "cost_label": "c/a",
    "public_label": "c/a",
-   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); year boundary assumed (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
+   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); paid per season (Action News 5, 2022), so five payments through the 2025-26 season; the 2026-27 season opened Oct 21 2026, after the as-of date (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
    "sources": [
     "oregon-moda-center-arena-comparable-structure-overview"
    ]
@@ -1228,7 +1309,7 @@
    "public_2026_m": 5.233511,
    "cost_label": "c/a",
    "public_label": "c/a",
-   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); year boundary assumed (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
+   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); paid per season (Action News 5, 2022), so five payments through the 2025-26 season; the 2026-27 season opened Oct 21 2026, after the as-of date (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
    "sources": [
     "oregon-moda-center-arena-comparable-structure-overview"
    ]
@@ -1248,27 +1329,7 @@
    "public_2026_m": 6.490058,
    "cost_label": "c/a",
    "public_label": "c/a",
-   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); year boundary assumed (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
-   "sources": [
-    "oregon-moda-center-arena-comparable-structure-overview"
-   ]
-  },
-  {
-   "team": "MEM",
-   "item_id": "MEM-ongoing-1-2026",
-   "kind": "ongoing",
-   "description": "City and county operating subsidy (press only)",
-   "year": 2026,
-   "status": "paid",
-   "core": true,
-   "spending_nominal_m": 6.3,
-   "public_nominal_m": 6.3,
-   "cpi_factor": 1.0,
-   "spending_2026_m": 6.3,
-   "public_2026_m": 6.3,
-   "cost_label": "c/a",
-   "public_label": "c/a",
-   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); year boundary assumed (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
+   "note": "City+County flat operating subsidy $4.95M/yr (2021-25) rising to $6.3M/yr (2025-29) per PFM (c); paid per season (Action News 5, 2022), so five payments through the 2025-26 season; the 2026-27 season opened Oct 21 2026, after the as-of date (a). No primary record found: the only recurring city item of similar size, the New Memphis Arena Fund's $4.475M a year, is debt service on the construction bonds, so this series may double count capital",
    "sources": [
     "oregon-moda-center-arena-comparable-structure-overview"
    ]
@@ -1281,18 +1342,18 @@
    "year": 1999,
    "status": "completed",
    "core": true,
-   "spending_nominal_m": 250.6,
+   "spending_nominal_m": 272.5,
    "public_nominal_m": 37.6,
    "cpi_factor": 1.991027,
-   "spending_2026_m": 498.951445,
+   "spending_2026_m": 542.554943,
    "public_2026_m": 74.862627,
-   "cost_label": "c",
+   "cost_label": "b",
    "public_label": "b",
    "note": "County bought about 17 acres of waterfront land from the City of Miami for $37.6M in fall 1997, \"in part\" for the arena site (b, OIG IG11-34 p.2 and report p.9); the operator (BPL) financed and built the arena and recovers its cost through yearly amortization ($156.6M deducted through FY2010).",
    "sources": [
     "miamidadeig-ig11-34finalbasketball",
     "miaminewtimes-the-heats-hot-air-6356397",
-    "wiki-kaseya-center"
+    "miamidadeclerk-cafr2025-complete"
    ]
   },
   {
@@ -3003,7 +3064,7 @@
    "team": "NOP",
    "item_id": "NOP-renovation-6",
    "kind": "renovation",
-   "description": "2013-14 renovation (2012 lease)",
+   "description": "2012-14 renovation (2012 lease)",
    "year": 2013,
    "status": "completed",
    "core": true,
@@ -3012,10 +3073,11 @@
    "cpi_factor": 1.423676,
    "spending_2026_m": 71.183793,
    "public_2026_m": 71.183793,
-   "cost_label": "c",
-   "public_label": "c",
-   "note": "State ~$50M, mostly capital-outlay (GO) bonds; Field of Schemes cites $54M",
+   "cost_label": "b",
+   "public_label": "b",
+   "note": "LSED FY2013 audit note (pdf p.52): \"The State will provide $50,000,000 of capital outlay funding in three phases of construction each to be completed prior to the 2012, 2013, and 2014 NBA seasons\" (b); mostly capital-outlay (GO) bonds (SBD); Field of Schemes cites $54M. Mid-construction year 2013",
    "sources": [
+    "lla-vwprbyagencyjson",
     "sportsbusinessdaily-new-orleans"
    ]
   },
@@ -3748,6 +3810,26 @@
   },
   {
    "team": "OKC",
+   "item_id": "OKC-renovation-2",
+   "kind": "renovation",
+   "description": "2022-23 MAPS 4 improvements",
+   "year": 2023,
+   "status": "completed",
+   "core": true,
+   "spending_nominal_m": 27.0,
+   "public_nominal_m": 27.0,
+   "cpi_factor": 1.08846,
+   "spending_2026_m": 29.38841,
+   "public_2026_m": 29.38841,
+   "cost_label": "b",
+   "public_label": "b",
+   "note": "MAPS 4 \"Improvements to Paycom Center ($27 million)\": seating and retractable seating, scoreboard, NBA-required renovations and maintenance; \"Arena improvements are complete\" (seats approved March 2022, scoreboard Sept 2023). MAPS 4 one-cent sales tax -> sales. Separate from the $89M of MAPS 4 money for the new arena. Alternative: $35M on an earlier version of the page (search index only)",
+   "sources": [
+    "okc-maps4-downtown-arena-related-facilities"
+   ]
+  },
+  {
+   "team": "OKC",
    "item_id": "OKC-ongoing-2-2023",
    "kind": "ongoing",
    "description": "City operating subsidy to ASM Global for the Paycom Center",
@@ -3804,13 +3886,13 @@
    "status": "completed",
    "core": true,
    "spending_nominal_m": 480.0,
-   "public_nominal_m": 430.0,
+   "public_nominal_m": 418.0,
    "cpi_factor": 1.520968,
    "spending_2026_m": 730.064502,
-   "public_2026_m": 654.016116,
+   "public_2026_m": 635.764504,
    "cost_label": "b",
    "public_label": "b/a",
-   "note": "Sources of funds, Event Center column (b): tourist development tax bonds $270M (senior $170M, subordinate $50M, completion $50M; capped at $270M of net proceeds, s.5.5) -> tourist; proceeds from the sale of city land $62M, City covenant bonds $37M and state and other government sources $30M -> general (the state's $2M-a-year sales-tax payment for 30 years, $60M nominal, OPPAGA 15-01, is bonded inside these lines and not added again); interest earnings $19M -> mixed (part of it accrued on the Magic's $50M deposit, s.5.4.3; not separable). The $12M \"Present Value of Magic Use Payments\" is city cash (\"The City has provided $12 million in cash which is to be applied to the construction of the Events Center\", s.5.4.8), recovered over time from the Magic's use payments -> counted as public (general), as Houston's rent-supported debt is, so the public figure overstates the net public cost. Public = $480M - Magic $50M = $430M (a), matching PFM. The earlier split ($100M Community Redevelopment Agency tax increment + $330M tourist tax; Business View 2017) is not supported: CRA bonds appear only in the performing arts center column. Magic also guaranteed $100M of bonds.",
+   "note": "Sources of funds, Event Center column (b): tourist development tax bonds $270M (senior $170M, subordinate $50M, completion $50M; capped at $270M of net proceeds, s.5.5) -> tourist; proceeds from the sale of city land $62M, City covenant bonds $37M and state and other government sources $30M -> general (the state's $2M-a-year sales-tax payment for 30 years, $60M nominal, OPPAGA 15-01, is bonded inside these lines and not added again); interest earnings $19M -> mixed (part of it accrued on the Magic's $50M deposit, s.5.4.3; not separable). The $12M \"Present Value of Magic Use Payments\" is city cash (\"The City has provided $12 million in cash which is to be applied to the construction of the Events Center\", s.5.4.8) that the Magic's use payments repay -> team-repaid financing, counted as private like Atlanta's and Detroit's team-serviced bonds and Cleveland's 2017 series (it was counted as public Oct 16-18, 2026). Public = $480M - Magic $50M - $12M = $418M (a); PFM counts $430M. The earlier split ($100M Community Redevelopment Agency tax increment + $330M tourist tax; Business View 2017) is not supported: CRA bonds appear only in the performing arts center column. Magic also guaranteed $100M of bonds.",
    "sources": [
     "occompt-occompt",
     "occompt-occompt-2",
@@ -3831,10 +3913,11 @@
    "cpi_factor": 1.0,
    "spending_2026_m": 226.0,
    "public_2026_m": 226.0,
-   "cost_label": "c",
-   "public_label": "c",
-   "note": "$226M of $626M Orange County TDT package (with Camping World Stadium); Magic $0 per PFM",
+   "cost_label": "b",
+   "public_label": "b",
+   "note": "Interlocal Funding Agreement (BCC Nov 19 2024, pdf p.5): County sixth-cent contribution \"up to ... $226,000,000\" in project costs, scheduled over 2024-2033 (Exhibit A-1); county not liable for overruns. Orlando ACFR FY2025: $60M Kia Center note issued May 2025, $16.6M drawn by Sept 30 2025. $226M of the $626M Orange County TDT package (with Camping World Stadium); Magic $0 per PFM",
    "sources": [
+    "occompt-occompt-2",
     "cfpublic-orlando-kia-center-camping-world-stadium-improve",
     "oregon-moda-center-arena-comparable-structure-overview"
    ]
@@ -3854,7 +3937,7 @@
    "public_2026_m": 0.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "Privately financed by Snider/Spectacor; no public construction money found in sources reached. 2018-20 ~$250M renovation private (c).",
+   "note": "Privately financed by Snider/Spectacor; no public construction money found in sources reached. 2020-23 $400M renovation private (c).",
    "sources": [
     "wiki-xfinity-mobile-arena"
    ]
@@ -3863,19 +3946,21 @@
    "team": "PHI",
    "item_id": "PHI-renovation-1",
    "kind": "renovation",
-   "description": "2018-20 renovation",
-   "year": 2019,
+   "description": "2020-23 renovation",
+   "year": 2022,
    "status": "completed",
    "core": true,
-   "spending_nominal_m": 250.0,
+   "spending_nominal_m": 400.0,
    "public_nominal_m": 0.0,
-   "cpi_factor": 1.297265,
-   "spending_2026_m": 324.316207,
+   "cpi_factor": 1.133264,
+   "spending_2026_m": 453.305728,
    "public_2026_m": 0.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "Comcast Spectacor ~$250M (private)",
+   "note": "Comcast Spectacor, private: \"final phase of a $400 million renovation ... The three-year-long project\", done by fall 2023 (Front Office Sports, July 2023); \"recently underwent a $400 million overhaul\" (WHYY, Sept 2025). A ~$250M plan was announced in 2018 (Philadelphia Magazine); whether it is inside the $400M is not settled",
    "sources": [
+    "frontofficesports-comcasts-400-million-wells-fargo-center-up",
+    "whyy-sixers-arena-south-philadelphia-timeline",
     "phillymag-wells-fargo-center-renovation"
    ]
   },
@@ -4130,7 +4215,8 @@
     "ksat-results-props-a-and-b-for-coliseum-complex-downt",
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
-    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "tpr-city-scraps-garage-project-marvel-2027-bond"
    ]
   },
   {
@@ -4148,12 +4234,13 @@
    "public_2026_m": 549.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "City up to $489M under a non-binding term sheet (Aug 2025, 7-4); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); definitive agreements targeted by Dec 31 2026, not signed as of Oct 16 2026",
+   "note": "City up to $489M under a non-binding term sheet (Aug 2025, 7-4): the lesser of 38% of the arena cost or $489M (s.2c), expected to be funded in 2028 and conditional on voter passage of a city bond program for the first phase of transportation and pedestrian infrastructure (Financing Addendum, Attachment III); the city's share of district roads and sidewalks for its 2027 bond is now estimated at $35M, about 20% of $175M of projects with the state transportation department assumed to pay 80%, down from $250M a year earlier (San Antonio Report via TPR, Oct 5 2026; not counted); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); definitive agreements targeted by the end of December 2026 (a city official, TPR June 17 2026; the term sheet sets no deadline), not signed as of Oct 16 2026",
    "sources": [
     "ksat-results-props-a-and-b-for-coliseum-complex-downt",
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
-    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "tpr-city-scraps-garage-project-marvel-2027-bond"
    ]
   },
   {
@@ -4181,17 +4268,17 @@
    "item_id": "TOR-renovation-1",
    "kind": "renovation",
    "description": "2023-25 renovation (C$350M+)",
-   "year": 2023,
+   "year": 2024,
    "status": "completed",
    "core": true,
-   "spending_nominal_m": 259.4,
+   "spending_nominal_m": 255.48,
    "public_nominal_m": 0.0,
-   "cpi_factor": 1.08846,
-   "spending_2026_m": 282.34643,
+   "cpi_factor": 1.057275,
+   "spending_2026_m": 270.112628,
    "public_2026_m": 0.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "MLSE-funded; C$350M converted at 2023 avg 1.3492 CAD/USD (FRED EXCAUS)",
+   "note": "MLSE-funded, in phases over 2023-25 (CTV, Nov 2025); C$350M converted at the 2024 average 1.3700 CAD/USD (FRED EXCAUS), the mid-construction year",
    "sources": [
     "nsnews-a-look-at-torontos-scotiabank-arena-as-it-underg"
    ]

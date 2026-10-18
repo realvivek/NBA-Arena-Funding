@@ -19,25 +19,29 @@
   "okgazette-wait-whos-paying-for-the-new-arena-2",
   "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
   "news9-voters-approve-sales-tax-extension",
+  "okc-maps4-downtown-arena-related-facilities",
   "govinfo-gaoreports-aimd-98-223",
   "cfo-arena-tax-revenue-clarification",
   "cfo-fis-downtown-arena-revitalization",
   "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
   "dccouncil-4-2-24-arena-funding-memo",
   "wtop-take-a-look-at-the-newest-renderings-of-the-capi",
+  "indyencyclopedia-bankers-life-fieldhouse",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+  "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
+  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
   "occompt-occompt",
   "occompt-occompt-2",
   "oppaga-15-01",
-  "oregon-moda-center-arena-comparable-structure-overview",
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
-  "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
-  "indyencyclopedia-bankers-life-fieldhouse",
-  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
   "carolinajournal-on-world-class-chumps",
   "espn-nba",
   "lgreports-charlotte",
   "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
-  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
+  "wbtv-charlotte-city-council-approves-275-million-spec",
+  "hochtief-turner-completes-spectrum-center-renovation",
   "degc-ugd-3",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
@@ -61,6 +65,7 @@
   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+  "tpr-city-scraps-garage-project-marvel-2027-bond",
   "bexar-adid-1520",
   "ohioauditor-gateway-economic-development-corporation-of-grea",
   "ohioauditor-auditsearch",
@@ -79,6 +84,7 @@
   "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
   "law-sfr-v13-nba",
   "texaspolitics-slide4b",
+  "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "ibo-2009-may-atlantic-yards-testimony",
   "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
@@ -103,14 +109,14 @@
  "rows": [
   {
    "team": "UTA",
-   "deal": "Delta Center 2025 deal (arena $525M + district $375M), 0.5% Salt Lake City sales tax",
+   "deal": "Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax",
    "jurisdiction": "Salt Lake City, UT",
-   "per_household_2026": 9098.63,
+   "per_household_2026": 5537.02,
    "parts": [
     {
      "jurisdiction": "Salt Lake City, UT",
      "level": 1,
-     "per_household_2026": 9098.63,
+     "per_household_2026": 5537.02,
      "households": 98916,
      "share": 1.0
     }
@@ -125,14 +131,14 @@
   },
   {
    "team": "OKC",
-   "deal": "New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($302M), OKC city sales tax and GO bonds",
+   "deal": "New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($331M), OKC city sales tax and GO bonds",
    "jurisdiction": "Oklahoma City, OK",
-   "per_household_2026": 4173.93,
+   "per_household_2026": 4275.16,
    "parts": [
     {
      "jurisdiction": "Oklahoma City, OK",
      "level": 1,
-     "per_household_2026": 4173.93,
+     "per_household_2026": 4275.16,
      "households": 290311,
      "share": 1.0
     }
@@ -147,21 +153,22 @@
     "vision-economic-community-development",
     "okgazette-wait-whos-paying-for-the-new-arena-2",
     "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
-    "news9-voters-approve-sales-tax-extension"
+    "news9-voters-approve-sales-tax-extension",
+    "okc-maps4-downtown-arena-related-facilities"
    ]
   },
   {
    "team": "WAS",
-   "deal": "Capital One Arena all public money since 1997",
+   "deal": "Capital One Arena all public money since 1997 (the $12M federal grant and $2M of WMATA money for the Metro link are not DC households' share)",
    "jurisdiction": "District of Columbia",
-   "per_household_2026": 2293.04,
+   "per_household_2026": 2205.3,
    "parts": [
     {
      "jurisdiction": "District of Columbia",
      "level": 3,
-     "per_household_2026": 2293.04,
+     "per_household_2026": 2205.3,
      "households": 329687,
-     "share": 1.0
+     "share": 0.961737
     }
    ],
    "sources": [
@@ -174,25 +181,32 @@
    ]
   },
   {
-   "team": "ORL",
-   "deal": "Kia Center (2010 build + 2025 renovation)",
-   "jurisdiction": "Orange County, FL",
-   "per_household_2026": 1571.4,
+   "team": "IND",
+   "deal": "Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",
+   "jurisdiction": "Marion County, IN",
+   "per_household_2026": 1972.61,
    "parts": [
     {
-     "jurisdiction": "Orange County, FL",
+     "jurisdiction": "Marion County, IN",
      "level": 2,
-     "per_household_2026": 1571.4,
-     "households": 560020,
-     "share": 1.0
+     "per_household_2026": 1918.64,
+     "households": 408907,
+     "share": 0.839662
+    },
+    {
+     "jurisdiction": "Indiana",
+     "level": 3,
+     "per_household_2026": 53.97,
+     "households": 2775637,
+     "share": 0.160338
     }
    ],
    "sources": [
-    "occompt-occompt",
-    "occompt-occompt-2",
-    "oppaga-15-01",
+    "indyencyclopedia-bankers-life-fieldhouse",
     "oregon-moda-center-arena-comparable-structure-overview",
-    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
+    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
    ]
   },
   {
@@ -214,42 +228,37 @@
    ]
   },
   {
-   "team": "IND",
-   "deal": "Gainbridge Fieldhouse (1999, 2019-22, CIB payments 2001 and 2014-25)",
-   "jurisdiction": "Marion County, IN",
-   "per_household_2026": 1515.46,
+   "team": "ORL",
+   "deal": "Kia Center (2010 build + 2025 renovation)",
+   "jurisdiction": "Orange County, FL",
+   "per_household_2026": 1538.81,
    "parts": [
     {
-     "jurisdiction": "Marion County, IN",
+     "jurisdiction": "Orange County, FL",
      "level": 2,
-     "per_household_2026": 1461.49,
-     "households": 408907,
-     "share": 0.799562
-    },
-    {
-     "jurisdiction": "Indiana",
-     "level": 3,
-     "per_household_2026": 53.97,
-     "households": 2775637,
-     "share": 0.200438
+     "per_household_2026": 1538.81,
+     "households": 560020,
+     "share": 1.0
     }
    ],
    "sources": [
-    "indyencyclopedia-bankers-life-fieldhouse",
+    "occompt-occompt",
+    "occompt-occompt-2",
+    "oppaga-15-01",
     "oregon-moda-center-arena-comparable-structure-overview",
-    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
+    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
    ]
   },
   {
    "team": "CHA",
-   "deal": "Spectrum Center (2005, 2014, 2022-25)",
+   "deal": "Spectrum Center (2005, 2014, 2024-25)",
    "jurisdiction": "Charlotte, NC",
-   "per_household_2026": 1482.71,
+   "per_household_2026": 1467.43,
    "parts": [
     {
      "jurisdiction": "Charlotte, NC",
      "level": 1,
-     "per_household_2026": 1482.71,
+     "per_household_2026": 1467.43,
      "households": 381274,
      "share": 1.0
     }
@@ -259,7 +268,8 @@
     "espn-nba",
     "lgreports-charlotte",
     "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
-    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
+    "wbtv-charlotte-city-council-approves-275-million-spec",
+    "hochtief-turner-completes-spectrum-center-renovation"
    ]
   },
   {
@@ -284,21 +294,21 @@
    "team": "MEM",
    "deal": "FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",
    "jurisdiction": "Shelby County, TN",
-   "per_household_2026": 1259.61,
+   "per_household_2026": 1242.09,
    "parts": [
     {
      "jurisdiction": "Shelby County, TN",
      "level": 2,
-     "per_household_2026": 1220.3,
+     "per_household_2026": 1202.78,
      "households": 359692,
-     "share": 0.792225
+     "share": 0.789835
     },
     {
      "jurisdiction": "Tennessee",
      "level": 3,
      "per_household_2026": 39.31,
      "households": 2928765,
-     "share": 0.207775
+     "share": 0.210165
     }
    ],
    "sources": [
@@ -373,6 +383,7 @@
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
     "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "tpr-city-scraps-garage-project-marvel-2027-bond",
     "bexar-adid-1520"
    ]
   },
@@ -449,23 +460,16 @@
   },
   {
    "team": "HOU",
-   "deal": "Toyota Center (2003 + 2026 state grant)",
+   "deal": "Toyota Center (2003)",
    "jurisdiction": "Harris County, TX",
-   "per_household_2026": 203.41,
+   "per_household_2026": 195.11,
    "parts": [
     {
      "jurisdiction": "Harris County, TX",
      "level": 2,
      "per_household_2026": 195.11,
      "households": 1801856,
-     "share": 0.787264
-    },
-    {
-     "jurisdiction": "Texas",
-     "level": 3,
-     "per_household_2026": 8.3,
-     "households": 11449769,
-     "share": 0.212736
+     "share": 1.0
     }
    ],
    "sources": [
@@ -473,6 +477,7 @@
     "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
     "law-sfr-v13-nba",
     "texaspolitics-slide4b",
+    "click2houston-harris-county-approves-180m-toyota-center",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
    ]
   },

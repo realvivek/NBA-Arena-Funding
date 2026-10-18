@@ -19,12 +19,12 @@ add(id='E01',team='MIN Timberwolves',owners='Marv Wolfenson & Harvey Ratner (sel
  alt_city='New Orleans (also San Diego, Nashville)',
  league_role='opposed: Stern mediated (1994-02-11); relocation committee unanimously blocked sale 1994-06-15; NBA sued to enjoin transfer',
  money_after='Public purchase of Target Center: Laws of Minnesota 1994 ch. 648 (HF 3041) signed 1994-05-10; reported purchase price $48M (Star Tribune via Wikipedia); Minneapolis final financing approval Mar 1995',
- money_usd_m=48, mechanism='Metropolitan Sports Facilities Commission/City purchase financed by bonds (ticket-surcharge backed; 1995 revised plan incl. $12.7M business bond commitments)',
+ money_usd_m=54.6, mechanism='Metropolitan Sports Facilities Commission/City purchase financed by bonds (ticket-surcharge backed; 1995 revised plan incl. $12.7M business bond commitments)',
  vote='Legislature + City Council; no referendum (poll: 60% opposed intervention)',
- threat_date='1994-02-11', approval_date='1994-05-10', approval_date_final='1995-03-15',
+ threat_date='1994-01-15', approval_date='1994-05-10', approval_date_final='1995-03-23',
  outcome='stayed',
- sources='https://www.lrl.mn.gov/guides/target.aspx ; https://en.wikipedia.org/wiki/Minnesota_Timberwolves_failed_move_to_New_Orleans ; https://www.tampabay.com/archive/1994/05/24/timberwolves-sold-to-louisiana-group',
- label='b (LRL) + c', notes='Final-approval day in March 1995 not given by LRL (15th used as placeholder for month count).')
+ sources='https://www.lrl.mn.gov/guides/target.aspx ; https://www.leg.state.mn.us/docs/2017/other/170786.pdf ; https://en.wikipedia.org/wiki/Minnesota_Timberwolves_failed_move_to_New_Orleans ; https://www.tampabay.com/archive/1994/05/24/timberwolves-sold-to-louisiana-group',
+ label='b (LRL, OLA 2017) + c', notes='Purchase price $54.6M (b, Minnesota Legislative Auditor 2017: "Minneapolis spent an additional $54.6 million to purchase the facility"), the funding ledger\'s figure; $48M (Star Tribune via Wikipedia, c) is the alternative. Threat dated from the LRL timeline: "1994 January: Reports surface that Wolfenson and Ratner are considering moving the team to San Diego or Nashville" (day not given; 15th used); Stern mediated Feb 11. Final city approval Mar 23 1995 (Star Tribune headline, "As of Today, Target Center Financing is a Done Deal", via LRL).')
 
 add(id='E02',team='SEA SuperSonics (now OKC)',owners='Barry Ackerley',period='1993-05',threat_class='none',
  said_or_done='No relocation threat documented; Ackerley had floated a private SoDo arena; city offered Coliseum renovation instead.',
@@ -38,27 +38,27 @@ add(id='E03',team='MIA Heat',owners='Micky Arison',period='1996-06 to 1996-11',t
  alt_city='Broward County', league_role='none documented',
  money_after='Miami-Dade: $38M bayfront county land + county operating payments ($8.5M/yr in the deal announced days before the vote; later reported $6.4M/yr; $64M paid by 2010); county gets 40% of arena profits above $14M (paid once, $257,134 in 2013; deleted in the 2014 amended agreements)',
  money_usd_m=38, mechanism='Land + annual operating subsidy from county; Heat financed the $213M building', vote='County referendum 1996-11-05 ("overwhelming victory", MNT)',
- threat_date='1996-06-15', approval_date='1996-11-05', outcome='stayed (AmericanAirlines Arena opened 2000-01-02)',
- sources='https://www.miaminewtimes.com/opinion/arena-winners-and-losers-alex-shoots-alex-scores-6361111/ ; https://www.miaminewtimes.com/news/tricky-micky-arisons-heat-doesnt-pay-rent-for-county-owned-arena-6538489/ ; https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf',
- label='c', notes='Threat month June 1996 (day placeholder). Wikipedia dates the threat 1997; contemporaneous MNT (Nov 1996) places it in June 1996. FY2025-26 county budget still shows a $6.4M payment (prior round).')
+ threat_date='1996-02-23', approval_date='1996-03-29', approval_date_final='1996-11-05', outcome='stayed (AmericanAirlines Arena opened 2000-01-02)',
+ sources='https://www.miaminewtimes.com/?p=40379989 ; https://www.miaminewtimes.com/opinion/arena-winners-and-losers-alex-shoots-alex-scores-6361111/ ; https://www.miaminewtimes.com/news/tricky-micky-arisons-heat-doesnt-pay-rent-for-county-owned-arena-6538489/ ; https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf',
+ label='c', notes='First approval Mar 29 1996: emergency meetings of the Dade County and Miami city commissions approved a $210M plan and a letter of intent was signed the same day (Miami New Times, May 8 1996, which also dates the Broward threat to early 1996, an anecdote of Feb 23 1996); the Inspector General (IG11-34) calls that letter of intent non-binding; county deal for a $165M arena in June 1996; referendum Nov 5 1996; binding agreements April 1997. FY2025-26 county budget still shows a $6.4M payment.')
 
-add(id='E04',team='SAC Kings',owners='Jim Thomas',period='1996-12 to 1997',threat_class='implied',
+add(id='E04',team='SAC Kings',owners='Jim Thomas',period='1996-12 to 1997',threat_class='unclear',
  said_or_done='Council weighed a $70M loan to keep the Kings in town (SportsBusiness Daily headline 1997-01-31); later accounts say Thomas threatened to sell the money-losing team (secondary).',
  alt_city='none named', league_role='none documented',
  money_after='City loan to team ~$70M (1997); balance reported as $77M owed to the city in 2011',
  money_usd_m=70, mechanism='City loan (repayable), not a grant', vote='City Council (date/count not verified)',
  threat_date='1997-01-15', approval_date='', outcome='stayed',
  sources='https://www.sportsbusinessdaily.com/Daily/Issues/1997/01/31/Facilities-Venues/SACRAMENTO-CITY-COUNCIL-WRESTLES-WITH-KINGS-DECISION.aspx ; https://voiceofoc.org/2011/03/anaheim-council-approves-bond-deal-for-basketball-team/',
- label='u (weak documentation of threat; loan amount reported inconsistently $70M-$82M)', notes='Excluded from capital comparison (loan).')
+ label='u (weak documentation of threat; loan amount reported inconsistently $70M-$82M)', notes='Not counted as a threat (reclassified Oct 18 2026): the record shows only a council loan "to keep the Kings in town" (SBD headline) and later secondary accounts that Thomas threatened to sell; no other city, out clause, out-of-town buyer or offer without a limit on moving is documented, and statements by officials alone do not count. Excluded from the capital comparison (loan).')
 
 add(id='E05',team='DAL Mavericks (with NHL Stars)',owners='Ross Perot Jr. (Mavs), Tom Hicks (Stars)',period='1997-1998',threat_class='unclear',
- said_or_done='No owner relocation statement found in this pass; owners supplied >$1.6M of the >$1.9M pro-arena campaign (backers outspent opponents ~20:1).',
+ said_or_done='No Mavericks owner statement found. Days before the vote, David Deniger, CEO of Hicks\'s Olympus Realty, a Stars minority owner and an arena negotiator, said "It\'s not unreasonable to assume the teams are going to go elsewhere" if the vote failed, with an arena near the Ballpark in Arlington, adding "we haven\'t threatened anybody" (Dallas Observer, Jan 14 1998). Owners supplied >$1.6M of the >$1.9M pro-arena campaign (backers outspent opponents ~20:1).',
  alt_city='', league_role='none documented',
  money_after='$125M city contribution to $420M American Airlines Center (+>$60M infrastructure; $185.3M public through 2018 per city)',
  money_usd_m=125, mechanism='New hotel-occupancy and car-rental taxes', vote='Referendum 1998-01-17: 62,861 to 61,237 (50.7%)',
  threat_date='', approval_date='1998-01-17', outcome='stayed',
- sources='https://www.hillwood.com/newsroom/news-articles/at-the-center-of-something-on-the-rise-5-years-on-aac-gleams-development-takes-shape/ (Dallas Morning News 2006-07-30 reprint) ; https://en.wikipedia.org/wiki/American_Airlines_Center',
- label='c', notes='Treated as no documented threat (N) with an "unclear" flag; sensitivity drops it.')
+ sources='https://www.hillwood.com/newsroom/news-articles/at-the-center-of-something-on-the-rise-5-years-on-aac-gleams-development-takes-shape/ (Dallas Morning News 2006-07-30 reprint) ; https://www.dallasobserver.com/arts-culture/mavs-held-hostage-6402203/ (Dallas Observer, Jan 14 1998) ; https://en.wikipedia.org/wiki/American_Airlines_Center',
+ label='c', notes='Treated as no documented threat (N) with an "unclear" flag; sensitivity drops it. The Deniger statement (added Oct 18 2026) came from a minority owner of the co-tenant NHL team, not the Mavericks, and disclaimed a threat, so it is recorded but not counted.')
 
 add(id='E06',team='SAS Spurs',owners='Peter M. Holt group (from 1996)',period='1999',threat_class='unclear',
  said_or_done='No specific 1998-99 owner threat found in this pass. Peter J. Holt (2022 letter): "My family became involved in the Spurs in the 90s because there was a real threat the team would be moved."',
@@ -76,7 +76,7 @@ add(id='E07',team='HOU Rockets',owners='Leslie Alexander',period='1995-2000 (key
  money_usd_m=182, mechanism='Harris County-Houston Sports Authority financing; campaign promised "no new taxes of any kind"',
  vote='City Council ~2000-09-13; voters 2000-11-07, 66% yes (1999 version had failed). Pro campaign: Enron/Ken Lay $590K, Reliant $400K',
  threat_date='2000-02-13', approval_date='2000-09-13', approval_date_final='2000-11-07', outcome='stayed',
- sources='http://www.chron.com/CDA/archives/archive.mpl?id=2000_3195424 ; http://www.chron.com/CDA/archives/archive.mpl?id=2000_3214398 ; http://www.chron.com/CDA/archives/archive.mpl?id=2000_3256380 ; http://www.chron.com/CDA/archives/archive.mpl?id=2003_3686610 ; https://en.wikipedia.org/wiki/Toyota_Center',
+ sources='https://www.houstonpress.com/news/home-court-advantage-6564384/ ; https://houstonsports.org/wp-content/uploads/Multi-Purpose_Arena_Letter_of_Agreement.pdf ; https://www.bondbuyer.com/news/houston-city-council-cuts-property-taxes-oks-arena-deal ; https://houstonsports.org/wp-content/uploads/City-HCHSA-Ground-Lease-Toyota-Center-20011231.pdf ; https://en.wikipedia.org/wiki/Toyota_Center',
  label='c', notes='Stern quote via Wikipedia citation of the Chronicle (archive not fetched).')
 
 add(id='E08',team='CHA Hornets (original; now NOP)',owners='George Shinn, Ray Wooldridge',period='1997-2002',threat_class='explicit',
@@ -120,7 +120,7 @@ add(id='E12',team='POR Trail Blazers',owners='Paul Allen',period='2006-2007',thr
  alt_city='none named', league_role='none documented',
  money_after='None identified; Allen privately re-bought the Rose Garden from creditors in 2007',
  money_usd_m='', mechanism='', vote='', threat_date='2006-02-25', approval_date='', outcome='stayed',
- sources='https://en.wikipedia.org/wiki/Moda_Center ; http://seattletimes.nwsource.com/html/localnews/2002827693_trailblazers25m.html',
+ sources='https://katu.com/sports/content/trail-blazers-owner-paul-allen-attends-sundays-game ; https://news.pollstar.com/2006/06/12/portland-fire-sale/ ; https://en.wikipedia.org/wiki/Moda_Center',
  label='c', notes='Counts as threat without new money.')
 
 add(id='E13',team='SEA SuperSonics -> OKC Thunder',owners='Howard Schultz (sold 2006-07-18) -> Clay Bennett, Aubrey McClendon, Tom Ward et al. (PBC)',period='2006-2008',threat_class='explicit',
@@ -129,7 +129,7 @@ add(id='E13',team='SEA SuperSonics -> OKC Thunder',owners='Howard Schultz (sold 
  money_after='Seattle: none (Initiative 91, Nov 2006, 74% yes, restricted subsidies; state/local governments did not fund a $500M arena complex). Destination: Oklahoma City voters 2008-03-04 approved 15-month 1-cent sales tax for $121.6M Ford Center upgrades + practice facility (62%); collected $103.5M. Seattle got $45M lease-break settlement (2008-07-02)',
  money_usd_m=121.6, mechanism='Temporary city sales tax (destination city)', vote='OKC referendum 62% yes',
  threat_date='2007-11-02', approval_date='2008-03-04', outcome='moved to Oklahoma City (2008)',
- sources='http://www.seattletimes.com/sports/nba/sonics-co-owner-mcclendon-fined-250k ; https://www.espn.com/nba/news/story?id=3091416 ; https://www.espn.com/nba/news/story?id=3277413 ; http://www.nba.com/news/bog_sonics_080418.html ; https://www.seattlepi.com/news/article/sonics-are-oklahoma-city-bound-1278241.php',
+ sources='http://www.seattletimes.com/sports/nba/sonics-co-owner-mcclendon-fined-250k ; https://www.espn.com/nba/news/story?id=3091416 ; https://www.espn.com/nba/news/story?id=3277413 ; https://www.heraldnet.com/2008/04/18/nba-approves-sonics-move-city-of-seattle-vows-to-fight-on/ ; https://www.seattlepi.com/news/article/sonics-are-oklahoma-city-bound-1278241.php',
  label='c', notes='Lag measured to destination-city money.')
 
 add(id='E14',team='IND Pacers',owners='Herb & Mel Simon',period='2008-2010',threat_class='implied',
@@ -137,8 +137,8 @@ add(id='E14',team='IND Pacers',owners='Herb & Mel Simon',period='2008-2010',thre
  alt_city='none named', league_role='none documented',
  money_after='Capital Improvement Board 2010-07-16 (6-1): $33.5M over 3 years ($10M/yr operating + >=$3.5M capital); partial repayment if team leaves before 2019',
  money_usd_m=33.5, mechanism='Capital Improvement Board operating subsidy', vote='CIB 6-1; no referendum',
- threat_date='2008-07-13', approval_date='2010-07-16', outcome='stayed',
- sources='https://www.bondbuyer.com/news/indianapolis-cib-to-vote-on-plan-crafted-to-keep-pacers-in-town ; https://www.ibj.com/articles/21164-cib-approves-33-5-million-deal-to-keep-indiana-pacers',
+ threat_date='2010-04-13', approval_date='2010-07-16', outcome='stayed',
+ sources='https://www.fieldofschemes.com/news/archives/2010/04/4116_pacers_threaten.html ; https://www.bondbuyer.com/news/indianapolis-cib-to-vote-on-plan-crafted-to-keep-pacers-in-town ; https://www.ibj.com/articles/21164-cib-approves-33-5-million-deal-to-keep-indiana-pacers',
  label='c', notes='Threat start approximated from "more than two years" (mid-2008). Operating money: excluded from capital comparison.')
 
 add(id='E15',team='NOH Hornets (NBA-owned)',owners='George Shinn -> NBA (Dec 2010, ~$300M) -> Tom Benson (2012-04-13, $338M)',period='2010-12 to 2012',threat_class='implied',
@@ -146,8 +146,8 @@ add(id='E15',team='NOH Hornets (NBA-owned)',owners='George Shinn -> NBA (Dec 201
  alt_city='none named', league_role='owned the team; negotiated lease',
  money_after='2012-03-16 Gov. Jindal announced 10-yr extension to 2024 with ~$50M state-funded arena upgrades (bond issue needing legislative approval); exit clause removed. LSED audits show "revenue benchmark" inducement payments continued ($2.59M FY2014; $2.84M FY2023) plus players\' income-tax pass-through (~$2.1-2.6M/yr)',
  money_usd_m=50, mechanism='State bonds + ongoing LSED inducements', vote='Legislature (bonds); no referendum',
- threat_date='2010-12-05', approval_date='2012-03-16', outcome='stayed',
- sources='https://www.businessreport.com/article/lease-deal-on-n-o-arena-a-signal-of-hornets-commitment-to-stay ; https://www.espn.com/nba/news/story?id=5887687 ; LLA audits (prior round arena_cba/out/pelicans_lsed_payments.csv)',
+ threat_date='2010-12-05', approval_date='2012-06-15', outcome='stayed',
+ sources='https://www.businessreport.com/article/lease-deal-on-n-o-arena-a-signal-of-hornets-commitment-to-stay ; https://www.espn.com/nba/news/story?id=5887687 ; https://app.lla.state.la.us/publicreports.nsf/0/4275b8bafc2cfd6786257da9007484de/$file/000040e2.pdf ; https://app.lla.state.la.us/publicreports.nsf/0/440351d0ffe374fa86257ad70070c62f/$file/0002e28e.pdf',
  label='c + b (LLA audits)', notes='Governor\'s office said inducements would end; audits show benchmark payments continued under the restated agreement.')
 
 add(id='E16',team='SAC Kings (Anaheim)',owners='Joe, Gavin & George Maloof',period='2011-02 to 2012-04',threat_class='explicit',
@@ -156,17 +156,17 @@ add(id='E16',team='SAC Kings (Anaheim)',owners='Joe, Gavin & George Maloof',peri
  money_after='Sacramento council 2012-03-06 approved term sheet: city $255.5M of $391M arena; Maloofs backed out 2012-04-13 (not executed)',
  money_usd_m=255.5, mechanism='Parking monetization (term sheet)', vote='City Council (term sheet)',
  threat_date='2011-02-19', approval_date='2012-03-06', outcome='stayed (deal collapsed)',
- sources='http://www.nba.com/2011/news/03/16/kings-relocation.ap/ ; https://voiceofoc.org/2011/03/anaheim-council-approves-bond-deal-for-basketball-team/ ; https://www.espn.com/nba/story/_/id/7654643/sacramento-city-council-approves-new-arena-plan-keep-kings ; https://en.wikipedia.org/wiki/Sacramento_Kings_failed_relocation_attempts',
+ sources='https://www.fieldofschemes.com/2011/02/21/2935/kings-to-anaheim-rumors-heat-up-after-stern-mumbles-something-about-it/ ; https://www.nbcsportsbayarea.com/news/report-maloof-lawyer-registers-four-new-nba-names/1244458/ ; https://voiceofoc.org/2011/03/anaheim-council-approves-bond-deal-for-basketball-team/ ; https://www.espn.com/nba/story/_/id/7654643/sacramento-city-council-approves-new-arena-plan-keep-kings ; https://en.wikipedia.org/wiki/Sacramento_Kings_failed_relocation_attempts',
  label='c', notes='Not executed - excluded from money comparison.')
 
 add(id='E17',team='SAC Kings (Seattle sale)',owners='Maloofs -> sale agreement with Chris Hansen & Steve Ballmer group (2013-01-21) -> Vivek Ranadive group (2013-05)',period='2013-01 to 2014-05',threat_class='explicit',
  said_or_done='2013-01-21: Maloofs agreed to sell 65% at a $525M valuation to the Seattle group, which was expected to relocate and use the SuperSonics name (USA Today 2013-01-21); relocation application filed (ESPN 2013-02-06); bid raised to $625M valuation (2013-05-10).',
  alt_city='Seattle (SoDo arena MOU: up to $200M public, approved 2012-09-24 city 6-2 / 2012-10-15 county)',
- league_role='opposed: relocation committee 7-0 against (2013-04-29); Board rejected relocation 22-8 (2013-05-15)',
+ league_role='opposed the move: relocation committee 7-0 against (2013-04-29); Board rejected relocation 22-8 (2013-05-15); the NBA also told the city it must open the arena by 2017 or risk losing the Kings (AP, 2014)',
  money_after='Golden 1 Center: council approved public financing 2014-05-20; city ~$223M cash ($212M bonds + $11M parking/econ-dev funds) of $507M; commonly reported $255M incl. land',
- money_usd_m=255, mechanism='Lease-revenue bonds backed by parking revenue', vote='City Council 2014-05-20; no public vote (petition drive opposed)',
- threat_date='2013-01-21', approval_date='2014-05-20', outcome='stayed',
- sources='https://www.usatoday.com/story/sports/nba/kings/2013/01/20/sacramento-seattle-maloofs-chris-hansen-sonics-supersonics/1850631/ ; http://www.nba.com/2013/news/05/15/kings-stay-in-sacramento.ap/index.html ; https://www.sacbee.com/news/local/city-arena/article2599400.html ; https://en.wikipedia.org/wiki/Golden_1_Center',
+ money_usd_m=223.1, mechanism='Lease-revenue bonds backed by parking revenue', vote='City Council 2014-05-20; no public vote (petition drive opposed)',
+ threat_date='2013-01-21', approval_date='2013-03-26', approval_date_final='2014-05-20', outcome='stayed',
+ sources='https://www.spokesman.com/stories/2013/jan/21/owners-agree-to-sell-kings/ ; https://www.cbsnews.com/sacramento/news/sacramento-council-approves-kings-arena-deal-7-2/ ; https://archive.kuow.org/news/2013-05-16/nba-owners-reject-sacramento-kings-move-to-seattle ; https://www.foxnews.com/sports/sacramento-approves-477-million-arena-caps-off-struggle-to-build-new-home-for-nbas-kings.amp ; https://www.usatoday.com/story/sports/nba/kings/2013/01/20/sacramento-seattle-maloofs-chris-hansen-sonics-supersonics/1850631/ ; https://www.sacbee.com/news/local/city-arena/article2599400.html ; https://en.wikipedia.org/wiki/Golden_1_Center',
  label='c', notes='Non-binding term sheet reported March 2013 (vote count not verified).')
 
 add(id='E18',team='MIL Bucks',owners='Herb Kohl -> Marc Lasry & Wes Edens (Apr 2014, $550M)',period='2014-04 to 2015-08',threat_class='explicit',
@@ -206,13 +206,13 @@ add(id='E21',team='WAS Wizards (and NHL Capitals)',owners='Ted Leonsis (Monument
  label='c', notes='3.6 months from the explicit announcement; 9.3 months from the June 2023 report.')
 
 add(id='E22',team='POR Trail Blazers',owners='Paul Allen estate (Jody Allen) -> Tom Dundon group (agreement 2025-08-13; NBA approval 2026-03-30; ~$4.25B)',period='2025-08 to 2026-08',threat_class='implied',
- said_or_done='Sale to a Dallas-based buyer; per OPB, Dundon\'s representatives "convinced state and local officials to finance renovations" before the purchase. KATU 2026-07-15: Dundon "has not publicly suggested he intends to move the franchise, but he also has not made a long-term commitment to keeping the team in Portland." Silver: "We are working with both sides to ensure that the Trail Blazers can have a long-term future in Portland."',
+ said_or_done='Sale to a Dallas-based buyer; the team was "not ... shy about dangling the possibility of Dundon moving the team" while lobbying the 2026 session (OPB, Apr 20 2026), and Dundon "has used the expansion process and the threat of relocation for leverage in recent discussions with other owners and city officials" (ESPN, Oct 2026); per OPB, Dundon\'s representatives "convinced state and local officials to finance renovations" before the purchase. KATU 2026-07-15: Dundon "has not publicly suggested he intends to move the franchise, but he also has not made a long-term commitment to keeping the team in Portland." Silver: "We are working with both sides to ensure that the Trail Blazers can have a long-term future in Portland."',
  alt_city='none named', league_role='neutral (Silver urging a deal)',
  money_after='Oregon SB 1501 (passed early March 2026): state bonds up to $365M repaid from Rose Quarter income-tax withholding (incl. players), conditional on city/county commitments and a long-term lease; city/county ~$208M pending; council approved negotiating terms Aug 2026',
  money_usd_m=365, mechanism='State bonds repaid by income-tax withholding at the arena', vote='Legislature (early March 2026); no referendum',
  threat_date='2025-08-13', approval_date='2026-03-06', outcome='pending',
- sources='https://www.opb.org/article/2026/06/09/portland-unveils-timeline-for-moda-center-deal/ ; https://katu.com/sports/trail-blazers/story/silver-warns-moda-center-renovation-talks-off-track-fueling-blazers-future-concerns-portland-city-council-adam-national-basketball-association-nba-ripcity-mayor-wilson ; https://www.opb.org/article/2026/03/30/nba-approves-trail-blazers-sale-tom-dundon/ ; https://www.oregon.gov/das/Pages/moda-center-project.aspx',
- label='c (weak: implied only by the out-of-town sale rule)', notes='SB 1501 day in March 2026 not confirmed (06 used). Sensitivity drops it.')
+ sources='https://www.opb.org/article/2026/06/09/portland-unveils-timeline-for-moda-center-deal/ ; https://katu.com/sports/trail-blazers/story/silver-warns-moda-center-renovation-talks-off-track-fueling-blazers-future-concerns-portland-city-council-adam-national-basketball-association-nba-ripcity-mayor-wilson ; https://www.opb.org/article/2026/04/20/trail-blazers-moda-center-portland-basketball-sports/ ; https://www.espn.com/nba/story/_/id/50079137/nba-expansion-las-vegas-seattle ; https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/SB1501/Enrolled ; https://www.oregonlegislature.gov/bills_laws/lawsstatutes/2026orlaw0074.pdf ; https://www.oregon.gov/das/Pages/moda-center-project.aspx',
+ label='c + b (enrolled bill, session law)', notes='SB 1501 passed the Senate Mar 4 and the House Mar 6 2026 (enrolled bill) and was signed Mar 31 2026 (Oregon Laws 2026, ch. 74). The money is approved but not final: definitive agreements and the bond sale are pending, so the comparison and the outcome counts treat it as pending, as the funding ledger does.')
 
 add(id='E23',team='OKC Thunder',owners='Clay Bennett (Professional Basketball Club LLC)',period='2022-01 to 2023-12',threat_class='official_cited',
  said_or_done='Mayor David Holt (2022 State of the City): not funding a new arena could lead the Thunder to "look outside the state for a new home"; Holt (Nov 2023): without a yes vote "It will be the beginning of the end and there\'s no other real path" (PBS NewsHour 2023-11-15). No relocation statement by Bennett or the NBA found; Bennett: arena will "secure the long-term future of the Thunder."',
@@ -277,9 +277,9 @@ add(id='E34',team='MEM Grizzlies',owners='Robert Pera',period='2024-2026',threat
 add(id='E35',team='DAL Mavericks',owners='Miriam Adelson & Dumont family (majority, Dec 2023); Mark Cuban (minority)',period='2024-2026',threat_class='none',
  said_or_done='Owners pushed Texas casino legalization (2025 session); Patrick Dumont said a casino is not part of the arena plans; club "made it clear" it wants to stay in Dallas; preliminary deal (June 2026) for a site ~10 miles north of downtown; AAC lease runs to July 2031.',alt_city='(within Dallas)',league_role='none documented',
  money_after='None approved as of Oct 2026',money_usd_m='',mechanism='',vote='',threat_date='',approval_date='',outcome='pending',
- sources='https://wtop.com/news/2026/06/dallas-mavericks-have-deal-for-arena-site-that-would-move-club-out-of-downtown-for-1st-time/ ; https://casino.org/news/sands-ceo-dumont-says-mavs-arena-plans-dont-include-casino',label='c',notes='')
+ sources='https://wtop.com/news/2026/06/dallas-mavericks-have-deal-for-arena-site-that-would-move-club-out-of-downtown-for-1st-time/ ; https://casino.org/news/sands-ceo-dumont-says-mavs-arena-plans-dont-include-casino ; https://www.fox5ny.com/sports/dallas-mavericks-sale-miriam-adelson',label='c',notes=' Not counted as an implied threat: the Dec 2023 sale went to the Las Vegas Sands owners (Adelson and Dumont families), but the buyers said they would "build on the team\'s success and legacy in Dallas" and had "no interest in moving the team to Vegas or out of North Texas" (FOX 4 via Fox 5 NY), and Cuban said the team would remain in Dallas; the out-of-town-buyer prong covers sales with no commitment to stay.')
 
-add(id='E36',team='NJ Nets -> BKN',owners='Bruce Ratner (bought 2004) -> Mikhail Prokhorov -> Joe Tsai',period='2004-2012',threat_class='implied',
+add(id='E36',team='NJ Nets -> BKN',owners='Bruce Ratner (bought 2004) -> Mikhail Prokhorov -> Joe Tsai',period='2004-2012',threat_class='explicit',
  said_or_done='Team sold (2004) to a developer whose plan was to move it to a new arena in Brooklyn (Atlantic Yards); played in Newark 2010-12, opened Barclays Center 2012-09-21.',alt_city='Brooklyn',league_role='approved sale/move',
  money_after='Destination (NY): IBO (2009) present-value subsidies: NYC $350M and State/MTA $142M incl. tax breaks; federal $194M via tax-exempt PILOT bonds; city net loss $40M (cash) or $180M incl. tax breaks; below-market land worth $50M-$114M excluded',money_usd_m=492,mechanism='Triple-tax-exempt PILOT bonds via Brooklyn Arena LDC; city/state capital; MTA land sale; tax exemptions',vote='No public vote',threat_date='',approval_date='',outcome='moved to Brooklyn (2012)',
  sources='https://www.fieldofschemes.com/news/archives/2009/09/3825_nets_arena_subs.html ; https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf',label='c (IBO via Field of Schemes) + b (IBO 2023 structure)',notes='Dates for sale agreement and state approval are approximate (not verified here); lag not used.')
@@ -316,6 +316,15 @@ for tid,team,txt in [('E41','BOS Celtics','TD Garden privately owned (Delaware N
                  'E47':'https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf (LSED FY26 presentation) ; https://www.senate.la.gov/FiscalServices/Presentations/2026/01%20-%20124%20LSED%20FY%2027%20FINAL.pdf (LSED FY27 presentation)'}[tid],label='c',notes='')
 
 # lures without a team (context rows)
+add(id='E50',team='GSW Warriors (Oakland)',owners='Chris Cohan',period='1995-10 to 1996-08',threat_class='implied',
+ said_or_done='Talks with another city: the Warriors and San Jose "have all but completed negotiations" on a $43M package including a $35M relocation fee, while the team sought a publicly financed Oakland arena (Sports Business Daily, Oct 19 1995, citing the San Francisco Chronicle).',
+ alt_city='San Jose', league_role='none documented',
+ money_after='Oakland and Alameda County financed a renovation of the Coliseum arena: Memorandum of Understanding Feb 21 1996 (city and county to issue bonds); License Agreement July 1996, 20-year term 1997-2017 with four five-year options and renovation debt owed to 2027 if the team leaves early; the Coliseum Authority issued "$140 million to be repaid over 30 years" in August 1996 (Court of Appeal, A157688, 2020). Renovation cost $121M (left_behind.csv, c).',
+ money_usd_m=140, mechanism='Coliseum Authority bonds repaid by the city and county (lease-revenue type per Bond Buyer, c)', vote='City Council and County Board (MOU)',
+ threat_date='1995-10-19', approval_date='1996-02-21', approval_date_final='1996-08-15', outcome='stayed (moved to San Francisco in 2019; arbitration and the courts held it to the renovation debt, see left_behind)',
+ sources='https://www.sportsbusinessdaily.com/Daily/Issues/1995/10/19/Franchises/ARE-WARRIORS-HEADING-TO-SAN-JOSE-OR-HOLDING-UP-OAKLAND.aspx ; https://www.courts.ca.gov/opinions/archive/A157688.PDF',
+ label='c (threat) + b (court record of the deal)', notes='Added Oct 18 2026 (missed in earlier rounds). The day of the August 1996 bond issue is not given (15th used); not in the capital comparison, whose deal list starts with the current arenas.')
+
 add(id='E48',team='(lure) Kansas City',owners='AEG (operator)',period='2004-2007',threat_class='lure_only',said_or_done='Sprint (T-Mobile) Center built without a tenant; used as relocation leverage by others (e.g., NHL Penguins 2006-07). No NBA team came.',alt_city='Kansas City',league_role='',
  money_after='Voters 2004-08-03 approved $4/day rental-car fee + $1.50/night hotel fee; $276M arena; AEG ~$50-54M, NABC $10M -> public ~ $212M (derived)',money_usd_m=212,mechanism='Rental-car and hotel fees',vote='Referendum 2004-08-03 (passed)',threat_date='',approval_date='2004-08-03',outcome='no team',
  sources='https://news.pollstar.com/2005/06/28/sprint-center-breaks-ground/ ; https://www.kcur.org/post/projects-kansas-city-taxpayers-are-still-paying',label='c + a',notes='')

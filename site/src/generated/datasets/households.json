@@ -19,25 +19,29 @@
   "okgazette-wait-whos-paying-for-the-new-arena-2",
   "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
   "news9-voters-approve-sales-tax-extension",
+  "okc-maps4-downtown-arena-related-facilities",
   "govinfo-gaoreports-aimd-98-223",
   "cfo-arena-tax-revenue-clarification",
   "cfo-fis-downtown-arena-revitalization",
   "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
   "dccouncil-4-2-24-arena-funding-memo",
   "wtop-take-a-look-at-the-newest-renderings-of-the-capi",
+  "indyencyclopedia-bankers-life-fieldhouse",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+  "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
+  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
   "occompt-occompt",
   "occompt-occompt-2",
   "oppaga-15-01",
-  "oregon-moda-center-arena-comparable-structure-overview",
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
-  "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
   "carolinajournal-on-world-class-chumps",
   "espn-nba",
   "lgreports-charlotte",
   "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
-  "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
-  "indyencyclopedia-bankers-life-fieldhouse",
-  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "wbtv-charlotte-city-council-approves-275-million-spec",
+  "hochtief-turner-completes-spectrum-center-renovation",
   "degc-ugd-3",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
@@ -54,6 +58,7 @@
   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+  "tpr-city-scraps-garage-project-marvel-2027-bond",
   "bexar-adid-1520",
   "ohioauditor-gateway-economic-development-corporation-of-grea",
   "ohioauditor-auditsearch",
@@ -79,6 +84,7 @@
   "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
   "law-sfr-v13-nba",
   "texaspolitics-slide4b",
+  "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "ibo-2009-may-atlantic-yards-testimony",
   "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
@@ -107,13 +113,13 @@
  "rows": [
   {
    "team": "UTA",
-   "deal": "Delta Center 2025 deal (arena $525M + district $375M), 0.5% Salt Lake City sales tax",
-   "amount_2026_m": 900.0,
+   "deal": "Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax",
+   "amount_2026_m": 547.7,
    "geo_id": "16000US4967000",
    "jurisdiction": "Salt Lake City, UT",
    "households": 98916,
    "share": 1.0,
-   "per_household_2026": 9098.63,
+   "per_household_2026": 5537.02,
    "note": "City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound",
    "sources": [
     "ksl-salt-lake-city-approves-new-delta-center-lease-t",
@@ -125,13 +131,13 @@
   },
   {
    "team": "OKC",
-   "deal": "New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($302M), OKC city sales tax and GO bonds",
-   "amount_2026_m": 1211.738674,
+   "deal": "New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($331M), OKC city sales tax and GO bonds",
+   "amount_2026_m": 1241.127084,
    "geo_id": "16000US4055000",
    "jurisdiction": "Oklahoma City, OK",
    "households": 290311,
    "share": 1.0,
-   "per_household_2026": 4173.93,
+   "per_household_2026": 4275.16,
    "note": "City sales tax (also paid by commuters/visitors) and GO bonds",
    "sources": [
     "wiki-paycom-center",
@@ -143,18 +149,19 @@
     "vision-economic-community-development",
     "okgazette-wait-whos-paying-for-the-new-arena-2",
     "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
-    "news9-voters-approve-sales-tax-extension"
+    "news9-voters-approve-sales-tax-extension",
+    "okc-maps4-downtown-arena-related-facilities"
    ]
   },
   {
    "team": "WAS",
-   "deal": "Capital One Arena all public money since 1997",
+   "deal": "Capital One Arena all public money since 1997 (the $12M federal grant and $2M of WMATA money for the Metro link are not DC households' share)",
    "amount_2026_m": 755.985405,
    "geo_id": "04000US11",
    "jurisdiction": "District of Columbia",
    "households": 329687,
-   "share": 1.0,
-   "per_household_2026": 2293.04,
+   "share": 0.961737,
+   "per_household_2026": 2205.3,
    "note": "District of Columbia general fund/GO",
    "sources": [
     "govinfo-gaoreports-aimd-98-223",
@@ -166,21 +173,21 @@
    ]
   },
   {
-   "team": "ORL",
-   "deal": "Kia Center (2010 build + 2025 renovation)",
-   "amount_2026_m": 880.016116,
-   "geo_id": "05000US12095",
-   "jurisdiction": "Orange County, FL",
-   "households": 560020,
-   "share": 1.0,
-   "per_household_2026": 1571.4,
-   "note": "Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional",
+   "team": "IND",
+   "deal": "Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",
+   "amount_2026_m": 934.355889,
+   "geo_id": "05000US18097",
+   "jurisdiction": "Marion County, IN",
+   "households": 408907,
+   "share": 0.839662,
+   "per_household_2026": 1918.64,
+   "note": "Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)",
    "sources": [
-    "occompt-occompt",
-    "occompt-occompt-2",
-    "oppaga-15-01",
+    "indyencyclopedia-bankers-life-fieldhouse",
     "oregon-moda-center-arena-comparable-structure-overview",
-    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
+    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
    ]
   },
   {
@@ -198,37 +205,40 @@
    ]
   },
   {
+   "team": "ORL",
+   "deal": "Kia Center (2010 build + 2025 renovation)",
+   "amount_2026_m": 861.764504,
+   "geo_id": "05000US12095",
+   "jurisdiction": "Orange County, FL",
+   "households": 560020,
+   "share": 1.0,
+   "per_household_2026": 1538.81,
+   "note": "Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional",
+   "sources": [
+    "occompt-occompt",
+    "occompt-occompt-2",
+    "oppaga-15-01",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
+   ]
+  },
+  {
    "team": "CHA",
-   "deal": "Spectrum Center (2005, 2014, 2022-25)",
-   "amount_2026_m": 565.319268,
+   "deal": "Spectrum Center (2005, 2014, 2024-25)",
+   "amount_2026_m": 559.491253,
    "geo_id": "16000US3712000",
    "jurisdiction": "Charlotte, NC",
    "households": 381274,
    "share": 1.0,
-   "per_household_2026": 1482.71,
+   "per_household_2026": 1467.43,
    "note": "City of Charlotte hotel/car-rental taxes",
    "sources": [
     "carolinajournal-on-world-class-chumps",
     "espn-nba",
     "lgreports-charlotte",
     "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
-    "wbtv-city-pay-275-million-renovate-spectrum-center-fu"
-   ]
-  },
-  {
-   "team": "IND",
-   "deal": "Gainbridge Fieldhouse (1999, 2019-22, CIB payments 2001 and 2014-25)",
-   "amount_2026_m": 747.42594,
-   "geo_id": "05000US18097",
-   "jurisdiction": "Marion County, IN",
-   "households": 408907,
-   "share": 0.799562,
-   "per_household_2026": 1461.49,
-   "note": "Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)",
-   "sources": [
-    "indyencyclopedia-bankers-life-fieldhouse",
-    "oregon-moda-center-arena-comparable-structure-overview",
-    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
+    "wbtv-charlotte-city-council-approves-275-million-spec",
+    "hochtief-turner-completes-spectrum-center-renovation"
    ]
   },
   {
@@ -248,12 +258,12 @@
   {
    "team": "MEM",
    "deal": "FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",
-   "amount_2026_m": 554.048246,
+   "amount_2026_m": 547.748246,
    "geo_id": "05000US47157",
    "jurisdiction": "Shelby County, TN",
    "households": 359692,
-   "share": 0.792225,
-   "per_household_2026": 1220.3,
+   "share": 0.789835,
+   "per_household_2026": 1202.78,
    "note": "Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)",
    "sources": [
     "memphistn-fy05-annual-report",
@@ -284,6 +294,7 @@
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
     "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "tpr-city-scraps-garage-project-marvel-2027-bond",
     "bexar-adid-1520"
    ]
   },
@@ -404,19 +415,20 @@
   },
   {
    "team": "HOU",
-   "deal": "Toyota Center (2003 + 2026 state grant)",
-   "amount_2026_m": 446.56221,
+   "deal": "Toyota Center (2003)",
+   "amount_2026_m": 351.56221,
    "geo_id": "05000US48201",
    "jurisdiction": "Harris County, TX",
    "households": 1801856,
-   "share": 0.787264,
+   "share": 1.0,
    "per_household_2026": 195.11,
-   "note": "Harris County (HCHSA hotel/car taxes) + Texas (about $95M expected)",
+   "note": "Harris County (HCHSA hotel/car taxes); the expected $95M state grant for the 2026 renovation is pending and not included",
    "sources": [
     "houstonsports-multi-purpose-arena-letter-of-agreement",
     "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
     "law-sfr-v13-nba",
     "texaspolitics-slide4b",
+    "click2houston-harris-county-approves-180m-toyota-center",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
    ]
   },
@@ -442,28 +454,30 @@
   },
   {
    "team": "IND",
-   "deal": "Gainbridge Fieldhouse (1999, 2019-22, CIB payments 2001 and 2014-25)",
-   "amount_2026_m": 747.42594,
+   "deal": "Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",
+   "amount_2026_m": 934.355889,
    "geo_id": "04000US18",
    "jurisdiction": "Indiana",
    "households": 2775637,
-   "share": 0.200438,
+   "share": 0.160338,
    "per_household_2026": 53.97,
    "note": "Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)",
    "sources": [
     "indyencyclopedia-bankers-life-fieldhouse",
     "oregon-moda-center-arena-comparable-structure-overview",
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
     "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
    ]
   },
   {
    "team": "MEM",
    "deal": "FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",
-   "amount_2026_m": 554.048246,
+   "amount_2026_m": 547.748246,
    "geo_id": "04000US47",
    "jurisdiction": "Tennessee",
    "households": 2928765,
-   "share": 0.207775,
+   "share": 0.210165,
    "per_household_2026": 39.31,
    "note": "Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)",
    "sources": [
@@ -510,24 +524,6 @@
     "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
     "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
     "wiki-barclays-center"
-   ]
-  },
-  {
-   "team": "HOU",
-   "deal": "Toyota Center (2003 + 2026 state grant)",
-   "amount_2026_m": 446.56221,
-   "geo_id": "04000US48",
-   "jurisdiction": "Texas",
-   "households": 11449769,
-   "share": 0.212736,
-   "per_household_2026": 8.3,
-   "note": "Harris County (HCHSA hotel/car taxes) + Texas (about $95M expected)",
-   "sources": [
-    "houstonsports-multi-purpose-arena-letter-of-agreement",
-    "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
-    "law-sfr-v13-nba",
-    "texaspolitics-slide4b",
-    "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
    ]
   }
  ],

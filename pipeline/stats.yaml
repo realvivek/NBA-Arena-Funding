@@ -91,7 +91,7 @@ stats:
   basis: 2026 dollars
   label: a
   sources: [ledger]
-  note: Adds Barclays Center's PILOT bonds, Madison Square Garden's property-tax exemption since 1982 (the Independent Budget Office's estimate in 2023 dollars, converted) and the United Center's valuation formula, 2002-2016. The breaks are low estimates, because the Garden's exemption after fiscal 2023 is not added and the United Center's 1994-2001 years could not be computed.
+  note: Adds Barclays Center's PILOT bonds, Madison Square Garden's property-tax exemption (the Independent Budget Office's estimate for fiscal 1984-2023, converted from 2023 dollars, plus the Department of Finance's values for fiscal 2024-2026) and the United Center's valuation formula, 2002-2016. The breaks are low estimates, because the Garden's first two years and the United Center's 1994-2001 years could not be computed.
 
 - key: expanded_share
   title: Public share with tax breaks added to both sides
@@ -132,10 +132,29 @@ stats:
   sources: [ledger]
   note: The size of the group in top10_share.
 
+- key: ind_public
+  title: Public money in Indianapolis's Gainbridge Fieldhouse, the most of any arena
+  sql: select sum(public_2026_m) from items where core and team = 'IND'
+  check: select (select team from items where core group by team order by sum(public_2026_m) desc limit 1) = 'IND'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger]
+  sources_sql: select source_id from item_sources where team = 'IND' and role = 'public' order by item_id, ord
+  note: Construction (press), renovations and capital obligations under the 2014 and 2019 agreements (the Capital Improvement Board's statements) and yearly payments, 2001 and 2014-2025.
+
+- key: ind_share
+  title: Public share of all spending on Gainbridge Fieldhouse
+  sql: select 100 * sum(public_2026_m) / sum(spending_2026_m) from items where core and team = 'IND'
+  unit: pct
+  digits: 0
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
 - key: orl_public
-  title: Public money in Orlando's Kia Center, the most of any arena
+  title: Public money in Orlando's Kia Center
   sql: select sum(public_2026_m) from items where core and team = 'ORL'
-  check: select (select team from items where core group by team order by sum(public_2026_m) desc limit 1) = 'ORL'
   unit: usd_m
   basis: 2026 dollars
   label: a
@@ -173,7 +192,7 @@ stats:
   unit: count
   label: a
   sources: [ledger]
-  note: Barclays Center, Little Caesars Arena, American Airlines Center and Golden 1 Center.
+  note: Chase Center (transit capital only), Barclays Center, Little Caesars Arena, American Airlines Center, Golden 1 Center and Crypto.com Arena.
 
 - key: costliest_public_min
   title: Least public money among those that got some
@@ -220,19 +239,33 @@ stats:
   note: Completed or binding. Renovations at their mid-construction year, work still under way at face value, purchases at the purchase year.
 
 - key: build_since_2014
+  title: Public money to build new arenas since 2014, including Oklahoma City's arena under construction
+  sql: |
+    select sum(public_2026_m) from items
+    where (core and kind = 'construction' and year >= 2014)
+       or (kind = 'project' and status = 'binding' and description not ilike '%district%')
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+  note: Sacramento (2016), Detroit (2017), Milwaukee (2018) and the transit work for Chase Center (2019), at their opening years, plus Oklahoma City's replacement arena, binding and under construction, at face value, so both sides count money committed since 2014. Intuit Dome (2024) had no public construction money. San Antonio's arena money is not binding yet and is left out, as pending renovation money is on the other side.
+
+- key: build_opened_since_2014
   title: Public money in the arenas that opened since 2014
   sql: select sum(public_2026_m) from items where core and kind = 'construction' and year >= 2014
   unit: usd_m
   basis: 2026 dollars
   label: a
   sources: [ledger, fred-cpiaucns]
-  note: Sacramento (2016), Detroit (2017) and Milwaukee (2018), at their opening years. Intuit Dome (2024) had no public construction money.
+  note: Sacramento (2016), Detroit (2017), Milwaukee (2018) and the transit work for Chase Center (2019), at their opening years.
 
 - key: rebuild_ratio
   title: Rebuilding money as a multiple of building money, since 2014
   sql: |
     select (select sum(public_2026_m) from items where core and kind in ('renovation', 'purchase') and year >= 2014)
-         / (select sum(public_2026_m) from items where core and kind = 'construction' and year >= 2014)
+         / (select sum(public_2026_m) from items
+            where (core and kind = 'construction' and year >= 2014)
+               or (kind = 'project' and status = 'binding' and description not ilike '%district%'))
   unit: number
   digits: 1
   label: a
@@ -252,6 +285,22 @@ stats:
   label: a
   sources: [ledger]
 
+- key: rebuild_top3_min
+  title: Least of the three largest totals put into one existing arena since 2014
+  sql: |
+    select min(v) from (select team, sum(public_2026_m) v from items
+                        where core and kind in ('renovation', 'purchase') and year >= 2014
+                        group by team order by v desc limit 3)
+  check: |
+    select list_sort(list(team)) = ['IND', 'UTA', 'WAS']
+    from (select team, sum(public_2026_m) v from items where core and kind in ('renovation', 'purchase') and year >= 2014
+          group by team order by v desc limit 3)
+  unit: usd_m
+  basis: 2026 dollars; work still under way at face value
+  label: a
+  sources: [ledger]
+  note: Indianapolis (the 2014 and 2019 agreements), Salt Lake City (the 2017 reimbursement and the 2025 renovation) and Washington (the 2024 purchase and renovation). The check confirms the three.
+
 - key: pending_existing
   title: Public money pending for current arenas
   sql: select sum(public_2026_m) from items where kind = 'renovation' and status = 'pending'
@@ -259,7 +308,7 @@ stats:
   basis: face value
   label: a
   sources: [ledger]
-  note: Memphis and Portland. Not counted in the totals.
+  note: Houston, Memphis and Portland. Not counted in the totals.
 
 - key: new_arenas_committed
   title: Public money committed to new arenas not yet open
@@ -335,13 +384,14 @@ stats:
   title: DC money to buy and renovate Capital One Arena under the 2024 deal
   sql: select sum(public_nominal_m) from items where item_id in ('WAS-purchase', 'WAS-renovation-2')
   check: |
-    select list(team order by v desc)[1:2] = ['UTA', 'WAS']
-    from (select team, sum(public_2026_m) v from items where core and kind in ('renovation', 'purchase') and year >= 2014 group by team)
+    select list_sort(list(team)) = ['IND', 'UTA', 'WAS']
+    from (select team, sum(public_2026_m) v from items where core and kind in ('renovation', 'purchase') and year >= 2014
+          group by team order by v desc limit 3)
   unit: usd_m
   basis: nominal, the amounts paid or committed
   label: b
   sources_sql: select source_id from item_sources where item_id in ('WAS-purchase', 'WAS-renovation-2') and role = 'public' order by item_id, ord
-  note: $87.5 million purchase (2024) and $427.5 million renovation (face value). The check confirms that Salt Lake City's and Washington's are the two largest deals since 2014 to renovate or buy an existing arena.
+  note: $87.5 million purchase (2024) and $427.5 million renovation (face value). The check confirms that Indianapolis, Salt Lake City and Washington have put the most since 2014 into renovating or buying an existing arena.
 
 - key: was_purchase
   title: What DC paid for Capital One Arena
@@ -384,6 +434,14 @@ stats:
   basis: face value
   label_sql: select public_label from items where item_id = 'MEM-renovation-2'
   sources_sql: select source_id from item_sources where item_id = 'MEM-renovation-2' and role = 'public' order by ord
+
+- key: hou_pending
+  title: State money expected for the Toyota Center renovation, not yet agreed
+  sql: select public_2026_m from items where item_id = 'HOU-renovation-1' and status = 'pending'
+  unit: usd_m
+  basis: face value, approximate
+  label_sql: select public_label from items where item_id = 'HOU-renovation-1'
+  sources_sql: select source_id from item_sources where item_id = 'HOU-renovation-1' and role = 'public' order by ord
 
 - key: mem_renovation_cost
   title: Cost of the FedExForum renovation
@@ -546,7 +604,7 @@ stats:
   label: a
   sources: [ledger, census-b11001-2024]
   sources_sql: select source_id from item_sources where item_id in ('UTA-renovation-3', 'UTA-project') and role = 'public' order by item_id, ord
-  note: The arena's $525 million and the district's $375 million, over the city's households. People who live elsewhere pay part of the city's sales tax, so this is an upper bound.
+  note: The arena's public money (the 2025 renovation's $525 million and the city's reimbursement for the 2017 renovation) over the city's households; the district's $375 million from the same tax is left out. People who live elsewhere pay part of the city's sales tax, so this is an upper bound.
 
 - key: hh_okc
   title: Oklahoma City's arena money per household in the city
@@ -555,11 +613,11 @@ stats:
   basis: 2026 dollars per household
   label: a
   sources: [ledger, census-b11001-2024]
-  note: The replacement arena and 2025 bond projects tied to it, plus the money for Paycom Center in 2002 and 2008.
+  note: The replacement arena and the 2025 bond projects tied to it (a garage and team offices), plus Paycom Center's public money since 2002 (construction, the 2008-10 and MAPS 4 improvements and the fiscal 2023 operating subsidy).
 
 - key: hh_was
   title: DC's money for Capital One Arena since 1997, per household
-  sql: select per_household_2026 from households where team = 'WAS' and share = 1
+  sql: select per_household_2026 from households where team = 'WAS'
   unit: usd
   basis: 2026 dollars per household
   label: a
@@ -573,21 +631,23 @@ stats:
   basis: 2026 dollars; more than
   label: b/a
   sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'NYK' and field = 'tax_break_source' order by ord
-  note: The Independent Budget Office's estimate (July 2023) of more than $946.7 million in 2023 dollars forgone since 1982, converted to 2026 dollars. Fiscal years after 2023 are not added.
+  note: The Independent Budget Office's estimate (July 2023) of more than $946.7 million in 2023 dollars forgone in fiscal 1984-2023 (it could not estimate the first two years), converted to 2026 dollars, plus the Department of Finance's values for fiscal 2024-2026, each converted from its own year.
 
 - key: nyk_exemption_2023
-  title: Madison Square Garden's exemption since 1982, as the Independent Budget Office estimated it
-  sql: select tax_break_cumulative_nominal_m from arenas where team = 'NYK'
+  title: Madison Square Garden's exemption in fiscal 1984-2023, as the Independent Budget Office estimated it
+  value: 946.7
+  evidence: {file: data/ledger/arena_ledger.csv, where: {row_type: current_arena, team: NYK}, column: tax_break_notes, contains: '"more than $946.7 million (in 2023 dollars)"'}
   unit: usd_m
   basis: 2023 dollars; more than
   label: b
   sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'NYK' and field = 'tax_break_source' order by ord
 
-- key: nyk_exemption_fy2023
-  title: Madison Square Garden's exemption in fiscal 2023
+- key: nyk_exemption_fy2026
+  title: Madison Square Garden's exemption in fiscal 2026, as the Department of Finance values it
   sql: select tax_break_annual_m from arenas where team = 'NYK'
+  check: select tax_break_annual_year = 2026 from arenas where team = 'NYK'
   unit: usd_m
-  basis: nominal, fiscal 2023
+  basis: nominal, fiscal 2026
   label: b
   sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'NYK' and field = 'tax_break_source' order by ord
 
@@ -702,13 +762,13 @@ stats:
   note: Not added to any total; the press figure could not be opened.
 
 - key: fed_bond_cost
-  title: Federal cost of tax-exempt arena bonds
+  title: Federal cost of tax-exempt arena bonds, estimated
   sql: select sum(fed_tax_expenditure_pv_2026_m) from arenas
   unit: usd_m
-  basis: present value at issue, in 2026 dollars
+  basis: present value at issue, in 2026 dollars; an estimate
   label: a
   sources: [ledger, gayer-2016]
-  note: New money for the arena only. Refundings and taxable issues are left out, Salt Lake City's 2025 issue is counted at the arena's $525 million of $900 million, and Indianapolis's 2021 issue at its new money, about $254 million. At a 28 percent marginal tax rate (the Gayer, Drukker and Gold method), converted to 2026 dollars from the year each issue's par is stated in (2014 for the issues from their Table 3). Paid by all U.S. taxpayers; not added to any total.
+  note: New money for the arena only. Refundings and taxable issues are left out, Salt Lake City's 2025 issue is counted at the arena's $525 million of $900 million, and Indianapolis's 2021 issue at its new money, about $254 million. At a 28 percent marginal tax rate (the Gayer, Drukker and Gold method), converted to 2026 dollars from the year each issue's par is stated in (2014 for the issues from their Table 3). Four counted issues' tax-exempt status is not confirmed in their documents (Atlanta 2017, Charlotte 2023, Detroit 2017 and Washington 2025). Paid by all U.S. taxpayers; not added to any total.
 
 - key: fed_tau
   title: Marginal tax rate used for the federal cost of tax-exempt bonds
@@ -1056,9 +1116,10 @@ stats:
 
 # ------------------------------------------------------------------ the lead graphic
 - key: construction_share
-  title: Construction's share of public money, counting tax breaks
+  title: Building's share of public money, counting tax breaks and Barclays Center's PILOT bonds as building money
   sql: |
-    select 100 * (select sum(public_2026_m) from items where core and kind = 'construction')
+    select 100 * ((select sum(public_2026_m) from items where core and kind = 'construction')
+                  + (select sum(coalesce(pilot_2026_m, 0)) from arenas))
          / ((select sum(public_2026_m) from items where core)
             + (select sum(coalesce(pilot_2026_m, 0)) from arenas)
             + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))
@@ -1067,6 +1128,49 @@ stats:
   basis: share of 2026 dollars
   label: a
   sources: [ledger]
+
+- key: after_opening_share
+  title: Share of public money that came after the arenas opened, counting tax breaks
+  sql: |
+    select 100 - 100 * ((select sum(public_2026_m) from items where core and kind = 'construction')
+                        + (select sum(coalesce(pilot_2026_m, 0)) from arenas))
+         / ((select sum(public_2026_m) from items where core)
+            + (select sum(coalesce(pilot_2026_m, 0)) from arenas)
+            + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))
+  unit: pct
+  digits: 0
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+  note: Renovations, purchases, yearly payments and property-tax exemptions, as a share of the expanded total.
+
+- key: building_public
+  title: Public money to build the arenas, including Barclays Center's PILOT bonds
+  sql: |
+    select (select sum(public_2026_m) from items where core and kind = 'construction')
+         + (select sum(coalesce(pilot_2026_m, 0)) from arenas)
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, fred-cpiaucns]
+
+- key: pilot_public
+  title: Barclays Center's PILOT bonds, repaid with the arena's property taxes
+  sql: select sum(coalesce(pilot_2026_m, 0)) from arenas
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
+  note: $511 million issued in 2009 to build the arena, repaid from payments in lieu of the property tax the arena would owe; converted from the 2012 opening year.
+
+- key: exemptions_added
+  title: Property-tax exemptions added to the expanded total
+  sql: select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [ledger]
+  note: Madison Square Garden's exemption, fiscal 1984-2026, and the United Center's valuation formula, tax years 2002-2016.
 
 # ------------------------------------------------------------------ teams: what they are worth and what owners paid
 - key: value_mean_2026
@@ -1232,6 +1336,14 @@ stats:
   unit: count
   label: a
   sources: [team-ledger]
+
+- key: public_deals_read
+  title: Of those, the deals whose terms could be read
+  sql: select count(*) from public_return where public_deal and sale_share <> 'unknown'
+  unit: count
+  label: a
+  sources: [team-ledger]
+  note: Memphis's lease could not be reached.
 
 - key: sale_share_found
   title: Public arena deals reviewed that give the public a share of a team sale
@@ -1479,6 +1591,46 @@ stats:
   unit: count
   label: c
   sources: [cliffordchance-2026-1-from-five-to-eight-nba-further-loosens]
+
+# ------------------------------------------------------------------ expansion
+- key: sea_arena_payments_2024
+  title: Seattle's payments under the Climate Pledge Arena revenue-sharing agreement, 2024
+  value: 12.877669
+  evidence: {file: data/inputs/research_claims.csv, where: {key: sea_arena_payments_2024}, column: quote, contains: 'Arena Partnership 10,377,174'}
+  unit: usd_m
+  digits: 1
+  basis: nominal, 2024 actuals
+  label: b/a
+  sources: [seattle-2026-adopted-budget-finance-general, seattle-2025-26-proposed-budget-finance-general]
+  note: The sum of the three funds' 2024 actuals for the Arena Partnership line ($1,985,249, $10,377,174 and $515,246), which the budgets describe as rental adjustment payments under the Seattle Arena Company agreement.
+
+- key: nv_live_ent_tax
+  title: Nevada's live entertainment tax on admission charges
+  value: 9
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nv_live_ent_tax}, column: quote, contains: '9 percent of the admission charge'}
+  unit: pct
+  digits: 0
+  label: b
+  sources: [nv-nrs-368a-live-entertainment-tax]
+  note: In-state professional teams' games are exempt (NRS 368A.200).
+
+- key: nv_nfl_bonds
+  title: Clark County general obligations authorized for an NFL stadium in 2016
+  value: 750
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nv_nfl_bonds}, column: quote, contains: 'not to exceed $750,000,000'}
+  unit: usd_m
+  basis: nominal, a cap
+  label: b
+  sources: [nv-sb1-2016-stadium-bonds]
+
+- key: nv_mlb_cap
+  title: Cap on public money for a Major League Baseball stadium under Nevada's 2023 law
+  value: 380
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nv_mlb_cap}, column: quote, contains: 'The amount of $380,000,000'}
+  unit: usd_m
+  basis: nominal, a cap including transferable tax credits
+  label: b
+  sources: [nv-sb1-2023-mlb-stadium]
 
 # ------------------------------------------------------------------ who is behind the deals
 - key: por_lobbying

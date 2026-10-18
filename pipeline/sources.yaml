@@ -240,6 +240,14 @@ sources:
   origin: independent
   date: '2014-04-22'
   checked: '2026-10-11'
+- id: blazersedge-nba-approves-sale-to-tom-dundon
+  url: https://www.blazersedge.com/trail-blazers-news/110733/portland-trail-blazers-owner-tom-dundon-sale-amount-nba-board-governors-approved
+  title: NBA Approves Sale of Trail Blazers to Tom Dundon
+  title_from: page title
+  publisher: Blazer's Edge (SB Nation), reporting The Athletic
+  origin: independent
+  date: '2026-03-30'
+  checked: '2026-10-18'
 - id: bleacherreport-10140783-warriors-knicks-lakers-celtics-top-f
   url: https://bleacherreport.com/articles/10140783-warriors-knicks-lakers-celtics-top-forbes-2024-list-of-most-valuable-nba-teams
   title: Warriors, Knicks, Lakers, Celtics Top Forbes' 2024 List of Most Valuable NBA Teams
@@ -296,6 +304,14 @@ sources:
   origin: independent
   date: '2020-12-17'
   checked: '2026-10-11'
+- id: bondbuyer-houston-city-council-cuts-property-taxes-oks-are
+  url: https://www.bondbuyer.com/news/houston-city-council-cuts-property-taxes-oks-arena-deal
+  title: Houston City Council Cuts Property Taxes, OKs Arena Deal
+  title_from: page title
+  publisher: The Bond Buyer
+  origin: independent
+  date: '2000-09-15'
+  checked: '2026-10-18'
 - id: bondbuyer-indianapolis-cib-to-vote-on-plan-crafted-to-keep
   url: https://www.bondbuyer.com/news/indianapolis-cib-to-vote-on-plan-crafted-to-keep-pacers-in-town
   title: Indianapolis CIB to Vote on Plan Crafted to Keep Pacers in Town
@@ -528,42 +544,6 @@ sources:
   origin: independent
   date: '2026-06-26'
   checked: '2026-10-18'
-- id: chron-archive-mpl
-  url: http://www.chron.com/CDA/archives/archive.mpl?id=2000_3195424
-  title: Stern Ultimatum Hits Close to Home
-  title_from: curated
-  publisher: Houston Chronicle
-  origin: independent
-  date: '2000-02-13'
-  checked: '2026-10-11'
-  review: not reached (HTTP 404; Wayback Machine connection reset); title and date from the citation in the Wikipedia article Toyota Center
-- id: chron-archive-mpl-2
-  url: http://www.chron.com/CDA/archives/archive.mpl?id=2000_3214398
-  title: Louisville Woos Rockets
-  title_from: curated
-  publisher: Houston Chronicle
-  origin: independent
-  date: '2000-05-13'
-  checked: '2026-10-11'
-  review: not reached (HTTP 404; Wayback Machine connection reset); title and date from the citation in the Wikipedia article Toyota Center
-- id: chron-archive-mpl-3
-  url: http://www.chron.com/CDA/archives/archive.mpl?id=2000_3256380
-  title: Margin of Victory for Arena Vote Called 'Bizarre'
-  title_from: curated
-  publisher: Houston Chronicle
-  origin: independent
-  date: '2000-11-09'
-  checked: '2026-10-11'
-  review: not reached (HTTP 404; Wayback Machine connection reset); title and date from the citation in the Wikipedia article Toyota Center
-- id: chron-archive-mpl-4
-  url: http://www.chron.com/CDA/archives/archive.mpl?id=2003_3686610
-  title: Rockets' Big Move a Winner
-  title_from: curated
-  publisher: Houston Chronicle
-  origin: independent
-  date: '2003-09-02'
-  checked: '2026-10-11'
-  review: not reached (HTTP 404; Wayback Machine connection reset); title and date from the citation in the Wikipedia article Toyota Center
 - id: cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c
   url: https://www.cityofsacramento.gov/content/dam/portal/treasurer/DebtManagement/officialstatements/lease-revenue-revenue/2015_Lease_Revenue_Bonds_Series_2015_(G1C)_Taxable.pdf
   title: 'Remarketing Circular: $272,870,000 Sacramento Public Financing Authority Lease Revenue Bonds, Series 2015 (Golden 1 Center) (Federally Taxable)'
@@ -595,6 +575,14 @@ sources:
   publisher: Cleary Gottlieb
   origin: independent
   date: '2025-08-22'
+  checked: '2026-10-18'
+- id: click2houston-harris-county-approves-180m-toyota-center
+  url: https://www.click2houston.com/news/local/2026/04/08/toyota-center-set-for-180m-renovation-plan-head-of-return-of-houston-comets-harris-county-officials-to-hear-details/
+  title: '‘Reimagined’: Harris County officials approve $180M Toyota Center renovation ahead of return of Houston Comets'
+  title_from: page title
+  publisher: KPRC 2 Houston
+  origin: independent
+  date: '2026-04-08'
   checked: '2026-10-18'
 - id: cliffordchance-2026-1-from-five-to-eight-nba-further-loosens
   url: https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/01/2026%20-%201%20From%20Five%20to%20Eight%20-%20NBA%20Further%20Loosens%20Private%20Equity%20Ownership%20Rules.pdf
@@ -652,6 +640,14 @@ sources:
   origin: government
   date: '2012-09-24'
   checked: '2026-10-11'
+- id: courts-a157688-coliseum-authority-v-warriors
+  url: https://www.courts.ca.gov/opinions/archive/A157688.PDF
+  title: Oakland-Alameda County Coliseum Authority v. Golden State Warriors, LLC, No. A157688 (Cal. Ct. App., First Dist., Div. 5)
+  title_from: curated
+  publisher: California Court of Appeal
+  origin: court
+  date: '2020-08-18'
+  checked: '2026-10-18'
 - id: dailymemphian
   url: https://dailymemphian.com/article/54179
   title: The city plans to keep the Grizzlies. Here’s a look inside the negotiations.
@@ -684,6 +680,14 @@ sources:
   origin: independent
   date: '2016-04-13'
   checked: '2026-10-17'
+- id: dallasobserver-mavs-held-hostage
+  url: https://www.dallasobserver.com/arts-culture/mavs-held-hostage-6402203/
+  title: Mavs held hostage
+  title_from: curated
+  publisher: Dallas Observer
+  origin: independent
+  date: '1998-01-14'
+  checked: '2026-10-18'
 - id: datacatalog-uzyt-m557
   url: https://datacatalog.cookcountyil.gov/resource/uzyt-m557.json
   title: Assessor - Assessed Values (dataset uzyt-m557)
@@ -716,6 +720,14 @@ sources:
   origin: independent
   date: '2013-11-22'
   checked: '2026-10-11'
+- id: degc-dda-financial-statements-fy2025
+  url: https://www.degc.org/_files/ugd/69e7f0_4f871f19d21d4f9ea2c90c2512c5dc8b.pdf
+  title: City of Detroit Downtown Development Authority Financial Statements, June 30, 2025 and 2024
+  title_from: curated
+  publisher: Detroit Downtown Development Authority (posted by the Detroit Economic Growth Corp.)
+  origin: government
+  date: '2025-10-21'
+  checked: '2026-10-18'
 - id: degc-ugd
   url: https://www.degc.org/_files/ugd/a7a51b_4187f63ed8eb44f0b177da32f136fb2c.pdf
   title: City of Detroit Downtown Development Authority Financial Statements (With Required Supplementary Information), June 30, 2019 and 2018
@@ -862,6 +874,15 @@ sources:
   origin: independent
   date: '2012-03-06'
   checked: '2026-10-11'
+- id: espn-where-nba-expansion-stands-2026-27
+  url: https://www.espn.com/nba/story/_/id/50079137/nba-expansion-las-vegas-seattle
+  title: Where NBA expansion stands ahead of the 2026-27 season
+  title_from: curated
+  publisher: ESPN
+  origin: independent
+  date: '2026-10-02'
+  checked: '2026-10-18'
+  review: page returns HTTP 202 to scripts; title and date from ESPN's story feed
 - id: fieldofschemes
   url: https://www.fieldofschemes.com/2016/11/02/11760/
   title: Atlanta mayor proposes giving Hawks $142.5m for arena renovations, because they asked nicely
@@ -878,6 +899,14 @@ sources:
   origin: independent
   date: '2009-09-10'
   checked: '2026-10-11'
+- id: fieldofschemes-4116-pacers-threaten
+  url: https://www.fieldofschemes.com/news/archives/2010/04/4116_pacers_threaten.html
+  title: Pacers threaten move unless city picks up $15m/year arena tab
+  title_from: curated
+  publisher: Field of Schemes
+  origin: independent
+  date: '2010-04-14'
+  checked: '2026-10-18'
 - id: fieldofschemes-charlotte-council-approves-260m-for-arena
   url: https://www.fieldofschemes.com/2002/11/12/13/charlotte-council-approves-260m-for-arena/
   title: Charlotte council approves $260m for arena
@@ -886,6 +915,14 @@ sources:
   origin: independent
   date: '2002-11-12'
   checked: '2026-10-11'
+- id: fieldofschemes-kings-to-anaheim-rumors-heat-up-after-stern-m
+  url: https://www.fieldofschemes.com/2011/02/21/2935/kings-to-anaheim-rumors-heat-up-after-stern-mumbles-something-about-it/
+  title: Kings-to-Anaheim rumors heat up after Stern mumbles something about it
+  title_from: page title
+  publisher: Field of Schemes
+  origin: independent
+  date: '2011-02-21'
+  checked: '2026-10-18'
 - id: finance-nba-warriors-sell-minority-stake-204353124
   url: https://finance.yahoo.com/news/nba-warriors-sell-minority-stake-204353124.html
   title: NBA's Warriors Sell Minority Stake to Arctos at $5.5 Billion Valuation
@@ -1382,6 +1419,14 @@ sources:
   origin: independent
   date: n.d.
   checked: '2026-10-18'
+- id: fox5ny-dallas-mavericks-sale-miriam-adelson
+  url: https://www.fox5ny.com/sports/dallas-mavericks-sale-miriam-adelson
+  title: Adelson family confirms efforts to buy Dallas Mavericks from Mark Cuban
+  title_from: page title
+  publisher: FOX 5 New York
+  origin: independent
+  date: '2023-11-29'
+  checked: '2026-10-18'
 - id: fox5ny-tsai-completes-purchase-of-nets-arena-hires-levy
   url: https://www.fox5ny.com/sports/tsai-completes-purchase-of-nets-arena-hires-levy-as-ceo
   title: Tsai completes purchase of Nets, arena, hires Levy as CEO
@@ -1430,6 +1475,14 @@ sources:
   origin: independent
   date: '2009-12-09'
   checked: '2026-10-18'
+- id: foxnews-sacramento-approves-477-million-arena-caps-off-s
+  url: https://www.foxnews.com/sports/sacramento-approves-477-million-arena-caps-off-struggle-to-build-new-home-for-nbas-kings.amp
+  title: Sacramento approves $477 million arena, caps off struggle to build new home for NBA's Kings
+  title_from: curated
+  publisher: Fox News
+  origin: independent
+  date: '2014-05-21'
+  checked: '2026-10-18'
 - id: freep-detroit-pistons-council-downtown
   url: https://www.freep.com/story/news/local/michigan/detroit/2017/06/20/detroit-pistons-council-downtown/411786001/
   title: Detroit City Council OKs $34.5M public funding for Pistons move
@@ -1446,6 +1499,14 @@ sources:
   publisher: Front Office Sports
   origin: independent
   date: '2021-09-10'
+  checked: '2026-10-18'
+- id: frontofficesports-comcasts-400-million-wells-fargo-center-up
+  url: https://frontofficesports.com/article/comcasts-400-million-wells-fargo-center-upgrades-near-completion/
+  title: Comcast’s $400M Wells Fargo Center Upgrades Near Completion
+  title_from: page title
+  publisher: Front Office Sports
+  origin: independent
+  date: '2023-07-07'
   checked: '2026-10-18'
 - id: frontofficesports-dyal-buys-close-to-6-of-the-atlanta-hawks
   url: https://frontofficesports.com/article/dyal-buys-close-to-6-of-the-atlanta-hawks/
@@ -1520,6 +1581,14 @@ sources:
   origin: independent
   date: '2015'
   checked: '2026-10-18'
+- id: heraldnet-nba-approves-sonics-move-city-of-seattle-vows-to
+  url: https://www.heraldnet.com/2008/04/18/nba-approves-sonics-move-city-of-seattle-vows-to-fight-on/
+  title: NBA approves Sonics' move; city of Seattle vows to fight on
+  title_from: curated
+  publisher: The Daily Herald (Everett)
+  origin: independent
+  date: '2008-04-18'
+  checked: '2026-10-18'
 - id: hillwood-at-the-center-of-something-on-the-rise-5-years-o
   url: https://www.hillwood.com/newsroom/news-articles/at-the-center-of-something-on-the-rise-5-years-on-aac-gleams-development-takes-shape/
   title: At the center of something on the rise 5 years on, AAC gleams, development takes shape
@@ -1528,6 +1597,22 @@ sources:
   origin: team_or_league
   date: '2006-07-30'
   checked: '2026-10-11'
+- id: hochtief-turner-completes-spectrum-center-renovation
+  url: https://www.hochtief.de/aktuelles-medien/pressemitteilungen/pressemitteilung/turner-and-da-everett-complete-major-renovation-of-spectrum-center-in-charlotte
+  title: Turner and D.A. Everett Complete Major Renovation of Spectrum Center in Charlotte
+  title_from: page title
+  publisher: Hochtief (parent of Turner Construction)
+  origin: independent
+  date: '2025-10-29'
+  checked: '2026-10-18'
+- id: hoodline-target-center-if-wolves-move
+  url: https://hoodline.com/2026/07/if-wolves-skip-town-does-target-center-become-downtown-s-biggest-question-mark/
+  title: What Happens To Minneapolis' Target Center If Wolves Move
+  title_from: page title
+  publisher: Hoodline
+  origin: independent
+  date: '2026-07-13'
+  checked: '2026-10-18'
 - id: hoopsrumors-forbes-franchise-valuations
   url: https://hoopsrumors.com/2015/01/forbes-franchise-valuations.html
   title: Lakers Top Forbes NBA Franchise Valuations
@@ -1568,6 +1653,15 @@ sources:
   origin: independent
   date: '2026-10-09'
   checked: '2026-10-18'
+- id: houstonpress-home-court-advantage
+  url: https://www.houstonpress.com/news/home-court-advantage-6564384/
+  title: Home Court Advantage
+  title_from: curated
+  publisher: Houston Press
+  origin: independent
+  date: '2000-06-22'
+  checked: '2026-10-18'
+  review: not reached by script (HTTP 403); read through a fetch tool
 - id: houstonsports-city-hchsa-ground-lease-toyota-center-20011231
   url: https://houstonsports.org/wp-content/uploads/City-HCHSA-Ground-Lease-Toyota-Center-20011231.pdf
   title: Ground Lease by and between City of Houston, Texas, as Landlord, and Harris County-Houston Sports Authority, as Tenant (with exhibits)
@@ -1608,6 +1702,14 @@ sources:
   origin: independent
   date: '2010-07-16'
   checked: '2026-10-11'
+- id: ibj-73314-pacers-cib-agree-to-360m-renovation-expans
+  url: https://www.ibj.com/articles/73314-pacers-cib-agree-to-360m-renovation-expansion-of-bankers-life-fieldhouse
+  title: 'UPDATE: CIB approves Pacers deal to fund $360M renovation, expansion of Bankers Life Fieldhouse - Indianapolis Business Journal'
+  title_from: page title
+  publisher: Indianapolis Business Journal
+  origin: independent
+  date: '2019-04-11'
+  checked: '2026-10-18'
 - id: ibj-nba-new-11-year-media-rights-deal-with-disney-nb
   url: https://www.ibj.com/articles/nba-new-11-year-media-rights-deal-with-disney-nbc-and-amazon-worth-76b
   title: 'NBA: New 11-year media rights deal with Disney, NBC and Amazon worth $76B'
@@ -1648,6 +1750,14 @@ sources:
   origin: government
   date: '2023-03-29'
   checked: '2026-10-16'
+- id: ibo-msg-property-tax-exemption-2023-report
+  url: https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/taxes-and-other-revenues/2023/2023-july-an-examination-of-the-madison-square-garden-property-tax-exemption.pdf
+  title: An Examination of the Madison Square Garden Property Tax Exemption
+  title_from: curated
+  publisher: New York City Independent Budget Office
+  origin: government
+  date: 2023-07
+  checked: '2026-10-18'
 - id: ideastream-county-council-approves-405-million-for-fieldhou
   url: https://www.ideastream.org/news/county-council-approves-405-million-for-fieldhouse-repairs
   title: County Council Approves $40.5 Million For Fieldhouse Repairs
@@ -1720,6 +1830,14 @@ sources:
   origin: independent
   date: '2026-07-15'
   checked: '2026-10-11'
+- id: katu-trail-blazers-owner-paul-allen-attends-sundays-g
+  url: https://katu.com/sports/content/trail-blazers-owner-paul-allen-attends-sundays-game
+  title: Trail Blazers owner Paul Allen attends Sunday's game
+  title_from: page title
+  publisher: KATU
+  origin: independent
+  date: '2006-08-21'
+  checked: '2026-10-18'
 - id: kcur-projects-kansas-city-taxpayers-are-still-paying
   url: https://www.kcur.org/post/projects-kansas-city-taxpayers-are-still-paying
   title: Projects That Kansas City Taxpayers Are Still Paying Off
@@ -1792,6 +1910,14 @@ sources:
   origin: independent
   date: '2024-07-02'
   checked: '2026-10-11'
+- id: ksl-delta-center-renovation-timeline-key-details
+  url: https://www.ksl.com/article/51061494/delta-center-renovation-timeline-other-key-details-released-ahead-of-likely-salt-lake-vote
+  title: Delta Center renovation timeline, other key details released ahead of likely Salt Lake vote
+  title_from: curated
+  publisher: KSL
+  origin: independent
+  date: '2024-07-05'
+  checked: '2026-10-18'
 - id: ksl-salt-lake-city-approves-new-delta-center-lease-t
   url: https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years
   title: Salt Lake City approves new Delta Center lease that could extend 100 years
@@ -1816,6 +1942,14 @@ sources:
   origin: independent
   date: '2018-10-29'
   checked: '2026-10-11'
+- id: kuow-nba-owners-reject-kings-move-to-seattle
+  url: https://archive.kuow.org/news/2013-05-16/nba-owners-reject-sacramento-kings-move-to-seattle
+  title: NBA Owners Reject Sacramento Kings Move To Seattle
+  title_from: page title
+  publisher: KUOW
+  origin: independent
+  date: '2013-05-16'
+  checked: '2026-10-18'
 - id: kutakrock-kutak-rock-lead-counsel-for-capital-one-arena
   url: https://www.kutakrock.com/newspublications/news/2025/january/kutak-rock-lead-counsel-for-capital-one-arena-deal
   title: Kutak Rock lead counsel for Capital One Arena deal
@@ -1969,6 +2103,22 @@ sources:
   origin: government
   date: '2022-03-23'
   checked: '2026-10-11'
+- id: lla-lsed-audit-fy2012
+  url: https://app.lla.state.la.us/publicreports.nsf/0/440351d0ffe374fa86257ad70070c62f/$file/0002e28e.pdf
+  title: Louisiana Stadium and Exposition District, Financial Statement Audit for the Year Ended June 30, 2012
+  title_from: curated
+  publisher: Louisiana Legislative Auditor
+  origin: government
+  date: '2012-12-19'
+  checked: '2026-10-18'
+- id: lla-lsed-audit-fy2014
+  url: https://app.lla.state.la.us/publicreports.nsf/0/4275b8bafc2cfd6786257da9007484de/$file/000040e2.pdf
+  title: Louisiana Stadium and Exposition District, Financial Statement Audit for the Year Ended June 30, 2014
+  title_from: curated
+  publisher: Louisiana Legislative Auditor
+  origin: government
+  date: '2014-12-10'
+  checked: '2026-10-18'
 - id: lla-vwprbyagencyjson
   url: https://app.lla.la.gov/publicreports.nsf/vwPRByAgencyJSON?OpenView&Count=10000&RestrictToCategory=Louisiana%20Stadium%20and%20Exposition%20District
   title: Audit reports for the Louisiana Stadium and Exposition District (Louisiana Legislative Auditor report index, JSON view)
@@ -2075,6 +2225,14 @@ sources:
   origin: independent
   date: '1996-11-14'
   checked: '2026-10-11'
+- id: miaminewtimes-p-40379989
+  url: https://www.miaminewtimes.com/?p=40379989
+  title: Micky Arison is a greedy corporate pig . . . and other observations about big boys and their expensive toys
+  title_from: page title
+  publisher: Miami New Times
+  origin: independent
+  date: '1996-05-08'
+  checked: '2026-10-18'
 - id: miaminewtimes-the-heats-hot-air-6356397
   url: https://www.miaminewtimes.com/news/the-heats-hot-air-6356397/
   title: The Heat’s Hot Air
@@ -2091,6 +2249,14 @@ sources:
   origin: independent
   date: '2010-12-21'
   checked: '2026-10-11'
+- id: milehighcre-rezoning-70-acres-around-ball-arena
+  url: https://milehighcre.com/city-council-approves-rezoning-of-70-acres-around-ball-arena/
+  title: City Council Approves Rezoning of 70 Acres Around Ball Arena
+  title_from: curated
+  publisher: Mile High CRE
+  origin: independent
+  date: '2024-10-22'
+  checked: '2026-10-18'
 - id: minneapolismn-2024-acfr-city-of-minneapolis-edited
   url: https://www.minneapolismn.gov/media/-www-content-assets/documents/city-policy/2024-ACFR---City-of-Minneapolis_edited.pdf
   title: City of Minneapolis, Minnesota Annual Comprehensive Financial Report for the Fiscal Year Ended December 31, 2024
@@ -2116,6 +2282,14 @@ sources:
   origin: government
   date: '2026-08-06'
   checked: '2026-10-16'
+- id: multco-resolution-2026-060
+  url: https://multco.us/file/2026-060.pdf/download
+  title: Resolution No. 2026-060, approving the Joint Authority Agreement for the County's investment in the renovation of the Moda Center Arena
+  title_from: curated
+  publisher: Multnomah County
+  origin: government
+  date: '2026-10-01'
+  checked: '2026-10-18'
 - id: municode-codescontent
   url: https://api.municode.com/CodesContent?jobId=495354&nodeId=TITIIREMUCO_CH53TAMIRE_ARTVIIFADEADTA&productId=10257
   title: 'Denver Revised Municipal Code, Chapter 53, Article VII: Facilities Development Admissions Tax'
@@ -2132,15 +2306,6 @@ sources:
   origin: independent
   date: 2009-07
   checked: '2026-10-11'
-- id: nba-bog-sonics-080418
-  url: http://www.nba.com/news/bog_sonics_080418.html
-  title: NBA Board of Governors Approve Sonics Move to Oklahoma City Pending Resolution of Litigation
-  title_from: curated
-  publisher: NBA.com
-  origin: team_or_league
-  date: '2008-04-18'
-  checked: '2026-10-11'
-  review: not reached (NBA.com returns 'Page not found'; Wayback Machine connection reset); title and date from the citation in the Wikipedia article Seattle SuperSonics relocation to Oklahoma City
 - id: nba-cavs-gilbert-acquires-minority-share-of-former-o
   url: https://www.nba.com/news/cavs-gilbert-acquires-minority-share-of-former-owner-gund
   title: Cavs' Gilbert acquires minority share of former owner Gund
@@ -2173,24 +2338,6 @@ sources:
   origin: team_or_league
   date: '2019-09-14'
   checked: '2026-10-18'
-- id: nba-kings-relocation-ap
-  url: http://www.nba.com/2011/news/03/16/kings-relocation.ap/
-  title: On the move? Kings file for 'Anaheim Royals'
-  title_from: curated
-  publisher: NBA.com (Associated Press)
-  origin: team_or_league
-  date: '2011-03-16'
-  checked: '2026-10-11'
-  review: not reached (HTTP 404); title and date from the citation in the Wikipedia article Sacramento Kings failed relocation attempts
-- id: nba-kings-stay-in-sacramento-ap
-  url: http://www.nba.com/2013/news/05/15/kings-stay-in-sacramento.ap/index.html
-  title: Kings to stay in Sacramento as owners reject Seattle move
-  title_from: curated
-  publisher: NBA.com (Associated Press)
-  origin: team_or_league
-  date: '2013-05-15'
-  checked: '2026-10-11'
-  review: not reached (HTTP 404); title and date from the citation in the Wikipedia article Sacramento Kings failed relocation attempts
 - id: nba-nba-approves-sale-majority-interest-lakers-mark
   url: https://www.nba.com/news/nba-approves-sale-majority-interest-lakers-mark-walter
   title: NBA Board of Governors approves sale of majority interest in Lakers to Mark Walter
@@ -2223,6 +2370,14 @@ sources:
   origin: team_or_league
   date: '2019-02-06'
   checked: '2026-10-18'
+- id: nba-pr-expansion-las-vegas-seattle-2026
+  url: https://pr.nba.com/nba-board-of-governors-potential-expansion-las-vegas-seattle/
+  title: NBA Board of Governors approves exploration of expansion to Las Vegas and Seattle
+  title_from: curated
+  publisher: NBA
+  origin: team_or_league
+  date: '2026-03-25'
+  checked: '2026-10-18'
 - id: nbcbayarea-marc-shad-timberwolves-lynx-sale-controlling-sta
   url: https://www.nbcbayarea.com/nba/marc-shad-timberwolves-lynx-sale-controlling-stake/4131323/
   title: Timberwolves and Lynx controlling stake to be sold to Marc Stad (AP)
@@ -2247,6 +2402,14 @@ sources:
   origin: independent
   date: '2014-06-03'
   checked: '2026-10-17'
+- id: nbcsportsbayarea-report-maloof-lawyer-registers-four-new-nba
+  url: https://www.nbcsportsbayarea.com/news/report-maloof-lawyer-registers-four-new-nba-names/1244458/
+  title: 'Report: Maloof lawyer registers four new NBA names'
+  title_from: page title
+  publisher: NBC Sports Bay Area
+  origin: independent
+  date: '2011-03-17'
+  checked: '2026-10-18'
 - id: nbcsportsbayarea-source-ranadive-not-part-of-group-selling-s
   url: https://www.nbcsportsbayarea.com/nba/sacramento-kings/source-ranadive-not-part-of-group-selling-stake-in-kings/1147442
   title: 'Source: Ranadivé not part of group selling stake in Kings'
@@ -2311,6 +2474,38 @@ sources:
   origin: independent
   date: '2023-10-10'
   checked: '2026-10-11'
+- id: nv-nrs-368a-live-entertainment-tax
+  url: https://www.leg.state.nv.us/NRS/NRS-368A.html
+  title: 'Nevada Revised Statutes, Chapter 368A: Tax on Live Entertainment'
+  title_from: curated
+  publisher: Nevada Legislature
+  origin: government
+  date: n.d.
+  checked: '2026-10-18'
+- id: nv-sb1-2016-stadium-bonds
+  url: https://www.leg.state.nv.us/Session/30th2016Special/Bills/SB/SB1_EN.pdf
+  title: Senate Bill No. 1, 30th Special Session (2016), enrolled
+  title_from: curated
+  publisher: Nevada Legislature
+  origin: government
+  date: '2016'
+  checked: '2026-10-18'
+- id: nv-sb1-2023-mlb-stadium
+  url: https://www.leg.state.nv.us/Session/35th2023Special/Bills/SB/SB1_EN.pdf
+  title: Senate Bill No. 1, 35th Special Session (2023), enrolled
+  title_from: curated
+  publisher: Nevada Legislature
+  origin: government
+  date: '2023'
+  checked: '2026-10-18'
+- id: nyc-dof-tax-expenditures-fy2026
+  url: https://www.nyc.gov/assets/finance/downloads/pdf/reports/reports-tax-expenditure/ter_2026_final.pdf
+  title: Annual Report on Tax Expenditures, Fiscal Year 2026
+  title_from: curated
+  publisher: New York City Department of Finance
+  origin: government
+  date: 2026-02
+  checked: '2026-10-18'
 - id: occompt-occompt
   url: https://occompt.legistar1.com/occompt/attachments/017457ff-5195-4c2a-907c-792707710a8e.pdf
   title: Second Amended and Restated Orlando/Orange County Interlocal Agreement (Board of County Commissioners consent agenda item, with exhibits)
@@ -2367,6 +2562,15 @@ sources:
   origin: government
   date: '2026-10-12'
   checked: '2026-10-16'
+- id: okc-maps4-downtown-arena-related-facilities
+  url: https://www.okc.gov/Infrastructure-Development/Current-Infrastructure-Projects/MAPS-4/Projects/Downtown-Arena-Related-Facilities
+  title: 'MAPS 4: Downtown Arena and Related Facilities'
+  title_from: curated
+  publisher: City of Oklahoma City
+  origin: government
+  date: n.d.
+  checked: '2026-10-18'
+  review: not reached by script (HTTP 403); read through a summarizing fetch
 - id: okc-ocppa-2024-final-web
   url: https://www.okc.gov/files/assets/city/v/1/finance/documents/afrs/public-property-authority/ocppa-2024-final-web.pdf
   title: Oklahoma City Public Property Authority Annual Financial Report for the Fiscal Years Ended June 30, 2024 and 2023
@@ -2423,15 +2627,6 @@ sources:
   origin: government
   date: 2026-03
   checked: '2026-10-11'
-- id: opb-nba-approves-trail-blazers-sale-tom-dundon
-  url: https://www.opb.org/article/2026/03/30/nba-approves-trail-blazers-sale-tom-dundon/
-  title: NBA approves Trail Blazers sale (Tom Dundon)
-  title_from: url
-  publisher: Oregon Public Broadcasting
-  origin: independent
-  date: '2026-03-30'
-  checked: '2026-10-11'
-  review: not reached (HTTP 404); title and date from the URL
 - id: opb-portland-unveils-timeline-for-moda-center-deal
   url: https://www.opb.org/article/2026/06/09/portland-unveils-timeline-for-moda-center-deal/
   title: Portland unveils timeline for Moda Center deal
@@ -2456,6 +2651,14 @@ sources:
   origin: government
   date: '2015-01-01'
   checked: '2026-10-16'
+- id: oregon-laws-2026-ch74-sb1501
+  url: https://www.oregonlegislature.gov/bills_laws/lawsstatutes/2026orlaw0074.pdf
+  title: Oregon Laws 2026, Chapter 74 (SB 1501), relating to the Moda Center
+  title_from: curated
+  publisher: Oregon Legislative Assembly
+  origin: government
+  date: '2026-03-31'
+  checked: '2026-10-18'
 - id: oregon-moda-center-arena-comparable-structure-overview
   url: https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf
   title: 'Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary'
@@ -2504,6 +2707,15 @@ sources:
   origin: independent
   date: '2018-03-05'
   checked: '2026-10-11'
+- id: phl-opa-parcel-788020600
+  url: https://phl.carto.com/api/v2/sql?q=SELECT%20*%20FROM%20opa_properties_public%20WHERE%20parcel_number%3D%27788020600%27
+  title: Property assessment record, parcel 788020600 (3601 S Broad St)
+  title_from: curated
+  publisher: City of Philadelphia
+  origin: government
+  date: n.d.
+  checked: '2026-10-18'
+  review: live query of the city's open property data
 - id: phoenix-phoenix
   url: https://phoenix.legistar1.com/phoenix/attachments/8e8f40fd-58dc-4f7c-bf23-193a20245f2b.pdf
   title: 'Attachment B: Back-Up Information, City-Owned Downtown Arena Renovation'
@@ -2543,6 +2755,14 @@ sources:
   publisher: Pollstar
   origin: independent
   date: '2010-06-12'
+  checked: '2026-10-18'
+- id: pollstar-portland-fire-sale
+  url: https://news.pollstar.com/2006/06/12/portland-fire-sale/
+  title: Portland Fire Sale - Pollstar News
+  title_from: page title
+  publisher: Pollstar
+  origin: independent
+  date: '2006-06-12'
   checked: '2026-10-18'
 - id: pollstar-sprint-center-breaks-ground
   url: https://news.pollstar.com/2005/06/28/sprint-center-breaks-ground/
@@ -2714,6 +2934,22 @@ sources:
   origin: team_or_league
   date: n.d.
   checked: '2026-10-16'
+- id: seattle-2025-26-proposed-budget-finance-general
+  url: https://www.seattle.gov/documents/Departments/FinanceDepartment/2526proposedbudget/FG.pdf
+  title: 'City of Seattle 2025-2026 Proposed Budget: Finance General'
+  title_from: curated
+  publisher: City of Seattle
+  origin: government
+  date: '2024'
+  checked: '2026-10-18'
+- id: seattle-2026-adopted-budget-finance-general
+  url: https://www.seattle.gov/documents/Departments/FinanceDepartment/26adoptedbudget/FG.pdf
+  title: 'City of Seattle 2026 Adopted Budget: Finance General'
+  title_from: curated
+  publisher: City of Seattle
+  origin: government
+  date: '2025'
+  checked: '2026-10-18'
 - id: seattle-seattle-partners-finance-team-evaluation-5-31-17
   url: https://www.seattle.gov/Documents/Departments/economicDevelopment/arena%20evaluation%20docs/Seattle%20Partners%20Finance%20Team%20Evaluation%205-31-17.pdf
   title: 'Finance Review Team Evaluation: Seattle Partners'
@@ -2730,15 +2966,6 @@ sources:
   origin: independent
   date: '2008-07-02'
   checked: '2026-10-11'
-- id: seattletimes-2002827693-trailblazers25m
-  url: http://seattletimes.nwsource.com/html/localnews/2002827693_trailblazers25m.html
-  title: Allen's Trail Blazers Seek Help to Stay in Portland
-  title_from: curated
-  publisher: The Seattle Times
-  origin: independent
-  date: '2006-02-25'
-  checked: '2026-10-11'
-  review: not reached (URL now redirects to the home page); title and date from the citation in the Wikipedia article Moda Center
 - id: seattletimes-sonics-co-owner-mcclendon-fined-250k
   url: http://www.seattletimes.com/sports/nba/sonics-co-owner-mcclendon-fined-250k
   title: Sonics co-owner McClendon fined $250K
@@ -2859,6 +3086,30 @@ sources:
   origin: government
   date: n.d.
   checked: '2026-10-11'
+- id: sfmta-board-lrv4-modification-4
+  url: https://sfmta.com/media/6283/download
+  title: 'SFMTA Board calendar item 10.7: Contract Modification No. 4 for four additional light rail vehicles'
+  title_from: curated
+  publisher: San Francisco Municipal Transportation Agency
+  origin: government
+  date: '2017-06-20'
+  checked: '2026-10-18'
+- id: sfmta-board-warriors-supplemental-appropriation
+  url: https://www.sfmta.com/media/5428/download
+  title: 'SFMTA Board calendar item 10.4: supplemental appropriation for Warriors event center transportation improvements'
+  title_from: curated
+  publisher: San Francisco Municipal Transportation Agency
+  origin: government
+  date: '2016-04-05'
+  checked: '2026-10-18'
+- id: sfmta-letter-to-ocii-2015-10-20
+  url: https://sfmta.com/media/4796/download
+  title: SFMTA Transit Service Plan, Enforcement Support and Capital Investment Funding for the Golden State Warriors Event Center (letter to OCII)
+  title_from: curated
+  publisher: San Francisco Municipal Transportation Agency
+  origin: government
+  date: '2015-10-20'
+  checked: '2026-10-18'
 - id: si-milwaukee-bucks-sold-herb-kohl
   url: https://www.si.com/nba/point-forward/2014/04/16/milwaukee-bucks-sold-herb-kohl
   title: Bucks to be sold for $550 million, but will remain in Milwaukee
@@ -2947,6 +3198,14 @@ sources:
   origin: independent
   date: '2022-05-10'
   checked: '2026-10-11'
+- id: spokesman-owners-agree-to-sell-kings
+  url: https://www.spokesman.com/stories/2013/jan/21/owners-agree-to-sell-kings/
+  title: Owners agree to sell Sacramento Kings
+  title_from: page title
+  publisher: The Spokesman-Review
+  origin: independent
+  date: '2013-01-21'
+  checked: '2026-10-18'
 - id: sportcal-arctos-acquires-stake-in-monumental-sports-qia-i
   url: https://www.sportcal.com/news/arctos-acquires-stake-in-monumental-sports-qia-increases-equity/
   title: Arctos acquires stake in Monumental Sports; QIA increases equity
@@ -2955,6 +3214,15 @@ sources:
   origin: independent
   date: '2025-12-18'
   checked: '2026-10-18'
+- id: sportico-dyal-nba-assets-after-suns-sale
+  url: https://www.sportico.com/business/finance/2023/dyal-homecourt-nba-assets-1234709900/
+  title: Dyal NBA Assets Jump to $500 Million After Suns Sale
+  title_from: page title
+  publisher: Sportico
+  origin: independent
+  date: '2023-02-14'
+  checked: '2026-10-18'
+  review: paywalled; headline and date only, the text was not read
 - id: sports-cavs-owner-dan-gilbert-moving-194805380
   url: https://sports.yahoo.com/articles/cavs-owner-dan-gilbert-moving-194805380.html
   title: 'Cavs owner Dan Gilbert moving closer to selling minority stake in the franchise: Reports'
@@ -2978,6 +3246,14 @@ sources:
   publisher: Yahoo Sports
   origin: independent
   date: '2022-12-20'
+  checked: '2026-10-18'
+- id: sportsbusinessdaily-are-warriors-heading-to-san-jose-or-hold
+  url: https://www.sportsbusinessdaily.com/Daily/Issues/1995/10/19/Franchises/ARE-WARRIORS-HEADING-TO-SAN-JOSE-OR-HOLDING-UP-OAKLAND.aspx
+  title: Are Warriors Heading to San Jose, or Holding Up Oakland?
+  title_from: curated
+  publisher: Sports Business Daily
+  origin: independent
+  date: '1995-10-19'
   checked: '2026-10-18'
 - id: sportsbusinessdaily-morning-buzz
   url: https://www.sportsbusinessdaily.com/Daily/Morning-Buzz/2019/01/24.aspx
@@ -3092,6 +3368,14 @@ sources:
   origin: independent
   date: '2026-04-09'
   checked: '2026-10-11'
+- id: tpr-city-scraps-garage-project-marvel-2027-bond
+  url: https://www.tpr.org/economy-and-labor/2026-10-05/city-scraps-plans-for-parking-garage-as-part-of-project-marvel-improvements-in-2027-bond
+  title: City scraps plans for parking garage as part of Project Marvel improvements in 2027 bond
+  title_from: page title
+  publisher: Texas Public Radio (San Antonio Report)
+  origin: independent
+  date: '2026-10-05'
+  checked: '2026-10-18'
 - id: tpr-heres-whats-in-the-downtown-arena-term-sheet-the
   url: https://www.tpr.org/government-politics/2025-08-21/heres-whats-in-the-downtown-arena-term-sheet-the-city-just-inked-with-the-san-antonio-spurs
   title: Here's what's in the downtown arena term sheet the city just inked with the San Antonio Spurs
@@ -3216,6 +3500,14 @@ sources:
   date: '2023-06-23'
   checked: '2026-10-11'
   review: not reached (connection failed; HTTP 403 to a second fetch tool); title from the citation in the Wikipedia article Capital One Arena
+- id: wbtv-charlotte-city-council-approves-275-million-spec
+  url: https://www.wbtv.com/2022/06/14/charlotte-city-council-approves-275-million-spectrum-center-renovations
+  title: Charlotte City Council approves $275 million Spectrum Center renovations
+  title_from: page title
+  publisher: WBTV
+  origin: independent
+  date: '2022-06-14'
+  checked: '2026-10-18'
 - id: wbtv-city-pay-275-million-renovate-spectrum-center-fu
   url: https://www.wbtv.com/2022/06/01/city-pay-275-million-renovate-spectrum-center-fund-new-practice-facility/
   title: City to pay $275 million to renovate Spectrum Center, fund new practice facility
@@ -3264,6 +3556,14 @@ sources:
   origin: independent
   date: '2019-04-12'
   checked: '2026-10-11'
+- id: whyy-sixers-arena-south-philadelphia-timeline
+  url: https://whyy.org/articles/sixers-arena-south-philadelphia-timeline/
+  title: Legislative timeline for new Sixers arena uncertain as lawmakers return to session
+  title_from: page title
+  publisher: WHYY
+  origin: independent
+  date: '2025-09-12'
+  checked: '2026-10-18'
 - id: whyy-south-philadelphia-new-arena-design-76ers-comcas
   url: https://whyy.org/articles/south-philadelphia-new-arena-design-76ers-comcast/
   title: 76ers and Comcast unveil design for South Philly arena that will open in 2030
@@ -3696,3 +3996,11 @@ sources:
   origin: independent
   date: '2021-10-28'
   checked: '2026-10-11'
+- id: yahoo-latimes-crypto-com-arena-renovation-2022
+  url: https://news.yahoo.com/crypto-com-arena-step-game-120057094.html
+  title: Crypto.com Arena to step up its game with several years' worth of renovation and upgrades
+  title_from: page title
+  publisher: Los Angeles Times (via Yahoo News)
+  origin: independent
+  date: '2022-08-22'
+  checked: '2026-10-18'

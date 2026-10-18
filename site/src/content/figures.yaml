@@ -3,15 +3,17 @@
 
 bill:
   title: >-
-    Building the arenas is {{construction_share}} of what the public has put into them
+    Of the public money in the arenas, {{after_opening_share}} came after they opened
   sub: >-
     Public money in the {{arenas_n}} arenas NBA teams play in, by kind, in 2026 dollars. Building the arenas is
     blue; everything else is orange
   dataset: public-layers
   notes:
     - >-
-      Tax breaks are property-tax breaks and taxes diverted to arena debt. The federal cost of tax-exempt arena
-      bonds, {{fed_bond_cost}}, is not included, because a different public pays it. The number of bills for each
+      Building includes {{bkn_pilot}} of Barclays Center bonds repaid with the property tax the arena would
+      otherwise owe. Tax breaks are property-tax breaks for Madison Square Garden and the United Center. The
+      federal cost of tax-exempt arena bonds, an estimated {{fed_bond_cost}}, is not included, because a different
+      public pays it. The number of bills for each
       kind is rounded to the nearest bill; the amounts beside them are not.
 
 values:
@@ -77,9 +79,10 @@ rebuild:
       purchases in the year of the sale. Money for work still under way, and pending money, is counted at face
       value in 2026.
     - >-
-      Not shown, because the arenas are not among the {{arenas_n}} in use: {{new_arenas_committed}} committed and
-      {{sas_pending}} pending for new arenas in Oklahoma City and San Antonio, and {{uta_district}} for the
-      district around Salt Lake City's arena.
+      Oklahoma City's arena under construction, {{okc_new_arena}}, is shown with the new arenas at face value
+      in 2026, because it is binding. Not shown: Bexar County's {{sas_county}} and the city's {{sas_pending}}
+      pending for a new San Antonio arena, which are not binding yet, and {{uta_district}} for the district around
+      Salt Lake City's arena.
 
 arenas:
   title: >-

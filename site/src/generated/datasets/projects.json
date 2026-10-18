@@ -5,6 +5,7 @@
   "ledger",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
   "dmagazine-the-one-post-you-need-to-read-about-the-mavs-goi",
+  "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "tri-statedefender-p-349496",
   "okc-oklahoma-city-and-thunder-break-ground-on-contin",
@@ -17,20 +18,23 @@
   "vision-economic-community-development",
   "okgazette-wait-whos-paying-for-the-new-arena-2",
   "bondbuyer-oklahoma-city-to-sell-revenue-bonds-for-nba-thun",
-  "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+  "occompt-occompt-2",
   "oregon-moda-center-arena-comparable-structure-overview",
+  "cfpublic-orlando-kia-center-camping-world-stadium-improve",
   "axios-sixers-flyers-new-arena-comcast-spectacor",
   "6abc-arena-76ers-flyers-marks-new-era-philadelphia-sp",
   "efiles",
   "olis-enrolled",
   "portland-adopted",
   "oregon-moda-center-project",
+  "multco-resolution-2026-060",
   "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
   "tpr-san-antonio-inches-closer-to-buying-property-for",
   "ksat-results-props-a-and-b-for-coliseum-complex-downt",
   "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+  "tpr-city-scraps-garage-project-marvel-2027-bond",
   "utah-pmn",
   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
   "dccouncil-4-2-24-arena-funding-memo",
@@ -89,10 +93,11 @@
    "public_construction_nominal_m": 95.0,
    "public_renovation_pending_nominal_m": null,
    "private_construction_nominal_m": 85.0,
-   "public_construction_notes": "Included in HOU row.",
+   "public_construction_notes": "Included in HOU row as pending: an expected state grant, no agreement found.",
    "lease_terms": "to 2033 (no extension reported)",
-   "notes_and_gaps": "Status: binding",
+   "notes_and_gaps": "Status: pending",
    "sources": [
+    "click2houston-harris-county-approves-180m-toyota-center",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
    ]
   },
@@ -119,7 +124,7 @@
    "team": "OKC",
    "arena": "New Oklahoma City arena (Continental Coliseum, Paycom Center replacement)",
    "city": "Oklahoma City, OK",
-   "opened": "late summer 2028 (target); must open by June 2029",
+   "opened": "late summer 2028 (target); must open by June 2029 (okc.gov); the license agreement's outside completion deadline is June 30 2030, after which the team may terminate",
    "owner": "City of Oklahoma City",
    "row_type": "project",
    "construction_cost_nominal_m": 900.0,
@@ -128,7 +133,7 @@
    "public_renovation_pending_nominal_m": null,
    "private_construction_nominal_m": 50.0,
    "public_construction_notes": "72-month 1-cent sales tax (voters Dec 2023, 71%; projected $976.3M incl. debt service) + MAPS 4: $89M (okc.gov 2026-10-12); $78M (b, OCPPA audited FY2024 report: \"City MAPS 4 | Arena | 78,000,000\"; okc.gov 2026-03-26; Bond Buyer 2025-10-16); ~$99M (Bond Buyer 2026-05-19); $70M (earlier okc.gov). Public = $900M arena (okc.gov 2026-03-26) - Thunder $50M (computed). $777.15M Series 2026 Arena Sales Tax Revenue Bonds (June 2026; Moody's rated a proposed $800.6M). Bond Buyer (2026-05-19) also reports a temporary 1% use tax approved in December (year not stated; not verified) and pledged revenue of $1.18B. OUTSIDE THE ARENA BUDGET: 2025 GO bonds approved by voters Oct 14 2025 (Prop 5 75.52%, Prop 9 75.95%): $35M downtown garage replacing the Myriad parking facility (b, vision.okc.gov, which lists it without naming the arena; the arena link is from Bond Buyer, c) + $25M Thunder front-office buildout (c, Oklahoma Gazette; city lists the line without an amount). Bond Buyer (2026-05-19): $90M of 2025 GO allocated to arena parking, streets and team offices (alternative). Earlier ledger text dated this vote Oct 14 2026 and called it pending; corrected Oct 16 2026.",
-   "lease_terms": "25 years from move-in, through at least 2053 (Bond Buyer 2026-04-06); early-exit penalties > $1B (KGOU 2025)",
+   "lease_terms": "25 years from move-in, through at least 2053 (Bond Buyer 2026-04-06); early-exit penalties up to $1B in years 1-5 after move-in, $850M in years 6-10, $750M in 11-15, $500M in 16-20 and $250M in 21-25 and each renewal (b, https://www.okc.gov/files/assets/city/v/1/city-manager/documents/pbcarena-use-license-agreementfinal-6-12-25-1.pdf (Arena Use License Agreement, final June 12 2025: s.21.3.5 and Schedule IV, pdf p.103))",
    "notes_and_gaps": "Status: binding",
    "sources": [
     "okc-oklahoma-city-and-thunder-break-ground-on-contin",
@@ -151,16 +156,17 @@
    "owner": "City of Orlando",
    "row_type": "project (memo: included in team row)",
    "construction_cost_nominal_m": 226.0,
-   "construction_cost_label": "c",
+   "construction_cost_label": "b",
    "public_construction_nominal_m": 226.0,
    "public_renovation_pending_nominal_m": null,
    "private_construction_nominal_m": 0.0,
    "public_construction_notes": "Included in ORL row.",
-   "lease_terms": "to 2035 (no extension reported)",
+   "lease_terms": "to June 30 2035 (b, 2024 interlocal p.9), with a five-year renewal option (2016 interlocal s.5.4.7); the city must negotiate an extension at least as long as the 2027-32 contract bonds before issuing them",
    "notes_and_gaps": "Status: binding",
    "sources": [
-    "cfpublic-orlando-kia-center-camping-world-stadium-improve",
-    "oregon-moda-center-arena-comparable-structure-overview"
+    "occompt-occompt-2",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "cfpublic-orlando-kia-center-camping-world-stadium-improve"
    ]
   },
   {
@@ -195,14 +201,15 @@
    "public_construction_nominal_m": null,
    "public_renovation_pending_nominal_m": 573.0,
    "private_construction_nominal_m": null,
-   "public_construction_notes": "Same money as the POR row pending renovation (not double counted). PENDING: State up to $365M (SB 1501, enacted, conditional; bond sale expected spring 2027 per DAS) + County up to $88M + City up to $120M (term sheet approved Aug 12 2026, non-binding) = $573M; plus ongoing money (city up to $275.0M over 20 years, county $13.6M) not counted; definitive documents due by Dec 31 2026; no action found Oct 12-16 2026",
+   "public_construction_notes": "Same money as the POR row pending renovation (not double counted). PENDING: State up to $365M (SB 1501, enacted, conditional; bond sale expected spring 2027 per DAS) + County up to $88M + City up to $120M (term sheet approved Aug 12 2026, non-binding) = $573M; plus ongoing money (city up to $275.0M over 20 years, county $13.6M) not counted; Multnomah County approved the Joint Authority Agreement Oct 1 2026, which \"does not commit the parties to the funding\" (Resolution 2026-060); SB 1501's other conditions must be met by the end of December 2026 for a spring 2027 bond sale (DAS); NBA approval of the sale complete",
    "lease_terms": "20-yr lease sought",
    "notes_and_gaps": "Status: pending",
    "sources": [
     "efiles",
     "olis-enrolled",
     "portland-adopted",
-    "oregon-moda-center-project"
+    "oregon-moda-center-project",
+    "multco-resolution-2026-060"
    ]
   },
   {
@@ -217,7 +224,7 @@
    "public_construction_nominal_m": 311.0,
    "public_renovation_pending_nominal_m": 549.0,
    "private_construction_nominal_m": 500.0,
-   "public_construction_notes": "Bexar County Prop B (Nov 2025, 52.1%): venue tax (hotel 1.75%->2% + 5% car rental) up to $311M or 25% of the cost, whichever is lower (KSAT). PENDING: City up to $489M under a non-binding term sheet (Aug 2025, 7-4); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); definitive agreements targeted by Dec 31 2026, not signed as of Oct 16 2026",
+   "public_construction_notes": "Bexar County Prop B (Nov 2025, 52.1%): venue tax (hotel 1.75%->2% + 5% car rental) up to $311M or 25% of the cost, whichever is lower (KSAT). PENDING: City up to $489M under a non-binding term sheet (Aug 2025, 7-4): the lesser of 38% of the arena cost or $489M (s.2c), expected to be funded in 2028 and conditional on voter passage of a city bond program for the first phase of transportation and pedestrian infrastructure (Financing Addendum, Attachment III); the city's share of district roads and sidewalks for its 2027 bond is now estimated at $35M, about 20% of $175M of projects with the state transportation department assumed to pay 80%, down from $250M a year earlier (San Antonio Report via TPR, Oct 5 2026; not counted); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); definitive agreements targeted by the end of December 2026 (a city official, TPR June 17 2026; the term sheet sets no deadline), not signed as of Oct 16 2026",
    "lease_terms": "30-yr non-relocation in non-binding term sheet",
    "notes_and_gaps": "Status: voter-approved (county) / pending (city)",
    "sources": [
@@ -226,7 +233,8 @@
     "ksat-results-props-a-and-b-for-coliseum-complex-downt",
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
-    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs"
+    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
+    "tpr-city-scraps-garage-project-marvel-2027-bond"
    ]
   },
   {

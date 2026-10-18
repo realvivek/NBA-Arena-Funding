@@ -106,6 +106,7 @@
   "forbes-charlotte-hornets",
   "nba-jordan-hornets-new-partners-retains-majority-off",
   "news4jax-michael-jordans-sale-of-majority-ownership-of-ho",
+  "blazersedge-nba-approves-sale-to-tom-dundon",
   "pr-trail-blazers-sale-tom-dundon",
   "columbian-nba-board-of-governors-approves-blazers-sale-to",
   "forbes-portland-trail-blazers",
@@ -178,7 +179,7 @@
    "deal_date": "2021-04-01",
    "deal_label": "c",
    "note": null,
-   "public_2026_m": 0.0,
+   "public_2026_m": 55.081865,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "si-warriors-sale",
@@ -211,7 +212,7 @@
    "deal_label": "b",
    "note": null,
    "public_2026_m": 0.0,
-   "tax_breaks_2026_m": 1030.4,
+   "tax_breaks_2026_m": 1162.6,
    "sources": [
     "sec-0000912057-97-029548",
     "forbes-new-york-knicks",
@@ -241,8 +242,8 @@
    "deal_value_b": 12.5,
    "deal_date": "2026-08-12",
    "deal_label": "c",
-   "note": "Forbes and Sportico set their 2026 values at the deal price.",
-   "public_2026_m": 0.0,
+   "note": "Forbes and Sportico set their 2026 values at the deal price. Forbes's team page says the Buss family owns 17.8%; Jeanie Buss has petitioned to block her siblings' sale of the family's stake (August 2026).",
+   "public_2026_m": 139.371912,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "abc7",
@@ -339,7 +340,7 @@
    "deal_label": "c",
    "note": "No deal value disclosed.",
    "public_2026_m": 0.0,
-   "tax_breaks_2026_m": 74.6,
+   "tax_breaks_2026_m": 72.9,
    "sources": [
     "chicago-reinsdorfs-new-investors-bulls-and-united-center",
     "forbes-chicago-bulls",
@@ -370,7 +371,7 @@
    "deal_date": null,
    "deal_label": null,
    "note": null,
-   "public_2026_m": 446.56221,
+   "public_2026_m": 351.56221,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "ktnv-golden-nugget-owner-tilman-fertitta-finalizes-pu",
@@ -400,7 +401,7 @@
    "deal_value_b": 6.0,
    "deal_date": "2024-06-19",
    "deal_label": "c",
-   "note": "Deal value is for BSE Global, not the Nets alone.",
+   "note": "Deal value is for BSE Global, not the Nets alone. Forbes's team page lists a $3.2B price for 2019.",
    "public_2026_m": 455.027052,
    "tax_breaks_2026_m": 738.2,
    "sources": [
@@ -562,7 +563,7 @@
    "deal_value_b": null,
    "deal_date": null,
    "deal_label": null,
-   "note": "Cuban bought the team for $285M in 2000 (same reports).",
+   "note": "Cuban bought the team for $285M in 2000 (same reports). Forbes's team page lists $3.55B for 2023 and $280M for Cuban's 2000 purchase.",
    "public_2026_m": 234.131712,
    "tax_breaks_2026_m": 0.0,
    "sources": [
@@ -582,7 +583,7 @@
    "price_year": 2015,
    "price_m": 850.0,
    "price_scope": "team_with_assets",
-   "price_note": "Includes operating control of the arena and about $120M of arena-related debt on a $730M deal",
+   "price_note": "Includes operating control of the arena; financed with cash and the assumption of some debt",
    "price_label": "c",
    "price_2026_m": 1189.395987,
    "seller_price_m": null,
@@ -754,8 +755,8 @@
    "deal_value_b": null,
    "deal_date": null,
    "deal_label": null,
-   "note": null,
-   "public_2026_m": 301.738673,
+   "note": "Forbes's team page lists $325M for 2006.",
+   "public_2026_m": 331.127083,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "aljazeera-sold-supersonics-to-stay-in-seattle",
@@ -882,7 +883,7 @@
    "deal_date": "2023-11-30",
    "deal_label": "c",
    "note": null,
-   "public_2026_m": 747.425938,
+   "public_2026_m": 934.355886,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "wrtv-pacers-still-call-indiana-home-thanks-to-herb-an",
@@ -914,7 +915,7 @@
    "deal_date": null,
    "deal_label": null,
    "note": null,
-   "public_2026_m": 880.016116,
+   "public_2026_m": 861.764504,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "deseret-amway-head-buys-orlando-magic",
@@ -945,7 +946,7 @@
    "deal_date": null,
    "deal_label": null,
    "note": "Jordan paid $275M for control in 2010 (same report).",
-   "public_2026_m": 565.319268,
+   "public_2026_m": 559.491253,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "cbssports-michael-jordans-13-year-run-as-hornets-owner-end",
@@ -963,7 +964,7 @@
    "price_year": 2026,
    "price_m": 4000.0,
    "price_scope": "valuation",
-   "price_note": "80.1% at closing on March 31, 2026; the rest at a $4.5B valuation by Sept. 1, 2028",
+   "price_note": "80.1% at a $4B valuation, closed March 31, 2026; the other 19.9% at a $4.5B valuation by Sept. 1, 2028, about $4.25B in all",
    "price_label": "c",
    "price_2026_m": 4000.0,
    "seller_price_m": 70.0,
@@ -980,6 +981,7 @@
    "public_2026_m": 82.626048,
    "tax_breaks_2026_m": 0.0,
    "sources": [
+    "blazersedge-nba-approves-sale-to-tom-dundon",
     "pr-trail-blazers-sale-tom-dundon",
     "columbian-nba-board-of-governors-approves-blazers-sale-to",
     "forbes-portland-trail-blazers",
@@ -1040,7 +1042,7 @@
    "deal_value_b": 4.5,
    "deal_date": "2026-08-21",
    "deal_label": "c",
-   "note": "League approval not confirmed as of Oct. 18, 2026.",
+   "note": "League approval not confirmed as of Oct. 18, 2026. Forbes's team page dates the purchase to 2021, when the $1.5B valuation was set.",
    "public_2026_m": 296.822623,
    "tax_breaks_2026_m": 0.0,
    "sources": [
@@ -1104,7 +1106,7 @@
    "deal_date": "2019-03-23",
    "deal_label": "c",
    "note": "Stake sizes and value not disclosed.",
-   "public_2026_m": 554.048244,
+   "public_2026_m": 547.748244,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "si-robert-pera-memphis-grizzlies-ap",

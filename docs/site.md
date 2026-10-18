@@ -51,7 +51,8 @@ A kicker, a serif headline that carries the total, a deck and a dateline open it
 each, its number in bold, with a link down to the chapter or chart that holds it (`findings` in the home entry of
 `pages.yaml`, each naming its section of `story.yaml`; the build fails on an unknown section). The lead graphic is
 the public's bill for the arenas as a stack of bills, each worth $100 million, filled from the bottom up as the
-reader scrolls: building the arenas in blue, then renovations, purchases, yearly payments and tax breaks in orange,
+reader scrolls: building the arenas in blue (Barclays Center's PILOT bonds included, since they paid for its
+construction), then renovations, purchases, yearly payments and property-tax breaks in orange,
 each starting a new row, with its amount printed beside the stack in large serif type and a leader to its bills, and
 brackets for the two shares. Bills the reader has not reached show as outlines. Each chapter is a serif heading,
 short paragraphs and its charts, and ends with one gray line naming its sources (each publisher once, with every

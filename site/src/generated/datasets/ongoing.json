@@ -347,18 +347,6 @@
    ]
   },
   {
-   "team": "MEM",
-   "item_id": "MEM-ongoing-1-2026",
-   "description": "City and county operating subsidy (press only)",
-   "year": 2026,
-   "public_nominal_m": 6.3,
-   "public_2026_m": 6.3,
-   "label": "c/a",
-   "sources": [
-    "oregon-moda-center-arena-comparable-structure-overview"
-   ]
-  },
-  {
    "team": "MIA",
    "item_id": "MIA-ongoing-3-1998",
    "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",

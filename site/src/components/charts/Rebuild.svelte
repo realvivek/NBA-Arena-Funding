@@ -1,9 +1,11 @@
 <script>
   // Chart 1, the lead graphic: public money by year, one stacked column per year with a segment per arena, for
-  // new arenas, existing ones and pending money on existing ones. Told in steps as the reader scrolls (see the
-  // [data-step] rules in global.css): marks and labels carry classes the steps show or fade (.seg.new,
-  // .seg.existing, .seg.pending, .hl for the two largest deals since 2014; .ann.a-new, .a-shift, .a-largest,
-  // .a-pending for the labels). Without scripts the chart rests in its last state, where everything is drawn.
+  // new arenas, existing ones and pending money on existing ones. A new arena still being built counts with the
+  // new ones once its money is binding (Oklahoma City's, at face value in 2026), as it does in the ratio the copy
+  // gives. Told in steps as the reader scrolls (see the [data-step] rules in global.css): marks and labels carry
+  // classes the steps show or fade (.seg.new, .seg.existing, .seg.pending, .hl for the three arenas with the most
+  // since 2014; .ann.a-new, .a-shift, .a-largest, .a-pending for the labels). Without scripts the chart rests in
+  // its last state, where everything is drawn.
   import { LayerCake, Svg } from 'layercake';
   import { scaleBand, scaleLinear } from 'd3-scale';
   import { WIDE, NARROW, FONT, money, moneyTick, vbar, textWidth, TEAM_CITY } from '../../lib/chart';
@@ -14,7 +16,13 @@
 
   const SINCE = 2014;
   const first = 1990;
-  const keep = rows.filter((r) => (r.category === 'new' || r.category === 'existing') && (r.status === 'counted' || r.status === 'pending'));
+  const keep = rows
+    .filter(
+      (r) =>
+        ((r.category === 'new' || r.category === 'existing') && (r.status === 'counted' || r.status === 'pending')) ||
+        (r.category === 'new_unopened' && r.binding),
+    )
+    .map((r) => (r.category === 'new_unopened' ? { ...r, category: 'new', building: true } : r));
   const last = Math.max(...keep.map((r) => r.year));
   const years = Array.from({ length: last - first + 1 }, (_, i) => first + i);
 
@@ -22,7 +30,8 @@
   const groups = new Map();
   for (const r of keep) {
     const k = `${r.year}|${r.team}|${r.category}|${r.status}`;
-    if (!groups.has(k)) groups.set(k, { year: r.year, team: r.team, category: r.category, pending: r.status === 'pending', value: 0, what: [] });
+    if (!groups.has(k))
+      groups.set(k, { year: r.year, team: r.team, category: r.category, pending: r.status === 'pending', building: !!r.building, value: 0, what: [] });
     const g = groups.get(k);
     g.value += r.public_2026_m;
     g.what.push(r.description);
@@ -41,10 +50,10 @@
   const ymax = Math.max(...years.map(total));
   const yTop = Math.ceil(ymax / 500) * 500;
 
-  // the two largest deals for existing arenas since 2014, by arena
+  // the three existing arenas with the most public money since 2014
   const byTeam = new Map();
   for (const s of segs) if (s.category === 'existing' && !s.pending && s.year >= SINCE) byTeam.set(s.team, (byTeam.get(s.team) ?? 0) + s.value);
-  const largest = [...byTeam.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2);
+  const largest = [...byTeam.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
   const hl = new Set(largest.map(([t]) => t));
   // the largest new-arena columns before 2014: two on wide screens (at least five years apart), one on phones
   const bigNew = [];
@@ -58,7 +67,7 @@
       .filter(Boolean)
       .join(' ');
   const tip = (s) =>
-    `${s.year}: ${TEAM_CITY[s.team]}, ${s.what.join('; ').toLowerCase()}: ${money(s.value)}${s.pending ? ', pending' : ''} (2026 dollars)`;
+    `${s.year}: ${TEAM_CITY[s.team]}, ${s.what.join('; ').toLowerCase()}: ${money(s.value)}${s.pending ? ', pending' : ''}${s.building ? ', under construction, at face value' : ''} (2026 dollars)`;
 
   const W = narrow ? NARROW : WIDE;
   const H = narrow ? 300 : 430;
@@ -69,7 +78,27 @@
   const rebuild = STATS.rebuild_since_2014.display.short;
   const build = STATS.build_since_2014.display.short;
   const ticksX = narrow ? [1990, 2000, 2010, 2020] : [1990, 1995, 2000, 2005, 2010, 2014, 2020, 2026];
-  const ticksY = narrow ? [0, 1000, 2000] : Array.from({ length: yTop / 500 + 1 }, (_, i) => i * 500);
+  const ticksY = narrow ? Array.from({ length: Math.floor(yTop / 1000) + 1 }, (_, i) => i * 1000) : Array.from({ length: yTop / 500 + 1 }, (_, i) => i * 500);
+
+  // labels at the right of the last column: the pending total and its cities, then the three largest arenas below
+  // it, spread so no two overlap and joined to their segments by leaders
+  const yS = scaleLinear().domain([0, yTop]).range([H - mb, mt]);
+  const pend = segs.filter((s) => s.pending);
+  const pendMid = pend.length ? (yS(Math.min(...pend.map((s) => s.y0))) + yS(Math.max(...pend.map((s) => s.y1)))) / 2 : 0;
+  const pendTop = pendMid - 8 * (pendingCities.length + 1);
+  const pendBottom = pend.length ? pendTop + 15 * pendingCities.length : mt;
+  const bigLabels = largest
+    .map(([team, value]) => {
+      const s = segs.filter((g) => g.team === team && g.year === last && !g.pending && g.category === 'existing').sort((a, b) => b.value - a.value)[0];
+      return s ? { team, value, mid: (yS(s.y0) + yS(s.y1)) / 2 } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.mid - b.mid);
+  let floor = pendBottom + 22;
+  for (const l of bigLabels) {
+    l.ly = Math.max(l.mid, floor);
+    floor = l.ly + 31;
+  }
 </script>
 
 <div class="plot" style="aspect-ratio: {W} / {H}">
@@ -134,29 +163,24 @@
             <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} to build</text>
           {:else}
             <text class="ann-text halo" x={xr} y={mt - 38} text-anchor="end" font-size={FONT}>Since {SINCE}: {rebuild} to renovate or buy</text>
-            <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} for arenas that opened</text>
+            <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} to build, counting Oklahoma City's</text>
           {/if}
         </g>
 
-        <!-- step 3: the two largest deals for existing arenas -->
+        <!-- step 3: the three existing arenas with the most since 2014 -->
         <g class="ann a-largest">
-          {#each largest as [team, value]}
-            {@const s = segs.filter((g) => g.team === team && g.year === last && !g.pending && g.category === 'existing').sort((a, b) => b.value - a.value)[0]}
-            {#if s}
-              {@const my = (y(s.y0) + y(s.y1)) / 2}
-              <path class="ann-line" d="M{xr + 2},{my}H{xr + 8}" />
-              <text class="ann-text" x={xr + 11} y={my - 3} font-size={FONT}>{TEAM_CITY[team]}</text>
-              <text class="ann-sub" x={xr + 11} y={my + 12} font-size={FONT}>{money(value)}</text>
-            {/if}
+          {#each bigLabels as l}
+            <path class="ann-line" d="M{xr + 2},{l.mid}H{xr + 5}V{l.ly}H{xr + 8}" />
+            <text class="ann-text" x={xr + 11} y={l.ly - 3} font-size={FONT}>{TEAM_CITY[l.team]}</text>
+            <text class="ann-sub" x={xr + 11} y={l.ly + 12} font-size={FONT}>{money(l.value)}{narrow ? '' : ' since ' + SINCE}</text>
           {/each}
         </g>
 
         <!-- step 4: pending money on existing arenas -->
         <g class="ann a-pending">
           {#if pendingTotal > 0}
-            {@const p = segs.filter((s) => s.pending)}
-            {@const my = (y(Math.min(...p.map((s) => s.y0))) + y(Math.max(...p.map((s) => s.y1)))) / 2}
-            {@const top = my - 8 * (pendingCities.length + 1)}
+            {@const my = pendMid}
+            {@const top = pendTop}
             <path class="ann-line" d="M{xr + 2},{my}H{xr + 8}" />
             {#if narrow}
               <text class="ann-text" x={xr + 11} y={top - 15} font-size={FONT}>Pending</text>

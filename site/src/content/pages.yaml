@@ -16,13 +16,13 @@ home:
   # What we found, under the head: one line per finding, each pointing to the section of story.yaml that holds it
   findings:
     - p: >-
-        Governments have put **{{expanded_public}}** in public money and tax breaks into the {{arenas_n}} arenas.
-        Building them was only {{construction_share}} of it.
+        Governments have put or committed **{{expanded_public}}** in public money and tax breaks to the
+        {{arenas_n}} arenas, and {{after_opening_share}} of it came after the arenas opened.
       to: bill
       sources: [ledger]
     - p: >-
         Since 2014, renovating or buying arenas that already stand has drawn **{{rebuild_ratio}} times** as much
-        public money as building new ones.
+        public money as building new ones, counting Oklahoma City's arena under construction.
       to: rebuild
       sources: [ledger]
     - p: >-
@@ -33,8 +33,8 @@ home:
       sources: [ledger]
     - p: >-
         The average team is worth **{{value_mean_2026}}**, {{value_growth_2014}} times the 2014 average before
-        inflation. None of the {{public_deals_reviewed}} public arena deals reviewed gives the public a share when a
-        team is sold.
+        inflation. None of the {{public_deals_read}} public arena deals whose terms could be read gives the public a
+        share when a team is sold.
       to: gains
       sources: [team-ledger]
     - p: >-
@@ -44,7 +44,8 @@ home:
       sources: [team-ledger, sec-owl-20251231]
     - p: >-
         Of the current arena leases, **{{leases_by_2036}}** end by 2036. After {{threats_same_city}} of the
-        {{threats_counted}} relocation threats documented since 1994, public money followed in the same city.
+        {{threats_counted}} relocation threats documented since 1994, public money followed in the same city, and
+        Portland's is pending.
       to: next
       sources: [threat-ledger, ledger]
 
@@ -124,8 +125,8 @@ who-is-behind:
     - stats:
         - value: '{{threats_same_city}} of {{threats_counted}}'
           label: >-
-            relocation threats by owners or the league since 1994 were followed by public money in the same city, a
-            median {{lag_median}} months later
+            relocation threats by owners or the league since 1994 were followed by public money in the same city,
+            {{lag_within_24}} of them within {{lag_window}} months
       sources: [threat-ledger]
     - cards:
         - title: Lobbying in Portland
@@ -133,7 +134,7 @@ who-is-behind:
           text: >-
             Reported by the Trail Blazers' arena company in the 2026 session that produced up to {{por_state}} of
             state bonds for its arena.
-          sources: [olis-enrolled]
+          sources: [olis-enrolled, opb-trail-blazers-moda-center-portland-basketball-sp]
         - title: A study in San Antonio
           text: >-
             The city's study of the new arena district came from CSL International, a subsidiary of Legends, whose
@@ -188,7 +189,7 @@ who-is-behind:
           sources: [revisor-473j-15]
         - title: Rent that grows
           text: >-
-            Rent that rises with the team's value, instead of a fixed fee like Oklahoma City's, capped at
+            Rent that rises with the team's value, instead of a per-game fee like Oklahoma City's, capped at
             {{okc_fee_cap}} a year.
           sources: [okc-pbcarena-use-license-agreementfinal-6-12-25-1]
         - title: Disclosure
@@ -215,10 +216,11 @@ arenas:
   path: /arenas/
   kicker: The arenas
   title: >-
-    Orlando's Kia Center Holds the Most Public Money of Any NBA Arena
+    In Cash, Indianapolis's Arena Has Taken the Most Public Money
   deck: >-
     The public money in each of the {{arenas_n}} arenas, from construction to yearly payments, with every
-    source. The Kia Center's {{orl_public}} is {{orl_share}} of everything spent on it.
+    source. Gainbridge Fieldhouse's {{ind_public}} is {{ind_share}} of everything spent on it; counting tax
+    breaks, Brooklyn's and New York's arenas have taken more.
   description: >-
     Every arena's construction, purchases, renovations, yearly payments, tax breaks and lease, with labels and
     sources.
@@ -301,9 +303,10 @@ tax-breaks:
     - p: >-
         The expanded total adds {{tax_breaks_added}} of breaks to the {{core_public}} of public money, all in
         2026 dollars: Barclays Center's PILOT bonds, {{bkn_pilot}} ({{bkn_pilot_issued}} when they were sold in
-        2009); Madison Square Garden's exemption since 1982, {{nyk_exemption}}; and the United Center's valuation
-        formula, {{chi_formula}} for 2002 to 2016. Breaks that are still to come, or that rest on a single figure
-        that could not be checked, are listed but not added.
+        2009); Madison Square Garden's exemption since 1982, more than {{nyk_exemption}}; and the United Center's
+        valuation formula, {{chi_formula}} for 2002 to 2016. Breaks that are still to come, or that rest on a single
+        figure that could not be checked, are listed but not added. The story counts the PILOT bonds as money to
+        build Barclays Center, because they paid for its construction.
       sources: [ledger]
     - fig: uc
 
@@ -323,8 +326,9 @@ threats:
     - p: >-
         An episode counts as a threat when an owner or the league tied a team's future in a city to public money,
         openly or by implication: naming another city or announcing a move, a sale to buyers who planned to move
-        the team or came from another city, a sale offered with no limit on moving, league terms letting it buy
-        back or move the team, talks with another city, or a lease clause that let the team leave. Statements by
+        the team or who came from another city and made no commitment to keep it there, a sale offered with no
+        limit on moving, league terms letting it buy back or move the team, talks with another city, or a lease
+        clause that let the team leave. Money approved but not yet final, as in Portland, is counted as pending. Statements by
         local officials alone, and other cities' offers, are recorded but not counted as threats.
       sources: [threat-ledger]
     - fig: threats
@@ -335,8 +339,8 @@ leases:
   title: >-
     {{leases_by_2036:cap}} NBA Leases End by 2036
   deck: >-
-    The year each arena lease ends, what leaving would cost, and the deals pending or planned in Memphis,
-    Portland, San Antonio, Dallas and Philadelphia, along with Oklahoma City's new arena.
+    The year each arena lease ends, what leaving would cost, and the deals pending or planned in Houston,
+    Memphis, Portland, San Antonio, Dallas and Philadelphia, along with Oklahoma City's new arena.
   description: >-
     Lease terms, exit penalties and the pending deals, arena by arena.
   sources: [ledger]
@@ -377,8 +381,8 @@ sources:
     {{sources_n}} Documents, From City Audits to Team Filings
   deck: >-
     Every document this site cites, grouped by who published it: {{sources_government}} from governments,
-    {{sources_team}} from teams, the league or their filings, and {{sources_independent}} from news
-    organizations, researchers and reference works.
+    {{sources_court}} from a court, {{sources_team}} from teams, the league or their filings, and
+    {{sources_independent}} from news organizations, researchers and reference works.
   description: >-
     The bibliography: every source, with its publisher, date and the date its figures were last checked.
   sources: [ledger]

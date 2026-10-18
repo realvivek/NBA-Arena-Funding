@@ -23,32 +23,32 @@
    "name": "Visitor taxes on hotels, car rentals, food and drink, and tickets",
    "payer": "visitors",
    "ord": 1,
-   "public_2026_m": 3523.995584,
-   "share_pct": 41.248938
+   "public_2026_m": 3705.097517,
+   "share_pct": 41.93691
   },
   {
    "bucket": "general",
    "name": "General taxes, general-obligation bonds, appropriations, state grants and sales of public assets",
    "payer": "residents",
    "ord": 2,
-   "public_2026_m": 1812.524481,
-   "share_pct": 21.215892
+   "public_2026_m": 1709.599097,
+   "share_pct": 19.35045
   },
   {
    "bucket": "sales",
    "name": "Dedicated general sales tax",
    "payer": "residents",
    "ord": 3,
-   "public_2026_m": 917.284818,
-   "share_pct": 10.736967
+   "public_2026_m": 946.673228,
+   "share_pct": 10.715116
   },
   {
    "bucket": "tif",
    "name": "Tax increment and other tax capture",
    "payer": "residents",
    "ord": 4,
-   "public_2026_m": 744.99606,
-   "share_pct": 8.720299
+   "public_2026_m": 789.751697,
+   "share_pct": 8.938967
   },
   {
    "bucket": "leaserev",
@@ -56,7 +56,7 @@
    "payer": "residents",
    "ord": 5,
    "public_2026_m": 304.561092,
-   "share_pct": 3.564937
+   "share_pct": 3.447238
   },
   {
    "bucket": "sin",
@@ -64,15 +64,15 @@
    "payer": "residents",
    "ord": 6,
    "public_2026_m": 52.539226,
-   "share_pct": 0.61498
+   "share_pct": 0.594676
   },
   {
    "bucket": "mixed",
    "name": "Public money not split among its funding streams",
    "payer": "other",
    "ord": 7,
-   "public_2026_m": 976.151417,
-   "share_pct": 11.42601
+   "public_2026_m": 1115.523329,
+   "share_pct": 12.626281
   },
   {
    "bucket": "land",
@@ -80,7 +80,7 @@
    "payer": "other",
    "ord": 8,
    "public_2026_m": 166.169606,
-   "share_pct": 1.945042
+   "share_pct": 1.880825
   },
   {
    "bucket": "infra",
@@ -88,7 +88,7 @@
    "payer": "other",
    "ord": 9,
    "public_2026_m": 45.017286,
-   "share_pct": 0.526935
+   "share_pct": 0.509537
   }
  ],
  "note": "",
