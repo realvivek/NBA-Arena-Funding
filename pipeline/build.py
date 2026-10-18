@@ -96,7 +96,7 @@ def source_tables(by_url):
         with open(os.path.join(ROOT, fn), newline='') as f:
             return list(csv.DictReader(f))
     t = {'item_sources': [], 'arena_sources': [], 'lease_sources': [], 'threat_sources': [], 'left_behind_sources': [],
-         'coord_sources': []}
+         'coord_sources': [], 'value_sources': [], 'history_sources': [], 'return_sources': [], 'investor_sources': []}
     for r in read('data/ledger/ledger_items.csv'):
         for role in ('cost', 'public'):
             for i, sid in enumerate(ids_for(r[f'{role}_source'], by_url)):
@@ -118,6 +118,19 @@ def source_tables(by_url):
     for r in read('data/inputs/arena_coordinates.csv'):
         for i, sid in enumerate(ids_for(r['source'], by_url)):
             t['coord_sources'].append((r['team'], sid, i))
+    for r in read('data/teams/team_values.csv'):
+        for field in ('owner', 'price', 'value', 'deal'):
+            for i, sid in enumerate(ids_for(r[f'{field}_source'], by_url)):
+                t['value_sources'].append((r['team'], field, sid, i))
+    for r in read('data/teams/value_history.csv'):
+        for i, sid in enumerate(ids_for(r['source'], by_url)):
+            t['history_sources'].append((int(r['year']), sid, i))
+    for r in read('data/teams/public_return.csv'):
+        for i, sid in enumerate(ids_for(r['sources'], by_url)):
+            t['return_sources'].append((r['team'], sid, i))
+    for r in read('data/teams/investors.csv'):
+        for i, sid in enumerate(ids_for(r['source'], by_url)):
+            t['investor_sources'].append((r['fund'], r['team'], sid, i))
     return t
 
 
@@ -131,7 +144,11 @@ def connect(by_url, srcs):
             'lease_sources': 'team VARCHAR, source_id VARCHAR, ord INTEGER',
             'threat_sources': 'id VARCHAR, source_id VARCHAR, ord INTEGER',
             'left_behind_sources': 'city VARCHAR, source_id VARCHAR, ord INTEGER',
-            'coord_sources': 'team VARCHAR, source_id VARCHAR, ord INTEGER'}
+            'coord_sources': 'team VARCHAR, source_id VARCHAR, ord INTEGER',
+            'value_sources': 'team VARCHAR, field VARCHAR, source_id VARCHAR, ord INTEGER',
+            'history_sources': 'year INTEGER, source_id VARCHAR, ord INTEGER',
+            'return_sources': 'team VARCHAR, source_id VARCHAR, ord INTEGER',
+            'investor_sources': 'fund VARCHAR, team VARCHAR, source_id VARCHAR, ord INTEGER'}
     for name, rows in source_tables(by_url).items():
         con.execute(f'create table {name} ({cols[name]})')
         if rows:

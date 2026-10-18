@@ -5,39 +5,40 @@ home:
   path: /
   kicker: Public money and NBA arenas
   title: >-
-    Taxpayers Are Now Paying to Rebuild the NBA's Arenas
+    Taxpayers Paid for the NBA's Arenas. Owners Kept the Gains.
   deck: >-
-    Since 2014, public money to renovate or buy existing NBA arenas has been {{rebuild_ratio}} times the public
-    money in the arenas that opened. Another {{pending_existing}} is pending, and {{leases_by_2036}} leases end
-    by 2036.
+    Governments have put {{expanded_public}}, in today's dollars, into the {{arenas_n}} arenas where NBA teams
+    play. Team values have soared since, to an average of {{value_mean_2026}}. In the public arena deals reviewed
+    here, the public's share of those gains is zero.
   description: >-
-    How the NBA's arenas were paid for: what the public put in, through which taxes, and what followed when
-    owners threatened to move.
-  sources: [ledger]
+    Who paid for the NBA's arenas, through which taxes, who gains as team values rise, and what the public gets
+    back.
+  sources: [ledger, team-ledger]
   findings:
     - p: >-
+        The public has put {{expanded_public}}, counting tax breaks, into the {{arenas_n}} arenas in use; building
+        them is {{construction_share}} of it.
+      to: fig-ball
+    - p: >-
         Since 2014, public money to renovate or buy existing arenas has been {{rebuild_ratio}} times the public
-        money in the arenas that opened, and another {{pending_existing}} is pending.
-      to: fig-rebuild
-    - p: >-
-        The public has put or committed {{core_public}} to the {{arenas_n}} arenas in use, {{public_share}} of
-        everything spent on them, and tax breaks add {{tax_breaks_added}}.
-      to: the-whole-bill
-    - p: >-
-        {{takeover_n:cap}} arenas built mainly with private money were later bought or rebuilt with public money,
-        {{takeover_public}} in all.
-      to: built-privately-rebuilt-publicly
+        money in the arenas that opened.
+      to: the-bill-keeps-coming-after-opening-night
     - p: >-
         Taxes that fall mostly on visitors paid {{visitors_share}} of public arena capital, and taxes residents
         mostly pay supplied {{residents_share}}.
-      to: who-pays
+      to: visitors-pay-a-large-share
     - p: >-
-        {{threats_same_city:cap}} of {{threats_counted}} relocation threats by owners or the league were followed
-        by public money in the same city.
-      to: threats-as-deadlines
+        The median team is worth {{value_multiple_median}} times what its owners paid, after inflation, and none
+        of the {{public_deals_reviewed}} public arena deals reviewed gives the public a share of a sale.
+      to: team-values-soared-the-public-s-share-did-not
     - p: >-
-        {{leases_by_2036:cap}} arena leases end by 2036, so more deals are coming.
-      to: the-next-round
+        {{finance_teams_n:cap}} of the {{arenas_n}} teams have a controlling owner from finance or an investment
+        fund with a stake, and the league itself shares in the fees of one fund.
+      to: who-is-behind-the-teams
+    - p: >-
+        Another {{pending_existing}} is pending for existing arenas, {{leases_by_2036}} arena leases end by 2036,
+        and public money followed {{threats_same_city}} of {{threats_counted}} relocation threats.
+      to: the-next-round-is-already-on-the-calendar
 
 arenas:
   path: /arenas/
@@ -58,6 +59,15 @@ arenas:
         new spending, because they pay back the arena's builders. Pending money is listed but not counted.
       sources: [ledger]
     - fig: arenas
+    - fig: map
+    - p: >-
+        Of the {{arenas_n}} arenas, {{private_built_n}} were built mainly with private money, meaning the public
+        paid less than half of their construction cost. Indianapolis's arena is in neither group, because its
+        records conflict on who paid to build it. {{takeover_n:cap}} of the {{private_built_n}} were later
+        bought or rebuilt with public money: {{takeover_public}}, of which {{takeover_pending}} is pending,
+        against {{takeover_construction_public}} of public money when they were built.
+      sources: [ledger, capitalimprovementboard-cib-of-managers-of-marion-county-fs]
+    - fig: takeovers
 
 taxes:
   path: /taxes/

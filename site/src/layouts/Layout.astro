@@ -121,21 +121,24 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
           window.addEventListener('resize', queue);
         });
       })();
-      // Look up an arena: the menu shows one card at a time. Without this script the first card and a list of
-      // links to every arena's record are shown.
+      // Every team, ranked: the buttons reorder the rows. Without this script the rows stay in order of public money.
       (function () {
-        document.querySelectorAll('.lookup').forEach(function (box) {
-          var pick = box.querySelector('.lookup-pick');
-          var sel = box.querySelector('select');
-          var list = box.querySelector('.lookup-teams');
-          if (!pick || !sel) return;
-          pick.hidden = false;
-          if (list) list.hidden = true;
-          function show() {
-            box.querySelectorAll('.arena-card').forEach(function (c) { c.hidden = c.getAttribute('data-team') !== sel.value; });
-          }
-          sel.addEventListener('change', show);
-          show();
+        document.querySelectorAll('.teams').forEach(function (box) {
+          var bar = box.querySelector('.teams-sort'), list = box.querySelector('.teams-list');
+          if (!bar || !list) return;
+          bar.hidden = false;
+          var rows = Array.prototype.slice.call(list.children);
+          bar.addEventListener('click', function (e) {
+            var b = e.target instanceof Element ? e.target.closest('button[data-sort]') : null;
+            if (!b) return;
+            var k = b.getAttribute('data-sort');
+            rows.sort(function (p, q) {
+              if (k === 'name') return p.dataset.name.localeCompare(q.dataset.name);
+              return parseFloat(q.dataset[k]) - parseFloat(p.dataset[k]) || p.dataset.name.localeCompare(q.dataset.name);
+            });
+            rows.forEach(function (r, i) { r.querySelector('.tm-rank').textContent = String(i + 1); list.appendChild(r); });
+            bar.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          });
         });
       })();
     </script>

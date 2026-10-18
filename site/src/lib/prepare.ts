@@ -15,7 +15,7 @@ type Block =
   | { h3: string }
   | { quote: string; by: string; sources?: Ref[] }
   | { scrolly: string; steps: Step[] }
-  | { lookup: string; title: string; intro: string; sources?: Ref[] };
+  | { teams: string; title: string; intro: string; sources?: Ref[] };
 export type PreparedStep = { step: string; html: string; sources: string[]; numbers: number[] };
 export type Prepared =
   | { kind: 'p'; html: string; sources: string[]; numbers: number[] }
@@ -23,7 +23,7 @@ export type Prepared =
   | { kind: 'h3'; text: string }
   | { kind: 'quote'; html: string; by: string; sources: string[]; numbers: number[] }
   | { kind: 'scrolly'; id: string; numbers: number[]; steps: PreparedStep[] }
-  | { kind: 'lookup'; data: string; title: string; intro: string };
+  | { kind: 'teams'; title: string; intro: string; sources: string[]; numbers: number[] };
 
 export async function prepare(blocks: Block[], cites: Citations, where: string): Promise<Prepared[]> {
   const out: Prepared[] = [];
@@ -39,13 +39,11 @@ export async function prepare(blocks: Block[], cites: Citations, where: string):
       const numbers = cites.add(await figureSources(b.scrolly));
       const steps = b.steps.map((s, j) => ({ step: s.step, ...paragraph(s.p, s.sources ?? [], `${at} step ${j + 1}`, cites) }));
       out.push({ kind: 'scrolly', id: b.scrolly, numbers, steps });
-    } else if ('lookup' in b)
-      out.push({
-        kind: 'lookup',
-        data: b.lookup,
-        title: plain(b.title, { where: `${at} title`, allow: ALLOW }),
-        intro: paragraph(b.intro, b.sources ?? [], `${at} intro`).html,
-      });
+    } else if ('teams' in b) {
+      if (b.teams !== 'all') throw new Error(`${at}: unknown team list ${b.teams}`);
+      const intro = paragraph(b.intro, b.sources ?? [], `${at} intro`, cites);
+      out.push({ kind: 'teams', title: plain(b.title, { where: `${at} title`, allow: ALLOW }), intro: intro.html, sources: intro.sources, numbers: intro.numbers });
+    }
     else throw new Error(`${at}: unsupported block`);
   }
   return out;

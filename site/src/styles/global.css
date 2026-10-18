@@ -25,6 +25,8 @@
   --seq-3: #5598e7;
   --seq-4: #256abf;
   --seq-5: #104281;
+  --water-top: #cfe2f6;
+  --water-veil: rgba(214, 230, 247, 0.74);
   --serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
   --sans: 'Libre Franklin Variable', 'Franklin Gothic Medium', 'Helvetica Neue', Arial, sans-serif;
   --measure: 37.5rem;
@@ -58,6 +60,8 @@
     --seq-3: #3987e5;
     --seq-4: #6da7ec;
     --seq-5: #b7d3f6;
+    --water-top: #14466e;
+    --water-veil: rgba(13, 53, 87, 0.74);
   }
 }
 :root[data-theme='dark'] {
@@ -85,6 +89,8 @@
   --seq-3: #3987e5;
   --seq-4: #6da7ec;
   --seq-5: #b7d3f6;
+  --water-top: #14466e;
+  --water-veil: rgba(13, 53, 87, 0.74);
 }
 
 *,
@@ -1044,148 +1050,155 @@ figure.chart {
   stroke-dasharray: 3 2;
 }
 
-/* The lead chart's steps (see Rebuild.svelte): new arenas, the shift since 2014, the largest deals, pending money */
-[data-step='new'] .seg.existing,
-[data-step='new'] .seg.pending {
-  opacity: 0.1;
+/* The lead graphic (see Ball.svelte): a basketball in water, its layers lit one step at a time */
+.chart svg .water-top {
+  stop-color: var(--water-top);
 }
-[data-step='new'] .ann:not(.a-new),
-[data-step='new'] .band {
+.chart svg .water-bottom {
+  stop-color: var(--surface);
+}
+.chart svg .veil {
+  fill: var(--water-veil);
+}
+.chart svg .waterline {
+  fill: none;
+  stroke: var(--public);
+  stroke-width: 2;
+}
+.chart svg .slice {
+  stroke: #fff;
+  stroke-opacity: 0.8;
+  stroke-width: 1.5;
+}
+.chart svg .in-val {
+  fill: #fff;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  paint-order: stroke;
+  stroke: #4a2208;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.chart svg .lay,
+.chart svg .lab {
+  transition: opacity 0.45s ease;
+}
+[data-step='built'] .lay,
+[data-step='built'] .lab:not(.lab-build),
+[data-step='renovated'] :is(.lay-buy, .lay-pay, .lay-breaks, .lab-buy, .lab-pay, .lab-breaks, .lab-total),
+[data-step='bought'] :is(.lay-breaks, .lab-breaks, .lab-total),
+[data-step='breaks'] .lab-total {
   opacity: 0;
 }
-[data-step='shift'] .seg.pending,
-[data-step='shift'] .ann.a-new,
-[data-step='shift'] .ann.a-largest,
-[data-step='shift'] .ann.a-pending {
-  opacity: 0;
-}
-[data-step='largest'] .seg.pending,
-[data-step='largest'] .ann.a-new,
-[data-step='largest'] .ann.a-pending {
-  opacity: 0;
-}
-[data-step='largest'] .seg:not(.hl) {
-  opacity: 0.22;
-}
-[data-step='pending'] .ann.a-new {
-  opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+  .chart svg .lay,
+  .chart svg .lab {
+    transition: none !important;
+  }
 }
 
-/* Look up an arena */
-.lookup {
-  margin-top: 44px;
+/* Team values (see Values.svelte and ValueTrend.svelte) */
+.chart svg .db-line {
+  stroke: var(--axis);
+  stroke-width: 2;
+}
+.chart svg .db-paid {
+  fill: var(--surface);
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+}
+.chart svg .db-now,
+.chart svg .trend-dot {
+  stroke: var(--surface);
+  stroke-width: 1.5;
+}
+.chart svg .trend-dot {
+  fill: var(--orange);
+}
+.chart svg .trend-line {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.chart svg .trend-area {
+  fill: var(--orange-wash);
+}
+
+/* Who owns the teams (see Owners.svelte) */
+.chart svg .own-tile {
+  fill: var(--plane);
+}
+.chart svg .own-strip {
+  fill: transparent;
+}
+.chart svg .own-pe .own-strip {
+  fill: var(--orange);
+}
+.chart svg .own-fin .own-strip {
+  fill: var(--orange);
+  fill-opacity: 0.45;
+}
+.chart svg .own-field {
+  fill: var(--ink-2);
+}
+.chart svg .own-funds {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+/* Every team, ranked (see Teams.astro): a row per team that opens to its record */
+.teams {
+  margin-top: 36px;
   margin-bottom: 48px;
-  padding: 22px 24px 20px;
-  background: var(--plane);
   font-family: var(--sans);
 }
-.lookup h3 {
+.teams h3 {
   margin: 0 0 4px;
   font-size: 1.1875rem;
 }
-.lookup-intro {
+.teams-intro {
   font-size: 0.9375rem;
   line-height: 1.45;
   color: var(--ink-2);
   margin: 0 0 14px;
 }
-.lookup label {
-  display: block;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--ink-2);
-  margin: 0 0 4px;
+.teams-sort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 12px;
+  font-size: 0.875rem;
 }
-.lookup select {
+.teams-sort > span {
+  color: var(--muted);
+  margin-right: 2px;
+}
+.teams-sort button {
   font: inherit;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 26rem;
-  padding: 8px 10px;
+  font-size: 0.875rem;
+  padding: 5px 11px;
   color: var(--ink);
   background: var(--surface);
   border: 1px solid var(--axis);
-  border-radius: 4px;
+  border-radius: 999px;
+  cursor: pointer;
 }
-.lookup-pick {
-  margin: 0 0 18px;
+.teams-sort button[aria-pressed='true'] {
+  color: var(--surface);
+  background: var(--ink);
+  border-color: var(--ink);
 }
-.lookup-teams {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  font-size: 0.875rem;
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
-}
-.arena-card {
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  padding: 18px 20px 16px;
-}
-.arena-card[hidden] {
-  display: none;
-}
-.arena-card h4 {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 650;
-  line-height: 1.15;
-  margin: 0;
-}
-.arena-card .where {
-  color: var(--muted);
-  font-size: 0.875rem;
-  margin: 2px 0 14px;
-}
-.arena-card .big {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 2px 12px;
-  margin: 0 0 8px;
-}
-.arena-card .big strong {
-  font-size: 2.25rem;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-}
-.arena-card .big span {
-  color: var(--ink-2);
-  font-size: 0.9375rem;
-}
-.share-bar {
-  display: flex;
-  gap: 2px;
-  height: 12px;
-  margin: 10px 0 6px;
-}
-.share-bar span {
-  display: block;
-  height: 100%;
-}
-.share-bar .pub {
-  background: var(--public);
-}
-.share-bar .brk {
-  background: var(--public-soft);
-}
-.share-bar .prv {
-  background: var(--private);
-  border-radius: 0 3px 3px 0;
-}
-.share-key {
+.teams-key {
   display: flex;
   flex-wrap: wrap;
   gap: 2px 14px;
   font-size: 0.8125rem;
   color: var(--ink-2);
-  margin: 0 0 14px;
+  margin: 0 0 6px;
 }
-.share-key i {
+.teams-key i {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -1193,28 +1206,139 @@ figure.chart {
   border-radius: 2px;
   vertical-align: -1px;
 }
-.arena-card dl {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 12px 20px;
-  margin: 0 0 14px;
+.teams-key-value {
+  margin-left: auto;
 }
-.arena-card dt {
+.teams-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.tm {
+  border-bottom: 1px solid var(--rule);
+}
+.tm summary {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 13rem) minmax(0, 1fr) 4.5rem 4rem;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 4px;
+  cursor: pointer;
+  list-style: none;
+}
+.tm summary::-webkit-details-marker {
+  display: none;
+}
+.tm summary:hover,
+.tm details[open] summary {
+  background: var(--plane);
+}
+.tm-rank {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.tm-name {
+  min-width: 0;
+}
+.tm-name b {
+  display: block;
+  font-size: 0.9375rem;
+}
+.tm-name small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tm-bar {
+  display: flex;
+  gap: 2px;
+  height: 10px;
+}
+.tm-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 0 2px 2px 0;
+}
+.tm-direct {
+  background: var(--public);
+}
+.tm-breaks {
+  background: var(--public-soft);
+}
+.tm-amt,
+.tm-val {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9375rem;
+}
+.tm-amt {
+  font-weight: 650;
+}
+.tm-val {
+  color: var(--ink-2);
+}
+.tm-body {
+  padding: 6px 4px 16px 2.6rem;
+}
+.tm-body dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 12px 22px;
+  margin: 8px 0 12px;
+}
+.tm-body dt {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
 }
-.arena-card dd {
+.tm-body dd {
   margin: 2px 0 0;
   font-size: 0.9375rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
-.arena-card .more {
+.tm-sources {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.tm-body .more {
   font-size: 0.9375rem;
   font-weight: 600;
   margin: 0;
+}
+@media (max-width: 40rem) {
+  .tm summary {
+    grid-template-columns: 1.5rem minmax(0, 1fr) 4.25rem;
+    grid-template-areas: 'rank name amt' '. bar val';
+    row-gap: 4px;
+  }
+  .tm-rank {
+    grid-area: rank;
+  }
+  .tm-name {
+    grid-area: name;
+  }
+  .tm-bar {
+    grid-area: bar;
+  }
+  .tm-amt {
+    grid-area: amt;
+  }
+  .tm-val {
+    grid-area: val;
+    font-size: 0.8125rem;
+  }
+  .tm-body {
+    padding-left: 4px;
+  }
 }
 
 /* The full record: cards for the reference pages */

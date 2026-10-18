@@ -1,0 +1,259 @@
+{
+ "id": "value-history",
+ "title": "Average NBA team value by year, as estimated by Forbes",
+ "sources": [
+  "team-ledger",
+  "forbes-072tab",
+  "forbes-nba-team-valuations-biz-07nba-cz-kb-mo-cs-1206nb",
+  "foxnews-la-lakers-seize-crown-as-most-valuable-nba-team",
+  "foxnews-knicks-most-valuable-nba-franchise-forbes",
+  "hoopsrumors-forbes-releases-nba-franchise-valuations",
+  "stabroeknews-p-275012",
+  "hoopsrumors-forbes-franchise-valuations",
+  "hoopsrumors-nba-franchise-values-up-13-knicks-on-top",
+  "phillymag-sixers-nba-rankings-forbes-valuableteams",
+  "nba-nba-franchise-values-forbes",
+  "nba-nba-teams-forbes-values-knicks-no-1",
+  "nba-nba-teams-forbes-value-knicks-lakers-lead",
+  "thepeninsulaqatar-knicks-still-the-most-valuable-team-forbes",
+  "nba-forbes-average-nba-values-2022",
+  "frontofficesports-most-valuable-nba-franchises-2023-golden-s",
+  "bleacherreport-10140783-warriors-knicks-lakers-celtics-top-f",
+  "forbes-p-162626",
+  "forbes-atlanta-hawks",
+  "forbes-boston-celtics",
+  "forbes-brooklyn-nets",
+  "forbes-charlotte-hornets",
+  "forbes-chicago-bulls",
+  "forbes-cleveland-cavaliers",
+  "forbes-dallas-mavericks",
+  "forbes-denver-nuggets",
+  "forbes-detroit-pistons",
+  "forbes-golden-state-warriors",
+  "forbes-houston-rockets",
+  "forbes-indiana-pacers",
+  "forbes-los-angeles-clippers",
+  "forbes-los-angeles-lakers",
+  "forbes-memphis-grizzlies",
+  "forbes-miami-heat",
+  "forbes-milwaukee-bucks",
+  "forbes-minnesota-timberwolves",
+  "forbes-new-orleans-pelicans",
+  "forbes-new-york-knicks",
+  "forbes-oklahoma-city-thunder",
+  "forbes-orlando-magic",
+  "forbes-philadelphia-76ers",
+  "forbes-phoenix-suns",
+  "forbes-portland-trail-blazers",
+  "forbes-sacramento-kings",
+  "forbes-san-antonio-spurs",
+  "forbes-toronto-raptors",
+  "forbes-utah-jazz",
+  "forbes-washington-wizards"
+ ],
+ "base_sources": [
+  "team-ledger"
+ ],
+ "columns": [
+  "year",
+  "forbes_avg_b",
+  "basis",
+  "label",
+  "sources"
+ ],
+ "rows": [
+  {
+   "year": 2003,
+   "forbes_avg_b": 0.248,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "forbes-072tab"
+   ]
+  },
+  {
+   "year": 2007,
+   "forbes_avg_b": 0.372,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "forbes-nba-team-valuations-biz-07nba-cz-kb-mo-cs-1206nb"
+   ]
+  },
+  {
+   "year": 2009,
+   "forbes_avg_b": 0.367,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "foxnews-la-lakers-seize-crown-as-most-valuable-nba-team"
+   ]
+  },
+  {
+   "year": 2011,
+   "forbes_avg_b": 0.369,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "foxnews-knicks-most-valuable-nba-franchise-forbes"
+   ]
+  },
+  {
+   "year": 2013,
+   "forbes_avg_b": 0.509,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "hoopsrumors-forbes-releases-nba-franchise-valuations"
+   ]
+  },
+  {
+   "year": 2014,
+   "forbes_avg_b": 0.634,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "stabroeknews-p-275012"
+   ]
+  },
+  {
+   "year": 2015,
+   "forbes_avg_b": 1.1,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "hoopsrumors-forbes-franchise-valuations"
+   ]
+  },
+  {
+   "year": 2016,
+   "forbes_avg_b": 1.25,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "hoopsrumors-nba-franchise-values-up-13-knicks-on-top"
+   ]
+  },
+  {
+   "year": 2017,
+   "forbes_avg_b": 1.36,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "phillymag-sixers-nba-rankings-forbes-valuableteams"
+   ]
+  },
+  {
+   "year": 2018,
+   "forbes_avg_b": 1.65,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "nba-nba-franchise-values-forbes"
+   ]
+  },
+  {
+   "year": 2019,
+   "forbes_avg_b": 1.9,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "nba-nba-teams-forbes-values-knicks-no-1"
+   ]
+  },
+  {
+   "year": 2020,
+   "forbes_avg_b": 2.12,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "nba-nba-teams-forbes-value-knicks-lakers-lead"
+   ]
+  },
+  {
+   "year": 2021,
+   "forbes_avg_b": 2.2,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "thepeninsulaqatar-knicks-still-the-most-valuable-team-forbes"
+   ]
+  },
+  {
+   "year": 2022,
+   "forbes_avg_b": 2.86,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "nba-forbes-average-nba-values-2022"
+   ]
+  },
+  {
+   "year": 2023,
+   "forbes_avg_b": 3.85,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "frontofficesports-most-valuable-nba-franchises-2023-golden-s"
+   ]
+  },
+  {
+   "year": 2024,
+   "forbes_avg_b": 4.4,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "bleacherreport-10140783-warriors-knicks-lakers-celtics-top-f"
+   ]
+  },
+  {
+   "year": 2025,
+   "forbes_avg_b": 5.4,
+   "basis": "Forbes list",
+   "label": "c",
+   "sources": [
+    "forbes-p-162626"
+   ]
+  },
+  {
+   "year": 2026,
+   "forbes_avg_b": 6.126,
+   "basis": "Mean of the 30 Forbes team values",
+   "label": "a",
+   "sources": [
+    "forbes-atlanta-hawks",
+    "forbes-boston-celtics",
+    "forbes-brooklyn-nets",
+    "forbes-charlotte-hornets",
+    "forbes-chicago-bulls",
+    "forbes-cleveland-cavaliers",
+    "forbes-dallas-mavericks",
+    "forbes-denver-nuggets",
+    "forbes-detroit-pistons",
+    "forbes-golden-state-warriors",
+    "forbes-houston-rockets",
+    "forbes-indiana-pacers",
+    "forbes-los-angeles-clippers",
+    "forbes-los-angeles-lakers",
+    "forbes-memphis-grizzlies",
+    "forbes-miami-heat",
+    "forbes-milwaukee-bucks",
+    "forbes-minnesota-timberwolves",
+    "forbes-new-orleans-pelicans",
+    "forbes-new-york-knicks",
+    "forbes-oklahoma-city-thunder",
+    "forbes-orlando-magic",
+    "forbes-philadelphia-76ers",
+    "forbes-phoenix-suns",
+    "forbes-portland-trail-blazers",
+    "forbes-sacramento-kings",
+    "forbes-san-antonio-spurs",
+    "forbes-toronto-raptors",
+    "forbes-utah-jazz",
+    "forbes-washington-wizards"
+   ]
+  }
+ ],
+ "note": "Each year's average is from Forbes's list published that year (2007 and 2009 lists were published in December). The 2026 value is the mean of Forbes's 30 team values of October 2026.",
+ "method": "select year, forbes_avg_b, 'Forbes list' as basis, label, coalesce((select list(s.source_id order by s.ord) from history_sources s where s.year = h.year), []) as sources from value_history h union all select 2026, avg(forbes_2026_b), 'Mean of the 30 Forbes team values', 'a', (select list(distinct s.source_id order by s.source_id) from value_sources s where s.field = 'value' and s.source_id like 'forbes-%' and s.source_id <> 'forbes-p-162626') from team_values order by year"
+}

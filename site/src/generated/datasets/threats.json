@@ -9,6 +9,7 @@
   "wiki-climate-pledge-arena",
   "miaminewtimes-arena-winners-and-losers-alex-shoots-alex-scor",
   "miaminewtimes-tricky-micky-arisons-heat-doesnt-pay-rent-for",
+  "miamidade-2014-06-03-bcc",
   "sportsbusinessdaily-sacramento-city-council-wrestles-with-ki",
   "voiceofoc-anaheim-council-approves-bond-deal-for-basketbal",
   "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
@@ -205,7 +206,7 @@
    "said_or_done": "Verbatim (Miami New Times, 1996-11-14): \"Back in June the shipping magnate forced the county into an agreement by threatening to move to Broward, a tactic his own negotiators later admitted was a bluff.\" Arison also sued (unsuccessfully) to block the ballot initiative, then funded an ad campaign.",
    "alt_city": "Broward County",
    "league_role": "none documented",
-   "money_after": "Miami-Dade: $38M bayfront county land + county operating payments ($8.5M/yr in the deal announced days before the vote; later reported $6.4M/yr; $64M paid by 2010); county gets 40% of arena profits above $14M",
+   "money_after": "Miami-Dade: $38M bayfront county land + county operating payments ($8.5M/yr in the deal announced days before the vote; later reported $6.4M/yr; $64M paid by 2010); county gets 40% of arena profits above $14M (paid once, $257,134 in 2013; deleted in the 2014 amended agreements)",
    "money_usd_m": 38.0,
    "mechanism": "Land + annual operating subsidy from county; Heat financed the $213M building",
    "vote": "County referendum 1996-11-05 (\"overwhelming victory\", MNT)",
@@ -222,7 +223,8 @@
    "lag_months": 4.7,
    "sources": [
     "miaminewtimes-arena-winners-and-losers-alex-shoots-alex-scor",
-    "miaminewtimes-tricky-micky-arisons-heat-doesnt-pay-rent-for"
+    "miaminewtimes-tricky-micky-arisons-heat-doesnt-pay-rent-for",
+    "miamidade-2014-06-03-bcc"
    ]
   },
   {

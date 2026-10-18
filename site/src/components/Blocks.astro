@@ -1,7 +1,7 @@
 ---
 import Prose from './Prose.astro';
 import Chart from './Chart.astro';
-import Lookup from './Lookup.astro';
+import Teams from './Teams.astro';
 import Cites from './Cites.astro';
 import type { Prepared } from '../lib/prepare';
 interface Props {
@@ -19,6 +19,6 @@ const { blocks } = Astro.props;
       <footer>{b.by} <Cites ids={b.sources} numbers={b.numbers} /></footer>
     </blockquote>
   ) :
-  b.kind === 'lookup' ? <Lookup data={b.data} title={b.title} intro={b.intro} /> :
+  b.kind === 'teams' ? <Teams title={b.title} intro={b.intro} sources={b.sources} numbers={b.numbers} /> :
   <h2>{b.text}</h2>
 )}

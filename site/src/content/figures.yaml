@@ -1,6 +1,64 @@
 # Chart frames. Titles state the finding; numbers are tokens from pipeline/stats.yaml.
 # Text fields are folded block scalars (>-) so colons and braces need no quoting.
 
+ball:
+  title: >-
+    Building the arenas is {{construction_share}} of what the public has put into them
+  sub: >-
+    Public money in the {{arenas_n}} arenas NBA teams play in, by kind, in 2026 dollars. Each layer's area is
+    proportional to its money; the part above the waterline paid to build the arenas
+  dataset: public-layers
+  notes:
+    - >-
+      Tax breaks are property-tax breaks and taxes diverted to arena debt. The federal cost of tax-exempt arena
+      bonds, {{fed_bond_cost}}, is not included, because a different public pays it.
+
+values:
+  title: >-
+    The median team is worth {{value_multiple_median}} times what its owners paid, after inflation
+  sub: >-
+    For each team, the price its controlling owners paid, in 2026 dollars; its value in October 2026, as estimated
+    by Forbes; and the public money in its arena, including tax breaks
+  dataset: team-values
+  legend:
+    - { label: Value in 2026, key: orange }
+    - { label: Price paid in 2026 dollars, key: private }
+    - { label: Public money in the arena, key: public }
+  notes:
+    - >-
+      Prices are what the current controlling owners paid, or the valuation at which they bought control; some
+      included an arena or other teams. Prices for the Heat, Knicks, Raptors and Wizards are not shown, because
+      they were not disclosed or bought more or less than the team. Forbes counts a team and its arena operations,
+      not the arena's real estate.
+
+trend:
+  title: >-
+    The average NBA team was worth {{value_mean_2026}} in 2026, {{value_growth_2014}} times the 2014 average
+  sub: >-
+    Average team value on each year's Forbes list, in the dollars of the day
+  dataset: value-history
+  notes:
+    - >-
+      Forbes's published averages; the 2026 figure is the mean of its {{arenas_n}} team values of October 2026.
+      Years with no list, or whose list could not be read, are left out.
+
+owners:
+  title: >-
+    {{finance_teams_n:cap}} of the {{arenas_n}} teams have an owner from finance or an investment fund behind them
+  sub: >-
+    Each team, marked by where its controlling owners made their money, with the investment funds that hold a stake
+    in the team or its parent company, as of October 2026
+  dataset: ownership
+  legend:
+    - { label: Owners from private equity or hedge funds, key: orange }
+    - { label: Owners from other finance, key: orange-soft }
+  notes:
+    - >-
+      Source of wealth from Forbes's profiles of the owners, or the release or report named in the data. The Bucks'
+      controlling owners are Wes Edens, who co-founded the asset manager Fortress, and the Haslam family. Stakes seen
+      only in search results, such as a reported Arctos stake in the Grizzlies, are left out. Josh Kushner's
+      venture firm, Thrive, is part of the pending purchase of the Lakers.
+
 rebuild:
   title: >-
     Since 2014, most public arena money has gone to existing arenas

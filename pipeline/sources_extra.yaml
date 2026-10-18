@@ -17,6 +17,14 @@ sources:
   origin: independent
   date: 2026-10-11
   checked: 2026-10-16
+- id: team-ledger
+  url: https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams
+  title: Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page
+  title_from: curated
+  publisher: This site
+  origin: independent
+  date: 2026-10-18
+  checked: 2026-10-18
 - id: uc-formula-method
   url: https://github.com/realvivek/NBA-Arena-Funding/blob/main/data/property_tax/united_center_formula_savings.md
   title: United Center stadium valuation formula, taxes forgone 2002-2016 (method and yearly series)
@@ -113,3 +121,43 @@ sources:
   origin: government
   date: 2025
   checked: 2026-10-11
+- id: sacurrent-csl-legends-2025
+  url: https://www.sacurrent.com/?p=377739
+  title: Report on CSL International's study of the Spurs arena district and its ties to Legends and Sixth Street (Michael Karlis)
+  title_from: curated
+  publisher: San Antonio Current
+  origin: independent
+  date: 2025-08-21
+  checked: 2026-10-18
+- id: pollstar-asm-okc-2025
+  url: https://news.pollstar.com/2025/06/18/oklahoma-city-extends-partnership-with-asm-global-for-new-paycom-center-approves-agreements-to-keep-thunder-in-town-through-2053/
+  title: Oklahoma City extends partnership with ASM Global for new Paycom Center, approves agreements to keep Thunder in town through 2053
+  title_from: url
+  publisher: Pollstar
+  origin: independent
+  date: 2025-06-18
+  checked: 2026-10-18
+- id: propublica-billionaire-playbook
+  url: https://www.propublica.org/article/the-billionaire-playbook-how-sports-owners-use-their-teams-to-avoid-millions-in-taxes
+  title: 'The Billionaire Playbook: How Sports Owners Use Their Teams to Avoid Millions in Taxes'
+  title_from: curated
+  publisher: ProPublica
+  origin: independent
+  date: 2021-07-08
+  checked: 2026-10-18
+- id: hr1-engrossed-2025
+  url: https://www.govinfo.gov/content/pkg/BILLS-119hr1eh/html/BILLS-119hr1eh.htm
+  title: H.R. 1 (119th Congress), as passed by the House, section 112017 (limitation on amortization of sports franchises)
+  title_from: curated
+  publisher: U.S. House of Representatives (GovInfo)
+  origin: government
+  date: 2025-05-22
+  checked: 2026-10-18
+- id: hr1-enrolled-2025
+  url: https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm
+  title: H.R. 1 (119th Congress), enrolled bill as signed into law
+  title_from: curated
+  publisher: U.S. Congress (GovInfo)
+  origin: government
+  date: 2025-07
+  checked: 2026-10-18

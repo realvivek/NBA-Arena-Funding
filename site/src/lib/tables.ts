@@ -1,5 +1,5 @@
 /** "Show the data" tables for each chart: the same rows the chart draws, with their sources. */
-import { money, dollars, TEAM_CITY } from './chart';
+import { money, dollars, TEAM_CITY, TEAM_NAME } from './chart';
 import type { Table } from './data';
 import { sitePath } from './paths';
 
@@ -12,6 +12,81 @@ const CATEGORY: Record<string, string> = {
 };
 const pct = (v: number | null | undefined, d = 0) => (v == null ? '' : `${v.toFixed(d)}%`);
 const m = (v: number | null | undefined) => (v == null ? '' : money(v));
+
+export function ballTable(rows: any[]): Table {
+  const total = rows.reduce((a, r) => a + r.public_2026_m, 0);
+  return {
+    columns: [
+      { key: 'name', label: 'Public money for' },
+      { key: 'public', label: 'Public money (2026 $)', num: true },
+      { key: 'share', label: 'Share of the total', num: true },
+    ],
+    rows: [
+      ...rows.map((r) => ({ name: r.name, public: m(r.public_2026_m), share: pct((100 * r.public_2026_m) / total) })),
+      { name: 'All of it', public: m(total), share: '100%' },
+    ],
+  };
+}
+
+const SCOPE: Record<string, string> = {
+  team: '',
+  team_with_assets: 'with the arena or other assets',
+  valuation: 'valuation of a controlling stake',
+  not_comparable: 'not comparable',
+};
+
+export function valuesTable(rows: any[]): Table {
+  return {
+    columns: [
+      { key: 'team', label: 'Team' },
+      { key: 'owner', label: 'Controlling owner' },
+      { key: 'paid', label: 'Price paid' },
+      { key: 'paid26', label: 'In 2026 $', num: true },
+      { key: 'value', label: 'Value, 2026', num: true },
+      { key: 'public', label: 'Public money in the arena (2026 $)', num: true },
+    ],
+    rows: rows.map((r) => ({
+      team: TEAM_NAME[r.team] ?? r.team,
+      owner: r.owner,
+      paid: r.price_m == null ? `Not comparable: ${r.price_note}` : `${money(r.price_m)} in ${r.price_year}${SCOPE[r.price_scope] ? ` (${SCOPE[r.price_scope]})` : ''}`,
+      paid26: r.price_2026_m == null || r.price_m == null ? '' : m(r.price_2026_m),
+      value: money(r.forbes_2026_b * 1000, 2),
+      public: m(r.public_2026_m) + (r.tax_breaks_2026_m ? ` + ${m(r.tax_breaks_2026_m)} tax breaks` : ''),
+    })),
+  };
+}
+
+const OWNER_CLASS: Record<string, string> = { private_equity: 'Private equity or hedge funds', other_finance: 'Other finance', other: 'Other' };
+
+export function ownersTable(rows: any[]): Table {
+  return {
+    columns: [
+      { key: 'team', label: 'Team' },
+      { key: 'owner', label: 'Controlling owners' },
+      { key: 'wealth', label: 'Main source of wealth' },
+      { key: 'cls', label: 'Counted as' },
+      { key: 'funds', label: 'Funds with a stake' },
+    ],
+    rows: rows.map((r) => ({
+      team: TEAM_NAME[r.team] ?? r.team,
+      owner: r.owner,
+      wealth: r.owner_wealth,
+      cls: OWNER_CLASS[r.owner_class],
+      funds: r.funds.map((f: string, i: number) => `${f} (${r.stakes[i]})`).join('; '),
+    })),
+  };
+}
+
+export function trendTable(rows: any[]): Table {
+  return {
+    columns: [
+      { key: 'year', label: 'Year' },
+      { key: 'avg', label: 'Average team value', num: true },
+      { key: 'basis', label: 'Basis' },
+    ],
+    rows: rows.map((r) => ({ year: r.year, avg: money(r.forbes_avg_b * 1000, 2), basis: r.basis })),
+  };
+}
 
 export function rebuildTable(rows: any[]): Table {
   return {

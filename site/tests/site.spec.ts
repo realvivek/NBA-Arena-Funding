@@ -87,11 +87,11 @@ test('every number in the copy links to its fact-check entry', async ({ page }) 
 
 test('the story renders its headline, key figures and every chart', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('h1')).toHaveText("Taxpayers Are Now Paying to Rebuild the NBA’s Arenas");
+  await expect(page.locator('h1')).toHaveText('Taxpayers Paid for the NBA’s Arenas. Owners Kept the Gains.');
   await expect(page.locator('.findings li')).toHaveCount(6);
   for (const href of await page.$$eval('.findings a.go', (as) => as.map((a) => a.getAttribute('href') ?? '')))
     await expect(page.locator(href), href).toHaveCount(1);
-  for (const id of ['rebuild', 'arenas', 'map', 'takeovers', 'whopays', 'households', 'uc', 'ongoing', 'threats', 'leases'])
+  for (const id of ['ball', 'rebuild', 'whopays', 'households', 'trend', 'values', 'owners', 'leases'])
     await expect(page.locator(`#fig-${id}`)).toHaveCount(1);
 });
 
@@ -111,26 +111,30 @@ test('the lead graphic follows the steps as the reader scrolls', async ({ browse
   }
 });
 
-test('the lookup shows the card for the team picked', async ({ page }) => {
+test('the team list sorts and opens each team\'s record', async ({ page }) => {
   await page.goto('/');
-  const pick = page.locator('#lookup-team');
-  await expect(pick).toBeVisible();
-  await expect(page.locator('.lookup-teams')).toBeHidden();
-  await expect(page.locator('.arena-card:visible')).toHaveCount(1);
-  await pick.selectOption('UTA');
-  await expect(page.locator('.arena-card:visible')).toHaveCount(1);
-  await expect(page.locator('.arena-card[data-team="UTA"]')).toBeVisible();
+  const rows = page.locator('.teams-list > li');
+  await expect(rows).toHaveCount(30);
+  await expect(page.locator('.teams-sort')).toBeVisible();
+  await page.locator('.teams-sort button', { hasText: 'A to Z' }).click();
+  await expect(rows.first()).toHaveAttribute('data-name', 'Atlanta Hawks');
+  await expect(rows.first().locator('.tm-rank')).toHaveText('1');
+  await page.locator('.teams-sort button', { hasText: 'Team value' }).click();
+  await expect(rows.first()).toHaveAttribute('data-name', 'Golden State Warriors');
+  await rows.first().locator('summary').click();
+  await expect(rows.first().locator('.tm-body')).toBeVisible();
+  await expect(rows.first().locator('.tm-body dt')).toHaveCount(await rows.first().locator('.tm-body dd').count());
 });
 
-test('without JavaScript the lead graphic shows its last step and the lookup lists every arena', async ({ browser }) => {
+test('without JavaScript the lead graphic shows its last step and the team list keeps its order', async ({ browser }) => {
   const ctx = await browser.newContext({ javaScriptEnabled: false });
   const page = await ctx.newPage();
   await page.goto('/');
   const fig = page.locator('figure.scrolly');
   const last = await fig.locator('.step').last().getAttribute('data-step');
   await expect(fig).toHaveAttribute('data-step', last ?? '');
-  await expect(page.locator('.lookup-pick')).toBeHidden();
-  await expect(page.locator('.lookup-teams li')).toHaveCount(await page.locator('.arena-card').count());
-  await expect(page.locator('.arena-card:visible')).toHaveCount(1);
+  await expect(page.locator('.teams-sort')).toBeHidden();
+  await expect(page.locator('.teams-list > li')).toHaveCount(30);
+  await expect(page.locator('.teams-list > li').first()).toHaveAttribute('data-name', 'Brooklyn Nets');
   await ctx.close();
 });

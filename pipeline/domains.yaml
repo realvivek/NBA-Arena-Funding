@@ -167,3 +167,52 @@ brookings.edu: {publisher: Brookings Institution, origin: independent}
 imgix.cosmicjs.com: {publisher: NBA and National Basketball Players Association, origin: team_or_league}
 lobbyingdisclosure.house.gov: {publisher: Clerk of the U.S. House of Representatives, origin: government}
 downtownmemphis.com: {publisher: Downtown Memphis Commission, origin: government}
+abc17news.com: {publisher: ABC 17 News, origin: independent}
+abc7.com: {publisher: ABC7 Los Angeles, origin: independent}
+abc7news.com: {publisher: ABC7 News, origin: independent}
+ajc.com: {publisher: The Atlanta Journal-Constitution, origin: independent}
+aljazeera.com: {publisher: Al Jazeera, origin: independent}
+bangordailynews.com: {publisher: Bangor Daily News, origin: independent}
+barclayscenter.com: {publisher: Barclays Center, origin: team_or_league}
+bleacherreport.com: {publisher: Bleacher Report, origin: independent}
+ca.finance.yahoo.com: {publisher: Yahoo Finance Canada, origin: independent}
+chicago.suntimes.com: {publisher: Chicago Sun-Times, origin: independent}
+cnbc.com: {publisher: CNBC, origin: independent}
+columbian.com: {publisher: The Columbian, origin: independent}
+deseret.com: {publisher: Deseret News, origin: independent}
+finance.yahoo.com: {publisher: Yahoo Finance, origin: independent}
+forbes.com: {publisher: Forbes, origin: independent}
+forbes.com.au: {publisher: Forbes Australia, origin: independent}
+fox5ny.com: {publisher: FOX 5 New York, origin: independent}
+foxbusiness.com: {publisher: Fox Business, origin: independent}
+foxnews.com: {publisher: Fox News, origin: independent}
+frontofficesports.com: {publisher: Front Office Sports, origin: independent}
+headlinersfoundation.org: {publisher: Headliners Foundation of Texas, origin: independent}
+inquirer.com: {publisher: The Philadelphia Inquirer, origin: independent}
+investor.msgsports.com: {publisher: Madison Square Garden Sports Corp., origin: team_or_league}
+ktnv.com: {publisher: KTNV, origin: independent}
+lakersnation.com: {publisher: Lakers Nation, origin: independent}
+nbcbayarea.com: {publisher: NBC Bay Area, origin: independent}
+nbcdfw.com: {publisher: NBC 5 Dallas-Fort Worth, origin: independent}
+nbcsportsbayarea.com: {publisher: NBC Sports Bay Area, origin: independent}
+newson6.com: {publisher: News On 6, origin: independent}
+otpp.com: {publisher: Ontario Teachers' Pension Plan, origin: team_or_league}
+platinumequity.com: {publisher: Platinum Equity, origin: team_or_league}
+roi-nj.com: {publisher: ROI-NJ, origin: independent}
+sa.gov: {publisher: City of San Antonio, origin: government}
+sacurrent.com: {publisher: San Antonio Current, origin: independent}
+slcdocs.com: {publisher: Salt Lake City Corporation, origin: government}
+sltrib.com: {publisher: The Salt Lake Tribune, origin: independent}
+stabroeknews.com: {publisher: Stabroek News, origin: independent}
+stocktitan.net: {publisher: Blue Owl Capital (release via StockTitan), origin: team_or_league}
+thepeninsulaqatar.com: {publisher: The Peninsula, origin: independent}
+westernmassnews.com: {publisher: Western Mass News, origin: independent}
+wrtv.com: {publisher: WRTV Indianapolis, origin: independent}
+wsls.com: {publisher: WSLS 10, origin: independent}
+revisor.mn.gov: {publisher: Minnesota Office of the Revisor of Statutes, origin: government}
+clearygottlieb.com: {publisher: Cleary Gottlieb, origin: independent}
+investmentnews.com: {publisher: InvestmentNews, origin: independent}
+news4jax.com: {publisher: News4JAX, origin: independent}
+privateequitywire.co.uk: {publisher: Private Equity Wire, origin: independent}
+sportcal.com: {publisher: Sportcal, origin: independent}
+cliffordchance.com: {publisher: Clifford Chance, origin: independent}

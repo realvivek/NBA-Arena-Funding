@@ -64,6 +64,7 @@ authorities/lease_clock.csv:
   fields:
     team: {type: string, constraints: {required: true, unique: true, pattern: '^[A-Z]{3}$'}}
     term_end_year: {type: number, constraints: {minimum: 2026, maximum: 2100}}
+    summary: {type: string, constraints: {required: true}}
     label: {type: string, constraints: {required: true, pattern: '^[abcu].*'}}
 
 property_tax/united_center_formula_savings.csv:
@@ -110,3 +111,58 @@ inputs/research_claims.csv:
     key: {type: string, constraints: {required: true, unique: true}}
     quote: {type: string, constraints: {required: true}}
     source: {type: string, constraints: {required: true, pattern: '^https?://.+'}}
+
+teams/team_values.csv:
+  primaryKey: [team]
+  fields:
+    team: {type: string, constraints: {required: true, unique: true, pattern: '^[A-Z]{3}$'}}
+    owner: {type: string, constraints: {required: true}}
+    owner_class: {type: string, constraints: {required: true, enum: [private_equity, other_finance, other]}}
+    owner_source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+    control_year: {type: integer, constraints: {required: true, minimum: 1960, maximum: 2026}}
+    price_year: {type: integer, constraints: {required: true, minimum: 1960, maximum: 2026}}
+    price_m: {type: number, constraints: {minimum: 1}}
+    price_scope: {type: string, constraints: {required: true, enum: [team, team_with_assets, valuation, not_comparable]}}
+    price_label: {type: string, constraints: {required: true, enum: [b, c]}}
+    price_source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+    seller_price_m: {type: number, constraints: {minimum: 1}}
+    seller_year: {type: integer, constraints: {minimum: 1960, maximum: 2026}}
+    forbes_2025_b: {type: number, constraints: {required: true, minimum: 1, maximum: 50}}
+    forbes_2026_b: {type: number, constraints: {required: true, minimum: 1, maximum: 50}}
+    sportico_2026_b: {type: number, constraints: {required: true, minimum: 1, maximum: 50}}
+    value_label: {type: string, constraints: {required: true, enum: [c]}}
+    value_source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+    deal_value_b: {type: number, constraints: {minimum: 0.1, maximum: 50}}
+    deal_date: {type: string, constraints: {pattern: '^20[0-9]{2}-[01][0-9]-[0-3][0-9]$'}}
+    deal_label: {type: string, constraints: {enum: [b, c]}}
+    deal_source: {type: string, constraints: {pattern: '.*https?://.*'}}
+
+teams/value_history.csv:
+  primaryKey: [year]
+  fields:
+    year: {type: integer, constraints: {required: true, unique: true, minimum: 1990, maximum: 2025}}
+    reported: {type: date, constraints: {required: true}}
+    forbes_avg_b: {type: number, constraints: {required: true, minimum: 0.05, maximum: 50}}
+    label: {type: string, constraints: {required: true, enum: [c]}}
+    source: {type: string, constraints: {required: true, pattern: '^https?://.+'}}
+
+teams/public_return.csv:
+  primaryKey: [team]
+  fields:
+    team: {type: string, constraints: {required: true, unique: true, pattern: '^[A-Z]{3}$'}}
+    public_deal: {type: string, constraints: {required: true, enum: ['Y', 'N']}}
+    sale_share: {type: string, constraints: {required: true, enum: ['no', none_found, unknown, private_arena]}}
+    equity_stake: {type: string, constraints: {required: true, enum: ['Y', 'N']}}
+    summary: {type: string, constraints: {required: true}}
+    label: {type: string, constraints: {required: true, enum: [a, b, c, b/c, u]}}
+
+teams/investors.csv:
+  primaryKey: [fund, team]
+  fields:
+    fund: {type: string, constraints: {required: true}}
+    team: {type: string, constraints: {required: true, pattern: '^[A-Z]{3}$'}}
+    entered: {type: string, constraints: {pattern: '^20[0-9]{2}-[01][0-9](-[0-3][0-9])?$'}}
+    entry_value_b: {type: number, constraints: {minimum: 0.1, maximum: 50}}
+    status: {type: string, constraints: {required: true, enum: [current, exited, pending]}}
+    label: {type: string, constraints: {required: true, enum: [b, c, b/c]}}
+    source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}

@@ -21,6 +21,36 @@
   "review": "not reached (HTTP 403); title from search-index text quoted in the research notes"
  },
  {
+  "id": "abc17news-p-1103237",
+  "url": "https://abc17news.com/?p=1103237",
+  "title": "NBA approves sale of Phoenix Suns, Mercury to Mat Ishbia",
+  "title_from": "page title",
+  "publisher": "ABC 17 News",
+  "origin": "independent",
+  "date": "2023-02-07",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "abc7",
+  "url": "https://abc7.com/16783698/",
+  "title": "Buss family to sell Lakers to Mark Walter for $10B valuation",
+  "title_from": "page title",
+  "publisher": "ABC7 Los Angeles",
+  "origin": "independent",
+  "date": "2025-06-18",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "abc7news-hawks-announce-sale-for-850m-to-antony-ressler-l",
+  "url": "https://abc7news.com/post/hawks-announce-sale-for-$850m-to-antony-ressler-led-group/677125/",
+  "title": "Hawks announce sale for $850M to Antony Ressler-led group",
+  "title_from": "page title",
+  "publisher": "ABC7 News",
+  "origin": "independent",
+  "date": "2015-04-23",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "actionnews5-shelby-county-commissioners-vote-unanimously-kee",
   "url": "https://www.actionnews5.com/2022/04/13/shelby-county-commissioners-vote-unanimously-keep-grizzlies-memphis-through-2029",
   "title": "Shelby County Commissioners vote unanimously to keep Grizzlies in Memphis through 2029",
@@ -29,6 +59,36 @@
   "origin": "independent",
   "date": "2022-04-12",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "ajc-rnrhggeufau2uxmza4cdgi",
+  "url": "https://www.ajc.com/news/local-govt--politics/philips-arena-get-192-million-face-lift/rNRHGGEUfAU2UXMza4CDgI",
+  "title": "Philips Arena to get $192.5 million face-lift",
+  "title_from": "page title",
+  "publisher": "The Atlanta Journal-Constitution",
+  "origin": "independent",
+  "date": "2016-11-01",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "aljazeera-clippers-2bn-sale-finalised-nba",
+  "url": "https://www.aljazeera.com/sports/2014/8/13/clippers-2bn-sale-finalised-nba",
+  "title": "Clippers' $2bn sale finalised",
+  "title_from": "page title",
+  "publisher": "Al Jazeera",
+  "origin": "independent",
+  "date": "2014-08-13",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "aljazeera-sold-supersonics-to-stay-in-seattle",
+  "url": "https://www.aljazeera.com/news/2006/10/25/sold-supersonics-to-stay-in-seattle",
+  "title": "Sold Supersonics to stay in Seattle",
+  "title_from": "page title",
+  "publisher": "Al Jazeera",
+  "origin": "independent",
+  "date": "2006-10-25",
+  "checked": "2026-10-18"
  },
  {
   "id": "archive-doc5530-1992-10-22-1",
@@ -156,6 +216,26 @@
   "review": "not reached (HTTP 403, Cloudflare challenge); title and date from the URL"
  },
  {
+  "id": "bangordailynews-saints-owner-tom-benson-buys-hornets-from-nb",
+  "url": "https://www.bangordailynews.com/2012/04/13/sports/saints-owner-tom-benson-buys-hornets-from-nba/",
+  "title": "Saints owner Tom Benson buys Hornets from NBA",
+  "title_from": "page title",
+  "publisher": "Bangor Daily News",
+  "origin": "independent",
+  "date": "2012-04-13",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "barclayscenter-joe-tsai-completes-acquisition-of-full-owners",
+  "url": "https://www.barclayscenter.com/news/detail/joe-tsai-completes-acquisition-of-full-ownership-of-brooklyn-nets-and-barclays-center",
+  "title": "Joe Tsai Completes Acquisition of Full Ownership of Brooklyn Nets and Barclays Center",
+  "title_from": "curated",
+  "publisher": "Barclays Center",
+  "origin": "team_or_league",
+  "date": "2019-09-18",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "bexar-2019-tax-exempt-venue-project-revenue-refunding",
   "url": "https://www.bexar.org/DocumentCenter/View/25129/2019-Tax-Exempt-Venue-Project-Revenue-Refunding-Bonds-Combined-Venue-Tax-OS",
   "title": "Official Statement: Bexar County, Texas Tax-Exempt Venue Project Revenue Refunding Bonds (Combined Venue Tax), Series 2019",
@@ -214,6 +294,16 @@
   "origin": "independent",
   "date": "2014-04-22",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "bleacherreport-10140783-warriors-knicks-lakers-celtics-top-f",
+  "url": "https://bleacherreport.com/articles/10140783-warriors-knicks-lakers-celtics-top-forbes-2024-list-of-most-valuable-nba-teams",
+  "title": "Warriors, Knicks, Lakers, Celtics Top Forbes' 2024 List of Most Valuable NBA Teams",
+  "title_from": "page title",
+  "publisher": "Bleacher Report",
+  "origin": "independent",
+  "date": "2024-10-24",
+  "checked": "2026-10-18"
  },
  {
   "id": "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
@@ -386,6 +476,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "ca-rogers-becomes-sole-owner-mlse-195642123",
+  "url": "https://ca.finance.yahoo.com/news/rogers-becomes-sole-owner-mlse-195642123.html",
+  "title": "Rogers becomes sole owner of MLSE after completing purchase of remaining 25% stake",
+  "title_from": "page title",
+  "publisher": "Yahoo Finance Canada",
+  "origin": "independent",
+  "date": "2026-10-01",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "cao-page379",
   "url": "https://cao.lacity.gov/content/budget/22-23/ProposedBudget/files/basic-html/page379.html",
   "title": "Staples Arena Funding Agreement Reconciliation (FY 2022-23 Proposed Budget, page 379)",
@@ -426,6 +526,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "cbsnews-broncos-sale-help-youth-programs-denver-metro-ar",
+  "url": "https://www.cbsnews.com/amp/colorado/news/broncos-sale-help-youth-programs-denver-metro-area-football-stadium-district",
+  "title": "Broncos sale will help youth programs in the Denver metro area",
+  "title_from": "page title",
+  "publisher": "CBS Colorado",
+  "origin": "independent",
+  "date": "2022-08-05",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "cbsnews-n-j-gives-76ers-82-million-to-build-practice-fac",
   "url": "https://www.cbsnews.com/amp/philadelphia/news/n-j-gives-76ers-82-million-to-build-practice-facility-and-offices-in-camden",
   "title": "N.J. Giving 76ers $82 Million To Build Practice Facility and Offices in Camden",
@@ -444,6 +554,46 @@
   "origin": "independent",
   "date": "2013-03-26",
   "checked": "2026-10-17"
+ },
+ {
+  "id": "cbssports-julia-koch-agrees-to-buy-15-stake-in-nets-libert",
+  "url": "https://www.cbssports.com/nba/news/julia-koch-agrees-to-buy-15-stake-in-nets-liberty-barclays-centers-parent-company-per-report",
+  "title": "Julia Koch agrees to buy 15% stake in Nets, Liberty, Barclays Center",
+  "title_from": "page title",
+  "publisher": "CBS Sports",
+  "origin": "independent",
+  "date": "2024-06-19",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "cbssports-lakers-sold-josh-kushner-bob-iger",
+  "url": "https://www.cbssports.com/nba/news/lakers-sold-josh-kushner-bob-iger/",
+  "title": "Lakers sold for record-breaking $12.5 billion: Everything to know about Josh Kushner, Bob Iger",
+  "title_from": "page title",
+  "publisher": "CBS Sports",
+  "origin": "independent",
+  "date": "2026-08-12",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "cbssports-michael-jordans-13-year-run-as-hornets-owner-end",
+  "url": "https://www.cbssports.com/nba/news/michael-jordans-13-year-run-as-hornets-owner-ends-as-franchise-completes-3-billion-sale/",
+  "title": "Michael Jordan's 13-year run as Hornets owner ends as franchise completes $3 billion sale",
+  "title_from": "curated",
+  "publisher": "CBS Sports",
+  "origin": "independent",
+  "date": "2023-08-03",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "cbssports-nba-board-of-governors-unanimously-approve-mark",
+  "url": "https://www.cbssports.com/nba/news/nba-board-of-governors-unanimously-approve-mark-cubans-majority-stake-sale-of-mavericks",
+  "title": "NBA board of governors unanimously approve Mark Cuban's majority stake sale of Mavericks",
+  "title_from": "curated",
+  "publisher": "CBS Sports",
+  "origin": "independent",
+  "date": "2023-12-27",
+  "checked": "2026-10-18"
  },
  {
   "id": "cbssports-thunder-will-stay-in-oklahoma-city-through-at-le",
@@ -514,6 +664,16 @@
   "origin": "government",
   "date": "2026-06-08",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "chicago-reinsdorfs-new-investors-bulls-and-united-center",
+  "url": "https://chicago.suntimes.com/bulls/2026/06/26/reinsdorfs-new-investors-bulls-and-united-center",
+  "title": "Reinsdorfs welcome new investors into Bulls, United Center",
+  "title_from": "page title",
+  "publisher": "Chicago Sun-Times",
+  "origin": "independent",
+  "date": "2026-06-26",
+  "checked": "2026-10-18"
  },
  {
   "id": "chron-archive-mpl",
@@ -588,6 +748,46 @@
   "origin": "government",
   "date": "2025",
   "checked": "2026-10-17"
+ },
+ {
+  "id": "clearygottlieb-sixth-street-invests-in-boston-celtics",
+  "url": "https://www.clearygottlieb.com/news-and-insights/news-listing/sixth-street-invests-in-boston-celtics",
+  "title": "Sixth Street Invests in Boston Celtics",
+  "title_from": "curated",
+  "publisher": "Cleary Gottlieb",
+  "origin": "independent",
+  "date": "2025-08-22",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "cliffordchance-2026-1-from-five-to-eight-nba-further-loosens",
+  "url": "https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/01/2026%20-%201%20From%20Five%20to%20Eight%20-%20NBA%20Further%20Loosens%20Private%20Equity%20Ownership%20Rules.pdf",
+  "title": "From Five to Eight: NBA Further Loosens Private Equity Ownership Rules",
+  "title_from": "curated",
+  "publisher": "Clifford Chance",
+  "origin": "independent",
+  "date": "2026-01-05",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "cnbc-walmart-heir-lukas-walton-chicago-bulls",
+  "url": "https://www.cnbc.com/2026/06/26/walmart-heir-lukas-walton-chicago-bulls.html",
+  "title": "Walmart heir Lukas Walton buys minority stake in the Chicago Bulls",
+  "title_from": "curated",
+  "publisher": "CNBC",
+  "origin": "independent",
+  "date": "2026-06-26",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "columbian-nba-board-of-governors-approves-blazers-sale-to",
+  "url": "https://www.columbian.com/news/2026/mar/31/nba-board-of-governors-approves-blazers-sale-to-group-led-by-tom-dundon/",
+  "title": "NBA Board of Governors approves Blazers' sale to group led by Tom Dundon",
+  "title_from": "page title",
+  "publisher": "The Columbian",
+  "origin": "independent",
+  "date": "2026-03-31",
+  "checked": "2026-10-18"
  },
  {
   "id": "commercialobserver-los-angeles-inglewood-clippers-win-unanim",
@@ -748,6 +948,16 @@
   "origin": "government",
   "date": "2021-10-14",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "deseret-amway-head-buys-orlando-magic",
+  "url": "https://www.deseret.com/1991/9/20/18942116/amway-head-buys-orlando-magic/",
+  "title": "Amway head buys Orlando Magic",
+  "title_from": "curated",
+  "publisher": "Deseret News",
+  "origin": "independent",
+  "date": "1991-09-20",
+  "checked": "2026-10-18"
  },
  {
   "id": "detroit-dda-fs-2024",
@@ -922,6 +1132,646 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "finance-nba-warriors-sell-minority-stake-204353124",
+  "url": "https://finance.yahoo.com/news/nba-warriors-sell-minority-stake-204353124.html",
+  "title": "NBA's Warriors Sell Minority Stake to Arctos at $5.5 Billion Valuation",
+  "title_from": "page title",
+  "publisher": "Yahoo Finance",
+  "origin": "independent",
+  "date": "2021-04-01",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-072tab",
+  "url": "https://www.forbes.com/forbes/2003/0217/072tab.html",
+  "title": "NBA Team Valuations",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2003-02-17",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-antony-ressler",
+  "url": "https://www.forbes.com/profile/antony-ressler/",
+  "title": "Forbes profile: Antony Ressler",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-atlanta-hawks",
+  "url": "https://www.forbes.com/teams/atlanta-hawks/",
+  "title": "Atlanta Hawks on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-boston-celtics",
+  "url": "https://www.forbes.com/teams/boston-celtics/",
+  "title": "Boston Celtics on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-brooklyn-nets",
+  "url": "https://www.forbes.com/teams/brooklyn-nets/",
+  "title": "Brooklyn Nets on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-charles-dolan",
+  "url": "https://www.forbes.com/profile/charles-dolan/",
+  "title": "Forbes profile: Charles Dolan & family",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-charlotte-hornets",
+  "url": "https://www.forbes.com/teams/charlotte-hornets/",
+  "title": "Charlotte Hornets on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-chicago-bulls",
+  "url": "https://www.forbes.com/teams/chicago-bulls/",
+  "title": "Chicago Bulls on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-cleveland-cavaliers",
+  "url": "https://www.forbes.com/teams/cleveland-cavaliers/",
+  "title": "Cleveland Cavaliers on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-dallas-mavericks",
+  "url": "https://www.forbes.com/teams/dallas-mavericks/",
+  "title": "Dallas Mavericks on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-daniel-gilbert",
+  "url": "https://www.forbes.com/profile/daniel-gilbert/",
+  "title": "Forbes profile: Daniel Gilbert",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-david-blitzer",
+  "url": "https://www.forbes.com/profile/david-blitzer/",
+  "title": "Forbes profile: David Blitzer",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-denver-nuggets",
+  "url": "https://www.forbes.com/teams/denver-nuggets/",
+  "title": "Denver Nuggets on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-detroit-pistons",
+  "url": "https://www.forbes.com/teams/detroit-pistons/",
+  "title": "Detroit Pistons on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-gayle-benson",
+  "url": "https://www.forbes.com/profile/gayle-benson/",
+  "title": "Forbes profile: Gayle Benson",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-george-kaiser",
+  "url": "https://www.forbes.com/profile/george-kaiser/",
+  "title": "Forbes profile: George Kaiser",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-golden-state-warriors",
+  "url": "https://www.forbes.com/teams/golden-state-warriors/",
+  "title": "Golden State Warriors on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-herbert-simon",
+  "url": "https://www.forbes.com/profile/herbert-simon/",
+  "title": "Forbes profile: Herb Simon",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-houston-rockets",
+  "url": "https://www.forbes.com/teams/houston-rockets/",
+  "title": "Houston Rockets on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-indiana-pacers",
+  "url": "https://www.forbes.com/teams/indiana-pacers/",
+  "title": "Indiana Pacers on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-jerry-reinsdorf",
+  "url": "https://www.forbes.com/profile/jerry-reinsdorf/",
+  "title": "Forbes profile: Jerry Reinsdorf",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-joe-lacob",
+  "url": "https://www.forbes.com/profile/joe-lacob/",
+  "title": "Forbes profile: Joe Lacob",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-joseph-tsai",
+  "url": "https://www.forbes.com/profile/joseph-tsai/",
+  "title": "Forbes profile: Joseph Tsai",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-josh-harris",
+  "url": "https://www.forbes.com/profile/josh-harris/",
+  "title": "Forbes profile: Josh Harris",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-los-angeles-clippers",
+  "url": "https://www.forbes.com/teams/los-angeles-clippers/",
+  "title": "Los Angeles Clippers on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-los-angeles-lakers",
+  "url": "https://www.forbes.com/teams/los-angeles-lakers/",
+  "title": "Los Angeles Lakers on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-marc-lore",
+  "url": "https://www.forbes.com/profile/marc-lore/",
+  "title": "Forbes profile: Marc Lore",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-mark-cubans-mavericks-sale-miriam-adelson-approv",
+  "url": "https://www.forbes.com.au/news/billionaires/mark-cubans-mavericks-sale-miriam-adelson-approved/",
+  "title": "Mark Cuban's Mavericks sale to casino magnate Miriam Adelson approved by NBA",
+  "title_from": "page title",
+  "publisher": "Forbes Australia",
+  "origin": "independent",
+  "date": "2023-12-27",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-mark-walter",
+  "url": "https://www.forbes.com/profile/mark-walter/",
+  "title": "Forbes profile: Mark Walter",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-mat-ishbia",
+  "url": "https://www.forbes.com/profile/mat-ishbia/",
+  "title": "Forbes profile: Mat Ishbia",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-memphis-grizzlies",
+  "url": "https://www.forbes.com/teams/memphis-grizzlies/",
+  "title": "Memphis Grizzlies on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-miami-heat",
+  "url": "https://www.forbes.com/teams/miami-heat/",
+  "title": "Miami Heat on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-micky-arison",
+  "url": "https://www.forbes.com/profile/micky-arison/",
+  "title": "Forbes profile: Micky Arison & family",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-milwaukee-bucks",
+  "url": "https://www.forbes.com/teams/milwaukee-bucks/",
+  "title": "Milwaukee Bucks on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-minnesota-timberwolves",
+  "url": "https://www.forbes.com/teams/minnesota-timberwolves/",
+  "title": "Minnesota Timberwolves on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-miriam-adelson",
+  "url": "https://www.forbes.com/profile/miriam-adelson/",
+  "title": "Forbes profile: Miriam Adelson & family",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-nba-team-valuations-biz-07nba-cz-kb-mo-cs-1206nb",
+  "url": "http://www.forbes.com/2007/12/06/nba-team-valuations-biz-07nba-cz_kb_mo_cs_1206nba_land.html",
+  "title": "The Business Of Basketball",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2007-12-06",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-new-orleans-pelicans",
+  "url": "https://www.forbes.com/teams/new-orleans-pelicans/",
+  "title": "New Orleans Pelicans on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-new-york-knicks",
+  "url": "https://www.forbes.com/teams/new-york-knicks/",
+  "title": "New York Knicks on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-oklahoma-city-thunder",
+  "url": "https://www.forbes.com/teams/oklahoma-city-thunder/",
+  "title": "Oklahoma City Thunder on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-orlando-magic",
+  "url": "https://www.forbes.com/teams/orlando-magic/",
+  "title": "Orlando Magic on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-p-162626",
+  "url": "https://www.forbes.com.au/?p=162626",
+  "title": "The most valuable NBA teams 2025",
+  "title_from": "page title",
+  "publisher": "Forbes Australia",
+  "origin": "independent",
+  "date": "2025-10-23",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-philadelphia-76ers",
+  "url": "https://www.forbes.com/teams/philadelphia-76ers/",
+  "title": "Philadelphia 76ers on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-phoenix-suns",
+  "url": "https://www.forbes.com/teams/phoenix-suns/",
+  "title": "Phoenix Suns on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-portland-trail-blazers",
+  "url": "https://www.forbes.com/teams/portland-trail-blazers/",
+  "title": "Portland Trail Blazers on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-richard-devos",
+  "url": "https://www.forbes.com/profile/richard-devos/",
+  "title": "Forbes profile: Richard DeVos & family",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-robert-pera",
+  "url": "https://www.forbes.com/profile/robert-pera/",
+  "title": "Forbes profile: Robert Pera",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-ryan-smith",
+  "url": "https://www.forbes.com/profile/ryan-smith/",
+  "title": "Forbes profile: Ryan Smith",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-sacramento-kings",
+  "url": "https://www.forbes.com/teams/sacramento-kings/",
+  "title": "Sacramento Kings on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-san-antonio-spurs",
+  "url": "https://www.forbes.com/teams/san-antonio-spurs/",
+  "title": "San Antonio Spurs on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-stanley-kroenke",
+  "url": "https://www.forbes.com/profile/stanley-kroenke/",
+  "title": "Forbes profile: Stanley Kroenke",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-steve-ballmer",
+  "url": "https://www.forbes.com/profile/steve-ballmer/",
+  "title": "Forbes profile: Steve Ballmer",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-theodore-leonsis",
+  "url": "https://www.forbes.com/profile/theodore-leonsis/",
+  "title": "Forbes profile: Theodore Leonsis",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-thomas-dundon",
+  "url": "https://www.forbes.com/profile/thomas-dundon/",
+  "title": "Forbes profile: Thomas Dundon",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-tilman-fertitta",
+  "url": "https://www.forbes.com/profile/tilman-fertitta/",
+  "title": "Forbes profile: Tilman Fertitta",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-tom-gores",
+  "url": "https://www.forbes.com/profile/tom-gores/",
+  "title": "Forbes profile: Tom Gores",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-toronto-raptors",
+  "url": "https://www.forbes.com/teams/toronto-raptors/",
+  "title": "Toronto Raptors on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-utah-jazz",
+  "url": "https://www.forbes.com/teams/utah-jazz/",
+  "title": "Utah Jazz on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-washington-wizards",
+  "url": "https://www.forbes.com/teams/washington-wizards/",
+  "title": "Washington Wizards on the Forbes NBA Team Valuations List",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "2026-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-wesley-edens",
+  "url": "https://www.forbes.com/profile/wesley-edens/",
+  "title": "Forbes profile: Wesley Edens",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "forbes-william-chisholm",
+  "url": "https://www.forbes.com/profile/william-chisholm/",
+  "title": "Forbes profile: William Chisholm",
+  "title_from": "page title",
+  "publisher": "Forbes",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "fox5ny-tsai-completes-purchase-of-nets-arena-hires-levy",
+  "url": "https://www.fox5ny.com/sports/tsai-completes-purchase-of-nets-arena-hires-levy-as-ceo",
+  "title": "Tsai completes purchase of Nets, arena, hires Levy as CEO",
+  "title_from": "page title",
+  "publisher": "FOX 5 New York",
+  "origin": "independent",
+  "date": "2019-09-23",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "fox6now-haslams-purchase-lasrys-stake-bucks-approved-nba",
+  "url": "https://www.fox6now.com/sports/haslams-purchase-lasrys-stake-bucks-approved-nba",
+  "title": "Haslams purchase of Lasry's Bucks stake approved by NBA",
+  "title_from": "page title",
+  "publisher": "FOX6 Milwaukee",
+  "origin": "independent",
+  "date": "2023-04-14",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "fox6now-wisconsin-assembly-approves-milwaukee-bucks-aren",
   "url": "https://fox6now.com/2015/07/28/wisconsin-assembly-approves-milwaukee-bucks-arena-deal/",
   "title": "Wisconsin Assembly approves Milwaukee Bucks arena funding deal; Gov. Walker says he'll sign it",
@@ -930,6 +1780,36 @@
   "origin": "independent",
   "date": "2015-07-28",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "foxbusiness-joshua-kushner-purchases-minority-stake-in-memph",
+  "url": "https://www.foxbusiness.com/markets/joshua-kushner-purchases-minority-stake-in-memphis-grizzlies",
+  "title": "Joshua Kushner purchases minority stake in Memphis Grizzlies",
+  "title_from": "page title",
+  "publisher": "Fox Business",
+  "origin": "independent",
+  "date": "2019-03-23",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "foxnews-knicks-most-valuable-nba-franchise-forbes",
+  "url": "https://www.foxnews.com/sports/knicks-most-valuable-nba-franchise-forbes",
+  "title": "Knicks most valuable NBA franchise: Forbes",
+  "title_from": "page title",
+  "publisher": "Fox News",
+  "origin": "independent",
+  "date": "2011-01-26",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "foxnews-la-lakers-seize-crown-as-most-valuable-nba-team",
+  "url": "https://www.foxnews.com/sports/la-lakers-seize-crown-as-most-valuable-nba-team",
+  "title": "LA Lakers seize crown as most valuable NBA team",
+  "title_from": "page title",
+  "publisher": "Fox News",
+  "origin": "independent",
+  "date": "2009-12-09",
+  "checked": "2026-10-18"
  },
  {
   "id": "fred-cpiaucns",
@@ -963,6 +1843,46 @@
   "review": "not reached (HTTP 402); title from the citation in the Wikipedia article Little Caesars Arena"
  },
  {
+  "id": "frontofficesports-arctos-to-buy-17-stake-in-kings-at-1-8b-va",
+  "url": "https://frontofficesports.com/article/arctos-to-buy-17-stake-in-kings-at-1-8b-valuation/",
+  "title": "Arctos Buys 17% Stake In Kings, Values Team At $1.8B",
+  "title_from": "page title",
+  "publisher": "Front Office Sports",
+  "origin": "independent",
+  "date": "2021-09-10",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "frontofficesports-dyal-buys-close-to-6-of-the-atlanta-hawks",
+  "url": "https://frontofficesports.com/article/dyal-buys-close-to-6-of-the-atlanta-hawks/",
+  "title": "Dyal Buys Close to 6% of the Atlanta Hawks",
+  "title_from": "page title",
+  "publisher": "Front Office Sports",
+  "origin": "independent",
+  "date": "2022-01-04",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "frontofficesports-most-valuable-nba-franchises-2023-golden-s",
+  "url": "https://frontofficesports.com/article/most-valuable-nba-franchises-2023-golden-state-warriors/",
+  "title": "The Most Valuable NBA Franchises for 2023",
+  "title_from": "page title",
+  "publisher": "Front Office Sports",
+  "origin": "independent",
+  "date": "2023-10-26",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "frontofficesports-the-nbas-expanding-private-equity-footprin",
+  "url": "https://frontofficesports.com/the-nbas-expanding-private-equity-footprint/",
+  "title": "The NBA's Expanding Private-Equity Footprint",
+  "title_from": "page title",
+  "publisher": "Front Office Sports",
+  "origin": "independent",
+  "date": "2025-10-22",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "gateway-edc-audit-2022",
   "url": "https://ohioauditor.gov/auditsearch/Reports/2023/Gateway_Economic_Development_Corporation_of_Greater_Cleveland_22-Cuyahoga_FINAL.pdf",
   "title": "Gateway Economic Development Corporation of Greater Cleveland, Regular Audit for the Year Ended December 31, 2022",
@@ -994,6 +1914,16 @@
   "review": "not reached (HTTP 403 and 500); title from the URL"
  },
  {
+  "id": "govinfo-crpt-119hrpt106-pt2",
+  "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt106/html/CRPT-119hrpt106-pt2.htm",
+  "title": "H. Rept. 119-106, One Big Beautiful Bill Act: report of the Committee on the Budget, book 2 (with the Ways and Means provisions)",
+  "title_from": "curated",
+  "publisher": "U.S. House of Representatives (GovInfo)",
+  "origin": "government",
+  "date": "2025-05-20",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "govinfo-gaoreports-aimd-98-223",
   "url": "https://www.govinfo.gov/content/pkg/GAOREPORTS-AIMD-98-223/pdf/GAOREPORTS-AIMD-98-223.pdf",
   "title": "District of Columbia: Final Status on the Sports Arena (GAO/AIMD-98-223)",
@@ -1014,6 +1944,16 @@
   "checked": "2026-10-17"
  },
  {
+  "id": "headlinersfoundation-spurs-arena-delivers-no-profit-sharing",
+  "url": "https://headlinersfoundation.org/showcase-awards/2015/spurs-arena-delivers-no-profit-sharing-to-the-county",
+  "title": "Spurs Arena Delivers No Profit-Sharing to the County",
+  "title_from": "curated",
+  "publisher": "Headliners Foundation of Texas",
+  "origin": "independent",
+  "date": "2015",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
   "url": "https://www.hillwood.com/newsroom/news-articles/at-the-center-of-something-on-the-rise-5-years-on-aac-gleams-development-takes-shape/",
   "title": "At the center of something on the rise 5 years on, AAC gleams, development takes shape",
@@ -1024,6 +1964,36 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "hoopsrumors-forbes-franchise-valuations",
+  "url": "https://hoopsrumors.com/2015/01/forbes-franchise-valuations.html",
+  "title": "Lakers Top Forbes NBA Franchise Valuations",
+  "title_from": "page title",
+  "publisher": "Hoops Rumors",
+  "origin": "independent",
+  "date": "2015-01-21",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "hoopsrumors-forbes-releases-nba-franchise-valuations",
+  "url": "https://hoopsrumors.com/2013/01/forbes-releases-nba-franchise-valuations.html",
+  "title": "Forbes Releases NBA Franchise Valuations",
+  "title_from": "page title",
+  "publisher": "Hoops Rumors",
+  "origin": "independent",
+  "date": "2013-01-23",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "hoopsrumors-nba-franchise-values-up-13-knicks-on-top",
+  "url": "https://hoopsrumors.com/2016/01/nba-franchise-values-up-13-knicks-on-top.html",
+  "title": "NBA Franchise Values Up 13%, Knicks On Top",
+  "title_from": "page title",
+  "publisher": "Hoops Rumors",
+  "origin": "independent",
+  "date": "2016-01-20",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "hoopsrumors-sarver-threatens-to-move-suns-to-seattle-or-vega",
   "url": "https://hoopsrumors.com/2018/12/sarver-threatens-to-move-suns-to-seattle-or-vegas.html",
   "title": "Sarver Threatens To Move Suns To Seattle Or Vegas?",
@@ -1032,6 +2002,16 @@
   "origin": "independent",
   "date": "2018-12-12",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "hoopsrumors-warriors-knicks-top-2026-nba-franchise-valuation",
+  "url": "https://www.hoopsrumors.com/2026/10/warriors-knicks-top-2026-nba-franchise-valuations.html",
+  "title": "Warriors, Knicks Top 2026 NBA Franchise Valuations",
+  "title_from": "page title",
+  "publisher": "Hoops Rumors",
+  "origin": "independent",
+  "date": "2026-10-09",
+  "checked": "2026-10-18"
  },
  {
   "id": "house-lda",
@@ -1084,6 +2064,26 @@
   "checked": "2026-10-17"
  },
  {
+  "id": "hr1-engrossed-2025",
+  "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eh/html/BILLS-119hr1eh.htm",
+  "title": "H.R. 1 (119th Congress), as passed by the House, section 112017 (limitation on amortization of sports franchises)",
+  "title_from": "curated",
+  "publisher": "U.S. House of Representatives (GovInfo)",
+  "origin": "government",
+  "date": "2025-05-22",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "hr1-enrolled-2025",
+  "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm",
+  "title": "H.R. 1 (119th Congress), enrolled bill as signed into law",
+  "title_from": "curated",
+  "publisher": "U.S. Congress (GovInfo)",
+  "origin": "government",
+  "date": "2025-07",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "ibj-21164-cib-approves-33-5-million-deal-to-keep-ind",
   "url": "https://www.ibj.com/articles/21164-cib-approves-33-5-million-deal-to-keep-indiana-pacers",
   "title": "CIB approves $33.5 million deal to keep Indiana Pacers",
@@ -1092,6 +2092,16 @@
   "origin": "independent",
   "date": "2010-07-16",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "ibj-nba-new-11-year-media-rights-deal-with-disney-nb",
+  "url": "https://www.ibj.com/articles/nba-new-11-year-media-rights-deal-with-disney-nbc-and-amazon-worth-76b",
+  "title": "NBA: New 11-year media rights deal with Disney, NBC and Amazon worth $76B",
+  "title_from": "page title",
+  "publisher": "Indianapolis Business Journal",
+  "origin": "independent",
+  "date": "2024-07-24",
+  "checked": "2026-10-18"
  },
  {
   "id": "ibo-2009-may-atlantic-yards-testimony",
@@ -1184,6 +2194,36 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "inquirer-20111014-sale-of-76ers-expected-to-conclude-next",
+  "url": "https://www.inquirer.com/philly/sports/sixers/20111014_Sale_of_76ers_expected_to_conclude_next_week.html",
+  "title": "Sale of 76ers expected to conclude next week",
+  "title_from": "page title",
+  "publisher": "The Philadelphia Inquirer",
+  "origin": "independent",
+  "date": "2011-10-14",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "investmentnews-spurs-co-owner-sixth-street-laying-ground-for",
+  "url": "https://investmentnews.com/alternatives/spurs-co-owner-sixth-street-laying-ground-for-debut-sports-fund/252984",
+  "title": "Spurs co-owner Sixth Street laying ground for debut sports fund",
+  "title_from": "page title",
+  "publisher": "InvestmentNews",
+  "origin": "independent",
+  "date": "2024-05-03",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "investor-msg-sports-board-approves-spin-off-of-rangers-bu",
+  "url": "https://investor.msgsports.com/press-releases/news-details/2026/MSG-Sports-Board-Approves-Spin-Off-of-Rangers-Business-From-Knicks-Business/default.aspx",
+  "title": "MSG Sports Board Approves Spin-Off of Rangers Business From Knicks Business",
+  "title_from": "curated",
+  "publisher": "Madison Square Garden Sports Corp.",
+  "origin": "team_or_league",
+  "date": "2026-09-30",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "katu-silver-warns-moda-center-renovation-talks-off-tr",
   "url": "https://katu.com/sports/trail-blazers/story/silver-warns-moda-center-renovation-talks-off-track-fueling-blazers-future-concerns-portland-city-council-adam-national-basketball-association-nba-ripcity-mayor-wilson",
   "title": "NBA's Silver warns Moda Center renovation talks off track, fueling Blazers future concerns",
@@ -1264,6 +2304,16 @@
   "checked": "2026-10-17"
  },
  {
+  "id": "ksat-spurs-name-peter-j-holt-managing-partner-add-aus",
+  "url": "https://ksat.com/sports/2021/06/18/spurs-name-peter-j-holt-managing-partner-add-austin-billionaire-michael-dell-to-investor-group",
+  "title": "Spurs name Peter J. Holt managing partner, add Austin billionaire Michael Dell to investor group",
+  "title_from": "page title",
+  "publisher": "KSAT",
+  "origin": "independent",
+  "date": "2021-06-18",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "ksl",
   "url": "https://www.ksl.com/article/51059126/",
   "title": "Proposed Smith Entertainment Group agreement includes tax hike, new Delta Center ticket fees",
@@ -1282,6 +2332,16 @@
   "origin": "independent",
   "date": "2025-08-11",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "ktnv-golden-nugget-owner-tilman-fertitta-finalizes-pu",
+  "url": "https://www.ktnv.com/sports/golden-nugget-owner-tilman-fertitta-finalizes-purchase-of-houston-rockets",
+  "title": "Tilman Fertitta purchases Houston Rockets",
+  "title_from": "page title",
+  "publisher": "KTNV",
+  "origin": "independent",
+  "date": "2017-10-06",
+  "checked": "2026-10-18"
  },
  {
   "id": "ktvu-warriors-ordered-to-pay-40m-for-oracle-arena-upg",
@@ -1314,6 +2374,16 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "lakersnation-josh-kushner-bob-iger-expected-to-officially-ta",
+  "url": "https://lakersnation.com/josh-kushner-bob-iger-expected-to-officially-take-control-of-lakers-after-vote-in-november/",
+  "title": "When Josh Kushner and Bob Iger will officially take over as Lakers owners",
+  "title_from": "page title",
+  "publisher": "Lakers Nation",
+  "origin": "independent",
+  "date": "2026-10-16",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "latimes-la-xpm-2001-jul-04-sp-18655-story",
   "url": "https://www.latimes.com/archives/la-xpm-2001-jul-04-sp-18655-story.html",
   "title": "NBA Approves Grizzlies’ Move",
@@ -1322,6 +2392,26 @@
   "origin": "independent",
   "date": "2001-07-04",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "law-charlotte-hornets-lease-summary",
+  "url": "https://law.marquette.edu/assets/sports-law/pdf/Charlotte%20Hornets%20Lease%20Summary.pdf",
+  "title": "Charlotte Hornets Lease Summary",
+  "title_from": "curated",
+  "publisher": "Marquette University Law School",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "law-dallas-mavericks-lease-summary",
+  "url": "https://law.marquette.edu/assets/sports-law/pdf/Dallas%20Mavericks%20Lease%20Summary.pdf",
+  "title": "Dallas Mavericks Lease Summary",
+  "title_from": "curated",
+  "publisher": "Marquette University Law School",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-18"
  },
  {
   "id": "law-orlando-magic-lease-summary-8-14",
@@ -1525,6 +2615,16 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "miamidade-2014-06-03-bcc",
+  "url": "https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf",
+  "title": "Board of County Commissioners Meeting, June 3, 2014: research notes on the HEAT agreements",
+  "title_from": "curated",
+  "publisher": "Miami-Dade County Office of the Commission Auditor",
+  "origin": "government",
+  "date": "2014-06-03",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "miamidade-archives",
   "url": "https://www.miamidade.gov/resources/budget/archives/",
   "title": "Miami-Dade County Adopted Budgets, Volume 1 (budget archive folder)",
@@ -1669,6 +2769,16 @@
   "review": "not reached (NBA.com returns 'Page not found'; Wayback Machine connection reset); title and date from the citation in the Wikipedia article Seattle SuperSonics relocation to Oklahoma City"
  },
  {
+  "id": "nba-cavs-gilbert-acquires-minority-share-of-former-o",
+  "url": "https://www.nba.com/news/cavs-gilbert-acquires-minority-share-of-former-owner-gund",
+  "title": "Cavs' Gilbert acquires minority share of former owner Gund",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2021-04-14",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "nba-cba-2023",
   "url": "https://imgix.cosmicjs.com/25da5eb0-15eb-11ee-b5b3-fbd321202bdf-Final-2023-NBA-Collective-Bargaining-Agreement-6-28-23.pdf",
   "title": "2023 NBA Collective Bargaining Agreement",
@@ -1679,6 +2789,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "nba-forbes-average-nba-values-2022",
+  "url": "https://www.nba.com/news/forbes-average-nba-values-2022",
+  "title": "Forbes: NBA teams worth $2.86 billion on average",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2022-10-27",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
   "url": "https://www.nba.com/news/hawks-and-city-atlanta-plan-philips-arena-renovation",
   "title": "Hawks announce $192.5M renovation of Philips Arena",
@@ -1687,6 +2807,16 @@
   "origin": "team_or_league",
   "date": "2016-11-01",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "nba-jordan-hornets-new-partners-retains-majority-off",
+  "url": "https://www.nba.com/article/2019/09/14/jordan-hornets-new-partners-retains-majority-official-release",
+  "title": "Michael Jordan sells minority stake in Hornets Sports & Entertainment",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2019-09-14",
+  "checked": "2026-10-18"
  },
  {
   "id": "nba-kings-relocation-ap",
@@ -1711,6 +2841,66 @@
   "review": "not reached (HTTP 404); title and date from the citation in the Wikipedia article Sacramento Kings failed relocation attempts"
  },
  {
+  "id": "nba-nba-approves-sale-majority-interest-lakers-mark",
+  "url": "https://www.nba.com/news/nba-approves-sale-majority-interest-lakers-mark-walter",
+  "title": "NBA Board of Governors approves sale of majority interest in Lakers to Mark Walter",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2025-10-30",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "nba-nba-franchise-values-forbes",
+  "url": "https://www.nba.com/news/nba-franchise-values-forbes",
+  "title": "Forbes: Every NBA team worth more than $1 billion",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2018-02-07",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "nba-nba-teams-forbes-value-knicks-lakers-lead",
+  "url": "https://www.nba.com/news/nba-teams-forbes-value-knicks-lakers-lead",
+  "title": "Forbes: NBA teams worth $2.12 billion on average",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2020-02-11",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "nba-nba-teams-forbes-values-knicks-no-1",
+  "url": "https://www.nba.com/news/nba-teams-forbes-values-knicks-no-1",
+  "title": "Forbes: NBA teams worth $1.9 billion on average",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2019-02-06",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "nbcbayarea-marc-shad-timberwolves-lynx-sale-controlling-sta",
+  "url": "https://www.nbcbayarea.com/nba/marc-shad-timberwolves-lynx-sale-controlling-stake/4131323/",
+  "title": "Timberwolves and Lynx controlling stake to be sold to Marc Stad (AP)",
+  "title_from": "curated",
+  "publisher": "NBC Bay Area",
+  "origin": "independent",
+  "date": "2026-08-21",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "nbcdfw-mark-cubans-sale-of-dallas-mavericks-unanimously",
+  "url": "https://www.nbcdfw.com/news/local/mark-cubans-sale-of-dallas-mavericks-unanimously-approved-by-nba/3420242/",
+  "title": "Mark Cuban's sale of Dallas Mavericks unanimously approved by NBA",
+  "title_from": "curated",
+  "publisher": "NBC 5 Dallas-Fort Worth",
+  "origin": "independent",
+  "date": "2023-12-27",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "nbcmiami-county-approves-new-heat-deal",
   "url": "https://www.nbcmiami.com/news/local/county-approves-new-heat-deal/67705/",
   "title": "County Approves New Heat Deal",
@@ -1719,6 +2909,36 @@
   "origin": "independent",
   "date": "2014-06-03",
   "checked": "2026-10-17"
+ },
+ {
+  "id": "nbcsportsbayarea-source-ranadive-not-part-of-group-selling-s",
+  "url": "https://www.nbcsportsbayarea.com/nba/sacramento-kings/source-ranadive-not-part-of-group-selling-stake-in-kings/1147442",
+  "title": "Source: Ranadivé not part of group selling stake in Kings",
+  "title_from": "page title",
+  "publisher": "NBC Sports Bay Area",
+  "origin": "independent",
+  "date": "2021-07-15",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "news4jax-michael-jordans-sale-of-majority-ownership-of-ho",
+  "url": "https://www.news4jax.com/sports/2023/08/03/michael-jordans-sale-of-majority-ownership-of-hornets-to-gabe-plotkin-and-rick-schnall-is-finalized/",
+  "title": "Michael Jordan's sale of majority ownership of Hornets to Gabe Plotkin and Rick Schnall is finalized",
+  "title_from": "page title",
+  "publisher": "News4JAX",
+  "origin": "independent",
+  "date": "2023-08-03",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "news4jax-pablo-torres-podcast-wins-pulitzer-prize-for-cli",
+  "url": "https://www.news4jax.com/sports/2026/05/04/pablo-torres-podcast-wins-pulitzer-prize-for-clippers-report-capping-a-remarkable-rise/",
+  "title": "Pablo Torre's podcast wins Pulitzer Prize for Clippers report, capping a remarkable rise",
+  "title_from": "curated",
+  "publisher": "News4JAX",
+  "origin": "independent",
+  "date": "2026-05-04",
+  "checked": "2026-10-18"
  },
  {
   "id": "news5cleveland-cavaliers-withdraw-from-140-million-quicken-l",
@@ -1739,6 +2959,16 @@
   "origin": "independent",
   "date": "2008-03-04",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "newson6-avalanche-nuggets-pepsi-center-sold",
+  "url": "https://newson6.com/story/5e3685a72f69d76f6209b1d5/avalanche-nuggets-pepsi-center-sold",
+  "title": "Avalanche, Nuggets, Pepsi Center sold",
+  "title_from": "page title",
+  "publisher": "News On 6",
+  "origin": "independent",
+  "date": "2000-04-24",
+  "checked": "2026-10-18"
  },
  {
   "id": "nolandgrab-mtastaffsummaryvdyard062209",
@@ -1871,6 +3101,16 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "okc-pbcarena-use-license-agreementfinal-6-12-25-1",
+  "url": "https://www.okc.gov/files/assets/city/v/1/city-manager/documents/pbcarena-use-license-agreementfinal-6-12-25-1.pdf",
+  "title": "Arena Use License Agreement, Oklahoma City Thunder (final, June 12, 2025)",
+  "title_from": "curated",
+  "publisher": "City of Oklahoma City",
+  "origin": "government",
+  "date": "2025-06-12",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "okgazette-wait-whos-paying-for-the-new-arena-2",
   "url": "https://www.okgazette.com/news/wait-whos-paying-for-the-new-arena-2/",
   "title": "Wait: Who’s Paying for the New Arena?",
@@ -1912,6 +3152,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "opb-trail-blazers-moda-center-portland-basketball-sp",
+  "url": "https://www.opb.org/article/2026/04/20/trail-blazers-moda-center-portland-basketball-sports/",
+  "title": "Trail Blazers spent (relatively) big to secure state money for Moda Center, records show",
+  "title_from": "page title",
+  "publisher": "Oregon Public Broadcasting",
+  "origin": "independent",
+  "date": "2026-04-20",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "oppaga-15-01",
   "url": "https://oppaga.fl.gov/Documents/Reports/15-01.pdf",
   "title": "Florida Economic Development Program Evaluations: Year 2 (Report No. 15-01)",
@@ -1942,6 +3192,16 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "otpp-teachers-completes-1-32-billion-sale-of-mlse",
+  "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2012/teachers-completes-1-32-billion-sale-of-mlse/",
+  "title": "Teachers' completes $1.32-billion sale of MLSE",
+  "title_from": "page title",
+  "publisher": "Ontario Teachers' Pension Plan",
+  "origin": "team_or_league",
+  "date": "2012-08-22",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "pbs-voters-in-oklahoma-city-will-decide-whether-a-ne",
   "url": "https://www.pbs.org/newshour/nation/voters-in-oklahoma-city-will-decide-whether-a-new-thunder-arena-is-worth-the-investment",
   "title": "Do new NBA arenas pay off? Oklahoma City voters are the latest to weigh this question",
@@ -1950,6 +3210,16 @@
   "origin": "independent",
   "date": "2023-11-15",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "phillymag-sixers-nba-rankings-forbes-valuableteams",
+  "url": "https://www.phillymag.com/business/2017/02/16/sixers-nba-rankings-forbes-valuableteams/",
+  "title": "Sixers Rise in Rankings of the Most Valuable NBA Teams",
+  "title_from": "page title",
+  "publisher": "Philadelphia Magazine",
+  "origin": "independent",
+  "date": "2017-02-16",
+  "checked": "2026-10-18"
  },
  {
   "id": "phillymag-wells-fargo-center-renovation",
@@ -1982,6 +3252,26 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "platinumequity-nba-board-of-governors-unanimously-approves-s",
+  "url": "https://www.platinumequity.com/news/nba-board-of-governors-unanimously-approves-sale-of-detroit/",
+  "title": "NBA Board of Governors Unanimously Approves Sale of Detroit Pistons to Tom Gores",
+  "title_from": "page title",
+  "publisher": "Platinum Equity",
+  "origin": "team_or_league",
+  "date": "2011-05-31",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "pollstar-asm-okc-2025",
+  "url": "https://news.pollstar.com/2025/06/18/oklahoma-city-extends-partnership-with-asm-global-for-new-paycom-center-approves-agreements-to-keep-thunder-in-town-through-2053/",
+  "title": "Oklahoma City extends partnership with ASM Global for new Paycom Center, approves agreements to keep Thunder in town through 2053",
+  "title_from": "url",
+  "publisher": "Pollstar",
+  "origin": "independent",
+  "date": "2025-06-18",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "pollstar-hornets-move-in-question",
   "url": "https://news.pollstar.com/2006/01/31/hornets-move-in-question/",
   "title": "Hornets Move In Question",
@@ -1990,6 +3280,16 @@
   "origin": "independent",
   "date": "2006-01-31",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "pollstar-leonsis-takes-over-wizards",
+  "url": "https://news.pollstar.com/2010/06/12/leonsis-takes-over-wizards/",
+  "title": "Leonsis Takes Over Wizards",
+  "title_from": "page title",
+  "publisher": "Pollstar",
+  "origin": "independent",
+  "date": "2010-06-12",
+  "checked": "2026-10-18"
  },
  {
   "id": "pollstar-sprint-center-breaks-ground",
@@ -2042,6 +3342,66 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "pr-nba-board-of-governors-suns-mercury-sale-mat-ish",
+  "url": "https://pr.nba.com/nba-board-of-governors-suns-mercury-sale-mat-ishbia",
+  "title": "NBA Board of Governors approves sale of Suns and Mercury to ownership group led by Mat Ishbia",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2023-02-07",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "pr-nba-board-of-governors-timberwolves-lynx-sale",
+  "url": "https://pr.nba.com/nba-board-of-governors-timberwolves-lynx-sale",
+  "title": "NBA Board of Governors approves sale of Timberwolves and Lynx to Marc Lore and Alex Rodriguez",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2025-06-24",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "pr-nba-investigation-clippers-kawhi-leonard",
+  "url": "https://pr.nba.com/nba-investigation-clippers-kawhi-leonard/",
+  "title": "NBA announces penalties and findings arising from investigation of LA Clippers",
+  "title_from": "curated",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2026-09-02",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "pr-trail-blazers-sale-tom-dundon",
+  "url": "https://pr.nba.com/trail-blazers-sale-tom-dundon/",
+  "title": "NBA Board of Governors approves sale of Trail Blazers to investor group led by Tom Dundon",
+  "title_from": "page title",
+  "publisher": "NBA",
+  "origin": "team_or_league",
+  "date": "2026-03-30",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "privateequitywire-nba-changes-pe-rules-ahead-of-proposed-12",
+  "url": "https://www.privateequitywire.co.uk/nba-changes-pe-rules-ahead-of-proposed-12-5bn-lakers-acquisition/",
+  "title": "NBA changes PE rules ahead of proposed $12.5bn Lakers acquisition",
+  "title_from": "page title",
+  "publisher": "Private Equity Wire",
+  "origin": "independent",
+  "date": "2026-09-21",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "propublica-billionaire-playbook",
+  "url": "https://www.propublica.org/article/the-billionaire-playbook-how-sports-owners-use-their-teams-to-avoid-millions-in-taxes",
+  "title": "The Billionaire Playbook: How Sports Owners Use Their Teams to Avoid Millions in Taxes",
+  "title_from": "curated",
+  "publisher": "ProPublica",
+  "origin": "independent",
+  "date": "2021-07-08",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "ptaxsim-2024",
   "url": "https://ccao-data-public-us-east-1.s3.amazonaws.com/ptaxsim/ptaxsim-2024.0.0.db.bz2",
   "title": "PTAXSIM database v2024.0.0 (Cook County property tax bills, rates and equalization factors)",
@@ -2073,6 +3433,36 @@
   "review": "not reached (HTTP 403, Cloudflare challenge; the saved copy is also a challenge page); title from the URL"
  },
  {
+  "id": "revisor-473j-15",
+  "url": "https://www.revisor.mn.gov/statutes/cite/473J.15",
+  "title": "Minnesota Statutes 473J.15, Criteria and conditions",
+  "title_from": "curated",
+  "publisher": "Minnesota Office of the Revisor of Statutes",
+  "origin": "government",
+  "date": "2023",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "roi-nj-hbse-to-sell-minority-share-5-to-arctos-sports-p",
+  "url": "https://www.roi-nj.com/2022/06/06/lifestyle/hbse-to-sell-minority-share-5-to-arctos-sports-partners-a-private-equity-firm/",
+  "title": "HBSE to sell minority share (5%) to Arctos Sports Partners, a private equity firm",
+  "title_from": "curated",
+  "publisher": "ROI-NJ",
+  "origin": "independent",
+  "date": "2022-06-06",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "sa-termsheet",
+  "url": "https://www.sa.gov/files/assets/main/v/1/initiatives/sports-amp-entertainment-district/termsheet.pdf",
+  "title": "Term sheet for a new Spurs arena in the downtown sports and entertainment district",
+  "title_from": "curated",
+  "publisher": "City of San Antonio",
+  "origin": "government",
+  "date": "2025-08-26",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "sacbee-article2599400",
   "url": "https://www.sacbee.com/news/local/city-arena/article2599400.html",
   "title": "Sacramento Kings Press Ahead with Arena While Opponents Plan Petition Drive",
@@ -2082,6 +3472,26 @@
   "date": "2014-05-21",
   "checked": "2026-10-11",
   "review": "not reached (connection failed); title and date from the citation in the Wikipedia article Golden 1 Center"
+ },
+ {
+  "id": "sacurrent-csl-legends-2025",
+  "url": "https://www.sacurrent.com/?p=377739",
+  "title": "Report on CSL International's study of the Spurs arena district and its ties to Legends and Sixth Street (Michael Karlis)",
+  "title_from": "curated",
+  "publisher": "San Antonio Current",
+  "origin": "independent",
+  "date": "2025-08-21",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "sacurrent-mccombs-family-returns-as-part-owners-of-san-ant",
+  "url": "https://www.sacurrent.com/arts/mccombs-family-returns-as-part-owners-of-san-antonio-spurs-33365908/",
+  "title": "McCombs family returns as part owners of San Antonio Spurs",
+  "title_from": "curated",
+  "publisher": "San Antonio Current",
+  "origin": "independent",
+  "date": "2023-12-20",
+  "checked": "2026-10-18"
  },
  {
   "id": "sai-ocppa-final-2023-9hvg",
@@ -2165,6 +3575,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "sec-0000912057-97-029548",
+  "url": "https://www.sec.gov/Archives/edgar/data/0000784681/000091205797029548/0000912057-97-029548.txt",
+  "title": "Cablevision Systems Corp., Form 8-K, filed Aug. 29, 1997",
+  "title_from": "curated",
+  "publisher": "U.S. Securities and Exchange Commission (EDGAR filing)",
+  "origin": "team_or_league",
+  "date": "1997-08-29",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "sec-0000927356-00-000575",
   "url": "https://www.sec.gov/Archives/edgar/data/1002666/000092735600000575/0000927356-00-000575.txt",
   "title": "Form 10-K405 for the fiscal year ended Dec. 31, 1999",
@@ -2195,6 +3615,16 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "sec-d944781dex991",
+  "url": "https://www.sec.gov/Archives/edgar/data/733099/000119312525155074/d944781dex991.htm",
+  "title": "Rogers Communications news release, July 2, 2025 (exhibit 99.1)",
+  "title_from": "curated",
+  "publisher": "U.S. Securities and Exchange Commission (EDGAR filing)",
+  "origin": "team_or_league",
+  "date": "2025-07-02",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "sec-fce-131201310k",
   "url": "https://www.sec.gov/Archives/edgar/data/38067/000003806713000016/fce-131201310k.htm",
   "title": "Form 10-K for the fiscal year ended Jan. 31, 2013",
@@ -2203,6 +3633,16 @@
   "origin": "team_or_league",
   "date": "2013-03-27",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "sec-kkr-20260630",
+  "url": "https://www.sec.gov/Archives/edgar/data/1404912/000140491226000027/kkr-20260630.htm",
+  "title": "KKR & Co. Inc., Form 10-Q for the quarter ended June 30, 2026",
+  "title_from": "curated",
+  "publisher": "U.S. Securities and Exchange Commission (EDGAR filing)",
+  "origin": "team_or_league",
+  "date": "2026-08",
+  "checked": "2026-10-18"
  },
  {
   "id": "sec-msg12312013-10q",
@@ -2235,6 +3675,16 @@
   "checked": "2026-10-17"
  },
  {
+  "id": "sec-owl-20251231",
+  "url": "https://www.sec.gov/Archives/edgar/data/1823945/000182394526000009/owl-20251231.htm",
+  "title": "Blue Owl Capital Inc., Form 10-K for 2025",
+  "title_from": "curated",
+  "publisher": "U.S. Securities and Exchange Commission (EDGAR filing)",
+  "origin": "team_or_league",
+  "date": "2026-02-19",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "senate-01-124-lsed-fy-26-final",
   "url": "https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf",
   "title": "FY26 Executive Budget: 01-124 Louisiana Stadium and Exposition District (Senate Finance Committee presentation)",
@@ -2265,6 +3715,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "si-milwaukee-bucks-sold-herb-kohl",
+  "url": "https://www.si.com/nba/point-forward/2014/04/16/milwaukee-bucks-sold-herb-kohl",
+  "title": "Bucks to be sold for $550 million, but will remain in Milwaukee",
+  "title_from": "page title",
+  "publisher": "Sports Illustrated",
+  "origin": "independent",
+  "date": "2014-04-16",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "si-phoenix-city-council-approves-suns-arena-rennova",
   "url": "https://www.si.com/nba/2019/01/23/phoenix-city-council-approves-suns-arena-rennovation-deal",
   "title": "Report: Phoenix City Council Approves $230M Suns Arena Deal",
@@ -2273,6 +3733,46 @@
   "origin": "independent",
   "date": "2019-01-24",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "si-robert-pera-memphis-grizzlies-ap",
+  "url": "https://www.si.com/nba/2012/11/05/robert-pera-memphis-grizzlies-ap",
+  "title": "New chairman: Memphis really owns the Grizzlies",
+  "title_from": "page title",
+  "publisher": "Sports Illustrated",
+  "origin": "independent",
+  "date": "2012-11-05",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "si-sacramento-kings-sold-534-million-vivek-ranadive",
+  "url": "https://www.si.com/nba/2013/05/31/sacramento-kings-sold-534-million-vivek-ranadive-george-maloof-joe-maloof-david-stern",
+  "title": "Maloofs complete sale of Kings to Vivek Ranadive group at record valuation",
+  "title_from": "page title",
+  "publisher": "Sports Illustrated",
+  "origin": "independent",
+  "date": "2013-05-31",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "si-share-of-miami-heat-ownership-sold-to-trump-asso",
+  "url": "https://www.si.com/nba/heat/onsi/share-of-miami-heat-ownership-sold-to-trump-associate-josh-kushner-01jttw8h4rxw",
+  "title": "Share Of Miami Heat Ownership Sold To Trump Associate Josh Kushner",
+  "title_from": "page title",
+  "publisher": "Sports Illustrated",
+  "origin": "independent",
+  "date": "2025-05-09",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "si-warriors-sale",
+  "url": "https://www.si.com/more-sports/2010/07/15/warriors-sale",
+  "title": "Warriors sold for record $450M; Guber to use hands-on approach",
+  "title_from": "page title",
+  "publisher": "Sports Illustrated",
+  "origin": "independent",
+  "date": "2010-07-15",
+  "checked": "2026-10-18"
  },
  {
   "id": "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll",
@@ -2295,6 +3795,26 @@
   "checked": "2026-10-16"
  },
  {
+  "id": "slcdocs-updateddraftparticipationagreement070524",
+  "url": "https://www.slcdocs.com/council/WebDoc/CapitalCityRevitalizationZone/UpdatedDraftParticipationAgreement070524.pdf",
+  "title": "Updated draft participation agreement, Capital City Revitalization Zone (July 5, 2024)",
+  "title_from": "curated",
+  "publisher": "Salt Lake City Corporation",
+  "origin": "government",
+  "date": "2024-07-05",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "sltrib-miller-family-sells-some-its",
+  "url": "https://sltrib.com/sports/jazz/2022/08/24/miller-family-sells-some-its",
+  "title": "Miller family sells some of its remaining shares in the Utah Jazz",
+  "title_from": "page title",
+  "publisher": "The Salt Lake Tribune",
+  "origin": "independent",
+  "date": "2022-08-24",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "spectrumlocalnews-spurs-owner-insists-team-will-stay-in-san",
   "url": "https://spectrumlocalnews.com/tx/san-antonio/news/2022/05/10/spurs-owner-insists-team-will-stay-in-san-antonio",
   "title": "Spurs owner insists NBA team will stay in San Antonio",
@@ -2305,6 +3825,26 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "sportcal-arctos-acquires-stake-in-monumental-sports-qia-i",
+  "url": "https://www.sportcal.com/news/arctos-acquires-stake-in-monumental-sports-qia-increases-equity/",
+  "title": "Arctos acquires stake in Monumental Sports; QIA increases equity",
+  "title_from": "curated",
+  "publisher": "Sportcal",
+  "origin": "independent",
+  "date": "2025-12-18",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "sports-cavs-owner-dan-gilbert-moving-194805380",
+  "url": "https://sports.yahoo.com/articles/cavs-owner-dan-gilbert-moving-194805380.html",
+  "title": "Cavs owner Dan Gilbert moving closer to selling minority stake in the franchise: Reports",
+  "title_from": "page title",
+  "publisher": "Yahoo Sports",
+  "origin": "independent",
+  "date": "2026-06-26",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "sports-fedexforum-documents-offer-strong-clue-194527628",
   "url": "https://sports.yahoo.com/articles/fedexforum-documents-offer-strong-clue-194527628.html",
   "title": "New FedExForum Documents Offer Strong Clue About Grizzlies’ Future In Memphis",
@@ -2313,6 +3853,16 @@
   "origin": "independent",
   "date": "2026-10-13",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "sports-suns-4b-sale-gives-dyal-205243895",
+  "url": "https://sports.yahoo.com/suns-4b-sale-gives-dyal-205243895.html",
+  "title": "Suns' $4B Sale Gives Dyal HomeCourt Early Win in Private Equity Era",
+  "title_from": "page title",
+  "publisher": "Yahoo Sports",
+  "origin": "independent",
+  "date": "2022-12-20",
+  "checked": "2026-10-18"
  },
  {
   "id": "sportsbusinessdaily-morning-buzz",
@@ -2333,6 +3883,16 @@
   "origin": "independent",
   "date": "2013-08-05",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "sportsbusinessdaily-pistons",
+  "url": "https://www.sportsbusinessdaily.com/Daily/Issues/2011/06/06/Franchises/Pistons.aspx",
+  "title": "Tom Gores Reportedly Landed Pistons, Assets For Only $325M",
+  "title_from": "page title",
+  "publisher": "Sports Business Daily",
+  "origin": "independent",
+  "date": "2011-06-06",
+  "checked": "2026-10-18"
  },
  {
   "id": "sportsbusinessdaily-sacramento-city-council-wrestles-with-ki",
@@ -2365,6 +3925,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "stabroeknews-p-275012",
+  "url": "https://www.stabroeknews.com/?p=275012",
+  "title": "Knicks top Forbes list of most valuable NBA teams",
+  "title_from": "page title",
+  "publisher": "Stabroek News",
+  "origin": "independent",
+  "date": "2014-01-23",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "url": "https://www.stadiumjourney.com/stadiums/toyota-center-gets-approval-for-180-million-renovation",
   "title": "Toyota Center Gets Approval for $180 Million Renovation",
@@ -2375,6 +3945,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "stocktitan-blue-owl-s-home-court-partners-fund-announces-mi",
+  "url": "https://www.stocktitan.net/news/OWL/blue-owl-s-home-court-partners-fund-announces-minority-equity-7fv3ubpu2vaq.html",
+  "title": "Blue Owl's Home Court Partners fund announces minority equity investment",
+  "title_from": "curated",
+  "publisher": "Blue Owl Capital (release via StockTitan)",
+  "origin": "team_or_league",
+  "date": "2026-07-06",
+  "checked": "2026-10-18"
+ },
+ {
   "id": "tampabay-timberwolves-sold-to-louisiana-group",
   "url": "https://www.tampabay.com/archive/1994/05/24/timberwolves-sold-to-louisiana-group",
   "title": "Timberwolves sold to Louisiana group",
@@ -2383,6 +3963,16 @@
   "origin": "independent",
   "date": "1994-05-24",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "team-ledger",
+  "url": "https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams",
+  "title": "Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page",
+  "title_from": "curated",
+  "publisher": "This site",
+  "origin": "independent",
+  "date": "2026-10-18",
+  "checked": "2026-10-18"
  },
  {
   "id": "tennesseelookout-state-spending-350-million-to-bolster-liber",
@@ -2404,6 +3994,16 @@
   "origin": "independent",
   "date": "n.d.",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "thepeninsulaqatar-knicks-still-the-most-valuable-team-forbes",
+  "url": "https://thepeninsulaqatar.com/article/11/02/2021/Knicks-still-the-most-valuable-team---Forbes",
+  "title": "Knicks still the most valuable team - Forbes",
+  "title_from": "page title",
+  "publisher": "The Peninsula",
+  "origin": "independent",
+  "date": "2021-02-11",
+  "checked": "2026-10-18"
  },
  {
   "id": "therealdeal-toyota-center-in-houston-set-for-180m-overhaul",
@@ -2474,6 +4074,16 @@
   "origin": "independent",
   "date": "2026-10-16",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "upi-arison-family-takes-control-of-heat",
+  "url": "https://www.upi.com/Archives/1995/02/13/Arison-family-takes-control-of-Heat/1555792651600/",
+  "title": "Arison family takes control of Heat",
+  "title_from": "curated",
+  "publisher": "UPI",
+  "origin": "independent",
+  "date": "1995-02-13",
+  "checked": "2026-10-18"
  },
  {
   "id": "upi-heat-commit-to-miami-through-2040",
@@ -2608,6 +4218,16 @@
   "origin": "government",
   "date": "2019-01-23",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "westernmassnews-nba-approves-sale-boston-celtics-private-equ",
+  "url": "https://www.westernmassnews.com/2025/08/14/nba-approves-sale-boston-celtics-private-equity-mogul-bill-chisholm-record-61-billion/",
+  "title": "NBA approves sale of Boston Celtics to private equity mogul Bill Chisholm for record $6.1 billion",
+  "title_from": "page title",
+  "publisher": "Western Mass News",
+  "origin": "independent",
+  "date": "2025-08-13",
+  "checked": "2026-10-18"
  },
  {
   "id": "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
@@ -3108,6 +4728,36 @@
   "origin": "independent",
   "date": "2015-07-15",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "wrtv-billionaire-steven-rales-buys-15-ownership-stake",
+  "url": "https://www.wrtv.com/sports/pacers/billionaire-steven-rales-buys-15-ownership-stake-in-indiana-pacers-from-herb-simon",
+  "title": "Billionaire Steven Rales buys 15% ownership stake in Indiana Pacers from Herb Simon",
+  "title_from": "page title",
+  "publisher": "WRTV Indianapolis",
+  "origin": "independent",
+  "date": "2023-12-01",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "wrtv-pacers-still-call-indiana-home-thanks-to-herb-an",
+  "url": "https://www.wrtv.com/sports/2025-nba-finals/pacers-still-call-indiana-home-thanks-to-herb-and-mel-simon",
+  "title": "Pacers still call Indiana home thanks to Herb and Mel Simon",
+  "title_from": "page title",
+  "publisher": "WRTV Indianapolis",
+  "origin": "independent",
+  "date": "2025-06-13",
+  "checked": "2026-10-18"
+ },
+ {
+  "id": "wsls-qatar-investment-authority-is-buying-a-stake-in",
+  "url": "https://www.wsls.com/sports/2023/06/22/qatar-investment-authority-is-buying-a-stake-in-monumental-sports-entertainment-ap-source-says/",
+  "title": "Qatar sovereign wealth fund buys stake in Washington's NBA, NHL and WNBA teams, AP source says",
+  "title_from": "page title",
+  "publisher": "WSLS 10",
+  "origin": "independent",
+  "date": "2023-06-22",
+  "checked": "2026-10-18"
  },
  {
   "id": "wtop-alexandria-says-capitals-wizards-arena-deal-is-d",

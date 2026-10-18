@@ -51,8 +51,32 @@ select * from read_csv('{root}/data/threats/left_behind.csv', header = true);
 
 create or replace view leases as
 select team, arena, owner, try_cast(term_end_year as integer) as term_end_year, term_and_nonrelocation,
-       outs_penalties_notes, label
+       outs_penalties_notes, summary, label
 from read_csv('{root}/data/authorities/lease_clock.csv', header = true, all_varchar = true);
+
+-- Teams: what each controlling owner paid, what the team is worth now, deals since, and what each public arena deal
+-- returns to the public. Prices in millions of nominal dollars; values in billions.
+create or replace view team_values as
+select team, owner, owner_wealth, owner_field, owner_class, control_year, price_year, try_cast(price_m as double) as price_m, price_scope, price_note, price_label,
+       try_cast(seller_price_m as double) as seller_price_m, try_cast(seller_year as integer) as seller_year,
+       forbes_2025_b, forbes_2026_b, sportico_2026_b, value_label,
+       nullif(deal, '') as deal, try_cast(deal_value_b as double) as deal_value_b, nullif(deal_date, '') as deal_date,
+       nullif(deal_label, '') as deal_label, note
+from read_csv('{root}/data/teams/team_values.csv', header = true, delim = ',', quote = '"', escape = '"', all_varchar = true,
+              types = {'control_year': 'INTEGER', 'price_year': 'INTEGER', 'forbes_2025_b': 'DOUBLE', 'forbes_2026_b': 'DOUBLE',
+                       'sportico_2026_b': 'DOUBLE'});
+
+create or replace view value_history as
+select * from read_csv('{root}/data/teams/value_history.csv', header = true, delim = ',', quote = '"', escape = '"');
+
+create or replace view investors as
+select fund, fund_type, team, holder, stake, nullif(entered, '') as entered, try_cast(entry_value_b as double) as entry_value_b,
+       status, label, note
+from read_csv('{root}/data/teams/investors.csv', header = true, delim = ',', quote = '"', escape = '"', all_varchar = true);
+
+create or replace view public_return as
+select team, public_deal = 'Y' as public_deal, sale_share, equity_stake = 'Y' as equity_stake, summary, label, note
+from read_csv('{root}/data/teams/public_return.csv', header = true, delim = ',', quote = '"', escape = '"', all_varchar = true);
 
 -- United Center: the 1989 valuation formula years, and the bills after it ended.
 create or replace view uc_formula as

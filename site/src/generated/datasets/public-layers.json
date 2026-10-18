@@ -1,0 +1,52 @@
+{
+ "id": "public-layers",
+ "title": "Public money in the 30 current arenas, by kind",
+ "sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
+ "base_sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
+ "columns": [
+  "ord",
+  "key",
+  "name",
+  "public_2026_m"
+ ],
+ "rows": [
+  {
+   "ord": 1,
+   "key": "build",
+   "name": "Building the arenas",
+   "public_2026_m": 5213.052206
+  },
+  {
+   "ord": 2,
+   "key": "reno",
+   "name": "Renovations",
+   "public_2026_m": 3111.303014
+  },
+  {
+   "ord": 3,
+   "key": "buy",
+   "name": "Buying arenas",
+   "public_2026_m": 218.884347
+  },
+  {
+   "ord": 4,
+   "key": "pay",
+   "name": "Yearly payments",
+   "public_2026_m": 759.099046
+  },
+  {
+   "ord": 5,
+   "key": "breaks",
+   "name": "Tax breaks",
+   "public_2026_m": 1843.2
+  }
+ ],
+ "note": "The five parts of the expanded total. Tax breaks are property-tax breaks and taxes diverted to arena debt; the federal cost of tax-exempt bonds is not included.",
+ "method": "select * from ( select 1 as ord, 'build' as key, 'Building the arenas' as name, sum(public_2026_m) as public_2026_m from items where core and kind = 'construction' union all select 2, 'reno', 'Renovations', sum(public_2026_m) from items where core and kind = 'renovation' union all select 3, 'buy', 'Buying arenas', sum(public_2026_m) from items where core and kind = 'purchase' union all select 4, 'pay', 'Yearly payments', sum(public_2026_m) from items where core and kind = 'ongoing' union all select 5, 'breaks', 'Tax breaks', (select sum(coalesce(pilot_2026_m, 0)) from arenas) + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y')) order by ord"
+}

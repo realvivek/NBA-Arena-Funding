@@ -2427,7 +2427,7 @@
  "sources_n": {
   "key": "sources_n",
   "title": "Documents in the bibliography (not counting this site's own ledgers)",
-  "value": 310.0,
+  "value": 474.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2436,10 +2436,10 @@
    "ledger"
   ],
   "display": {
-   "long": "310",
-   "short": "310",
-   "title": "310",
-   "cap": "310"
+   "long": "474",
+   "short": "474",
+   "title": "474",
+   "cap": "474"
   },
   "note": "",
   "method": "select count(*) from sources where publisher <> 'This site'"
@@ -2447,7 +2447,7 @@
  "sources_government": {
   "key": "sources_government",
   "title": "Government sources",
-  "value": 112.0,
+  "value": 120.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2456,10 +2456,10 @@
    "ledger"
   ],
   "display": {
-   "long": "112",
-   "short": "112",
-   "title": "112",
-   "cap": "112"
+   "long": "120",
+   "short": "120",
+   "title": "120",
+   "cap": "120"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'government' and publisher <> 'This site'"
@@ -2487,7 +2487,7 @@
  "sources_team": {
   "key": "sources_team",
   "title": "Team or league sources",
-  "value": 14.0,
+  "value": 34.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2496,10 +2496,10 @@
    "ledger"
   ],
   "display": {
-   "long": "14",
-   "short": "14",
-   "title": "14",
-   "cap": "14"
+   "long": "34",
+   "short": "34",
+   "title": "34",
+   "cap": "34"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'team_or_league' and publisher <> 'This site'"
@@ -2507,7 +2507,7 @@
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 184.0,
+  "value": 320.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2516,12 +2516,1021 @@
    "ledger"
   ],
   "display": {
-   "long": "184",
-   "short": "184",
-   "title": "184",
-   "cap": "184"
+   "long": "320",
+   "short": "320",
+   "title": "320",
+   "cap": "320"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"
+ },
+ "construction_share": {
+  "key": "construction_share",
+  "title": "Construction's share of public money, counting tax breaks",
+  "value": 46.772546,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "47 percent",
+   "short": "47%",
+   "title": "47%",
+   "cap": "47 percent"
+  },
+  "note": "",
+  "method": "select 100 * (select sum(public_2026_m) from items where core and kind = 'construction') / ((select sum(public_2026_m) from items where core) + (select sum(coalesce(pilot_2026_m, 0)) from arenas) + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))"
+ },
+ "value_mean_2026": {
+  "key": "value_mean_2026",
+  "title": "Average NBA team value, October 2026 (mean of Forbes's 30 team values)",
+  "value": 6126.0,
+  "unit": "usd_m",
+  "basis": "Forbes estimates of October 2026, nominal",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "$6.1 billion",
+   "short": "$6.1B",
+   "title": "$6.1 Billion",
+   "cap": "$6.1 billion"
+  },
+  "note": "Forbes reported the average as $6.1 billion; the mean of its 30 team values is $6.126 billion.",
+  "method": "select 1000 * avg(forbes_2026_b) from team_values"
+ },
+ "value_avg_2014": {
+  "key": "value_avg_2014",
+  "title": "Average NBA team value on Forbes's January 2014 list",
+  "value": 634.0,
+  "unit": "usd_m",
+  "basis": "nominal; Forbes estimate",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "stabroeknews-p-275012"
+  ],
+  "display": {
+   "long": "$634 million",
+   "short": "$634M",
+   "title": "$634 Million",
+   "cap": "$634 million"
+  },
+  "note": "",
+  "method": "select 1000 * forbes_avg_b from value_history where year = 2014"
+ },
+ "value_growth_2014": {
+  "key": "value_growth_2014",
+  "title": "Average team value in 2026 as a multiple of the average on the 2014 list, before inflation",
+  "value": 9.662461,
+  "unit": "number",
+  "basis": "nominal dollars",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "9.7",
+   "short": "9.7",
+   "title": "9.7",
+   "cap": "9.7"
+  },
+  "note": "",
+  "method": "select avg(forbes_2026_b) / (select forbes_avg_b from value_history where year = 2014) from team_values"
+ },
+ "value_min_2026": {
+  "key": "value_min_2026",
+  "title": "Value of the least valuable NBA team, October 2026 (Forbes)",
+  "value": 4000.0,
+  "unit": "usd_m",
+  "basis": "Forbes estimate, nominal",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "$4.0 billion",
+   "short": "$4.0B",
+   "title": "$4.0 Billion",
+   "cap": "$4.0 billion"
+  },
+  "note": "The Memphis Grizzlies.",
+  "method": "select 1000 * min(forbes_2026_b) from team_values"
+ },
+ "value_max_2026": {
+  "key": "value_max_2026",
+  "title": "Value of the most valuable NBA team, October 2026 (Forbes)",
+  "value": 13500.0,
+  "unit": "usd_m",
+  "basis": "Forbes estimate, nominal",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "forbes-golden-state-warriors",
+   "forbes-p-162626",
+   "hoopsrumors-warriors-knicks-top-2026-nba-franchise-valuation"
+  ],
+  "display": {
+   "long": "$13.5 billion",
+   "short": "$13.5B",
+   "title": "$13.5 Billion",
+   "cap": "$13.5 billion"
+  },
+  "note": "The Golden State Warriors.",
+  "method": "select 1000 * max(forbes_2026_b) from team_values"
+ },
+ "value_multiple_median": {
+  "key": "value_multiple_median",
+  "title": "Median ratio of a team's 2026 value to the price its current owners paid, in 2026 dollars",
+  "value": 5.956045,
+  "unit": "number",
+  "basis": "price converted with CPI-U from the year paid",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "team-ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "6",
+   "short": "6",
+   "title": "6",
+   "cap": "6"
+  },
+  "note": "The 26 teams whose price is comparable; prices for the Heat, Knicks, Raptors and Wizards bought more or less than the team, or were not disclosed.",
+  "method": "select median(1000 * v.forbes_2026_b / (v.price_m * c.factor_2026)) from team_values v join cpi c on c.year = v.price_year where v.price_m is not null and v.price_scope <> 'not_comparable'"
+ },
+ "values_comparable_n": {
+  "key": "values_comparable_n",
+  "title": "Teams whose price paid is comparable with their value",
+  "value": 26.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "26",
+   "short": "26",
+   "title": "26",
+   "cap": "26"
+  },
+  "note": "",
+  "method": "select count(*) from team_values where price_m is not null and price_scope <> 'not_comparable'"
+ },
+ "lal_price_2025": {
+  "key": "lal_price_2025",
+  "title": "Valuation in Mark Walter's 2025 purchase of control of the Lakers",
+  "value": 10000.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "abc7",
+   "nba-nba-approves-sale-majority-interest-lakers-mark"
+  ],
+  "display": {
+   "long": "$10 billion",
+   "short": "$10B",
+   "title": "$10 Billion",
+   "cap": "$10 billion"
+  },
+  "note": "",
+  "method": "select price_m from team_values where team = 'LAL'"
+ },
+ "lal_deal_2026": {
+  "key": "lal_deal_2026",
+  "title": "Valuation in the August 2026 agreement to sell control of the Lakers to Josh Kushner and Bob Iger",
+  "value": 12500.0,
+  "unit": "usd_m",
+  "basis": "nominal; pending a league vote",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "cbssports-lakers-sold-josh-kushner-bob-iger",
+   "lakersnation-josh-kushner-bob-iger-expected-to-officially-ta"
+  ],
+  "display": {
+   "long": "$12.5 billion",
+   "short": "$12.5B",
+   "title": "$12.5 Billion",
+   "cap": "$12.5 billion"
+  },
+  "note": "",
+  "method": "select 1000 * deal_value_b from team_values where team = 'LAL'"
+ },
+ "bos_seller_price": {
+  "key": "bos_seller_price",
+  "title": "Price the Celtics' previous owners paid in 2002",
+  "value": 360.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "westernmassnews-nba-approves-sale-boston-celtics-private-equ"
+  ],
+  "display": {
+   "long": "$360 million",
+   "short": "$360M",
+   "title": "$360 Million",
+   "cap": "$360 million"
+  },
+  "note": "",
+  "method": "select seller_price_m from team_values where team = 'BOS' and seller_year = 2002"
+ },
+ "bos_price_2025": {
+  "key": "bos_price_2025",
+  "title": "Valuation in Bill Chisholm's 2025 purchase of control of the Celtics",
+  "value": 6100.0,
+  "unit": "usd_m",
+  "basis": "nominal; at least 51 percent at closing",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "westernmassnews-nba-approves-sale-boston-celtics-private-equ"
+  ],
+  "display": {
+   "long": "$6.1 billion",
+   "short": "$6.1B",
+   "title": "$6.1 Billion",
+   "cap": "$6.1 billion"
+  },
+  "note": "",
+  "method": "select price_m from team_values where team = 'BOS'"
+ },
+ "por_seller_price": {
+  "key": "por_seller_price",
+  "title": "Price Paul Allen paid for the Trail Blazers in 1988",
+  "value": 70.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "forbes-portland-trail-blazers"
+  ],
+  "display": {
+   "long": "$70 million",
+   "short": "$70M",
+   "title": "$70 Million",
+   "cap": "$70 million"
+  },
+  "note": "",
+  "method": "select seller_price_m from team_values where team = 'POR' and seller_year = 1988"
+ },
+ "por_price_2026": {
+  "key": "por_price_2026",
+  "title": "Valuation in Tom Dundon's group's 2026 purchase of control of the Trail Blazers",
+  "value": 4000.0,
+  "unit": "usd_m",
+  "basis": "nominal; 80.1 percent at closing",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "pr-trail-blazers-sale-tom-dundon",
+   "columbian-nba-board-of-governors-approves-blazers-sale-to",
+   "forbes-portland-trail-blazers"
+  ],
+  "display": {
+   "long": "$4 billion",
+   "short": "$4B",
+   "title": "$4 Billion",
+   "cap": "$4 billion"
+  },
+  "note": "",
+  "method": "select price_m from team_values where team = 'POR'"
+ },
+ "cha_seller_price": {
+  "key": "cha_seller_price",
+  "title": "Price Michael Jordan paid for control of the Hornets in 2010",
+  "value": 275.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "cbssports-michael-jordans-13-year-run-as-hornets-owner-end"
+  ],
+  "display": {
+   "long": "$275 million",
+   "short": "$275M",
+   "title": "$275 Million",
+   "cap": "$275 million"
+  },
+  "note": "",
+  "method": "select seller_price_m from team_values where team = 'CHA' and seller_year = 2010"
+ },
+ "cha_price_2023": {
+  "key": "cha_price_2023",
+  "title": "Valuation in the 2023 sale of control of the Hornets",
+  "value": 3000.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "cbssports-michael-jordans-13-year-run-as-hornets-owner-end"
+  ],
+  "display": {
+   "long": "$3 billion",
+   "short": "$3B",
+   "title": "$3 Billion",
+   "cap": "$3 billion"
+  },
+  "note": "",
+  "method": "select price_m from team_values where team = 'CHA'"
+ },
+ "nba_media_total": {
+  "key": "nba_media_total",
+  "title": "Value of the NBA's national media deals that began with the 2025-26 season",
+  "value": 76000.0,
+  "unit": "usd_m",
+  "basis": "nominal, over the deals' term",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "ibj-nba-new-11-year-media-rights-deal-with-disney-nb"
+  ],
+  "display": {
+   "long": "$76 billion",
+   "short": "$76B",
+   "title": "$76 Billion",
+   "cap": "$76 billion"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_media_total, column quote: \"about $76 billion over those 11 years\")"
+ },
+ "nba_media_years": {
+  "key": "nba_media_years",
+  "title": "Term of the NBA's national media deals, in years",
+  "value": 11.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "ibj-nba-new-11-year-media-rights-deal-with-disney-nb"
+  ],
+  "display": {
+   "long": "11",
+   "short": "11",
+   "title": "11",
+   "cap": "11"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_media_years, column quote: \"over those 11 years\")"
+ },
+ "public_deals_reviewed": {
+  "key": "public_deals_reviewed",
+  "title": "Teams whose public arena deals were reviewed for what they return to the public",
+  "value": 22.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "22",
+   "short": "22",
+   "title": "22",
+   "cap": "22"
+  },
+  "note": "",
+  "method": "select count(*) from public_return where public_deal"
+ },
+ "sale_share_found": {
+  "key": "sale_share_found",
+  "title": "Public arena deals reviewed that give the public a share of a team sale",
+  "value": 0.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "zero",
+   "short": "0",
+   "title": "Zero",
+   "cap": "Zero"
+  },
+  "note": "",
+  "method": "select count(*) from public_return where public_deal and sale_share not in ('no', 'none_found', 'unknown')"
+ },
+ "okc_game_fee": {
+  "key": "okc_game_fee",
+  "title": "Oklahoma City's license fee per Thunder game under the 2025 agreement",
+  "value": 58000.0,
+  "unit": "usd",
+  "basis": "nominal",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "okc-pbcarena-use-license-agreementfinal-6-12-25-1"
+  ],
+  "display": {
+   "long": "$58,000",
+   "short": "$58,000",
+   "title": "$58,000",
+   "cap": "$58,000"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/teams/public_return.csv (team=OKC, column summary: \"A license fee of $58,000 a game\")"
+ },
+ "okc_fee_cap": {
+  "key": "okc_fee_cap",
+  "title": "Yearly cap on Oklahoma City's license fees from the Thunder",
+  "value": 3.75,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 2,
+  "label": "b",
+  "sources": [
+   "okc-pbcarena-use-license-agreementfinal-6-12-25-1"
+  ],
+  "display": {
+   "long": "$3.75 million",
+   "short": "$3.75M",
+   "title": "$3.75 Million",
+   "cap": "$3.75 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/teams/public_return.csv (team=OKC, column summary: \"capped at $3.75M a year\")"
+ },
+ "was_rent_min": {
+  "key": "was_rent_min",
+  "title": "Lowest yearly rent the teams pay the District for Capital One Arena under the 2024 deal",
+  "value": 1.5,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "cfo-tafa-capital-one-arena-112624"
+  ],
+  "display": {
+   "long": "$1.5 million",
+   "short": "$1.5M",
+   "title": "$1.5 Million",
+   "cap": "$1.5 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/teams/public_return.csv (team=WAS, column summary: \"Rent of $1.5M to $2.3M a year\")"
+ },
+ "was_rent_max": {
+  "key": "was_rent_max",
+  "title": "Highest yearly rent the teams pay the District for Capital One Arena under the 2024 deal",
+  "value": 2.3,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "cfo-tafa-capital-one-arena-112624"
+  ],
+  "display": {
+   "long": "$2.3 million",
+   "short": "$2.3M",
+   "title": "$2.3 Million",
+   "cap": "$2.3 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/teams/public_return.csv (team=WAS, column summary: \"Rent of $1.5M to $2.3M a year\")"
+ },
+ "mil_rent": {
+  "key": "mil_rent",
+  "title": "Yearly rent the Bucks pay for Fiserv Forum",
+  "value": 1.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 0,
+  "label": "b",
+  "sources": [
+   "wi-lfb-informational-paper-18"
+  ],
+  "display": {
+   "long": "$1 million",
+   "short": "$1M",
+   "title": "$1 Million",
+   "cap": "$1 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/teams/public_return.csv (team=MIL, column summary: \"Rent of $1M a year\")"
+ },
+ "mil_ticket_fee": {
+  "key": "mil_ticket_fee",
+  "title": "Surcharge on each Bucks ticket under the Fiserv Forum lease",
+  "value": 2.0,
+  "unit": "usd",
+  "basis": "nominal",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "wi-lfb-informational-paper-18"
+  ],
+  "display": {
+   "long": "$2",
+   "short": "$2",
+   "title": "$2",
+   "cap": "$2"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/teams/public_return.csv (team=MIL, column summary: \"a $2 surcharge on each ticket\")"
+ },
+ "mia_profit_share": {
+  "key": "mia_profit_share",
+  "title": "Miami-Dade County's share of arena net cash flow above the threshold, under the original Heat agreements",
+  "value": 40.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "b",
+  "sources": [
+   "miamidadeig-ig11-34finalbasketball"
+  ],
+  "display": {
+   "long": "40 percent",
+   "short": "40%",
+   "title": "40%",
+   "cap": "40 percent"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=mia_profit_share, column quote: \"the remaining 40% to the County\")"
+ },
+ "mia_profit_threshold": {
+  "key": "mia_profit_threshold",
+  "title": "Arena net cash flow the Heat's arena company kept before Miami-Dade's share began",
+  "value": 14.0,
+  "unit": "usd_m",
+  "basis": "nominal, per year",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "miamidadeig-ig11-34finalbasketball"
+  ],
+  "display": {
+   "long": "$14 million",
+   "short": "$14M",
+   "title": "$14 Million",
+   "cap": "$14 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=mia_profit_threshold, column quote: \"in excess of $14 million\")"
+ },
+ "mia_profit_paid": {
+  "key": "mia_profit_paid",
+  "title": "The only payment Miami-Dade received from its share of arena net cash flow, in 2013",
+  "value": 257134.0,
+  "unit": "usd",
+  "basis": "nominal",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "miamidade-2014-06-03-bcc"
+  ],
+  "display": {
+   "long": "$257,134",
+   "short": "$257,134",
+   "title": "$257,134",
+   "cap": "$257,134"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=mia_profit_paid, column quote: \"a payment to the County ($257,134)\")"
+ },
+ "sas_profit_share": {
+  "key": "sas_profit_share",
+  "title": "Bexar County's share of arena profits above a threshold under the Spurs' current agreement",
+  "value": 20.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "b/c",
+  "sources": [
+   "headlinersfoundation-spurs-arena-delivers-no-profit-sharing",
+   "sa-termsheet"
+  ],
+  "display": {
+   "long": "20 percent",
+   "short": "20%",
+   "title": "20%",
+   "cap": "20 percent"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/teams/public_return.csv (team=SAS, column summary: \"A 20% share of arena profits above a threshold has never paid\")"
+ },
+ "vikings_public_share": {
+  "key": "vikings_public_share",
+  "title": "Public share of the gain on a sale of the Minnesota Vikings in the first ten years of the stadium lease",
+  "value": 25.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "b",
+  "sources": [
+   "revisor-473j-15"
+  ],
+  "display": {
+   "long": "25 percent",
+   "short": "25%",
+   "title": "25%",
+   "cap": "25 percent"
+  },
+  "note": "Minn. Stat. 473J.15 subd. 8; the share falls to 15 percent in years 11 to 15 and 10 percent in years 16 to 20.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=vikings_public_share, column quote: \"25 percent of the amount in excess of the purchase price\")"
+ },
+ "broncos_sale_share": {
+  "key": "broncos_sale_share",
+  "title": "Payment to the Denver stadium district from the 2022 sale of the Broncos",
+  "value": 41.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "cbsnews-broncos-sale-help-youth-programs-denver-metro-ar"
+  ],
+  "display": {
+   "long": "$41 million",
+   "short": "$41M",
+   "title": "$41 Million",
+   "cap": "$41 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=broncos_sale_share, column quote: \"The board approved that $41 million sum\")"
+ },
+ "arenas_public_n": {
+  "key": "arenas_public_n",
+  "title": "Arenas with public money or tax breaks",
+  "value": 24.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "24",
+   "short": "24",
+   "title": "24",
+   "cap": "24"
+  },
+  "note": "The check confirms that Brooklyn's and New York's arenas rank first and second when tax breaks are counted.",
+  "method": "select count(*) from arenas a where coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0) + coalesce(a.pilot_2026_m, 0) + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end > 0"
+ },
+ "owners_finance_n": {
+  "key": "owners_finance_n",
+  "title": "Teams whose controlling owners made their money mainly in finance",
+  "value": 11.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "11",
+   "short": "11",
+   "title": "11",
+   "cap": "11"
+  },
+  "note": "Private equity or hedge funds (Atlanta, Boston, Charlotte, Detroit, Milwaukee, Philadelphia) and other finance (Cleveland and Phoenix in mortgage lending, the Lakers in asset management, Golden State in venture capital, Portland in financial services), by Forbes's source of wealth.",
+  "method": "select count(*) from team_values where owner_class <> 'other'"
+ },
+ "owners_pe_n": {
+  "key": "owners_pe_n",
+  "title": "Teams whose controlling owners made their money mainly in private equity or hedge funds",
+  "value": 6.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "six",
+   "short": "6",
+   "title": "Six",
+   "cap": "Six"
+  },
+  "note": "",
+  "method": "select count(*) from team_values where owner_class = 'private_equity'"
+ },
+ "fund_teams_n": {
+  "key": "fund_teams_n",
+  "title": "Teams with a current stake held by an investment fund, in the team or its parent company",
+  "value": 11.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "11",
+   "short": "11",
+   "title": "11",
+   "cap": "11"
+  },
+  "note": "Stakes seen only in search results, such as Arctos's reported Grizzlies stake, are not counted.",
+  "method": "select count(distinct team) from investors where status = 'current'"
+ },
+ "funds_n": {
+  "key": "funds_n",
+  "title": "Investment funds with current stakes in NBA teams",
+  "value": 4.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "four",
+   "short": "4",
+   "title": "Four",
+   "cap": "Four"
+  },
+  "note": "",
+  "method": "select count(distinct fund) from investors where status = 'current'"
+ },
+ "arctos_teams_n": {
+  "key": "arctos_teams_n",
+  "title": "Teams in which Arctos Sports Partners holds a current stake",
+  "value": 5.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "five",
+   "short": "5",
+   "title": "Five",
+   "cap": "Five"
+  },
+  "note": "",
+  "method": "select count(*) from investors where status = 'current' and fund = 'Arctos Sports Partners'"
+ },
+ "homecourt_teams_n": {
+  "key": "homecourt_teams_n",
+  "title": "Teams in which Blue Owl HomeCourt holds a current stake",
+  "value": 5.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "five",
+   "short": "5",
+   "title": "Five",
+   "cap": "Five"
+  },
+  "note": "",
+  "method": "select count(*) from investors where status = 'current' and fund = 'Blue Owl HomeCourt'"
+ },
+ "finance_teams_n": {
+  "key": "finance_teams_n",
+  "title": "Teams with a controlling owner from finance or a current fund stake",
+  "value": 16.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "16",
+   "short": "16",
+   "title": "16",
+   "cap": "16"
+  },
+  "note": "",
+  "method": "select count(*) from team_values v where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current')"
+ },
+ "finance_teams_public": {
+  "key": "finance_teams_public",
+  "title": "Public money, with tax breaks, in the arenas of teams with a controlling owner from finance or a current fund stake",
+  "value": 4732.850577,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger",
+   "ledger"
+  ],
+  "display": {
+   "long": "$4.73 billion",
+   "short": "$4.73B",
+   "title": "$4.73 Billion",
+   "cap": "$4.73 billion"
+  },
+  "note": "",
+  "method": "with t as (select v.team from team_values v where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current')) select (select sum(public_2026_m) from items where core and team in (select team from t)) + (select sum(coalesce(pilot_2026_m, 0) + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end) from arenas where team in (select team from t))"
+ },
+ "control_sales_2015_n": {
+  "key": "control_sales_2015_n",
+  "title": "Sales of control since 2015 to the teams' current owners, with a comparable price",
+  "value": 11.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "11",
+   "short": "11",
+   "title": "11",
+   "cap": "11"
+  },
+  "note": "",
+  "method": "select count(*) from team_values where control_year >= 2015 and price_m is not null and price_scope <> 'not_comparable'"
+ },
+ "control_sales_2015_finance_n": {
+  "key": "control_sales_2015_finance_n",
+  "title": "Of those sales, the ones to buyers who made their money mainly in finance",
+  "value": 6.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "six",
+   "short": "6",
+   "title": "Six",
+   "cap": "Six"
+  },
+  "note": "",
+  "method": "select count(*) from team_values where control_year >= 2015 and price_m is not null and price_scope <> 'not_comparable' and owner_class <> 'other'"
+ },
+ "nba_fund_cap_single": {
+  "key": "nba_fund_cap_single",
+  "title": "Most of one NBA team a single investment fund may own",
+  "value": 20.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "cliffordchance-2026-1-from-five-to-eight-nba-further-loosens"
+  ],
+  "display": {
+   "long": "20 percent",
+   "short": "20%",
+   "title": "20%",
+   "cap": "20 percent"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_fund_cap_single, column quote: \"capped at 20%\")"
+ },
+ "nba_fund_cap_total": {
+  "key": "nba_fund_cap_total",
+  "title": "Most of one NBA team all investment funds together may own",
+  "value": 30.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "cliffordchance-2026-1-from-five-to-eight-nba-further-loosens"
+  ],
+  "display": {
+   "long": "30 percent",
+   "short": "30%",
+   "title": "30%",
+   "cap": "30 percent"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_fund_cap_total, column quote: \"limited to 30%\")"
+ },
+ "nba_fund_teams_max": {
+  "key": "nba_fund_teams_max",
+  "title": "Teams in which one investment fund may hold stakes, since Dec. 3, 2025",
+  "value": 8.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "cliffordchance-2026-1-from-five-to-eight-nba-further-loosens"
+  ],
+  "display": {
+   "long": "eight",
+   "short": "8",
+   "title": "Eight",
+   "cap": "Eight"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_fund_teams_max, column quote: \"as many as eight teams\")"
+ },
+ "por_lobbying": {
+  "key": "por_lobbying",
+  "title": "Lobbying reported by the Trail Blazers' arena company in the first three months of 2026",
+  "value": 100000.0,
+  "unit": "usd",
+  "basis": "nominal",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "opb-trail-blazers-moda-center-portland-basketball-sp"
+  ],
+  "display": {
+   "long": "$100,000",
+   "short": "$100,000",
+   "title": "$100,000",
+   "cap": "$100,000"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=por_lobbying, column quote: \"Rip City Management spent $100,000 on lobbying\")"
+ },
+ "lac_fine": {
+  "key": "lac_fine",
+  "title": "The NBA's fine on the Clippers after its investigation of Kawhi Leonard's endorsement deals",
+  "value": 30.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "pr-nba-investigation-clippers-kawhi-leonard"
+  ],
+  "display": {
+   "long": "$30 million",
+   "short": "$30M",
+   "title": "$30 Million",
+   "cap": "$30 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=lac_fine, column quote: \"The Clippers are fined $30 million\")"
+ },
+ "lac_picks": {
+  "key": "lac_picks",
+  "title": "First-round draft picks the Clippers forfeit",
+  "value": 5.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "pr-nba-investigation-clippers-kawhi-leonard"
+  ],
+  "display": {
+   "long": "five",
+   "short": "5",
+   "title": "Five",
+   "cap": "Five"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=lac_picks, column quote: \"forfeit five first-round draft picks\")"
+ },
+ "sec197_years": {
+  "key": "sec197_years",
+  "title": "Years over which a buyer deducts the purchase price of a team's franchise and other intangibles",
+  "value": 15.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "govinfo-crpt-119hrpt106-pt2"
+  ],
+  "display": {
+   "long": "15",
+   "short": "15",
+   "title": "15",
+   "cap": "15"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=sec197_years, column quote: \"amortizable on a straight-line basis over 15 years\")"
  }
 }

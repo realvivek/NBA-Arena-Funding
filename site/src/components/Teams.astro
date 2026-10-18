@@ -1,0 +1,132 @@
+---
+/**
+ * Every team, ranked: one row per team with the public money in its arena (tax breaks shown apart), its value and
+ * an expandable record: the arena, the public money by kind and the taxes that paid it, the lease, what the owners
+ * paid and what the team is worth, and what the public gets back. Rows are drawn at build time from the same
+ * datasets as the charts. A small script adds the sort buttons; without it the rows stay in order of public money.
+ */
+import { dataset } from '../lib/data';
+import { money, TEAM_CITY, TEAM_NAME } from '../lib/chart';
+import { source, shortName } from '../lib/sources';
+import { sitePath } from '../lib/paths';
+import Cites from './Cites.astro';
+
+interface Props {
+  title: string;
+  intro: string;
+  sources: string[];
+  numbers: number[];
+}
+const { title, intro, sources: introSources, numbers } = Astro.props;
+const by = <T extends { team: string }>(rows: T[]) => Object.fromEntries(rows.map((r) => [r.team, r]));
+const arenas = by(dataset('arenas').rows as any[]);
+const values = by(dataset('team-values').rows as any[]);
+const returns = by(dataset('public-return').rows as any[]);
+const leases = by(dataset('leases').rows as any[]);
+const items = Object.fromEntries((dataset('items').rows as any[]).map((i) => [i.item_id, i]));
+
+// the taxes that paid each team's capital money (construction, renovations, purchases), by who mostly pays them
+const payers: Record<string, Record<string, number>> = {};
+for (const b of dataset('item-buckets').rows as any[]) {
+  const it = items[b.item_id];
+  if (!it || !it.core || it.kind === 'ongoing') continue;
+  (payers[b.team] ??= {})[b.payer] = (payers[b.team]?.[b.payer] ?? 0) + b.public_2026_m;
+}
+const PAYER = { residents: "residents' taxes", visitors: 'visitor taxes', other: 'land, or money not split by tax' } as Record<string, string>;
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const pct = (v: number) => `${Math.round(v)}%`;
+const year = (d: string | null) => (d ? d.slice(0, 4) : '');
+const sentence = (t: string) => t.replace(/\.$/, '') + '.';
+// a Forbes value as published: $13.5B, $5.425B
+const worth = (b: number) => `$${b}B`;
+
+const rows = Object.keys(arenas).map((team) => {
+  const a = arenas[team], v = values[team], ret = returns[team], l = leases[team];
+  const direct = a.public_2026_m, breaks = a.tax_breaks_2026_m, total = direct + breaks;
+  const parts = [
+    ['building it', a.construction_public_2026_m],
+    ['renovations', a.renovation_public_2026_m],
+    ['buying it', a.purchase_public_2026_m],
+    ['yearly payments', a.ongoing_public_2026_m],
+    ['tax breaks', breaks],
+  ].filter(([, x]) => (x as number) > 0.05) as [string, number][];
+  const paid = payers[team] ?? {};
+  const paidTotal = Object.values(paid).reduce((s, x) => s + x, 0);
+  const paidWith = paidTotal > 0
+    ? Object.entries(paid).filter(([, x]) => x / paidTotal >= 0.05).sort((p, q) => q[1] - p[1]).map(([k, x]) => `${pct((100 * x) / paidTotal)} ${PAYER[k]}`).join(', ')
+    : '';
+  let bought = '';
+  if (v.price_scope === 'not_comparable' || v.price_m == null) bought = sentence(v.price_note);
+  else {
+    const then = v.price_year < 2023 ? ` (${money(v.price_2026_m)} in 2026 dollars)` : '';
+    const price = v.price_m >= 1000 ? worth(v.price_m / 1000) : money(v.price_m);
+    const how = v.price_scope === 'valuation' ? `at a ${price} valuation` : `for ${price}`;
+    bought = `${cap(v.owner)} bought control in ${v.price_year} ${how}${then}. ${sentence(v.price_note)}`;
+  }
+  const deal = v.deal ? ` In ${year(v.deal_date)}: ${sentence(`${v.deal}${v.deal_value_b ? `, at a reported ${worth(v.deal_value_b)} valuation` : ''}`)}` : '';
+  const ids = [...new Set([...(a.sources ?? []), ...(l?.sources ?? []), ...(v.sources ?? []), ...(ret?.sources ?? [])])];
+  return {
+    team,
+    name: TEAM_NAME[team],
+    arena: a.arena,
+    total, direct, breaks,
+    share: a.public_share_pct,
+    value: v.forbes_2026_b,
+    chip: direct > 0 ? `${pct(a.public_share_pct)} public` : breaks > 0 ? 'tax breaks only' : 'no public money found',
+    record: [
+      ['Arena', `${a.arena}, ${a.city}. Opened ${a.opened}. Owned by ${a.owner.replace(/ - /g, '; ')}.`],
+      ['Public money', parts.length ? `${cap(parts.map(([n, x]) => `${n} ${money(x)}`).join(', '))}, in 2026 dollars. Public share of all spending on the arena: ${pct(a.public_share_pct)}.` : 'None found in the records reviewed.'],
+      ...(paidWith ? [['Paid with', `${cap(paidWith)}.`]] : []),
+      ['Lease', l?.summary ?? ''],
+      ['The team', `${bought} Worth ${worth(v.forbes_2026_b)} (Forbes, October 2026).${deal}`],
+      ['What the public gets back', ret?.summary ?? ''],
+    ] as [string, string][],
+    sources: ids.map((id) => source(id)),
+  };
+});
+rows.sort((p, q) => q.total - p.total || p.name.localeCompare(q.name));
+const top = rows[0].total;
+---
+<section class="teams" aria-labelledby="teams-title">
+  <h3 id="teams-title">{title}</h3>
+  <div class="teams-intro"><Fragment set:html={intro} />{' '}<Cites ids={introSources} numbers={numbers} /></div>
+  <div class="teams-sort" role="group" aria-label="Sort the teams" hidden>
+    <span>Sort by</span>
+    <button type="button" data-sort="total" aria-pressed="true">Public money</button>
+    <button type="button" data-sort="share" aria-pressed="false">Public share</button>
+    <button type="button" data-sort="value" aria-pressed="false">Team value</button>
+    <button type="button" data-sort="name" aria-pressed="false">A to Z</button>
+  </div>
+  <p class="teams-key" aria-hidden="true">
+    <span><i style="background: var(--public)" />Public money</span>
+    <span><i style="background: var(--public-soft)" />Tax breaks</span>
+    <span class="teams-key-value">Team value, 2026</span>
+  </p>
+  <ol class="teams-list">
+    {rows.map((r, i) => (
+      <li class="tm" id={`team-${r.team.toLowerCase()}`} data-total={r.total.toFixed(1)} data-share={r.share.toFixed(1)} data-value={r.value.toFixed(3)} data-name={r.name}>
+        <details>
+          <summary>
+            <span class="tm-rank">{i + 1}</span>
+            <span class="tm-name"><b>{r.name}</b><small>{r.arena} · {r.chip}</small></span>
+            <span class="tm-bar" aria-hidden="true">
+              {r.direct > 0 && <span class="tm-direct" style={`width: ${((100 * r.direct) / top).toFixed(2)}%`} />}
+              {r.breaks > 0 && <span class="tm-breaks" style={`width: ${((100 * r.breaks) / top).toFixed(2)}%`} />}
+            </span>
+            <span class="tm-amt">{r.total > 0 ? money(r.total) : '$0'}</span>
+            <span class="tm-val">{money(r.value * 1000, 1)}</span>
+          </summary>
+          <div class="tm-body">
+            <dl>
+              {r.record.map(([k, x]) => <div><dt>{k}</dt><dd>{x}</dd></div>)}
+            </dl>
+            <p class="tm-sources">
+              Sources: {r.sources.map((s, j) => <>{j > 0 && ' · '}<a href={s.url} rel="noopener">{shortName(s)}</a></>)}
+            </p>
+            <p class="more"><a href={sitePath(`/arenas/#${r.team.toLowerCase()}`)}>The full record for {r.arena}, {TEAM_CITY[r.team]}</a></p>
+          </div>
+        </details>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -20,7 +20,7 @@ const sources = defineCollection({
 const cites = z.array(reference('sources')).default([]);
 
 // A block of copy: a paragraph, a chart, a subhead, a pull quote, a chart told in steps as the reader scrolls
-// (each step names the chart state it shows), or the arena lookup. Paragraphs and steps cite sources by id.
+// (each step names the chart state it shows), or the ranked list of teams. Paragraphs and steps cite sources by id.
 const step = z.object({ step: z.string(), p: z.string(), sources: cites }).strict();
 const block = z.union([
   z.object({ p: z.string(), sources: cites }).strict(),
@@ -28,7 +28,7 @@ const block = z.union([
   z.object({ h3: z.string() }).strict(),
   z.object({ quote: z.string(), by: z.string(), sources: cites }).strict(),
   z.object({ scrolly: z.string(), steps: z.array(step).min(2) }).strict(),
-  z.object({ lookup: z.string(), title: z.string(), intro: z.string(), sources: cites }).strict(),
+  z.object({ teams: z.string(), title: z.string(), intro: z.string(), sources: cites }).strict(),
 ]);
 // A chapter ends with a link to the reference page that holds its full record.
 const more = z.object({ page: z.string(), text: z.string() }).strict();

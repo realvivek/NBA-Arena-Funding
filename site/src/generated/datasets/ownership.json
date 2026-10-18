@@ -1,0 +1,587 @@
+{
+ "id": "ownership",
+ "title": "Who owns each team, the controlling owners' main source of wealth, and the investment funds with stakes",
+ "sources": [
+  "team-ledger",
+  "ledger",
+  "forbes-antony-ressler",
+  "frontofficesports-dyal-buys-close-to-6-of-the-atlanta-hawks",
+  "forbes-william-chisholm",
+  "clearygottlieb-sixth-street-invests-in-boston-celtics",
+  "frontofficesports-the-nbas-expanding-private-equity-footprin",
+  "nba-jordan-hornets-new-partners-retains-majority-off",
+  "news4jax-michael-jordans-sale-of-majority-ownership-of-ho",
+  "forbes-josh-harris",
+  "forbes-david-blitzer",
+  "roi-nj-hbse-to-sell-minority-share-5-to-arctos-sports-p",
+  "forbes-tom-gores",
+  "forbes-wesley-edens",
+  "forbes-daniel-gilbert",
+  "stocktitan-blue-owl-s-home-court-partners-fund-announces-mi",
+  "sports-cavs-owner-dan-gilbert-moving-194805380",
+  "forbes-joe-lacob",
+  "finance-nba-warriors-sell-minority-stake-204353124",
+  "forbes-mark-walter",
+  "forbes-mat-ishbia",
+  "forbes-thomas-dundon",
+  "forbes-marc-lore",
+  "frontofficesports-arctos-to-buy-17-stake-in-kings-at-1-8b-va",
+  "nbcsportsbayarea-source-ranadive-not-part-of-group-selling-s",
+  "ksat-spurs-name-peter-j-holt-managing-partner-add-aus",
+  "investmentnews-spurs-co-owner-sixth-street-laying-ground-for",
+  "forbes-ryan-smith",
+  "sltrib-miller-family-sells-some-its",
+  "forbes-theodore-leonsis",
+  "sportcal-arctos-acquires-stake-in-monumental-sports-qia-i",
+  "wsls-qatar-investment-authority-is-buying-a-stake-in",
+  "forbes-joseph-tsai",
+  "forbes-jerry-reinsdorf",
+  "forbes-miriam-adelson",
+  "forbes-stanley-kroenke",
+  "forbes-tilman-fertitta",
+  "forbes-herbert-simon",
+  "forbes-steve-ballmer",
+  "forbes-robert-pera",
+  "forbes-micky-arison",
+  "forbes-gayle-benson",
+  "forbes-charles-dolan",
+  "forbes-george-kaiser",
+  "forbes-richard-devos",
+  "sec-d944781dex991"
+ ],
+ "base_sources": [
+  "team-ledger",
+  "ledger"
+ ],
+ "columns": [
+  "team",
+  "owner",
+  "owner_wealth",
+  "owner_field",
+  "owner_class",
+  "control_year",
+  "funds",
+  "stakes",
+  "forbes_2026_b",
+  "public_2026_m",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "ATL",
+   "owner": "Tony Ressler's group",
+   "owner_wealth": "co-founded the private equity firms Apollo (1990) and Ares (1997)",
+   "owner_field": "Private equity",
+   "owner_class": "private_equity",
+   "control_year": 2015,
+   "funds": [
+    "Blue Owl HomeCourt"
+   ],
+   "stakes": [
+    "about 6%"
+   ],
+   "forbes_2026_b": 5.75,
+   "public_2026_m": 312.649501,
+   "sources": [
+    "forbes-antony-ressler",
+    "frontofficesports-dyal-buys-close-to-6-of-the-atlanta-hawks"
+   ]
+  },
+  {
+   "team": "BOS",
+   "owner": "Bill Chisholm's group",
+   "owner_wealth": "private equity (Symphony Technology Group)",
+   "owner_field": "Private equity",
+   "owner_class": "private_equity",
+   "control_year": 2025,
+   "funds": [
+    "Sixth Street"
+   ],
+   "stakes": [
+    "reported at 10% to 12.5%"
+   ],
+   "forbes_2026_b": 7.0,
+   "public_2026_m": 0.0,
+   "sources": [
+    "forbes-william-chisholm",
+    "clearygottlieb-sixth-street-invests-in-boston-celtics",
+    "frontofficesports-the-nbas-expanding-private-equity-footprin"
+   ]
+  },
+  {
+   "team": "CHA",
+   "owner": "Rick Schnall and Gabe Plotkin",
+   "owner_wealth": "hedge funds and private equity (Plotkin founded Melvin Capital; Schnall is co-president of Clayton, Dubilier & Rice)",
+   "owner_field": "Hedge funds, private equity",
+   "owner_class": "private_equity",
+   "control_year": 2023,
+   "funds": [
+    "Blue Owl HomeCourt"
+   ],
+   "stakes": [
+    "undisclosed, in the buyer group"
+   ],
+   "forbes_2026_b": 4.4,
+   "public_2026_m": 565.319268,
+   "sources": [
+    "nba-jordan-hornets-new-partners-retains-majority-off",
+    "news4jax-michael-jordans-sale-of-majority-ownership-of-ho"
+   ]
+  },
+  {
+   "team": "PHI",
+   "owner": "Josh Harris and David Blitzer",
+   "owner_wealth": "private equity (Harris co-founded Apollo; Blitzer runs Blackstone's tactical opportunities group)",
+   "owner_field": "Private equity",
+   "owner_class": "private_equity",
+   "control_year": 2011,
+   "funds": [
+    "Arctos Sports Partners"
+   ],
+   "stakes": [
+    "about 5%, bought over time"
+   ],
+   "forbes_2026_b": 6.4,
+   "public_2026_m": 0.0,
+   "sources": [
+    "forbes-josh-harris",
+    "forbes-david-blitzer",
+    "roi-nj-hbse-to-sell-minority-share-5-to-arctos-sports-p"
+   ]
+  },
+  {
+   "team": "DET",
+   "owner": "Tom Gores",
+   "owner_wealth": "private equity (Platinum Equity)",
+   "owner_field": "Private equity",
+   "owner_class": "private_equity",
+   "control_year": 2011,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.2,
+   "public_2026_m": 386.968009,
+   "sources": [
+    "forbes-tom-gores"
+   ]
+  },
+  {
+   "team": "MIL",
+   "owner": "Wes Edens and Jimmy and Dee Haslam",
+   "owner_wealth": "investments (Edens co-founded the asset manager Fortress Investment Group)",
+   "owner_field": "Private equity",
+   "owner_class": "private_equity",
+   "control_year": 2014,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.6,
+   "public_2026_m": 330.193498,
+   "sources": [
+    "forbes-wesley-edens"
+   ]
+  },
+  {
+   "team": "CLE",
+   "owner": "Dan Gilbert",
+   "owner_wealth": "mortgage lending (co-founded what became Rocket Mortgage)",
+   "owner_field": "Mortgage lending",
+   "owner_class": "other_finance",
+   "control_year": 2005,
+   "funds": [
+    "Blue Owl HomeCourt"
+   ],
+   "stakes": [
+    "reported at 5% to 10%"
+   ],
+   "forbes_2026_b": 5.5,
+   "public_2026_m": 432.583988,
+   "sources": [
+    "forbes-daniel-gilbert",
+    "stocktitan-blue-owl-s-home-court-partners-fund-announces-mi",
+    "sports-cavs-owner-dan-gilbert-moving-194805380"
+   ]
+  },
+  {
+   "team": "GSW",
+   "owner": "Joe Lacob and Peter Guber",
+   "owner_wealth": "venture capital (Lacob joined Kleiner Perkins in 1987)",
+   "owner_field": "Venture capital",
+   "owner_class": "other_finance",
+   "control_year": 2010,
+   "funds": [
+    "Arctos Sports Partners"
+   ],
+   "stakes": [
+    "about 5% (later reported at 13% to 15%)"
+   ],
+   "forbes_2026_b": 13.5,
+   "public_2026_m": 0.0,
+   "sources": [
+    "forbes-joe-lacob",
+    "finance-nba-warriors-sell-minority-stake-204353124"
+   ]
+  },
+  {
+   "team": "LAL",
+   "owner": "Mark Walter",
+   "owner_wealth": "asset management (chief executive of Guggenheim Partners)",
+   "owner_field": "Asset management",
+   "owner_class": "other_finance",
+   "control_year": 2025,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 12.5,
+   "public_2026_m": 0.0,
+   "sources": [
+    "forbes-mark-walter"
+   ]
+  },
+  {
+   "team": "PHX",
+   "owner": "Mat Ishbia",
+   "owner_wealth": "mortgage lending (United Wholesale Mortgage)",
+   "owner_field": "Mortgage lending",
+   "owner_class": "other_finance",
+   "control_year": 2023,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 6.0,
+   "public_2026_m": 299.94527,
+   "sources": [
+    "forbes-mat-ishbia"
+   ]
+  },
+  {
+   "team": "POR",
+   "owner": "Tom Dundon's group",
+   "owner_wealth": "financial services (chairman of Dundon Capital Partners)",
+   "owner_field": "Financial services",
+   "owner_class": "other_finance",
+   "control_year": 2026,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.3,
+   "public_2026_m": 82.626048,
+   "sources": [
+    "forbes-thomas-dundon"
+   ]
+  },
+  {
+   "team": "MIN",
+   "owner": "Marc Lore and Alex Rodriguez",
+   "owner_wealth": "e-commerce (Jet.com) and baseball",
+   "owner_field": "E-commerce",
+   "owner_class": "other",
+   "control_year": 2025,
+   "funds": [
+    "Blue Owl HomeCourt"
+   ],
+   "stakes": [
+    "undisclosed"
+   ],
+   "forbes_2026_b": 4.18,
+   "public_2026_m": 296.822623,
+   "sources": [
+    "forbes-marc-lore",
+    "frontofficesports-the-nbas-expanding-private-equity-footprin"
+   ]
+  },
+  {
+   "team": "SAC",
+   "owner": "Vivek Ranadive's group",
+   "owner_wealth": "software (founder of TIBCO)",
+   "owner_field": "Software",
+   "owner_class": "other",
+   "control_year": 2013,
+   "funds": [
+    "Arctos Sports Partners",
+    "Blue Owl HomeCourt"
+   ],
+   "stakes": [
+    "about 17%",
+    "under 5%"
+   ],
+   "forbes_2026_b": 4.7,
+   "public_2026_m": 308.292103,
+   "sources": [
+    "frontofficesports-arctos-to-buy-17-stake-in-kings-at-1-8b-va",
+    "nbcsportsbayarea-source-ranadive-not-part-of-group-selling-s"
+   ]
+  },
+  {
+   "team": "SAS",
+   "owner": "the Holt family and partners",
+   "owner_wealth": "a family equipment dealership (HOLT CAT)",
+   "owner_field": "Equipment dealing",
+   "owner_class": "other",
+   "control_year": 1996,
+   "funds": [
+    "Sixth Street"
+   ],
+   "stakes": [
+    "20%"
+   ],
+   "forbes_2026_b": 5.6,
+   "public_2026_m": 413.764864,
+   "sources": [
+    "ksat-spurs-name-peter-j-holt-managing-partner-add-aus",
+    "investmentnews-spurs-co-owner-sixth-street-laying-ground-for"
+   ]
+  },
+  {
+   "team": "UTA",
+   "owner": "Ryan and Ashley Smith",
+   "owner_wealth": "software (co-founder of Qualtrics)",
+   "owner_field": "Software",
+   "owner_class": "other",
+   "control_year": 2020,
+   "funds": [
+    "Arctos Sports Partners"
+   ],
+   "stakes": [
+    "a minority stake in SEG; about 10% of the Jazz, bought with a partner"
+   ],
+   "forbes_2026_b": 4.75,
+   "public_2026_m": 547.7,
+   "sources": [
+    "forbes-ryan-smith",
+    "sltrib-miller-family-sells-some-its"
+   ]
+  },
+  {
+   "team": "WAS",
+   "owner": "Ted Leonsis",
+   "owner_wealth": "internet (AOL), then venture capital",
+   "owner_field": "Internet, venture capital",
+   "owner_class": "other",
+   "control_year": 2010,
+   "funds": [
+    "Arctos Sports Partners",
+    "Qatar Investment Authority"
+   ],
+   "stakes": [
+    "a minority stake",
+    "about 5%, increased in December 2025"
+   ],
+   "forbes_2026_b": 5.2,
+   "public_2026_m": 755.985405,
+   "sources": [
+    "forbes-theodore-leonsis",
+    "sportcal-arctos-acquires-stake-in-monumental-sports-qia-i",
+    "wsls-qatar-investment-authority-is-buying-a-stake-in"
+   ]
+  },
+  {
+   "team": "BKN",
+   "owner": "Joe and Clara Wu Tsai",
+   "owner_wealth": "e-commerce (co-founder of Alibaba)",
+   "owner_field": "E-commerce",
+   "owner_class": "other",
+   "control_year": 2019,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 6.5,
+   "public_2026_m": 1193.227052,
+   "sources": [
+    "forbes-joseph-tsai"
+   ]
+  },
+  {
+   "team": "CHI",
+   "owner": "Jerry Reinsdorf's group",
+   "owner_wealth": "sports teams, after a first fortune in real estate",
+   "owner_field": "Real estate",
+   "owner_class": "other",
+   "control_year": 1985,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 6.7,
+   "public_2026_m": 74.6,
+   "sources": [
+    "forbes-jerry-reinsdorf"
+   ]
+  },
+  {
+   "team": "DAL",
+   "owner": "Miriam Adelson and the Dumont family",
+   "owner_wealth": "casinos (Las Vegas Sands)",
+   "owner_field": "Casinos",
+   "owner_class": "other",
+   "control_year": 2023,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 5.8,
+   "public_2026_m": 234.131712,
+   "sources": [
+    "forbes-miriam-adelson"
+   ]
+  },
+  {
+   "team": "DEN",
+   "owner": "Stan Kroenke",
+   "owner_wealth": "sports and real estate",
+   "owner_field": "Real estate",
+   "owner_class": "other",
+   "control_year": 2000,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 5.15,
+   "public_2026_m": 81.63212,
+   "sources": [
+    "forbes-stanley-kroenke"
+   ]
+  },
+  {
+   "team": "HOU",
+   "owner": "Tilman Fertitta",
+   "owner_wealth": "restaurants, hospitality and casinos",
+   "owner_field": "Hospitality",
+   "owner_class": "other",
+   "control_year": 2017,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 6.6,
+   "public_2026_m": 446.56221,
+   "sources": [
+    "forbes-tilman-fertitta"
+   ]
+  },
+  {
+   "team": "IND",
+   "owner": "Herb Simon and family",
+   "owner_wealth": "real estate (Simon Property Group)",
+   "owner_field": "Real estate",
+   "owner_class": "other",
+   "control_year": 1983,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.55,
+   "public_2026_m": 747.425938,
+   "sources": [
+    "forbes-herbert-simon"
+   ]
+  },
+  {
+   "team": "LAC",
+   "owner": "Steve Ballmer",
+   "owner_wealth": "Microsoft",
+   "owner_field": "Software",
+   "owner_class": "other",
+   "control_year": 2014,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 7.8,
+   "public_2026_m": 0.0,
+   "sources": [
+    "forbes-steve-ballmer"
+   ]
+  },
+  {
+   "team": "MEM",
+   "owner": "Robert Pera",
+   "owner_wealth": "wireless networking (Ubiquiti)",
+   "owner_field": "Wireless networking",
+   "owner_class": "other",
+   "control_year": 2012,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.0,
+   "public_2026_m": 554.048244,
+   "sources": [
+    "forbes-robert-pera"
+   ]
+  },
+  {
+   "team": "MIA",
+   "owner": "the Arison family",
+   "owner_wealth": "Carnival cruises",
+   "owner_field": "Cruise lines",
+   "owner_class": "other",
+   "control_year": 1995,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 6.1,
+   "public_2026_m": 410.144553,
+   "sources": [
+    "forbes-micky-arison"
+   ]
+  },
+  {
+   "team": "NOP",
+   "owner": "Gayle Benson",
+   "owner_wealth": "inherited the Saints and the Pelicans from Tom Benson",
+   "owner_field": "Inheritance",
+   "owner_class": "other",
+   "control_year": 2012,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.1,
+   "public_2026_m": 458.761418,
+   "sources": [
+    "forbes-gayle-benson"
+   ]
+  },
+  {
+   "team": "NYK",
+   "owner": "the Dolan family, through Madison Square Garden Sports",
+   "owner_wealth": "cable television (Cablevision)",
+   "owner_field": "Cable television",
+   "owner_class": "other",
+   "control_year": 1997,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 12.6,
+   "public_2026_m": 1030.4,
+   "sources": [
+    "forbes-charles-dolan"
+   ]
+  },
+  {
+   "team": "OKC",
+   "owner": "Clay Bennett's group",
+   "owner_wealth": "investments, energy and banking (Bennett chairs Dorchester Capital; George Kaiser owns most of BOK Financial)",
+   "owner_field": "Energy, banking, investing",
+   "owner_class": "other",
+   "control_year": 2006,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.9,
+   "public_2026_m": 301.738673,
+   "sources": [
+    "frontofficesports-the-nbas-expanding-private-equity-footprin",
+    "forbes-george-kaiser"
+   ]
+  },
+  {
+   "team": "ORL",
+   "owner": "the DeVos family",
+   "owner_wealth": "Amway",
+   "owner_field": "Direct selling",
+   "owner_class": "other",
+   "control_year": 1991,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 4.5,
+   "public_2026_m": 880.016116,
+   "sources": [
+    "forbes-richard-devos"
+   ]
+  },
+  {
+   "team": "TOR",
+   "owner": "Rogers Communications",
+   "owner_wealth": "telecommunications (a listed company)",
+   "owner_field": "Telecom",
+   "owner_class": "other",
+   "control_year": 2025,
+   "funds": [],
+   "stakes": [],
+   "forbes_2026_b": 5.9,
+   "public_2026_m": 0.0,
+   "sources": [
+    "sec-d944781dex991"
+   ]
+  }
+ ],
+ "note": "Main source of wealth from Forbes profiles read Oct. 17-18, 2026, or the release or report named, classed by this project as private equity (private equity or hedge funds), other finance (mortgage lending, asset management, venture capital, financial services) or other. Funds are those with a current stake in the team or its parent company; stakes seen only in search results are left out.",
+ "method": "with pub as (select team, sum(public_2026_m) filter (where core) as public_2026_m from items where kind <> 'project' group by team), brk as (select team, coalesce(pilot_2026_m, 0) + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end as tax_breaks_2026_m from arenas), f as (select team, list(fund order by fund) as funds, list(stake order by fund) as stakes from investors where status = 'current' group by team) select v.team, v.owner, v.owner_wealth, v.owner_field, v.owner_class, v.control_year, coalesce(f.funds, []) as funds, coalesce(f.stakes, []) as stakes, v.forbes_2026_b, coalesce(p.public_2026_m, 0) + coalesce(b.tax_breaks_2026_m, 0) as public_2026_m, list_concat(coalesce((select list(s.source_id order by s.ord) from value_sources s where s.team = v.team and s.field = 'owner'), []), coalesce((select list(s.source_id order by s.fund, s.ord) from investor_sources s where s.team = v.team and s.fund in (select fund from investors i where i.team = v.team and i.status = 'current')), [])) as sources from team_values v left join f using (team) left join pub p using (team) left join brk b using (team) order by case v.owner_class when 'private_equity' then 1 when 'other_finance' then 2 else 3 end, len(coalesce(f.funds, [])) = 0, v.team"
+}

@@ -3,6 +3,7 @@
  "title": "Notes and sources for each arena's construction, renovations, tax status and lease",
  "sources": [
   "ledger",
+  "ajc-rnrhggeufau2uxmza4cdgi",
   "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
   "fieldofschemes",
   "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b",
@@ -54,6 +55,7 @@
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
   "si-phoenix-city-council-approves-suns-arena-rennova",
+  "webapi-texts",
   "portland-adopted",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
   "efiles",
@@ -69,6 +71,7 @@
  ],
  "base_sources": [
   "ledger",
+  "ajc-rnrhggeufau2uxmza4cdgi",
   "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
   "fieldofschemes",
   "bondbuyer-moody-146-s-rates-atlantic-yards-pilot-deal-at-b",
@@ -120,6 +123,7 @@
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
   "si-phoenix-city-council-approves-suns-arena-rennova",
+  "webapi-texts",
   "portland-adopted",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
   "efiles",
@@ -166,6 +170,7 @@
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
+    "ajc-rnrhggeufau2uxmza4cdgi",
     "nba-hawks-and-city-atlanta-plan-philips-arena-renova",
     "fieldofschemes"
    ],
@@ -639,7 +644,8 @@
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
-    "si-phoenix-city-council-approves-suns-arena-rennova"
+    "si-phoenix-city-council-approves-suns-arena-rennova",
+    "webapi-texts"
    ],
    "tax_break_sources": []
   },

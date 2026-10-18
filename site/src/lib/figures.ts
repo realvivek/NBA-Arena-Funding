@@ -5,6 +5,10 @@ import { ids } from './content';
 import { sitePath } from './paths';
 
 export const FIG_DATA: Record<string, string> = {
+  ball: 'public-layers',
+  values: 'team-values',
+  trend: 'value-history',
+  owners: 'ownership',
   rebuild: 'rebuild-by-year',
   arenas: 'arenas',
   map: 'arena-map',

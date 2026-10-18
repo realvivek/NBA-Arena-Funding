@@ -62,6 +62,19 @@ The documented series now covers seven teams and $759M (2026 dollars), up from f
 | Hornets | FY2020-23 | Charlotte budgets: city arena-reserve contributions beyond the $0.6M a year already in the 2014 deal, net of the team's match. |
 | Grizzlies | 2021-2026 | Still press only (PFM). See the correction below. |
 
+## Team values, prices and what the public gets back (October 18, 2026)
+
+`data/teams/` holds three new files that the site reads. Every row cites its documents, and every figure carries a label.
+
+- `team_values.csv`: for each team, the controlling owner, the price paid for control or the valuation at which control changed hands (with what it covered), Forbes's values of October 2025 and October 2026, Sportico's 2026 value and the latest deal that put a price on the team. Prices are press (c) except the Knicks' (Cablevision's 1997 Form 8-K) and the Raptors' (Rogers's 2025 release), both (b). Four prices are kept without a figure because they are not comparable with a team value: the Heat's (undisclosed), the Knicks' (the whole Madison Square Garden business, 1995-97), the Raptors' (stakes in MLSE since 2012, in Canadian dollars) and the Wizards' (the rest of the team with the arena and other assets, 2010). The Spurs' price is the 1993 investor group's; the Holts became the largest owners in 1996.
+- Values: Forbes's team pages ("Calculated October 2026"), read Oct. 17-18, 2026; the 2025 values from Forbes Australia's republication of the Forbes list of Oct. 23, 2025; Sportico's 2026 values from Hoops Rumors's summary of Oct. 9, 2026, because Sportico's pages could not be reached.
+- `value_history.csv`: Forbes's published average team value for each list that could be read, 2003 to 2025. The 2026 average is computed from the 30 team values ($6.126B; Forbes's article gives $6.1 billion). Left out: 2000 and 2005 (lists not found), 2010 (no list dated that year), 2012 and the second 2021 list (seen only in search results).
+- `public_return.csv`: what each public arena deal returns, from leases, term sheets, audits and budgets. 22 teams have a public arena deal and 8 do not. None of the 22 gives the public equity or a share of a sale: the documents for Denver, Houston, Indianapolis, Milwaukee, Oklahoma City, Portland and Salt Lake City allow a sale with no payment to the public; 14 have no such clause in the documents reviewed; the Memphis lease was not reached.
+- Alternatives are kept in the notes: Dallas ($3.5B, against $3.8B-$3.9B from a Dallas Morning News source), Chicago ($16M, against $9.2M for a controlling stake), Indiana ($11M, against $10M and $10.5M), Memphis ($377M, against about $350M), Milwaukee's 2023 stake ($3.5B when agreed, about $3.2B at closing) and Brooklyn (the team at $2.35B, against nearly $3.5B for the team and the arena).
+- Pending as of Oct. 18, 2026: the Lakers' sale to Josh Kushner and Bob Iger (league vote expected in November) and the Timberwolves' sale to Marc Stad (approval not confirmed).
+- Hand-entered stats are confirmed in the build against the data: Oklahoma City's license fee and cap, Washington's rent, Milwaukee's rent and surcharge and Bexar County's profit share against the summary column of `public_return.csv`; the media deals, Miami-Dade's profit share and its one payment, Minnesota's Vikings statute and the Broncos payment against verbatim quotes in `data/inputs/research_claims.csv`, copied from saved copies of the documents (AP via the Indianapolis Business Journal, the Inspector General's 2012 report, the Commission Auditor's notes of June 3, 2014, Minn. Stat. 473J.15 and CBS Colorado).
+- `lease_clock.csv` has a new `summary` column: one plain sentence per lease, written from its own term and penalty columns. The ledger build does not read it.
+
 ## Corrections made during the work
 
 - **DC exemption value.** One draft of the report gave the value as $262.9M, after misreading the OCFO memo's phrase "$262.9 million through the base term of the Lease". Table 1 of the memo shows that figure is the FY2029-2050 column only. The total through June 30, 2050 is $312.7M, the figure the ledger already carried. The report was corrected on October 11, 2026.
@@ -146,6 +159,10 @@ The documented series now covers seven teams and $759M (2026 dollars), up from f
 - **Dallas citations (Oct. 17, 2026).** The KERA link now redirects to kera.org/news, so the lease row and the Dallas project cite only the AP story via WTOP. D Magazine's post was the other source for the project note's owner's-representative and TIF-district details. It returned 403 and could not be re-read, and the note says so.
 - **A legend label split by a comma (Oct. 17, 2026).** A chart legend written as `{ label: Land, or not split by stream, key: other }` was read as the label "Land" plus a stray key. Legend entries are now strict in the content schema, so a stray key fails the build.
 
+- **United Center property tax in the story draft (Oct. 18, 2026).** A draft of the shorter story gave the United Center's 2024 property tax as $10.8M, which is the estimate for the Intuit Dome. The Cook County bill for tax year 2024 is $10.15M (`united_center_tax_bills_2017_2024.csv`), and the line now reads $10.1M.
+- **Fixes flagged by the team-values research (Oct. 18, 2026).** The Atlanta lease row now cites the AJC's Nov. 1, 2016 report for the $5.9M yearly lease payment; the Phoenix row cites the 2019 council report for the $200M penalty; threat episode E03 now notes that Miami-Dade's 40% share of arena profits paid once ($257,134 in 2013) and was deleted in 2014 (Commission Auditor); and the Paycom Center naming-rights row notes that the 2025 arena use license agreement drops the city's share.
+- **Detroit price (Oct. 18, 2026).** Tom Gores's $325M price was first read from a search result only; the Sports Business Daily page later loaded ("Tom Gores Reportedly Landed Pistons, Assets For Only $325M"), and the note saying it could not be opened was removed.
+
 ## Figures not checked against a saved copy
 
 These figures were read through a summarizing fetch tool or come from press pages that were not downloaded, so they could not be rechecked against a saved document. They keep their (c) label where they are press, and the primary ones are flagged here for a recheck before publication.
@@ -157,6 +174,8 @@ These figures were read through a summarizing fetch tool or come from press page
 - Press and Wikipedia alternatives kept in `construction_cost_other_reports`.
 - Lease table (Oct. 17, 2026): the Heat's commitment through 2040 (UPI), Milwaukee's $553M first-year penalty (The Daily Reporter) and the Madison Square Garden license to June 2055 (MSG Sports Form 10-K, fiscal 2026) were read through the summarizing fetch tool only.
 - Wording check (Oct. 17, 2026): Oklahoma City's penalty schedule (okc.gov refuses downloads), the Downtown Memphis Commission's report of the March 18, 2025 resolution, Kutak Rock's Jan. 13, 2025 release and KSAT's Prop B cap were read through the summarizing fetch tool only.
+
+- Team values (Oct. 18, 2026): Forbes's team pages and its 2026 list article were read through the summarizing fetch tool and search results (forbes.com refuses scripted downloads); the page titles of the 30 team pages were confirmed by a direct request.
 
 ## Not reachable from the build environment
 
@@ -192,3 +211,4 @@ The web-search allowance shared by the October 16 research ran out partway throu
 - docs-preview.legis.wisconsin.gov returns a "Website Blocked" page; docs.legis.wisconsin.gov serves the same Legislative Fiscal Bureau paper byte for byte, and the ledger now cites that host.
 - en.wikipedia.org and wikidata.org rate-limit scripted requests (HTTP 429); arena coordinates for the map were fetched slowly from Wikipedia's page-summary API.
 - dmagazine.com and therealdeal.com (HTTP 403, Oct. 17, 2026). The cited KERA story now redirects to kera.org/news.
+- Oct. 18, 2026 research on owners, investors and deal makers: sportico.com (redirects to a host that does not resolve), pulitzer.org, cnbc.com, investor.msgsports.com, roi-nj.com, sacurrent.com, stocktitan.net, sa.gov and upi.com (HTTP 403 to scripted requests; most were read through the summarizing fetch tool), PitchBook, Pensions & Investments, RealGM, Business Wire and SportBusiness (HTTP 403), Bloomberg and The Athletic (paywalled), jct.gov, vpap.org, axios.com, texasmonthly.com, crainsdetroit.com, wlrk.com and nytimes.com (HTTP 403). The shared web-search allowance ran out near the end of that research, so pension and sovereign investors in the sports funds, the arena-management fees paid to Legends and state lobbyist registries were not searched.

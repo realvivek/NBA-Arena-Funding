@@ -1,7 +1,7 @@
 """Source registry: every URL the site cites, with a stable id, origin tag, title, publisher and dates.
 
-`python pipeline/registry.py seed` adds entries for URLs that are cited in the data but missing from
-pipeline/sources.yaml, filling title, date and publisher by rule. It never changes an existing entry, so
+`python pipeline/registry.py seed [YYYY-MM-DD]` adds entries for URLs that are cited in the data but missing from
+pipeline/sources.yaml, filling title, date and publisher by rule; the date, if given, is when the new sources were checked. It never changes an existing entry, so
 curated fields survive. `python pipeline/registry.py check` fails if any cited URL has no entry.
 """
 import csv, os, re, sys, json
@@ -25,6 +25,10 @@ CITED = {
     'data/threats/left_behind.csv': ['sources'],
     'data/inputs/arena_coordinates.csv': ['source'],
     'data/inputs/research_claims.csv': ['source'],
+    'data/teams/team_values.csv': ['owner_source', 'price_source', 'value_source', 'deal_source'],
+    'data/teams/investors.csv': ['source'],
+    'data/teams/value_history.csv': ['source'],
+    'data/teams/public_return.csv': ['sources'],
 }
 ORIGINS = ('government', 'court', 'team_or_league', 'independent')
 GENERIC = {'download', 'document', 'file', 'content', 'show', 'view', 'index', 'detail', 'details', 'default', 'pdf', 'page',
@@ -240,7 +244,10 @@ if __name__ == '__main__':
             for n in os.listdir(notes_dir):
                 if n.endswith('.md'):
                     recheck |= {norm_url(u) for u in URL_RE.findall(open(os.path.join(notes_dir, n)).read())}
-        print('added %d, total %d' % seed(old_urls=old, recheck_urls=recheck))
+        when = sys.argv[2] if len(sys.argv) > 2 else '2026-10-16'
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', when):
+            sys.exit(f'seed: checked date {when!r} is not YYYY-MM-DD')
+        print('added %d, total %d' % seed(checked_new=when, old_urls=old, recheck_urls=recheck))
     probs = check()
     for p in probs:
         print('PROBLEM', p)

@@ -109,6 +109,13 @@
       "type": "string"
      },
      {
+      "name": "summary",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
       "name": "label",
       "type": "string",
       "constraints": {
@@ -2716,6 +2723,475 @@
       "name": "home_nonres_tax_if_55pct_m",
       "type": "number"
      }
+    ]
+   }
+  },
+  {
+   "name": "teams-investors",
+   "type": "table",
+   "path": "teams/investors.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "fund",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "fund_type",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "holder",
+      "type": "string"
+     },
+     {
+      "name": "stake",
+      "type": "string"
+     },
+     {
+      "name": "entered",
+      "type": "string",
+      "constraints": {
+       "pattern": "^20[0-9]{2}-[01][0-9](-[0-3][0-9])?$"
+      }
+     },
+     {
+      "name": "entry_value_b",
+      "type": "number",
+      "constraints": {
+       "minimum": 0.1,
+       "maximum": 50
+      }
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "current",
+        "exited",
+        "pending"
+       ]
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "b",
+        "c",
+        "b/c"
+       ]
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "note",
+      "type": "string"
+     }
+    ],
+    "primaryKey": [
+     "fund",
+     "team"
+    ]
+   }
+  },
+  {
+   "name": "teams-public-return",
+   "type": "table",
+   "path": "teams/public_return.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "public_deal",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "Y",
+        "N"
+       ]
+      }
+     },
+     {
+      "name": "sale_share",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "no",
+        "none_found",
+        "unknown",
+        "private_arena"
+       ]
+      }
+     },
+     {
+      "name": "equity_stake",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "Y",
+        "N"
+       ]
+      }
+     },
+     {
+      "name": "summary",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "a",
+        "b",
+        "c",
+        "b/c",
+        "u"
+       ]
+      }
+     },
+     {
+      "name": "sources",
+      "type": "string"
+     },
+     {
+      "name": "note",
+      "type": "string"
+     }
+    ],
+    "primaryKey": [
+     "team"
+    ]
+   }
+  },
+  {
+   "name": "teams-team-values",
+   "type": "table",
+   "path": "teams/team_values.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "owner",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "control_year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1960,
+       "maximum": 2026
+      }
+     },
+     {
+      "name": "owner_wealth",
+      "type": "string"
+     },
+     {
+      "name": "owner_field",
+      "type": "string"
+     },
+     {
+      "name": "owner_class",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "private_equity",
+        "other_finance",
+        "other"
+       ]
+      }
+     },
+     {
+      "name": "owner_source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "price_year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1960,
+       "maximum": 2026
+      }
+     },
+     {
+      "name": "price_m",
+      "type": "number",
+      "constraints": {
+       "minimum": 1
+      }
+     },
+     {
+      "name": "price_scope",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "team",
+        "team_with_assets",
+        "valuation",
+        "not_comparable"
+       ]
+      }
+     },
+     {
+      "name": "price_note",
+      "type": "string"
+     },
+     {
+      "name": "price_label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "b",
+        "c"
+       ]
+      }
+     },
+     {
+      "name": "price_source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "seller_price_m",
+      "type": "number",
+      "constraints": {
+       "minimum": 1
+      }
+     },
+     {
+      "name": "seller_year",
+      "type": "integer",
+      "constraints": {
+       "minimum": 1960,
+       "maximum": 2026
+      }
+     },
+     {
+      "name": "forbes_2025_b",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 1,
+       "maximum": 50
+      }
+     },
+     {
+      "name": "forbes_2026_b",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 1,
+       "maximum": 50
+      }
+     },
+     {
+      "name": "sportico_2026_b",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 1,
+       "maximum": 50
+      }
+     },
+     {
+      "name": "value_label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "c"
+       ]
+      }
+     },
+     {
+      "name": "value_source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "deal",
+      "type": "string"
+     },
+     {
+      "name": "deal_value_b",
+      "type": "number",
+      "constraints": {
+       "minimum": 0.1,
+       "maximum": 50
+      }
+     },
+     {
+      "name": "deal_date",
+      "type": "string",
+      "constraints": {
+       "pattern": "^20[0-9]{2}-[01][0-9]-[0-3][0-9]$"
+      }
+     },
+     {
+      "name": "deal_label",
+      "type": "string",
+      "constraints": {
+       "enum": [
+        "b",
+        "c"
+       ]
+      }
+     },
+     {
+      "name": "deal_source",
+      "type": "string",
+      "constraints": {
+       "pattern": ".*https?://.*"
+      }
+     },
+     {
+      "name": "note",
+      "type": "string"
+     }
+    ],
+    "primaryKey": [
+     "team"
+    ]
+   }
+  },
+  {
+   "name": "teams-value-history",
+   "type": "table",
+   "path": "teams/value_history.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "minimum": 1990,
+       "maximum": 2025
+      }
+     },
+     {
+      "name": "reported",
+      "type": "date",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "forbes_avg_b",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0.05,
+       "maximum": 50
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "c"
+       ]
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^https?://.+"
+      }
+     },
+     {
+      "name": "note",
+      "type": "string"
+     }
+    ],
+    "primaryKey": [
+     "year"
     ]
    }
   },

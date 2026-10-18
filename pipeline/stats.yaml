@@ -1053,3 +1053,464 @@ stats:
   unit: count
   label: a
   sources: [ledger]
+
+# ------------------------------------------------------------------ the lead graphic
+- key: construction_share
+  title: Construction's share of public money, counting tax breaks
+  sql: |
+    select 100 * (select sum(public_2026_m) from items where core and kind = 'construction')
+         / ((select sum(public_2026_m) from items where core)
+            + (select sum(coalesce(pilot_2026_m, 0)) from arenas)
+            + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))
+  unit: pct
+  digits: 0
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
+# ------------------------------------------------------------------ teams: what they are worth and what owners paid
+- key: value_mean_2026
+  title: Average NBA team value, October 2026 (mean of Forbes's 30 team values)
+  sql: select 1000 * avg(forbes_2026_b) from team_values
+  unit: usd_m
+  digits: 1
+  basis: Forbes estimates of October 2026, nominal
+  label: a
+  sources: [team-ledger]
+  note: Forbes reported the average as $6.1 billion; the mean of its 30 team values is $6.126 billion.
+
+- key: value_avg_2014
+  title: Average NBA team value on Forbes's January 2014 list
+  sql: select 1000 * forbes_avg_b from value_history where year = 2014
+  unit: usd_m
+  basis: nominal; Forbes estimate
+  label: c
+  sources_sql: select source_id from history_sources where year = 2014 order by ord
+
+- key: value_growth_2014
+  title: Average team value in 2026 as a multiple of the average on the 2014 list, before inflation
+  sql: select avg(forbes_2026_b) / (select forbes_avg_b from value_history where year = 2014) from team_values
+  unit: number
+  digits: 1
+  basis: nominal dollars
+  label: a
+  sources: [team-ledger]
+
+- key: value_min_2026
+  title: Value of the least valuable NBA team, October 2026 (Forbes)
+  sql: select 1000 * min(forbes_2026_b) from team_values
+  check: select team = 'MEM' from team_values order by forbes_2026_b limit 1
+  unit: usd_m
+  digits: 1
+  basis: Forbes estimate, nominal
+  label: c
+  sources: [team-ledger]
+  note: The Memphis Grizzlies.
+
+- key: value_max_2026
+  title: Value of the most valuable NBA team, October 2026 (Forbes)
+  sql: select 1000 * max(forbes_2026_b) from team_values
+  check: select team = 'GSW' from team_values order by forbes_2026_b desc limit 1
+  unit: usd_m
+  digits: 1
+  basis: Forbes estimate, nominal
+  label: c
+  sources_sql: select source_id from value_sources where team = 'GSW' and field = 'value' order by ord
+  note: The Golden State Warriors.
+
+- key: value_multiple_median
+  title: Median ratio of a team's 2026 value to the price its current owners paid, in 2026 dollars
+  sql: |
+    select median(1000 * v.forbes_2026_b / (v.price_m * c.factor_2026))
+    from team_values v join cpi c on c.year = v.price_year
+    where v.price_m is not null and v.price_scope <> 'not_comparable'
+  unit: number
+  digits: 0
+  basis: price converted with CPI-U from the year paid
+  label: a
+  sources: [team-ledger, fred-cpiaucns]
+  note: The 26 teams whose price is comparable; prices for the Heat, Knicks, Raptors and Wizards bought more or less than the team, or were not disclosed.
+
+- key: values_comparable_n
+  title: Teams whose price paid is comparable with their value
+  sql: select count(*) from team_values where price_m is not null and price_scope <> 'not_comparable'
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: lal_price_2025
+  title: Valuation in Mark Walter's 2025 purchase of control of the Lakers
+  sql: select price_m from team_values where team = 'LAL'
+  unit: usd_m
+  digits: 0
+  basis: nominal
+  label: c
+  sources_sql: select source_id from value_sources where team = 'LAL' and field = 'price' order by ord
+
+- key: lal_deal_2026
+  title: Valuation in the August 2026 agreement to sell control of the Lakers to Josh Kushner and Bob Iger
+  sql: select 1000 * deal_value_b from team_values where team = 'LAL'
+  unit: usd_m
+  digits: 1
+  basis: nominal; pending a league vote
+  label: c
+  sources_sql: select source_id from value_sources where team = 'LAL' and field = 'deal' order by ord
+
+- key: bos_seller_price
+  title: Price the Celtics' previous owners paid in 2002
+  sql: select seller_price_m from team_values where team = 'BOS' and seller_year = 2002
+  unit: usd_m
+  basis: nominal
+  label: c
+  sources_sql: select source_id from value_sources where team = 'BOS' and field = 'price' order by ord
+
+- key: bos_price_2025
+  title: Valuation in Bill Chisholm's 2025 purchase of control of the Celtics
+  sql: select price_m from team_values where team = 'BOS'
+  unit: usd_m
+  digits: 1
+  basis: nominal; at least 51 percent at closing
+  label: c
+  sources_sql: select source_id from value_sources where team = 'BOS' and field = 'price' order by ord
+
+- key: por_seller_price
+  title: Price Paul Allen paid for the Trail Blazers in 1988
+  sql: select seller_price_m from team_values where team = 'POR' and seller_year = 1988
+  unit: usd_m
+  basis: nominal
+  label: c
+  sources: [forbes-portland-trail-blazers]
+
+- key: por_price_2026
+  title: Valuation in Tom Dundon's group's 2026 purchase of control of the Trail Blazers
+  sql: select price_m from team_values where team = 'POR'
+  unit: usd_m
+  digits: 0
+  basis: nominal; 80.1 percent at closing
+  label: c
+  sources_sql: select source_id from value_sources where team = 'POR' and field = 'price' order by ord
+
+- key: cha_seller_price
+  title: Price Michael Jordan paid for control of the Hornets in 2010
+  sql: select seller_price_m from team_values where team = 'CHA' and seller_year = 2010
+  unit: usd_m
+  basis: nominal
+  label: c
+  sources_sql: select source_id from value_sources where team = 'CHA' and field = 'price' order by ord
+
+- key: cha_price_2023
+  title: Valuation in the 2023 sale of control of the Hornets
+  sql: select price_m from team_values where team = 'CHA'
+  unit: usd_m
+  digits: 0
+  basis: nominal
+  label: c
+  sources_sql: select source_id from value_sources where team = 'CHA' and field = 'price' order by ord
+
+- key: nba_media_total
+  title: Value of the NBA's national media deals that began with the 2025-26 season
+  value: 76000
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nba_media_total}, column: quote, contains: 'about $76 billion over those 11 years'}
+  unit: usd_m
+  digits: 0
+  basis: nominal, over the deals' term
+  label: c
+  sources: [ibj-nba-new-11-year-media-rights-deal-with-disney-nb]
+
+- key: nba_media_years
+  title: Term of the NBA's national media deals, in years
+  value: 11
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nba_media_years}, column: quote, contains: 'over those 11 years'}
+  unit: count
+  label: c
+  sources: [ibj-nba-new-11-year-media-rights-deal-with-disney-nb]
+
+# ------------------------------------------------------------------ teams: what the public gets back
+- key: public_deals_reviewed
+  title: Teams whose public arena deals were reviewed for what they return to the public
+  sql: select count(*) from public_return where public_deal
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: sale_share_found
+  title: Public arena deals reviewed that give the public a share of a team sale
+  sql: select count(*) from public_return where public_deal and sale_share not in ('no', 'none_found', 'unknown')
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: okc_game_fee
+  title: Oklahoma City's license fee per Thunder game under the 2025 agreement
+  value: 58000
+  evidence: {file: data/teams/public_return.csv, where: {team: OKC}, column: summary, contains: 'A license fee of $58,000 a game'}
+  unit: usd
+  basis: nominal
+  label: b
+  sources_sql: select source_id from return_sources where team = 'OKC' order by ord
+
+- key: okc_fee_cap
+  title: Yearly cap on Oklahoma City's license fees from the Thunder
+  value: 3.75
+  evidence: {file: data/teams/public_return.csv, where: {team: OKC}, column: summary, contains: 'capped at $3.75M a year'}
+  unit: usd_m
+  digits: 2
+  basis: nominal
+  label: b
+  sources_sql: select source_id from return_sources where team = 'OKC' order by ord
+
+- key: was_rent_min
+  title: Lowest yearly rent the teams pay the District for Capital One Arena under the 2024 deal
+  value: 1.5
+  evidence: {file: data/teams/public_return.csv, where: {team: WAS}, column: summary, contains: 'Rent of $1.5M to $2.3M a year'}
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b
+  sources_sql: select source_id from return_sources where team = 'WAS' order by ord
+
+- key: was_rent_max
+  title: Highest yearly rent the teams pay the District for Capital One Arena under the 2024 deal
+  value: 2.3
+  evidence: {file: data/teams/public_return.csv, where: {team: WAS}, column: summary, contains: 'Rent of $1.5M to $2.3M a year'}
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b
+  sources_sql: select source_id from return_sources where team = 'WAS' order by ord
+
+- key: mil_rent
+  title: Yearly rent the Bucks pay for Fiserv Forum
+  value: 1
+  evidence: {file: data/teams/public_return.csv, where: {team: MIL}, column: summary, contains: 'Rent of $1M a year'}
+  unit: usd_m
+  digits: 0
+  basis: nominal
+  label: b
+  sources_sql: select source_id from return_sources where team = 'MIL' order by ord
+
+- key: mil_ticket_fee
+  title: Surcharge on each Bucks ticket under the Fiserv Forum lease
+  value: 2
+  evidence: {file: data/teams/public_return.csv, where: {team: MIL}, column: summary, contains: 'a $2 surcharge on each ticket'}
+  unit: usd
+  basis: nominal
+  label: b
+  sources_sql: select source_id from return_sources where team = 'MIL' order by ord
+
+- key: mia_profit_share
+  title: Miami-Dade County's share of arena net cash flow above the threshold, under the original Heat agreements
+  value: 40
+  evidence: {file: data/inputs/research_claims.csv, where: {key: mia_profit_share}, column: quote, contains: 'the remaining 40% to the County'}
+  unit: pct
+  digits: 0
+  label: b
+  sources: [miamidadeig-ig11-34finalbasketball]
+
+- key: mia_profit_threshold
+  title: Arena net cash flow the Heat's arena company kept before Miami-Dade's share began
+  value: 14
+  evidence: {file: data/inputs/research_claims.csv, where: {key: mia_profit_threshold}, column: quote, contains: 'in excess of $14 million'}
+  unit: usd_m
+  basis: nominal, per year
+  label: b
+  sources: [miamidadeig-ig11-34finalbasketball]
+
+- key: mia_profit_paid
+  title: The only payment Miami-Dade received from its share of arena net cash flow, in 2013
+  value: 257134
+  evidence: {file: data/inputs/research_claims.csv, where: {key: mia_profit_paid}, column: quote, contains: 'a payment to the County ($257,134)'}
+  unit: usd
+  basis: nominal
+  label: b
+  sources: [miamidade-2014-06-03-bcc]
+
+- key: sas_profit_share
+  title: Bexar County's share of arena profits above a threshold under the Spurs' current agreement
+  value: 20
+  evidence: {file: data/teams/public_return.csv, where: {team: SAS}, column: summary, contains: 'A 20% share of arena profits above a threshold has never paid'}
+  unit: pct
+  digits: 0
+  label: b/c
+  sources_sql: select source_id from return_sources where team = 'SAS' order by ord
+
+- key: vikings_public_share
+  title: Public share of the gain on a sale of the Minnesota Vikings in the first ten years of the stadium lease
+  value: 25
+  evidence: {file: data/inputs/research_claims.csv, where: {key: vikings_public_share}, column: quote, contains: '25 percent of the amount in excess of the purchase price'}
+  unit: pct
+  digits: 0
+  label: b
+  sources: [revisor-473j-15]
+  note: Minn. Stat. 473J.15 subd. 8; the share falls to 15 percent in years 11 to 15 and 10 percent in years 16 to 20.
+
+- key: broncos_sale_share
+  title: Payment to the Denver stadium district from the 2022 sale of the Broncos
+  value: 41
+  evidence: {file: data/inputs/research_claims.csv, where: {key: broncos_sale_share}, column: quote, contains: 'The board approved that $41 million sum'}
+  unit: usd_m
+  basis: nominal
+  label: c
+  sources: [cbsnews-broncos-sale-help-youth-programs-denver-metro-ar]
+
+# ------------------------------------------------------------------ every team, ranked
+- key: arenas_public_n
+  title: Arenas with public money or tax breaks
+  sql: |
+    select count(*) from arenas a
+    where coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0)
+          + coalesce(a.pilot_2026_m, 0)
+          + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end > 0
+  check: |
+    select list(team order by v desc)[1:2] = ['BKN', 'NYK']
+    from (select a.team, coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0)
+                 + coalesce(a.pilot_2026_m, 0)
+                 + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end as v
+          from arenas a)
+  unit: count
+  label: a
+  sources: [ledger]
+  note: The check confirms that Brooklyn's and New York's arenas rank first and second when tax breaks are counted.
+
+# ------------------------------------------------------------------ who owns the teams
+- key: owners_finance_n
+  title: Teams whose controlling owners made their money mainly in finance
+  sql: select count(*) from team_values where owner_class <> 'other'
+  unit: count
+  label: a
+  sources: [team-ledger]
+  note: Private equity or hedge funds (Atlanta, Boston, Charlotte, Detroit, Milwaukee, Philadelphia) and other finance (Cleveland and Phoenix in mortgage lending, the Lakers in asset management, Golden State in venture capital, Portland in financial services), by Forbes's source of wealth.
+
+- key: owners_pe_n
+  title: Teams whose controlling owners made their money mainly in private equity or hedge funds
+  sql: select count(*) from team_values where owner_class = 'private_equity'
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: fund_teams_n
+  title: Teams with a current stake held by an investment fund, in the team or its parent company
+  sql: select count(distinct team) from investors where status = 'current'
+  unit: count
+  label: a
+  sources: [team-ledger]
+  note: Stakes seen only in search results, such as Arctos's reported Grizzlies stake, are not counted.
+
+- key: funds_n
+  title: Investment funds with current stakes in NBA teams
+  sql: select count(distinct fund) from investors where status = 'current'
+  check: select list(distinct fund order by fund) = ['Arctos Sports Partners', 'Blue Owl HomeCourt', 'Qatar Investment Authority', 'Sixth Street'] from investors where status = 'current'
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: arctos_teams_n
+  title: Teams in which Arctos Sports Partners holds a current stake
+  sql: select count(*) from investors where status = 'current' and fund = 'Arctos Sports Partners'
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: homecourt_teams_n
+  title: Teams in which Blue Owl HomeCourt holds a current stake
+  sql: select count(*) from investors where status = 'current' and fund = 'Blue Owl HomeCourt'
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: finance_teams_n
+  title: Teams with a controlling owner from finance or a current fund stake
+  sql: |
+    select count(*) from team_values v
+    where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current')
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: finance_teams_public
+  title: Public money, with tax breaks, in the arenas of teams with a controlling owner from finance or a current fund stake
+  sql: |
+    with t as (select v.team from team_values v
+               where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current'))
+    select (select sum(public_2026_m) from items where core and team in (select team from t))
+         + (select sum(coalesce(pilot_2026_m, 0) + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end)
+            from arenas where team in (select team from t))
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [team-ledger, ledger]
+
+- key: control_sales_2015_n
+  title: Sales of control since 2015 to the teams' current owners, with a comparable price
+  sql: select count(*) from team_values where control_year >= 2015 and price_m is not null and price_scope <> 'not_comparable'
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: control_sales_2015_finance_n
+  title: Of those sales, the ones to buyers who made their money mainly in finance
+  sql: select count(*) from team_values where control_year >= 2015 and price_m is not null and price_scope <> 'not_comparable' and owner_class <> 'other'
+  unit: count
+  label: a
+  sources: [team-ledger]
+
+- key: nba_fund_cap_single
+  title: Most of one NBA team a single investment fund may own
+  value: 20
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nba_fund_cap_single}, column: quote, contains: 'capped at 20%'}
+  unit: pct
+  digits: 0
+  label: c
+  sources: [cliffordchance-2026-1-from-five-to-eight-nba-further-loosens]
+
+- key: nba_fund_cap_total
+  title: Most of one NBA team all investment funds together may own
+  value: 30
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nba_fund_cap_total}, column: quote, contains: 'limited to 30%'}
+  unit: pct
+  digits: 0
+  label: c
+  sources: [cliffordchance-2026-1-from-five-to-eight-nba-further-loosens]
+
+- key: nba_fund_teams_max
+  title: Teams in which one investment fund may hold stakes, since Dec. 3, 2025
+  value: 8
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nba_fund_teams_max}, column: quote, contains: 'as many as eight teams'}
+  unit: count
+  label: c
+  sources: [cliffordchance-2026-1-from-five-to-eight-nba-further-loosens]
+
+# ------------------------------------------------------------------ who is behind the deals
+- key: por_lobbying
+  title: Lobbying reported by the Trail Blazers' arena company in the first three months of 2026
+  value: 100000
+  evidence: {file: data/inputs/research_claims.csv, where: {key: por_lobbying}, column: quote, contains: 'Rip City Management spent $100,000 on lobbying'}
+  unit: usd
+  basis: nominal
+  label: c
+  sources: [opb-trail-blazers-moda-center-portland-basketball-sp]
+
+- key: lac_fine
+  title: The NBA's fine on the Clippers after its investigation of Kawhi Leonard's endorsement deals
+  value: 30
+  evidence: {file: data/inputs/research_claims.csv, where: {key: lac_fine}, column: quote, contains: 'The Clippers are fined $30 million'}
+  unit: usd_m
+  basis: nominal
+  label: b
+  sources: [pr-nba-investigation-clippers-kawhi-leonard]
+
+- key: lac_picks
+  title: First-round draft picks the Clippers forfeit
+  value: 5
+  evidence: {file: data/inputs/research_claims.csv, where: {key: lac_picks}, column: quote, contains: 'forfeit five first-round draft picks'}
+  unit: count
+  label: b
+  sources: [pr-nba-investigation-clippers-kawhi-leonard]
+
+- key: sec197_years
+  title: Years over which a buyer deducts the purchase price of a team's franchise and other intangibles
+  value: 15
+  evidence: {file: data/inputs/research_claims.csv, where: {key: sec197_years}, column: quote, contains: 'amortizable on a straight-line basis over 15 years'}
+  unit: count
+  label: b
+  sources: [govinfo-crpt-119hrpt106-pt2]

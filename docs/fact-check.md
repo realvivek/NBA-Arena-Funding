@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-118 figures, 21 datasets, 313 sources. Ledger as of 2026-10-16.
+168 figures, 26 datasets, 478 sources. Ledger as of 2026-10-16.
 
 ## Figures
 
@@ -947,16 +947,16 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_n`: Documents in the bibliography (not counting this site's own ledgers)
 
-- Shown as: 310 (310)
-- Value: 310 count
+- Shown as: 474 (474)
+- Value: 474 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where publisher <> 'This site'`
 
 ### `sources_government`: Government sources
 
-- Shown as: 112 (112)
-- Value: 112 count
+- Shown as: 120 (120)
+- Value: 120 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'government' and publisher <> 'This site'`
@@ -971,40 +971,453 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_team`: Team or league sources
 
-- Shown as: 14 (14)
-- Value: 14 count
+- Shown as: 34 (34)
+- Value: 34 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'team_or_league' and publisher <> 'This site'`
 
 ### `sources_independent`: Independent sources
 
-- Shown as: 184 (184)
-- Value: 184 count
+- Shown as: 320 (320)
+- Value: 320 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'independent' and publisher <> 'This site'`
+
+### `construction_share`: Construction's share of public money, counting tax breaks
+
+- Shown as: 47 percent (47%)
+- Value: 46.7725 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select 100 * (select sum(public_2026_m) from items where core and kind = 'construction') / ((select sum(public_2026_m) from items where core) + (select sum(coalesce(pilot_2026_m, 0)) from arenas) + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))`
+
+### `value_mean_2026`: Average NBA team value, October 2026 (mean of Forbes's 30 team values)
+
+- Shown as: $6.1 billion ($6.1B)
+- Value: 6,126 usd_m, Forbes estimates of October 2026, nominal
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Note: Forbes reported the average as $6.1 billion; the mean of its 30 team values is $6.126 billion.
+- Method: `select 1000 * avg(forbes_2026_b) from team_values`
+
+### `value_avg_2014`: Average NBA team value on Forbes's January 2014 list
+
+- Shown as: $634 million ($634M)
+- Value: 634 usd_m, nominal; Forbes estimate
+- Label: (c)
+- Sources: [Knicks top Forbes list of most valuable NBA teams](https://www.stabroeknews.com/?p=275012) (independent)
+- Method: `select 1000 * forbes_avg_b from value_history where year = 2014`
+
+### `value_growth_2014`: Average team value in 2026 as a multiple of the average on the 2014 list, before inflation
+
+- Shown as: 9.7 (9.7)
+- Value: 9.66246 number, nominal dollars
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select avg(forbes_2026_b) / (select forbes_avg_b from value_history where year = 2014) from team_values`
+
+### `value_min_2026`: Value of the least valuable NBA team, October 2026 (Forbes)
+
+- Shown as: $4.0 billion ($4.0B)
+- Value: 4,000 usd_m, Forbes estimate, nominal
+- Label: (c)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Note: The Memphis Grizzlies.
+- Method: `select 1000 * min(forbes_2026_b) from team_values`
+
+### `value_max_2026`: Value of the most valuable NBA team, October 2026 (Forbes)
+
+- Shown as: $13.5 billion ($13.5B)
+- Value: 13,500 usd_m, Forbes estimate, nominal
+- Label: (c)
+- Sources: [Golden State Warriors on the Forbes NBA Team Valuations List](https://www.forbes.com/teams/golden-state-warriors/) (independent); [The most valuable NBA teams 2025](https://www.forbes.com.au/?p=162626) (independent); [Warriors, Knicks Top 2026 NBA Franchise Valuations](https://www.hoopsrumors.com/2026/10/warriors-knicks-top-2026-nba-franchise-valuations.html) (independent)
+- Note: The Golden State Warriors.
+- Method: `select 1000 * max(forbes_2026_b) from team_values`
+
+### `value_multiple_median`: Median ratio of a team's 2026 value to the price its current owners paid, in 2026 dollars
+
+- Shown as: 6 (6)
+- Value: 5.95604 number, price converted with CPI-U from the year paid
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Note: The 26 teams whose price is comparable; prices for the Heat, Knicks, Raptors and Wizards bought more or less than the team, or were not disclosed.
+- Method: `select median(1000 * v.forbes_2026_b / (v.price_m * c.factor_2026)) from team_values v join cpi c on c.year = v.price_year where v.price_m is not null and v.price_scope <> 'not_comparable'`
+
+### `values_comparable_n`: Teams whose price paid is comparable with their value
+
+- Shown as: 26 (26)
+- Value: 26 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from team_values where price_m is not null and price_scope <> 'not_comparable'`
+
+### `lal_price_2025`: Valuation in Mark Walter's 2025 purchase of control of the Lakers
+
+- Shown as: $10 billion ($10B)
+- Value: 10,000 usd_m, nominal
+- Label: (c)
+- Sources: [Buss family to sell Lakers to Mark Walter for $10B valuation](https://abc7.com/16783698/) (independent); [NBA Board of Governors approves sale of majority interest in Lakers to Mark Walter](https://www.nba.com/news/nba-approves-sale-majority-interest-lakers-mark-walter) (team or league)
+- Method: `select price_m from team_values where team = 'LAL'`
+
+### `lal_deal_2026`: Valuation in the August 2026 agreement to sell control of the Lakers to Josh Kushner and Bob Iger
+
+- Shown as: $12.5 billion ($12.5B)
+- Value: 12,500 usd_m, nominal; pending a league vote
+- Label: (c)
+- Sources: [Lakers sold for record-breaking $12.5 billion: Everything to know about Josh Kushner, Bob Iger](https://www.cbssports.com/nba/news/lakers-sold-josh-kushner-bob-iger/) (independent); [When Josh Kushner and Bob Iger will officially take over as Lakers owners](https://lakersnation.com/josh-kushner-bob-iger-expected-to-officially-take-control-of-lakers-after-vote-in-november/) (independent)
+- Method: `select 1000 * deal_value_b from team_values where team = 'LAL'`
+
+### `bos_seller_price`: Price the Celtics' previous owners paid in 2002
+
+- Shown as: $360 million ($360M)
+- Value: 360 usd_m, nominal
+- Label: (c)
+- Sources: [NBA approves sale of Boston Celtics to private equity mogul Bill Chisholm for record $6.1 billion](https://www.westernmassnews.com/2025/08/14/nba-approves-sale-boston-celtics-private-equity-mogul-bill-chisholm-record-61-billion/) (independent)
+- Method: `select seller_price_m from team_values where team = 'BOS' and seller_year = 2002`
+
+### `bos_price_2025`: Valuation in Bill Chisholm's 2025 purchase of control of the Celtics
+
+- Shown as: $6.1 billion ($6.1B)
+- Value: 6,100 usd_m, nominal; at least 51 percent at closing
+- Label: (c)
+- Sources: [NBA approves sale of Boston Celtics to private equity mogul Bill Chisholm for record $6.1 billion](https://www.westernmassnews.com/2025/08/14/nba-approves-sale-boston-celtics-private-equity-mogul-bill-chisholm-record-61-billion/) (independent)
+- Method: `select price_m from team_values where team = 'BOS'`
+
+### `por_seller_price`: Price Paul Allen paid for the Trail Blazers in 1988
+
+- Shown as: $70 million ($70M)
+- Value: 70 usd_m, nominal
+- Label: (c)
+- Sources: [Portland Trail Blazers on the Forbes NBA Team Valuations List](https://www.forbes.com/teams/portland-trail-blazers/) (independent)
+- Method: `select seller_price_m from team_values where team = 'POR' and seller_year = 1988`
+
+### `por_price_2026`: Valuation in Tom Dundon's group's 2026 purchase of control of the Trail Blazers
+
+- Shown as: $4 billion ($4B)
+- Value: 4,000 usd_m, nominal; 80.1 percent at closing
+- Label: (c)
+- Sources: [NBA Board of Governors approves sale of Trail Blazers to investor group led by Tom Dundon](https://pr.nba.com/trail-blazers-sale-tom-dundon/) (team or league); [NBA Board of Governors approves Blazers' sale to group led by Tom Dundon](https://www.columbian.com/news/2026/mar/31/nba-board-of-governors-approves-blazers-sale-to-group-led-by-tom-dundon/) (independent); [Portland Trail Blazers on the Forbes NBA Team Valuations List](https://www.forbes.com/teams/portland-trail-blazers/) (independent)
+- Method: `select price_m from team_values where team = 'POR'`
+
+### `cha_seller_price`: Price Michael Jordan paid for control of the Hornets in 2010
+
+- Shown as: $275 million ($275M)
+- Value: 275 usd_m, nominal
+- Label: (c)
+- Sources: [Michael Jordan's 13-year run as Hornets owner ends as franchise completes $3 billion sale](https://www.cbssports.com/nba/news/michael-jordans-13-year-run-as-hornets-owner-ends-as-franchise-completes-3-billion-sale/) (independent)
+- Method: `select seller_price_m from team_values where team = 'CHA' and seller_year = 2010`
+
+### `cha_price_2023`: Valuation in the 2023 sale of control of the Hornets
+
+- Shown as: $3 billion ($3B)
+- Value: 3,000 usd_m, nominal
+- Label: (c)
+- Sources: [Michael Jordan's 13-year run as Hornets owner ends as franchise completes $3 billion sale](https://www.cbssports.com/nba/news/michael-jordans-13-year-run-as-hornets-owner-ends-as-franchise-completes-3-billion-sale/) (independent)
+- Method: `select price_m from team_values where team = 'CHA'`
+
+### `nba_media_total`: Value of the NBA's national media deals that began with the 2025-26 season
+
+- Shown as: $76 billion ($76B)
+- Value: 76,000 usd_m, nominal, over the deals' term
+- Label: (c)
+- Sources: [NBA: New 11-year media rights deal with Disney, NBC and Amazon worth $76B](https://www.ibj.com/articles/nba-new-11-year-media-rights-deal-with-disney-nbc-and-amazon-worth-76b) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_media_total, column quote: "about $76 billion over those 11 years")`
+
+### `nba_media_years`: Term of the NBA's national media deals, in years
+
+- Shown as: 11 (11)
+- Value: 11 count
+- Label: (c)
+- Sources: [NBA: New 11-year media rights deal with Disney, NBC and Amazon worth $76B](https://www.ibj.com/articles/nba-new-11-year-media-rights-deal-with-disney-nbc-and-amazon-worth-76b) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_media_years, column quote: "over those 11 years")`
+
+### `public_deals_reviewed`: Teams whose public arena deals were reviewed for what they return to the public
+
+- Shown as: 22 (22)
+- Value: 22 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from public_return where public_deal`
+
+### `sale_share_found`: Public arena deals reviewed that give the public a share of a team sale
+
+- Shown as: zero (0)
+- Value: 0 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from public_return where public_deal and sale_share not in ('no', 'none_found', 'unknown')`
+
+### `okc_game_fee`: Oklahoma City's license fee per Thunder game under the 2025 agreement
+
+- Shown as: $58,000 ($58,000)
+- Value: 58,000 usd, nominal
+- Label: (b)
+- Sources: [Arena Use License Agreement, Oklahoma City Thunder (final, June 12, 2025)](https://www.okc.gov/files/assets/city/v/1/city-manager/documents/pbcarena-use-license-agreementfinal-6-12-25-1.pdf) (government)
+- Method: `Entered by hand; confirmed against data/teams/public_return.csv (team=OKC, column summary: "A license fee of $58,000 a game")`
+
+### `okc_fee_cap`: Yearly cap on Oklahoma City's license fees from the Thunder
+
+- Shown as: $3.75 million ($3.75M)
+- Value: 3.75 usd_m, nominal
+- Label: (b)
+- Sources: [Arena Use License Agreement, Oklahoma City Thunder (final, June 12, 2025)](https://www.okc.gov/files/assets/city/v/1/city-manager/documents/pbcarena-use-license-agreementfinal-6-12-25-1.pdf) (government)
+- Method: `Entered by hand; confirmed against data/teams/public_return.csv (team=OKC, column summary: "capped at $3.75M a year")`
+
+### `was_rent_min`: Lowest yearly rent the teams pay the District for Capital One Arena under the 2024 deal
+
+- Shown as: $1.5 million ($1.5M)
+- Value: 1.5 usd_m, nominal
+- Label: (b)
+- Sources: [Tax Abatement Financial Analysis: Downtown Arena Revitalization Act of 2024 (Bill 25-1004)](https://cfo.dc.gov/sites/default/files/dc/sites/ocfo/publication/attachments/TAFA_Capital%20One%20Arena%20112624.pdf) (government)
+- Method: `Entered by hand; confirmed against data/teams/public_return.csv (team=WAS, column summary: "Rent of $1.5M to $2.3M a year")`
+
+### `was_rent_max`: Highest yearly rent the teams pay the District for Capital One Arena under the 2024 deal
+
+- Shown as: $2.3 million ($2.3M)
+- Value: 2.3 usd_m, nominal
+- Label: (b)
+- Sources: [Tax Abatement Financial Analysis: Downtown Arena Revitalization Act of 2024 (Bill 25-1004)](https://cfo.dc.gov/sites/default/files/dc/sites/ocfo/publication/attachments/TAFA_Capital%20One%20Arena%20112624.pdf) (government)
+- Method: `Entered by hand; confirmed against data/teams/public_return.csv (team=WAS, column summary: "Rent of $1.5M to $2.3M a year")`
+
+### `mil_rent`: Yearly rent the Bucks pay for Fiserv Forum
+
+- Shown as: $1 million ($1M)
+- Value: 1 usd_m, nominal
+- Label: (b)
+- Sources: [Local Professional Sports Facilities Financing (Informational Paper 18)](https://docs.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf) (government)
+- Method: `Entered by hand; confirmed against data/teams/public_return.csv (team=MIL, column summary: "Rent of $1M a year")`
+
+### `mil_ticket_fee`: Surcharge on each Bucks ticket under the Fiserv Forum lease
+
+- Shown as: $2 ($2)
+- Value: 2 usd, nominal
+- Label: (b)
+- Sources: [Local Professional Sports Facilities Financing (Informational Paper 18)](https://docs.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf) (government)
+- Method: `Entered by hand; confirmed against data/teams/public_return.csv (team=MIL, column summary: "a $2 surcharge on each ticket")`
+
+### `mia_profit_share`: Miami-Dade County's share of arena net cash flow above the threshold, under the original Heat agreements
+
+- Shown as: 40 percent (40%)
+- Value: 40 pct
+- Label: (b)
+- Sources: [Audit of the Agreements Between Miami-Dade County and Basketball Properties, Ltd., et al. to Operate the American Airlines Arena (Final Report IG11-34)](https://www.miamidadeig.org/resources-oig/pdf/Reports2012/IG11.34FinalBasketball.pdf) (government)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=mia_profit_share, column quote: "the remaining 40% to the County")`
+
+### `mia_profit_threshold`: Arena net cash flow the Heat's arena company kept before Miami-Dade's share began
+
+- Shown as: $14 million ($14M)
+- Value: 14 usd_m, nominal, per year
+- Label: (b)
+- Sources: [Audit of the Agreements Between Miami-Dade County and Basketball Properties, Ltd., et al. to Operate the American Airlines Arena (Final Report IG11-34)](https://www.miamidadeig.org/resources-oig/pdf/Reports2012/IG11.34FinalBasketball.pdf) (government)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=mia_profit_threshold, column quote: "in excess of $14 million")`
+
+### `mia_profit_paid`: The only payment Miami-Dade received from its share of arena net cash flow, in 2013
+
+- Shown as: $257,134 ($257,134)
+- Value: 257,134 usd, nominal
+- Label: (b)
+- Sources: [Board of County Commissioners Meeting, June 3, 2014: research notes on the HEAT agreements](https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf) (government)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=mia_profit_paid, column quote: "a payment to the County ($257,134)")`
+
+### `sas_profit_share`: Bexar County's share of arena profits above a threshold under the Spurs' current agreement
+
+- Shown as: 20 percent (20%)
+- Value: 20 pct
+- Label: (b/c)
+- Sources: [Spurs Arena Delivers No Profit-Sharing to the County](https://headlinersfoundation.org/showcase-awards/2015/spurs-arena-delivers-no-profit-sharing-to-the-county) (independent); [Term sheet for a new Spurs arena in the downtown sports and entertainment district](https://www.sa.gov/files/assets/main/v/1/initiatives/sports-amp-entertainment-district/termsheet.pdf) (government)
+- Method: `Entered by hand; confirmed against data/teams/public_return.csv (team=SAS, column summary: "A 20% share of arena profits above a threshold has never paid")`
+
+### `vikings_public_share`: Public share of the gain on a sale of the Minnesota Vikings in the first ten years of the stadium lease
+
+- Shown as: 25 percent (25%)
+- Value: 25 pct
+- Label: (b)
+- Sources: [Minnesota Statutes 473J.15, Criteria and conditions](https://www.revisor.mn.gov/statutes/cite/473J.15) (government)
+- Note: Minn. Stat. 473J.15 subd. 8; the share falls to 15 percent in years 11 to 15 and 10 percent in years 16 to 20.
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=vikings_public_share, column quote: "25 percent of the amount in excess of the purchase price")`
+
+### `broncos_sale_share`: Payment to the Denver stadium district from the 2022 sale of the Broncos
+
+- Shown as: $41 million ($41M)
+- Value: 41 usd_m, nominal
+- Label: (c)
+- Sources: [Broncos sale will help youth programs in the Denver metro area](https://www.cbsnews.com/amp/colorado/news/broncos-sale-help-youth-programs-denver-metro-area-football-stadium-district) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=broncos_sale_share, column quote: "The board approved that $41 million sum")`
+
+### `arenas_public_n`: Arenas with public money or tax breaks
+
+- Shown as: 24 (24)
+- Value: 24 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: The check confirms that Brooklyn's and New York's arenas rank first and second when tax breaks are counted.
+- Method: `select count(*) from arenas a where coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0) + coalesce(a.pilot_2026_m, 0) + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end > 0`
+
+### `owners_finance_n`: Teams whose controlling owners made their money mainly in finance
+
+- Shown as: 11 (11)
+- Value: 11 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Note: Private equity or hedge funds (Atlanta, Boston, Charlotte, Detroit, Milwaukee, Philadelphia) and other finance (Cleveland and Phoenix in mortgage lending, the Lakers in asset management, Golden State in venture capital, Portland in financial services), by Forbes's source of wealth.
+- Method: `select count(*) from team_values where owner_class <> 'other'`
+
+### `owners_pe_n`: Teams whose controlling owners made their money mainly in private equity or hedge funds
+
+- Shown as: six (6)
+- Value: 6 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from team_values where owner_class = 'private_equity'`
+
+### `fund_teams_n`: Teams with a current stake held by an investment fund, in the team or its parent company
+
+- Shown as: 11 (11)
+- Value: 11 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Note: Stakes seen only in search results, such as Arctos's reported Grizzlies stake, are not counted.
+- Method: `select count(distinct team) from investors where status = 'current'`
+
+### `funds_n`: Investment funds with current stakes in NBA teams
+
+- Shown as: four (4)
+- Value: 4 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(distinct fund) from investors where status = 'current'`
+
+### `arctos_teams_n`: Teams in which Arctos Sports Partners holds a current stake
+
+- Shown as: five (5)
+- Value: 5 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from investors where status = 'current' and fund = 'Arctos Sports Partners'`
+
+### `homecourt_teams_n`: Teams in which Blue Owl HomeCourt holds a current stake
+
+- Shown as: five (5)
+- Value: 5 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from investors where status = 'current' and fund = 'Blue Owl HomeCourt'`
+
+### `finance_teams_n`: Teams with a controlling owner from finance or a current fund stake
+
+- Shown as: 16 (16)
+- Value: 16 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from team_values v where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current')`
+
+### `finance_teams_public`: Public money, with tax breaks, in the arenas of teams with a controlling owner from finance or a current fund stake
+
+- Shown as: $4.73 billion ($4.73B)
+- Value: 4,732.85 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent); [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `with t as (select v.team from team_values v where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current')) select (select sum(public_2026_m) from items where core and team in (select team from t)) + (select sum(coalesce(pilot_2026_m, 0) + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end) from arenas where team in (select team from t))`
+
+### `control_sales_2015_n`: Sales of control since 2015 to the teams' current owners, with a comparable price
+
+- Shown as: 11 (11)
+- Value: 11 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from team_values where control_year >= 2015 and price_m is not null and price_scope <> 'not_comparable'`
+
+### `control_sales_2015_finance_n`: Of those sales, the ones to buyers who made their money mainly in finance
+
+- Shown as: six (6)
+- Value: 6 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) from team_values where control_year >= 2015 and price_m is not null and price_scope <> 'not_comparable' and owner_class <> 'other'`
+
+### `nba_fund_cap_single`: Most of one NBA team a single investment fund may own
+
+- Shown as: 20 percent (20%)
+- Value: 20 pct
+- Label: (c)
+- Sources: [From Five to Eight: NBA Further Loosens Private Equity Ownership Rules](https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/01/2026%20-%201%20From%20Five%20to%20Eight%20-%20NBA%20Further%20Loosens%20Private%20Equity%20Ownership%20Rules.pdf) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_fund_cap_single, column quote: "capped at 20%")`
+
+### `nba_fund_cap_total`: Most of one NBA team all investment funds together may own
+
+- Shown as: 30 percent (30%)
+- Value: 30 pct
+- Label: (c)
+- Sources: [From Five to Eight: NBA Further Loosens Private Equity Ownership Rules](https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/01/2026%20-%201%20From%20Five%20to%20Eight%20-%20NBA%20Further%20Loosens%20Private%20Equity%20Ownership%20Rules.pdf) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_fund_cap_total, column quote: "limited to 30%")`
+
+### `nba_fund_teams_max`: Teams in which one investment fund may hold stakes, since Dec. 3, 2025
+
+- Shown as: eight (8)
+- Value: 8 count
+- Label: (c)
+- Sources: [From Five to Eight: NBA Further Loosens Private Equity Ownership Rules](https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/01/2026%20-%201%20From%20Five%20to%20Eight%20-%20NBA%20Further%20Loosens%20Private%20Equity%20Ownership%20Rules.pdf) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_fund_teams_max, column quote: "as many as eight teams")`
+
+### `por_lobbying`: Lobbying reported by the Trail Blazers' arena company in the first three months of 2026
+
+- Shown as: $100,000 ($100,000)
+- Value: 100,000 usd, nominal
+- Label: (c)
+- Sources: [Trail Blazers spent (relatively) big to secure state money for Moda Center, records show](https://www.opb.org/article/2026/04/20/trail-blazers-moda-center-portland-basketball-sports/) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=por_lobbying, column quote: "Rip City Management spent $100,000 on lobbying")`
+
+### `lac_fine`: The NBA's fine on the Clippers after its investigation of Kawhi Leonard's endorsement deals
+
+- Shown as: $30 million ($30M)
+- Value: 30 usd_m, nominal
+- Label: (b)
+- Sources: [NBA announces penalties and findings arising from investigation of LA Clippers](https://pr.nba.com/nba-investigation-clippers-kawhi-leonard/) (team or league)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=lac_fine, column quote: "The Clippers are fined $30 million")`
+
+### `lac_picks`: First-round draft picks the Clippers forfeit
+
+- Shown as: five (5)
+- Value: 5 count
+- Label: (b)
+- Sources: [NBA announces penalties and findings arising from investigation of LA Clippers](https://pr.nba.com/nba-investigation-clippers-kawhi-leonard/) (team or league)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=lac_picks, column quote: "forfeit five first-round draft picks")`
+
+### `sec197_years`: Years over which a buyer deducts the purchase price of a team's franchise and other intangibles
+
+- Shown as: 15 (15)
+- Value: 15 count
+- Label: (b)
+- Sources: [H. Rept. 119-106, One Big Beautiful Bill Act: report of the Committee on the Budget, book 2 (with the Ways and Means provisions)](https://www.govinfo.gov/content/pkg/CRPT-119hrpt106/html/CRPT-119hrpt106-pt2.htm) (government)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=sec197_years, column quote: "amortizable on a straight-line basis over 15 years")`
 
 ## Datasets behind the charts and tables
 
 - `items`: Every public-money item in the ledger. 192 rows; 151 sources.
 - `item-buckets`: Public money in each item by funding stream. 75 rows; 1 sources.
+- `public-layers`: Public money in the 30 current arenas, by kind. 5 rows; 2 sources. The five parts of the expanded total. Tax breaks are property-tax breaks and taxes diverted to arena debt; the federal cost of tax-exempt bonds is not included.
 - `rebuild-by-year`: Public money by year, for new arenas and for existing ones. 57 rows; 99 sources. Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year.
 - `arenas`: The 30 current arenas, public and private money. 30 rows; 76 sources. Private money is construction and renovation spending not paid by the public. Tax breaks are the Barclays Center PILOT bonds and the exemptions counted in the expanded total.
 - `arena-map`: Where the public money went, arena by arena. 30 rows; 31 sources. Locations from each arena's Wikipedia article; money from the ledger.
-- `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 64 sources.
+- `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 66 sources.
 - `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 21 rows; 35 sources.
 - `who-pays`: Public capital money by funding stream. 9 rows; 2 sources.
 - `households`: Public money in the largest deals, per household in the jurisdictions that pay. 23 rows; 85 sources.
 - `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 16 rows; 85 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.
 - `uc-bills`: United Center property-tax bills, with and without the 1989 valuation formula. 23 rows; 6 sources. Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.
 - `ongoing`: Yearly public payments to teams or arena operators. 118 rows; 25 sources.
-- `threats`: Relocation threats and what followed. 49 rows; 105 sources.
+- `threats`: Relocation threats and what followed. 49 rows; 106 sources.
 - `threat-deals`: Deals compared, with and without a prior threat. 24 rows; 2 sources. Public money at the deal year in 2025 dollars from compare.py, converted to 2026 dollars.
 - `left-behind`: Cities that kept paying after a team left. 9 rows; 19 sources.
-- `leases`: When each arena lease ends, and what leaving costs. 30 rows; 45 sources.
+- `leases`: When each arena lease ends, and what leaving costs. 30 rows; 47 sources.
 - `projects`: New arenas, districts and pending deals. 10 rows; 33 sources.
 - `slc-monthly`: Salt Lake City's arena sales tax, monthly distributions. 21 rows; 1 sources. Final distributions from the Utah State Tax Commission's monthly reports (Salt Lake City, code 18122).
 - `wcd-annual`: Wisconsin Center District taxes by source. 5 rows; 2 sources.
 - `fed-bonds`: Federal cost of tax-exempt arena bonds, by issue. 17 rows; 3 sources. New money for the arena only; refundings, taxable issues and the district's share of Salt Lake City's 2025 issue are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate, in the dollars the par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3), then in 2026 dollars.
 - `tax-breaks`: Property-tax breaks and taxes diverted to arena debt. 5 rows; 12 sources.
+- `team-values`: What each team's owner paid, what the team is worth now, and the public money in its arena. 30 rows; 123 sources. Prices are what the current controlling owner paid, or the valuation at which a controlling stake changed hands, in the year paid and in 2026 dollars; prices that bought more or less than the team are marked by price_scope. Values are Forbes's of October 2026 and 2025 and Sportico's of October 2026. Public money is the ledger's, with tax breaks shown separately.
+- `value-history`: Average NBA team value by year, as estimated by Forbes. 18 rows; 48 sources. Each year's average is from Forbes's list published that year (2007 and 2009 lists were published in December). The 2026 value is the mean of Forbes's 30 team values of October 2026.
+- `public-return`: What each public arena deal returns to the public. 30 rows; 32 sources. From the arena agreements, audits and budgets reviewed. sale_share is 'no' where the documents allow a sale with no payment to the public, 'none_found' where no clause was found in the documents reviewed, 'unknown' where the agreement could not be reached, and 'private_arena' where there is no public arena deal.
+- `ownership`: Who owns each team, the controlling owners' main source of wealth, and the investment funds with stakes. 30 rows; 46 sources. Main source of wealth from Forbes profiles read Oct. 17-18, 2026, or the release or report named, classed by this project as private equity (private equity or hedge funds), other finance (mortgage lending, asset management, venture capital, financial services) or other. Funds are those with a current stake in the team or its parent company; stakes seen only in search results are left out.

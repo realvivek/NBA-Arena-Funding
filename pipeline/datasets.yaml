@@ -28,6 +28,23 @@ datasets:
     order by b.team, b.item_id, g.ord
   sources: [ledger]
 
+# ------------------------------------------------------------------ the lead graphic: public money by kind
+- id: public-layers
+  title: Public money in the 30 current arenas, by kind
+  sql: |
+    select * from (
+        select 1 as ord, 'build' as key, 'Building the arenas' as name, sum(public_2026_m) as public_2026_m
+        from items where core and kind = 'construction'
+        union all select 2, 'reno', 'Renovations', sum(public_2026_m) from items where core and kind = 'renovation'
+        union all select 3, 'buy', 'Buying arenas', sum(public_2026_m) from items where core and kind = 'purchase'
+        union all select 4, 'pay', 'Yearly payments', sum(public_2026_m) from items where core and kind = 'ongoing'
+        union all select 5, 'breaks', 'Tax breaks',
+               (select sum(coalesce(pilot_2026_m, 0)) from arenas)
+               + (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))
+    order by ord
+  sources: [ledger, fred-cpiaucns]
+  note: The five parts of the expanded total. Tax breaks are property-tax breaks and taxes diverted to arena debt; the federal cost of tax-exempt bonds is not included.
+
 # ------------------------------------------------------------------ chart 1: building versus rebuilding
 - id: rebuild-by-year
   title: Public money by year, for new arenas and for existing ones
@@ -242,7 +259,7 @@ datasets:
 - id: leases
   title: When each arena lease ends, and what leaving costs
   sql: |
-    select l.team, l.arena, l.owner, l.term_end_year, l.term_and_nonrelocation, l.outs_penalties_notes, l.label,
+    select l.team, l.arena, l.owner, l.term_end_year, l.term_and_nonrelocation, l.outs_penalties_notes, l.summary, l.label,
            a.exit_penalty,
            (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'renovation' and i.status = 'pending') as pending_2026_m,
            (select sum(public_2026_m) from items i where i.team = l.team and i.kind = 'project' and i.status <> 'pending' and i.item_id <> 'UTA-project') as new_arena_2026_m,
@@ -310,3 +327,75 @@ datasets:
   sources: [ledger]
   row_sources: sources
   require_row_sources: true
+
+# ------------------------------------------------------------------ teams: owners, values and what the public gets back
+- id: team-values
+  title: What each team's owner paid, what the team is worth now, and the public money in its arena
+  sql: |
+    with pub as (select team, sum(public_2026_m) filter (where core) as public_2026_m from items where kind <> 'project' group by team),
+         brk as (select team, coalesce(pilot_2026_m, 0)
+                       + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end as tax_breaks_2026_m
+                 from arenas)
+    select v.team, v.owner, v.control_year, v.price_year, v.price_m, v.price_scope, v.price_note, v.price_label,
+           v.price_m * (select factor_2026 from cpi where cpi.year = v.price_year) as price_2026_m,
+           v.seller_price_m, v.seller_year, v.forbes_2025_b, v.forbes_2026_b, v.sportico_2026_b, v.value_label,
+           v.deal, v.deal_value_b, v.deal_date, v.deal_label, v.note,
+           coalesce(p.public_2026_m, 0) as public_2026_m, coalesce(b.tax_breaks_2026_m, 0) as tax_breaks_2026_m,
+           coalesce((select list(s.source_id order by case s.field when 'price' then 1 when 'value' then 2 else 3 end, s.ord)
+                     from value_sources s where s.team = v.team), []) as sources
+    from team_values v left join pub p using (team) left join brk b using (team)
+    order by v.forbes_2026_b desc, v.team
+  sources: [team-ledger, ledger, fred-cpiaucns]
+  row_sources: sources
+  require_row_sources: true
+  note: Prices are what the current controlling owner paid, or the valuation at which a controlling stake changed hands, in the year paid and in 2026 dollars; prices that bought more or less than the team are marked by price_scope. Values are Forbes's of October 2026 and 2025 and Sportico's of October 2026. Public money is the ledger's, with tax breaks shown separately.
+
+- id: value-history
+  title: Average NBA team value by year, as estimated by Forbes
+  sql: |
+    select year, forbes_avg_b, 'Forbes list' as basis, label,
+           coalesce((select list(s.source_id order by s.ord) from history_sources s where s.year = h.year), []) as sources
+    from value_history h
+    union all
+    select 2026, avg(forbes_2026_b), 'Mean of the 30 Forbes team values', 'a',
+           (select list(distinct s.source_id order by s.source_id) from value_sources s
+            where s.field = 'value' and s.source_id like 'forbes-%' and s.source_id <> 'forbes-p-162626')
+    from team_values
+    order by year
+  sources: [team-ledger]
+  row_sources: sources
+  require_row_sources: true
+  note: Each year's average is from Forbes's list published that year (2007 and 2009 lists were published in December). The 2026 value is the mean of Forbes's 30 team values of October 2026.
+
+- id: public-return
+  title: What each public arena deal returns to the public
+  sql: |
+    select r.team, r.public_deal, r.sale_share, r.equity_stake, r.summary, r.label, r.note,
+           coalesce((select list(s.source_id order by s.ord) from return_sources s where s.team = r.team), []) as sources
+    from public_return r
+    order by r.team
+  sources: [team-ledger]
+  row_sources: sources
+  note: From the arena agreements, audits and budgets reviewed. sale_share is 'no' where the documents allow a sale with no payment to the public, 'none_found' where no clause was found in the documents reviewed, 'unknown' where the agreement could not be reached, and 'private_arena' where there is no public arena deal.
+
+- id: ownership
+  title: Who owns each team, the controlling owners' main source of wealth, and the investment funds with stakes
+  sql: |
+    with pub as (select team, sum(public_2026_m) filter (where core) as public_2026_m from items where kind <> 'project' group by team),
+         brk as (select team, coalesce(pilot_2026_m, 0)
+                       + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end as tax_breaks_2026_m
+                 from arenas),
+         f as (select team, list(fund order by fund) as funds, list(stake order by fund) as stakes
+               from investors where status = 'current' group by team)
+    select v.team, v.owner, v.owner_wealth, v.owner_field, v.owner_class, v.control_year, coalesce(f.funds, []) as funds,
+           coalesce(f.stakes, []) as stakes, v.forbes_2026_b,
+           coalesce(p.public_2026_m, 0) + coalesce(b.tax_breaks_2026_m, 0) as public_2026_m,
+           list_concat(coalesce((select list(s.source_id order by s.ord) from value_sources s where s.team = v.team and s.field = 'owner'), []),
+                       coalesce((select list(s.source_id order by s.fund, s.ord) from investor_sources s
+                                 where s.team = v.team and s.fund in (select fund from investors i where i.team = v.team and i.status = 'current')), [])) as sources
+    from team_values v left join f using (team) left join pub p using (team) left join brk b using (team)
+    order by case v.owner_class when 'private_equity' then 1 when 'other_finance' then 2 else 3 end, len(coalesce(f.funds, [])) = 0, v.team
+  sources: [team-ledger, ledger]
+  row_sources: sources
+  require_row_sources: true
+  note: Main source of wealth from Forbes profiles read Oct. 17-18, 2026, or the release or report named, classed by this project as private equity (private equity or hedge funds), other finance (mortgage lending, asset management, venture capital, financial services) or other. Funds are those with a current stake in the team or its parent company; stakes seen only in search results are left out.

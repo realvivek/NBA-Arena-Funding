@@ -2,6 +2,10 @@
 /** A chart by figure id: its component, its dataset and its data table, drawn wide and narrow inside a Figure. */
 import { getEntry } from 'astro:content';
 import Figure from './Figure.astro';
+import Ball from './charts/Ball.svelte';
+import Values from './charts/Values.svelte';
+import ValueTrend from './charts/ValueTrend.svelte';
+import Owners from './charts/Owners.svelte';
 import Rebuild from './charts/Rebuild.svelte';
 import Arenas from './charts/Arenas.svelte';
 import ArenaMap from './charts/ArenaMap.svelte';
@@ -28,6 +32,10 @@ interface Props {
 const { id, numbers = [], steps = [] } = Astro.props;
 const XWIDE = new Set<string>();
 const REG: Record<string, { C: any; data: string; table: (rows: any[]) => any; props?: Record<string, unknown> }> = {
+  ball: { C: Ball, data: 'public-layers', table: T.ballTable },
+  values: { C: Values, data: 'team-values', table: T.valuesTable },
+  trend: { C: ValueTrend, data: 'value-history', table: T.trendTable },
+  owners: { C: Owners, data: 'ownership', table: T.ownersTable },
   rebuild: { C: Rebuild, data: 'rebuild-by-year', table: T.rebuildTable },
   arenas: { C: Arenas, data: 'arenas', table: T.arenasTable },
   map: { C: ArenaMap, data: 'arena-map', table: T.mapTable },

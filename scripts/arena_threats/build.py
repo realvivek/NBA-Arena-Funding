@@ -36,10 +36,10 @@ add(id='E02',team='SEA SuperSonics (now OKC)',owners='Barry Ackerley',period='19
 add(id='E03',team='MIA Heat',owners='Micky Arison',period='1996-06 to 1996-11',threat_class='explicit',
  said_or_done='Verbatim (Miami New Times, 1996-11-14): "Back in June the shipping magnate forced the county into an agreement by threatening to move to Broward, a tactic his own negotiators later admitted was a bluff." Arison also sued (unsuccessfully) to block the ballot initiative, then funded an ad campaign.',
  alt_city='Broward County', league_role='none documented',
- money_after='Miami-Dade: $38M bayfront county land + county operating payments ($8.5M/yr in the deal announced days before the vote; later reported $6.4M/yr; $64M paid by 2010); county gets 40% of arena profits above $14M',
+ money_after='Miami-Dade: $38M bayfront county land + county operating payments ($8.5M/yr in the deal announced days before the vote; later reported $6.4M/yr; $64M paid by 2010); county gets 40% of arena profits above $14M (paid once, $257,134 in 2013; deleted in the 2014 amended agreements)',
  money_usd_m=38, mechanism='Land + annual operating subsidy from county; Heat financed the $213M building', vote='County referendum 1996-11-05 ("overwhelming victory", MNT)',
  threat_date='1996-06-15', approval_date='1996-11-05', outcome='stayed (AmericanAirlines Arena opened 2000-01-02)',
- sources='https://www.miaminewtimes.com/opinion/arena-winners-and-losers-alex-shoots-alex-scores-6361111/ ; https://www.miaminewtimes.com/news/tricky-micky-arisons-heat-doesnt-pay-rent-for-county-owned-arena-6538489/',
+ sources='https://www.miaminewtimes.com/opinion/arena-winners-and-losers-alex-shoots-alex-scores-6361111/ ; https://www.miaminewtimes.com/news/tricky-micky-arisons-heat-doesnt-pay-rent-for-county-owned-arena-6538489/ ; https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf',
  label='c', notes='Threat month June 1996 (day placeholder). Wikipedia dates the threat 1997; contemporaneous MNT (Nov 1996) places it in June 1996. FY2025-26 county budget still shows a $6.4M payment (prior round).')
 
 add(id='E04',team='SAC Kings',owners='Jim Thomas',period='1996-12 to 1997',threat_class='implied',

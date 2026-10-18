@@ -63,7 +63,7 @@
 
   const W = narrow ? NARROW : WIDE;
   const H = narrow ? 300 : 430;
-  const ml = narrow ? 38 : 48;
+  const ml = narrow ? 40 : 54;
   const mr = narrow ? 98 : 128;
   const mt = narrow ? 58 : 64;
   const mb = 26;

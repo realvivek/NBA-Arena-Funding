@@ -27,33 +27,36 @@ data/*.csv  ->  pipeline/build.py  ->  site/src/generated/*.json, docs/fact-chec
 
 | Path | Role |
 | --- | --- |
-| `src/content/story.yaml`, `pages.yaml`, `figures.yaml` | All copy: the story, the reference page heads and notes, the home page's findings, and every chart's title, subtitle and notes. Numbers are tokens (`{{core_public}}`, `{{core_public:short}}`, `:title`, `:cap`). A story section is a list of blocks: paragraphs, figures, scroll steps for a figure (`scrolly`, with one paragraph per step), a pull quote, the arena lookup and subheads; `more` links a chapter to the reference pages. |
+| `src/content/story.yaml`, `pages.yaml`, `figures.yaml` | All copy: the story, the reference page heads and notes, the home page's findings, and every chart's title, subtitle and notes. Numbers are tokens (`{{core_public}}`, `{{core_public:short}}`, `:title`, `:cap`). A story section is a list of blocks: paragraphs, figures, scroll steps for a figure (`scrolly`, with one paragraph per step), a pull quote, the ranked list of teams (`teams`) and subheads; `more` links a chapter to the reference pages. |
 | `src/content.config.ts` | Content collections with schemas; paragraph sources are references to the `sources` collection. |
 | `src/lib/copy.ts` | The copy check and the renderer. The build fails on a typed dollar figure, percentage, number word or numeral (other than a year or a date), a number in a block with no source, an unknown token or source, an em or en dash, a tool name, or marketing language. Tokens render as links to the fact-check entry. |
 | `src/components/charts/*.svelte` | The charts, rendered on the server, with LayerCake or as plain SVG. Each draws a wide layout (680 units, shown from 640px up) and a narrow one (340 units); chart text is at least 13 units, so it stays at 11px or more at every width. Label widths are estimated from Libre Franklin's advance widths (`src/lib/chart.ts`), within about 10 percent of the rendered text. |
 | `src/components/Figure.astro`, `Chart.astro` | The chart frame: title, subtitle, legend, both layouts, notes, sources and a "Show the data" table. A figure with steps is laid out as a scroll-driven graphic: the chart holds its place while the steps pass beside it (from 64rem) or over it (as cards, on phones). |
 | `src/lib/prepare.ts`, `src/components/Blocks.astro` | Render the story's blocks in reading order, so citation numbers follow the order a reader meets the sources. |
-| `src/components/Lookup.astro` | The arena lookup: a card for each arena, drawn at build time from the same rows as the arenas chart, with a menu to pick one. |
+| `src/components/Teams.astro` | Every team, ranked: a row per team with the public money in its arena and the team's value, which opens to its record (the arena, the public money and the taxes that paid it, the lease, what the owners paid and the team is worth, and what the public gets back), drawn at build time from the same datasets as the charts. A small script adds sort buttons. |
 | `src/pages/` | The story and the reference pages: arenas, taxes, tax breaks, threats, leases, households, sources and fact check. |
-| `tests/site.spec.ts` | Playwright: every page loads with no errors and no requests to other sites, works without JavaScript, fits a 360px phone with no sideways scrolling, keeps chart text at 11px or more, has one h1 and no skipped heading levels, and links every number to an existing fact-check entry. The lead graphic is checked at a desktop and a phone width (each step sets its state, including after a jump), and so is the lookup, with and without JavaScript. |
+| `tests/site.spec.ts` | Playwright: every page loads with no errors and no requests to other sites, works without JavaScript, fits a 360px phone with no sideways scrolling, keeps chart text at 11px or more, has one h1 and no skipped heading levels, and links every number to an existing fact-check entry. The lead graphic is checked at a desktop and a phone width (each step sets its state, including after a jump), and the team list is checked with and without JavaScript. |
 
 ## Design
 
-The home page reads like a newspaper's long-form data story. A headline, deck and dateline open it; the lead
-graphic follows, with four steps that build the argument on the chart (the new arenas, the turn to existing ones
-since 2014, the two largest deals, and the money pending). "What we found" lists the findings, each linked to its
-chapter. The chapters carry the charts, a pull quote from the research, the arena lookup, and links to the
+The home page reads like a newspaper's data story, short enough to read in under ten minutes. A headline, deck
+and dateline open it; the lead graphic follows: a basketball floating in water, sliced into layers whose areas are
+proportional to the public money in each, with five steps that light them in turn (building the arenas, above the
+waterline; renovations; purchases and yearly payments; tax breaks; the total). "What we found" lists the findings,
+each linked to its chapter. The chapters carry the ranked list of every team, the charts (rebuilding since 2014,
+who pays, team values against what owners paid, the average team value by year, the lease clock), and links to the
 reference pages for the full record. The source list and the reference pages close it.
 
 Type is Newsreader (headlines and text, with its optical-size axis) and Libre Franklin (labels, charts and the
 interface), both served from the site. The text column is 37.5rem; charts break out to 46rem, and the lead graphic
 to 72rem. Every script is optional: without JavaScript the lead graphic rests in its last state and its steps
-read as paragraphs, the lookup shows its first card and a list of links to every arena's record, and tooltips are
+read as paragraphs, the team list stays in order of public money with every record still opening, and tooltips are
 not shown.
 
 Charts follow one palette, validated for color-vision deficiency in light and dark mode: blue for public money,
-orange for the second series (existing arenas, visitor taxes, threats), gray for private money, and a one-hue blue
-ramp for shares on the map. Tooltips are added by a small script and are optional; every value is also in the
+orange for the second series (existing arenas, visitor taxes, threats, team values), gray for private money, and a
+one-hue blue ramp for shares on the map. The lead graphic's ball is drawn in leather tones and its water in tokens
+that follow the theme. Tooltips are added by a small script and are optional; every value is also in the
 chart's data table.
 
 ## Deploy
