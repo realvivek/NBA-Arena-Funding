@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-const PAGES = ['/', '/arenas/', '/taxes/', '/tax-breaks/', '/threats/', '/leases/', '/households/', '/sources/', '/fact-check/'];
+const PAGES = ['/', '/who-is-behind/', '/arenas/', '/taxes/', '/tax-breaks/', '/threats/', '/leases/', '/households/', '/sources/', '/fact-check/'];
 
 async function visit(page: Page, path: string) {
   const external: string[] = [];

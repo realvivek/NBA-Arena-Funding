@@ -383,6 +383,9 @@ def main(argv):
     # the corrections log and the list of unreachable sites, shown on the site's fact-check page
     with open(os.path.join(ROOT, 'notes', 'verification.md')) as f:
         write(os.path.join(OUT, 'verification.md'), f.read(), check, stale)
+    # the investigation report, shown on the site's who-is-behind page
+    with open(os.path.join(ROOT, 'report', 'who-is-behind-nba-arena-deals.md')) as f:
+        write(os.path.join(OUT, 'who-is-behind.md'), f.read(), check, stale)
     if stale:
         fail(['outputs differ from the committed files; run pipeline/build.py and commit:'] + stale)
     print(f'{n_tables} tables valid; {len(srcs)} sources; {len(stats)} stats; {len(datasets)} datasets'

@@ -32,6 +32,7 @@ The threat comparison finds no evidence that deals after a threat were larger or
 ```
 report/
   who-paid-for-nba-arenas.md     the report
+  who-is-behind-nba-arena-deals.md  the investigation of who is behind the deals: funds and owners from finance, lobbying, studies, banks, federal money and remedies (shown on the site at /who-is-behind/)
   charts/                        the two charts embedded in the report
 data/
   ledger/                        arena_ledger.csv (30 arenas + 10 project rows, 96 columns), ledger_items.csv and ledger_buckets.csv (one row per item and funding stream), households.csv, totals.txt, _calc.json

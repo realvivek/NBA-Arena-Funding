@@ -40,6 +40,20 @@ home:
         and public money followed {{threats_same_city}} of {{threats_counted}} relocation threats.
       to: the-next-round-is-already-on-the-calendar
 
+who-is-behind:
+  path: /who-is-behind/
+  kicker: The investigation
+  title: >-
+    Who Is Behind the NBA's Arena Deals
+  deck: >-
+    The investment funds and owners from finance in NBA teams, the lobbyists, consultants and banks around the
+    arena deals, the reporting that exposed owners' taxes and side deals, the federal tax breaks, and what the
+    public gets back. The full report behind the story, with every source.
+  description: >-
+    The full report: funds and owners from finance, lobbying and campaigns, studies and banks, prize-winning
+    investigations, federal tax breaks and remedies, every figure labeled and sourced.
+  sources: [team-ledger]
+
 arenas:
   path: /arenas/
   kicker: The arenas

@@ -10,7 +10,7 @@ import { plain } from '../lib/copy';
 import { sitePath } from '../lib/paths';
 import meta from '../generated/meta.json';
 
-const ORDER = ['arenas', 'taxes', 'tax-breaks', 'threats', 'leases', 'households', 'sources', 'fact-check'];
+const ORDER = ['who-is-behind', 'arenas', 'taxes', 'tax-breaks', 'threats', 'leases', 'households', 'sources', 'fact-check'];
 const cites = new Citations();
 const page = (await getEntry('pages', 'home'))!.data;
 const pages = await getCollection('pages');

@@ -1341,6 +1341,57 @@ figure.chart {
   }
 }
 
+/* The investigation report (see pages/who-is-behind): a long text with tables, read in the story's column */
+.report-parts {
+  margin: 18px 0 8px;
+  padding: 14px 18px;
+  background: var(--plane);
+  font-family: var(--sans);
+}
+.report-parts .note {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+.report-parts ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.report-body {
+  overflow-wrap: anywhere;
+}
+.report-body h2 {
+  margin-top: 52px;
+}
+.report-body h3 {
+  margin-top: 32px;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+}
+.report-body ul,
+.report-body ol {
+  padding-left: 1.25rem;
+}
+.report-body li {
+  margin: 0 0 6px;
+}
+.report-body em {
+  color: var(--ink-2);
+}
+.report-body .report-table {
+  max-height: none;
+  margin: 14px 0 22px;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+.report-body .report-table td,
+.report-body .report-table th {
+  vertical-align: top;
+  overflow-wrap: normal;
+}
+
 /* The full record: cards for the reference pages */
 .endmatter {
   margin-top: 72px;

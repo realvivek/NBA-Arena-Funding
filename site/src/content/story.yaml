@@ -197,6 +197,8 @@ behind:
         disclosure of the contractors, sponsors and consultants that work for both the team and the arena's public
         owner.
       sources: [bradbury-2023, revisor-473j-15, team-ledger]
+  more:
+    - { page: who-is-behind, text: 'The full investigation, with every source' }
 
 next:
   n: 7

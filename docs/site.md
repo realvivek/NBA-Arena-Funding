@@ -1,6 +1,6 @@
 # The site
 
-A long-form data story on the home page and eight reference pages, built as a static site from the ledgers in
+A long-form data story on the home page, the investigation report behind it and eight reference pages, built as a static site from the ledgers in
 `data/`. Every number on it is computed from the data at build time, every number links to its entry in the
 fact-check ledger, and every chart is drawn at build time as SVG, in a wide and a narrow layout.
 
@@ -34,7 +34,7 @@ data/*.csv  ->  pipeline/build.py  ->  site/src/generated/*.json, docs/fact-chec
 | `src/components/Figure.astro`, `Chart.astro` | The chart frame: title, subtitle, legend, both layouts, notes, sources and a "Show the data" table. A figure with steps is laid out as a scroll-driven graphic: the chart holds its place while the steps pass beside it (from 64rem) or over it (as cards, on phones). |
 | `src/lib/prepare.ts`, `src/components/Blocks.astro` | Render the story's blocks in reading order, so citation numbers follow the order a reader meets the sources. |
 | `src/components/Teams.astro` | Every team, ranked: a row per team with the public money in its arena and the team's value, which opens to its record (the arena, the public money and the taxes that paid it, the lease, what the owners paid and the team is worth, and what the public gets back), drawn at build time from the same datasets as the charts. A small script adds sort buttons. |
-| `src/pages/` | The story and the reference pages: arenas, taxes, tax breaks, threats, leases, households, sources and fact check. |
+| `src/pages/` | The story and the reference pages: the investigation report (`who-is-behind/`, rendered from `report/who-is-behind-nba-arena-deals.md`, which the pipeline copies into `src/generated/`), arenas, taxes, tax breaks, threats, leases, households, sources and fact check. |
 | `tests/site.spec.ts` | Playwright: every page loads with no errors and no requests to other sites, works without JavaScript, fits a 360px phone with no sideways scrolling, keeps chart text at 11px or more, has one h1 and no skipped heading levels, and links every number to an existing fact-check entry. The lead graphic is checked at a desktop and a phone width (each step sets its state, including after a jump), and the team list is checked with and without JavaScript. |
 
 ## Design
