@@ -58,8 +58,9 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
       <div class="col">
         <p class="foot-name">Who Paid for the NBA's Arenas</p>
         Ledger as of {asOf}. Dollars are 2026 dollars (BLS CPI-U) unless marked. Every number links to its entry in
-        the <a href={sitePath('/fact-check/')}>fact-check ledger</a>, and every paragraph lists its sources. The data and the code
-        that builds this site are in the <a href="https://github.com/realvivek/NBA-Arena-Funding">project repository</a>.
+        the <a href={sitePath('/fact-check/')}>fact-check ledger</a>, which also lists each paragraph's sources; every chapter
+        and chart names its own. The data and the code that builds this site are in the
+        <a href="https://github.com/realvivek/NBA-Arena-Funding">project repository</a>.
       </div>
     </footer>
     <div class="tip" role="status" hidden></div>

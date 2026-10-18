@@ -11,23 +11,31 @@ interface Props {
   blocks: Prepared[];
   /** The level of the subheads: 3 inside the story's chapters, 2 on a page whose sections they head. */
   level?: 2 | 3;
+  /** No citation toggles in the text: the sources are listed at the end of the chapter or section. */
+  quiet?: boolean;
 }
-const { blocks, level = 2 } = Astro.props;
+const { blocks, level = 2, quiet = false } = Astro.props;
 const H = level === 3 ? 'h3' : 'h2';
 ---
 {blocks.map((b) =>
-  b.kind === 'p' ? <Prose html={b.html} sources={b.sources} numbers={b.numbers} /> :
+  b.kind === 'p' ? <Prose html={b.html} sources={b.sources} numbers={b.numbers} quiet={quiet} /> :
+  b.kind === 'reveal' ? (
+    <div class="reveal">
+      <p class="reveal-lead" set:html={b.lead} />
+      <p class="reveal-value" set:html={b.value} />
+    </div>
+  ) :
   b.kind === 'fig' ? <Chart id={b.id} numbers={b.numbers} /> :
-  b.kind === 'scrolly' ? <Chart id={b.id} numbers={b.numbers} steps={b.steps} /> :
+  b.kind === 'scrolly' ? <Chart id={b.id} numbers={b.numbers} steps={b.steps} quiet={quiet} /> :
   b.kind === 'quote' ? (
     <blockquote class="pullquote">
       <p set:html={b.html} />
-      <footer>{b.by} <Cites ids={b.sources} numbers={b.numbers} /></footer>
+      <footer>{b.by} {!quiet && <Cites ids={b.sources} numbers={b.numbers} />}</footer>
     </blockquote>
   ) :
-  b.kind === 'teams' ? <Teams title={b.title} intro={b.intro} sources={b.sources} numbers={b.numbers} /> :
-  b.kind === 'stats' ? <Tiles tiles={b.tiles} sources={b.sources} numbers={b.numbers} /> :
-  b.kind === 'cards' ? <Cards cards={b.cards} /> :
-  b.kind === 'funds' ? <Funds funds={b.funds} /> :
+  b.kind === 'teams' ? <Teams title={b.title} intro={b.intro} sources={b.sources} numbers={b.numbers} quiet={quiet} /> :
+  b.kind === 'stats' ? <Tiles tiles={b.tiles} sources={quiet ? [] : b.sources} numbers={b.numbers} /> :
+  b.kind === 'cards' ? <Cards cards={b.cards} quiet={quiet} /> :
+  b.kind === 'funds' ? <Funds funds={b.funds} quiet={quiet} /> :
   <H class="subhead" id={b.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}>{b.text}</H>
 )}

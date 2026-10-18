@@ -72,6 +72,7 @@ describe('every piece of copy in the content files', () => {
   const blockCopy = (where: string, b: any) => {
     const own = b.sources ?? [];
     if (b.p) items.push([where, b.p, own]);
+    if (b.reveal) items.push([`${where} reveal`, `${b.reveal} ${b.value}`, own]);
     if (b.h3) items.push([`${where} subhead`, b.h3, own]);
     if (b.quote) items.push([`${where} quote`, b.quote, own], [`${where} byline`, b.by, own]);
     for (const [i, s] of (b.steps ?? []).entries()) items.push([`${where} step ${i + 1}`, s.p, s.sources ?? []]);

@@ -28,8 +28,9 @@ interface Props {
   id: string;
   numbers?: number[];
   steps?: PreparedStep[];
+  quiet?: boolean;
 }
-const { id, numbers = [], steps = [] } = Astro.props;
+const { id, numbers = [], steps = [], quiet = false } = Astro.props;
 const XWIDE = new Set<string>();
 const REG: Record<string, { C: any; data: string; table: (rows: any[]) => any; props?: Record<string, unknown> }> = {
   bill: { C: Bill, data: 'public-layers', table: T.billTable },
@@ -58,7 +59,7 @@ if (!fig) throw new Error(`figure ${id} is not in src/content/figures.yaml`);
 const label = plain(fig.data.title, { where: `figure ${id} label`, sources: ds.sources, allow: ALLOW });
 const C = spec.C;
 ---
-<Figure id={id} dataset={ds} table={spec.table(ds.rows)} numbers={numbers} steps={steps} xwide={XWIDE.has(id)}>
+<Figure id={id} dataset={ds} table={spec.table(ds.rows)} numbers={numbers} steps={steps} xwide={XWIDE.has(id)} quiet={quiet}>
   <C slot="wide" rows={ds.rows} variant="wide" label={label} {...spec.props} />
   <C slot="narrow" rows={ds.rows} variant="narrow" label={label} {...spec.props} />
 </Figure>

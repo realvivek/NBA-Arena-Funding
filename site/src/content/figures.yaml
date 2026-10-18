@@ -5,13 +5,14 @@ bill:
   title: >-
     Building the arenas is {{construction_share}} of what the public has put into them
   sub: >-
-    Public money in the {{arenas_n}} arenas NBA teams play in, in 2026 dollars. Each bar starts where the one above
-    ends, so together they add up to the total
+    Public money in the {{arenas_n}} arenas NBA teams play in, by kind, in 2026 dollars. Building the arenas is
+    blue; everything else is orange
   dataset: public-layers
   notes:
     - >-
       Tax breaks are property-tax breaks and taxes diverted to arena debt. The federal cost of tax-exempt arena
-      bonds, {{fed_bond_cost}}, is not included, because a different public pays it.
+      bonds, {{fed_bond_cost}}, is not included, because a different public pays it. The number of bills for each
+      kind is rounded to the nearest bill; the amounts beside them are not.
 
 values:
   title: >-

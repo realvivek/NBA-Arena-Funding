@@ -85,23 +85,22 @@ test('every number in the copy links to its fact-check entry', async ({ page }) 
   }
 });
 
-test('the story renders its headline, key figures, contents and every chart', async ({ page }) => {
+test('the story renders its headline, every chart and the lead graphic\'s labels', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('h1')).toHaveText('Taxpayers Paid for the NBA’s Arenas. Owners Kept the Gains.');
-  await expect(page.locator('.hero .tile')).toHaveCount(4);
-  for (const v of await page.locator('.hero .tile-v').allTextContents()) expect(v.trim()).not.toBe('');
-  const toc = await page.$$eval('.toc a', (as) => as.map((a) => a.getAttribute('href') ?? ''));
-  expect(toc.length).toBe(8);
-  for (const href of toc) await expect(page.locator(href), href).toHaveCount(1);
+  await expect(page.locator('h1')).toHaveText(/^Taxpayers Put \$[\d.]+ Billion Into the NBA’s Arenas\. Owners Kept the Gains\.$/);
   for (const id of ['bill', 'rebuild', 'whopays', 'trend', 'values', 'owners', 'leases'])
     await expect(page.locator(`#fig-${id}`)).toHaveCount(1);
-  // every row of the lead graphic carries its name and its amount
-  const rows = page.locator('#fig-bill .v-wide .bl-row');
-  await expect(rows).toHaveCount(6);
-  for (const r of await rows.all()) {
-    expect((await r.locator('.bl-name').textContent())?.trim()).toBeTruthy();
-    expect((await r.locator('.bl-amt').textContent())?.trim()).toMatch(/^\$/);
+  // every kind of money in the lead graphic carries its amount and its name
+  const kinds = page.locator('#fig-bill .v-wide .bs-kind');
+  await expect(kinds).toHaveCount(5);
+  for (const k of await kinds.all()) {
+    expect((await k.locator('.bs-num').textContent())?.trim()).toMatch(/^\$[\d.]+ (billion|million)$/);
+    expect((await k.locator('.bs-name').textContent())?.trim()).toBeTruthy();
   }
+  // the text carries no citation marks; each chapter names its sources, and each chart its own
+  await expect(page.locator('.chapter .para details.cites')).toHaveCount(0);
+  expect(await page.locator('.chapter .src-line').count()).toBeGreaterThanOrEqual(6);
+  expect(await page.locator('figure.chart .fig-src').count()).toBe(await page.locator('figure.chart').count());
 });
 
 test('the investigation page shows its key figures, the funds and a link to the full report', async ({ page }) => {

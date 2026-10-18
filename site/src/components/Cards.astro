@@ -4,15 +4,16 @@ import Cites from './Cites.astro';
 import type { PreparedCard } from '../lib/prepare';
 interface Props {
   cards: PreparedCard[];
+  quiet?: boolean;
 }
-const { cards } = Astro.props;
+const { cards, quiet = false } = Astro.props;
 ---
 <ul class="cardset">
   {cards.map((c) => (
     <li class="cardset-item">
       <p class="cs-title">{c.title}</p>
       {c.value && <p class="cs-value" set:html={c.value} />}
-      <div class="cs-text"><Fragment set:html={c.text} />{' '}<Cites ids={c.sources} numbers={c.numbers} /></div>
+      <div class="cs-text"><Fragment set:html={c.text} />{!quiet && <>{' '}<Cites ids={c.sources} numbers={c.numbers} /></>}</div>
     </li>
   ))}
 </ul>

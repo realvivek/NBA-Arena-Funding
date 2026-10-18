@@ -21,7 +21,7 @@ function item(where: string, href: string, text: string, own: string[]): CopyIte
 
 type Block = Record<string, any>;
 
-/** The copy in a list of blocks: paragraphs, steps, key figures, cards, the funds and pull quotes. */
+/** The copy in a list of blocks: paragraphs, steps, figures in large type, key figures, cards, the funds and quotes. */
 function blockItems(blocks: Block[], where: string, href: string, figWhere: Map<string, { where: string; href: string }>): CopyItem[] {
   const out: CopyItem[] = [];
   let n = 0;
@@ -29,6 +29,7 @@ function blockItems(blocks: Block[], where: string, href: string, figWhere: Map<
     const own = ids(b.sources);
     if ('p' in b) out.push(item(`${where}: paragraph ${++n}`, href, b.p, own));
     if ('quote' in b) out.push(item(`${where}: quote`, href, b.quote, own));
+    if ('reveal' in b) out.push(item(`${where}: figure in large type`, href, `${b.reveal} ${b.value}`, own));
     if ('scrolly' in b) b.steps.forEach((s: Block, i: number) => out.push(item(`${where}: step ${i + 1}`, href, s.p, ids(s.sources))));
     if ('stats' in b)
       b.stats.forEach((t: Block) => out.push(item(`${where}: key figure`, href, `${t.value} ${t.label}`, own)));

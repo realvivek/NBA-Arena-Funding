@@ -122,16 +122,16 @@ body {
   margin: 0;
   background: var(--surface);
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.62;
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.6;
   font-optical-sizing: auto;
   overflow-wrap: break-word;
 }
 @media (max-width: 40rem) {
   body {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.0625rem;
+    line-height: 1.58;
   }
 }
 a {
@@ -246,35 +246,16 @@ main {
   margin-right: auto;
 }
 
-/* Page heads: the story's opening and each page's head sit on the band, which runs the full width */
-.band {
-  position: relative;
-  overflow: hidden;
-  margin: 0 calc(-1 * var(--gutter));
-  padding: 0 var(--gutter);
-  background: var(--band);
-  color: var(--band-ink);
-}
-.band .court {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: auto;
-  color: var(--band-ink);
-  opacity: 0.08;
-  pointer-events: none;
-}
+/* Page heads, set like a newspaper's: a kicker, a serif headline and deck, and a dateline, in the column the page
+   reads in */
 .hero,
 .head {
-  position: relative;
-  max-width: var(--xwide);
+  max-width: var(--wide);
   margin: 0 auto;
-  padding: 60px 0 36px;
+  padding: 56px 0 30px;
 }
 .head {
-  max-width: 66rem;
-  padding: 44px 0 30px;
+  padding: 44px 0 26px;
 }
 .kicker {
   font-family: var(--sans);
@@ -285,59 +266,31 @@ main {
   color: var(--public);
   margin: 0 0 14px;
 }
-.band .kicker {
-  color: var(--band-orange);
-}
 h1 {
-  font-family: var(--sans);
-  font-weight: 800;
-  font-size: clamp(2rem, 1.2rem + 3.2vw, 3.25rem);
-  line-height: 1.04;
-  letter-spacing: -0.028em;
-  margin: 0 0 18px;
-  max-width: 24ch;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2.125rem, 1.35rem + 3vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.012em;
+  margin: 0 0 16px;
+  max-width: 22ch;
   text-wrap: balance;
 }
 .hero h1 {
-  font-size: clamp(2.375rem, 1.2rem + 4.8vw, 4.5rem);
-  line-height: 1;
-  letter-spacing: -0.034em;
-  max-width: 20ch;
-  margin-bottom: 22px;
+  font-size: clamp(2.125rem, 1.3rem + 3.3vw, 3.375rem);
+  line-height: 1.04;
+  letter-spacing: -0.014em;
+  max-width: 24ch;
+  margin-bottom: 20px;
 }
 .deck {
-  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
-  line-height: 1.45;
+  font-family: var(--serif);
+  font-size: clamp(1.1875rem, 1.05rem + 0.55vw, 1.4375rem);
+  line-height: 1.42;
   color: var(--ink-2);
-  max-width: 40em;
-  margin: 0 0 22px;
+  max-width: 34em;
+  margin: 0 0 24px;
   text-wrap: pretty;
-}
-.band .deck {
-  color: var(--band-muted);
-}
-.band a {
-  color: var(--band-public);
-}
-.band a.num {
-  color: var(--band-ink);
-  text-decoration-color: var(--band-muted);
-}
-.band .cites > summary {
-  color: var(--band-muted);
-}
-.band .cites > summary:hover,
-.band .cites[open] > summary {
-  color: var(--band-ink);
-  background: var(--band-rule);
-}
-.band .cite-list {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--band-muted);
-}
-.band .origin {
-  color: var(--band-muted);
-  border-color: var(--band-rule);
 }
 .meta,
 .dateline {
@@ -348,162 +301,129 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 18px;
-}
-.band .meta,
-.band .dateline {
-  color: var(--band-muted);
-  border-top: 1px solid var(--band-rule);
-  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
 }
 .meta a,
 .dateline a {
   color: inherit;
 }
 .dateline time {
-  color: var(--band-ink);
+  color: var(--ink);
   font-weight: 600;
 }
 @media (max-width: 40rem) {
   .hero {
-    padding: 36px 0 24px;
+    padding: 34px 0 22px;
   }
   .head {
-    padding: 30px 0 22px;
-  }
-  .band .court {
-    opacity: 0.05;
+    padding: 28px 0 20px;
   }
 }
-
-/* what follows a page's head starts clear of the band */
-.band + .col,
-.band + .col-wide {
-  margin-top: 36px;
+.head + .col,
+.head + .col-wide {
+  margin-top: 28px;
 }
 
-/* The story's contents: a row of chapter links under the head; on phones it scrolls sideways */
-.toc {
-  margin: 0 calc(-1 * var(--gutter));
-  border-bottom: 1px solid var(--rule);
-  font-family: var(--sans);
-}
-.toc ol {
-  max-width: var(--xwide);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  list-style: none;
-  display: flex;
-  gap: 0 4px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.toc ol::-webkit-scrollbar {
-  display: none;
-}
-.toc a {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 7px;
-  padding: 14px 10px 12px;
-  white-space: nowrap;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--ink-2);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-}
-.toc li:first-child a {
-  padding-left: 0;
-}
-.toc a:hover {
-  color: var(--ink);
-  border-bottom-color: var(--public);
-}
-.toc-n {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--public);
-  font-variant-numeric: tabular-nums;
-}
-
-/* Story text */
+/* Story text: a serif at reading size, short paragraphs, numbers in the text and nothing underlined */
 h2 {
-  font-family: var(--sans);
-  font-size: 1.375rem;
-  line-height: 1.25;
+  font-family: var(--serif);
+  font-size: 1.625rem;
+  line-height: 1.2;
   font-weight: 700;
   margin: 56px 0 12px;
   text-wrap: balance;
 }
-/* A chapter opens with its number and its finding as the title; its first paragraph reads larger */
 .chapter {
-  margin-top: 104px;
+  margin-top: 96px;
 }
 .ch-head {
-  border-top: 3px solid var(--ink);
-  padding-top: 14px;
-  margin: 0 0 18px;
-}
-.ch-num {
-  display: block;
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--public);
-  margin: 0 0 6px;
+  margin: 0 0 14px;
 }
 .ch-head h2 {
-  font-family: var(--sans);
-  font-size: clamp(1.875rem, 1.25rem + 2.2vw, 2.875rem);
-  font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.026em;
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.375rem);
+  line-height: 1.1;
+  letter-spacing: -0.008em;
   margin: 0;
 }
 .ch-head + .para {
-  font-size: 1.25rem;
+  font-size: 1.3125rem;
   line-height: 1.5;
-  color: var(--ink);
 }
+h3,
 .chapter h3.subhead {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  margin: 48px 0 6px;
+  font-family: var(--serif);
+  font-size: 1.3125rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 44px 0 8px;
 }
 @media (max-width: 40rem) {
   .chapter {
-    margin-top: 80px;
+    margin-top: 72px;
   }
   .ch-head + .para {
-    font-size: 1.125rem;
+    font-size: 1.1875rem;
   }
-}
-h3 {
-  font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.3;
-  font-weight: 700;
-  margin: 32px 0 8px;
 }
 p,
 .para {
-  margin: 0 0 1.1em;
+  margin: 0 0 1em;
 }
 .prose p,
 .para {
   text-wrap: pretty;
 }
+.para strong {
+  font-weight: 700;
+}
 a.num {
   color: inherit;
-  text-decoration: underline dotted var(--muted);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  text-decoration: none;
   font-variant-numeric: lining-nums;
 }
 a.num:hover {
-  text-decoration: underline solid var(--public);
+  text-decoration: underline dotted var(--muted);
+  text-underline-offset: 0.2em;
+}
+
+/* A sentence that ends on a number set large (see the reveal block) */
+.reveal {
+  margin: 36px 0 28px;
+}
+.reveal-lead {
+  font-size: 1.375rem;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 30em;
+}
+.reveal-value {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 1.8rem + 4vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 6px 0 0;
+}
+.reveal-value a.num:hover {
+  text-decoration: none;
+}
+
+/* The sources of a chapter, in one gray line at its end; each paragraph's own list is on the fact-check page */
+.src-line {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 26px 0 0;
+  max-width: var(--measure);
+}
+.src-line a {
+  color: inherit;
+  text-decoration: none;
+}
+.src-line a:hover {
+  color: var(--ink);
 }
 
 /* Citations: a toggle at the end of each paragraph that lists its sources */
@@ -645,14 +565,50 @@ figure.chart {
 .chart-source {
   color: var(--muted);
 }
+/* Under each chart, the way the papers do it: one gray line of sources, and one toggle for notes and data */
 .fig-foot {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 22px;
   margin: 10px 0 0;
+  font-family: var(--sans);
 }
-.fig-foot details[open] {
-  flex-basis: 100%;
+.fig-src {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.fig-src a {
+  color: inherit;
+  text-decoration: none;
+}
+.fig-src a:hover {
+  color: var(--ink);
+}
+.fig-foot .chart-notes {
+  margin: 8px 0 10px;
+}
+details.src-all {
+  display: inline;
+  margin-left: 6px;
+}
+details.src-all > summary {
+  display: inline;
+  cursor: pointer;
+  color: var(--link);
+  font-weight: 600;
+}
+details.src-all[open] {
+  display: block;
+  margin: 8px 0 0;
+}
+details.src-all ol {
+  margin: 6px 0 0;
+  padding: 10px 12px 10px 28px;
+  background: var(--plane);
+  border-radius: 4px;
+  color: var(--ink-2);
+}
+details.src-all li {
+  margin: 0 0 4px;
 }
 details.data {
   margin: 0;
@@ -663,6 +619,7 @@ details.data > summary {
   cursor: pointer;
   color: var(--link);
   font-weight: 600;
+  font-size: 0.8125rem;
   width: max-content;
 }
 .table-wrap {
@@ -996,7 +953,8 @@ footer.site-foot .col {
   max-width: var(--xwide);
 }
 footer.site-foot .foot-name {
-  font-size: 1.0625rem;
+  font-family: var(--serif);
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--ink);
   margin: 0 0 6px;
@@ -1054,15 +1012,16 @@ figure.chart {
 }
 .tile {
   min-width: 0;
-  border-top: 3px solid var(--public);
+  border-top: 1px solid var(--ink);
   padding-top: 10px;
 }
 .tile-v {
   display: block;
-  font-size: clamp(1.875rem, 1.35rem + 1.7vw, 2.625rem);
-  font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.025em;
+  font-family: var(--serif);
+  font-size: clamp(1.875rem, 1.35rem + 1.7vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   font-variant-numeric: lining-nums;
   color: var(--ink);
 }
@@ -1087,43 +1046,22 @@ figure.chart {
   font-size: 0.75rem;
   color: var(--muted);
 }
-.tiles-dark .tiles-src {
-  color: var(--band-muted);
-}
-.tiles-dark {
-  margin: 30px 0 30px;
-}
-.tiles-dark .tile {
-  border-top-color: var(--band-public);
-}
-.tiles-dark .tile-v,
-.tiles-dark .tile-v a.num {
-  color: var(--band-public);
-}
-.tiles-dark .tile-l {
-  color: var(--band-muted);
-}
-.tiles-dark .tile-l a.num {
-  color: var(--band-ink);
-}
-@media (min-width: 64rem) {
-  .tiles-dark .tiles-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+.head .tiles {
+  margin: 4px 0 26px;
 }
 @media (max-width: 40rem) {
   .tiles-list {
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
   }
-  .tiles-dark .tiles-list {
+  .head .tiles-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 14px;
   }
   .tile-v {
     font-size: 2rem;
   }
-  .tiles-dark .tile-v {
+  .head .tile-v {
     font-size: 1.75rem;
   }
   .tile-l {
@@ -1164,10 +1102,11 @@ figure.chart {
 }
 .cs-value {
   margin: 0;
+  font-family: var(--serif);
   font-size: 1.625rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 .cs-text {
@@ -1180,24 +1119,19 @@ figure.chart {
 .chapter-more {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 22px 0 0;
+  gap: 6px 22px;
+  margin: 18px 0 0;
   font-family: var(--sans);
 }
 .chapter-more a {
-  display: inline-block;
-  padding: 8px 14px;
-  border: 1px solid var(--axis);
-  border-radius: 999px;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--ink);
+  color: var(--link);
   text-decoration: none;
 }
 .chapter-more a:hover {
-  border-color: var(--public);
-  color: var(--link);
+  text-decoration: underline;
 }
 
 /* Pull quote */
@@ -1237,10 +1171,10 @@ figure.chart {
   padding: 10px 0 8px;
 }
 .step {
-  font-family: var(--sans);
+  font-family: var(--serif);
 }
 .step strong {
-  font-weight: 800;
+  font-weight: 700;
 }
 .step .para {
   margin: 0;
@@ -1275,13 +1209,8 @@ figure.chart {
   }
   .step {
     margin: 0 0 58vh;
-    padding: 16px 18px;
-    font-size: 1.0625rem;
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-left: 4px solid var(--public);
-    border-radius: 6px;
-    box-shadow: var(--shadow);
+    font-size: 1.3125rem;
+    line-height: 1.5;
     transition: opacity 0.3s ease;
   }
   .step:last-child {
@@ -1313,10 +1242,9 @@ figure.chart {
     padding: 14px 16px;
     background: var(--surface);
     border: 1px solid var(--rule);
-    border-left: 4px solid var(--public);
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow: var(--shadow);
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   .step:last-child {
     margin-bottom: 0;
@@ -1378,95 +1306,81 @@ figure.chart {
   stroke-dasharray: 3 2;
 }
 
-/* The lead graphic (see Bill.svelte): the public's bill built up row by row. Rows the reader has not reached show
-   as outlines with muted labels, and the row the current step describes is marked. */
-.chart svg .bl-solid {
-  fill: var(--public);
-  stroke: var(--public);
-  stroke-width: 1.25;
-  transition: opacity 0.45s ease;
-}
-.chart svg .bl-ghost {
-  fill: var(--public-wash);
-  stroke: var(--public-soft);
-  stroke-width: 1.25;
-  stroke-dasharray: 4 3;
-}
-.chart svg .bl-mark {
-  fill: var(--plane);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-.chart svg .bl-name {
-  fill: var(--ink);
-  font-weight: 600;
-}
-.chart svg .bl-name-total {
-  font-weight: 800;
-}
-.chart svg .bl-amt {
-  fill: var(--ink);
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-.chart svg .bl-share {
-  fill: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-.chart svg .bl-name,
-.chart svg .bl-amt,
-.chart svg .bl-share {
-  transition: fill 0.35s ease;
-}
-.chart svg .bl-rule {
-  stroke: var(--ink);
-  stroke-width: 1.5;
-}
-.chart svg .bl-conn {
-  stroke: var(--axis);
+/* The lead graphic (see Bill.svelte): the public's bill as a stack of $100 million bills, filled from the bottom
+   up, blue for building the arenas and orange for everything after it. Bills the reader has not reached show as
+   outlines and their labels are muted. Amounts are set in the serif, large, the way a newspaper labels money. */
+.chart svg .bs-bill {
+  stroke: var(--surface);
   stroke-width: 1;
+  transition: fill 0.4s ease, stroke 0.4s ease;
+}
+.chart svg .bs-first .bs-bill,
+.chart svg .bs-swatch {
+  fill: var(--public);
+}
+.chart svg .bs-after .bs-bill {
+  fill: var(--orange);
+}
+.chart svg .bs-inner {
+  fill: none;
+  stroke: #fff;
+  stroke-opacity: 0.42;
+  stroke-width: 1;
+  transition: opacity 0.4s ease;
+}
+.chart svg .bs-num {
+  font-family: var(--serif);
+  font-weight: 700;
+  fill: var(--ink);
+  font-variant-numeric: lining-nums;
+}
+.chart svg .bs-name {
+  fill: var(--ink-2);
+}
+.chart svg .bs-lead {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1;
+}
+.chart svg .bs-bracket {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.25;
+}
+.chart svg .bs-num,
+.chart svg .bs-name,
+.chart svg .bs-lead {
+  transition: fill 0.35s ease, stroke 0.35s ease;
+}
+.chart[data-step='built'] svg :is(.bs-reno, .bs-buy, .bs-pay, .bs-breaks) .bs-bill,
+.chart[data-step='renovated'] svg :is(.bs-buy, .bs-pay, .bs-breaks) .bs-bill,
+.chart[data-step='bought'] svg .bs-breaks .bs-bill {
+  fill: transparent;
+  stroke: var(--axis);
   stroke-dasharray: 2 2;
 }
-.chart svg .bl-guide {
-  fill: none;
-  stroke: var(--ink-2);
-  stroke-width: 1.25;
-  stroke-dasharray: 3 3;
-}
-.chart svg .bl-bracket {
-  fill: none;
-  stroke: var(--ink-2);
-  stroke-width: 1.25;
-}
-.chart svg .bl-brlabel {
-  fill: var(--ink);
-  font-weight: 700;
-}
-[data-step='built'] :is(.bl-reno, .bl-buy, .bl-pay, .bl-breaks, .bl-total) .bl-solid,
-[data-step='renovated'] :is(.bl-buy, .bl-pay, .bl-breaks, .bl-total) .bl-solid,
-[data-step='bought'] :is(.bl-breaks, .bl-total) .bl-solid,
-[data-step='breaks'] .bl-total .bl-solid {
+[data-step='built'] :is(.bs-reno, .bs-buy, .bs-pay, .bs-breaks) .bs-inner,
+[data-step='renovated'] :is(.bs-buy, .bs-pay, .bs-breaks) .bs-inner,
+[data-step='bought'] .bs-breaks .bs-inner {
   opacity: 0;
 }
-[data-step='built'] :is(.bl-reno, .bl-buy, .bl-pay, .bl-breaks, .bl-total) :is(.bl-name, .bl-amt),
-[data-step='renovated'] :is(.bl-buy, .bl-pay, .bl-breaks, .bl-total) :is(.bl-name, .bl-amt),
-[data-step='bought'] :is(.bl-breaks, .bl-total) :is(.bl-name, .bl-amt),
-[data-step='breaks'] .bl-total :is(.bl-name, .bl-amt) {
+[data-step='built'] :is(.bs-reno, .bs-buy, .bs-pay, .bs-breaks, .bs-total) :is(.bs-num, .bs-name),
+[data-step='renovated'] :is(.bs-buy, .bs-pay, .bs-breaks, .bs-total) :is(.bs-num, .bs-name),
+[data-step='bought'] :is(.bs-breaks, .bs-total) :is(.bs-num, .bs-name),
+[data-step='breaks'] .bs-total :is(.bs-num, .bs-name) {
   fill: var(--muted);
 }
-[data-step='built'] .bl-build .bl-mark,
-[data-step='renovated'] .bl-reno .bl-mark,
-[data-step='bought'] :is(.bl-buy, .bl-pay) .bl-mark,
-[data-step='breaks'] .bl-breaks .bl-mark,
-[data-step='total'] .bl-total .bl-mark {
-  opacity: 1;
+[data-step='built'] :is(.bs-reno, .bs-buy, .bs-pay, .bs-breaks) .bs-lead,
+[data-step='renovated'] :is(.bs-buy, .bs-pay, .bs-breaks) .bs-lead,
+[data-step='bought'] .bs-breaks .bs-lead {
+  stroke: var(--axis);
 }
 @media (prefers-reduced-motion: reduce) {
-  .chart svg .bl-solid,
-  .chart svg .bl-mark,
-  .chart svg .bl-name,
-  .chart svg .bl-amt,
-  .chart svg .bl-share {
+  .chart svg .bs-bill,
+  .chart svg .bs-inner,
+  .chart svg .bs-num,
+  .chart svg .bs-name,
+  .chart svg .bs-lead {
     transition: none !important;
   }
 }
@@ -1497,6 +1411,17 @@ figure.chart {
 }
 .chart svg .trend-area {
   fill: var(--orange-wash);
+}
+.chart svg .hit {
+  fill: transparent;
+}
+/* a note's arrow, drawn by hand the way the papers do */
+.chart svg .ann-arrow {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* Who owns the teams (see Owners.svelte) */
@@ -1736,21 +1661,18 @@ figure.chart {
 
 /* The investigation, short (see pages/who-is-behind): sections headed like the story's chapters */
 .brief h2.subhead {
-  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.125rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.022em;
-  border-top: 3px solid var(--ink);
-  padding-top: 14px;
-  margin: 80px 0 14px;
+  font-size: clamp(1.625rem, 1.2rem + 1.4vw, 2.125rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.008em;
+  margin: 80px 0 12px;
 }
 .brief .prose > h2.subhead:first-child {
   margin-top: 52px;
 }
 .brief .subhead + .para {
-  font-size: 1.125rem;
+  font-size: 1.3125rem;
   line-height: 1.5;
-  color: var(--ink);
 }
 
 /* The funds with stakes in teams (see Funds.astro): a card for each, with its teams */

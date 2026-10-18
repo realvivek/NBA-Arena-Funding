@@ -4,8 +4,10 @@ interface Props {
   html: string;
   sources: string[];
   numbers: number[];
+  /** No citation toggle: the paragraph's sources are listed at the end of its chapter. */
+  quiet?: boolean;
 }
-const { html, sources, numbers } = Astro.props;
+const { html, sources, numbers, quiet = false } = Astro.props;
 // A div, not a p: the citation toggle is a <details>, which a paragraph cannot contain.
 ---
-<div class="para"><Fragment set:html={html} />{' '}<Cites ids={sources} numbers={numbers} /></div>
+<div class="para"><Fragment set:html={html} />{!quiet && <>{' '}<Cites ids={sources} numbers={numbers} /></>}</div>

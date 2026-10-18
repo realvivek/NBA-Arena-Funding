@@ -1,23 +1,37 @@
 ---
 /**
  * The investigation, short: the funds and owners from finance in the teams, the people around the arena deals,
- * the reporting, the federal layer and what would change the math, as key figures, cards and charts. Its copy is
- * the who-is-behind entry in pages.yaml; the full text is at ./report/.
+ * the reporting, the federal layer and what would change the math, as short sections of text, key figures, cards
+ * and charts. Like the story, its text carries no citation marks: each section ends with a line naming its
+ * sources. Its copy is the who-is-behind entry in pages.yaml; the full text is at ./report/.
  */
 import Layout from '../../layouts/Layout.astro';
 import PageHead from '../../components/PageHead.astro';
 import Blocks from '../../components/Blocks.astro';
+import SourceLine from '../../components/SourceLine.astro';
 import SourceList from '../../components/SourceList.astro';
 import { referencePage } from '../../lib/page';
+import { textSources, type Prepared } from '../../lib/prepare';
 import { sitePath } from '../../lib/paths';
 
 const { page, cites, blocks, title } = await referencePage('who-is-behind');
+// a section is a subhead and the blocks up to the next one
+const sections: Prepared[][] = [];
+for (const b of blocks) {
+  if (b.kind === 'h3' || !sections.length) sections.push([]);
+  sections[sections.length - 1].push(b);
+}
 ---
 <Layout title={title} description={page.description} path="/who-is-behind/">
   <article class="ref brief">
     <PageHead page={page} id="who-is-behind" cites={cites} />
     <div class="col prose">
-      <Blocks blocks={blocks} />
+      {sections.map((s) => (
+        <section>
+          <Blocks blocks={s} quiet />
+          <SourceLine ids={textSources(s)} />
+        </section>
+      ))}
       <a class="cta" href={sitePath('/who-is-behind/report/')}>
         <span class="cta-k">The full report</span>
         <span class="cta-t">Every finding in detail: the funds and owners, lobbying and campaigns, studies and banks, the

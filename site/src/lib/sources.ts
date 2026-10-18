@@ -14,6 +14,12 @@ export function source(id: string): Source {
   return s;
 }
 
+/** How a source is credited in a one-line source note: its publisher, or for this site's own ledgers, their name. */
+export function creditName(s: Source): string {
+  if (s.publisher === 'This site') return `${s.title.replace(/ \(.*$/, '').replace(/,.*$/, '')} (this site)`;
+  return s.publisher;
+}
+
 /** A short name for a source in a list of links: publisher, then date. */
 export function shortName(s: Source): string {
   const d = s.date === 'n.d.' ? '' : `, ${s.date.slice(0, 4)}`;

@@ -1,8 +1,8 @@
 ---
 /**
  * A chart frame: the finding as its title, what is plotted, a legend, the wide and narrow SVG layouts (slots),
- * then two toggles under the chart: its notes and sources, and a table of the data. Copy comes from
- * src/content/figures.yaml and passes the copy check.
+ * then a one-line source under the chart and one toggle with its notes, documents and a table of the data. Copy
+ * comes from src/content/figures.yaml and passes the copy check.
  */
 import { getEntry } from 'astro:content';
 import DataTable, { type Column, type Cell } from './DataTable.astro';
@@ -10,7 +10,7 @@ import Cites from './Cites.astro';
 import Prose from './Prose.astro';
 import type { PreparedStep } from '../lib/prepare';
 import { paragraph, ids } from '../lib/content';
-import { source, ORIGIN_LABEL } from '../lib/sources';
+import { source, creditName, ORIGIN_LABEL } from '../lib/sources';
 import { FIG_RECORD } from '../lib/figures';
 
 interface Props {
@@ -22,8 +22,10 @@ interface Props {
   steps?: PreparedStep[];
   /** Break out to the full page width (the lead graphic and the map). */
   xwide?: boolean;
+  /** Steps without citation toggles (their sources are listed at the end of the chapter). */
+  quiet?: boolean;
 }
-const { id, dataset, table, numbers = [], steps = [], xwide = false } = Astro.props;
+const { id, dataset, table, numbers = [], steps = [], xwide = false, quiet = false } = Astro.props;
 const scrolly = steps.length > 0;
 const cls = ['chart', xwide || scrolly ? 'xwide' : '', scrolly ? 'scrolly' : ''].filter(Boolean).join(' ');
 const fig = await getEntry('figures', id);
@@ -48,6 +50,14 @@ const swatch: Record<string, string> = {
   other: 'background: var(--other)',
 };
 const few = all.length <= 4;
+// the chart's source line names each publisher once, linked to its first document; a scroll-driven figure's
+// steps are its text, so their documents are credited here too
+const credited = [...new Set([...all, ...steps.flatMap((st) => st.sources)])];
+const publishers: { name: string; url: string }[] = [];
+for (const sid of credited) {
+  const s = source(sid);
+  if (!publishers.some((p) => p.name === creditName(s))) publishers.push({ name: creditName(s), url: s.url });
+}
 const keyClass: Record<string, string> = { pending: 'key key-outline', 'pending-orange': 'key key-outline-orange' };
 const legendItems = fig.data.legend.map((l) => ({
   label: l.label,
@@ -76,7 +86,7 @@ const legendItems = fig.data.legend.map((l) => ({
       <div class="scrolly-steps">
         {steps.map((st) => (
           <div class="step" data-step={st.step}>
-            <Prose html={st.html} sources={st.sources} numbers={st.numbers} />
+            <Prose html={st.html} sources={st.sources} numbers={st.numbers} quiet={quiet} />
           </div>
         ))}
       </div>
@@ -94,13 +104,23 @@ const legendItems = fig.data.legend.map((l) => ({
       <div class="v-narrow"><slot name="narrow" /></div>
     </>
   )}
-  <div class="fig-foot">
-    <details class="data notes">
-      <summary>Notes and sources</summary>
-      <figcaption class="chart-notes">
+  <figcaption class="fig-foot">
+    <p class="fig-src">
+      {credited.length > 1 ? 'Sources: ' : 'Source: '}
+      {publishers.map((p, i) => (
+        <>
+          {i > 0 && '; '}
+          <a href={p.url} rel="noopener">{p.name}</a>
+        </>
+      ))}
+      {rowCount > 0 && record && <>; each row's own documents ({rowCount}) are in <a href={record.href}>{record.label}</a></>}
+    </p>
+    <details class="data">
+      <summary>Notes and data</summary>
+      <div class="chart-notes">
         {notes.map((n) => <p set:html={n.html} />)}
         <div class="chart-source">
-          {all.length > 1 ? 'Sources: ' : 'Source: '}
+          {all.length > 1 ? 'Documents: ' : 'Document: '}
           {few ? (
             all.map((sid, i) => {
               const s = source(sid);
@@ -114,15 +134,9 @@ const legendItems = fig.data.legend.map((l) => ({
           ) : (
             <>{all.length} documents {numbers.length > 0 && <Cites ids={all} numbers={numbers} />}</>
           )}
-          {rowCount > 0 && record && (
-            <>. Each row also cites its own documents ({rowCount} in all), listed in <a href={record.href}>{record.label}</a>.</>
-          )}
         </div>
-      </figcaption>
-    </details>
-    <details class="data">
-      <summary>Show the data</summary>
+      </div>
       <DataTable columns={table.columns} rows={table.rows} caption={dataset.title} />
     </details>
-  </div>
+  </figcaption>
 </figure>

@@ -1,0 +1,46 @@
+---
+/**
+ * The sources of a chapter in one gray line, the way a newspaper credits a graphic: each publisher once, linked to
+ * its first document, then the full list of documents folded under it. Each paragraph's own sources are listed on
+ * the fact-check page.
+ */
+import { source, creditName, ORIGIN_LABEL } from '../lib/sources';
+interface Props {
+  ids: string[];
+}
+const { ids } = Astro.props;
+const docs = [...new Set(ids)].map(source);
+const publishers: { name: string; url: string; n: number }[] = [];
+for (const s of docs) {
+  const p = publishers.find((x) => x.name === creditName(s));
+  if (p) p.n += 1;
+  else publishers.push({ name: creditName(s), url: s.url, n: 1 });
+}
+// a long list is cut short; every document is in the folded list
+const shown = publishers.slice(0, 6);
+---
+{docs.length > 0 && (
+  <div class="src-line">
+    <span>{docs.length === 1 ? 'Source: ' : 'Sources: '}</span>
+    {shown.map((p, i) => (
+      <>
+        {i > 0 && '; '}
+        <a href={p.url} rel="noopener">{p.name}</a>
+      </>
+    ))}
+    {publishers.length > shown.length && <> and {publishers.length - shown.length} more</>}
+    {docs.length > 1 && (
+      <details class="src-all">
+        <summary>All {docs.length} documents</summary>
+        <ol>
+          {docs.map((s) => (
+            <li>
+              <a href={s.url} rel="noopener">{s.title}</a>, {s.publisher}{s.date !== 'n.d.' ? `, ${s.date}` : ''}
+              <span class="origin">{ORIGIN_LABEL[s.origin]}</span>
+            </li>
+          ))}
+        </ol>
+      </details>
+    )}
+  </div>
+)}

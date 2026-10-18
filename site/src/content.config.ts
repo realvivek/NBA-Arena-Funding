@@ -37,6 +37,8 @@ const block = z.union([
   z.object({ stats: z.array(tile).min(1), sources: cites }).strict(),
   z.object({ cards: z.array(card).min(1) }).strict(),
   z.object({ funds: z.array(fund).min(1) }).strict(),
+  // a sentence that ends on a number set large: the lead-in, then the number (a token) on its own line
+  z.object({ reveal: z.string(), value: z.string(), sources: cites }).strict(),
 ]);
 // A chapter ends with a link to the reference page that holds its full record.
 const more = z.object({ page: z.string(), text: z.string() }).strict();
@@ -47,8 +49,6 @@ const story = defineCollection({
   schema: z.object({
     n: z.number().int(),
     title: z.string().optional(),
-    // a short name for the chapter in the story's contents
-    nav: z.string().optional(),
     blocks: z.array(block),
     more: z.array(more).default([]),
   }),

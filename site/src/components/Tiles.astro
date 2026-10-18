@@ -5,12 +5,10 @@ interface Props {
   tiles: { value: string; label: string }[];
   sources: string[];
   numbers: number[];
-  /** On a dark band (the story's opening and the page heads). */
-  dark?: boolean;
 }
-const { tiles, sources, numbers, dark = false } = Astro.props;
+const { tiles, sources, numbers } = Astro.props;
 ---
-<div class:list={['tiles', { 'tiles-dark': dark }]}>
+<div class="tiles">
   <ul class="tiles-list">
     {tiles.map((t) => (
       <li class="tile">

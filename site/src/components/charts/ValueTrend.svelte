@@ -1,5 +1,6 @@
 <script>
-  // The average NBA team value by year, from Forbes's lists, in the dollars of each year.
+  // The average NBA team value by year, from Forbes's lists, in the dollars of each year: the line, its first,
+  // 2014 and last values, and a note with an arrow where the league's new media deals begin.
   import { WIDE, NARROW, FONT, money, moneyTick } from '../../lib/chart';
 
   let { rows, variant = 'wide', label = '' } = $props();
@@ -19,6 +20,7 @@
   const area = `${line}L${sx(t1).toFixed(1)},${sy(0)}L${sx(t0).toFixed(1)},${sy(0)}Z`;
   const first = pts[0], last = pts[pts.length - 1];
   const mark = pts.find((p) => p.year === 2014);
+  const media = pts.find((p) => p.year === 2025);
   const tip = (p) => `${p.year}: ${money(p.forbes_avg_b * 1000)} (${p.basis})`;
 </script>
 
@@ -34,8 +36,18 @@
     <path class="trend-area" d={area} />
     <path class="trend-line" d={line} />
     {#each pts as p}
-      <circle class="trend-dot" cx={sx(p.year)} cy={sy(p.forbes_avg_b)} r="3.5" data-tip={tip(p)} />
+      {@const shown = p === first || p === last || p === mark}
+      <circle class={shown ? 'trend-dot' : 'hit'} cx={sx(p.year)} cy={sy(p.forbes_avg_b)} r={shown ? 4.5 : 9} data-tip={tip(p)} />
     {/each}
+    {#if media && !narrow}
+      <!-- the national media deals that began with the 2025-26 season -->
+      {@const mx = sx(media.year)}
+      {@const my = sy(media.forbes_avg_b)}
+      <path class="ann-arrow" d="M{mx - 118},{my - 52} C{mx - 70},{my - 64} {mx - 26},{my - 44} {mx - 9},{my - 9}" />
+      <path class="ann-arrow" d="M{mx - 15},{my - 15} L{mx - 9},{my - 9} L{mx - 17},{my - 8}" />
+      <text class="ann-sub halo" x={mx - 124} y={my - 64} text-anchor="end" font-size={FONT}>New national media deals</text>
+      <text class="ann-sub halo" x={mx - 124} y={my - 48} text-anchor="end" font-size={FONT}>begin with the 2025-26 season</text>
+    {/if}
     <text class="ann-text halo" x={sx(first.year) + 8} y={sy(first.forbes_avg_b) - 12} font-size={FONT}>{money(first.forbes_avg_b * 1000)} in {first.year}</text>
     {#if mark && !narrow}
       <text class="ann-sub halo" x={sx(mark.year) - 6} y={sy(mark.forbes_avg_b) - 10} text-anchor="end" font-size={FONT}>{money(mark.forbes_avg_b * 1000)} in {mark.year}</text>

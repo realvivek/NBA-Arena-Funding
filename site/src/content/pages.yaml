@@ -5,25 +5,15 @@ home:
   path: /
   kicker: Public money and NBA arenas
   title: >-
-    Taxpayers Paid for the NBA's Arenas. Owners Kept the Gains.
+    Taxpayers Put {{expanded_public:title}} Into the NBA's Arenas. Owners Kept the Gains.
   deck: >-
-    Governments have put {{expanded_public}}, in today's dollars, into the {{arenas_n}} arenas where NBA teams
-    play. Team values have soared since. In the public arena deals reviewed here, the public's share of those gains
-    is zero.
+    Building the arenas was only {{construction_share}} of it; the rest went to renovations, purchases, yearly
+    payments and tax breaks. Team values have soared since, and none of the {{public_deals_reviewed}} public arena
+    deals reviewed here gives the public a share when a team is sold.
   description: >-
     Who paid for the NBA's arenas, through which taxes, who gains as team values rise, and what the public gets
     back.
   sources: [ledger, team-ledger]
-  # the scoreboard under the headline
-  tiles:
-    - value: '{{expanded_public:short}}'
-      label: public money in the {{arenas_n}} arenas, counting tax breaks
-    - value: '{{construction_share:short}}'
-      label: of it went to building them; the rest to renovations, purchases, payments and tax breaks
-    - value: '{{value_mean_2026:short}}'
-      label: the average team's value, {{value_growth_2014}} times the 2014 average before inflation
-    - value: '{{sale_share_found:short}}'
-      label: of {{public_deals_reviewed}} public arena deals reviewed give the public a share when a team is sold
 
 who-is-behind:
   path: /who-is-behind/

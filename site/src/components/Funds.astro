@@ -7,8 +7,9 @@ import Cites from './Cites.astro';
 import type { PreparedFund } from '../lib/prepare';
 interface Props {
   funds: PreparedFund[];
+  quiet?: boolean;
 }
-const { funds } = Astro.props;
+const { funds, quiet = false } = Astro.props;
 const year = (d: string | null) => (d ? d.slice(0, 4) : '');
 ---
 <ul class="funds">
@@ -25,7 +26,7 @@ const year = (d: string | null) => (d ? d.slice(0, 4) : '');
           </li>
         ))}
       </ul>
-      <div class="fund-text"><Fragment set:html={f.text} />{' '}<Cites ids={f.sources} numbers={f.numbers} /></div>
+      <div class="fund-text"><Fragment set:html={f.text} />{!quiet && <>{' '}<Cites ids={f.sources} numbers={f.numbers} /></>}</div>
     </li>
   ))}
 </ul>

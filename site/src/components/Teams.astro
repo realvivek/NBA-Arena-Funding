@@ -16,8 +16,9 @@ interface Props {
   intro: string;
   sources: string[];
   numbers: number[];
+  quiet?: boolean;
 }
-const { title, intro, sources: introSources, numbers } = Astro.props;
+const { title, intro, sources: introSources, numbers, quiet = false } = Astro.props;
 const by = <T extends { team: string }>(rows: T[]) => Object.fromEntries(rows.map((r) => [r.team, r]));
 const arenas = by(dataset('arenas').rows as any[]);
 const values = by(dataset('team-values').rows as any[]);
@@ -89,7 +90,7 @@ const top = rows[0].total;
 ---
 <section class="teams" aria-labelledby="teams-title">
   <h3 id="teams-title">{title}</h3>
-  <div class="teams-intro"><Fragment set:html={intro} />{' '}<Cites ids={introSources} numbers={numbers} /></div>
+  <div class="teams-intro"><Fragment set:html={intro} />{!quiet && <>{' '}<Cites ids={introSources} numbers={numbers} /></>}</div>
   <div class="teams-sort" role="group" aria-label="Sort the teams" hidden>
     <span>Sort by</span>
     <button type="button" data-sort="total" aria-pressed="true">Public money</button>

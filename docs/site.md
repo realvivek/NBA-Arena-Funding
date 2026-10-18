@@ -27,39 +27,47 @@ data/*.csv  ->  pipeline/build.py  ->  site/src/generated/*.json, docs/fact-chec
 
 | Path | Role |
 | --- | --- |
-| `src/content/story.yaml`, `pages.yaml`, `figures.yaml` | All copy: the story, the page heads (with their key figures, `tiles`), the investigation page and the reference pages' notes, and every chart's title, subtitle and notes. Numbers are tokens (`{{core_public}}`, `{{core_public:short}}`, `:title`, `:cap`). A story section or a page is a list of blocks: paragraphs, figures, scroll steps for a figure (`scrolly`, with one paragraph per step), key figures (`stats`: a token in large type over a short label), cards (`cards`: a place or a finding, an optional figure and a sentence or two), the funds with stakes in teams (`funds`: a sentence each, with their stakes drawn from the `investors` dataset), a pull quote, the ranked list of teams (`teams`) and subheads; `more` links a chapter to the reference pages, and `nav` names it in the story's contents. |
+| `src/content/story.yaml`, `pages.yaml`, `figures.yaml` | All copy: the story, the page heads (with their key figures, `tiles`), the investigation page and the reference pages' notes, and every chart's title, subtitle and notes. Numbers are tokens (`{{core_public}}`, `{{core_public:short}}`, `:title`, `:cap`). A story section or a page is a list of blocks: paragraphs, figures, scroll steps for a figure (`scrolly`, with one paragraph per step), key figures (`stats`: a token in large type over a short label), cards (`cards`: a place or a finding, an optional figure and a sentence or two), the funds with stakes in teams (`funds`: a sentence each, with their stakes drawn from the `investors` dataset), a sentence that ends on a number set large (`reveal`), a pull quote, the ranked list of teams (`teams`) and subheads; `more` links a chapter to the reference pages. |
 | `src/content.config.ts` | Content collections with schemas; paragraph sources are references to the `sources` collection. |
 | `src/lib/copy.ts` | The copy check and the renderer. The build fails on a typed dollar figure, percentage, number word or numeral (other than a year or a date), a number in a block with no source, an unknown token or source, an em or en dash, a tool name, or marketing language. Tokens render as links to the fact-check entry. |
 | `src/components/charts/*.svelte` | The charts, rendered on the server, with LayerCake or as plain SVG. Each draws a wide layout (680 units, shown from 640px up) and a narrow one (340 units); chart text is at least 13 units, so it stays at 11px or more at every width. Label widths are estimated from Libre Franklin's advance widths (`src/lib/chart.ts`), within about 10 percent of the rendered text. |
-| `src/components/Figure.astro`, `Chart.astro` | The chart frame: title, subtitle, legend, both layouts, then two toggles: "Notes and sources" and "Show the data", a table of every value. A figure with steps is laid out as a scroll-driven graphic: the chart holds its place while the steps pass beside it (from 64rem) or over it (as cards, on phones). |
-| `src/lib/prepare.ts`, `src/components/Blocks.astro`, `Tiles.astro`, `Cards.astro`, `Funds.astro` | Render the blocks in reading order, so citation numbers follow the order a reader meets the sources. |
+| `src/components/Figure.astro`, `Chart.astro` | The chart frame: title, subtitle, legend, both layouts, a gray source line, and one toggle, "Notes and data", with the notes, the documents and a table of every value. A figure with steps is laid out as a scroll-driven graphic: the chart holds its place while the steps pass beside it (from 64rem) or over it (as cards, on phones). |
+| `src/lib/prepare.ts`, `src/components/Blocks.astro`, `Tiles.astro`, `Cards.astro`, `Funds.astro`, `SourceLine.astro` | Render the blocks in reading order, so the numbered source list follows the order a reader meets the sources; in quiet mode (the story and the investigation page) the text carries no citation marks and `SourceLine` names a chapter's or section's sources at its end. |
 | `src/components/Teams.astro` | Every team, ranked: a row per team with the public money in its arena and the team's value, which opens to its record (the arena, the public money and the taxes that paid it, the lease, what the owners paid and the team is worth, and what the public gets back), drawn at build time from the same datasets as the charts. A small script adds sort buttons and shows the first ten teams until the reader asks for all of them. |
 | `src/pages/` | The story, the investigation (`who-is-behind/`: key figures, the funds, the owners chart and cards, from `pages.yaml`; the full report at `who-is-behind/report/`, rendered from `report/who-is-behind-nba-arena-deals.md`, which the pipeline copies into `src/generated/`) and the reference pages: arenas, taxes, tax breaks, threats, leases, households, sources and fact check. |
 | `tests/site.spec.ts` | Playwright: every page loads with no errors and no requests to other sites, works without JavaScript, fits a 360px phone with no sideways scrolling, keeps chart text at 11px or more, has one h1 and no skipped heading levels, and links every number to an existing fact-check entry. The lead graphic is checked at a desktop and a phone width (each step sets its state, including after a jump, and every row carries its name and amount), the investigation page's figures, funds and link to the full report are checked, and the team list is checked with and without JavaScript. |
 
 ## Design
 
-The home page is a short data story, about four minutes to read, built from numbers and charts rather than long
-paragraphs. A dark band under the masthead holds the headline, the deck and a scoreboard of four key figures, with
-the lines of a basketball court drawn faintly behind them; a row of chapter links follows. The lead graphic is the
-public's bill for the arenas, built up one kind of money at a time: each bar starts where the one above it ends, so
-the five bars (building the arenas, renovations, buying arenas, yearly payments, tax breaks) add up to the total in
-the last row, and every row carries its name, its amount and its share. Five steps walk through it; rows not reached
-yet show as outlines with muted labels, and the row a step describes is marked. Each chapter opens with its number
-and its finding as the title, then a sentence or two, key figures, its chart and cards, and ends with links to the
-reference pages. The investigation page (`/who-is-behind/`) is the short version of the report, in the same form;
-the full text is one link away. The source list closes each page, folded.
+The home page is a short data story, about four minutes to read, set the way a newspaper sets one. Its design
+follows patterns found in ten New York Times data stories from 2025 and 2026 (among them "What It Would Look Like
+to Pay W.N.B.A. Players What They Deserve", "How Trump Is Getting Richer in Office", "What the Iran War Is Costing
+You" and "U.S. Debt Is on Pace to Set a Record High"): the chart carries the finding, its title states it and notes
+on the chart say it again with an arrow to the mark; one accent color against gray; money drawn as money; a serif
+for the narrative with the key numbers in bold, sometimes a sentence that ends on a number set large; and almost no
+interface, only a gray source line under each chart.
 
-Type is Libre Franklin throughout, with Newsreader kept for pull quotes; both are served from the site. On the story
-and the investigation page everything shares one left edge in a 46rem column, and paragraphs stop at 37.5rem; the
-lead graphic breaks out to 72rem. Every script is optional: without JavaScript the lead graphic rests in its last
-state and its steps read as paragraphs, the team list shows every team in order of public money with every record
-still opening, and tooltips are not shown.
+A kicker, a serif headline that carries the total, a deck and a dateline open it. The lead graphic is the public's
+bill for the arenas as a stack of bills, each worth $100 million, filled from the bottom up as the reader scrolls:
+building the arenas in blue, then renovations, purchases, yearly payments and tax breaks in orange, each starting a
+new row, with its amount printed beside the stack in large serif type and a leader to its bills, and brackets for
+the two shares. Bills the reader has not reached show as outlines. Each chapter is a serif heading, short
+paragraphs and its charts, and ends with one gray line naming its sources (each publisher once, with every
+document in a fold) and plain links to the reference pages. Paragraphs carry no citation marks; the fact-check
+page lists every paragraph with its numbers and sources. The investigation page (`/who-is-behind/`) is set the same
+way, a source line under each section; the full text is one link away. The reference pages keep a citation toggle
+on each paragraph.
+
+Type is Newsreader for headlines and text and Libre Franklin for charts, captions and the interface, both served
+from the site. On the story and the investigation page everything shares one left edge in a 46rem column, and
+paragraphs stop at 37.5rem; the lead graphic breaks out to 72rem. Every script is optional: without JavaScript the
+lead graphic rests in its last state and its steps read as paragraphs, the team list shows every team in order of
+public money with every record still opening, and tooltips are not shown.
 
 Charts follow one palette, validated for color-vision deficiency in light and dark mode: blue for public money,
-orange for the second series (existing arenas, visitor taxes, threats, team values), gray for private money, and a
-one-hue blue ramp for shares on the map. The band is the same dark navy in both modes, with its own light text,
-blue and orange. Tooltips are added by a small script and are optional; every value is also in the chart's data
+orange for the second series (existing arenas, visitor taxes, threats, team values, money after building), gray for
+private money, and a one-hue blue ramp for shares on the map. Notes and a table of every value sit in one toggle
+under each chart. Tooltips are added by a small script and are optional; every value is also in the chart's data
 table.
 
 ## Deploy

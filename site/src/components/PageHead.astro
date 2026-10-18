@@ -23,12 +23,10 @@ const tileSources = blockSources((page.tiles ?? []).map((t) => `${t.value} ${t.l
 const tileNumbers = tiles.length ? cites.add(tileSources) : [];
 const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
-<div class="band">
-  <header class="head">
-    <p class="kicker">{page.kicker}</p>
-    <h1 set:html={title.html} />
-    <p class="deck" set:html={deck.html} />
-    {tiles.length > 0 && <Tiles tiles={tiles} sources={tileSources} numbers={tileNumbers} dark />}
-    <p class="meta"><span>Data as of {asOf}</span><span>Dollars in 2026 terms unless marked</span><a href={sitePath('/')}>Read the story</a></p>
-  </header>
-</div>
+<header class="head">
+  <p class="kicker">{page.kicker}</p>
+  <h1 set:html={title.html} />
+  <p class="deck" set:html={deck.html} />
+  {tiles.length > 0 && <Tiles tiles={tiles} sources={tileSources} numbers={tileNumbers} />}
+  <p class="meta"><span>Data as of {asOf}</span><span>Dollars in 2026 terms unless marked</span><a href={sitePath('/')}>Read the story</a></p>
+</header>

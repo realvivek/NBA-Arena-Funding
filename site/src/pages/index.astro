@@ -2,12 +2,12 @@
 import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Blocks from '../components/Blocks.astro';
-import Tiles from '../components/Tiles.astro';
+import SourceLine from '../components/SourceLine.astro';
 import SourceList from '../components/SourceList.astro';
 import { Citations } from '../lib/sources';
 import { paragraph } from '../lib/content';
-import { prepare, type Prepared } from '../lib/prepare';
-import { plain, blockSources } from '../lib/copy';
+import { prepare, textSources, type Prepared } from '../lib/prepare';
+import { plain } from '../lib/copy';
 import { sitePath } from '../lib/paths';
 import meta from '../generated/meta.json';
 
@@ -20,43 +20,33 @@ const sections = (await getCollection('story')).sort((a, b) => a.data.n - b.data
 const refs = pages.filter((p) => ORDER.includes(p.id)).sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
 const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-// Everything that cites a source is rendered here, in reading order, so the numbers follow the story: the deck,
-// the scoreboard, the opening (the lead graphic and its steps), then each chapter.
+// The story reads like a newspaper's: a headline and deck, the lead graphic and its steps, then each chapter as
+// short paragraphs and charts. The paragraphs carry no citation marks; each chapter ends with a line naming its
+// sources, every chart names its own, and the fact-check page lists each paragraph's. Everything is prepared here
+// in reading order, so the numbered list at the end follows the story.
 const title = plain(page.title, { where: 'home title' });
+const headline = paragraph(page.title, page.sources, 'home headline', cites, { link: false });
 const deck = paragraph(page.deck, page.sources, 'home deck', cites);
-const board = page.tiles.map((t, i) => ({
-  value: paragraph(t.value, page.sources, `home figure ${i + 1}`).html,
-  label: paragraph(t.label, page.sources, `home figure ${i + 1} label`).html,
-}));
-const boardSources = blockSources(page.tiles.map((t) => `${t.value} ${t.label}`).join(' '), page.sources.map((s) => (typeof s === 'string' ? s : s.id)));
-const boardNumbers = cites.add(boardSources);
 const [opening, ...rest] = sections;
 if (opening.data.title) throw new Error('the story opens with its lead graphic, without a chapter title');
 const openBlocks = await prepare(opening.data.blocks, cites, `story ${opening.id}`);
-const chapters: { id: string; title: string; nav: string; slug: string; blocks: Prepared[]; more: { href: string; text: string }[] }[] = [];
+const chapters: { id: string; title: string; slug: string; blocks: Prepared[]; more: { href: string; text: string }[] }[] = [];
 for (const s of rest) {
-  if (!s.data.title || !s.data.nav) throw new Error(`story ${s.id}: a chapter needs a title and a short name`);
+  if (!s.data.title) throw new Error(`story ${s.id}: a chapter needs a title`);
   const more = s.data.more.map((m) => {
     if (!pagePath[m.page]) throw new Error(`story ${s.id}: unknown page ${m.page}`);
     return { href: sitePath(pagePath[m.page]), text: plain(m.text, { where: `story ${s.id} link` }) };
   });
-  chapters.push({
-    id: s.id,
-    title: s.data.title,
-    nav: plain(s.data.nav, { where: `story ${s.id} short name` }),
-    slug: slug(s.data.title),
-    blocks: await prepare(s.data.blocks, cites, `story ${s.id}`),
-    more,
-  });
+  chapters.push({ id: s.id, title: plain(s.data.title, { where: `story ${s.id} title` }), slug: slug(s.data.title), blocks: await prepare(s.data.blocks, cites, `story ${s.id}`), more });
 }
-const pad = (i: number) => String(i).padStart(2, '0');
 
-// reading time, from the words a reader meets: paragraphs, steps, key figures and cards
+// reading time, from the words a reader meets
 const strip = (h: string) => h.replace(/<[^>]+>/g, ' ');
 const text = [...openBlocks, ...chapters.flatMap((c) => c.blocks)]
   .flatMap((b) =>
     b.kind === 'p' || b.kind === 'quote' ? [b.html] :
     b.kind === 'scrolly' ? b.steps.map((s) => s.html) :
+    b.kind === 'reveal' ? [b.lead, b.value] :
     b.kind === 'stats' ? b.tiles.flatMap((t) => [t.value, t.label]) :
     b.kind === 'cards' ? b.cards.flatMap((c) => [c.title, c.value ?? '', c.text]) : [])
   .map(strip)
@@ -66,46 +56,27 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
 ---
 <Layout title={title} description={page.description} path="/">
   <article class="story">
-    <header class="band hero-band">
-      <svg class="court" viewBox="0 0 600 400" aria-hidden="true" focusable="false">
-        <!-- the end of a court, in lines: the lane, the free-throw circle, the three-point arc and the rim -->
-        <g fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="410" y="140" width="190" height="120" />
-          <circle cx="410" cy="200" r="60" />
-          <path d="M600 22H470a180 180 0 0 0 0 356H600" />
-          <circle cx="552" cy="200" r="8" />
-          <path d="M566 176V224" />
-        </g>
-      </svg>
-      <div class="hero">
-        <p class="kicker">{page.kicker}</p>
-        <h1>{title}</h1>
-        <p class="deck" set:html={deck.html} />
-        <Tiles tiles={board} sources={boardSources} numbers={boardNumbers} dark />
-        <p class="dateline">
-          <span>Data through <time datetime={meta.as_of}>{asOf}</time></span>
-          <span>Dollars in 2026 terms</span>
-          <span>{minutes} minute read</span>
-        </p>
-      </div>
+    <header class="hero">
+      <p class="kicker">{page.kicker}</p>
+      <h1 set:html={headline.html} />
+      <p class="deck" set:html={deck.html} />
+      <p class="dateline">
+        <span>Data through <time datetime={meta.as_of}>{asOf}</time></span>
+        <span>Dollars in 2026 terms</span>
+        <span>{minutes} minute read</span>
+      </p>
     </header>
-    <nav class="toc" aria-label="Chapters">
-      <ol>
-        <li><a href="#fig-bill"><span class="toc-n">00</span>The bill</a></li>
-        {chapters.map((c, i) => <li><a href={`#${c.slug}`}><span class="toc-n">{pad(i + 1)}</span>{c.nav}</a></li>)}
-      </ol>
-    </nav>
     <div class="col prose opening">
-      <Blocks blocks={openBlocks} level={3} />
+      <Blocks blocks={openBlocks} level={3} quiet />
     </div>
     <div class="col prose">
-      {chapters.map((c, i) => (
+      {chapters.map((c) => (
         <section class="chapter" aria-labelledby={c.slug}>
           <header class="ch-head">
-            <span class="ch-num" aria-hidden="true">{pad(i + 1)}</span>
             <h2 id={c.slug}>{c.title}</h2>
           </header>
-          <Blocks blocks={c.blocks} level={3} />
+          <Blocks blocks={c.blocks} level={3} quiet />
+          <SourceLine ids={textSources(c.blocks)} />
           {c.more.length > 0 && (
             <p class="chapter-more">
               {c.more.map((m) => <a href={m.href}>{m.text} →</a>)}
@@ -128,7 +99,7 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
       </ul>
       <h2 id="sources-for-this-story">Sources for this story</h2>
       <details class="all-sources">
-        <summary>All {cites.order.length} documents, numbered in the order the story first cites them</summary>
+        <summary>All {cites.order.length} documents, in the order the story first cites them</summary>
         <SourceList ids={cites.order} numbered />
       </details>
     </div>

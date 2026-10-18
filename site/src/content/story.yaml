@@ -1,7 +1,8 @@
-# The story on the home page. One entry per section, in order of n. Numbers are tokens ({{key}}) from
-# pipeline/stats.yaml; paragraphs, steps, key figures and cards cite sources by id (pipeline/sources.yaml). Text
-# fields are folded block scalars (>-) so colons and quotes need no escaping. The copy check in src/lib/copy.ts
-# runs on every block. Keep it short: a chapter is a sentence or two, its key figures and its chart.
+# The story on the home page, written the way a newspaper's data story reads: short paragraphs with the key numbers
+# in bold, a chart after the sentence that introduces it. One entry per section, in order of n. Numbers are tokens
+# ({{key}}) from pipeline/stats.yaml; every paragraph and step cites sources by id (pipeline/sources.yaml), listed
+# at the end of its chapter and, paragraph by paragraph, on the fact-check page. Text fields are folded block
+# scalars (>-) so colons and quotes need no escaping. The copy check in src/lib/copy.ts runs on every block.
 
 bill:
   n: 1
@@ -31,24 +32,24 @@ bill:
           sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
         - step: total
           p: >-
-            **{{expanded_public}}** in all. Federal taxpayers carry another {{fed_bond_cost}}: the income tax
-            forgone on the tax-exempt bonds sold for these arenas.
+            That is **{{expanded_public}}** in all. Federal taxpayers carry another {{fed_bond_cost}}: the income
+            tax forgone on the tax-exempt bonds sold for these arenas.
           sources: [ledger, gayer-2016]
 
 teams:
   n: 2
   title: Every team, ranked
-  nav: Every team
   blocks:
     - p: >-
-        Counting tax breaks, {{arenas_public_n}} of the {{arenas_n}} arenas have taken public money. In cash,
-        Orlando's Kia Center has taken the most: {{orl_public}}, {{orl_share}} of everything spent on it.
-      sources: [ledger]
+        Counting tax breaks, {{arenas_public_n}} of the {{arenas_n}} arenas have taken public money. Brooklyn and
+        New York lead because of tax breaks. In cash, Orlando's Kia Center has taken the most: **{{orl_public}}**,
+        {{orl_share}} of everything spent on it.
+      sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
     - teams: all
       title: All the teams
       intro: >-
-        Open a team for its record: public money and the taxes behind it, the lease, what the owners paid and the
-        team's value now. Public money is in 2026 dollars; values are Forbes's estimates of October 2026.
+        Open a team for its record: the public money and the taxes behind it, the lease, what the owners paid and
+        the team's value now. Public money is in 2026 dollars; values are Forbes's estimates of October 2026.
       sources: [ledger, team-ledger]
   more:
     - { page: arenas, text: 'Every arena, item by item' }
@@ -56,46 +57,35 @@ teams:
 rebuild:
   n: 3
   title: The bill keeps coming after opening night
-  nav: After opening night
   blocks:
     - p: >-
-        Since 2014, most public money for arena buildings has gone to arenas that already stand.
-      sources: [ledger]
-    - stats:
-        - value: '{{rebuild_since_2014:short}}'
-          label: to renovate or buy existing arenas since 2014
-        - value: '{{rebuild_ratio}}×'
-          label: the {{build_since_2014}} for the arenas that opened in those years
-        - value: '{{takeover_public:short}}'
-          label: >-
-            to buy or rebuild {{takeover_n}} arenas first built mainly with private money, {{takeover_pending}} of
-            it still pending
+        The spending does not stop when an arena opens. Since 2014, governments have put **{{rebuild_since_2014}}**
+        into renovating or buying arenas that already stand, {{rebuild_ratio}} times the {{build_since_2014}} that
+        went into the arenas that opened in those years.
       sources: [ledger]
     - fig: rebuild
+    - p: >-
+        {{takeover_n:cap}} arenas built mainly with private money, in Atlanta, Minneapolis, Phoenix, Portland, Salt
+        Lake City and Washington, were later bought or rebuilt with public money: **{{takeover_public}}**, of which
+        {{takeover_pending}} is pending, against {{takeover_construction_public}} when they were built.
+      sources: [ledger]
   more:
     - { page: arenas, text: 'The record for each arena' }
 
 pays:
   n: 4
   title: Visitors pay a large share
-  nav: Who pays
   blocks:
     - p: >-
         Taxes on hotel rooms, car rentals, restaurant meals and tickets, which fall mostly on visitors, supplied
-        {{visitors_share}} of the public money to build, renovate and buy the arenas. Taxes residents mostly pay
-        supplied {{residents_share}}.
+        **{{visitors_share}}** of the public money to build, renovate and buy the arenas. Taxes that residents
+        mostly pay supplied {{residents_share}}.
       sources: [ledger]
     - fig: whopays
-    - h3: The largest commitments per household
-    - stats:
-        - value: '{{hh_uta:short}}'
-          label: >-
-            per Salt Lake City household for the Delta Center deal, an upper bound: people who live elsewhere pay
-            part of the tax
-        - value: '{{hh_okc:short}}'
-          label: per Oklahoma City household, for its current and new arenas
-        - value: '{{hh_was:short}}'
-          label: per Washington household, for Capital One Arena since 1997
+    - p: >-
+        Per household, the largest commitments are in Salt Lake City, where the Delta Center deal comes to
+        **{{hh_uta}}** for each household in the city (an upper bound, because people who live elsewhere pay part
+        of the sales tax); Oklahoma City, at **{{hh_okc}}**; and Washington, at **{{hh_was}}**.
       sources: [ledger, census-b11001-2024]
   more:
     - { page: taxes, text: 'Every funding stream' }
@@ -104,15 +94,16 @@ pays:
 gains:
   n: 5
   title: Team values soared. The public's share did not.
-  nav: Team values
   blocks:
-    - stats:
-        - value: '{{lal_deal_2026:short}}'
-          label: the Lakers' value in the August 2026 deal to sell control, pending a league vote
-        - value: '{{value_mean_2026:short}}'
-          label: the average team's value, {{value_growth_2014}} times the 2014 average before inflation
-        - value: '{{value_multiple_median}}×'
-          label: the median team's value against the price its owners paid, after inflation
+    - reveal: >-
+        In 2025, Mark Walter bought control of the Los Angeles Lakers at a {{lal_price_2025}} valuation. In August
+        2026 he agreed to sell his majority stake, pending a league vote, at a valuation of
+      value: '{{lal_deal_2026}}.'
+      sources: [team-ledger]
+    - p: >-
+        Forbes puts the average team at **{{value_mean_2026}}**, {{value_growth_2014}} times the average on its 2014
+        list, before inflation. Much of the rise follows the league's national media deals, worth about
+        {{nba_media_total}} over {{nba_media_years}} years.
       sources: [team-ledger]
     - fig: trend
     - p: >-
@@ -121,107 +112,75 @@ gains:
       sources: [team-ledger]
     - fig: values
     - h3: What the public gets back
-    - cards:
-        - title: Oklahoma City
-          value: '{{okc_game_fee}} a game'
-          text: >-
-            The Thunder's license fee under the 2025 agreement, capped at {{okc_fee_cap}} a year, for an arena the
-            city is putting {{okc_new_arena}} into.
-          sources: [okc-pbcarena-use-license-agreementfinal-6-12-25-1]
-        - title: Washington
-          value: '{{was_rent_min:short}} to {{was_rent_max:short}}'
-          text: >-
-            Yearly rent from the teams, after the District committed {{was_2024_deal}} to buy and renovate
-            Capital One Arena.
-          sources: [cfo-tafa-capital-one-arena-112624]
-        - title: Every sale
-          value: '{{sale_share_found:short}} of {{public_deals_reviewed}}'
-          text: >-
-            Public arena deals reviewed that give the public a share when the team is sold. Minnesota's law for the
-            Vikings gives the state and Minneapolis up to {{vikings_public_share}} of the gain.
-          sources: [team-ledger, revisor-473j-15]
+    - p: >-
+        Rent and fees that do not grow with a team's value. Oklahoma City charges the Thunder **{{okc_game_fee}} a
+        game**, capped at {{okc_fee_cap}} a year, for an arena the city is putting {{okc_new_arena}} into.
+        Washington collects {{was_rent_min}} to {{was_rent_max}} a year after committing {{was_2024_deal}} to buy
+        and renovate its arena.
+      sources: [okc-pbcarena-use-license-agreementfinal-6-12-25-1, cfo-tafa-capital-one-arena-112624]
     - quote: >-
         The renovation is "likely increasing revenue and long-term value for Monumental."
       by: >-
         DC's chief financial officer, Nov. 26, 2024, on the public renovation of Capital One Arena. Monumental Sports
         owns the Wizards and the Capitals.
       sources: [cfo-tafa-capital-one-arena-112624]
+    - p: >-
+        None of the **{{public_deals_reviewed}}** public arena deals reviewed gives the public a share when the team
+        is sold. It can be done: Minnesota's law for the Vikings gives the state and Minneapolis up to
+        {{vikings_public_share}} of the gain, and the Denver Broncos' stadium lease sent {{broncos_sale_share}} to
+        youth programs in the Denver area when the team was sold in 2022.
+      sources: [team-ledger, revisor-473j-15]
 
 behind:
   n: 6
   title: Who is behind the teams
-  nav: Who is behind
   blocks:
-    - stats:
-        - value: '{{funds_n:short}}'
-          label: investment funds hold stakes in {{fund_teams_n}} teams or their parent companies
-        - value: '{{owners_finance_n}}'
-          label: of the {{arenas_n}} controlling owners made their money mainly in finance
-        - value: '{{finance_teams_public:short}}'
-          label: >-
-            in public money, with tax breaks, for the arenas of the {{finance_teams_n}} teams with an owner from
-            finance or a fund stake
-      sources: [team-ledger, ledger]
+    - p: >-
+        More and more of the owners come from finance: {{control_sales_2015_finance_n}} of the
+        {{control_sales_2015_n}} sales of control since 2015 went to buyers who made their money there. Of the
+        {{arenas_n}} controlling owners, **{{owners_finance_n}}** made their fortunes mainly in finance,
+        {{owners_pe_n}} of them in private equity or hedge funds.
+      sources: [team-ledger]
+    - p: >-
+        Since 2021 the league has also let investment funds buy into teams. {{funds_n:cap}} funds now hold stakes in
+        **{{fund_teams_n}}** teams or their parent companies.
+      sources: [team-ledger]
     - fig: owners
-    - cards:
-        - title: The league shares in a fund
-          text: >-
-            Blue Owl's annual report says the NBA "receives a share of management fees and incentive allocations"
-            from the fund that holds stakes in {{homecourt_teams_n}} teams.
-          sources: [sec-owl-20251231]
-        - title: Lobbying in Portland
-          value: '{{por_lobbying}}'
-          text: >-
-            Reported by the Trail Blazers' arena company in the 2026 session that produced up to {{por_state}} of
-            state bonds for its arena.
-          sources: [olis-enrolled]
-        - title: A study in San Antonio
-          text: >-
-            The city's study of the arena district came from CSL International, a subsidiary of Legends, whose
-            majority owner, Sixth Street, is an investor in the Spurs.
-          sources: [sacurrent-csl-legends-2025]
+    - p: >-
+        The league shares in one of the funds: Blue Owl's annual report says the NBA "receives a share of management
+        fees and incentive allocations" from it.
+      sources: [sec-owl-20251231]
+    - p: >-
+        People with money at stake help make the deals. In the 2026 session that produced up to {{por_state}} of
+        state bonds for Portland's arena, the Trail Blazers' arena company reported **{{por_lobbying}}** of
+        lobbying. San Antonio's study of its new arena district came from CSL International, a subsidiary of
+        Legends, whose majority owner, Sixth Street, is an investor in the Spurs.
+      sources: [olis-enrolled, sacurrent-csl-legends-2025]
   more:
     - { page: who-is-behind, text: 'The investigation: funds, deal makers and federal tax breaks' }
 
 next:
   n: 7
   title: The next round is already on the calendar
-  nav: What's next
   blocks:
-    - stats:
-        - value: '{{leases_by_2036}}'
-          label: arena leases end by 2036, {{leases_by_2031}} of them by 2031
-        - value: '{{threats_same_city}} of {{threats_counted}}'
-          label: >-
-            relocation threats since 1994 were followed by public money in the same city, a median
-            {{lag_median}} months later
-        - value: '{{pending_existing:short}}'
-          label: of public money pending for existing arenas in Memphis and Portland
+    - p: >-
+        Leases are where new deals start. Of the current leases, **{{leases_by_2036}}** end by 2036,
+        {{leases_by_2031}} of them by 2031. Since 1994, owners or the league threatened, openly or by implication, to
+        move a team at least {{threats_counted}} times in the episodes documented here, and public money followed in
+        the same city {{threats_same_city}} times, a median {{lag_median}} months later.
       sources: [threat-ledger, ledger]
     - fig: leases
-    - cards:
-        - title: Memphis
-          value: '{{mem_pending:short}}'
-          text: Held for a FedExForum renovation until the Grizzlies sign a new lease.
-          sources: [tri-statedefender-p-349496]
-        - title: Portland
-          value: '{{por_pending:short}}'
-          text: >-
-            Pending for the Moda Center, including up to {{por_state}} of state bonds repaid with an amount equal to
-            income taxes on work at the arena.
-          sources: [olis-enrolled]
-        - title: San Antonio
-          value: '{{sas_pending:short}}'
-          text: >-
-            The most the city would put into a new Spurs arena, pending, on top of up to {{sas_county}} from Bexar
-            County.
-          sources: [ksat-results-props-a-and-b-for-coliseum-complex-downt]
-        - title: Oklahoma City
-          value: '{{okc_new_arena:short}}'
-          text: >-
-            For a new arena due in 2028. The Thunder's lease runs through at least 2053, with penalties of up to
-            {{okc_exit_penalty}} for leaving early.
-          sources: [okc-oklahoma-city-and-thunder-break-ground-on-contin, okc-okc-and-thunder-approve-agreements-to-keep-the-thu]
+    - p: >-
+        The asking has already begun. Memphis is holding **{{mem_pending}}** for a FedExForum renovation until the
+        Grizzlies sign a new lease. Portland has **{{por_pending}}** pending for the Moda Center, including up to
+        {{por_state}} of state bonds. San Antonio's own share of a new Spurs arena, up to {{sas_pending}}, is
+        pending, on top of up to {{sas_county}} from Bexar County.
+      sources: [tri-statedefender-p-349496, olis-enrolled, ksat-results-props-a-and-b-for-coliseum-complex-downt]
+    - p: >-
+        Oklahoma City is already building. Its new arena, with **{{okc_new_arena}}** of public money, is due to open
+        in 2028, and the Thunder's lease runs through at least 2053, with penalties of up to {{okc_exit_penalty}}
+        for leaving early.
+      sources: [okc-oklahoma-city-and-thunder-break-ground-on-contin, okc-okc-and-thunder-approve-agreements-to-keep-the-thu]
   more:
     - { page: leases, text: 'Every lease and its exit terms' }
     - { page: threats, text: 'All the threat episodes' }
@@ -229,7 +188,6 @@ next:
 method:
   n: 9
   title: How this was made
-  nav: Method
   blocks:
     - p: >-
         Every figure comes from ledgers built from {{sources_n}} documents: {{sources_government}} from governments,
