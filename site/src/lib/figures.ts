@@ -5,7 +5,7 @@ import { ids } from './content';
 import { sitePath } from './paths';
 
 export const FIG_DATA: Record<string, string> = {
-  ball: 'public-layers',
+  bill: 'public-layers',
   values: 'team-values',
   trend: 'value-history',
   owners: 'ownership',

@@ -20,8 +20,13 @@ const sources = defineCollection({
 const cites = z.array(reference('sources')).default([]);
 
 // A block of copy: a paragraph, a chart, a subhead, a pull quote, a chart told in steps as the reader scrolls
-// (each step names the chart state it shows), or the ranked list of teams. Paragraphs and steps cite sources by id.
+// (each step names the chart state it shows), the ranked list of teams, a row of key figures (each a token with a
+// short label), a set of cards (a place or a finding, an optional key figure and a sentence or two) or the funds
+// with stakes in teams (a sentence for each; their stakes come from the data). Everything with words cites sources.
 const step = z.object({ step: z.string(), p: z.string(), sources: cites }).strict();
+const tile = z.object({ value: z.string(), label: z.string() }).strict();
+const card = z.object({ title: z.string(), value: z.string().optional(), text: z.string(), sources: cites }).strict();
+const fund = z.object({ fund: z.string(), text: z.string(), sources: cites }).strict();
 const block = z.union([
   z.object({ p: z.string(), sources: cites }).strict(),
   z.object({ fig: z.string() }).strict(),
@@ -29,6 +34,9 @@ const block = z.union([
   z.object({ quote: z.string(), by: z.string(), sources: cites }).strict(),
   z.object({ scrolly: z.string(), steps: z.array(step).min(2) }).strict(),
   z.object({ teams: z.string(), title: z.string(), intro: z.string(), sources: cites }).strict(),
+  z.object({ stats: z.array(tile).min(1), sources: cites }).strict(),
+  z.object({ cards: z.array(card).min(1) }).strict(),
+  z.object({ funds: z.array(fund).min(1) }).strict(),
 ]);
 // A chapter ends with a link to the reference page that holds its full record.
 const more = z.object({ page: z.string(), text: z.string() }).strict();
@@ -39,6 +47,8 @@ const story = defineCollection({
   schema: z.object({
     n: z.number().int(),
     title: z.string().optional(),
+    // a short name for the chapter in the story's contents
+    nav: z.string().optional(),
     blocks: z.array(block),
     more: z.array(more).default([]),
   }),

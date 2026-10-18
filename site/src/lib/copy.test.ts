@@ -68,12 +68,25 @@ describe('every piece of copy in the content files', () => {
   const pages = read('pages.yaml');
   const figures = read('figures.yaml');
   const items: [string, string, string[]][] = [];
-  for (const [id, s] of Object.entries<any>(story))
-    s.blocks.forEach((b: any, i: number) => b.p && items.push([`story ${id} ${i + 1}`, b.p, b.sources ?? []]));
+  // every piece of copy in a block: paragraphs, steps, quotes and their bylines, key figures, cards, the funds
+  const blockCopy = (where: string, b: any) => {
+    const own = b.sources ?? [];
+    if (b.p) items.push([where, b.p, own]);
+    if (b.h3) items.push([`${where} subhead`, b.h3, own]);
+    if (b.quote) items.push([`${where} quote`, b.quote, own], [`${where} byline`, b.by, own]);
+    for (const [i, s] of (b.steps ?? []).entries()) items.push([`${where} step ${i + 1}`, s.p, s.sources ?? []]);
+    for (const t of b.stats ?? []) items.push([`${where} key figure`, `${t.value} ${t.label}`, own]);
+    for (const c of b.cards ?? []) items.push([`${where} card ${c.title}`, `${c.title} ${c.value ?? ''} ${c.text}`, c.sources ?? []]);
+    for (const f of b.funds ?? []) items.push([`${where} fund ${f.fund}`, f.text, f.sources ?? []]);
+  };
+  for (const [id, s] of Object.entries<any>(story)) {
+    if (s.nav) items.push([`story ${id} short name`, s.nav, []]);
+    s.blocks.forEach((b: any, i: number) => blockCopy(`story ${id} ${i + 1}`, b));
+  }
   for (const [id, p] of Object.entries<any>(pages)) {
     for (const k of ['title', 'deck', 'description']) items.push([`page ${id} ${k}`, p[k], p.sources ?? []]);
     for (const t of p.tiles ?? []) items.push([`page ${id} tile`, `${t.value} ${t.label}`, p.sources ?? []]);
-    for (const b of [...(p.blocks ?? []), ...(p.notes ?? [])]) if (b.p) items.push([`page ${id} block`, b.p, b.sources ?? []]);
+    for (const [i, b] of [...(p.blocks ?? []), ...(p.notes ?? [])].entries()) blockCopy(`page ${id} block ${i + 1}`, b);
   }
   for (const [id, f] of Object.entries<any>(figures))
     for (const t of [f.title, f.sub, ...(f.notes ?? [])]) items.push([`figure ${id}`, t, ['ledger', ...(f.sources ?? [])]]);

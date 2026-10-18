@@ -122,12 +122,21 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
           window.addEventListener('resize', queue);
         });
       })();
-      // Every team, ranked: the buttons reorder the rows. Without this script the rows stay in order of public money.
+      // Every team, ranked: the buttons reorder the rows, and the list shows the first ten until the reader asks for
+      // all of them (or follows a link to a team further down). Without this script every row shows, in order of
+      // public money.
       (function () {
         document.querySelectorAll('.teams').forEach(function (box) {
           var bar = box.querySelector('.teams-sort'), list = box.querySelector('.teams-list');
           if (!bar || !list) return;
           bar.hidden = false;
+          var more = box.querySelector('.teams-more'), target = null;
+          try { target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null; } catch (e) {}
+          if (more && !(target && list.contains(target))) {
+            box.classList.add('collapsed');
+            more.hidden = false;
+            more.addEventListener('click', function () { box.classList.remove('collapsed'); more.hidden = true; });
+          }
           var rows = Array.prototype.slice.call(list.children);
           bar.addEventListener('click', function (e) {
             var b = e.target instanceof Element ? e.target.closest('button[data-sort]') : null;

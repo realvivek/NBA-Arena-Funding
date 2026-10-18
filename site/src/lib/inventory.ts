@@ -19,6 +19,28 @@ function item(where: string, href: string, text: string, own: string[]): CopyIte
   return { where, href, text, tokens: tokenKeys(text), typed: typedNumbers(text, ALLOW), sources: blockSources(text, own) };
 }
 
+type Block = Record<string, any>;
+
+/** The copy in a list of blocks: paragraphs, steps, key figures, cards, the funds and pull quotes. */
+function blockItems(blocks: Block[], where: string, href: string, figWhere: Map<string, { where: string; href: string }>): CopyItem[] {
+  const out: CopyItem[] = [];
+  let n = 0;
+  for (const b of blocks) {
+    const own = ids(b.sources);
+    if ('p' in b) out.push(item(`${where}: paragraph ${++n}`, href, b.p, own));
+    if ('quote' in b) out.push(item(`${where}: quote`, href, b.quote, own));
+    if ('scrolly' in b) b.steps.forEach((s: Block, i: number) => out.push(item(`${where}: step ${i + 1}`, href, s.p, ids(s.sources))));
+    if ('stats' in b)
+      b.stats.forEach((t: Block) => out.push(item(`${where}: key figure`, href, `${t.value} ${t.label}`, own)));
+    if ('cards' in b)
+      b.cards.forEach((c: Block) => out.push(item(`${where}: card "${c.title}"`, href, `${c.value ?? ''} ${c.text}`.trim(), ids(c.sources))));
+    if ('funds' in b) b.funds.forEach((f: Block) => out.push(item(`${where}: ${f.fund}`, href, f.text, ids(f.sources))));
+    const fig = b.fig ?? b.scrolly;
+    if (fig && !figWhere.has(fig)) figWhere.set(fig, { where, href });
+  }
+  return out;
+}
+
 export async function copyInventory(): Promise<CopyItem[]> {
   const out: CopyItem[] = [];
   const pages = await getCollection('pages');
@@ -36,19 +58,12 @@ export async function copyInventory(): Promise<CopyItem[]> {
       out.push(item(`${name}: key figure ${i + 1} label`, p.data.path, t.label, own));
     });
     for (const [part, blocks] of [['', p.data.blocks], [' note', p.data.notes]] as const)
-      blocks.forEach((b, i) => {
-        if ('p' in b) out.push(item(`${name}${part}: paragraph ${i + 1}`, p.data.path, b.p, ids(b.sources)));
-        if ('fig' in b) figWhere.set(b.fig, { where: `${name}`, href: p.data.path });
-      });
+      out.push(...blockItems(blocks, `${name}${part}`, p.data.path, figWhere));
   }
   for (const s of story) {
     const title = s.data.title ?? 'Opening';
     const href = s.data.title ? `/#${slug(s.data.title)}` : '/';
-    let n = 0;
-    for (const b of s.data.blocks) {
-      if ('p' in b) out.push(item(`Story, ${title}: paragraph ${++n}`, href, b.p, ids(b.sources)));
-      if ('fig' in b && !figWhere.has(b.fig)) figWhere.set(b.fig, { where: `Story, ${title}`, href });
-    }
+    out.push(...blockItems(s.data.blocks, `Story, ${title}`, href, figWhere));
   }
   for (const f of figures) {
     const at = figWhere.get(f.id) ?? { where: 'Chart', href: '/' };

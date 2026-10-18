@@ -1,5 +1,6 @@
 /* Tokens. Chart colors are the validated palette (blue, orange, aqua; see docs/site.md), stepped for each mode.
-   Layout: a 600px reading column; figures break out to 736px, the lead graphic and the map to 1152px. */
+   The band is the dark head under the masthead, the same in both modes. Layout: a 600px reading column; figures,
+   key figures and cards break out to 736px, the lead graphic and the map to 1152px. */
 :root {
   color-scheme: light;
   --surface: #ffffff;
@@ -25,8 +26,13 @@
   --seq-3: #5598e7;
   --seq-4: #256abf;
   --seq-5: #104281;
-  --water-top: #cfe2f6;
-  --water-veil: rgba(214, 230, 247, 0.74);
+  --band: #0c1626;
+  --band-ink: #f4f6fa;
+  --band-muted: #aab5c7;
+  --band-rule: rgba(255, 255, 255, 0.16);
+  --band-public: #7fb3f2;
+  --band-orange: #ff9b6b;
+  --shadow: 0 1px 2px rgba(12, 22, 38, 0.06), 0 8px 24px rgba(12, 22, 38, 0.07);
   --serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
   --sans: 'Libre Franklin Variable', 'Franklin Gothic Medium', 'Helvetica Neue', Arial, sans-serif;
   --measure: 37.5rem;
@@ -60,8 +66,13 @@
     --seq-3: #3987e5;
     --seq-4: #6da7ec;
     --seq-5: #b7d3f6;
-    --water-top: #14466e;
-    --water-veil: rgba(13, 53, 87, 0.74);
+    --band: #0a1220;
+    --band-ink: #f0efec;
+    --band-muted: #9ca7b9;
+    --band-rule: rgba(255, 255, 255, 0.14);
+    --band-public: #86b6ef;
+    --band-orange: #f28a5c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
   }
 }
 :root[data-theme='dark'] {
@@ -89,8 +100,13 @@
   --seq-3: #3987e5;
   --seq-4: #6da7ec;
   --seq-5: #b7d3f6;
-  --water-top: #14466e;
-  --water-veil: rgba(13, 53, 87, 0.74);
+  --band: #0a1220;
+  --band-ink: #f0efec;
+  --band-muted: #9ca7b9;
+  --band-rule: rgba(255, 255, 255, 0.14);
+  --band-public: #86b6ef;
+  --band-orange: #f28a5c;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 *,
@@ -106,16 +122,16 @@ body {
   margin: 0;
   background: var(--surface);
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.62;
   font-optical-sizing: auto;
   overflow-wrap: break-word;
 }
 @media (max-width: 40rem) {
   body {
-    font-size: 1.125rem;
-    line-height: 1.58;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
 a {
@@ -149,9 +165,11 @@ svg {
   z-index: 10;
 }
 
-/* Masthead: the project's name and its pages, over a hairline */
+/* Masthead: the project's name and its pages, on the band */
 .masthead {
-  border-bottom: 1px solid var(--ink);
+  background: var(--band);
+  color: var(--band-ink);
+  border-bottom: 1px solid var(--band-rule);
   font-family: var(--sans);
 }
 .masthead-inner {
@@ -165,11 +183,10 @@ svg {
   flex-wrap: wrap;
 }
 .site-name {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1.1875rem;
-  letter-spacing: -0.005em;
-  color: var(--ink);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--band-ink);
   text-decoration: none;
 }
 .site-nav {
@@ -180,17 +197,38 @@ svg {
   font-weight: 500;
 }
 .site-nav a {
-  color: var(--ink-2);
+  color: var(--band-muted);
   text-decoration: none;
   padding: 4px 0;
 }
 .site-nav a:hover {
-  color: var(--ink);
+  color: var(--band-ink);
 }
 .site-nav a[aria-current='page'] {
-  color: var(--ink);
+  color: var(--band-ink);
   font-weight: 700;
-  box-shadow: inset 0 -2px 0 var(--ink);
+  box-shadow: inset 0 -2px 0 var(--band-orange);
+}
+@media (max-width: 40rem) {
+  .masthead-inner {
+    display: block;
+    padding-bottom: 0;
+  }
+  /* on phones the pages scroll sideways in one row instead of wrapping into a block of links */
+  .site-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 18px;
+    margin: 4px calc(-1 * var(--gutter)) 0;
+    padding: 0 var(--gutter) 8px;
+  }
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .site-nav a {
+    white-space: nowrap;
+  }
 }
 
 /* Page frame */
@@ -208,45 +246,98 @@ main {
   margin-right: auto;
 }
 
-/* Page heads: the story's hero and each reference page's head */
-.head {
-  padding: 44px 0 8px;
+/* Page heads: the story's opening and each page's head sit on the band, which runs the full width */
+.band {
+  position: relative;
+  overflow: hidden;
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 0 var(--gutter);
+  background: var(--band);
+  color: var(--band-ink);
 }
-.hero {
-  max-width: 48rem;
+.band .court {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  color: var(--band-ink);
+  opacity: 0.08;
+  pointer-events: none;
+}
+.hero,
+.head {
+  position: relative;
+  max-width: var(--xwide);
   margin: 0 auto;
-  padding: 56px 0 8px;
+  padding: 60px 0 36px;
+}
+.head {
+  max-width: 66rem;
+  padding: 44px 0 30px;
 }
 .kicker {
   font-family: var(--sans);
   font-size: 0.8125rem;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--public);
   margin: 0 0 14px;
 }
+.band .kicker {
+  color: var(--band-orange);
+}
 h1 {
-  font-family: var(--serif);
-  font-weight: 650;
-  font-size: clamp(2.125rem, 1.25rem + 3.4vw, 3rem);
-  line-height: 1.06;
-  letter-spacing: -0.018em;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 1.2rem + 3.2vw, 3.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
   margin: 0 0 18px;
+  max-width: 24ch;
   text-wrap: balance;
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 1.3rem + 4.6vw, 4.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.024em;
+  font-size: clamp(2.375rem, 1.2rem + 4.8vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.034em;
+  max-width: 20ch;
   margin-bottom: 22px;
 }
 .deck {
-  font-size: clamp(1.25rem, 1.1rem + 0.55vw, 1.5rem);
-  line-height: 1.4;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  line-height: 1.45;
   color: var(--ink-2);
+  max-width: 40em;
   margin: 0 0 22px;
   text-wrap: pretty;
+}
+.band .deck {
+  color: var(--band-muted);
+}
+.band a {
+  color: var(--band-public);
+}
+.band a.num {
+  color: var(--band-ink);
+  text-decoration-color: var(--band-muted);
+}
+.band .cites > summary {
+  color: var(--band-muted);
+}
+.band .cites > summary:hover,
+.band .cites[open] > summary {
+  color: var(--band-ink);
+  background: var(--band-rule);
+}
+.band .cite-list {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--band-muted);
+}
+.band .origin {
+  color: var(--band-muted);
+  border-color: var(--band-rule);
 }
 .meta,
 .dateline {
@@ -258,17 +349,81 @@ h1 {
   flex-wrap: wrap;
   gap: 4px 18px;
 }
-.dateline {
-  border-top: 1px solid var(--rule);
-  padding-top: 12px;
+.band .meta,
+.band .dateline {
+  color: var(--band-muted);
+  border-top: 1px solid var(--band-rule);
+  padding-top: 14px;
 }
 .meta a,
 .dateline a {
   color: inherit;
 }
 .dateline time {
-  color: var(--ink);
+  color: var(--band-ink);
   font-weight: 600;
+}
+@media (max-width: 40rem) {
+  .hero {
+    padding: 36px 0 24px;
+  }
+  .head {
+    padding: 30px 0 22px;
+  }
+  .band .court {
+    opacity: 0.05;
+  }
+}
+
+/* what follows a page's head starts clear of the band */
+.band + .col,
+.band + .col-wide {
+  margin-top: 36px;
+}
+
+/* The story's contents: a row of chapter links under the head; on phones it scrolls sideways */
+.toc {
+  margin: 0 calc(-1 * var(--gutter));
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+}
+.toc ol {
+  max-width: var(--xwide);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  list-style: none;
+  display: flex;
+  gap: 0 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.toc ol::-webkit-scrollbar {
+  display: none;
+}
+.toc a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 14px 10px 12px;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.toc li:first-child a {
+  padding-left: 0;
+}
+.toc a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--public);
+}
+.toc-n {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--public);
+  font-variant-numeric: tabular-nums;
 }
 
 /* Story text */
@@ -280,13 +435,50 @@ h2 {
   margin: 56px 0 12px;
   text-wrap: balance;
 }
-.chapter > h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 1.35rem + 1.3vw, 2.375rem);
-  font-weight: 650;
-  line-height: 1.1;
-  letter-spacing: -0.012em;
-  margin: 80px 0 20px;
+/* A chapter opens with its number and its finding as the title; its first paragraph reads larger */
+.chapter {
+  margin-top: 104px;
+}
+.ch-head {
+  border-top: 3px solid var(--ink);
+  padding-top: 14px;
+  margin: 0 0 18px;
+}
+.ch-num {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--public);
+  margin: 0 0 6px;
+}
+.ch-head h2 {
+  font-family: var(--sans);
+  font-size: clamp(1.875rem, 1.25rem + 2.2vw, 2.875rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.026em;
+  margin: 0;
+}
+.ch-head + .para {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.chapter h3.subhead {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 48px 0 6px;
+}
+@media (max-width: 40rem) {
+  .chapter {
+    margin-top: 80px;
+  }
+  .ch-head + .para {
+    font-size: 1.125rem;
+  }
 }
 h3 {
   font-family: var(--sans);
@@ -453,8 +645,17 @@ figure.chart {
 .chart-source {
   color: var(--muted);
 }
-details.data {
+.fig-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
   margin: 10px 0 0;
+}
+.fig-foot details[open] {
+  flex-basis: 100%;
+}
+details.data {
+  margin: 0;
   font-family: var(--sans);
   font-size: 0.875rem;
 }
@@ -795,16 +996,35 @@ footer.site-foot .col {
   max-width: var(--xwide);
 }
 footer.site-foot .foot-name {
-  font-family: var(--serif);
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--ink);
   margin: 0 0 6px;
 }
 
-/* Figures break out of the reading column: most to 736px, the lead graphic and the map to 1152px */
+/* The story and the investigation page share one left edge: their column is 736px, the width of the figures,
+   key figures and cards, and the paragraphs in it stop at the 600px measure. */
+.story .col.prose,
+.story .endmatter,
+.brief .col.prose {
+  max-width: var(--wide);
+}
+.story .prose .para,
+.brief .prose .para,
+.story .prose .subhead,
+.brief .prose .teams-intro {
+  max-width: var(--measure);
+}
+.story .ch-head h2 {
+  max-width: 22ch;
+}
+
+/* Figures, key figures and cards break out of the reading column to 736px; the lead graphic and the map to
+   1152px */
 .prose figure.chart,
-.prose .lookup {
+.prose .tiles,
+.prose .cardset,
+.prose .funds {
   --fw: min(var(--wide), calc(100vw - 2 * var(--gutter)));
   width: var(--fw);
   margin-left: calc((100% - var(--fw)) / 2);
@@ -818,69 +1038,166 @@ figure.chart {
   margin-bottom: 48px;
 }
 
-/* What we found: the findings, each linked to its chapter */
-.findings {
-  margin: 56px auto 8px;
-  padding: 22px 26px 10px;
-  background: var(--plane);
+/* Key figures (see Tiles.astro): each a number in large type over a short label, with a rule above in the
+   color of what it counts (blue for public money) */
+.tiles {
+  margin: 30px 0 40px;
   font-family: var(--sans);
 }
-.findings h2 {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  margin: 0 0 6px;
-}
-.findings ol {
+.tiles-list {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-.findings li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 4px 16px;
-  align-items: baseline;
-  padding: 12px 0;
-  border-top: 1px solid var(--rule);
-  font-size: 1.0625rem;
-  line-height: 1.45;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 18px 22px;
 }
-.findings li:first-child {
-  border-top: 0;
+.tile {
+  min-width: 0;
+  border-top: 3px solid var(--public);
+  padding-top: 10px;
 }
-.findings .go {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  white-space: nowrap;
+.tile-v {
+  display: block;
+  font-size: clamp(1.875rem, 1.35rem + 1.7vw, 2.625rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-variant-numeric: lining-nums;
+  color: var(--ink);
+}
+.tile-v a.num,
+.cs-value a.num {
   text-decoration: none;
 }
-.findings .go:hover {
+.tile-v a.num:hover,
+.cs-value a.num:hover {
   text-decoration: underline;
 }
-@media (max-width: 40rem) {
-  .findings {
-    padding: 18px 18px 6px;
+.tile-l {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.9375rem;
+  line-height: 1.42;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.tiles-src {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.tiles-dark .tiles-src {
+  color: var(--band-muted);
+}
+.tiles-dark {
+  margin: 30px 0 30px;
+}
+.tiles-dark .tile {
+  border-top-color: var(--band-public);
+}
+.tiles-dark .tile-v,
+.tiles-dark .tile-v a.num {
+  color: var(--band-public);
+}
+.tiles-dark .tile-l {
+  color: var(--band-muted);
+}
+.tiles-dark .tile-l a.num {
+  color: var(--band-ink);
+}
+@media (min-width: 64rem) {
+  .tiles-dark .tiles-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  .findings li {
+}
+@media (max-width: 40rem) {
+  .tiles-list {
     grid-template-columns: minmax(0, 1fr);
-    font-size: 1rem;
+    gap: 14px;
+  }
+  .tiles-dark .tiles-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 14px;
+  }
+  .tile-v {
+    font-size: 2rem;
+  }
+  .tiles-dark .tile-v {
+    font-size: 1.75rem;
+  }
+  .tile-l {
+    font-size: 0.875rem;
   }
 }
 
-/* A chapter ends with a link to the reference page that holds its full record */
-.chapter-more {
+/* Cards (see Cards.astro): a place or a finding, its key figure and a sentence */
+.cardset {
+  list-style: none;
+  margin: 26px 0 40px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 14px;
   font-family: var(--sans);
+}
+/* four cards make two rows of two */
+.cardset:has(> li:nth-child(4):last-child) {
+  grid-template-columns: repeat(auto-fit, minmax(max(13.5rem, calc(50% - 7px)), 1fr));
+}
+.cardset-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px 14px;
+  background: var(--plane);
+  border-radius: 10px;
+}
+.cs-title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cs-value {
+  margin: 0;
+  font-size: 1.625rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.cs-text {
   font-size: 0.9375rem;
-  font-weight: 600;
-  margin: 4px 0 0;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* A chapter ends with links to the pages that hold its full record */
+.chapter-more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 0;
+  font-family: var(--sans);
 }
 .chapter-more a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--axis);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
   text-decoration: none;
 }
 .chapter-more a:hover {
-  text-decoration: underline;
+  border-color: var(--public);
+  color: var(--link);
 }
 
 /* Pull quote */
@@ -920,7 +1237,10 @@ figure.chart {
   padding: 10px 0 8px;
 }
 .step {
-  font-family: var(--serif);
+  font-family: var(--sans);
+}
+.step strong {
+  font-weight: 800;
 }
 .step .para {
   margin: 0;
@@ -955,7 +1275,13 @@ figure.chart {
   }
   .step {
     margin: 0 0 58vh;
-    font-size: 1.1875rem;
+    padding: 16px 18px;
+    font-size: 1.0625rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--public);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
     transition: opacity 0.3s ease;
   }
   .step:last-child {
@@ -987,8 +1313,10 @@ figure.chart {
     padding: 14px 16px;
     background: var(--surface);
     border: 1px solid var(--rule);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-    font-size: 1.0625rem;
+    border-left: 4px solid var(--public);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
   }
   .step:last-child {
     margin-bottom: 0;
@@ -1050,49 +1378,95 @@ figure.chart {
   stroke-dasharray: 3 2;
 }
 
-/* The lead graphic (see Ball.svelte): a basketball in water, its layers lit one step at a time */
-.chart svg .water-top {
-  stop-color: var(--water-top);
-}
-.chart svg .water-bottom {
-  stop-color: var(--surface);
-}
-.chart svg .veil {
-  fill: var(--water-veil);
-}
-.chart svg .waterline {
-  fill: none;
+/* The lead graphic (see Bill.svelte): the public's bill built up row by row. Rows the reader has not reached show
+   as outlines with muted labels, and the row the current step describes is marked. */
+.chart svg .bl-solid {
+  fill: var(--public);
   stroke: var(--public);
-  stroke-width: 2;
-}
-.chart svg .slice {
-  stroke: #fff;
-  stroke-opacity: 0.8;
-  stroke-width: 1.5;
-}
-.chart svg .in-val {
-  fill: #fff;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  paint-order: stroke;
-  stroke: #4a2208;
-  stroke-width: 3px;
-  stroke-linejoin: round;
-}
-.chart svg .lay,
-.chart svg .lab {
+  stroke-width: 1.25;
   transition: opacity 0.45s ease;
 }
-[data-step='built'] .lay,
-[data-step='built'] .lab:not(.lab-build),
-[data-step='renovated'] :is(.lay-buy, .lay-pay, .lay-breaks, .lab-buy, .lab-pay, .lab-breaks, .lab-total),
-[data-step='bought'] :is(.lay-breaks, .lab-breaks, .lab-total),
-[data-step='breaks'] .lab-total {
+.chart svg .bl-ghost {
+  fill: var(--public-wash);
+  stroke: var(--public-soft);
+  stroke-width: 1.25;
+  stroke-dasharray: 4 3;
+}
+.chart svg .bl-mark {
+  fill: var(--plane);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.chart svg .bl-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+.chart svg .bl-name-total {
+  font-weight: 800;
+}
+.chart svg .bl-amt {
+  fill: var(--ink);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.chart svg .bl-share {
+  fill: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.chart svg .bl-name,
+.chart svg .bl-amt,
+.chart svg .bl-share {
+  transition: fill 0.35s ease;
+}
+.chart svg .bl-rule {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.chart svg .bl-conn {
+  stroke: var(--axis);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+.chart svg .bl-guide {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.25;
+  stroke-dasharray: 3 3;
+}
+.chart svg .bl-bracket {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.25;
+}
+.chart svg .bl-brlabel {
+  fill: var(--ink);
+  font-weight: 700;
+}
+[data-step='built'] :is(.bl-reno, .bl-buy, .bl-pay, .bl-breaks, .bl-total) .bl-solid,
+[data-step='renovated'] :is(.bl-buy, .bl-pay, .bl-breaks, .bl-total) .bl-solid,
+[data-step='bought'] :is(.bl-breaks, .bl-total) .bl-solid,
+[data-step='breaks'] .bl-total .bl-solid {
   opacity: 0;
 }
+[data-step='built'] :is(.bl-reno, .bl-buy, .bl-pay, .bl-breaks, .bl-total) :is(.bl-name, .bl-amt),
+[data-step='renovated'] :is(.bl-buy, .bl-pay, .bl-breaks, .bl-total) :is(.bl-name, .bl-amt),
+[data-step='bought'] :is(.bl-breaks, .bl-total) :is(.bl-name, .bl-amt),
+[data-step='breaks'] .bl-total :is(.bl-name, .bl-amt) {
+  fill: var(--muted);
+}
+[data-step='built'] .bl-build .bl-mark,
+[data-step='renovated'] .bl-reno .bl-mark,
+[data-step='bought'] :is(.bl-buy, .bl-pay) .bl-mark,
+[data-step='breaks'] .bl-breaks .bl-mark,
+[data-step='total'] .bl-total .bl-mark {
+  opacity: 1;
+}
 @media (prefers-reduced-motion: reduce) {
-  .chart svg .lay,
-  .chart svg .lab {
+  .chart svg .bl-solid,
+  .chart svg .bl-mark,
+  .chart svg .bl-name,
+  .chart svg .bl-amt,
+  .chart svg .bl-share {
     transition: none !important;
   }
 }
@@ -1208,6 +1582,25 @@ figure.chart {
 }
 .teams-key-value {
   margin-left: auto;
+}
+.teams.collapsed .teams-list > li:nth-child(n + 11) {
+  display: none;
+}
+.teams-more {
+  display: block;
+  margin: 14px 0 0;
+  padding: 9px 16px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--surface);
+  background: var(--ink);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.teams-more[hidden] {
+  display: none;
 }
 .teams-list {
   list-style: none;
@@ -1341,7 +1734,125 @@ figure.chart {
   }
 }
 
-/* The investigation report (see pages/who-is-behind): a long text with tables, read in the story's column */
+/* The investigation, short (see pages/who-is-behind): sections headed like the story's chapters */
+.brief h2.subhead {
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.125rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  border-top: 3px solid var(--ink);
+  padding-top: 14px;
+  margin: 80px 0 14px;
+}
+.brief .prose > h2.subhead:first-child {
+  margin-top: 52px;
+}
+.brief .subhead + .para {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* The funds with stakes in teams (see Funds.astro): a card for each, with its teams */
+.funds {
+  list-style: none;
+  margin: 26px 0 40px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 14px;
+  font-family: var(--sans);
+}
+.fund {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px 14px;
+  background: var(--plane);
+  border-top: 4px solid var(--orange);
+  border-radius: 10px;
+}
+.fund-type {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.fund-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.fund-count {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.fund-stakes {
+  list-style: none;
+  margin: 8px 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+.fund-stakes li {
+  display: grid;
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+.fund-stakes b {
+  font-weight: 650;
+}
+.fund-stakes span {
+  color: var(--muted);
+}
+.fund-text {
+  margin-top: auto;
+  padding-top: 9px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* A link to the full report, on the band */
+.cta {
+  display: grid;
+  gap: 6px;
+  margin: 64px 0 24px;
+  padding: 22px 24px;
+  background: var(--band);
+  color: var(--band-ink);
+  border-radius: 12px;
+  font-family: var(--sans);
+  text-decoration: none;
+}
+.cta-k {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--band-orange);
+}
+.cta-t {
+  font-size: 1.0625rem;
+  line-height: 1.45;
+}
+.cta-go {
+  font-weight: 700;
+  color: var(--band-public);
+}
+.cta:hover .cta-go {
+  text-decoration: underline;
+}
+
+/* The full investigation report (see pages/who-is-behind/report): a long text with tables, in the reading column */
 .report-parts {
   margin: 18px 0 8px;
   padding: 14px 18px;
@@ -1392,9 +1903,22 @@ figure.chart {
   overflow-wrap: normal;
 }
 
-/* The full record: cards for the reference pages */
+/* The full record: cards for the reference pages, then the story's sources, folded */
 .endmatter {
-  margin-top: 72px;
+  margin-top: 104px;
+}
+.endmatter h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+details.all-sources > summary {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--link);
+  margin: 0 0 14px;
 }
 
 @media print {

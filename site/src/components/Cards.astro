@@ -1,0 +1,18 @@
+---
+/** A set of cards: a place or a finding, an optional key figure, and a sentence or two with its sources. */
+import Cites from './Cites.astro';
+import type { PreparedCard } from '../lib/prepare';
+interface Props {
+  cards: PreparedCard[];
+}
+const { cards } = Astro.props;
+---
+<ul class="cardset">
+  {cards.map((c) => (
+    <li class="cardset-item">
+      <p class="cs-title">{c.title}</p>
+      {c.value && <p class="cs-value" set:html={c.value} />}
+      <div class="cs-text"><Fragment set:html={c.text} />{' '}<Cites ids={c.sources} numbers={c.numbers} /></div>
+    </li>
+  ))}
+</ul>

@@ -1,0 +1,31 @@
+---
+/**
+ * The investment funds with current stakes in teams: a card for each, with what kind of fund it is, a sentence
+ * from the copy, and each team it holds a stake in (or in whose parent company), as reported, from the data.
+ */
+import Cites from './Cites.astro';
+import type { PreparedFund } from '../lib/prepare';
+interface Props {
+  funds: PreparedFund[];
+}
+const { funds } = Astro.props;
+const year = (d: string | null) => (d ? d.slice(0, 4) : '');
+---
+<ul class="funds">
+  {funds.map((f) => (
+    <li class="fund">
+      <p class="fund-type">{f.type}</p>
+      <p class="fund-name">{f.fund}</p>
+      <p class="fund-count">{f.stakes.length === 1 ? '1 team' : `${f.stakes.length} teams`}</p>
+      <ul class="fund-stakes">
+        {f.stakes.map((s) => (
+          <li>
+            <b>{s.name}</b>
+            <span>{s.entered ? `Since ${year(s.entered)}: ` : ''}{s.stake}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="fund-text"><Fragment set:html={f.text} />{' '}<Cites ids={f.sources} numbers={f.numbers} /></div>
+    </li>
+  ))}
+</ul>

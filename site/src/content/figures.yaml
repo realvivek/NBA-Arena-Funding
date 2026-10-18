@@ -1,12 +1,12 @@
 # Chart frames. Titles state the finding; numbers are tokens from pipeline/stats.yaml.
 # Text fields are folded block scalars (>-) so colons and braces need no quoting.
 
-ball:
+bill:
   title: >-
     Building the arenas is {{construction_share}} of what the public has put into them
   sub: >-
-    Public money in the {{arenas_n}} arenas NBA teams play in, by kind, in 2026 dollars. Each layer's area is
-    proportional to its money; the part above the waterline paid to build the arenas
+    Public money in the {{arenas_n}} arenas NBA teams play in, in 2026 dollars. Each bar starts where the one above
+    ends, so together they add up to the total
   dataset: public-layers
   notes:
     - >-

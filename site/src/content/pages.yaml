@@ -8,37 +8,22 @@ home:
     Taxpayers Paid for the NBA's Arenas. Owners Kept the Gains.
   deck: >-
     Governments have put {{expanded_public}}, in today's dollars, into the {{arenas_n}} arenas where NBA teams
-    play. Team values have soared since, to an average of {{value_mean_2026}}. In the public arena deals reviewed
-    here, the public's share of those gains is zero.
+    play. Team values have soared since. In the public arena deals reviewed here, the public's share of those gains
+    is zero.
   description: >-
     Who paid for the NBA's arenas, through which taxes, who gains as team values rise, and what the public gets
     back.
   sources: [ledger, team-ledger]
-  findings:
-    - p: >-
-        The public has put {{expanded_public}}, counting tax breaks, into the {{arenas_n}} arenas in use; building
-        them is {{construction_share}} of it.
-      to: fig-ball
-    - p: >-
-        Since 2014, public money to renovate or buy existing arenas has been {{rebuild_ratio}} times the public
-        money in the arenas that opened.
-      to: the-bill-keeps-coming-after-opening-night
-    - p: >-
-        Taxes that fall mostly on visitors paid {{visitors_share}} of public arena capital, and taxes residents
-        mostly pay supplied {{residents_share}}.
-      to: visitors-pay-a-large-share
-    - p: >-
-        The median team is worth {{value_multiple_median}} times what its owners paid, after inflation, and none
-        of the {{public_deals_reviewed}} public arena deals reviewed gives the public a share of a sale.
-      to: team-values-soared-the-public-s-share-did-not
-    - p: >-
-        {{finance_teams_n:cap}} of the {{arenas_n}} teams have a controlling owner from finance or an investment
-        fund with a stake, and the league itself shares in the fees of one fund.
-      to: who-is-behind-the-teams
-    - p: >-
-        Another {{pending_existing}} is pending for existing arenas, {{leases_by_2036}} arena leases end by 2036,
-        and public money followed {{threats_same_city}} of {{threats_counted}} relocation threats.
-      to: the-next-round-is-already-on-the-calendar
+  # the scoreboard under the headline
+  tiles:
+    - value: '{{expanded_public:short}}'
+      label: public money in the {{arenas_n}} arenas, counting tax breaks
+    - value: '{{construction_share:short}}'
+      label: of it went to building them; the rest to renovations, purchases, payments and tax breaks
+    - value: '{{value_mean_2026:short}}'
+      label: the average team's value, {{value_growth_2014}} times the 2014 average before inflation
+    - value: '{{sale_share_found:short}}'
+      label: of {{public_deals_reviewed}} public arena deals reviewed give the public a share when a team is sold
 
 who-is-behind:
   path: /who-is-behind/
@@ -46,9 +31,158 @@ who-is-behind:
   title: >-
     Who Is Behind the NBA's Arena Deals
   deck: >-
-    The investment funds and owners from finance in NBA teams, the lobbyists, consultants and banks around the
-    arena deals, the reporting that exposed owners' taxes and side deals, the federal tax breaks, and what the
-    public gets back. The full report behind the story, with every source.
+    Owners from finance and investment funds now reach {{finance_teams_n}} of the {{arenas_n}} teams. People with
+    money at stake help make the arena deals, federal tax breaks add a second layer of subsidy, and none of the
+    public deals reviewed gives the public a share of the gains.
+  description: >-
+    The investment funds and owners from finance in NBA teams, the people around the arena deals, the reporting
+    that exposed owners' taxes and side deals, the federal tax breaks, and what would change the math.
+  sources: [team-ledger]
+  tiles:
+    - value: '{{funds_n:short}}'
+      label: investment funds with stakes in {{fund_teams_n}} teams or their parent companies
+    - value: '{{owners_finance_n}}'
+      label: of the {{arenas_n}} controlling owners made their money mainly in finance
+    - value: '{{finance_teams_public:short}}'
+      label: in public money, with tax breaks, for the arenas of the {{finance_teams_n}} teams they reach
+    - value: '{{fed_bond_cost:short}}'
+      label: in federal income tax forgone on the tax-exempt bonds sold for the arenas
+  blocks:
+    - h3: The funds in the teams
+    - p: >-
+        Since 2021 the league has let investment funds buy into teams: up to {{nba_fund_cap_single}} of a team for
+        one fund and {{nba_fund_cap_total}} for all funds together, and since December 2025 in up to
+        {{nba_fund_teams_max}} teams per fund. The stakes carry no governance rights, and no record found places a
+        fund at an arena negotiation.
+      sources: [cliffordchance-2026-1-from-five-to-eight-nba-further-loosens, frontofficesports-the-nbas-expanding-private-equity-footprin]
+    - funds:
+        - fund: Arctos Sports Partners
+          text: KKR, one of the largest private equity firms, bought the company that manages Arctos in May 2026.
+          sources: [sec-kkr-20260630]
+        - fund: Blue Owl HomeCourt
+          text: >-
+            The league's partner fund. Blue Owl's annual report says the NBA "receives a share of management fees and
+            incentive allocations" from it.
+          sources: [sec-owl-20251231]
+        - fund: Qatar Investment Authority
+          text: Qatar's sovereign wealth fund, a partner in the Wizards' parent company since 2023.
+          sources: [wsls-qatar-investment-authority-is-buying-a-stake-in]
+        - fund: Sixth Street
+          text: >-
+            Also the majority owner of Legends, whose CSL International studied San Antonio's arena district and
+            whose ASM Global runs Oklahoma City's arena.
+          sources: [sacurrent-csl-legends-2025, pollstar-asm-okc-2025]
+    - h3: The owners
+    - p: >-
+        {{owners_finance_n:cap}} of the {{arenas_n}} controlling owners made their money mainly in finance,
+        {{owners_pe_n}} of them in private equity or hedge funds, and {{control_sales_2015_finance_n}} of the
+        {{control_sales_2015_n}} sales of control since 2015 went to buyers from finance.
+      sources: [team-ledger]
+    - fig: owners
+    - h3: Fund money came before the latest public deal
+    - cards:
+        - title: San Antonio
+          value: 2021, then 2025
+          text: Sixth Street bought into the Spurs in 2021. Bexar County voters approved arena money in 2025.
+          sources: [ksat-spurs-name-peter-j-holt-managing-partner-add-aus, ledger]
+        - title: Salt Lake City
+          value: 2022, then 2024
+          text: Arctos bought into the Jazz's parent company in 2022. Utah passed its arena law in 2024.
+          sources: [sltrib-miller-family-sells-some-its, ledger]
+        - title: Washington
+          value: 2023, then 2024
+          text: Qatar's fund bought into the Wizards' parent company in 2023, the year before the District's deal.
+          sources: [wsls-qatar-investment-authority-is-buying-a-stake-in, ledger]
+        - title: Charlotte
+          value: 2019, then 2022
+          text: The Hornets' hedge-fund owners became partners in 2019, before the city's 2022 arena deal.
+          sources: [nba-jordan-hornets-new-partners-retains-majority-off, ledger]
+    - h3: The people around the deals
+    - stats:
+        - value: '{{threats_same_city}} of {{threats_counted}}'
+          label: >-
+            relocation threats by owners or the league since 1994 were followed by public money in the same city, a
+            median {{lag_median}} months later
+      sources: [threat-ledger]
+    - cards:
+        - title: Lobbying in Portland
+          value: '{{por_lobbying}}'
+          text: >-
+            Reported by the Trail Blazers' arena company in the 2026 session that produced up to {{por_state}} of
+            state bonds for its arena.
+          sources: [olis-enrolled]
+        - title: A study in San Antonio
+          text: >-
+            The city's study of the new arena district came from CSL International, a subsidiary of Legends, whose
+            majority owner, Sixth Street, is an investor in the Spurs.
+          sources: [sacurrent-csl-legends-2025]
+        - title: An operator in Oklahoma City
+          text: >-
+            Legends, through ASM Global, runs the city's publicly owned arena under a contract that extends to the new
+            one.
+          sources: [pollstar-asm-okc-2025]
+    - h3: What the reporting found
+    - p: >-
+        No Pulitzer has gone to an investigation of an arena deal. The nearest is this year's prize for audio
+        reporting, to the podcast Pablo Torre Finds Out, for showing how money reached Kawhi Leonard through
+        Aspiration, a company Steve Ballmer had invested in.
+      sources: [news4jax-pablo-torres-podcast-wins-pulitzer-prize-for-cli]
+    - cards:
+        - title: The league's finding
+          value: '{{lac_fine:short}} fine'
+          text: >-
+            The NBA found the Clippers induced companies doing business with the team to pay Leonard "by offering them
+            business from the team." It took {{lac_picks}} first-round picks and suspended Ballmer for a year.
+          sources: [pr-nba-investigation-clippers-kawhi-leonard]
+        - title: The tax playbook
+          text: >-
+            ProPublica's 2021 "Billionaire Playbook," drawn from IRS records, showed how owners use their teams to cut
+            taxes on their other income.
+          sources: [propublica-billionaire-playbook]
+    - h3: The federal layer
+    - stats:
+        - value: '{{fed_bond_cost:short}}'
+          label: in federal income tax forgone on interest from the tax-exempt bonds sold for the arenas
+        - value: '{{sec197_years}} years'
+          label: over which a buyer deducts the purchase price of a team's franchise
+      sources: [gayer-2016]
+    - p: >-
+        In 2025 the House voted to halve that deduction for sports teams; the committee report said "the owners of
+        sports teams unfairly benefit." The change was left out of the law that passed.
+      sources: [govinfo-crpt-119hrpt106-pt2, hr1-engrossed-2025, hr1-enrolled-2025]
+    - h3: What would change the math
+    - p: >-
+        Economists who reviewed more than {{research_studies}} studies over {{research_years}} years of research found
+        "very limited economic impacts of professional sports teams and stadiums." A city that pays anyway can ask
+        for what the NBA deals reviewed here do not have.
+      sources: [bradbury-2023]
+    - cards:
+        - title: A share of the sale
+          value: up to {{vikings_public_share}}
+          text: >-
+            Of the gain when the team is sold, as Minnesota wrote into its law for the Vikings. The Broncos' stadium
+            lease sent {{broncos_sale_share}} to youth programs in the Denver area when the team was sold in 2022.
+          sources: [revisor-473j-15]
+        - title: Rent that grows
+          text: >-
+            Rent that rises with the team's value, instead of a fixed fee like Oklahoma City's, capped at
+            {{okc_fee_cap}} a year.
+          sources: [okc-pbcarena-use-license-agreementfinal-6-12-25-1]
+        - title: Disclosure
+          text: >-
+            Disclosure of the contractors, sponsors and consultants that work for both the team and the arena's public
+            owner.
+          sources: [team-ledger]
+
+who-is-behind-report:
+  path: /who-is-behind/report/
+  kicker: The investigation, in full
+  title: >-
+    Who Is Behind the NBA's Arena Deals: the Full Report
+  deck: >-
+    The complete report behind the investigation page: funds and owners from finance, lobbying and campaigns,
+    studies and banks, prize-winning investigations, federal tax breaks and remedies, every figure labeled and
+    sourced.
   description: >-
     The full report: funds and owners from finance, lobbying and campaigns, studies and banks, prize-winning
     investigations, federal tax breaks and remedies, every figure labeled and sourced.

@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-168 figures, 26 datasets, 478 sources. Ledger as of 2026-10-16.
+168 figures, 27 datasets, 478 sources. Ledger as of 2026-10-16.
 
 ## Figures
 
@@ -1420,4 +1420,5 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - `team-values`: What each team's owner paid, what the team is worth now, and the public money in its arena. 30 rows; 123 sources. Prices are what the current controlling owner paid, or the valuation at which a controlling stake changed hands, in the year paid and in 2026 dollars; prices that bought more or less than the team are marked by price_scope. Values are Forbes's of October 2026 and 2025 and Sportico's of October 2026. Public money is the ledger's, with tax breaks shown separately.
 - `value-history`: Average NBA team value by year, as estimated by Forbes. 18 rows; 48 sources. Each year's average is from Forbes's list published that year (2007 and 2009 lists were published in December). The 2026 value is the mean of Forbes's 30 team values of October 2026.
 - `public-return`: What each public arena deal returns to the public. 30 rows; 32 sources. From the arena agreements, audits and budgets reviewed. sale_share is 'no' where the documents allow a sale with no payment to the public, 'none_found' where no clause was found in the documents reviewed, 'unknown' where the agreement could not be reached, and 'private_arena' where there is no public arena deal.
+- `investors`: The investment funds with current stakes in NBA teams or their parent companies, and each stake. 13 rows; 16 sources. From the funds' and teams' releases, filings and reports of each deal. Stakes are as reported; stakes seen only in search results are left out.
 - `ownership`: Who owns each team, the controlling owners' main source of wealth, and the investment funds with stakes. 30 rows; 46 sources. Main source of wealth from Forbes profiles read Oct. 17-18, 2026, or the release or report named, classed by this project as private equity (private equity or hedge funds), other finance (mortgage lending, asset management, venture capital, financial services) or other. Funds are those with a current stake in the team or its parent company; stakes seen only in search results are left out.

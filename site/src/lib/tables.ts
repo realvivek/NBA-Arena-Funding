@@ -13,7 +13,7 @@ const CATEGORY: Record<string, string> = {
 const pct = (v: number | null | undefined, d = 0) => (v == null ? '' : `${v.toFixed(d)}%`);
 const m = (v: number | null | undefined) => (v == null ? '' : money(v));
 
-export function ballTable(rows: any[]): Table {
+export function billTable(rows: any[]): Table {
   const total = rows.reduce((a, r) => a + r.public_2026_m, 0);
   return {
     columns: [

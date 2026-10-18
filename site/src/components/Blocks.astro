@@ -3,11 +3,17 @@ import Prose from './Prose.astro';
 import Chart from './Chart.astro';
 import Teams from './Teams.astro';
 import Cites from './Cites.astro';
+import Tiles from './Tiles.astro';
+import Cards from './Cards.astro';
+import Funds from './Funds.astro';
 import type { Prepared } from '../lib/prepare';
 interface Props {
   blocks: Prepared[];
+  /** The level of the subheads: 3 inside the story's chapters, 2 on a page whose sections they head. */
+  level?: 2 | 3;
 }
-const { blocks } = Astro.props;
+const { blocks, level = 2 } = Astro.props;
+const H = level === 3 ? 'h3' : 'h2';
 ---
 {blocks.map((b) =>
   b.kind === 'p' ? <Prose html={b.html} sources={b.sources} numbers={b.numbers} /> :
@@ -20,5 +26,8 @@ const { blocks } = Astro.props;
     </blockquote>
   ) :
   b.kind === 'teams' ? <Teams title={b.title} intro={b.intro} sources={b.sources} numbers={b.numbers} /> :
-  <h2>{b.text}</h2>
+  b.kind === 'stats' ? <Tiles tiles={b.tiles} sources={b.sources} numbers={b.numbers} /> :
+  b.kind === 'cards' ? <Cards cards={b.cards} /> :
+  b.kind === 'funds' ? <Funds funds={b.funds} /> :
+  <H class="subhead" id={b.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}>{b.text}</H>
 )}

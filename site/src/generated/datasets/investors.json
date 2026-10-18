@@ -1,0 +1,185 @@
+{
+ "id": "investors",
+ "title": "The investment funds with current stakes in NBA teams or their parent companies, and each stake",
+ "sources": [
+  "team-ledger",
+  "finance-nba-warriors-sell-minority-stake-204353124",
+  "frontofficesports-arctos-to-buy-17-stake-in-kings-at-1-8b-va",
+  "roi-nj-hbse-to-sell-minority-share-5-to-arctos-sports-p",
+  "sltrib-miller-family-sells-some-its",
+  "sportcal-arctos-acquires-stake-in-monumental-sports-qia-i",
+  "nbcsportsbayarea-source-ranadive-not-part-of-group-selling-s",
+  "frontofficesports-dyal-buys-close-to-6-of-the-atlanta-hawks",
+  "news4jax-michael-jordans-sale-of-majority-ownership-of-ho",
+  "stocktitan-blue-owl-s-home-court-partners-fund-announces-mi",
+  "sports-cavs-owner-dan-gilbert-moving-194805380",
+  "frontofficesports-the-nbas-expanding-private-equity-footprin",
+  "wsls-qatar-investment-authority-is-buying-a-stake-in",
+  "ksat-spurs-name-peter-j-holt-managing-partner-add-aus",
+  "investmentnews-spurs-co-owner-sixth-street-laying-ground-for",
+  "clearygottlieb-sixth-street-invests-in-boston-celtics"
+ ],
+ "base_sources": [
+  "team-ledger"
+ ],
+ "columns": [
+  "fund",
+  "fund_type",
+  "team",
+  "holder",
+  "stake",
+  "entered",
+  "sources"
+ ],
+ "rows": [
+  {
+   "fund": "Arctos Sports Partners",
+   "fund_type": "private equity",
+   "team": "GSW",
+   "holder": "Golden State Group",
+   "stake": "about 5% (later reported at 13% to 15%)",
+   "entered": "2021-04-01",
+   "sources": [
+    "finance-nba-warriors-sell-minority-stake-204353124"
+   ]
+  },
+  {
+   "fund": "Arctos Sports Partners",
+   "fund_type": "private equity",
+   "team": "SAC",
+   "holder": "Sacramento Kings",
+   "stake": "about 17%",
+   "entered": "2021-09",
+   "sources": [
+    "frontofficesports-arctos-to-buy-17-stake-in-kings-at-1-8b-va"
+   ]
+  },
+  {
+   "fund": "Arctos Sports Partners",
+   "fund_type": "private equity",
+   "team": "PHI",
+   "holder": "Harris Blitzer Sports & Entertainment",
+   "stake": "about 5%, bought over time",
+   "entered": "2022-06-06",
+   "sources": [
+    "roi-nj-hbse-to-sell-minority-share-5-to-arctos-sports-p"
+   ]
+  },
+  {
+   "fund": "Arctos Sports Partners",
+   "fund_type": "private equity",
+   "team": "UTA",
+   "holder": "Smith Entertainment Group",
+   "stake": "a minority stake in SEG; about 10% of the Jazz, bought with a partner",
+   "entered": "2022-08-24",
+   "sources": [
+    "sltrib-miller-family-sells-some-its"
+   ]
+  },
+  {
+   "fund": "Arctos Sports Partners",
+   "fund_type": "private equity",
+   "team": "WAS",
+   "holder": "Monumental Sports & Entertainment",
+   "stake": "a minority stake",
+   "entered": "2025-12-18",
+   "sources": [
+    "sportcal-arctos-acquires-stake-in-monumental-sports-qia-i"
+   ]
+  },
+  {
+   "fund": "Blue Owl HomeCourt",
+   "fund_type": "NBA-partnered fund",
+   "team": "SAC",
+   "holder": "Sacramento Kings",
+   "stake": "under 5%",
+   "entered": "2021-07-15",
+   "sources": [
+    "nbcsportsbayarea-source-ranadive-not-part-of-group-selling-s"
+   ]
+  },
+  {
+   "fund": "Blue Owl HomeCourt",
+   "fund_type": "NBA-partnered fund",
+   "team": "ATL",
+   "holder": "Atlanta Hawks",
+   "stake": "about 6%",
+   "entered": "2022-01-04",
+   "sources": [
+    "frontofficesports-dyal-buys-close-to-6-of-the-atlanta-hawks"
+   ]
+  },
+  {
+   "fund": "Blue Owl HomeCourt",
+   "fund_type": "NBA-partnered fund",
+   "team": "CHA",
+   "holder": "Charlotte Hornets",
+   "stake": "undisclosed, in the buyer group",
+   "entered": "2023-08-03",
+   "sources": [
+    "news4jax-michael-jordans-sale-of-majority-ownership-of-ho"
+   ]
+  },
+  {
+   "fund": "Blue Owl HomeCourt",
+   "fund_type": "NBA-partnered fund",
+   "team": "CLE",
+   "holder": "Cleveland Cavaliers",
+   "stake": "reported at 5% to 10%",
+   "entered": "2026-07-06",
+   "sources": [
+    "stocktitan-blue-owl-s-home-court-partners-fund-announces-mi",
+    "sports-cavs-owner-dan-gilbert-moving-194805380"
+   ]
+  },
+  {
+   "fund": "Blue Owl HomeCourt",
+   "fund_type": "NBA-partnered fund",
+   "team": "MIN",
+   "holder": "Minnesota Timberwolves",
+   "stake": "undisclosed",
+   "entered": null,
+   "sources": [
+    "frontofficesports-the-nbas-expanding-private-equity-footprin"
+   ]
+  },
+  {
+   "fund": "Qatar Investment Authority",
+   "fund_type": "sovereign wealth fund",
+   "team": "WAS",
+   "holder": "Monumental Sports & Entertainment",
+   "stake": "about 5%, increased in December 2025",
+   "entered": "2023-06-22",
+   "sources": [
+    "wsls-qatar-investment-authority-is-buying-a-stake-in",
+    "sportcal-arctos-acquires-stake-in-monumental-sports-qia-i"
+   ]
+  },
+  {
+   "fund": "Sixth Street",
+   "fund_type": "investment firm",
+   "team": "SAS",
+   "holder": "Spurs Sports & Entertainment",
+   "stake": "20%",
+   "entered": "2021-06-18",
+   "sources": [
+    "ksat-spurs-name-peter-j-holt-managing-partner-add-aus",
+    "investmentnews-spurs-co-owner-sixth-street-laying-ground-for"
+   ]
+  },
+  {
+   "fund": "Sixth Street",
+   "fund_type": "investment firm",
+   "team": "BOS",
+   "holder": "Boston Celtics",
+   "stake": "reported at 10% to 12.5%",
+   "entered": "2025-08-22",
+   "sources": [
+    "clearygottlieb-sixth-street-invests-in-boston-celtics",
+    "frontofficesports-the-nbas-expanding-private-equity-footprin"
+   ]
+  }
+ ],
+ "note": "From the funds' and teams' releases, filings and reports of each deal. Stakes are as reported; stakes seen only in search results are left out.",
+ "method": "select i.fund, i.fund_type, i.team, i.holder, i.stake, i.entered, coalesce((select list(s.source_id order by s.ord) from investor_sources s where s.team = i.team and s.fund = i.fund), []) as sources from investors i where i.status = 'current' order by i.fund, i.entered nulls last, i.team"
+}

@@ -1,0 +1,23 @@
+---
+/** A row of key figures: each a number in large type over a short label, with one list of sources for the row. */
+import Cites from './Cites.astro';
+interface Props {
+  tiles: { value: string; label: string }[];
+  sources: string[];
+  numbers: number[];
+  /** On a dark band (the story's opening and the page heads). */
+  dark?: boolean;
+}
+const { tiles, sources, numbers, dark = false } = Astro.props;
+---
+<div class:list={['tiles', { 'tiles-dark': dark }]}>
+  <ul class="tiles-list">
+    {tiles.map((t) => (
+      <li class="tile">
+        <span class="tile-v" set:html={t.value} />
+        <span class="tile-l" set:html={t.label} />
+      </li>
+    ))}
+  </ul>
+  {sources.length > 0 && <div class="tiles-src"><span>Sources</span> <Cites ids={sources} numbers={numbers} /></div>}
+</div>

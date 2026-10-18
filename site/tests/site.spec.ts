@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-const PAGES = ['/', '/who-is-behind/', '/arenas/', '/taxes/', '/tax-breaks/', '/threats/', '/leases/', '/households/', '/sources/', '/fact-check/'];
+const PAGES = ['/', '/who-is-behind/', '/who-is-behind/report/', '/arenas/', '/taxes/', '/tax-breaks/', '/threats/', '/leases/', '/households/', '/sources/', '/fact-check/'];
 
 async function visit(page: Page, path: string) {
   const external: string[] = [];
@@ -85,14 +85,34 @@ test('every number in the copy links to its fact-check entry', async ({ page }) 
   }
 });
 
-test('the story renders its headline, key figures and every chart', async ({ page }) => {
+test('the story renders its headline, key figures, contents and every chart', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('h1')).toHaveText('Taxpayers Paid for the NBA’s Arenas. Owners Kept the Gains.');
-  await expect(page.locator('.findings li')).toHaveCount(6);
-  for (const href of await page.$$eval('.findings a.go', (as) => as.map((a) => a.getAttribute('href') ?? '')))
-    await expect(page.locator(href), href).toHaveCount(1);
-  for (const id of ['ball', 'rebuild', 'whopays', 'households', 'trend', 'values', 'owners', 'leases'])
+  await expect(page.locator('.hero .tile')).toHaveCount(4);
+  for (const v of await page.locator('.hero .tile-v').allTextContents()) expect(v.trim()).not.toBe('');
+  const toc = await page.$$eval('.toc a', (as) => as.map((a) => a.getAttribute('href') ?? ''));
+  expect(toc.length).toBe(8);
+  for (const href of toc) await expect(page.locator(href), href).toHaveCount(1);
+  for (const id of ['bill', 'rebuild', 'whopays', 'trend', 'values', 'owners', 'leases'])
     await expect(page.locator(`#fig-${id}`)).toHaveCount(1);
+  // every row of the lead graphic carries its name and its amount
+  const rows = page.locator('#fig-bill .v-wide .bl-row');
+  await expect(rows).toHaveCount(6);
+  for (const r of await rows.all()) {
+    expect((await r.locator('.bl-name').textContent())?.trim()).toBeTruthy();
+    expect((await r.locator('.bl-amt').textContent())?.trim()).toMatch(/^\$/);
+  }
+});
+
+test('the investigation page shows its key figures, the funds and a link to the full report', async ({ page }) => {
+  await page.goto('/who-is-behind/');
+  await expect(page.locator('.head .tile')).toHaveCount(4);
+  await expect(page.locator('.fund')).toHaveCount(4);
+  for (const f of await page.locator('.fund').all()) expect(await f.locator('.fund-stakes li').count()).toBeGreaterThan(0);
+  await expect(page.locator('#fig-owners')).toHaveCount(1);
+  await page.locator('a.cta').click();
+  await expect(page).toHaveURL(/\/who-is-behind\/report\/$/);
+  await expect(page.locator('.report-parts li').first()).toBeVisible();
 });
 
 test('the lead graphic follows the steps as the reader scrolls', async ({ browser }) => {
@@ -115,6 +135,10 @@ test('the team list sorts and opens each team\'s record', async ({ page }) => {
   await page.goto('/');
   const rows = page.locator('.teams-list > li');
   await expect(rows).toHaveCount(30);
+  await expect(page.locator('.teams-list > li:visible')).toHaveCount(10);
+  await page.locator('.teams-more').click();
+  await expect(page.locator('.teams-list > li:visible')).toHaveCount(30);
+  await expect(page.locator('.teams-more')).toBeHidden();
   await expect(page.locator('.teams-sort')).toBeVisible();
   await page.locator('.teams-sort button', { hasText: 'A to Z' }).click();
   await expect(rows.first()).toHaveAttribute('data-name', 'Atlanta Hawks');

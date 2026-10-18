@@ -1,21 +1,34 @@
 ---
 import { paragraph } from '../lib/content';
+import { blockSources } from '../lib/copy';
 import type { Citations } from '../lib/sources';
+import Tiles from './Tiles.astro';
 import meta from '../generated/meta.json';
 import { sitePath } from '../lib/paths';
 interface Props {
-  page: { kicker: string; title: string; deck: string; sources: ({ id: string } | string)[] };
+  page: { kicker: string; title: string; deck: string; sources: ({ id: string } | string)[]; tiles?: { value: string; label: string }[] };
   id: string;
   cites: Citations;
 }
 const { page, id, cites } = Astro.props;
+const own = page.sources.map((s) => (typeof s === 'string' ? s : s.id));
 const title = paragraph(page.title, page.sources, `${id} title`, undefined, { link: false });
 const deck = paragraph(page.deck, page.sources, `${id} deck`, cites);
+// the page's key figures, if it has any, follow the deck
+const tiles = (page.tiles ?? []).map((t, i) => ({
+  value: paragraph(t.value, own, `${id} figure ${i + 1}`).html,
+  label: paragraph(t.label, own, `${id} figure ${i + 1} label`).html,
+}));
+const tileSources = blockSources((page.tiles ?? []).map((t) => `${t.value} ${t.label}`).join(' '), own);
+const tileNumbers = tiles.length ? cites.add(tileSources) : [];
 const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
-<header class="head col">
-  <p class="kicker">{page.kicker}</p>
-  <h1 set:html={title.html} />
-  <p class="deck" set:html={deck.html} />
-  <p class="meta"><span>Data as of {asOf}</span><span>Dollars in 2026 terms unless marked</span><a href={sitePath('/')}>Read the story</a></p>
-</header>
+<div class="band">
+  <header class="head">
+    <p class="kicker">{page.kicker}</p>
+    <h1 set:html={title.html} />
+    <p class="deck" set:html={deck.html} />
+    {tiles.length > 0 && <Tiles tiles={tiles} sources={tileSources} numbers={tileNumbers} dark />}
+    <p class="meta"><span>Data as of {asOf}</span><span>Dollars in 2026 terms unless marked</span><a href={sitePath('/')}>Read the story</a></p>
+  </header>
+</div>

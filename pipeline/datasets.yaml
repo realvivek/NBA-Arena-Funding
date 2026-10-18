@@ -378,6 +378,20 @@ datasets:
   row_sources: sources
   note: From the arena agreements, audits and budgets reviewed. sale_share is 'no' where the documents allow a sale with no payment to the public, 'none_found' where no clause was found in the documents reviewed, 'unknown' where the agreement could not be reached, and 'private_arena' where there is no public arena deal.
 
+- id: investors
+  title: The investment funds with current stakes in NBA teams or their parent companies, and each stake
+  sql: |
+    select i.fund, i.fund_type, i.team, i.holder, i.stake, i.entered,
+           coalesce((select list(s.source_id order by s.ord) from investor_sources s
+                     where s.team = i.team and s.fund = i.fund), []) as sources
+    from investors i
+    where i.status = 'current'
+    order by i.fund, i.entered nulls last, i.team
+  sources: [team-ledger]
+  row_sources: sources
+  require_row_sources: true
+  note: From the funds' and teams' releases, filings and reports of each deal. Stakes are as reported; stakes seen only in search results are left out.
+
 - id: ownership
   title: Who owns each team, the controlling owners' main source of wealth, and the investment funds with stakes
   sql: |
