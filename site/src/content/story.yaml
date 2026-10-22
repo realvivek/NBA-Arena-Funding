@@ -200,8 +200,8 @@ next:
         move a team at least {{threats_counted}} times in the episodes documented here, and public money followed in
         the same city {{threats_same_city}} times, {{lag_within_24}} of them within {{lag_window}} months. In
         Portland, where the team was sold in 2026 to a buyer from Dallas, the state's money is approved but still
-        pending.
-      sources: [threat-ledger, ledger]
+        pending; on Oct. 21, 2026, the city said it and the team had not yet agreed on the essential terms of a lease.
+      sources: [threat-ledger, ledger, portland-ordinance-192244]
     - fig: leases
     - p: >-
         The asking has already begun. Memphis is holding **{{mem_pending}}** for a FedExForum renovation until the
@@ -217,13 +217,14 @@ next:
       sources: [okc-oklahoma-city-and-thunder-break-ground-on-contin, okc-okc-and-thunder-approve-agreements-to-keep-the-thu]
     - p: >-
         Expansion would bring more deals. In March 2026 the league's owners voted to explore adding teams in Las
-        Vegas and Seattle, and the labor contract keeps any expansion fees out of the revenue the league shares with
-        players. Seattle already shares arena-related tax revenue with the company that leases its arena:
+        Vegas and Seattle. The labor contract keeps any expansion fees out of the revenue the league shares with
+        players, and owners expect {{expansion_fee_min}} to {{expansion_fee_max}} each, ESPN reported in October 2026,
+        money that teams have planned to spend on rosters, arena upgrades or debt. Seattle already shares arena-related tax revenue with the company that leases its arena:
         **{{sea_arena_payments_2024}}** in 2024. Nevada exempts games played by its own professional teams from its
         {{nv_live_ent_tax}} tax on live entertainment, and it has put public money into stadiums before: up to
         {{nv_nfl_bonds}} of county bonds for an NFL stadium in 2016 and up to {{nv_mlb_cap}} for a baseball stadium
         in 2023.
-      sources: [nba-pr-expansion-las-vegas-seattle-2026, nba-cba-2023, seattle-2026-adopted-budget-finance-general, seattle-2025-26-proposed-budget-finance-general, nv-nrs-368a-live-entertainment-tax, nv-sb1-2016-stadium-bonds, nv-sb1-2023-mlb-stadium]
+      sources: [nba-pr-expansion-las-vegas-seattle-2026, nba-cba-2023, espn-nba-intel-seattle-expansion-2026-10-16, seattle-2026-adopted-budget-finance-general, seattle-2025-26-proposed-budget-finance-general, nv-nrs-368a-live-entertainment-tax, nv-sb1-2016-stadium-bonds, nv-sb1-2023-mlb-stadium]
   more:
     - { page: leases, text: 'Every lease and its exit terms' }
     - { page: threats, text: 'All the threat episodes' }
@@ -275,8 +276,46 @@ claims:
           value: Not by the evidence
           text: >-
             Economists who reviewed more than {{research_studies}} studies over {{research_years}} years found "very
-            limited economic impacts of professional sports teams and stadiums."
-          sources: [bradbury-2023]
+            limited economic impacts of professional sports teams and stadiums." A 2026 study of Detroit found that
+            sports events at its new arena were not associated with a significant rise in demand for hotel rooms or
+            short-term rentals.
+          sources: [bradbury-2023, jakar-2026-detroit-sport-tourism]
+    - h3: What the deals promised
+    - p: >-
+        Where the records allow a check, housing and development promises fell short, revenue promises went both
+        ways, and hiring goals were met in some cities and missed in others.
+    - cards:
+        - title: Sacramento
+          value: Revenue
+          text: >-
+            The city told bond investors in 2015 that parking revenue would cover its arena payments, with "no net
+            effect on the General Fund." By 2023 the general fund had paid more than {{sac_gf_backfill}} over
+            {{sac_gf_backfill_years}} years.
+          sources: [cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c, fieldofschemes-why-the-kings-arena-parking-revenue-fiasco-is-bad]
+        - title: Detroit
+          value: Hiring
+          text: >-
+            The 2013 agreement required Detroit residents to fill at least {{det_hire_target}} of the construction
+            jobs. They worked {{det_hire_actual}} of the hours, and contractors paid {{det_hire_fines}} in fines.
+          sources: [michigan-snyder-detroit-arena-4380-jobs-2013, constructiondive-detroit-arena-local-hire-fines-2018]
+        - title: Brooklyn
+          value: Housing
+          text: >-
+            The development around Barclays Center promised {{bkn_affordable_promised}} affordable apartments. By
+            the 2025 deadline {{bkn_affordable_built}} were built, and the state accepted a {{bkn_affordable_penalty}}
+            penalty for the rest.
+          sources: [ibo-atlantic-yards-2005, citylimits-atlantic-yards-reboot-2026]
+        - title: Miami
+          value: Profit share
+          text: >-
+            The county was promised {{mia_profit_share}} of the arena's net cash flow above {{mia_profit_threshold}}
+            a year. The formula paid once, {{mia_profit_paid}} in 2013, and the clause was dropped in 2014.
+          sources: [miamidadeig-ig11-34finalbasketball, miamidade-2014-06-03-bcc]
+    - p: >-
+        Some promises held. Sacramento's arena exceeded its local-hiring goals, the city auditor found, and Salt Lake
+        City's arena sales tax, projected to raise about {{slc_tax_projection}} over {{slc_tax_projection_years}}
+        years, brought in {{slc_tax_fy2026}} in its first full fiscal year.
+      sources: [sacramento-auditor-golden1-hiring-2017, slc-council-sec-district-2024, utah-tax-distributions]
 
 method:
   n: 9
@@ -288,6 +327,15 @@ method:
         {{sources_independent}} from news organizations, researchers and reference works. Each is labeled as computed, taken from a primary document,
         or taken from the press or another secondary source.
       sources: [ledger, team-ledger]
+    - p: >-
+        The totals line up with the most complete academic count, J.C. Bradbury's 2026 database of venue costs, which
+        builds on Judith Grant Long's: it puts public money for building today's {{arenas_n}} arenas at
+        {{bradbury_public_2026}} in 2026 dollars, against {{construction_public}} here before Barclays Center's PILOT
+        bonds. Arena by arena they often differ, at {{bradbury_gap_n}} of the {{bradbury_compared_n}} arenas with public
+        money in either count by more than a tenth, mostly over land, site work, purchases and bonds repaid by a team
+        or by property taxes. Like most published estimates, it counts only construction; renovations, purchases and
+        yearly payments add {{non_construction_public}} here.
+      sources: [bradbury-2026-venue-database, ledger]
     - p: >-
         Dollars are in 2026 terms, converted with the Consumer Price Index for All Urban Consumers, not seasonally
         adjusted, on the January-August 2026 average ({{cpi_base}}). Pending deals are reported but not counted.

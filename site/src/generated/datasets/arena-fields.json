@@ -18,6 +18,7 @@
   "ilga-003502000k10-220",
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
+  "ideastream-county-tax-vote-cavs-guardians",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
   "milehighcre-rezoning-70-acres-around-ball-arena",
   "sec-0001047469-98-001379",
@@ -70,6 +71,7 @@
   "portland-2024-annual-comprehensive-financial-report",
   "oregon-moda-center-arena-comparable-structure-overview",
   "portland-adopted",
+  "oregonian-moda-center-talks-dundon-2026-10-21",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
   "efiles",
   "cityofsacramento-city-of-sacramento-2025-acfr",
@@ -101,6 +103,7 @@
   "ilga-003502000k10-220",
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
+  "ideastream-county-tax-vote-cavs-guardians",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
   "milehighcre-rezoning-70-acres-around-ball-arena",
   "sec-0001047469-98-001379",
@@ -153,6 +156,7 @@
   "portland-2024-annual-comprehensive-financial-report",
   "oregon-moda-center-arena-comparable-structure-overview",
   "portland-adopted",
+  "oregonian-moda-center-talks-dundon-2026-10-21",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
   "efiles",
   "cityofsacramento-city-of-sacramento-2025-acfr",
@@ -302,12 +306,13 @@
    "conduit_note": null,
    "bond_detail": null,
    "lease_terms": "Through 2033-34 season + two successive 5-yr TEAM options",
-   "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds",
-   "lease_label": "b",
+   "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds; a recent assessment says the arena and the ballpark \"will need more than $400 million for repairs through 2037,\" and the city and county are drafting a plan that could raise sales and sin taxes (Ideastream, Oct 19 2026, c)",
+   "lease_label": "b/c",
    "property_tax_sources": [],
    "lease_sources": [
     "gateway-edc-audit-2022",
-    "gwcomplex-board-packet-12-17-25"
+    "gwcomplex-board-packet-12-17-25",
+    "ideastream-county-tax-vote-cavs-guardians"
    ],
    "tax_break_sources": []
   },
@@ -485,7 +490,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "2002 Memphis & Shelby County (sports authority) $296M tax-exempt",
-   "lease_terms": "Current lease ends after 2028-29 season; $550M renovation/new lease still unsigned as of Oct 16 2026 (the Oct 8 2026 Sports Authority agenda lists a construction agreement and a funding-agreement amendment; press reports approval)",
+   "lease_terms": "Current lease ends after 2028-29 season; $550M renovation/new lease still unsigned as of Oct 22 2026 (the Oct 8 2026 Sports Authority agenda lists a construction agreement and a funding-agreement amendment; press reports approval)",
    "exit_penalty": "(Attendance clause/2022 settlement already known - excluded)",
    "lease_label": "c",
    "property_tax_sources": [],
@@ -704,7 +709,7 @@
    "conduit_note": null,
    "bond_detail": "2027 State of Oregon debt (SB 1501, Oregon Laws 2026 ch. 74) - pl $365M planned",
    "lease_terms": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); the 2024 bridge agreement has a five-year option to extend through 2035 (City Ordinance 191857, per ACFR FY2024, b); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026 (Resolution 37750)",
-   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b)",
+   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c)",
    "lease_label": "b/c",
    "property_tax_sources": [
     "wweek-proposed-city-purchase-of-moda-center-would-trig",
@@ -713,7 +718,8 @@
    "lease_sources": [
     "portland-2024-annual-comprehensive-financial-report",
     "oregon-moda-center-arena-comparable-structure-overview",
-    "portland-adopted"
+    "portland-adopted",
+    "oregonian-moda-center-talks-dundon-2026-10-21"
    ],
    "tax_break_sources": []
   },

@@ -75,6 +75,14 @@ sources:
   origin: independent
   date: '2006-10-25'
   checked: '2026-10-18'
+- id: ap-shapiro-no-state-money-arenas-2025
+  url: https://www.wcexaminer.com/2025/06/22/shapiro-remains-steadfast-on-no-state-money-for-new-arenas
+  title: Josh Shapiro remains steadfast on no Pa. state money for new arenas
+  title_from: page title
+  publisher: The Associated Press (via the Wyoming County Examiner)
+  origin: independent
+  date: '2025-06-22'
+  checked: '2026-10-22'
 - id: archive-doc5530-1992-10-22-1
   url: https://archive.org/details/DOC5530_1992-10-22_1
   title: Report and Decision on the Application for Approval of Garden Corporation to Undertake a Project in Boston, Massachusetts under Mass. G.L. c.121A
@@ -400,6 +408,14 @@ sources:
   origin: independent
   date: '2021-01-21'
   checked: '2026-10-11'
+- id: bradbury-2026-venue-database
+  url: https://github.com/jcbradbury/This-One-Will-Be-Different/blob/260e4fcdb3f94e056fefaaf052b524bef99cbf73/data/venuesdb_base.csv
+  title: 'This One Will Be Different: venue database (venuesdb_base.csv), commit 260e4fc'
+  title_from: curated
+  publisher: J.C. Bradbury (data for This One Will Be Different, Oxford University Press, 2026; CC BY 4.0)
+  origin: independent
+  date: '2026-10-13'
+  checked: '2026-10-22'
 - id: businessreport-lease-deal-on-n-o-arena-a-signal-of-hornets-c
   url: https://www.businessreport.com/article/lease-deal-on-n-o-arena-a-signal-of-hornets-commitment-to-stay
   title: 'Lease deal on N.O. Arena: A signal of Hornets’ commitment to stay?'
@@ -560,6 +576,14 @@ sources:
   origin: independent
   date: '2026-06-26'
   checked: '2026-10-18'
+- id: citylimits-atlantic-yards-reboot-2026
+  url: https://citylimits.org/in-atlantic-yards-reboot-new-developers-seek-more-subsidies-2382-more-apartments-but-only-366-more-affordable-ones/
+  title: In Atlantic Yards Reboot, New Developers Seek More Subsidies & 2,382 More Apartments, But Only 366 More Affordable Ones
+  title_from: page title
+  publisher: City Limits
+  origin: independent
+  date: '2026-09-24'
+  checked: '2026-10-22'
 - id: cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c
   url: https://www.cityofsacramento.gov/content/dam/portal/treasurer/DebtManagement/officialstatements/lease-revenue-revenue/2015_Lease_Revenue_Bonds_Series_2015_(G1C)_Taxable.pdf
   title: 'Remarketing Circular: $272,870,000 Sacramento Public Financing Authority Lease Revenue Bonds, Series 2015 (Golden 1 Center) (Federally Taxable)'
@@ -640,6 +664,14 @@ sources:
   origin: government
   date: '2024-10-21'
   checked: '2026-10-11'
+- id: constructiondive-detroit-arena-local-hire-fines-2018
+  url: https://www.constructiondive.com/news/local-hire-fines-for-detroit-arena-contractors-climb-to-52m/519688/
+  title: Local hire fines for Detroit arena contractors climb to $5.2M
+  title_from: page title
+  publisher: Construction Dive
+  origin: independent
+  date: '2018-03-22'
+  checked: '2026-10-22'
 - id: cookcountytreasurer-pappasportalnewsletter
   url: https://www.cookcountytreasurer.com/pappasportalnewsletter.aspx?newsletterid=2026052601
   title: 'Illinois Megaproject Bill: A Bears Incentive with Wide Property Tax Ramifications'
@@ -874,6 +906,15 @@ sources:
   origin: independent
   date: '2010-12-05'
   checked: '2026-10-11'
+- id: espn-nba-intel-seattle-expansion-2026-10-16
+  url: https://www.espn.com/nba/story/_/id/50190888/preseason-intel-expansion-seattle-towns-extensions
+  title: 'NBA intel: Seattle expansion update, Towns extension drama, more from preseason'
+  title_from: curated
+  publisher: ESPN
+  origin: independent
+  date: '2026-10-16'
+  checked: '2026-10-22'
+  review: story page returns an empty page to scripts; title, date and text from ESPN's public news interface
 - id: espn-print
   url: https://www.espn.com/espn/print?id=1334984&type=news
   title: Council willing to amend 'new owner' statement
@@ -899,6 +940,22 @@ sources:
   date: '2026-10-02'
   checked: '2026-10-18'
   review: page returns HTTP 202 to scripts; title and date from ESPN's story feed
+- id: expressnews-442m-bond-2026-09-30
+  url: https://www.yahoo.com/news/politics/articles/city-staff-proposes-442-million-172613670.html
+  title: City staff proposes $442 million bond to avoid property tax hike, but some council members eye $1 billion
+  title_from: page title
+  publisher: San Antonio Express-News (via Yahoo News)
+  origin: independent
+  date: '2026-09-30'
+  checked: '2026-10-22'
+- id: expressnews-bond-appointments-2026-10-19
+  url: https://www.yahoo.com/news/politics/articles/amid-strife-city-council-members-181510641.html
+  title: Amid strife, City Council members move to limit mayor's power to make bond appointments
+  title_from: page title
+  publisher: San Antonio Express-News (via Yahoo News)
+  origin: independent
+  date: '2026-10-19'
+  checked: '2026-10-22'
 - id: fieldofschemes
   url: https://www.fieldofschemes.com/2016/11/02/11760/
   title: Atlanta mayor proposes giving Hawks $142.5m for arena renovations, because they asked nicely
@@ -939,6 +996,14 @@ sources:
   origin: independent
   date: '2011-02-21'
   checked: '2026-10-18'
+- id: fieldofschemes-why-the-kings-arena-parking-revenue-fiasco-is-bad
+  url: https://www.fieldofschemes.com/2023/10/23/20519/why-the-kings-arena-parking-revenue-fiasco-is-bad-but-not-really-that-bad/
+  title: Why the Kings arena parking revenue fiasco is bad but not really that bad
+  title_from: page title
+  publisher: Field of Schemes
+  origin: independent
+  date: '2023-10-23'
+  checked: '2026-10-22'
 - id: finance-nba-warriors-sell-minority-stake-204353124
   url: https://finance.yahoo.com/news/nba-warriors-sell-minority-stake-204353124.html
   title: NBA's Warriors Sell Minority Stake to Arctos at $5.5 Billion Valuation
@@ -1435,6 +1500,14 @@ sources:
   origin: independent
   date: n.d.
   checked: '2026-10-18'
+- id: fox4-mavericks-begin-zoning-valley-view
+  url: https://www.fox4news.com/sports/dallas-mavericks-begin-zoning-process-new-far-north-dallas-arena-site
+  title: Dallas Mavericks begin zoning process for new Far North Dallas arena site
+  title_from: page title
+  publisher: FOX 4 Dallas-Fort Worth
+  origin: independent
+  date: '2026-09-09'
+  checked: '2026-10-22'
 - id: fox5ny-dallas-mavericks-sale-miriam-adelson
   url: https://www.fox5ny.com/sports/dallas-mavericks-sale-miriam-adelson
   title: Adelson family confirms efforts to buy Dallas Mavericks from Mark Cuban
@@ -1766,6 +1839,14 @@ sources:
   origin: government
   date: '2023-03-29'
   checked: '2026-10-16'
+- id: ibo-atlantic-yards-2005
+  url: https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2005/2005-september-atlantic-yards-a-net-fiscal-benefit-for-the-city.pdf
+  title: 'Atlantic Yards: A Net Fiscal Benefit for the City? (Fiscal Brief)'
+  title_from: curated
+  publisher: New York City Independent Budget Office
+  origin: government
+  date: 2005-09
+  checked: '2026-10-22'
 - id: ibo-msg-property-tax-exemption-2023-report
   url: https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/taxes-and-other-revenues/2023/2023-july-an-examination-of-the-madison-square-garden-property-tax-exemption.pdf
   title: An Examination of the Madison Square Garden Property Tax Exemption
@@ -1782,6 +1863,14 @@ sources:
   origin: independent
   date: '2019-06-12'
   checked: '2026-10-11'
+- id: ideastream-county-tax-vote-cavs-guardians
+  url: https://www.ideastream.org/government-politics/2026-10-19/state-bill-would-require-vote-on-county-tax-hikes-complicating-plan-to-fund-cavs-guardians
+  title: State bill would require vote on county tax hikes, complicating plan to fund Cavs, Guardians
+  title_from: curated
+  publisher: Ideastream Public Media
+  origin: independent
+  date: '2026-10-19'
+  checked: '2026-10-22'
 - id: ilga-003502000k10-220
   url: https://www.ilga.gov/Documents/legislation/ilcs/documents/003502000K10-220.htm
   title: '35 ILCS 200/10-220: Valuation (Property Tax Code, sports stadium property)'
@@ -1838,6 +1927,15 @@ sources:
   origin: team_or_league
   date: '2026-09-30'
   checked: '2026-10-18'
+- id: jakar-2026-detroit-sport-tourism
+  url: https://doi.org/10.1123/jsm.2025-0050
+  title: 'Sport Tourism in the "D": New Sport Venues and the Lodging Industry (Jakar, Binesh and Kaplanidou)'
+  title_from: curated
+  publisher: Journal of Sport Management (via DOI)
+  origin: independent
+  date: '2026'
+  checked: '2026-10-22'
+  review: publisher page refuses scripts; title and abstract from the Crossref record
 - id: katu-silver-warns-moda-center-renovation-talks-off-tr
   url: https://katu.com/sports/trail-blazers/story/silver-warns-moda-center-renovation-talks-off-track-fueling-blazers-future-concerns-portland-city-council-adam-national-basketball-association-nba-ripcity-mayor-wilson
   title: NBA's Silver warns Moda Center renovation talks off track, fueling Blazers future concerns
@@ -1870,6 +1968,14 @@ sources:
   origin: independent
   date: '2025-06-18'
   checked: '2026-10-11'
+- id: kgw-dundon-keeping-blazers-priority-2026-10-16
+  url: https://sports.yahoo.com/articles/report-dundon-says-keeping-blazers-233153152.html
+  title: 'Report: Dundon says keeping Blazers in Portland ''is the priority''; Moda Center deadline is flexible'
+  title_from: page title
+  publisher: KGW (via Yahoo Sports)
+  origin: independent
+  date: '2026-10-16'
+  checked: '2026-10-22'
 - id: knpr-will-milwaukee-bucks-find-new-home-las-vegas
   url: https://knpr.org/knpr/2015-07/will-milwaukee-bucks-find-new-home-las-vegas
   title: Will The Milwaukee Bucks Find A New Home In Las Vegas?
@@ -2265,6 +2371,14 @@ sources:
   origin: independent
   date: '2010-12-21'
   checked: '2026-10-11'
+- id: michigan-snyder-detroit-arena-4380-jobs-2013
+  url: https://www.michigan.gov/formergovernors/recent/snyder/press-releases/2013/07/24/detroit-arena-entertainment-project-expected-to-create-4380-construction-jobs-and-help-revitalize
+  title: 'Snyder: Detroit arena/entertainment project expected to create 4,380 construction jobs and help revitalize city'
+  title_from: page title
+  publisher: Office of Gov. Rick Snyder (State of Michigan)
+  origin: independent
+  date: '2013-07-24'
+  checked: '2026-10-22'
 - id: milehighcre-rezoning-70-acres-around-ball-arena
   url: https://milehighcre.com/city-council-approves-rezoning-of-70-acres-around-ball-arena/
   title: City Council Approves Rezoning of 70 Acres Around Ball Arena
@@ -2450,6 +2564,14 @@ sources:
   origin: independent
   date: '2026-05-04'
   checked: '2026-10-18'
+- id: news4sa-spurs-garages-state-road-money
+  url: https://news4sanantonio.com/news/investigations/spurs-building-parking-garages-at-arena-site-say-state-will-help-fund-road-improvements
+  title: Spurs building parking garages at arena site, say state will help fund road improvements
+  title_from: page title
+  publisher: News 4 San Antonio
+  origin: independent
+  date: '2026-10-20'
+  checked: '2026-10-22'
 - id: news5cleveland-cavaliers-withdraw-from-140-million-quicken-l
   url: https://www.news5cleveland.com/sports/basketball/cavaliers/cavaliers-withdraw-from-140-million-quicken-loans-arena-transformation-project
   title: Cavaliers withdraw from $140 million Quicken Loans Arena transformation project
@@ -2700,6 +2822,14 @@ sources:
   origin: government
   date: n.d.
   checked: '2026-10-16'
+- id: oregonian-moda-center-talks-dundon-2026-10-21
+  url: https://sports.yahoo.com/articles/moda-center-talks-tom-dundon-215452701.html
+  title: In Moda Center talks, Tom Dundon and city officials are 10 years, $1 billion and one jet ride apart
+  title_from: curated
+  publisher: The Oregonian (via Yahoo Sports)
+  origin: independent
+  date: '2026-10-21'
+  checked: '2026-10-22'
 - id: otpp-teachers-completes-1-32-billion-sale-of-mlse
   url: https://www.otpp.com/en-ca/about-us/news-and-insights/2012/teachers-completes-1-32-billion-sale-of-mlse/
   title: Teachers' completes $1.32-billion sale of MLSE
@@ -2829,6 +2959,22 @@ sources:
   origin: government
   date: '2026-08-12'
   checked: '2026-10-16'
+- id: portland-joint-authority-agreement-2026
+  url: https://www.portland.gov/sites/default/files/council-documents/2026/ExhibitA_JAA-Final--29Sep2026-SIGNED.pdf
+  title: 'Exhibit A to Ordinance 192244: Intergovernmental Agreement establishing the Oregon Arena Joint Authority (state draft dated Sept. 29, 2026)'
+  title_from: curated
+  publisher: City of Portland
+  origin: government
+  date: '2026-09-29'
+  checked: '2026-10-22'
+- id: portland-ordinance-192244
+  url: https://www.portland.gov/council/documents/ordinance/passed/192244
+  title: 'Ordinance 192244: Authorize Intergovernmental Agreement between the City, State of Oregon, and Multnomah County to establish the Oregon Arena Joint Authority'
+  title_from: curated
+  publisher: City of Portland
+  origin: government
+  date: '2026-10-21'
+  checked: '2026-10-22'
 - id: pr-nba-board-of-governors-suns-mercury-sale-mat-ish
   url: https://pr.nba.com/nba-board-of-governors-suns-mercury-sale-mat-ishbia
   title: NBA Board of Governors approves sale of Suns and Mercury to ownership group led by Mat Ishbia
@@ -2919,6 +3065,23 @@ sources:
   date: '2014-05-21'
   checked: '2026-10-11'
   review: not reached (connection failed); title and date from the citation in the Wikipedia article Golden 1 Center
+- id: sacramento-auditor-golden1-hiring-2017
+  url: http://sacramento.granicus.com/MetaViewer.php?view_id=21&event_id=3117&meta_id=508994
+  title: Follow-Up Audit of the Golden1 Center Local Hiring and Business Involvement (Budget and Audit Committee report, File ID 2017-01564)
+  title_from: curated
+  publisher: City of Sacramento, Office of the City Auditor
+  origin: government
+  date: '2017-12-05'
+  checked: '2026-10-22'
+- id: sacurrent-council-weighs-property-tax-bond-2026
+  url: https://www.sacurrent.com/news/some-on-city-council-weigh-another-property-tax-hike-others-say-residents-have-had-enough/
+  title: Some on City Council weigh another property tax hike, others say residents have had enough
+  title_from: url
+  publisher: San Antonio Current
+  origin: independent
+  date: '2026-10-15'
+  checked: '2026-10-22'
+  review: HTTP 429 to scripts; title from the address, date and text read by the October 22 news check
 - id: sacurrent-mccombs-family-returns-as-part-owners-of-san-ant
   url: https://www.sacurrent.com/arts/mccombs-family-returns-as-part-owners-of-san-antonio-spurs-33365908/
   title: McCombs family returns as part owners of San Antonio Spurs
@@ -3191,6 +3354,14 @@ sources:
   origin: independent
   date: '2023-08-29'
   checked: '2026-10-11'
+- id: slc-council-sec-district-2024
+  url: https://www.slc.gov/council/salt-lake-city-council-approves-sports-entertainment-culture-and-convention-district/
+  title: Salt Lake City Council approves Sports, Entertainment, Culture and Convention District
+  title_from: curated
+  publisher: Salt Lake City Council
+  origin: government
+  date: '2024-10-01'
+  checked: '2026-10-22'
 - id: slc-slc-acfr-06-30-2025
   url: https://www.slc.gov/Finance/wp-content/uploads/sites/3/2026/04/SLC-ACFR-06.30.2025.pdf
   title: Salt Lake City Corporation Annual Comprehensive Financial Report for the Year Ended June 30, 2025

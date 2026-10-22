@@ -37,13 +37,16 @@ for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bonds.csv')):
     elif r['tax_status']!='planned': k['par_te']+=p
     k['rows'].append(f"{r['year']} {r['issuer_series'][:60]} ${p:g}M {r['tax_status']}")
 # federal cost of tax-exempt bonds: only each issue's new money for the arena (fed_cost_par_m), converted from the year
-# whose dollars its par is stated in (2014 for the issues taken from Gayer, Drukker and Gold's Table 3)
+# whose dollars its par is stated in (2014 for the issues taken from Gayer, Drukker and Gold's Table 3). For those
+# issues their published present value of the revenue loss (from each issue's redemption schedule) is used; for the
+# others, the level 30-year approximation in nba_arena_bond_federal_cost.csv
 counted={(r['team'],r['year'],r['issuer_series']):r for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bonds.csv')) if r['fed_cost_par_m']}
 fedpv=defaultdict(float); fedpv26=defaultdict(float)  # present value at issue, in the dollars of the par and in 2026 dollars
 for r in csv.DictReader(open(DATA+'/tax_mechanisms/nba_arena_bond_federal_cost.csv')):
     b=counted.get((r['team'],r['year'],r['issuer_series']))
     if r['tau']=='0.28' and b:
-        pv=float(r['pv3_30yr_fed_loss_m'])*float(b['fed_cost_par_m'])/float(b['par_m'])
+        loss=float(b['gdg_pv3_revenue_loss_m']) if b['gdg_pv3_revenue_loss_m'] else float(r['pv3_30yr_fed_loss_m'])
+        pv=loss*float(b['fed_cost_par_m'])/float(b['par_m'])
         fedpv[r['team']]+=pv; fedpv26[r['team']]+=pv*f26(int(b['par_dollars_year']))
 
 hh=json.load(open(DATA+'/inputs/census/acs2024_B11001.json'))

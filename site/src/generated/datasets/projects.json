@@ -5,6 +5,7 @@
   "ledger",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
   "dmagazine-the-one-post-you-need-to-read-about-the-mavs-goi",
+  "fox4-mavericks-begin-zoning-valley-view",
   "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "tri-statedefender-p-349496",
@@ -23,11 +24,14 @@
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
   "axios-sixers-flyers-new-arena-comcast-spectacor",
   "6abc-arena-76ers-flyers-marks-new-era-philadelphia-sp",
+  "ap-shapiro-no-state-money-arenas-2025",
   "efiles",
   "olis-enrolled",
   "portland-adopted",
   "oregon-moda-center-project",
   "multco-resolution-2026-060",
+  "portland-ordinance-192244",
+  "portland-joint-authority-agreement-2026",
   "tpr-heres-whats-in-the-downtown-arena-term-sheet-the",
   "tpr-san-antonio-inches-closer-to-buying-property-for",
   "ksat-results-props-a-and-b-for-coliseum-complex-downt",
@@ -35,6 +39,10 @@
   "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
   "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
   "tpr-city-scraps-garage-project-marvel-2027-bond",
+  "sacurrent-council-weighs-property-tax-bond-2026",
+  "expressnews-bond-appointments-2026-10-19",
+  "expressnews-442m-bond-2026-09-30",
+  "news4sa-spurs-garages-state-road-money",
   "utah-pmn",
   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
   "dccouncil-4-2-24-arena-funding-memo",
@@ -73,12 +81,13 @@
    "public_construction_nominal_m": 0.0,
    "public_renovation_pending_nominal_m": null,
    "private_construction_nominal_m": null,
-   "public_construction_notes": "Preliminary agreement on 104 acres of the former Valley View Mall site, about 10 miles north of downtown, for an arena to open by 2031, when the American Airlines Center lease expires (AP via WTOP, June 1 2026); no public financing deal reported. A D Magazine post read earlier reported that Legends was hired as owner's representative and that the site lies in the Mall Area Redevelopment TIF district; it could not be re-read on Oct. 17 2026 (403).",
+   "public_construction_notes": "Preliminary agreement on 104 acres of the former Valley View Mall site, about 10 miles north of downtown, for an arena to open by 2031, when the American Airlines Center lease expires (AP via WTOP, June 1 2026); no public financing deal reported. A D Magazine post read earlier reported that Legends was hired as owner's representative and that the site lies in the Mall Area Redevelopment TIF district; it could not be re-read on Oct. 17 2026 (403). The team began the rezoning process in September 2026 (FOX 4, Sept 9 2026); no public financing request reported as of Oct 22 2026.",
    "lease_terms": "AAC lease ends 2031",
    "notes_and_gaps": "Status: planned (no financing deal)",
    "sources": [
     "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
-    "dmagazine-the-one-post-you-need-to-read-about-the-mavs-goi"
+    "dmagazine-the-one-post-you-need-to-read-about-the-mavs-goi",
+    "fox4-mavericks-begin-zoning-valley-view"
    ]
   },
   {
@@ -181,12 +190,13 @@
    "public_construction_nominal_m": 0.0,
    "public_renovation_pending_nominal_m": null,
    "private_construction_nominal_m": null,
-   "public_construction_notes": "Teams call it \"the largest fully privately funded project in city history\" (Sept 2026 renderings); needs City Council approvals; Gov. Shapiro said (Jan 2025) he would review whether the state invests - no decision found.",
+   "public_construction_notes": "Teams call it \"the largest fully privately funded project in city history\" (Sept 2026 renderings); needs City Council approvals; Gov. Shapiro \"reaffirmed the state would provide no funding for any new sports arenas\" (AP, June 22 2025); no state money found.",
    "lease_terms": "n/a (team-owned)",
    "notes_and_gaps": "Status: planned (approvals pending)",
    "sources": [
     "axios-sixers-flyers-new-arena-comcast-spectacor",
-    "6abc-arena-76ers-flyers-marks-new-era-philadelphia-sp"
+    "6abc-arena-76ers-flyers-marks-new-era-philadelphia-sp",
+    "ap-shapiro-no-state-money-arenas-2025"
    ]
   },
   {
@@ -201,7 +211,7 @@
    "public_construction_nominal_m": null,
    "public_renovation_pending_nominal_m": 573.0,
    "private_construction_nominal_m": null,
-   "public_construction_notes": "Same money as the POR row pending renovation (not double counted). PENDING: State up to $365M (SB 1501, enacted, conditional; bond sale expected spring 2027 per DAS) + County up to $88M + City up to $120M (term sheet approved Aug 12 2026, non-binding) = $573M; plus ongoing money (city up to $275.0M over 20 years, county $13.6M) not counted; Multnomah County approved the Joint Authority Agreement Oct 1 2026, which \"does not commit the parties to the funding\" (Resolution 2026-060); SB 1501's other conditions must be met by the end of December 2026 for a spring 2027 bond sale (DAS); NBA approval of the sale complete",
+   "public_construction_notes": "Same money as the POR row pending renovation (not double counted). PENDING: State up to $365M (SB 1501, enacted, conditional; bond sale expected spring 2027 per DAS) + County up to $88M + City up to $120M (term sheet approved Aug 12 2026, non-binding) = $573M; plus ongoing money (city up to $275.0M over 20 years, county $13.6M) not counted; Multnomah County approved the Joint Authority Agreement Oct 1 2026, which \"does not commit the parties to the funding\" (Resolution 2026-060), and Portland City Council authorized it Oct 21 2026 (Ordinance 192244, 8-4), which \"does not commit the City to any arena lease terms or funding obligations\"; its impact statement says the city and Rip City Management \"have not yet agreed on the essential terms of a long-term lease\"; the agreement lets any party withdraw if definitive documents are not signed by July 1 2028, its \"Outside Date\" (s.11.4); SB 1501's other conditions must be met by the end of December 2026 for a spring 2027 bond sale (DAS); NBA approval of the sale complete",
    "lease_terms": "20-yr lease sought",
    "notes_and_gaps": "Status: pending",
    "sources": [
@@ -209,7 +219,9 @@
     "olis-enrolled",
     "portland-adopted",
     "oregon-moda-center-project",
-    "multco-resolution-2026-060"
+    "multco-resolution-2026-060",
+    "portland-ordinance-192244",
+    "portland-joint-authority-agreement-2026"
    ]
   },
   {
@@ -224,7 +236,7 @@
    "public_construction_nominal_m": 311.0,
    "public_renovation_pending_nominal_m": 549.0,
    "private_construction_nominal_m": 500.0,
-   "public_construction_notes": "Bexar County Prop B (Nov 2025, 52.1%): venue tax (hotel 1.75%->2% + 5% car rental) up to $311M or 25% of the cost, whichever is lower (KSAT). PENDING: City up to $489M under a non-binding term sheet (Aug 2025, 7-4): the lesser of 38% of the arena cost or $489M (s.2c), expected to be funded in 2028 and conditional on voter passage of a city bond program for the first phase of transportation and pedestrian infrastructure (Financing Addendum, Attachment III); the city's share of district roads and sidewalks for its 2027 bond is now estimated at $35M, about 20% of $175M of projects with the state transportation department assumed to pay 80%, down from $250M a year earlier (San Antonio Report via TPR, Oct 5 2026; not counted); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); definitive agreements targeted by the end of December 2026 (a city official, TPR June 17 2026; the term sheet sets no deadline), not signed as of Oct 16 2026",
+   "public_construction_notes": "Bexar County Prop B (Nov 2025, 52.1%): venue tax (hotel 1.75%->2% + 5% car rental) up to $311M or 25% of the cost, whichever is lower (KSAT). PENDING: City up to $489M under a non-binding term sheet (Aug 2025, 7-4): the lesser of 38% of the arena cost or $489M (s.2c), expected to be funded in 2028 and conditional on voter passage of a city bond program for the first phase of transportation and pedestrian infrastructure (Financing Addendum, Attachment III); the city's share of district roads and sidewalks for its 2027 bond is now estimated at $35M, about 20% of $175M of projects with the state transportation department assumed to pay 80%, down from $250M a year earlier (San Antonio Report via TPR, Oct 5 2026; not counted); council declined on Aug 17 2026 (5-6) to put the $489M to voters in Nov 2026; separately, council approved Sept 10 2026 up to $60M of Midtown TIRZ debt to buy the 13-acre arena site (more than $115M with financing; final financing plan to return to council; KSAT, TPR); city staff recommended Oct 14 2026 a $442M 2027 general-obligation bond, for a May 2027 vote, that includes the $35M (San Antonio Current, Oct 15 2026); the mayor's alternative leaves out bond money for arena infrastructure (Express-News, Oct 19 2026), and the city manager said a failed bond would force the city to \"reexamine the deal\" (Express-News, Sept 30 2026); the Spurs say they will build 1,500 parking spaces in garages on the site and that the state transportation department would pay $80M of road work if the bond passes (News 4 San Antonio, Oct 20 2026; the Express-News reported a request to match $21M of city money); definitive agreements targeted by the end of December 2026 (a city official, TPR June 17 2026; the term sheet sets no deadline), not signed as of Oct 22 2026",
    "lease_terms": "30-yr non-relocation in non-binding term sheet",
    "notes_and_gaps": "Status: voter-approved (county) / pending (city)",
    "sources": [
@@ -234,7 +246,11 @@
     "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
     "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
     "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
-    "tpr-city-scraps-garage-project-marvel-2027-bond"
+    "tpr-city-scraps-garage-project-marvel-2027-bond",
+    "sacurrent-council-weighs-property-tax-bond-2026",
+    "expressnews-bond-appointments-2026-10-19",
+    "expressnews-442m-bond-2026-09-30",
+    "news4sa-spurs-garages-state-road-money"
    ]
   },
   {

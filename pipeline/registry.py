@@ -25,6 +25,7 @@ CITED = {
     'data/threats/left_behind.csv': ['sources'],
     'data/inputs/arena_coordinates.csv': ['source'],
     'data/inputs/research_claims.csv': ['source'],
+    'data/inputs/outside_estimates.csv': ['source'],
     'data/teams/team_values.csv': ['owner_source', 'price_source', 'value_source', 'deal_source'],
     'data/teams/investors.csv': ['source'],
     'data/teams/value_history.csv': ['source'],

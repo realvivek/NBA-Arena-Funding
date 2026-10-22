@@ -94,7 +94,7 @@ P(f"Excluding those {len(later)}: public {f(s_core)} of {f(s_sp)} = {100*s_core/
 bp=C['bucket26_priv']; btp=sum(bp.values())
 P('Mechanism split of their public capital money (2026$): '+'; '.join(f"{BN[b].split(' (')[0]} {f(bp[b])} ({100*bp[b]/btp:.0f}%)" for b in sorted(bp,key=lambda b:-bp[b]) if bp[b]))
 te={'BKN':'PILOT bonds $511M (2009; refunded 2016: $478.7M tax-exempt + $15M taxable)','DET':'MSF 2014A $250M tax-exempt (2014B $200M taxable authorized, $188.5M drawn, Olympia-paid); DDA 2018A refunding $287.4M','UTA':'PID sales-tax bonds 2025A/B/C $900M tax-exempt, up to $525M of it for the arena','WAS':'DC GO-funded $515M (tax status of specific bonds not confirmed)'}
-P('Tax-exempt bonds behind privately built arenas: '+'; '.join(f"{k}: {v}" for k,v in te.items())+f". Federal cost of their new money for the arena (GDG method, tau .28, present value at issue in 2026$): BKN {f(C['fedpv26'].get('BKN',0))}, DET {f(C['fedpv26'].get('DET',0))}, UTA {f(C['fedpv26'].get('UTA',0))}, WAS {f(C['fedpv26'].get('WAS',0))}.")
+P('Tax-exempt bonds behind privately built arenas: '+'; '.join(f"{k}: {v}" for k,v in te.items())+f". Federal cost of their new money for the arena (tau .28, present value at issue in 2026$; GDG's value for BKN): BKN {f(C['fedpv26'].get('BKN',0))}, DET {f(C['fedpv26'].get('DET',0))}, UTA {f(C['fedpv26'].get('UTA',0))}, WAS {f(C['fedpv26'].get('WAS',0))}.")
 P('Other public money and tax breaks at arenas built and owned privately:')
 H={
 'BKN':'City $205M (IBO 2009 testimony; IBO\'s Sept 2009 brief counts $150M) + State $100M (IBO Sept 2009) capital for land/infrastructure + MTA rail yard $10M (IBO arena share of the $50M bid gap), counted in core; $511M tax-exempt PILOT bonds (property taxes diverted to arena debt; expanded total); full property-tax exemption (would-be $99M/yr 2023 vs $39M PILOT)',
@@ -127,7 +127,7 @@ P(f"= EXPANDED PUBLIC TOTAL .................................... >= {f(exp)}  ({
 P('Not added (future): the tax relief in DC\'s 2024 arena law, mainly the continued property/possessory-interest tax exemption for Capital One Arena to June 2050, valued by OCFO at $49.8M FY2025-28 + $262.9M FY2029-50 = $312.7M (OCFO: "not financially necessary").')
 for k,d in sorted(det.items()):
     if d.get('tb_memo'): P(f"Memo, not added: {d['tb_short']}: about {f(d['tb_memo'])} nominal, from one unverified press figure (range in arena_ledger.csv tax_break_notes).")
-P(f"Memo: federal cost of tax-exempt arena bonds (GDG method, tau=0.28; present value at issue of each issue's new money for the arena: refundings and taxable issues excluded, Salt Lake City's 2025 PID issue at the arena's $525M of $900M, Indianapolis's 2021A at its ~$254M of new money) = {f(sum(C['fedpv26'].values()))} in 2026 dollars, each converted from the year its par is stated in (2014 for the issues from GDG Table 3) - not added (different payer, overlapping with local bonds).")
+P(f"Memo: federal cost of tax-exempt arena bonds (present value at issue of the federal revenue loss on each issue's new money for the arena, tau=0.28: refundings and taxable issues excluded, Salt Lake City's 2025 PID issue at the arena's $525M of $900M, Indianapolis's 2021A at its ~$254M of new money; GDG's published values for the seven issues in their data, from each issue's redemption schedule, and a level 30-year approximation for the later issues) = {f(sum(C['fedpv26'].values()))} in 2026 dollars, each converted from the year its par is stated in (2014 for the issues from GDG Table 3) - not added (different payer, overlapping with local bonds).")
 P('')
 P('F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$)')
 P('-'*78)
@@ -212,6 +212,19 @@ P('HOU: public $175M = 2000 Letter Agreement arena budget (primary); press range
 P('OKC new arena: MAPS 4 money $70M (earlier okc.gov), $78M (OCPPA audited FY2024; okc.gov March 2026; Bond Buyer), ~$99M (Bond Buyer May 2026), $89M (okc.gov Oct 12 2026); public set to $900M arena - $50M Thunder; cost estimate $1.016B (Bond Buyer).')
 P('WAS: renovation total $712.5M from Council memo ($800M incl. $87.5M purchase); Monumental now says $1B+.')
 P('MIN: purchase $54.6M (Legislative Auditor 2017) vs $54.0M arena line of the 1995 bonds (2003 packet; the $0.6M difference is other acquisition costs) vs ~$54M (SBD 1994); 2017 Taylor $58M (LRL) vs $60M (Wikipedia).')
+# other published estimates of public construction money, arena by arena (data/inputs/outside_estimates.csv): the
+# arenas where Bradbury's database and the ledger differ by more than a tenth of the larger figure
+OB={r['team']:r for r in csv.DictReader(open(DATA+'/inputs/outside_estimates.csv')) if r['estimate']=='bradbury-2026'}
+LP={r['team']:float(r['public_construction_2026_m'] or 0) for r in cur}
+P(f"Other published estimate, public construction money: J.C. Bradbury's 2026 venue database (Long 2013 for arenas opened through 2010, press after; c; {OB['ATL']['source'].split(' ')[0]}). 2026$, each converted from its opening year; ledger value used <- Bradbury:")
+for t in sorted(OB):
+    r=OB[t]; y=int(r['opened']); b=float(r['public_nominal_m'] or 0); b26=b*fac(y); l26=LP[t]
+    if (b26>0 or l26>0) and abs(l26-b26)>0.1*max(l26,b26):
+        P(f"  {t}: {f(l26)} <- {f(b26)} (${b:g}M of ${float(r['total_nominal_m']):g}M in {y}; his source: {r['basis'][:110]})")
+P(f"  Totals: ledger {f(sum(LP.values()))}, Bradbury {f(sum(float(r['public_nominal_m'] or 0)*fac(int(r['opened'])) for r in OB.values()))}.")
+P('Public shares of construction in other compilations (c; Matheson 2012 / Marquette NSLI 2014, via PolitiFact, https://www.politifact.com/factchecks/2015/may/29/timothy-sheehy/would-paying-half-cost-new-milwaukee-bucks-arena-b/): ATL 29/91%, CHA 100/100%, DAL 50/30%, DEN 22/3%, HOU 82/100%, IND 100/43%, MEM 100/83%, MIA 100/59%, ORL 90/87.5%; the ledger has 29%, 85%, 30%, 20%, 77%, 43%, 100%, 14% and 87% (Miami counts only the county land as construction money and the yearly payments separately).')
+P('BOS: $20M public of $241M (Long 2013, via NPR/WAMC, https://www.wamc.org/2013-12-20/the-cost-to-keep-the-home-team-at-home-may-not-be-worth-it, c), probably the Chapter 121A tax arrangement the ledger could not value; ledger $0.')
+P('MIN: purchase "$72 million" in 1994 (Mercatus 2018, https://www.mercatus.org/bridge/commentary/target-center-and-minneapolis-celebrate-30-years-stadium-subsidies, c) <- $54.6M used (Legislative Auditor, b).')
 P('')
 P('J. BUILDING VERSUS REBUILDING SINCE 2014 (2026$)')
 P('-'*78)

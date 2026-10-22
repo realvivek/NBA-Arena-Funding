@@ -711,7 +711,11 @@
    "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
    "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
-   "tpr-city-scraps-garage-project-marvel-2027-bond"
+   "tpr-city-scraps-garage-project-marvel-2027-bond",
+   "sacurrent-council-weighs-property-tax-bond-2026",
+   "expressnews-bond-appointments-2026-10-19",
+   "expressnews-442m-bond-2026-09-30",
+   "news4sa-spurs-garages-state-road-money"
   ],
   "display": {
    "long": "$1.22 billion",
@@ -762,7 +766,11 @@
    "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
    "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
-   "tpr-city-scraps-garage-project-marvel-2027-bond"
+   "tpr-city-scraps-garage-project-marvel-2027-bond",
+   "sacurrent-council-weighs-property-tax-bond-2026",
+   "expressnews-bond-appointments-2026-10-19",
+   "expressnews-442m-bond-2026-09-30",
+   "news4sa-spurs-garages-state-road-money"
   ],
   "display": {
    "long": "$311 million",
@@ -786,7 +794,11 @@
    "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
    "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
-   "tpr-city-scraps-garage-project-marvel-2027-bond"
+   "tpr-city-scraps-garage-project-marvel-2027-bond",
+   "sacurrent-council-weighs-property-tax-bond-2026",
+   "expressnews-bond-appointments-2026-10-19",
+   "expressnews-442m-bond-2026-09-30",
+   "news4sa-spurs-garages-state-road-money"
   ],
   "display": {
    "long": "25 percent",
@@ -810,7 +822,11 @@
    "ksat-san-antonio-city-council-bats-down-2nd-arena-fun",
    "ksat-council-approves-dollar60m-in-tirz-debt-to-buy-l",
    "tpr-midtown-tirz-commits-166m-to-buy-land-for-spurs",
-   "tpr-city-scraps-garage-project-marvel-2027-bond"
+   "tpr-city-scraps-garage-project-marvel-2027-bond",
+   "sacurrent-council-weighs-property-tax-bond-2026",
+   "expressnews-bond-appointments-2026-10-19",
+   "expressnews-442m-bond-2026-09-30",
+   "news4sa-spurs-garages-state-road-money"
   ],
   "display": {
    "long": "$549 million",
@@ -1983,7 +1999,7 @@
  "fed_bond_cost": {
   "key": "fed_bond_cost",
   "title": "Federal cost of tax-exempt arena bonds, estimated",
-  "value": 1529.1,
+  "value": 1411.4,
   "unit": "usd_m",
   "basis": "present value at issue, in 2026 dollars; an estimate",
   "digits": null,
@@ -1993,13 +2009,55 @@
    "gayer-2016"
   ],
   "display": {
-   "long": "$1.53 billion",
-   "short": "$1.53B",
-   "title": "$1.53 Billion",
-   "cap": "$1.53 billion"
+   "long": "$1.41 billion",
+   "short": "$1.41B",
+   "title": "$1.41 Billion",
+   "cap": "$1.41 billion"
   },
-  "note": "New money for the arena only. Refundings and taxable issues are left out, Salt Lake City's 2025 issue is counted at the arena's $525 million of $900 million, and Indianapolis's 2021 issue at its new money, about $254 million. At a 28 percent marginal tax rate (the Gayer, Drukker and Gold method), converted to 2026 dollars from the year each issue's par is stated in (2014 for the issues from their Table 3). Four counted issues' tax-exempt status is not confirmed in their documents (Atlanta 2017, Charlotte 2023, Detroit 2017 and Washington 2025). Paid by all U.S. taxpayers; not added to any total.",
+  "note": "New money for the arena only. Refundings and taxable issues are left out, Salt Lake City's 2025 issue is counted at the arena's $525 million of $900 million, and Indianapolis's 2021 issue at its new money, about $254 million. The present value at issue of the federal income tax lost on the bonds' interest at a 28 percent marginal rate, converted to 2026 dollars from the year each issue's par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3). For the seven issues in their data, their published values; for later issues, a level 30-year approximation that ran 13.8 percent above their values where both can be compared. Five counted issues' tax-exempt status is not confirmed or not stated in their documents (Atlanta 2017, Charlotte 2023, Detroit 2017, Indianapolis 2021 and Washington 2025). Paid by all U.S. taxpayers; not added to any total. The check confirms the issue-by-issue table adds up to the ledger's figure.",
   "method": "select sum(fed_tax_expenditure_pv_2026_m) from arenas"
+ },
+ "fed_gdg_issues_n": {
+  "key": "fed_gdg_issues_n",
+  "title": "Counted bond issues valued with Gayer, Drukker and Gold's published figures",
+  "value": 7.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "gayer-2016",
+   "ledger"
+  ],
+  "display": {
+   "long": "seven",
+   "short": "7",
+   "title": "Seven",
+   "cap": "Seven"
+  },
+  "note": "",
+  "method": "select count(*) from arena_bonds where coalesce(gdg_pv3_revenue_loss_m, '') <> '' and coalesce(fed_cost_par_m, '') <> ''"
+ },
+ "fed_bond_cost_unconfirmed": {
+  "key": "fed_bond_cost_unconfirmed",
+  "title": "Part of the federal bond cost resting on issues whose tax-exempt status is not confirmed",
+  "value": 278.160959,
+  "unit": "usd_m",
+  "basis": "present value at issue, in 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "gayer-2016"
+  ],
+  "display": {
+   "long": "$278 million",
+   "short": "$278M",
+   "title": "$278 Million",
+   "cap": "$278 million"
+  },
+  "note": "Atlanta 2017, Charlotte 2023, Detroit 2017, Indianapolis 2021 and Washington 2025.",
+  "method": "with b as (select team, cast(year as integer) as year, issuer_series, cast(par_dollars_year as integer) as py, cast(fed_cost_par_m as double) as cp, try_cast(gdg_pv3_revenue_loss_m as double) as g, tax_status from arena_bonds where coalesce(fed_cost_par_m, '') <> '') select sum(coalesce(b.g, f.pv3_30yr_fed_loss_m) * b.cp / f.par_m * coalesce((select factor_2026 from cpi where cpi.year = b.py), 1)) from fed_bond_cost f join b on b.team = f.team and b.year = f.year and b.issuer_series = f.issuer_series where f.tau = 0.28 and b.tax_status not like 'tax-exempt%'"
  },
  "fed_tau": {
   "key": "fed_tau",
@@ -2631,6 +2689,7 @@
    "portland-2024-annual-comprehensive-financial-report",
    "oregon-moda-center-arena-comparable-structure-overview",
    "portland-adopted",
+   "oregonian-moda-center-talks-dundon-2026-10-21",
    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
    "frontofficesports-comcasts-400-million-wells-fargo-center-up",
    "whyy-south-philadelphia-new-arena-design-76ers-comcas",
@@ -2641,6 +2700,7 @@
    "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
    "gateway-edc-audit-2022",
    "gwcomplex-board-packet-12-17-25",
+   "ideastream-county-tax-vote-cavs-guardians",
    "sportsbusinessdaily-twolves",
    "hoodline-target-center-if-wolves-move",
    "occompt-occompt-2",
@@ -2805,6 +2865,311 @@
   "note": "",
   "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=years, column quote: \"spans over 30 years\")"
  },
+ "bradbury_public_2026": {
+  "key": "bradbury_public_2026",
+  "title": "Public construction money in the 30 arenas in J.C. Bradbury's 2026 venue database, in 2026 dollars",
+  "value": 5328.02357,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "c/a",
+  "sources": [
+   "bradbury-2026-venue-database",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$5.33 billion",
+   "short": "$5.33B",
+   "title": "$5.33 Billion",
+   "cap": "$5.33 billion"
+  },
+  "note": "Construction only, including land and infrastructure where reported. Each arena's nominal figure converted from its opening year with the ledger's factors; converting Bradbury's 2024-dollar total instead gives $5.33 billion as well.",
+  "method": "select sum(public_nominal_m * (select factor_2026 from cpi where cpi.year = opened)) from outside_estimates where estimate = 'bradbury-2026'"
+ },
+ "bradbury_compared_n": {
+  "key": "bradbury_compared_n",
+  "title": "Arenas with public construction money in either the ledger or Bradbury's database",
+  "value": 23.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "bradbury-2026-venue-database",
+   "ledger"
+  ],
+  "display": {
+   "long": "23",
+   "short": "23",
+   "title": "23",
+   "cap": "23"
+  },
+  "note": "",
+  "method": "with o as (select team, public_nominal_m * (select factor_2026 from cpi where cpi.year = opened) as b from outside_estimates where estimate = 'bradbury-2026'), l as (select team, public_2026_m as l from items where kind = 'construction' and core) select count(*) from o join l using (team) where o.b > 0 or l.l > 0"
+ },
+ "bradbury_gap_n": {
+  "key": "bradbury_gap_n",
+  "title": "Of those, arenas where the two figures differ by more than a tenth of the larger one",
+  "value": 17.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "bradbury-2026-venue-database",
+   "ledger"
+  ],
+  "display": {
+   "long": "17",
+   "short": "17",
+   "title": "17",
+   "cap": "17"
+  },
+  "note": "The largest gaps are Barclays Center (Bradbury counts part of the bonds repaid with the arena's property taxes as construction money; the ledger keeps all of them in its expanded total), Indianapolis and Atlanta (bonds the ledger treats as repaid by the team or whose split is unresolved), and Washington, Los Angeles, Denver, Portland, Miami and Golden State, where the ledger counts land, site work or transit that the database does not. Arenas where the ledger is higher add up to $928 million and arenas where it is lower to $867 million.",
+  "method": "with o as (select team, public_nominal_m * (select factor_2026 from cpi where cpi.year = opened) as b from outside_estimates where estimate = 'bradbury-2026'), l as (select team, public_2026_m as l from items where kind = 'construction' and core) select count(*) from o join l using (team) where (o.b > 0 or l.l > 0) and abs(l.l - o.b) > 0.1 * greatest(l.l, o.b)"
+ },
+ "non_construction_public": {
+  "key": "non_construction_public",
+  "title": "Public money in the 30 arenas other than construction (purchases, renovations and yearly payments)",
+  "value": 4198.47675,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$4.20 billion",
+   "short": "$4.20B",
+   "title": "$4.20 Billion",
+   "cap": "$4.20 billion"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from items where core and kind <> 'construction'"
+ },
+ "sac_gf_backfill": {
+  "key": "sac_gf_backfill",
+  "title": "Sacramento general-fund money diverted to Golden 1 Center bond payments over two years, as reported in 2023",
+  "value": 5.7,
+  "unit": "usd_m",
+  "basis": "more than; nominal",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "fieldofschemes-why-the-kings-arena-parking-revenue-fiasco-is-bad"
+  ],
+  "display": {
+   "long": "$5.7 million",
+   "short": "$5.7M",
+   "title": "$5.7 Million",
+   "cap": "$5.7 million"
+  },
+  "note": "The Sacramento Bee's figure, quoted by Field of Schemes on Oct. 23, 2023. The city's 2015 disclosure to bond investors had projected \"no net effect on the General Fund\" over six years.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=sac_gf_backfill, column quote: \"more than $5.7 million over the past two years to pay off the construction bonds\")"
+ },
+ "sac_gf_backfill_years": {
+  "key": "sac_gf_backfill_years",
+  "title": "Years over which the general-fund money was reported, in 2023",
+  "value": 2.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "fieldofschemes-why-the-kings-arena-parking-revenue-fiasco-is-bad"
+  ],
+  "display": {
+   "long": "two",
+   "short": "2",
+   "title": "Two",
+   "cap": "Two"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=sac_gf_backfill, column quote: \"over the past two years\")"
+ },
+ "det_hire_target": {
+  "key": "det_hire_target",
+  "title": "Share of the Little Caesars Arena construction jobs the 2013 project agreement required for Detroit residents",
+  "value": 50.0,
+  "unit": "pct",
+  "basis": "at least",
+  "digits": 0,
+  "label": "b",
+  "sources": [
+   "michigan-snyder-detroit-arena-4380-jobs-2013"
+  ],
+  "display": {
+   "long": "50 percent",
+   "short": "50%",
+   "title": "50%",
+   "cap": "50 percent"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=det_hire_target, column quote: \"requires at least half of the jobs created to be filled by Detroit residents\")"
+ },
+ "det_hire_actual": {
+  "key": "det_hire_actual",
+  "title": "Share of Little Caesars Arena construction hours worked by Detroit residents",
+  "value": 25.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "constructiondive-detroit-arena-local-hire-fines-2018"
+  ],
+  "display": {
+   "long": "25 percent",
+   "short": "25%",
+   "title": "25%",
+   "cap": "25 percent"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=det_hire_actual, column quote: \"Detroit residents put in only 25% of the total\")"
+ },
+ "det_hire_fines": {
+  "key": "det_hire_fines",
+  "title": "Fines Little Caesars Arena contractors paid for missing the local-hiring requirement",
+  "value": 5.2,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "constructiondive-detroit-arena-local-hire-fines-2018"
+  ],
+  "display": {
+   "long": "$5.2 million",
+   "short": "$5.2M",
+   "title": "$5.2 Million",
+   "cap": "$5.2 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=det_hire_fines, column quote: \"paid a total of $5.2 million in fines\")"
+ },
+ "bkn_affordable_promised": {
+  "key": "bkn_affordable_promised",
+  "title": "Affordable apartments promised at Atlantic Yards, the development around Barclays Center",
+  "value": 2250.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "c/b",
+  "sources": [
+   "citylimits-atlantic-yards-reboot-2026",
+   "ibo-atlantic-yards-2005"
+  ],
+  "display": {
+   "long": "2,250",
+   "short": "2,250",
+   "title": "2,250",
+   "cap": "2,250"
+  },
+  "note": "Half of 4,500 rentals under the developer's 2005 agreement (20 percent for low-income and 30 percent for middle-income households; NYC Independent Budget Office, Sept. 2005).",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=bkn_affordable_promised, column quote: \"Of 2,250 promised affordable units\")"
+ },
+ "bkn_affordable_built": {
+  "key": "bkn_affordable_built",
+  "title": "Affordable apartments built at Atlantic Yards by the 2025 deadline",
+  "value": 1374.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "citylimits-atlantic-yards-reboot-2026"
+  ],
+  "display": {
+   "long": "1,374",
+   "short": "1,374",
+   "title": "1,374",
+   "cap": "1,374"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=bkn_affordable_built, column quote: \"the 1,374 built\")"
+ },
+ "bkn_affordable_penalty": {
+  "key": "bkn_affordable_penalty",
+  "title": "Penalty New York State accepted for the affordable apartments not built at Atlantic Yards",
+  "value": 12.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "citylimits-atlantic-yards-reboot-2026"
+  ],
+  "display": {
+   "long": "$12 million",
+   "short": "$12M",
+   "title": "$12 Million",
+   "cap": "$12 million"
+  },
+  "note": "Under a 2014 settlement, missing units after May 31, 2025 owed $2,000 a month each (Gothamist, June 2025), about $21 million a year for 876 units; the $12 million is about seven months of it (computed).",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=bkn_affordable_penalty, column quote: \"agreed to accept just $12 million in penalties for the 876 missing affordable housing units\")"
+ },
+ "slc_tax_projection": {
+  "key": "slc_tax_projection",
+  "title": "What Salt Lake City's council said its arena sales tax would raise over 30 years",
+  "value": 1200.0,
+  "unit": "usd_m",
+  "basis": "about; nominal, over 30 years",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "slc-council-sec-district-2024"
+  ],
+  "display": {
+   "long": "$1.2 billion",
+   "short": "$1.2B",
+   "title": "$1.2 Billion",
+   "cap": "$1.2 billion"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=slc_tax_projection, column quote: \"predicted to generate around $1.2 billion over 30 years\")"
+ },
+ "slc_tax_projection_years": {
+  "key": "slc_tax_projection_years",
+  "title": "Years over which the council's projection runs",
+  "value": 30.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "slc-council-sec-district-2024"
+  ],
+  "display": {
+   "long": "30",
+   "short": "30",
+   "title": "30",
+   "cap": "30"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=slc_tax_projection_years, column quote: \"over 30 years\")"
+ },
+ "slc_tax_fy2026": {
+  "key": "slc_tax_fy2026",
+  "title": "Salt Lake City arena sales tax distributed in fiscal 2026 (July 2025 to June 2026), its first full fiscal year",
+  "value": 57.99473,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b/a",
+  "sources": [
+   "utah-tax-distributions"
+  ],
+  "display": {
+   "long": "$58.0 million",
+   "short": "$58.0M",
+   "title": "$58.0 Million",
+   "cap": "$58.0 million"
+  },
+  "note": "The sum of the Utah State Tax Commission's final monthly distributions to the city for the tax. The council's projection averages $40 million a year; a projection that assumes growth would expect less than the average in the early years.",
+  "method": "select sum(usd) / 1e6 from slc_monthly where month between '2025-07' and '2026-06'"
+ },
  "cpi_base": {
   "key": "cpi_base",
   "title": "2026 CPI-U base (January-August average)",
@@ -2848,7 +3213,7 @@
  "sources_n": {
   "key": "sources_n",
   "title": "Documents in the bibliography (not counting this site's own ledgers)",
-  "value": 516.0,
+  "value": 537.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2857,10 +3222,10 @@
    "ledger"
   ],
   "display": {
-   "long": "516",
-   "short": "516",
-   "title": "516",
-   "cap": "516"
+   "long": "537",
+   "short": "537",
+   "title": "537",
+   "cap": "537"
   },
   "note": "",
   "method": "select count(*) from sources where publisher <> 'This site'"
@@ -2868,7 +3233,7 @@
  "sources_government": {
   "key": "sources_government",
   "title": "Government sources",
-  "value": 139.0,
+  "value": 144.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2877,10 +3242,10 @@
    "ledger"
   ],
   "display": {
-   "long": "139",
-   "short": "139",
-   "title": "139",
-   "cap": "139"
+   "long": "144",
+   "short": "144",
+   "title": "144",
+   "cap": "144"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'government' and publisher <> 'This site'"
@@ -2928,7 +3293,7 @@
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 344.0,
+  "value": 360.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2937,10 +3302,10 @@
    "ledger"
   ],
   "display": {
-   "long": "344",
-   "short": "344",
-   "title": "344",
-   "cap": "344"
+   "long": "360",
+   "short": "360",
+   "title": "360",
+   "cap": "360"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"
@@ -4211,6 +4576,46 @@
   },
   "note": "The sum of the three funds' 2024 actuals for the Arena Partnership line ($1,985,249, $10,377,174 and $515,246), which the budgets describe as rental adjustment payments under the Seattle Arena Company agreement.",
   "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=sea_arena_payments_2024, column quote: \"Arena Partnership 10,377,174\")"
+ },
+ "expansion_fee_min": {
+  "key": "expansion_fee_min",
+  "title": "Expansion fees each current team is projected to receive, low end of the reported range",
+  "value": 500.0,
+  "unit": "usd_m",
+  "basis": "per team, as reported",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "espn-nba-intel-seattle-expansion-2026-10-16"
+  ],
+  "display": {
+   "long": "$500 million",
+   "short": "$500M",
+   "title": "$500 Million",
+   "cap": "$500 million"
+  },
+  "note": "Reported by ESPN from ownership sources on Oct. 16, 2026, before any team was approved; no fee has been set.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=expansion_fee_min, column quote: \"the expected $500 million to 600 million expansion fee windfall each team\")"
+ },
+ "expansion_fee_max": {
+  "key": "expansion_fee_max",
+  "title": "Expansion fees each current team is projected to receive, high end of the reported range",
+  "value": 600.0,
+  "unit": "usd_m",
+  "basis": "per team, as reported",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "espn-nba-intel-seattle-expansion-2026-10-16"
+  ],
+  "display": {
+   "long": "$600 million",
+   "short": "$600M",
+   "title": "$600 Million",
+   "cap": "$600 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=expansion_fee_max, column quote: \"the expected $500 million to 600 million expansion fee windfall each team\")"
  },
  "nv_live_ent_tax": {
   "key": "nv_live_ent_tax",

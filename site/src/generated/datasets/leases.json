@@ -11,6 +11,7 @@
   "portland-2024-annual-comprehensive-financial-report",
   "oregon-moda-center-arena-comparable-structure-overview",
   "portland-adopted",
+  "oregonian-moda-center-talks-dundon-2026-10-21",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
   "frontofficesports-comcasts-400-million-wells-fargo-center-up",
   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
@@ -21,6 +22,7 @@
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "gateway-edc-audit-2022",
   "gwcomplex-board-packet-12-17-25",
+  "ideastream-county-tax-vote-cavs-guardians",
   "sportsbusinessdaily-twolves",
   "hoodline-target-center-if-wolves-move",
   "occompt-occompt-2",
@@ -86,7 +88,7 @@
    "arena": "FedExForum",
    "owner": "Memphis-Shelby Co. PBA (public)",
    "term_end_year": 2029,
-   "term_and_nonrelocation": "Current lease ends after 2028-29 season; $550M renovation/new lease still unsigned as of Oct 16 2026 (the Oct 8 2026 Sports Authority agenda lists a construction agreement and a funding-agreement amendment; press reports approval)",
+   "term_and_nonrelocation": "Current lease ends after 2028-29 season; $550M renovation/new lease still unsigned as of Oct 22 2026 (the Oct 8 2026 Sports Authority agenda lists a construction agreement and a funding-agreement amendment; press reports approval)",
    "outs_penalties_notes": "(Attendance clause/2022 settlement already known - excluded)",
    "summary": "Ends after the 2028-29 season; a new lease is under negotiation.",
    "label": "c",
@@ -124,17 +126,18 @@
    "owner": "City of Portland (public since 2024: building bought for $1, land under it for $7.13M)",
    "term_end_year": 2030,
    "term_and_nonrelocation": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); the 2024 bridge agreement has a five-year option to extend through 2035 (City Ordinance 191857, per ACFR FY2024, b); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026 (Resolution 37750)",
-   "outs_penalties_notes": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b)",
+   "outs_penalties_notes": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c)",
    "summary": "Expires Oct. 11, 2030, unless extended; a 20-year lease is being negotiated.",
    "label": "b/c",
-   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b)",
+   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c)",
    "pending_2026_m": 573.0,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
     "portland-2024-annual-comprehensive-financial-report",
     "oregon-moda-center-arena-comparable-structure-overview",
-    "portland-adopted"
+    "portland-adopted",
+    "oregonian-moda-center-talks-dundon-2026-10-21"
    ]
   },
   {
@@ -215,16 +218,17 @@
    "owner": "Gateway EDC (public non-profit)",
    "term_end_year": 2034,
    "term_and_nonrelocation": "Through 2033-34 season + two successive 5-yr TEAM options",
-   "outs_penalties_notes": "Gateway owes Major Capital Repairs; told City/County it lacks funds",
+   "outs_penalties_notes": "Gateway owes Major Capital Repairs; told City/County it lacks funds; a recent assessment says the arena and the ballpark \"will need more than $400 million for repairs through 2037,\" and the city and county are drafting a plan that could raise sales and sin taxes (Ideastream, Oct 19 2026, c)",
    "summary": "Runs through the 2033-34 season, with two five-year team options.",
-   "label": "b",
-   "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds",
+   "label": "b/c",
+   "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds; a recent assessment says the arena and the ballpark \"will need more than $400 million for repairs through 2037,\" and the city and county are drafting a plan that could raise sales and sin taxes (Ideastream, Oct 19 2026, c)",
    "pending_2026_m": null,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "sources": [
     "gateway-edc-audit-2022",
-    "gwcomplex-board-packet-12-17-25"
+    "gwcomplex-board-packet-12-17-25",
+    "ideastream-county-tax-vote-cavs-guardians"
    ]
   },
   {

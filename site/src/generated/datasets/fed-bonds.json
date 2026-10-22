@@ -20,6 +20,8 @@
   "par_dollars_year",
   "counted_par_m",
   "fed_cost_basis",
+  "tax_status",
+  "method",
   "pv_m",
   "pv_2026_m"
  ],
@@ -32,9 +34,11 @@
    "par_m": 152.0,
    "par_dollars_year": 2014,
    "counted_par_m": 152.0,
-   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
-   "pv_m": 54.5,
-   "pv_2026_m": 76.351739
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3; federal cost is GDG's published present value of the federal revenue loss at 3% (2014 dollars, their data file), computed from the issue's redemption schedule",
+   "tax_status": "tax-exempt",
+   "method": "Gayer, Drukker and Gold, published",
+   "pv_m": 44.05779,
+   "pv_2026_m": 61.722732
   },
   {
    "team": "SAS",
@@ -44,9 +48,11 @@
    "par_m": 169.0,
    "par_dollars_year": 2014,
    "counted_par_m": 169.0,
-   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
-   "pv_m": 70.7,
-   "pv_2026_m": 99.047118
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3; federal cost is GDG's published present value of the federal revenue loss at 3% (2014 dollars, their data file), computed from the issue's redemption schedule",
+   "tax_status": "tax-exempt",
+   "method": "Gayer, Drukker and Gold, published",
+   "pv_m": 43.78677,
+   "pv_2026_m": 61.343046
   },
   {
    "team": "HOU",
@@ -56,9 +62,11 @@
    "par_m": 304.0,
    "par_dollars_year": 2014,
    "counted_par_m": 304.0,
-   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
-   "pv_m": 118.1,
-   "pv_2026_m": 165.452116
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3; federal cost is GDG's published present value of the federal revenue loss at 3% (2014 dollars, their data file), computed from the issue's redemption schedule",
+   "tax_status": "tax-exempt",
+   "method": "Gayer, Drukker and Gold, published",
+   "pv_m": 111.5261,
+   "pv_2026_m": 156.242416
   },
   {
    "team": "MEM",
@@ -68,9 +76,11 @@
    "par_m": 296.0,
    "par_dollars_year": 2014,
    "counted_par_m": 296.0,
-   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
-   "pv_m": 105.4,
-   "pv_2026_m": 147.66006
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3; federal cost is GDG's published present value of the federal revenue loss at 3% (2014 dollars, their data file), computed from the issue's redemption schedule",
+   "tax_status": "tax-exempt",
+   "method": "Gayer, Drukker and Gold, published",
+   "pv_m": 87.12488,
+   "pv_2026_m": 122.057543
   },
   {
    "team": "CHA",
@@ -80,9 +90,11 @@
    "par_m": 229.0,
    "par_dollars_year": 2014,
    "counted_par_m": 229.0,
-   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
-   "pv_m": 71.3,
-   "pv_2026_m": 99.887688
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3; federal cost is GDG's published present value of the federal revenue loss at 3% (2014 dollars, their data file), computed from the issue's redemption schedule",
+   "tax_status": "tax-exempt",
+   "method": "Gayer, Drukker and Gold, published",
+   "pv_m": 65.39593,
+   "pv_2026_m": 91.616385
   },
   {
    "team": "ORL",
@@ -92,9 +104,11 @@
    "par_m": 342.0,
    "par_dollars_year": 2014,
    "counted_par_m": 342.0,
-   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
-   "pv_m": 105.7,
-   "pv_2026_m": 148.080345
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3; federal cost is GDG's published present value of the federal revenue loss at 3% (2014 dollars, their data file), computed from the issue's redemption schedule",
+   "tax_status": "tax-exempt",
+   "method": "Gayer, Drukker and Gold, published",
+   "pv_m": 93.45865,
+   "pv_2026_m": 130.930833
   },
   {
    "team": "BKN",
@@ -104,9 +118,11 @@
    "par_m": 564.0,
    "par_dollars_year": 2014,
    "counted_par_m": 564.0,
-   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3",
-   "pv_m": 164.4,
-   "pv_2026_m": 230.31607
+   "fed_cost_basis": "Whole issue (new money); par in 2014 dollars, from GDG Table 3; federal cost is GDG's published present value of the federal revenue loss at 3% (2014 dollars, their data file), computed from the issue's redemption schedule",
+   "tax_status": "tax-exempt",
+   "method": "Gayer, Drukker and Gold, published",
+   "pv_m": 160.9241,
+   "pv_2026_m": 225.446511
   },
   {
    "team": "DET",
@@ -117,6 +133,8 @@
    "par_dollars_year": 2014,
    "counted_par_m": 250.0,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "tax-exempt",
+   "method": "level 30-year approximation",
    "pv_m": 57.1,
    "pv_2026_m": 79.994207
   },
@@ -129,6 +147,8 @@
    "par_dollars_year": 2016,
    "counted_par_m": 54.3,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "tax-exempt",
+   "method": "level 30-year approximation",
    "pv_m": 10.9,
    "pv_2026_m": 15.062232
   },
@@ -141,6 +161,8 @@
    "par_dollars_year": 2016,
    "counted_par_m": 108.1,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "tax-exempt",
+   "method": "level 30-year approximation",
    "pv_m": 21.8,
    "pv_2026_m": 30.124464
   },
@@ -153,6 +175,8 @@
    "par_dollars_year": 2017,
    "counted_par_m": 110.0,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "not confirmed",
+   "method": "level 30-year approximation",
    "pv_m": 22.6,
    "pv_2026_m": 30.578591
   },
@@ -165,6 +189,8 @@
    "par_dollars_year": 2017,
    "counted_par_m": 36.0,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "not confirmed",
+   "method": "level 30-year approximation",
    "pv_m": 7.4,
    "pv_2026_m": 10.012459
   },
@@ -177,6 +203,8 @@
    "par_dollars_year": 2021,
    "counted_par_m": 22.925,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "not stated (5%)",
+   "method": "level 30-year approximation",
    "pv_m": 3.4,
    "pv_2026_m": 4.161454
   },
@@ -189,6 +217,8 @@
    "par_dollars_year": 2021,
    "counted_par_m": 254.0,
    "fed_cost_basis": "New money only: about $254M for the renovation (Bond Buyer, c); the rest refunded or retired earlier Fieldhouse and CIB bonds (CIB FY2025 Note 5)",
+   "tax_status": "not stated (5% coupons)",
+   "method": "level 30-year approximation",
    "pv_m": 37.649785,
    "pv_2026_m": 46.081725
   },
@@ -201,6 +231,8 @@
    "par_dollars_year": 2023,
    "counted_par_m": 110.0,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "not confirmed",
+   "method": "level 30-year approximation",
    "pv_m": 29.0,
    "pv_2026_m": 31.565329
   },
@@ -213,6 +245,8 @@
    "par_dollars_year": 2025,
    "counted_par_m": 525.0,
    "fed_cost_basis": "The arena's share: up to $525M of the $899.99M issue; the $375M for the district is left out (pro rata, a)",
+   "tax_status": "tax-exempt",
+   "method": "level 30-year approximation",
    "pv_m": 154.176713,
    "pv_2026_m": 158.827915
   },
@@ -225,10 +259,12 @@
    "par_dollars_year": 2025,
    "counted_par_m": 515.0,
    "fed_cost_basis": "Whole issue (new money)",
+   "tax_status": "not confirmed",
+   "method": "level 30-year approximation",
    "pv_m": 151.2,
    "pv_2026_m": 155.761401
   }
  ],
- "note": "New money for the arena only; refundings, taxable issues and the district's share of Salt Lake City's 2025 issue are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate, in the dollars the par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3), then in 2026 dollars.",
- "method": "with b as (select team, cast(year as integer) as year, issuer_series, cast(par_dollars_year as integer) as par_dollars_year, cast(fed_cost_par_m as double) as counted_par_m, fed_cost_basis from arena_bonds where coalesce(fed_cost_par_m, '') <> '') select f.team, f.arena, f.year, f.issuer_series, f.par_m, b.par_dollars_year, b.counted_par_m, b.fed_cost_basis, f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m as pv_m, f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m * coalesce((select factor_2026 from cpi where cpi.year = b.par_dollars_year), 1) as pv_2026_m from fed_bond_cost f join b on b.team = f.team and b.year = f.year and b.issuer_series = f.issuer_series where f.tau = 0.28 order by f.year, f.team, f.issuer_series"
+ "note": "New money for the arena only; refundings, taxable issues and the district's share of Salt Lake City's 2025 issue are left out. Present value at issue of the federal income tax lost on the bonds' interest at a 28 percent marginal rate, in the dollars the par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3), then in 2026 dollars. For the seven issues in their data, their published values, computed from each issue's redemption schedule; for later issues, an approximation that charges interest on the full par for 30 years and so probably overstates the cost (it ran 13.8 percent above their values on their seven issues).",
+ "method": "with b as (select team, cast(year as integer) as year, issuer_series, cast(par_dollars_year as integer) as par_dollars_year, cast(fed_cost_par_m as double) as counted_par_m, fed_cost_basis, tax_status, try_cast(gdg_pv3_revenue_loss_m as double) as gdg_pv_m from arena_bonds where coalesce(fed_cost_par_m, '') <> '') select f.team, f.arena, f.year, f.issuer_series, f.par_m, b.par_dollars_year, b.counted_par_m, b.fed_cost_basis, b.tax_status, case when b.gdg_pv_m is not null then 'Gayer, Drukker and Gold, published' else 'level 30-year approximation' end as method, coalesce(b.gdg_pv_m, f.pv3_30yr_fed_loss_m) * b.counted_par_m / f.par_m as pv_m, coalesce(b.gdg_pv_m, f.pv3_30yr_fed_loss_m) * b.counted_par_m / f.par_m * coalesce((select factor_2026 from cpi where cpi.year = b.par_dollars_year), 1) as pv_2026_m from fed_bond_cost f join b on b.team = f.team and b.year = f.year and b.issuer_series = f.issuer_series where f.tau = 0.28 order by f.year, f.team, f.issuer_series"
 }

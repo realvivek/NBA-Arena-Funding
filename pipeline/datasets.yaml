@@ -315,17 +315,19 @@ datasets:
   title: Federal cost of tax-exempt arena bonds, by issue
   sql: |
     with b as (select team, cast(year as integer) as year, issuer_series, cast(par_dollars_year as integer) as par_dollars_year,
-                      cast(fed_cost_par_m as double) as counted_par_m, fed_cost_basis
+                      cast(fed_cost_par_m as double) as counted_par_m, fed_cost_basis, tax_status,
+                      try_cast(gdg_pv3_revenue_loss_m as double) as gdg_pv_m
                from arena_bonds where coalesce(fed_cost_par_m, '') <> '')
-    select f.team, f.arena, f.year, f.issuer_series, f.par_m, b.par_dollars_year, b.counted_par_m, b.fed_cost_basis,
-           f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m as pv_m,
-           f.pv3_30yr_fed_loss_m * b.counted_par_m / f.par_m
+    select f.team, f.arena, f.year, f.issuer_series, f.par_m, b.par_dollars_year, b.counted_par_m, b.fed_cost_basis, b.tax_status,
+           case when b.gdg_pv_m is not null then 'Gayer, Drukker and Gold, published' else 'level 30-year approximation' end as method,
+           coalesce(b.gdg_pv_m, f.pv3_30yr_fed_loss_m) * b.counted_par_m / f.par_m as pv_m,
+           coalesce(b.gdg_pv_m, f.pv3_30yr_fed_loss_m) * b.counted_par_m / f.par_m
              * coalesce((select factor_2026 from cpi where cpi.year = b.par_dollars_year), 1) as pv_2026_m
     from fed_bond_cost f join b on b.team = f.team and b.year = f.year and b.issuer_series = f.issuer_series
     where f.tau = 0.28
     order by f.year, f.team, f.issuer_series
   sources: [ledger, gayer-2016, fred-cpiaucns]
-  note: New money for the arena only; refundings, taxable issues and the district's share of Salt Lake City's 2025 issue are left out. Present value at issue of 30 years of lost federal income tax at a 28 percent marginal rate, in the dollars the par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3), then in 2026 dollars.
+  note: New money for the arena only; refundings, taxable issues and the district's share of Salt Lake City's 2025 issue are left out. Present value at issue of the federal income tax lost on the bonds' interest at a 28 percent marginal rate, in the dollars the par is stated in (2014 for the issues from Gayer, Drukker and Gold's Table 3), then in 2026 dollars. For the seven issues in their data, their published values, computed from each issue's redemption schedule; for later issues, an approximation that charges interest on the full par for 30 years and so probably overstates the cost (it ran 13.8 percent above their values on their seven issues).
 
 - id: tax-breaks
   title: Property-tax breaks and taxes diverted to arena debt

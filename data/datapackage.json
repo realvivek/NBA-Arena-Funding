@@ -505,6 +505,63 @@
    }
   },
   {
+   "name": "inputs-outside-estimates",
+   "type": "table",
+   "path": "inputs/outside_estimates.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "estimate",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "venue",
+      "type": "string"
+     },
+     {
+      "name": "opened",
+      "type": "integer"
+     },
+     {
+      "name": "total_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "public_nominal_m",
+      "type": "number"
+     },
+     {
+      "name": "total_2024_m",
+      "type": "number"
+     },
+     {
+      "name": "public_2024_m",
+      "type": "number"
+     },
+     {
+      "name": "basis",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
    "name": "inputs-research-claims",
    "type": "table",
    "path": "inputs/research_claims.csv",
@@ -2592,6 +2649,10 @@
      {
       "name": "fed_cost_basis",
       "type": "string"
+     },
+     {
+      "name": "gdg_pv3_revenue_loss_m",
+      "type": "number"
      }
     ]
    }

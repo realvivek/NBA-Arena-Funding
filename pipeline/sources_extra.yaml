@@ -7,24 +7,24 @@ sources:
   title_from: curated
   publisher: This site
   origin: independent
-  date: 2026-10-18
-  checked: 2026-10-18
+  date: 2026-10-22
+  checked: 2026-10-22
 - id: threat-ledger
   url: https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats
   title: Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site
   title_from: curated
   publisher: This site
   origin: independent
-  date: 2026-10-18
-  checked: 2026-10-18
+  date: 2026-10-22
+  checked: 2026-10-22
 - id: team-ledger
   url: https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams
   title: Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page
   title_from: curated
   publisher: This site
   origin: independent
-  date: 2026-10-18
-  checked: 2026-10-18
+  date: 2026-10-22
+  checked: 2026-10-22
 - id: uc-formula-method
   url: https://github.com/realvivek/NBA-Arena-Funding/blob/main/data/property_tax/united_center_formula_savings.md
   title: United Center stadium valuation formula, taxes forgone 2002-2016 (method and yearly series)

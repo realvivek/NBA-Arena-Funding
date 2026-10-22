@@ -306,9 +306,10 @@ tax-breaks:
         The federal cost counts only new money for the arenas. Refundings and taxable bonds are left out, and so
         is the part of Salt Lake City's 2025 bonds that pays for the district around its arena. The cost is the
         present value, at issue, of the federal income tax forgone on the bonds' interest at a {{fed_tau}}
-        marginal rate, following Gayer, Drukker and Gold. Issues taken from their table are stated in 2014
-        dollars and are converted to 2026 dollars from 2014; the others are converted from the year of issue. All
-        U.S. taxpayers bear it, so it is not added to any city's total.
+        marginal rate. For the {{fed_gdg_issues_n}} issues in Gayer, Drukker and Gold's data it is their published value, in 2014
+        dollars, converted to 2026 dollars; for later issues it is an approximation that probably overstates the
+        cost, converted from the year of issue. {{fed_bond_cost_unconfirmed:cap}} of it rests on issues whose
+        tax-exempt status is not confirmed. All U.S. taxpayers bear it, so it is not added to any city's total.
       sources: [gayer-2016, ledger]
   blocks:
     - p: >-

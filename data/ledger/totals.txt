@@ -1,4 +1,4 @@
-NBA ARENA LEDGER - COMPUTED TOTALS (built 2026-10-18)
+NBA ARENA LEDGER - COMPUTED TOTALS (built 2026-10-22)
 ==============================================================================
 CPI: BLS CPI-U, U.S. city average, all items, NOT seasonally adjusted (FRED CPIAUCNS = BLS CUUR0000SA0).
 Annual averages = mean of monthly values. 2026 base = Jan-Aug 2026 average 331.655 (September 2026 was published in October and is not included);
@@ -58,7 +58,7 @@ Core public money $4.70B of $21.70B total spending = 21.6%
 Later bought or rebuilt with public money (6): WAS $600M, POR $581M, UTA $548M, MIN $219M, PHX $217M, ATL $188M = $2.35B, of which $573M pending
 Excluding those 6: public $2.40B of $17.09B = 14.0%
 Mechanism split of their public capital money (2026$): General taxes / GO bonds / appropriations / state grants / public asset sales $1.25B (29%); Hotel, car-rental, F&B, ticket $1.01B (23%); Tax increment & tax capture $640M (15%); Dedicated general sales tax $625M (14%); Public, mechanism split not documented $341M (8%); Lease-revenue bonds $305M (7%); Land contributed or sold below value $166M (4%); Infrastructure / parking / site work $9M (0%)
-Tax-exempt bonds behind privately built arenas: BKN: PILOT bonds $511M (2009; refunded 2016: $478.7M tax-exempt + $15M taxable); DET: MSF 2014A $250M tax-exempt (2014B $200M taxable authorized, $188.5M drawn, Olympia-paid); DDA 2018A refunding $287.4M; UTA: PID sales-tax bonds 2025A/B/C $900M tax-exempt, up to $525M of it for the arena; WAS: DC GO-funded $515M (tax status of specific bonds not confirmed). Federal cost of their new money for the arena (GDG method, tau .28, present value at issue in 2026$): BKN $230M, DET $90M, UTA $159M, WAS $156M.
+Tax-exempt bonds behind privately built arenas: BKN: PILOT bonds $511M (2009; refunded 2016: $478.7M tax-exempt + $15M taxable); DET: MSF 2014A $250M tax-exempt (2014B $200M taxable authorized, $188.5M drawn, Olympia-paid); DDA 2018A refunding $287.4M; UTA: PID sales-tax bonds 2025A/B/C $900M tax-exempt, up to $525M of it for the arena; WAS: DC GO-funded $515M (tax status of specific bonds not confirmed). Federal cost of their new money for the arena (tau .28, present value at issue in 2026$; GDG's value for BKN): BKN $225M, DET $90M, UTA $159M, WAS $156M.
 Other public money and tax breaks at arenas built and owned privately:
   BKN: City $205M (IBO 2009 testimony; IBO's Sept 2009 brief counts $150M) + State $100M (IBO Sept 2009) capital for land/infrastructure + MTA rail yard $10M (IBO arena share of the $50M bid gap), counted in core; $511M tax-exempt PILOT bonds (property taxes diverted to arena debt; expanded total); full property-tax exemption (would-be $99M/yr 2023 vs $39M PILOT)
   DET: $286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia rent-free
@@ -84,7 +84,7 @@ Core public money .......................................... $9.59B
 = EXPANDED PUBLIC TOTAL .................................... >= $11.56B  (40.3% of a spending base that adds the tax breaks)
 Not added (future): the tax relief in DC's 2024 arena law, mainly the continued property/possessory-interest tax exemption for Capital One Arena to June 2050, valued by OCFO at $49.8M FY2025-28 + $262.9M FY2029-50 = $312.7M (OCFO: "not financially necessary").
 Memo, not added: DEN Ball Arena seat-tax exemption, 1999-2023: about $96M nominal, from one unverified press figure (range in arena_ledger.csv tax_break_notes).
-Memo: federal cost of tax-exempt arena bonds (GDG method, tau=0.28; present value at issue of each issue's new money for the arena: refundings and taxable issues excluded, Salt Lake City's 2025 PID issue at the arena's $525M of $900M, Indianapolis's 2021A at its ~$254M of new money) = $1.53B in 2026 dollars, each converted from the year its par is stated in (2014 for the issues from GDG Table 3) - not added (different payer, overlapping with local bonds).
+Memo: federal cost of tax-exempt arena bonds (present value at issue of the federal revenue loss on each issue's new money for the arena, tau=0.28: refundings and taxable issues excluded, Salt Lake City's 2025 PID issue at the arena's $525M of $900M, Indianapolis's 2021A at its ~$254M of new money; GDG's published values for the seven issues in their data, from each issue's redemption schedule, and a level 30-year approximation for the later issues) = $1.41B in 2026 dollars, each converted from the year its par is stated in (2014 for the issues from GDG Table 3) - not added (different payer, overlapping with local bonds).
 
 F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$)
 ------------------------------------------------------------------------------
@@ -165,6 +165,28 @@ HOU: public $175M = 2000 Letter Agreement arena budget (primary); press range $1
 OKC new arena: MAPS 4 money $70M (earlier okc.gov), $78M (OCPPA audited FY2024; okc.gov March 2026; Bond Buyer), ~$99M (Bond Buyer May 2026), $89M (okc.gov Oct 12 2026); public set to $900M arena - $50M Thunder; cost estimate $1.016B (Bond Buyer).
 WAS: renovation total $712.5M from Council memo ($800M incl. $87.5M purchase); Monumental now says $1B+.
 MIN: purchase $54.6M (Legislative Auditor 2017) vs $54.0M arena line of the 1995 bonds (2003 packet; the $0.6M difference is other acquisition costs) vs ~$54M (SBD 1994); 2017 Taylor $58M (LRL) vs $60M (Wikipedia).
+Other published estimate, public construction money: J.C. Bradbury's 2026 venue database (Long 2013 for arenas opened through 2010, press after; c; https://github.com/jcbradbury/This-One-Will-Be-Different/blob/260e4fcdb3f94e056fefaaf052b524bef99cbf73/data/venuesdb_base.csv). 2026$, each converted from its opening year; ledger value used <- Bradbury:
+  ATL: $124M <- $299M ($150M of $150M in 1999; his source: Long (2013), https://www.ajc.com/sports/hawks-unveil-arena-extreme-makeover/HzqSR5iiI3X1oa1KvI1fdI/)
+  BKN: $455M <- $761M ($527M of $1000M in 2012; his source: https://www.nytimes.com/2018/07/11/nyregion/stadiums-arenas-funding-nyc.html)
+  DEN: $82M <- $0M ($0M of $180M in 1999; his source: Long (2013))
+  DET: $387M <- $438M ($324M of $863M in 2017; his source: https://www.record-eagle.com/opinion/opinion-shiny-new-sports-stadiums-a-loser-for-taxpayers/article_b32984d2-)
+  GSW: $55M <- $0M ($0M of $1400M in 2019; his source: https://www.businessinsider.com/how-chase-center-built-warriors-cost-perfect-storm-2019-3)
+  HOU: $352M <- $316M ($175M of $175M in 2003; his source: Long (2013))
+  IND: $157M <- $354M ($178M of $178M in 1999; his source: Long (2013), https://apnews.com/article/51906d22452f45d7a4311a805deb2df0)
+  LAL: $139M <- $0M ($0M of $315M in 1999; his source: Long (2013))
+  MEM: $439M <- $363M ($207M of $250M in 2004; his source: Long (2013))
+  MIA: $75M <- $0M ($0M of $213M in 1999; his source: Long (2013))
+  MIN: $58M <- $140M ($55M of $104M in 1990; his source: Long (2013), https://www.nba.com/timberwolves/target-center-officially-reopens-following-completion-renovation)
+  NOP: $227M <- $167M ($84M of $114M in 1999; his source: Long (2013), https://www.fox8live.com/story/23751072/pelicans-unveil-arena-renovations/)
+  ORL: $636M <- $502M ($330M of $380M in 2010; his source: Long (2013); https://www.si.com/nba/magic/news/more-details-revealed-about-kia-center-226-million-improvements)
+  PHX: $83M <- $66M ($28M of $83M in 1992; his source: Long (2013), https://www.cnbc.com/2019/11/21/phoenix-suns-unveil-renderings-of-230-million-arena-renovation-pr)
+  POR: $75M <- $0M ($0M of $228M in 1995; his source: Long (2013))
+  SAC: $308M <- $352M ($255M of $535M in 2016; his source: https://www.sacbee.com/news/local/city-arena/article79420892.html)
+  WAS: $156M <- $0M ($0M of $200M in 1997; his source: Long (2013), https://www.bizjournals.com/washington/news/2019/12/09/take-a-look-at-the-big-upgrades-at-capital)
+  Totals: ledger $5.39B, Bradbury $5.33B.
+Public shares of construction in other compilations (c; Matheson 2012 / Marquette NSLI 2014, via PolitiFact, https://www.politifact.com/factchecks/2015/may/29/timothy-sheehy/would-paying-half-cost-new-milwaukee-bucks-arena-b/): ATL 29/91%, CHA 100/100%, DAL 50/30%, DEN 22/3%, HOU 82/100%, IND 100/43%, MEM 100/83%, MIA 100/59%, ORL 90/87.5%; the ledger has 29%, 85%, 30%, 20%, 77%, 43%, 100%, 14% and 87% (Miami counts only the county land as construction money and the yearly payments separately).
+BOS: $20M public of $241M (Long 2013, via NPR/WAMC, https://www.wamc.org/2013-12-20/the-cost-to-keep-the-home-team-at-home-may-not-be-worth-it, c), probably the Chapter 121A tax arrangement the ledger could not value; ledger $0.
+MIN: purchase "$72 million" in 1994 (Mercatus 2018, https://www.mercatus.org/bridge/commentary/target-center-and-minneapolis-celebrate-30-years-stadium-subsidies, c) <- $54.6M used (Legislative Auditor, b).
 
 J. BUILDING VERSUS REBUILDING SINCE 2014 (2026$)
 ------------------------------------------------------------------------------

@@ -94,6 +94,10 @@ from read_csv('{root}/data/dedicated_taxes/slc_ccr_monthly.csv', header = true, 
 create or replace view wcd_annual as
 select * from read_csv('{root}/data/dedicated_taxes/wcd_expo_tax_annual.csv', header = true, all_varchar = true);
 
+-- Other published estimates of public money for the same arenas (construction only), for the comparison in the method.
+create or replace view outside_estimates as
+select * from read_csv('{root}/data/inputs/outside_estimates.csv', header = true);
+
 -- Arena locations for the map (Wikipedia article coordinates).
 create or replace view coords as
 select team, lat, lon from read_csv('{root}/data/inputs/arena_coordinates.csv', header = true);
