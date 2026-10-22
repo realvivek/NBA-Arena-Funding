@@ -3,10 +3,10 @@
 
 bill:
   title: >-
-    Of the public money in the arenas, {{after_opening_share}} came after they opened
+    Of the public money in the arenas, {{after_opening_share}} came, or is committed, after they opened
   sub: >-
     Public money in the {{arenas_n}} arenas NBA teams play in, by kind, in 2026 dollars. Building the arenas is
-    blue; everything else is orange
+    blue; everything else is orange, in alternating shades
   dataset: public-layers
   notes:
     - >-
@@ -24,9 +24,10 @@ values:
     by Forbes; and the public money in its arena, including tax breaks
   dataset: team-values
   legend:
-    - { label: Value in 2026, key: orange }
-    - { label: Price paid in 2026 dollars, key: private }
+    - { label: Value in 2026, key: dot-orange }
+    - { label: Price paid in 2026 dollars, key: ring }
     - { label: Public money in the arena, key: public }
+    - { label: Tax breaks and taxes diverted to arena debt, key: public-soft }
   notes:
     - >-
       Prices are what the current controlling owners paid, or the valuation at which they bought control; some
@@ -55,6 +56,7 @@ owners:
   legend:
     - { label: Owners from private equity or hedge funds, key: orange }
     - { label: Owners from other finance, key: orange-soft }
+    - { label: An investment fund holds a stake, key: aqua }
   notes:
     - >-
       Source of wealth from Forbes's profiles of the owners, or the release or report named in the data. The Bucks'
@@ -66,8 +68,8 @@ rebuild:
   title: >-
     Since 2014, most public arena money has gone to existing arenas
   sub: >-
-    Public money committed each year to build new arenas and to renovate or buy existing ones, one segment per
-    arena, in 2026 dollars
+    Public money for new arenas and for renovating or buying existing ones, by the year the ledger counts it, one
+    segment per arena, in 2026 dollars. Work under way and pending money stand at 2026, at face value
   dataset: rebuild-by-year
   legend:
     - { label: New arenas, key: public }
@@ -80,9 +82,11 @@ rebuild:
       value in 2026.
     - >-
       Oklahoma City's arena under construction, {{okc_new_arena}}, is shown with the new arenas at face value
-      in 2026, because it is binding. Not shown: Bexar County's {{sas_county}} and the city's {{sas_pending}}
-      pending for a new San Antonio arena, which are not binding yet, and {{uta_district}} for the district around
-      Salt Lake City's arena.
+      in 2026, because it is binding. Not shown: Bexar County's {{sas_county}} for a new San Antonio arena,
+      approved by voters but not yet binding; the city's {{sas_pending}}, pending, including up to {{sas_tirz}} of
+      tax-increment debt the council approved on Sept. 10, 2026 to buy the site; and {{uta_district}} for the
+      district around Salt Lake City's arena. Counting Bexar County's money with the new arenas, rebuilding has
+      drawn {{rebuild_ratio_with_sas}} times as much as building.
 
 arenas:
   title: >-
@@ -99,7 +103,8 @@ arenas:
     - >-
       Public money includes construction, purchases, completed or binding renovations and yearly payments.
       Shares count public money only; the tax breaks are shown but not included in the share. Private money is
-      construction and renovation spending the public did not pay.
+      construction and renovation spending the public did not pay. Barclays Center's PILOT bonds paid for part
+      of its construction, so they sit inside its bar and its private money is shown net of them.
 
 valuegroups:
   title: >-
@@ -148,20 +153,24 @@ takeovers:
 
 whopays:
   title: >-
-    Visitor taxes paid {{visitors_share}} of public arena capital
+    Taxes residents mostly pay supplied {{residents_share}} of public arena capital, hotel and car-rental taxes
+    {{visitors_share}}
   sub: >-
     Public money for construction, purchases and renovations, by funding stream, grouped by who mostly pays, in
     2026 dollars
   dataset: who-pays
   legend:
     - { label: Mostly visitors, key: orange }
+    - { label: Visitors and residents, key: orange-soft }
     - { label: Mostly residents, key: public }
     - { label: 'Land, or not split by stream', key: other }
   notes:
     - >-
       Each dollar is assigned to one stream, as documented in the arena's records. Money that the records tie to
-      several streams without splitting it is shown as not split. Yearly payments to teams and operators,
-      {{ongoing_public}}, are not included.
+      several streams without splitting it is shown as not split. Meal and ticket taxes are shown apart from
+      hotel and car-rental taxes because residents pay much of them; Indianapolis's and Milwaukee's pool them
+      with hotel taxes, and the records do not split the pools. Counting them with visitor taxes gives
+      {{visitors_shared_share}}. Yearly payments to teams and operators, {{ongoing_public}}, are not included.
 
 payershift:
   title: >-
@@ -172,6 +181,7 @@ payershift:
   dataset: payer-periods
   legend:
     - { label: Mostly visitors, key: orange }
+    - { label: Visitors and residents, key: orange-soft }
     - { label: Mostly residents, key: public }
     - { label: 'Land, or not split by stream', key: other }
   notes:
@@ -183,7 +193,7 @@ payershift:
 
 households:
   title: >-
-    In Salt Lake City, the arena deal comes to {{hh_uta}} per household
+    In Salt Lake City, the arena deal comes to as much as {{hh_uta}} per household
   sub: >-
     Public money in the largest deals, per household where each arena is, adding the shares of every government
     that pays, in 2026 dollars
@@ -193,13 +203,16 @@ households:
     - { label: State share, key: public-soft }
   notes:
     - >-
-      Households are from the Census Bureau's 2024 American Community Survey. Salt Lake City's figure is an upper
-      bound, because people who live elsewhere pay part of the city's sales tax. In Orlando and San Antonio the
-      money comes mostly from visitor taxes.
+      Households are from the Census Bureau's 2024 American Community Survey. Marks follow one rule: an upper
+      bound where most of the money is a dedicated sales tax, which people who live elsewhere also pay; mostly
+      visitor taxes where most of it is hotel and car-rental taxes; partly visitor taxes where most of it is meal
+      and ticket taxes, alone or pooled with hotel taxes. Portland's row includes the {{por_pending}} pending for
+      the Moda Center; pending money is left out of the other rows.
 
 uc:
   title: >-
     A 1989 formula held the United Center's tax bill to {{uc_formula_bill_min}} to {{uc_formula_bill_max}} a year
+    in 2002-2016
   sub: >-
     Property tax billed on the United Center, and the estimated bill without the stadium valuation formula,
     nominal dollars
@@ -239,7 +252,8 @@ threats:
     - >-
       A threat is a statement, sale, sale term, talks with another city or lease clause by an owner or the
       league that tied a team's future in a city to public money, openly or by implication. Medians of public
-      share are for deals with a known total cost.
+      share are for deals with a known total cost. The gap between them cannot be told apart from chance (p =
+      {{p_share}}, Mann-Whitney test, {{threat_share_n}} deals after a threat and {{nothreat_share_n}} without).
 
 leases:
   title: >-
@@ -260,6 +274,10 @@ slc:
   sub: >-
     Final monthly distributions of the city's arena and district sales tax, nominal dollars
   dataset: slc-monthly
+  notes:
+    - >-
+      The series starts small: {{slc_first_two_months}} in January and February 2025 together. From March 2025 on,
+      every month brought at least {{slc_monthly_min_later}}.
 
 wcd:
   title: >-
@@ -273,5 +291,5 @@ wcd:
     - { label: Car rentals, key: aqua }
   notes:
     - >-
-      Hotel rooms combine the basic and additional room taxes. The 2026 column, marked with an asterisk, covers January
-      through September.
+      Hotel rooms combine the basic and additional room taxes. The 2026 column, marked with an asterisk and drawn
+      lighter, covers January through September only, so it is not a full year.

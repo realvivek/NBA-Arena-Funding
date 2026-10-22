@@ -26,6 +26,7 @@
   "municode-codescontent",
   "9news-next-question-what-incentives-did-ball-arena-get",
   "detroit-dda-fs-2024",
+  "degc-ugd-3",
   "sf-wv5m-vpq2",
   "houstonsports-toyota-center-arena-lease",
   "houstonsports-hchsa-special-bod-agenda-4-8-26",
@@ -111,6 +112,7 @@
   "municode-codescontent",
   "9news-next-question-what-incentives-did-ball-arena-get",
   "detroit-dda-fs-2024",
+  "degc-ugd-3",
   "sf-wv5m-vpq2",
   "houstonsports-toyota-center-arena-lease",
   "houstonsports-hchsa-special-bod-agenda-4-8-26",
@@ -199,8 +201,8 @@
    "pilot_note": null,
    "conduit_note": "Recreation Authority arena bonds repaid by Turner/arena revenues (c, Marquette via search; Bond Buyer reports $147.5M taxable 1997)",
    "bond_detail": "2017 City of Atlanta and Fulton County Recreation Authority Serie $110M not confirmed",
-   "lease_terms": "Non-relocation to 2046 (matches bond maturity)",
-   "exit_penalty": "Break-up fee up to $200M before 2046; Hawks pay $5.9M/yr lease after bonds retire 2028",
+   "lease_terms": "Non-relocation to 2046, when the bonds mature",
+   "exit_penalty": "Break-up fee of up to $200M before 2046; the Hawks pay $5.9M a year in rent after bonds retire in 2028",
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
@@ -213,7 +215,7 @@
   {
    "team": "BKN",
    "construction_cost_other_reports": "Developer's \"Total Cost\" at opening, scope not defined (FCE 10-K FY2012). Alternatives: $890.2M recorded building cost with land at zero (b, same 10-K Schedule III; includes capitalized interest, amount not given); $940.0M recorded at Dec 31 2014 after post-opening work (b); pre-opening estimates $904.3M-$911.1M (b, FCE 10-Ks FY2009-FY2011); ~$1.0B (c, Wikipedia)",
-   "public_construction_notes": "City capital contribution \"has grown from $100 million to $205 million\" (b, IBO testimony May 2009) + State $100M (b, IBO fiscal brief Sept 2009 p.2: \"direct payments of $100 million each from the city and state\"; also Doctoroff via Gotham Gazette, c). Alternative for the city: $150M, because IBO's Sept 2009 brief (p.3) counts only about half of the $105M addition, $50M, as caused by the project (b), for land acquisition and infrastructure for the arena block, outside the arena cost. MTA Vanderbilt Yard: IBO (Sept 2009) puts the subsidy at the $50M gap between Extell's $150M cash bid and Forest City's $100M and attributes $10M (present value) of it to the arena, using the 2009 terms' $20M of $100M for the arena block (b) -> land bucket (a public asset sold below the competing bid). Extell's $150M is computed from IBO's $50M gap (a). Whole-project alternatives, not counted: $50M bid gap (b); IBO's $214M appraisal ($214.5M per Atlantic Yards Report, c) minus the $100M present value of the 2009 payment stream at the MTA's 6.5% = $114.0M (a); replacement yard cut from $240-250M (MTA CFO via Atlantic Yards Report, c) or $182M (developer's figure via Atlantic Yards Report, c) to $147M (b, MTA staff summary) = $35M-$103M (a). The $10M is a present value as of FY2010 but is deflated with the construction money at the 2012 opening year (at 2010 it would be about $0.7M higher in 2026 dollars).",
+   "public_construction_notes": "City capital contribution \"has grown from $100 million to $205 million\" (b, IBO testimony May 2009) + State $100M (b, IBO fiscal brief Sept 2009 p.2: \"direct payments of $100 million each from the city and state\"). Alternative for the city: $150M, because IBO's Sept 2009 brief (p.3) counts only about half of the $105M addition, $50M, as caused by the project (b), for land acquisition and infrastructure for the arena block, outside the arena cost. MTA Vanderbilt Yard: IBO (Sept 2009) puts the subsidy at the $50M gap between Extell's $150M cash bid and Forest City's $100M and attributes $10M (present value) of it to the arena, using the 2009 terms' $20M of $100M for the arena block (b) -> land bucket (a public asset sold below the competing bid). Extell's $150M is computed from IBO's $50M gap (a). Whole-project alternatives, not counted: $50M bid gap (b); IBO's $214M appraisal ($214.5M per Atlantic Yards Report, c) minus the $100M present value of the 2009 payment stream at the MTA's 6.5% = $114.0M (a); replacement yard cut from $240-250M (MTA CFO via Atlantic Yards Report, c) or $182M (developer's figure via Atlantic Yards Report, c) to $147M (b, MTA staff summary) = $35M-$103M (a). The $10M is a present value as of FY2010 but is deflated with the construction money at the 2012 opening year (at 2010 it would be about $0.7M higher in 2026 dollars).",
    "ongoing_notes": null,
    "tax_break_desc": null,
    "tax_break_notes": null,
@@ -221,7 +223,7 @@
    "conduit_note": null,
    "bond_detail": "2009 Brooklyn Arena Local Development Corp PILOT bonds $564M tax-exempt | 2016 BALDC PILOT Revenue Refunding Bonds Series 2016A $478.665M tax-exempt | 2016 BALDC PILOT Revenue Refunding Bonds Series 2016B $15M TAXABLE",
    "lease_terms": "Non-relocation agreement cited by Moody's as PILOT-bond credit positive; PILOT bonds final debt service 2046",
-   "exit_penalty": "Term/penalty not confirmed",
+   "exit_penalty": "Term and penalty not confirmed",
    "lease_label": "c/u",
    "property_tax_sources": [
     "ibo-2023-march-description-of-public-subsidies-for-m"
@@ -241,7 +243,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": null,
-   "lease_terms": "Lease through 2035-36 season (2021 15-yr extension)",
+   "lease_terms": "Lease through the 2035-36 season (2021 extension of 15 years)",
    "exit_penalty": "Not public",
    "lease_label": "c",
    "property_tax_sources": [
@@ -305,7 +307,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": null,
-   "lease_terms": "Through 2033-34 season + two successive 5-yr TEAM options",
+   "lease_terms": "Through the 2033-34 season, with two successive five-year team options",
    "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds; a recent assessment says the arena and the ballpark \"will need more than $400 million for repairs through 2037,\" and the city and county are drafting a plan that could raise sales and sin taxes (Ideastream, Oct 19 2026, c)",
    "lease_label": "b/c",
    "property_tax_sources": [],
@@ -326,7 +328,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "1998 City of Dallas $152M tax-exempt",
-   "lease_terms": "Mavericks' lease at American Airlines Center expires in 2031",
+   "lease_terms": "The Mavericks' lease at American Airlines Center expires in 2031",
    "exit_penalty": "Mavericks pursuing a new arena on the former Valley View Mall site (June 2026)",
    "lease_label": "c",
    "property_tax_sources": [],
@@ -371,10 +373,12 @@
    "pilot_note": null,
    "conduit_note": "MSF Series 2014B: $200M authorized, $188.5M drawn, retired in 2017 through prepayment of base concession fees (b, DDA FY2018 Note G)",
    "bond_detail": "2014 Michigan Strategic Fund LO Revenue Bonds Series 2014A $250M tax-exempt | 2014 Michigan Strategic Fund Series 2014B $200M TAXABLE | 2017 Detroit DDA Series 2017 bonds (Pistons relocation work) $36M not confirmed | 2018 Detroit DDA Tax Increment Revenue Refunding Bonds Series 201 $287.425M not confirmed (refunds tax-exempt 2014A) | 2024 Detroit DDA Series 2024 bonds (refund the 2018A) $198.835M not confirmed (refunds 2018A)",
-   "lease_terms": "Pistons MOU with DDA (2016); 35-yr term widely reported but not verified (MOU PDF 403)",
-   "exit_penalty": "$36M 2017 DDA bonds to make arena NBA-compliant",
+   "lease_terms": "2016 memorandum of understanding with the Downtown Development Authority; a 35-year term is widely reported but not verified (the document could not be downloaded)",
+   "exit_penalty": "$36M of 2017 DDA bonds to make the arena ready for the NBA",
    "lease_label": "b/u",
-   "property_tax_sources": [],
+   "property_tax_sources": [
+    "degc-ugd-3"
+   ],
    "lease_sources": [
     "detroit-dda-fs-2024"
    ],
@@ -409,8 +413,8 @@
    "pilot_note": null,
    "conduit_note": "Rent Supported Debt backed by Rockets rent: principal capped at $30.4M without tenant approval (b, lease App. A p.A-4); a $57.54M 2014 taxable \"Toyota Center Project\" refunding is listed in the HCHSA debt worksheet, link to the rent-supported debt not confirmed",
    "bond_detail": "2001 Harris County-Houston Sports Authority $304M tax-exempt",
-   "lease_terms": "Term = 360 months from Oct-2003 commencement (ends after 2032-33); no extension reported with Apr-2026 $180M renovation ($95M State of Texas)",
-   "exit_penalty": "Landlord duty to renovate to \"first-class, state of the art\" standard (s8.6) limited to Renovation Fund",
+   "lease_terms": "360 months from October 2003 (ends after the 2032-33 season); no extension reported with the April 2026 $180M renovation, for which about $95M is expected from the state (no agreement found)",
+   "exit_penalty": "The landlord's duty to keep the arena \"first-class, state of the art\" (lease section 8.6) is limited to the Renovation Fund",
    "lease_label": "b/c",
    "property_tax_sources": [],
    "lease_sources": [
@@ -430,8 +434,8 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "2021 MCCRFA Excise Taxes Lease Rental Revenue Bonds Series 2021A  $401.41M not stated (5% coupons) | 2021 CIB Excise Taxes Revenue Subordinate Bonds Series 2021A $22.925M not stated (5%)",
-   "lease_terms": "25-yr agreement 2019-2044 + 1-yr team option",
-   "exit_penalty": "Pacers may terminate if CIB fails to appropriate ~$12.5M/yr reimbursements or capital; Pacers owe up to $750M if they fail to play home games; if the Pacers and the CIB do not agree on more technology funding by 2036, the Pacers could terminate (IBJ 2019, c)",
+   "lease_terms": "25-year agreement, 2019-2044, with a one-year team option and two mutual extension options",
+   "exit_penalty": "The Pacers may terminate if the CIB fails to appropriate about $12.5M a year of reimbursements or its capital money; Pacers owe up to $750M if they fail to play home games; if the Pacers and the CIB do not agree on more technology funding by 2036, the Pacers could terminate (IBJ 2019, c)",
    "lease_label": "b",
    "property_tax_sources": [],
    "lease_sources": [
@@ -491,7 +495,7 @@
    "conduit_note": null,
    "bond_detail": "2002 Memphis & Shelby County (sports authority) $296M tax-exempt",
    "lease_terms": "Current lease ends after 2028-29 season; $550M renovation/new lease still unsigned as of Oct 22 2026 (the Oct 8 2026 Sports Authority agenda lists a construction agreement and a funding-agreement amendment; press reports approval)",
-   "exit_penalty": "(Attendance clause/2022 settlement already known - excluded)",
+   "exit_penalty": "Exit terms of a new lease not public; the current lease's attendance-clause dispute was settled in 2022",
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
@@ -512,7 +516,7 @@
    "conduit_note": null,
    "bond_detail": null,
    "lease_terms": "Through June 30 2040 under the 2014 agreements (UPI; Commission Auditor notes, b); from 2025 either side may ask to renegotiate the terms for July 2035-June 2040 and, if either elects, terminate from July 1 2035",
-   "exit_penalty": "County subsidy $6.4M/yr (FY26 budget) rising to $8.5M 2031-35",
+   "exit_penalty": "County payments of $6.4M a year through fiscal 2029 (FY2026 budget), then $8.5M a year to June 2035, under the 2014 agreements",
    "lease_label": "b",
    "property_tax_sources": [],
    "lease_sources": [
@@ -534,7 +538,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "2016 Wisconsin Center District appropriation revenue bonds $108.1M tax-exempt | 2016 WCD dedicated tax revenue bonds $54.3M tax-exempt | 2016 WCD dedicated tax revenue refunding bonds (Nov 29 2016) $37.9M tax-exempt (assumed) | 2016 WCD Subordinate Revenue Bonds Series 2016 (Taxable), BCPL pr $45M TAXABLE",
-   "lease_terms": "30-yr lease (signed Apr 2016) + two 5-yr TEAM options; team may negotiate with third parties in last 5 yrs of term",
+   "lease_terms": "30-year lease signed in April 2016, with two five-year team options; the team may negotiate with third parties in the last five years of the term",
    "exit_penalty": "Non-relocation damages of at least $553M in year 1, declining; the floor is reported as $20M (BizTimes) or $200M (WPR, quoting the district chair)",
    "lease_label": "b/c",
    "property_tax_sources": [],
@@ -556,8 +560,8 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": null,
-   "lease_terms": "Play through 2034-35 season (2016 agreement)",
-   "exit_penalty": "$50M payment to city if not fulfilled; $53.5M city debt service 2026-35",
+   "lease_terms": "Play through the 2034-35 season (2016 agreement)",
+   "exit_penalty": "The team pays the city $50M if it leaves early; the city owes $53.5M of debt service in 2026-35",
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
@@ -577,7 +581,7 @@
    "conduit_note": null,
    "bond_detail": null,
    "lease_terms": "Initial term to June 30, 2029 (amended June 13, 2023); State agreement \"set to expire in FY 2029\"",
-   "exit_penalty": "State must keep paying $3.65M/yr Quality Jobs equivalent through FY2029",
+   "exit_penalty": "The state must keep paying $3.65M a year, a Quality Jobs equivalent, through FY2029",
    "lease_label": "b",
    "property_tax_sources": [],
    "lease_sources": [
@@ -596,7 +600,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": null,
-   "lease_terms": "Arena license to June 30, 2055, fees +3%/yr",
+   "lease_terms": "Arena license to June 30, 2055, with fees rising 3% a year",
    "exit_penalty": "n/a",
    "lease_label": "b",
    "property_tax_sources": [
@@ -646,7 +650,7 @@
    "conduit_note": null,
    "bond_detail": "2008 Orange County TDT / City of Orlando $342M tax-exempt",
    "lease_terms": "Use Agreement ends June 30 2035 (2024 interlocal funding agreement, b); before the county issues its Contract Sixth Cent bonds (2027 at the earliest) the city must negotiate an extension at least as long as those bonds, with non-relocation penalties covering the remaining debt; the 2016 interlocal (s.5.4.7) also gives a five-year renewal option",
-   "exit_penalty": "Rent $1M/contract year",
+   "exit_penalty": "Rent of $1M a contract year",
    "lease_label": "b",
    "property_tax_sources": [],
    "lease_sources": [
@@ -733,8 +737,8 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "2015 Sacramento Public Financing Authority Lease Revenue Bonds Se $272.87M TAXABLE",
-   "lease_terms": "35-yr non-relocation + two 5-yr extensions (term sheet); ~2051 inferred",
-   "exit_penalty": "Kings minimum lease payments $406.2M over 35 yrs",
+   "lease_terms": "35-year non-relocation commitment from 2016 with two five-year extensions (term sheet); about 2051",
+   "exit_penalty": "The Kings' minimum lease payments total $406.2M over 35 years",
    "lease_label": "c/u + b",
    "property_tax_sources": [],
    "lease_sources": [
@@ -790,7 +794,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "2025 Downtown Revitalization PID Sales Tax Revenue Bonds (SEG Red $899.99M tax-exempt",
-   "lease_terms": "30-yr non-relocation tied to SLC 0.5% sales tax from 2025 (~2054-55 inferred)",
+   "lease_terms": "30-year non-relocation commitment tied to Salt Lake City's 0.5% sales tax from 2025 (about 2054-55)",
    "exit_penalty": "If both teams leave, Smith Entertainment Group must repay the outstanding sales-tax bonds whose proceeds it received; if one team leaves, 50% of a $250M liquidated damages amount in years 1-15, reduced by $16,666,667 a year to zero at year 30, so $125M at most (draft participation agreement of July 5 2024, s.11.8(d), b; the executed agreement of Dec 10 2024 was not read)",
    "lease_label": "b/c",
    "property_tax_sources": [
@@ -813,7 +817,7 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "2025 DC capital budget FY2025-27 funded by GO bonds $515M not confirmed",
-   "lease_terms": "Lease-back to DCALP through June 30, 2050, with up to five 4-yr renewals; Wizards and Capitals must play home games there; no-shop to 2045",
+   "lease_terms": "Leased back to DC Arena LP through June 30, 2050, with up to five four-year renewals; the Wizards and Capitals must play home games there, with a no-shop clause to 2045",
    "exit_penalty": "Damages not quantified in the fiscal impact statement",
    "lease_label": "b",
    "property_tax_sources": [

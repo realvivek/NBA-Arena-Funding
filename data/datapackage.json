@@ -916,6 +916,10 @@
       "type": "number"
      },
      {
+      "name": "pubcon_meals_m",
+      "type": "number"
+     },
+     {
       "name": "pubcon_tif_m",
       "type": "number"
      },
@@ -1207,6 +1211,10 @@
       "type": "number"
      },
      {
+      "name": "pubcap_meals_2026_m",
+      "type": "number"
+     },
+     {
       "name": "pubcap_tif_2026_m",
       "type": "number"
      },
@@ -1265,6 +1273,10 @@
      },
      {
       "name": "amount_2026_m",
+      "type": "number"
+     },
+     {
+      "name": "pending_2026_m",
       "type": "number"
      },
      {
@@ -1341,6 +1353,7 @@
         "general",
         "sales",
         "tourist",
+        "meals",
         "tif",
         "leaserev",
         "land",

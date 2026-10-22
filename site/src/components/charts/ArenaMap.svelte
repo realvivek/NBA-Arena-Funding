@@ -36,7 +36,7 @@
   const points = ranked
     .map((d) => {
       const [px, py] = projection([d.lon, d.lat]);
-      return { ...d, px, py, rad: d.public_2026_m > 0 ? Math.max(r(d.public_2026_m), 2.5) : 2.5, city: TEAM_CITY[d.team] };
+      return { ...d, px, py, rad: d.public_2026_m > 0 ? Math.max(r(d.public_2026_m), 2.5) : 3.25, city: TEAM_CITY[d.team] };
     })
     .reverse(); // small circles on top
   // Labels for the ten largest, placed so that none covers a circle or another label: each tries spots around its
@@ -95,7 +95,8 @@
         {#if d.public_2026_m > 0}
           <circle class="seq-{bin(d.public_share_pct)} dot-ring" cx={d.px} cy={d.py} r={d.rad} data-tip={tip(d)} />
         {:else}
-          <circle cx={d.px} cy={d.py} r={d.rad} fill="var(--surface)" stroke="var(--muted)" stroke-width="1.5" data-tip={tip(d)} />
+          <!-- arenas with no public money: rings drawn over their neighbours, in ink so they read on a blue circle -->
+          <circle cx={d.px} cy={d.py} r={d.rad} fill="var(--surface)" stroke="var(--ink-2)" stroke-width="1.5" data-tip={tip(d)} />
         {/if}
       {/each}
       {#if !narrow}
@@ -117,7 +118,7 @@
             <circle cx={cx} cy={48 - r(v)} r={r(v)} fill="none" stroke="var(--muted)" />
             <text class="tick t-muted" x={cx + r(v) + 4} y="48" font-size={FONT}>{money(v)}</text>
           {/each}
-          <circle cx="566" cy="44" r="2.5" fill="var(--surface)" stroke="var(--muted)" stroke-width="1.5" />
+          <circle cx="566" cy="44" r="3.25" fill="var(--surface)" stroke="var(--ink-2)" stroke-width="1.5" />
           <text class="tick t-muted" x="574" y="48" font-size={FONT}>None found</text>
         </g>
       {:else}
@@ -129,6 +130,16 @@
   </LayerCake>
 </div>
 {#if narrow}
+  <!-- on phones the key sits under the map, in the page's own type -->
+  <div class="map-key" aria-hidden="true">
+    <span class="map-key-title">Public share of all spending</span>
+    <span class="map-bins">
+      {#each BINS as b, i}
+        <span><i style="background: var(--seq-{i + 1})"></i>{i === 0 ? 'Under 20%' : `${BINS[i - 1]}-${i === 4 ? 100 : b}%`}</span>
+      {/each}
+    </span>
+    <span class="map-key-size">Circles are sized by public money; <i class="ring"></i> none found</span>
+  </div>
   <ol class="map-list">
     {#each ranked.slice(0, 10) as d}
       <li><span class="map-city">{TEAM_CITY[d.team]}</span> <span class="map-val">{money(d.public_2026_m)}, {Math.round(d.public_share_pct)}% public</span></li>
@@ -137,6 +148,38 @@
 {/if}
 
 <style>
+  .map-key {
+    display: grid;
+    gap: 4px;
+    margin: 6px 0 0;
+    font-size: 0.8125rem;
+    color: var(--ink-2);
+  }
+  .map-key-title {
+    color: var(--muted);
+  }
+  .map-bins {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 10px;
+  }
+  .map-bins i {
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    margin-right: 4px;
+    border-radius: 2px;
+    vertical-align: -1px;
+  }
+  .map-key-size .ring {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 2px 0 3px;
+    border: 1.5px solid var(--ink-2);
+    border-radius: 50%;
+    background: var(--surface);
+  }
   .map-list {
     margin: 8px 0 0;
     padding-left: 1.6em;

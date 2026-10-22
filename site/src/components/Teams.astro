@@ -34,7 +34,7 @@ for (const b of dataset('item-buckets').rows as any[]) {
   if (!it || !it.core || it.kind === 'ongoing') continue;
   (payers[b.team] ??= {})[b.payer] = (payers[b.team]?.[b.payer] ?? 0) + b.public_2026_m;
 }
-const PAYER = { residents: "residents' taxes", visitors: 'visitor taxes', other: 'land, or money not split by tax' } as Record<string, string>;
+const PAYER = { residents: "residents' taxes", visitors: 'hotel and car-rental taxes', shared: 'meal and ticket taxes', other: 'land or money not split by tax' } as Record<string, string>;
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const pct = (v: number) => `${Math.round(v)}%`;
 const year = (d: string | null) => (d ? d.slice(0, 4) : '');
@@ -45,17 +45,22 @@ const worth = (b: number) => `$${b}B`;
 const rows = Object.keys(arenas).map((team) => {
   const a = arenas[team], v = values[team], ret = returns[team], l = leases[team];
   const direct = a.public_2026_m, breaks = a.tax_breaks_2026_m, total = direct + breaks;
+  // Barclays Center's PILOT bonds paid for building it and are repaid with its property taxes, so they sit with the
+  // building money here; other tax breaks are listed apart
+  const pilot = a.pilot_2026_m ?? 0;
   const parts = [
     ['building it', a.construction_public_2026_m],
     ['renovations', a.renovation_public_2026_m],
     ['buying it', a.purchase_public_2026_m],
     ['yearly payments', a.ongoing_public_2026_m],
-    ['tax breaks', breaks],
-  ].filter(([, x]) => (x as number) > 0.05) as [string, number][];
+    ['tax breaks', breaks - pilot],
+  ].filter(([, x]) => (x as number) > 0.05)
+    .map(([n, x]) => `${n} ${money(x as number)}${n === 'building it' && pilot > 0.05 ? ` plus ${money(pilot)} of bonds repaid with its property taxes` : ''}`);
+  const bondShare = pilot > 0.05 ? ` (${pct((100 * (direct + pilot)) / a.spending_2026_m)} counting the bonds)` : '';
   const paid = payers[team] ?? {};
   const paidTotal = Object.values(paid).reduce((s, x) => s + x, 0);
   const paidWith = paidTotal > 0
-    ? Object.entries(paid).filter(([, x]) => x / paidTotal >= 0.05).sort((p, q) => q[1] - p[1]).map(([k, x]) => `${pct((100 * x) / paidTotal)} ${PAYER[k]}`).join(', ')
+    ? Object.entries(paid).filter(([, x]) => x / paidTotal >= 0.005).sort((p, q) => q[1] - p[1]).map(([k, x]) => `${pct((100 * x) / paidTotal)} ${PAYER[k]}`).join(', ')
     : '';
   let bought = '';
   if (v.price_scope === 'not_comparable' || v.price_m == null) bought = sentence(v.price_note);
@@ -74,10 +79,10 @@ const rows = Object.keys(arenas).map((team) => {
     total, direct, breaks,
     share: a.public_share_pct,
     value: v.forbes_2026_b,
-    chip: direct > 0 ? `${pct(a.public_share_pct)} public` : breaks > 0 ? 'tax breaks only' : 'no public money found',
+    chip: direct > 0 ? `${pct(a.public_share_pct)} public` : breaks > 0 ? 'tax breaks only' : 'no public money counted',
     record: [
       ['Arena', `${a.arena}, ${a.city}. Opened ${a.opened}. Owned by ${a.owner.replace(/ - /g, '; ')}.`],
-      ['Public money', parts.length ? `${cap(parts.map(([n, x]) => `${n} ${money(x)}`).join(', '))}, in 2026 dollars. Public share of all spending on the arena: ${pct(a.public_share_pct)}.` : 'None found in the records reviewed.'],
+      ['Public money', parts.length ? `${cap(parts.join(', '))}, in 2026 dollars. Public share of all spending on the arena: ${pct(a.public_share_pct)}${bondShare}.` : 'None counted in the records reviewed.'],
       ...(paidWith ? [['Paid with', `${cap(paidWith)}.`]] : []),
       ['Lease', l?.summary ?? ''],
       ['The team', `${bought} Worth ${worth(v.forbes_2026_b)} (Forbes, October 2026).${deal}`],
@@ -102,7 +107,7 @@ const top = rows[0].total;
   <p class="teams-key" aria-hidden="true">
     <span><span class="tm-arena" style="--share: 0.5"><i /></span>Public share of all spending on the arena</span>
     <span><i style="background: var(--public)" />Public money</span>
-    <span><i style="background: var(--public-soft)" />Tax breaks</span>
+    <span><i style="background: var(--public-soft)" />Tax breaks and taxes diverted to arena debt</span>
     <span class="teams-key-value">Team value, 2026</span>
   </p>
   <ol class="teams-list">
@@ -118,7 +123,7 @@ const top = rows[0].total;
               {r.breaks > 0 && <span class="tm-breaks" style={`width: ${((100 * r.breaks) / top).toFixed(2)}%`} />}
             </span>
             <span class="tm-amt">{r.total > 0 ? money(r.total) : '$0'}</span>
-            <span class="tm-val">{money(r.value * 1000, 1)}</span>
+            <span class="tm-val"><span class="tm-val-k">worth </span>{money(r.value * 1000, 1)}</span>
           </summary>
           <div class="tm-body">
             <dl>

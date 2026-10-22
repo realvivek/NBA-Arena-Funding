@@ -51,8 +51,8 @@
    "year": 2000,
    "public_m": 195.0,
    "public_2026_m": 375.599251,
-   "total_m": 235.0,
-   "share_pct": 82.978723
+   "total_m": 255.0,
+   "share_pct": 76.470588
   },
   {
    "id": "E10",
@@ -254,7 +254,7 @@
   },
   {
    "id": "E24",
-   "deal": "SAS new arena (county binding; share uses city term sheet)",
+   "deal": "SAS new arena (county voter-approved, not yet binding; share uses city term sheet)",
    "grp": "no_threat",
    "flags": "none;share 860/1300 planned",
    "year": 2025,

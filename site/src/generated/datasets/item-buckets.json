@@ -67,8 +67,8 @@
   {
    "item_id": "CHA-renovation-1",
    "team": "CHA",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "mixed",
+   "payer": "other",
    "public_nominal_m": 33.5,
    "public_2026_m": 46.931803
   },
@@ -187,24 +187,24 @@
   {
    "item_id": "IND-construction",
    "team": "IND",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "meals",
+   "payer": "shared",
    "public_nominal_m": 79.0,
    "public_2026_m": 157.291158
   },
   {
    "item_id": "IND-renovation-1",
    "team": "IND",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "meals",
+   "payer": "shared",
    "public_nominal_m": 33.5,
    "public_2026_m": 45.326672
   },
   {
    "item_id": "IND-renovation-2",
    "team": "IND",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "meals",
+   "payer": "shared",
    "public_nominal_m": 147.6,
    "public_2026_m": 180.656082
   },
@@ -227,16 +227,16 @@
   {
    "item_id": "IND-renovation-3",
    "team": "IND",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "meals",
+   "payer": "shared",
    "public_nominal_m": 17.62431,
    "public_2026_m": 21.571401
   },
   {
    "item_id": "IND-renovation-4",
    "team": "IND",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "meals",
+   "payer": "shared",
    "public_nominal_m": 120.031875,
    "public_2026_m": 120.031875
   },
@@ -307,8 +307,8 @@
   {
    "item_id": "MIL-construction",
    "team": "MIL",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "meals",
+   "payer": "shared",
    "public_nominal_m": 94.9,
    "public_2026_m": 125.341452
   },
@@ -659,8 +659,8 @@
   {
    "item_id": "WAS-renovation-1",
    "team": "WAS",
-   "bucket": "tourist",
-   "payer": "visitors",
+   "bucket": "meals",
+   "payer": "shared",
    "public_nominal_m": 50.0,
    "public_2026_m": 79.977696
   },

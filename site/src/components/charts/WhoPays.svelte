@@ -7,7 +7,8 @@
   let { rows, variant = 'wide', label = '' } = $props();
   const narrow = variant === 'narrow';
   const SHORT = {
-    tourist: 'Visitor taxes',
+    tourist: 'Hotel and car-rental taxes',
+    meals: 'Meal and ticket taxes, some pooled',
     general: 'General funds, bonds and grants',
     sales: 'Dedicated sales tax',
     tif: 'Tax increment and tax capture',
@@ -19,6 +20,7 @@
   };
   const GROUPS = [
     { payer: 'visitors', name: 'Taxes mostly paid by visitors', cls: 'f-orange' },
+    { payer: 'shared', name: 'Taxes visitors and residents share', cls: 'f-orange-soft' },
     { payer: 'residents', name: 'Taxes mostly paid by residents', cls: 'f-public' },
     { payer: 'other', name: 'Land, or not split by stream', cls: 'f-other' },
   ];

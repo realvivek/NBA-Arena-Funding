@@ -5,7 +5,7 @@ ATL-renovation-1,ATL,general,32.5,42.925155
 BKN-construction,BKN,general,305.0,440.581749
 BKN-construction,BKN,land,10.0,14.445303
 CHA-construction,CHA,tourist,170.0,288.703633
-CHA-renovation-1,CHA,tourist,33.5,46.931803
+CHA-renovation-1,CHA,mixed,33.5,46.931803
 CHA-renovation-2,CHA,tourist,215.0,221.486119
 CLE-construction,CLE,mixed,120.0,268.501569
 CLE-renovation-1,CLE,mixed,70.0,92.45418
@@ -20,13 +20,13 @@ GSW-construction,GSW,tif,34.5,44.755637
 HOU-construction,HOU,tourist,175.0,315.504547
 HOU-construction,HOU,infra,20.0,36.057663
 HOU-renovation-1,HOU,mixed,95.0,95.0
-IND-construction,IND,tourist,79.0,157.291158
-IND-renovation-1,IND,tourist,33.5,45.326672
+IND-construction,IND,meals,79.0,157.291158
+IND-renovation-1,IND,meals,33.5,45.326672
 IND-renovation-2,IND,tif,122.4,149.812361
-IND-renovation-2,IND,tourist,147.6,180.656082
+IND-renovation-2,IND,meals,147.6,180.656082
 IND-renovation-2,IND,general,25.0,30.59893
-IND-renovation-3,IND,tourist,17.62431,21.571401
-IND-renovation-4,IND,tourist,120.031875,120.031875
+IND-renovation-3,IND,meals,17.62431,21.571401
+IND-renovation-4,IND,meals,120.031875,120.031875
 LAL-construction,LAL,mixed,70.0,139.371912
 MEM-construction,MEM,mixed,206.0,361.710089
 MEM-construction,MEM,tourist,12.0,21.070491
@@ -36,7 +36,7 @@ MEM-renovation-2,MEM,general,150.0,150.0
 MEM-renovation-2,MEM,tourist,320.0,320.0
 MIA-construction,MIA,land,37.6,74.862627
 MIL-construction,MIL,general,108.1,142.775669
-MIL-construction,MIL,tourist,94.9,125.341452
+MIL-construction,MIL,meals,94.9,125.341452
 MIL-construction,MIL,tif,47.0,62.076378
 MIN-construction,MIN,tif,20.0,50.766815
 MIN-construction,MIN,mixed,3.0,7.615022
@@ -73,7 +73,7 @@ UTA-renovation-3,UTA,sales,525.0,525.0
 WAS-construction,WAS,land,37.2,76.861676
 WAS-construction,WAS,general,38.3,79.134467
 WAS-purchase,WAS,general,87.5,92.511566
-WAS-renovation-1,WAS,tourist,50.0,79.977696
+WAS-renovation-1,WAS,meals,50.0,79.977696
 WAS-renovation-2,WAS,general,427.5,427.5
 OKC-project,OKC,sales,850.0,850.0
 OKC-project,OKC,general,60.0,60.0

@@ -1,23 +1,23 @@
-team,deal,amount_2026_m,geo_id,jurisdiction,households,share,per_household_2026,note
-UTA,"Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax",547.7,16000US4967000,"Salt Lake City, UT",98916,1.0,5537.02,"City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound"
-OKC,"New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($331M), OKC city sales tax and GO bonds",1241.127084,16000US4055000,"Oklahoma City, OK",290311,1.0,4275.16,City sales tax (also paid by commuters/visitors) and GO bonds
-WAS,Capital One Arena all public money since 1997 (the $12M federal grant and $2M of WMATA money for the Metro link are not DC households' share),755.985405,04000US11,District of Columbia,329687,0.961737,2205.3,District of Columbia general fund/GO
-ORL,Kia Center (2010 build + 2025 renovation),861.764504,05000US12095,"Orange County, FL",560020,1.0,1538.81,Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional
-IND,"Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",934.355889,05000US18097,"Marion County, IN",408907,0.839662,1918.64,"Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)"
-IND,"Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",934.355889,04000US18,Indiana,2775637,0.160338,53.97,"Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)"
-CHA,"Spectrum Center (2005, 2014, 2024-25)",559.491253,16000US3712000,"Charlotte, NC",381274,1.0,1467.43,City of Charlotte hotel/car-rental taxes
-MEM,"FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",547.748246,05000US47157,"Shelby County, TN",359692,0.789835,1202.78,Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)
-MEM,"FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",547.748246,04000US47,Tennessee,2928765,0.210165,39.31,Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)
-HOU,Toyota Center (2003),351.56221,05000US48201,"Harris County, TX",1801856,1.0,195.11,Harris County (HCHSA hotel/car taxes); the expected $95M state grant for the 2026 renovation is pending and not included
-BKN,"Barclays Center direct capital (city $205M, state $100M)",455.027052,16000US3651000,"New York, NY",3379651,0.672131,90.49,New York City + New York State
-BKN,"Barclays Center direct capital (city $205M, state $100M)",455.027052,04000US36,New York,7828074,0.327869,19.06,New York City + New York State
-SAS,"Frost Bank Center (2002, 2015) + county $311M for new arena",724.764863,05000US48029,"Bexar County, TX",774392,1.0,935.91,Bexar County visitor taxes (paid mostly by visitors)
-DET,Little Caesars Arena DDA TIF,386.968009,16000US2622000,"Detroit, MI",268048,1.0,1443.65,City of Detroit (TIF also captures county/school taxes; schools backfilled by state)
-CLE,"Rocket Arena (1994, 2017-19, 2019 repairs)",432.583987,05000US39035,"Cuyahoga County, OH",551960,1.0,783.72,"Cuyahoga County (sin tax, county bonds)"
-POR,Moda Center pending rebuild ($573M) + past ($83M),655.626048,04000US41,Oregon,1744270,0.55672,209.26,Oregon (income-tax capture) + Multnomah County + City of Portland
-POR,Moda Center pending rebuild ($573M) + past ($83M),655.626048,05000US41051,"Multnomah County, OR",353080,0.134223,249.24,Oregon (income-tax capture) + Multnomah County + City of Portland
-POR,Moda Center pending rebuild ($573M) + past ($83M),655.626048,16000US4159000,"Portland, OR",294419,0.309057,688.22,Oregon (income-tax capture) + Multnomah County + City of Portland
-MIL,Fiserv Forum,330.193498,05000US55079,"Milwaukee County, WI",396211,0.7838,653.2,"Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)"
-MIL,Fiserv Forum,330.193498,04000US55,Wisconsin,2535198,0.2162,28.16,"Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)"
-NOP,Smoothie King Center,458.761416,04000US22,Louisiana,1848965,1.0,248.12,State of Louisiana (LSED/state)
-SAC,Golden 1 Center,308.292103,16000US0664000,"Sacramento, CA",198965,1.0,1549.48,City of Sacramento general fund/parking
+team,deal,amount_2026_m,pending_2026_m,geo_id,jurisdiction,households,share,per_household_2026,note
+UTA,"Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax",547.7,0.0,16000US4967000,"Salt Lake City, UT",98916,1.0,5537.02,"City sales tax, part of it paid by people who live elsewhere, so the figure per household in the city is an upper bound"
+OKC,"New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($331M), OKC city sales tax and GO bonds",1241.127084,0.0,16000US4055000,"Oklahoma City, OK",290311,1.0,4275.16,City sales tax (also paid by commuters/visitors) and GO bonds
+WAS,Capital One Arena all public money since 1997 (the $12M federal grant and $2M of WMATA money for the Metro link are not DC households' share),755.985405,0.0,04000US11,District of Columbia,329687,0.961737,2205.3,District of Columbia general fund/GO
+ORL,Kia Center (2010 build + 2025 renovation),861.764504,0.0,05000US12095,"Orange County, FL",560020,1.0,1538.81,"Orange County 6% tourist tax, paid mostly by visitors, so the figure per household is notional"
+IND,"Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",934.355889,0.0,05000US18097,"Marion County, IN",408907,0.839662,1918.64,"Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)"
+IND,"Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",934.355889,0.0,04000US18,Indiana,2775637,0.160338,53.97,"Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)"
+CHA,"Spectrum Center (2005, 2014, 2024-25)",559.491253,0.0,16000US3712000,"Charlotte, NC",381274,1.0,1467.43,City of Charlotte hotel/car-rental taxes
+MEM,"FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",547.748246,0.0,05000US47157,"Shelby County, TN",359692,0.789835,1202.78,Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)
+MEM,"FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",547.748246,0.0,04000US47,Tennessee,2928765,0.210165,39.31,Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)
+HOU,Toyota Center (2003),351.56221,0.0,05000US48201,"Harris County, TX",1801856,1.0,195.11,Harris County (HCHSA hotel/car taxes); the expected $95M state grant for the 2026 renovation is pending and not included
+BKN,"Barclays Center direct capital (city $205M, state $100M)",455.027052,0.0,16000US3651000,"New York, NY",3379651,0.672131,90.49,New York City + New York State
+BKN,"Barclays Center direct capital (city $205M, state $100M)",455.027052,0.0,04000US36,New York,7828074,0.327869,19.06,New York City + New York State
+SAS,"Frost Bank Center (2002, 2015) + county $311M for new arena",724.764863,0.0,05000US48029,"Bexar County, TX",774392,1.0,935.91,Bexar County visitor taxes (paid mostly by visitors)
+DET,Little Caesars Arena DDA TIF,386.968009,0.0,16000US2622000,"Detroit, MI",268048,1.0,1443.65,City of Detroit (TIF also captures county/school taxes; schools backfilled by state)
+CLE,"Rocket Arena (1994, 2017-19, 2019 repairs)",432.583987,0.0,05000US39035,"Cuyahoga County, OH",551960,1.0,783.72,"Cuyahoga County (sin tax, county bonds)"
+POR,Moda Center pending rebuild ($573M) + past ($83M),655.626048,573.0,04000US41,Oregon,1744270,0.55672,209.26,Oregon (income-tax capture) + Multnomah County + City of Portland
+POR,Moda Center pending rebuild ($573M) + past ($83M),655.626048,573.0,05000US41051,"Multnomah County, OR",353080,0.134223,249.24,Oregon (income-tax capture) + Multnomah County + City of Portland
+POR,Moda Center pending rebuild ($573M) + past ($83M),655.626048,573.0,16000US4159000,"Portland, OR",294419,0.309057,688.22,Oregon (income-tax capture) + Multnomah County + City of Portland
+MIL,Fiserv Forum,330.193498,0.0,05000US55079,"Milwaukee County, WI",396211,0.7838,653.2,"Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)"
+MIL,Fiserv Forum,330.193498,0.0,04000US55,Wisconsin,2535198,0.2162,28.16,"Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)"
+NOP,Smoothie King Center,458.761416,0.0,04000US22,Louisiana,1848965,1.0,248.12,State of Louisiana (LSED/state)
+SAC,Golden 1 Center,308.292103,0.0,16000US0664000,"Sacramento, CA",198965,1.0,1549.48,City of Sacramento general fund/parking

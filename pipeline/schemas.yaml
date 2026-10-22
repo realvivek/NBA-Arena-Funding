@@ -23,7 +23,7 @@ ledger/ledger_items.csv:
 ledger/ledger_buckets.csv:
   fields:
     item_id: {type: string, constraints: {required: true}}
-    bucket: {type: string, constraints: {required: true, enum: [general, sales, tourist, tif, leaserev, land, infra, sin, mixed]}}
+    bucket: {type: string, constraints: {required: true, enum: [general, sales, tourist, meals, tif, leaserev, land, infra, sin, mixed]}}
     public_nominal_m: {type: number, constraints: {required: true, minimum: 0}}
     public_2026_m: {type: number, constraints: {required: true, minimum: 0}}
 

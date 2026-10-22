@@ -5,9 +5,9 @@ home:
   path: /
   kicker: Public money and NBA arenas
   title: >-
-    Taxpayers Put {{expanded_public:title}} Into the NBA's Arenas. Owners Kept the Gains.
+    Taxpayers Have Put or Committed {{expanded_public:title}} to the NBA's Arenas. Owners Kept the Gains.
   deck: >-
-    A review of the public money behind every arena in the league: what governments paid, through which taxes, who
+    A review of the public money and tax breaks behind every arena in the league: what governments paid, through which taxes, who
     gained as team values soared, and which deals come next.
   description: >-
     Who paid for the NBA's arenas, through which taxes, who gains as team values rise, and what the public gets
@@ -17,7 +17,7 @@ home:
   findings:
     - p: >-
         Governments have put or committed **{{expanded_public}}** in public money and tax breaks to the
-        {{arenas_n}} arenas, and {{after_opening_share}} of it came after the arenas opened.
+        {{arenas_n}} arenas, and {{after_opening_share}} of it came, or is committed, after the arenas opened.
       to: bill
       sources: [ledger]
     - p: >-
@@ -49,8 +49,8 @@ home:
       sources: [team-ledger, sec-owl-20251231]
     - p: >-
         Of the current arena leases, **{{leases_by_2036}}** end by 2036. After {{threats_same_city}} of the
-        {{threats_counted}} relocation threats documented since 1994, public money followed in the same city, and
-        Portland's is pending.
+        {{threats_counted}} relocation threats documented since 1994, public money followed in the same city, but
+        deals that came with no threat were no smaller and no less one-sided.
       to: next
       sources: [threat-ledger, ledger]
 
@@ -62,7 +62,7 @@ who-is-behind:
   deck: >-
     Owners from finance and investment funds now reach {{finance_teams_n}} of the {{arenas_n}} teams. People with
     money at stake help make the arena deals, federal tax breaks add a second layer of subsidy, and none of the
-    public deals reviewed gives the public a share of the gains.
+    {{public_deals_read}} public deals whose terms could be read gives the public a share when a team is sold.
   description: >-
     The investment funds and owners from finance in NBA teams, the people around the arena deals, the reporting
     that exposed owners' taxes and side deals, the federal tax breaks, and what would change the math.
@@ -73,7 +73,9 @@ who-is-behind:
     - value: '{{owners_finance_n}}'
       label: of the {{arenas_n}} controlling owners made their money mainly in finance
     - value: '{{finance_teams_public:short}}'
-      label: in public money, with tax breaks, for the arenas of the {{finance_teams_n}} teams they reach
+      label: >-
+        in public money for the arenas of the {{finance_teams_n}} teams they reach, {{finance_teams_share}} of the
+        total, about their share of the league
     - value: '{{fed_bond_cost:short}}'
       label: in federal income tax forgone on the tax-exempt bonds sold for the arenas
   blocks:
@@ -81,9 +83,9 @@ who-is-behind:
     - p: >-
         Since 2021 the league has let investment funds buy into teams: up to {{nba_fund_cap_single}} of a team for
         one fund and {{nba_fund_cap_total}} for all funds together, and since December 2025 in up to
-        {{nba_fund_teams_max}} teams per fund. The stakes carry no governance rights, and no record found places a
-        fund at an arena negotiation.
-      sources: [cliffordchance-2026-1-from-five-to-eight-nba-further-loosens, frontofficesports-the-nbas-expanding-private-equity-footprin]
+        {{nba_fund_teams_max}} teams per fund. League rules give the stakes no governance rights, though Arctos
+        reportedly took board seats with its Kings stake, and no record found places a fund at an arena negotiation.
+      sources: [cliffordchance-2026-1-from-five-to-eight-nba-further-loosens, frontofficesports-the-nbas-expanding-private-equity-footprin, frontofficesports-arctos-to-buy-17-stake-in-kings-at-1-8b-va]
     - funds:
         - fund: Arctos Sports Partners
           text: KKR, one of the largest private equity firms, bought the company that manages Arctos in May 2026.
@@ -104,11 +106,14 @@ who-is-behind:
     - h3: The owners
     - p: >-
         {{owners_finance_n:cap}} of the {{arenas_n}} controlling owners made their money mainly in finance,
-        {{owners_pe_n}} of them in private equity or hedge funds, and {{control_sales_2015_finance_n}} of the
-        {{control_sales_2015_n}} sales of control since 2015 went to buyers from finance.
+        {{owners_pe_n}} of them in private equity or hedge funds. {{control_sales_2015_finance_n:cap}} of the
+        {{control_sales_2015_n}} sales of control since 2015 went to buyers from finance, against
+        {{control_sales_pre2015_finance_n}} of the {{control_sales_pre2015_n}} earlier sales to today's owners. Of
+        the public money in the arenas of the teams they reach, {{finance_teams_after}}, or
+        {{finance_teams_after_share}}, was counted after the current finance owner or fund arrived.
       sources: [team-ledger]
     - fig: owners
-    - h3: Fund money came before the latest public deal
+    - h3: Finance money came before the latest public deal
     - cards:
         - title: San Antonio
           value: 2021, then 2025
@@ -124,8 +129,14 @@ who-is-behind:
           sources: [wsls-qatar-investment-authority-is-buying-a-stake-in, ledger]
         - title: Charlotte
           value: 2019, then 2022
-          text: The Hornets' hedge-fund owners became partners in 2019, before the city's 2022 arena deal.
-          sources: [nba-jordan-hornets-new-partners-retains-majority-off, ledger]
+          text: >-
+            Hedge-fund founders Gabe Plotkin and Daniel Sundheim bought into the Hornets in 2019, before the city's
+            2022 arena deal. Plotkin and Rick Schnall took control in 2023.
+          sources: [nba-jordan-hornets-new-partners-retains-majority-off, news4jax-michael-jordans-sale-of-majority-ownership-of-ho, ledger]
+    - p: >-
+        Elsewhere the funds bought in after the latest public money was approved, or the arena has none. No record
+        found links a fund to the negotiations, so the timing shows who stood to gain, not who made the deals.
+      sources: [team-ledger, ledger]
     - h3: The people around the deals
     - stats:
         - value: '{{threats_same_city}} of {{threats_counted}}'
@@ -152,7 +163,8 @@ who-is-behind:
           sources: [pollstar-asm-okc-2025]
     - h3: What the reporting found
     - p: >-
-        No Pulitzer has gone to an investigation of an arena deal. The nearest is this year's prize for audio
+        We found no Pulitzer for an investigation of an arena deal, though the Pulitzer site could not be searched
+        directly. The nearest is this year's prize for audio
         reporting, to the podcast Pablo Torre Finds Out, for showing how money reached Kawhi Leonard through
         Aspiration, a company Steve Ballmer had invested in.
       sources: [news4jax-pablo-torres-podcast-wins-pulitzer-prize-for-cli]
@@ -173,7 +185,7 @@ who-is-behind:
         - value: '{{fed_bond_cost:short}}'
           label: in federal income tax forgone on interest from the tax-exempt bonds sold for the arenas
         - value: '{{sec197_years}} years'
-          label: over which a buyer deducts the purchase price of a team's franchise
+          label: over which a buyer deducts most of the purchase price of a team
       sources: [gayer-2016]
     - p: >-
         In 2025 the House voted to halve that deduction for sports teams; the committee report said "the owners of
@@ -190,8 +202,9 @@ who-is-behind:
           value: up to {{vikings_public_share}}
           text: >-
             Of the gain when the team is sold, as Minnesota wrote into its law for the Vikings. The Broncos' stadium
-            lease sent {{broncos_sale_share}} to youth programs in the Denver area when the team was sold in 2022.
-          sources: [revisor-473j-15]
+            lease paid {{broncos_sale_share}} to the Denver stadium district for youth programs when the team was sold
+            in 2022; the buyers took over the lease without that clause.
+          sources: [revisor-473j-15, cbsnews-broncos-sale-help-youth-programs-denver-metro-ar]
         - title: Rent that grows
           text: >-
             Rent that rises with the team's value, instead of a per-game fee like Oklahoma City's, capped at
@@ -221,11 +234,12 @@ arenas:
   path: /arenas/
   kicker: The arenas
   title: >-
-    In Cash, Indianapolis's Arena Has Taken the Most Public Money
+    Indianapolis's Arena Has Taken the Most Direct Public Money
   deck: >-
     The public money in each of the {{arenas_n}} arenas, from construction to yearly payments, with every
-    source. Gainbridge Fieldhouse's {{ind_public}} is {{ind_share}} of everything spent on it; counting tax
-    breaks, Brooklyn's and New York's arenas have taken more.
+    source. Gainbridge Fieldhouse's {{ind_public}} is {{ind_share}} of everything spent on it. Counting the bonds
+    Barclays Center repays with its property taxes and Madison Square Garden's tax exemption, Brooklyn's and New
+    York's arenas have taken more.
   description: >-
     Every arena's construction, purchases, renovations, yearly payments, tax breaks and lease, with labels and
     sources.
@@ -240,21 +254,22 @@ arenas:
     - fig: map
     - p: >-
         Of the {{arenas_n}} arenas, {{private_built_n}} were built mainly with private money, meaning the public
-        paid less than half of their construction cost. Indianapolis's arena is in neither group, because its
-        records conflict on who paid to build it. {{takeover_n:cap}} of the {{private_built_n}} were later
+        paid less than half of their construction cost. Barclays Center is not among them: counting the bonds its
+        property taxes repay, the public paid {{bkn_build_share}} of building it. Indianapolis's arena is in neither
+        group, because its records conflict on who paid to build it. {{takeover_n:cap}} of the {{private_built_n}} were later
         bought or rebuilt with public money: {{takeover_public}}, of which {{takeover_pending}} is pending,
         against {{takeover_construction_public}} of public money when they were built.
-      sources: [ledger, capitalimprovementboard-cib-of-managers-of-marion-county-fs]
+      sources: [ledger, capitalimprovementboard-cib-of-managers-of-marion-county-fs, ibo-2023-march-description-of-public-subsidies-for-m]
     - fig: takeovers
 
 taxes:
   path: /taxes/
   kicker: The taxes
   title: >-
-    Visitor Taxes Paid {{visitors_share:short}} of Public Arena Capital
+    Taxes Residents Mostly Pay Supplied {{residents_share:short}} of Public Arena Capital
   deck: >-
-    The public money in NBA arenas comes from taxes on hotel rooms, car rentals and meals, and from general
-    funds, sales taxes and tax increment. Here is each stream, and the records that show how the money is raised.
+    The public money in NBA arenas comes from taxes on hotel rooms, car rentals, meals and tickets, and from
+    general funds, sales taxes and tax increment. Here is each stream, and the records that show how the money is raised.
   description: >-
     The funding streams behind public arena money, who mostly pays each one, and the tax series behind the
     largest deals.
@@ -262,13 +277,16 @@ taxes:
   blocks:
     - p: >-
         Every dollar of public capital money in the ledger is assigned to one funding stream, as the arena's
-        records document it. Taxes residents mostly pay supplied {{residents_share}}, taxes on visitors
-        {{visitors_share}}, and land, or money the records do not split among its streams, {{other_share}}.
+        records document it. Taxes residents mostly pay supplied {{residents_share}}; hotel and car-rental taxes,
+        which fall mostly on visitors, {{visitors_share}}; taxes on restaurant meals and tickets, alone or pooled
+        with hotel taxes, which visitors and residents share, {{shared_share}}; and land, or money the records do
+        not split among its streams, {{other_share}}. No study of who bears these taxes for these arenas was
+        found, so the split shows who mostly pays, not an exact incidence.
       sources: [ledger]
     - fig: whopays
     - p: >-
-        The mix has changed over time. Before 2014, visitor taxes supplied {{visitors_share_before_2014}} of the
-        money; since then, taxes residents mostly pay have supplied {{residents_share_since_2014}}, led by Salt Lake
+        The mix has changed over time. Before 2014, hotel and car-rental taxes supplied
+        {{visitors_share_before_2014}} of the money; since then, taxes residents mostly pay have supplied {{residents_share_since_2014}}, led by Salt Lake
         City's arena sales tax and Washington's general fund.
       sources: [ledger]
     - fig: payershift
@@ -298,7 +316,7 @@ tax-breaks:
     appears in a budget as spending. The {{tax_breaks_n}} breaks in the expanded total add {{tax_breaks_added}}
     in 2026 dollars.
   description: >-
-    Every tax break found, counted or not: Madison Square Garden, Barclays Center, the United Center, Capital One
+    Every tax break valued, counted or not: Madison Square Garden, Barclays Center, the United Center, Capital One
     Arena, Ball Arena and the federal cost of tax-exempt bonds.
   sources: [ledger]
   notes:
@@ -315,21 +333,30 @@ tax-breaks:
     - p: >-
         The expanded total adds {{tax_breaks_added}} of breaks to the {{core_public}} of public money, all in
         2026 dollars: Barclays Center's PILOT bonds, {{bkn_pilot}} ({{bkn_pilot_issued}} when they were sold in
-        2009); Madison Square Garden's exemption since 1982, more than {{nyk_exemption}}; and the United Center's
+        2009); Madison Square Garden's exemption, which dates to 1982, more than {{nyk_exemption}} for fiscal 1984
+        to 2026; and the United Center's
         valuation formula, {{chi_formula}} for 2002 to 2016. Breaks that are still to come, or that rest on a single
         figure that could not be checked, are listed but not added. The story counts the PILOT bonds as money to
         build Barclays Center, because they paid for its construction.
       sources: [ledger]
+    - p: >-
+        Publicly owned arenas pay no property tax, and the ledger does not add that forgone tax to any total. It is
+        about {{phi_exemption_annual}} a year for Philadelphia's arena, on property the city owns of record, and
+        about {{por_ptax_forgone}} a year for Portland's since the city bought it in 2024. Barclays Center's
+        payments in lieu of tax, {{bkn_pilot_2023}} in 2023, were also less than the {{bkn_wouldbe_2023}} of tax it
+        would have owed.
+      sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
     - fig: uc
 
 threats:
   path: /threats/
   kicker: The threats
   title: >-
-    {{threats_same_city:cap}} of {{threats_counted}} Relocation Threats Were Followed by Public Money
+    Public Money Followed {{threats_same_city}} of {{threats_counted}} Relocation Threats. It Came {{nothreat_deals_n}} Times Without One.
   deck: >-
-    A ledger of {{threat_episodes}} episodes since 1993, from explicit threats to lease clauses and other cities'
-    offers, with what followed in each city.
+    A ledger of {{threat_episodes}} entries from 1990 to 2026, from explicit threats to lease clauses, other
+    cities' offers and the teams with no threat found, with what followed in each city. Deals that followed a
+    threat were not larger or more one-sided than deals without one.
   description: >-
     The relocation threat ledger, how threats were classified, how deals after a threat compare, and the cities
     that kept paying after a team left.
@@ -342,6 +369,13 @@ threats:
         limit on moving, league terms letting it buy back or move the team, talks with another city, or a lease
         clause that let the team leave. Money approved but not yet final, as in Portland, is counted as pending. Statements by
         local officials alone, and other cities' offers, are recorded but not counted as threats.
+      sources: [threat-ledger]
+    - p: >-
+        A threat is not what separates the deals. Over the same years, {{nothreat_deals_n}} deals with public money
+        for NBA arenas came with no threat on record. The median public share was {{threat_median_share}} after a threat and
+        {{nothreat_median_share}} without one, and the median public money {{threat_median_public}} against
+        {{nothreat_median_public}}. In samples this small, neither gap can be told apart from chance (p =
+        {{p_share}} for the share and {{p_dollars}} for the money, Mann-Whitney test).
       sources: [threat-ledger]
     - fig: threats
 
@@ -368,9 +402,10 @@ households:
   path: /households/
   kicker: The households
   title: >-
-    In Salt Lake City, the Arena Deal Comes to {{hh_uta}} per Household
+    In Salt Lake City, the Arena Deal Comes to as Much as {{hh_uta}} per Household
   deck: >-
-    The public money in the largest deals, divided by the households in the jurisdictions that pay.
+    The public money in the largest deals, divided by the households in the jurisdictions that pay. Salt Lake
+    City's figure is an upper bound, because people who live elsewhere pay part of its sales tax.
   description: >-
     Per-household figures for the largest arena deals, the paying jurisdictions and their weights.
   sources: [ledger, census-b11001-2024]
@@ -381,8 +416,9 @@ households:
         city or county also pays its share of the state's part, so the figures add.
       sources: [census-b11001-2024, ledger]
     - p: >-
-        A per-household figure is a measure of scale, not a tax bill. Visitor taxes, which paid {{visitors_share}}
-        of public arena capital, fall mostly on people who live elsewhere, and sales taxes fall partly on them.
+        A per-household figure is a measure of scale, not a tax bill. Hotel and car-rental taxes, which paid
+        {{visitors_share}} of public arena capital, fall mostly on people who live elsewhere, and sales, meal and
+        ticket taxes fall partly on them.
       sources: [ledger]
     - fig: households
 

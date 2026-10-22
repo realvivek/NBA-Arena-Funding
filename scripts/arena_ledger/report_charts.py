@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 DATA = ROOT + '/data'
 OUT = ROOT + '/report/charts'
 plt.rcParams.update({'font.family': ['Inter', 'DejaVu Sans'], 'font.size': 11, 'text.parse_math': False, 'svg.hashsalt': 'arena', 'savefig.dpi': 150})
-PUB, PRIV, VIS = '#2b7bd9', '#c4c4b8', '#1fb27a'
+PUB, PRIV, VIS, SHR = '#2b7bd9', '#c4c4b8', '#1fb27a', '#8fd8bc'
 INK, MUTED = '#1a1a1a', '#555555'
 
 CITY = {'ORL': 'Orlando', 'WAS': 'Washington', 'IND': 'Indiana', 'CHA': 'Charlotte', 'MEM': 'Memphis', 'UTA': 'Utah', 'HOU': 'Houston',
@@ -49,23 +49,25 @@ def arenas():
 def streams():
     C = json.load(open(DATA + '/ledger/_calc.json'))
     b = C['bucket26']; tot = sum(b.values())
-    resident = ['general', 'sales', 'tif', 'leaserev', 'sin']; visitor = ['tourist']
-    name = {'tourist': 'Hotel, car-rental, food and ticket taxes', 'general': 'General taxes, bonds and state grants', 'sales': 'Dedicated sales tax',
+    resident = ['general', 'sales', 'tif', 'leaserev', 'sin']; visitor = ['tourist']; shared = ['meals']
+    name = {'tourist': 'Hotel and car-rental taxes', 'meals': 'Meal and ticket taxes (some pooled)', 'general': 'General taxes, bonds and state grants', 'sales': 'Dedicated sales tax',
             'tif': 'Captured property and income taxes', 'mixed': 'Public, stream not documented', 'leaserev': 'Lease-revenue bonds (general fund, parking)',
             'sin': 'Alcohol and cigarette taxes', 'infra': 'Infrastructure and site work', 'land': 'Land given or sold below value'}
-    res = sum(b.get(k, 0) for k in resident); vis = sum(b.get(k, 0) for k in visitor); oth = tot - res - vis
+    res = sum(b.get(k, 0) for k in resident); vis = sum(b.get(k, 0) for k in visitor); shr = sum(b.get(k, 0) for k in shared)
+    oth = tot - res - vis - shr
     order = sorted((k for k in b if b[k]), key=lambda k: -b[k])
-    color = lambda k: PUB if k in resident else (VIS if k in visitor else PRIV)
+    color = lambda k: PUB if k in resident else (VIS if k in visitor else (SHR if k in shared else PRIV))
     fig = plt.figure(figsize=(8.9, 4.6))
-    fig.text(0.005, 0.975, f'Residents paid {100*res/tot:.0f}% of the public arena money; visitors paid {100*vis/tot:.0f}%', fontsize=15, weight='bold', color=INK, va='top')
+    fig.text(0.005, 0.975, f'Residents paid {100*res/tot:.0f}% of the public arena money; hotel and car-rental taxes, {100*vis/tot:.0f}%', fontsize=15, weight='bold', color=INK, va='top')
     fig.text(0.005, 0.915, f'{money(tot)} of public capital for the 30 arenas, 2026 dollars, by who mostly pays (bar) and by funding stream (below).', fontsize=10.5, color=MUTED, va='top')
     top = fig.add_axes([0.0, 0.79, 1.0, 0.055]); x = 0
-    for v, c in [(res, PUB), (vis, VIS), (oth, PRIV)]:
+    for v, c in [(res, PUB), (vis, VIS), (shr, SHR), (oth, PRIV)]:
         top.barh(0, v, left=x, color=c, height=1); x += v
     top.set_xlim(0, tot); top.axis('off')
     fig.text(0.005, 0.755, f'Paid mostly by residents: {100*res/tot:.0f}%', fontsize=11, color=INK, va='top')
-    fig.text(res / tot + 0.003, 0.755, f'Paid mostly by visitors: {100*vis/tot:.0f}%', fontsize=11, color=INK, va='top')
-    fig.text(0.995, 0.755, f'In kind or not documented: {100*oth/tot:.0f}%', fontsize=11, color=INK, va='top', ha='right')
+    fig.text(res / tot + 0.003, 0.755, f'Mostly visitors: {100*vis/tot:.0f}%', fontsize=11, color=INK, va='top')
+    fig.text((res + vis) / tot + 0.003, 0.715, f'Both: {100*shr/tot:.0f}%', fontsize=11, color=INK, va='top')
+    fig.text(0.995, 0.755, f'Land or not split: {100*oth/tot:.0f}%', fontsize=11, color=INK, va='top', ha='right')
     ax = fig.add_axes([0.40, 0.02, 0.58, 0.63])
     for i, k in enumerate(order):
         ax.barh(i, b[k], color=color(k), height=0.62)

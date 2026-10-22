@@ -1,13 +1,15 @@
 <script>
   // Who mostly pays, before and since 2014: one bar per period, split into taxes mostly paid by visitors, taxes
-  // mostly paid by residents, and land or money not split by stream. Labels sit under their segments.
+  // visitors and residents share, taxes mostly paid by residents, and land or money not split by stream. Labels sit
+  // under their segments; a label that does not fit is left to the tooltip and the table.
   import { WIDE, NARROW, FONT, money, textWidth } from '../../lib/chart';
 
   let { rows, variant = 'wide', label = '' } = $props();
   const narrow = variant === 'narrow';
-  const ORDER = ['visitors', 'residents', 'other'];
-  const CLS = { visitors: 'f-orange', residents: 'f-public', other: 'f-other' };
-  const WORD = { visitors: 'visitors', residents: 'residents', other: 'not split' };
+  const ORDER = ['visitors', 'shared', 'residents', 'other'];
+  const CLS = { visitors: 'f-orange', shared: 'f-orange-soft', residents: 'f-public', other: 'f-other' };
+  const WORD = { visitors: 'visitors', shared: 'shared', residents: 'residents', other: 'not split' };
+  const PAID = { visitors: 'taxes mostly paid by visitors', shared: 'meal and ticket taxes visitors and residents share', residents: 'taxes mostly paid by residents', other: 'land, or money not split by stream' };
   const NAME = { before: 'Before 2014', since: 'Since 2014' };
   const W = narrow ? NARROW : WIDE;
   const x0 = 0, x1 = W - 2, gap = 2, bh = narrow ? 22 : 26;
@@ -21,26 +23,28 @@
       x += w;
       return s;
     });
-    // labels under the segments, left to right; the last one is right-aligned at the bar's end when it is narrow
+    // labels under the segments, left to right; a label pushed by the one before it slides right while it still
+    // starts inside its own segment, and the last one is right-aligned at the bar's end when it is narrow
     let right = -Infinity;
     for (const s of segs) {
       const txt = narrow ? `${Math.round(s.share_pct)}%` : `${Math.round(s.share_pct)}% ${WORD[s.payer]}`;
       const tw = textWidth(txt);
       const last = s === segs[segs.length - 1];
-      let lx = s.x, anchor = 'start';
-      if (last && s.x + tw > x1) {
+      let lx = Math.max(s.x, right + 8), anchor = 'start';
+      if (last && lx + tw > x1) {
         lx = x1;
         anchor = 'end';
       }
       const left = anchor === 'end' ? lx - tw : lx;
-      s.label = left >= right + 8 ? { txt, lx, anchor } : null;
+      const inside = anchor === 'end' || lx <= s.x + Math.max(s.w - 12, 0);
+      s.label = left >= right + 8 && inside ? { txt, lx, anchor } : null;
       if (s.label) right = left + tw;
     }
     return { p, total, segs };
   });
   const rowH = bh + 64, mt = 2;
   const H = mt + periods.length * rowH - 16;
-  const tip = (s, p) => `${NAME[p]}: ${money(s.public_2026_m)} from ${s.payer === 'other' ? 'land, or money not split by stream' : `taxes mostly paid by ${s.payer}`}, ${s.share_pct.toFixed(1)}%`;
+  const tip = (s, p) => `${NAME[p]}: ${money(s.public_2026_m)} from ${PAID[s.payer]}, ${s.share_pct.toFixed(1)}%`;
 </script>
 
 <div class="plot" style="aspect-ratio: {W} / {H}">

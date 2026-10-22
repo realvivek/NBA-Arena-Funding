@@ -53,6 +53,10 @@
     <text class="ann-text halo" x={sx(first.year) + 8} y={sy(first.forbes_avg_b) - (narrow ? 16 : 12)} font-size={FONT}>{money(first.forbes_avg_b * 1000)} in {first.year}</text>
     {#if mark && !narrow}
       <text class="ann-sub halo" x={sx(mark.year) - 6} y={sy(mark.forbes_avg_b) - 10} text-anchor="end" font-size={FONT}>{money(mark.forbes_avg_b * 1000)} in {mark.year}</text>
+    {:else if mark}
+      <!-- on phones the 2014 label sits up in the open space before the climb, with a leader to its point -->
+      <path class="ann-line" d="M{sx(mark.year) - 3},{sy(mark.forbes_avg_b) - 6}L{sx(mark.year) - 8},{sy(mark.forbes_avg_b) - 28}" />
+      <text class="ann-sub halo" x={sx(mark.year) - 10} y={sy(mark.forbes_avg_b) - 32} text-anchor="end" font-size={FONT}>{money(mark.forbes_avg_b * 1000)} in {mark.year}</text>
     {/if}
     <text class="ann-text halo" x={sx(last.year) - 8} y={sy(last.forbes_avg_b) - 12} text-anchor="end" font-size={FONT}>{money(last.forbes_avg_b * 1000, 1)} in {last.year}</text>
   </svg>

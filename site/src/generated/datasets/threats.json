@@ -98,6 +98,7 @@
   "wiki-rocket-arena",
   "axios-cleveland-cavs-impact",
   "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "in-83950a",
   "wbtv-city-pay-275-million-renovate-spectrum-center-fu",
   "wfae-city-council-approves-arena-renovations-streetca",
   "utah-pmn",
@@ -115,6 +116,7 @@
   "bondbuyer-golden-state-warriors-lose-bid-to-escape-oakland",
   "wiki-intuit-dome",
   "freep-detroit-pistons-council-downtown",
+  "degc-ugd-3",
   "cbsnews-n-j-gives-76ers-82-million-to-build-practice-fac",
   "wiki-76-place-at-market-east",
   "wiki-td-garden",
@@ -173,7 +175,7 @@
    "said_or_done": "Paraphrase (Wikipedia citing Star Tribune 1994-02-12): owners sought a public or private buyer for the $73M remaining Target Center mortgage, otherwise the team \"would be sold and in all likelihood moved\"; owners met San Diego, Nashville and New Orleans representatives (Feb 1994). 1994-05-23: agreed to sell to Top Rank of Louisiana for $152.5M to move to New Orleans (Times-Picayune 1994-05-24).",
    "alt_city": "New Orleans (also San Diego, Nashville)",
    "league_role": "opposed: Stern mediated (1994-02-11); relocation committee unanimously blocked sale 1994-06-15; NBA sued to enjoin transfer",
-   "money_after": "Public purchase of Target Center: Laws of Minnesota 1994 ch. 648 (HF 3041) signed 1994-05-10; reported purchase price $48M (Star Tribune via Wikipedia); Minneapolis final financing approval Mar 1995",
+   "money_after": "Public purchase of Target Center: Laws of Minnesota 1994 ch. 648 (HF 3041) signed 1994-05-10; purchase price $54.6M (Minnesota Legislative Auditor 2017, b; $48M in the Star Tribune via Wikipedia, c); Minneapolis final financing approval Mar 1995",
    "money_usd_m": 54.6,
    "mechanism": "Metropolitan Sports Facilities Commission/City purchase financed by bonds (ticket-surcharge backed; 1995 revised plan incl. $12.7M business bond commitments)",
    "vote": "Legislature + City Council; no referendum (poll: 60% opposed intervention)",
@@ -227,7 +229,7 @@
    "id": "E03",
    "team": "MIA Heat",
    "owners": "Micky Arison",
-   "period": "1996-06 to 1996-11",
+   "period": "1996-02 to 1996-11",
    "threat_class": "explicit",
    "said_or_done": "Verbatim (Miami New Times, 1996-11-14): \"Back in June the shipping magnate forced the county into an agreement by threatening to move to Broward, a tactic his own negotiators later admitted was a bluff.\" Arison also sued (unsuccessfully) to block the ballot initiative, then funded an ad campaign.",
    "alt_city": "Broward County",
@@ -351,8 +353,8 @@
    "said_or_done": "After voters rejected the arena (Nov 1999), Commissioner David Stern: \"if there's not a new building...I think it's certain that the team will be relocated.\" (Houston Chronicle, 2000-02-13). Rockets talked to other cities: looked at Anaheim in 1999-2000 (LA Times 2001-02-13) and negotiated with Louisville (\"Louisville Woos Rockets\", Houston Chronicle 2000-05-13).",
    "alt_city": "Louisville, Anaheim",
    "league_role": "backed (commissioner ultimatum)",
-   "money_after": "Toyota Center: city/Harris County-Houston Sports Authority $182M of $235M (77%); Rockets $43M; city bought land",
-   "money_usd_m": 182.0,
+   "money_after": "Toyota Center: the Harris County-Houston Sports Authority funded the $175M arena budget from hotel and car-rental tax bonds and the city paid up to $20M for the site and infrastructure, $195M in all (b, 2000 letter agreement and interlocal agreement), 76% of $255M of construction counting the Rockets' $60M (the funding ledger's rule); press reported $182M of $235M",
+   "money_usd_m": 195.0,
    "mechanism": "Harris County-Houston Sports Authority financing; campaign promised \"no new taxes of any kind\"",
    "vote": "City Council ~2000-09-13; voters 2000-11-07, 66% yes (1999 version had failed). Pro campaign: Enron/Ken Lay $590K, Reliant $400K",
    "threat_date": "2000-02-13",
@@ -855,7 +857,7 @@
    "said_or_done": "Mayor David Holt (2022 State of the City): not funding a new arena could lead the Thunder to \"look outside the state for a new home\"; Holt (Nov 2023): without a yes vote \"It will be the beginning of the end and there's no other real path\" (PBS NewsHour 2023-11-15). No relocation statement by Bennett or the NBA found; Bennett: arena will \"secure the long-term future of the Thunder.\"",
    "alt_city": "none named",
    "league_role": "none documented",
-   "money_after": "Voters 2023-12-12: 1-cent sales tax for 72 months, >= $900M (incl. $70M MAPS 4); Thunder $50M (~5.5%); 25-yr license (June 2025) with > $1B exit penalties",
+   "money_after": "Voters 2023-12-12: 1-cent sales tax for 72 months, >= $900M (incl. $70M MAPS 4); Thunder $50M (~5.5%); 25-yr license (June 2025) with exit penalties of up to $1B, declining over the term",
    "money_usd_m": 900.0,
    "mechanism": "Temporary city sales tax",
    "vote": "71% yes (41,129 / 16,797); pro side outspent opponents >= 48:1",
@@ -1043,7 +1045,8 @@
    "no_new_money": false,
    "lag_months": null,
    "sources": [
-    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
+    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+    "in-83950a"
    ]
   },
   {
@@ -1142,7 +1145,7 @@
    "said_or_done": "None documented.",
    "alt_city": null,
    "league_role": "none documented",
-   "money_after": "$180M Toyota Center overhaul with ~$95M State of Texas grant (Apr 2026)",
+   "money_after": "$180M Toyota Center overhaul (Apr 2026) with about $95M expected from the State of Texas; no agreement found",
    "money_usd_m": 95.0,
    "mechanism": "State grant",
    "vote": "HCHSA board 2026-04-08",
@@ -1330,7 +1333,8 @@
    "no_new_money": false,
    "lag_months": null,
    "sources": [
-    "freep-detroit-pistons-council-downtown"
+    "freep-detroit-pistons-council-downtown",
+    "degc-ugd-3"
    ]
   },
   {
@@ -1424,7 +1428,7 @@
    "owners": null,
    "period": "1990-2026",
    "threat_class": "none",
-   "said_or_done": "Crypto.com Arena privately financed by AEG (1999). No threat found.",
+   "said_or_done": "Crypto.com Arena built by AEG (1999) with a ~$70M city advance repaid mainly from city revenue. No threat found.",
    "alt_city": null,
    "league_role": "none documented",
    "money_after": null,
@@ -1452,7 +1456,7 @@
    "owners": null,
    "period": "1990-2026",
    "threat_class": "none",
-   "said_or_done": "United Center privately built by Reinsdorf/Wirtz JV (1994); annual property-tax appeals (prior round). No threat found.",
+   "said_or_done": "United Center privately built by the Reinsdorf and Wirtz joint venture (1994). No threat found.",
    "alt_city": null,
    "league_role": "none documented",
    "money_after": null,
@@ -1536,7 +1540,7 @@
    "owners": null,
    "period": "1990-2026",
    "threat_class": "none",
-   "said_or_done": "2023-06-13 amendment extended Smoothie King Center term to 2029; state pays $3.65M/yr Quality-Jobs-equivalent FY2023-29 plus ongoing LSED entitlements (FY2027 budget $17.7M). No threat found.",
+   "said_or_done": "2023-06-13 amendment extended Smoothie King Center term to 2029; state obligated to pay $3.65M a year in Quality Jobs-equivalent payments for FY2023-29, budgeted from FY2025, plus ongoing LSED entitlements (FY2027 budget $17.7M). No threat found.",
    "alt_city": null,
    "league_role": "none documented",
    "money_after": null,

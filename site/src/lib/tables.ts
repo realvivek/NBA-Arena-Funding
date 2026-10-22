@@ -72,7 +72,7 @@ export function ownersTable(rows: any[]): Table {
       owner: r.owner,
       wealth: r.owner_wealth,
       cls: OWNER_CLASS[r.owner_class],
-      funds: r.funds.map((f: string, i: number) => `${f} (${r.stakes[i]})`).join('; '),
+      funds: r.funds.map((f: string, i: number) => `${f}: ${r.stakes[i]}`).join('; '),
     })),
   };
 }
@@ -103,7 +103,7 @@ export function rebuildTable(rows: any[]): Table {
       arena: { text: TEAM_CITY[r.team] ?? r.team, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
       what: r.description,
       category: CATEGORY[r.category],
-      status: STATUS[r.status],
+      status: r.status === 'committed' ? (r.binding ? 'Binding, not open' : 'Approved, not yet binding') : STATUS[r.status],
       public: m(r.public_2026_m),
     })),
   };
@@ -171,7 +171,7 @@ export function takeoversTable(rows: any[]): Table {
 }
 
 export function whoPaysTable(rows: any[]): Table {
-  const PAYER: Record<string, string> = { visitors: 'Mostly visitors', residents: 'Mostly residents', other: 'Land, or not split by stream' };
+  const PAYER: Record<string, string> = { visitors: 'Mostly visitors', shared: 'Visitors and residents', residents: 'Mostly residents', other: 'Land, or not split by stream' };
   return {
     columns: [
       { key: 'name', label: 'Funding stream' },
@@ -184,7 +184,7 @@ export function whoPaysTable(rows: any[]): Table {
 }
 
 export function payerShiftTable(rows: any[]): Table {
-  const PAYER: Record<string, string> = { visitors: 'Mostly visitors', residents: 'Mostly residents', other: 'Land, or not split by stream' };
+  const PAYER: Record<string, string> = { visitors: 'Mostly visitors', shared: 'Visitors and residents', residents: 'Mostly residents', other: 'Land, or not split by stream' };
   const PERIOD: Record<string, string> = { before: 'Before 2014', since: 'Since 2014' };
   return {
     columns: [

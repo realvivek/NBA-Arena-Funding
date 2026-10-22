@@ -21,8 +21,19 @@
     d.pending_2026_m
       ? `${money(d.pending_2026_m)} pending`
       : d.new_arena_2026_m
-        ? `${money(d.new_arena_2026_m)}${d.new_arena_pending_2026_m ? ` + ${money(d.new_arena_pending_2026_m)} pending` : ''} for a new arena`
+        ? `${money(d.new_arena_2026_m)}${d.new_arena_binding ? '' : ' approved'}${d.new_arena_pending_2026_m ? ` + ${money(d.new_arena_pending_2026_m)} pending` : ''} for a new arena`
         : '';
+  // on phones the longest of these notes that fits beside the year
+  const notes = (d) =>
+    d.pending_2026_m
+      ? [note(d)]
+      : d.new_arena_2026_m
+        ? [
+            note(d),
+            `${money(d.new_arena_2026_m)}${d.new_arena_binding ? '' : ' approved'}${d.new_arena_pending_2026_m ? ' + more pending' : ''}, new arena`,
+            `${money(d.new_arena_2026_m)}${d.new_arena_binding ? ', new arena' : ' approved'}`,
+          ]
+        : [];
   const tip = (d) => `${d.arena}, ${d.city}: lease ends ${d.term_end_year}` + (note(d) ? `; ${note(d)}` : '');
 </script>
 
@@ -56,7 +67,10 @@
           <text class={soon ? 't-strong' : 't-ink'} x={lw - 10} y={cy} dy="0.32em" text-anchor="end" font-size={FONT}>{d.city}</text>
           <line x1={x(start)} x2={x(d.term_end_year)} y1={cy} y2={cy} stroke={soon ? 'var(--public)' : 'var(--axis)'} stroke-width="2" />
           <circle class={soon ? 'f-public dot-ring' : 'f-other dot-ring'} cx={x(d.term_end_year)} cy={cy} r="5" data-tip={tip(d)} />
-          <text class="tick t-muted" x={x(d.term_end_year) + 10} y={cy} dy="0.32em" font-size={FONT}>{d.term_end_year}{#if note(d) && !narrow}<tspan class="t-ink" dx="8">{note(d)}</tspan>{/if}</text>
+          {@const tx = x(d.term_end_year) + 10}
+          {@const fits = (t) => t && tx + textWidth(String(d.term_end_year)) + 8 + textWidth(t) <= W - 2}
+          {@const shown = !narrow ? note(d) : (notes(d).find(fits) ?? '')}
+          <text class="tick t-muted" x={tx} y={cy} dy="0.32em" font-size={FONT}>{d.term_end_year}{#if shown}<tspan class="t-ink" dx="8">{shown}</tspan>{/if}</text>
         {/each}
       </Svg>
     {/snippet}

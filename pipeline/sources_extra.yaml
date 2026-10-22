@@ -82,13 +82,13 @@ sources:
   date: 2023-06-28
   checked: 2026-10-11
 - id: utah-tax-distributions
-  url: https://tax.utah.gov/sales/distributions/
-  title: Sales and Use Tax Distributions
+  url: https://tax.utah.gov/business/sales-tax/other-sales-tax/distribution/
+  title: Monthly Distribution (sales and use tax distributions, including Capital City Revitalization)
   title_from: curated
   publisher: Utah State Tax Commission
   origin: government
   date: 2026-09
-  checked: 2026-10-11
+  checked: 2026-10-22
 - id: wi-dor-expo-tax
   url: https://www.revenue.wi.gov/DORReports/Expo-tax-distributions.pdf
   title: Expo Tax Distributions (Wisconsin Center District)

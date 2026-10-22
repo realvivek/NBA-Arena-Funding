@@ -17,7 +17,8 @@ bill:
           sources: [ledger]
         - step: renovated
           p: >-
-            Renovations took **{{renovation_public}}** more. Since 2014, fixing up or buying existing arenas has
+            Renovations took or will take **{{renovation_public}}** more, {{underway_public}} of it for work still
+            under way or money still to be paid. Since 2014, fixing up or buying existing arenas has
             drawn {{rebuild_ratio}} times as much public money as building new ones, counting Oklahoma City's arena
             under construction.
           sources: [ledger]
@@ -25,17 +26,19 @@ bill:
           p: >-
             Minneapolis, Portland and Washington paid the equivalent of **{{purchase_public}}** to buy arenas from
             their owners.
-            Yearly payments to teams and arena operators, most of them in Miami and Indianapolis, add
-            **{{ongoing_public}}**.
+            Yearly payments to teams and arena operators, and costs the public pays for them, most of them in Miami and
+            Indianapolis, add **{{ongoing_public}}**.
           sources: [ledger]
         - step: breaks
           p: >-
-            Property-tax breaks add **{{exemptions_added}}**: taxes never collected on Madison Square Garden since
-            1982 and on the United Center under a 1989 formula.
+            Property-tax breaks add **{{exemptions_added}}**: taxes not collected on Madison Square Garden from
+            fiscal 1984 to 2026, under an exemption that dates to 1982, and on the United Center under a 1989
+            formula.
           sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m, nyc-dof-tax-expenditures-fy2026]
         - step: total
           p: >-
-            That is **{{expanded_public}}** in all, and {{after_opening_share}} of it came after the arenas opened.
+            That is **{{expanded_public}}** in all, and {{after_opening_share}} of it came, or is committed, after
+            the arenas opened.
             Federal taxpayers carry an estimated {{fed_bond_cost}} more: the income tax forgone on the tax-exempt
             bonds sold for these arenas.
           sources: [ledger, gayer-2016]
@@ -46,7 +49,8 @@ teams:
   blocks:
     - p: >-
         Counting tax breaks, at least {{arenas_public_n}} of the {{arenas_n}} arenas have taken public money.
-        Brooklyn and New York lead because of tax breaks. In cash, Indianapolis's Gainbridge Fieldhouse has taken
+        Brooklyn leads because of the bonds its arena's property taxes repay, and New York because of its
+        property-tax exemption. Counting only direct public money, Indianapolis's Gainbridge Fieldhouse has taken
         the most: **{{ind_public}}**, {{ind_share}} of everything spent on it, from construction to renovations and
         yearly payments.
       sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
@@ -73,15 +77,16 @@ rebuild:
         The spending does not stop when an arena opens. Since 2014, governments have put or committed
         **{{rebuild_since_2014}}** to renovating or buying arenas that already stand, {{rebuild_ratio}} times the
         {{build_since_2014}} for new ones: {{build_opened_since_2014}} for the arenas that opened in those years and
-        {{okc_new_arena}} for Oklahoma City's, now under construction. Since then, Indianapolis, Salt Lake City and
-        Washington have each put or committed at least {{rebuild_top3_min}} to an arena that already stands.
+        {{okc_new_arena}} for Oklahoma City's, now under construction. Over those years, Indianapolis, Salt Lake City
+        and Washington have each put or committed at least {{rebuild_top3_min}} to an arena that already stands.
       sources: [ledger]
     - fig: rebuild
     - p: >-
         The renovations now rival the buildings. Since 2014, {{renovations_over_cost_n}} renovations with public
         money have cost more than their arenas did to build, in 2026 dollars: in Indianapolis, Phoenix, Salt Lake
         City and Washington. Salt Lake City's public money alone is {{uta_renovation_multiple}} times what the Delta
-        Center cost to build in 1991.
+        Center cost to build in 1991. Part of the shift is age: {{arenas_opened_1990_2005}} of the {{arenas_n}}
+        arenas opened between 1990 and 2005, so most of them came due for major work in the same years.
       sources: [ledger]
     - p: >-
         {{takeover_n:cap}} arenas built mainly with private money, in Atlanta, Minneapolis, Phoenix, Portland, Salt
@@ -96,13 +101,13 @@ pays:
   title: The bill has shifted from visitors to residents
   blocks:
     - p: >-
-        Taxes on hotel rooms, car rentals, restaurant meals and tickets, which fall mostly on visitors, supplied
-        {{visitors_share}} of the public money to build, renovate and buy the arenas. Taxes that residents mostly
-        pay supplied {{residents_share}}.
+        Taxes on hotel rooms and car rentals, which fall mostly on visitors, supplied {{visitors_share}} of the
+        public money to build, renovate and buy the arenas. Taxes on restaurant meals and tickets, which visitors
+        and residents share, supplied {{shared_share}}, and taxes that residents mostly pay, {{residents_share}}.
       sources: [ledger]
     - p: >-
-        The mix has changed. Before 2014, visitor taxes supplied **{{visitors_share_before_2014}}** of the money and
-        residents' taxes {{residents_share_before_2014}}. Since then, taxes residents mostly pay have supplied
+        The mix has changed. Before 2014, hotel and car-rental taxes supplied **{{visitors_share_before_2014}}** of
+        the money and residents' taxes {{residents_share_before_2014}}. Since then, taxes residents mostly pay have supplied
         **{{residents_share_since_2014}}**, led by Salt Lake City's arena sales tax and Washington's general fund.
         Visitor taxes are still public money: a hotel tax spent on an arena is not spent on anything else.
       sources: [ledger]
@@ -133,9 +138,10 @@ gains:
       sources: [team-ledger]
     - p: >-
         Forbes puts the average team at **{{value_mean_2026}}**, {{value_growth_2014}} times the average on its 2014
-        list, before inflation. Much of the rise follows the league's national media deals, worth about
-        {{nba_media_total}} over {{nba_media_years}} years.
-      sources: [team-ledger]
+        list, before inflation. The rise came as the league's national media money grew: the TV deals signed in
+        2014 were reported at {{nba_media_2014_annual}} a year, and the deals that began in the 2025-26 season are
+        worth about {{nba_media_total}} over {{nba_media_years}} years.
+      sources: [team-ledger, espn-nba-extends-television-deals-2014, ibj-nba-new-11-year-media-rights-deal-with-disney-nb]
     - fig: trend
     - p: >-
         Owners who sold recently left with many times what they paid. Paul Allen bought the Trail Blazers for
@@ -158,9 +164,10 @@ gains:
     - p: >-
         None of the **{{public_deals_read}}** public arena deals whose terms could be read gives the public a share
         when the team is sold. It can be done: Minnesota's law for the Vikings gives the state and Minneapolis up to
-        {{vikings_public_share}} of the gain, and the Denver Broncos' stadium lease sent {{broncos_sale_share}} to
-        youth programs in the Denver area when the team was sold in 2022.
-      sources: [team-ledger, revisor-473j-15]
+        {{vikings_public_share}} of the gain, and the Denver Broncos' stadium lease paid {{broncos_sale_share}},
+        {{broncos_sale_pct}} of the sale's net profit, to the stadium district for youth programs when the team was
+        sold in 2022. The buyers took over the lease without that clause.
+      sources: [team-ledger, revisor-473j-15, cbsnews-broncos-sale-help-youth-programs-denver-metro-ar]
 
 behind:
   n: 6
@@ -168,7 +175,8 @@ behind:
   blocks:
     - p: >-
         More and more of the owners come from finance: {{control_sales_2015_finance_n}} of the
-        {{control_sales_2015_n}} sales of control since 2015 went to buyers who made their money there. Of the
+        {{control_sales_2015_n}} sales of control since 2015 went to buyers who made their money there, against
+        {{control_sales_pre2015_finance_n}} of the {{control_sales_pre2015_n}} earlier sales to today's owners. Of the
         {{arenas_n}} controlling owners, **{{owners_finance_n}}** made their fortunes mainly in finance,
         {{owners_pe_n}} of them in private equity or hedge funds.
       sources: [team-ledger]
@@ -198,7 +206,9 @@ next:
         Leases are where new deals start. Of the current leases, **{{leases_by_2036}}** end by 2036,
         {{leases_by_2031}} of them by 2031. Since 1994, owners or the league threatened, openly or by implication, to
         move a team at least {{threats_counted}} times in the episodes documented here, and public money followed in
-        the same city {{threats_same_city}} times, {{lag_within_24}} of them within {{lag_window}} months. In
+        the same city {{threats_same_city}} times, {{lag_within_24}} of them within {{lag_window}} months. Deals
+        without a threat were no smaller and no less one-sided: the median public share was
+        {{threat_median_share}} after a threat and {{nothreat_median_share}} without one, in small samples. In
         Portland, where the team was sold in 2026 to a buyer from Dallas, the state's money is approved but still
         pending; on Oct. 21, 2026, the city said it and the team had not yet agreed on the essential terms of a lease.
       sources: [threat-ledger, ledger, portland-ordinance-192244]

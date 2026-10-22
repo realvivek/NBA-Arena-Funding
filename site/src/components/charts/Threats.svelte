@@ -9,13 +9,15 @@
   let { rows, deals = [], variant = 'wide', label = '' } = $props();
   const narrow = variant === 'narrow';
   const CITY = { ...TEAM_CITY, NOH: 'New Orleans', SEA: 'Seattle', VAN: 'Vancouver', NJ: 'New Jersey' };
+  // episodes in a city the team has since left: the Warriors played in Oakland in 1995
+  const CITY_BY_ID = { E50: 'Oakland' };
   const frac = (iso) => {
     const d = new Date(iso + 'T00:00:00Z');
     return d.getUTCFullYear() + (d.getUTCMonth() + d.getUTCDate() / 31) / 12;
   };
   const lags = rows
     .filter((r) => r.lag_months != null && r.threat_date && r.approval_date)
-    .map((r) => ({ ...r, city: CITY[r.team.split(' ')[0]] ?? r.team, t0: frac(r.threat_date), t1: frac(r.approval_date) }))
+    .map((r) => ({ ...r, city: CITY_BY_ID[r.id] ?? CITY[r.team.split(' ')[0]] ?? r.team, t0: frac(r.threat_date), t1: frac(r.approval_date) }))
     .sort((a, b) => a.t0 - b.t0);
   const W = narrow ? NARROW : WIDE;
   const lw = Math.ceil(Math.max(...lags.map((d) => textWidth(`${d.city} ${d.threat_date.slice(0, 4)}`)))) + 12;
@@ -70,7 +72,8 @@
         {/each}
         {#if narrow}
           {@const top = dumbH + 14}
-          {@const sx = scaleLinear().domain([0, 100]).range([6, W - 6])}
+          <!-- the axis leaves room for its end labels, so every label centers on its tick -->
+          {@const sx = scaleLinear().domain([0, 100]).range([18, W - 22])}
           <line class="baseline" x1="0" x2={W} y1={top - 10} y2={top - 10} />
           <text class="t-strong" x="0" y={top + 10} font-size={FONT}>Public share of each deal</text>
           {#each groups as g, i}
@@ -84,7 +87,8 @@
             {/each}
           {/each}
           {#each [0, 25, 50, 75, 100] as t, j}
-            <text class="tick t-muted" x={sx(t)} y={top + 52 + 44 + 26} text-anchor={j === 0 ? 'start' : j === 4 ? 'end' : 'middle'} font-size={FONT}>{t}%</text>
+            <line class="grid" x1={sx(t)} x2={sx(t)} y1={top + 52 + 44 + 8} y2={top + 52 + 44 + 12} />
+            <text class="tick t-muted" x={sx(t)} y={top + 52 + 44 + 26} text-anchor="middle" font-size={FONT}>{t}%</text>
           {/each}
         {:else}
           {@const top = dumbH + 14}

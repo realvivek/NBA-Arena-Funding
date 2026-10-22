@@ -715,6 +715,19 @@ figure.chart {
   background: var(--orange-wash);
   box-shadow: inset 0 0 0 1.5px var(--orange);
 }
+/* point marks: an open ring and a filled dot, drawn as they are in the chart */
+.key-ring {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2);
+}
+.key-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--orange);
+}
 .plot {
   position: relative;
   width: 100%;
@@ -885,6 +898,10 @@ figure.chart:not(.scrolly) {
 }
 .chart svg .f-orange {
   fill: var(--orange);
+}
+.chart svg .f-orange-soft {
+  fill: var(--orange);
+  fill-opacity: 0.45;
 }
 .chart svg .f-aqua {
   fill: var(--aqua);
@@ -1456,26 +1473,37 @@ figure.chart {
   .scrolly-steps {
     position: relative;
     z-index: 1;
-    padding: 78vh 0 24vh;
+    padding: 78vh 0 4vh;
     pointer-events: none;
   }
   .scrolly .legend {
     font-size: 0.8125rem;
     gap: 2px 12px;
   }
+  /* each step is a tall stretch of scroll whose card holds below the chart while it is read, then fades as the
+     next one takes over, so a card never sits on the bills it describes */
   .step {
-    pointer-events: auto;
     max-width: 32rem;
-    margin: 0 auto 70vh;
+    min-height: 78vh;
+    margin: 0 auto;
+    font-size: 1.125rem;
+  }
+  .step:last-child {
+    min-height: 52vh;
+  }
+  .step-card {
+    pointer-events: auto;
+    position: sticky;
+    top: 60vh;
     padding: 14px 16px;
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: 4px;
     box-shadow: var(--shadow);
-    font-size: 1.125rem;
+    transition: opacity 0.25s ease;
   }
-  .step:last-child {
-    margin-bottom: 0;
+  .scrolly.js .step:not(.is-active) .step-card {
+    opacity: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1548,6 +1576,10 @@ figure.chart {
 }
 .chart svg .bs-after .bs-bill {
   fill: var(--orange);
+}
+/* the kinds after building alternate two shades, so neighbouring kinds read apart */
+.chart svg :is(.bs-buy, .bs-breaks) .bs-bill {
+  fill-opacity: 0.55;
 }
 .chart svg .bs-inner {
   fill: none;
@@ -1668,6 +1700,9 @@ figure.chart {
 .chart svg .own-fin .own-strip {
   fill: var(--orange);
   fill-opacity: 0.45;
+}
+.chart svg .own-fund-mark {
+  fill: var(--aqua);
 }
 .chart svg .own-field {
   fill: var(--ink-2);
@@ -1868,6 +1903,10 @@ figure.chart {
 .tm-val {
   color: var(--ink-2);
 }
+/* on phones the value column has no header beside it, so it carries a word */
+.tm-val-k {
+  display: none;
+}
 .tm-body {
   padding: 6px 4px 16px 2.6rem;
 }
@@ -1901,7 +1940,7 @@ figure.chart {
 }
 @media (max-width: 40rem) {
   .tm summary {
-    grid-template-columns: 1.5rem 26px minmax(0, 1fr) 4.25rem;
+    grid-template-columns: 1.5rem 26px minmax(0, 1fr) 5.75rem;
     grid-template-areas: 'rank arena name amt' '. arena bar val';
     row-gap: 4px;
   }
@@ -1925,6 +1964,13 @@ figure.chart {
   .tm-val {
     grid-area: val;
     font-size: 0.8125rem;
+  }
+  .tm-val-k {
+    display: inline;
+    color: var(--muted);
+  }
+  .tm-name small {
+    white-space: normal;
   }
   .tm-body {
     padding-left: 4px;

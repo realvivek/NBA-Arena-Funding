@@ -133,7 +133,7 @@ stats:
   note: The size of the group in top10_share.
 
 - key: ind_public
-  title: Public money in Indianapolis's Gainbridge Fieldhouse, the most of any arena
+  title: Direct public money in Indianapolis's Gainbridge Fieldhouse, the most of any arena (tax breaks and the Barclays Center PILOT bonds not counted)
   sql: select sum(public_2026_m) from items where core and team = 'IND'
   check: select (select team from items where core group by team order by sum(public_2026_m) desc limit 1) = 'IND'
   unit: usd_m
@@ -179,7 +179,7 @@ stats:
   unit: count
   label: a
   sources: [ledger]
-  note: Arenas ranked by construction cost in 2026 dollars; Intuit Dome, Chase Center, Barclays Center, Little Caesars Arena, Madison Square Garden, American Airlines Center, Golden 1 Center and Crypto.com Arena. The ninth, the Kia Center, was built mainly with public money.
+  note: Arenas ranked by construction cost in 2026 dollars; Intuit Dome and Chase Center. The third, Barclays Center, was built mainly with public money once its PILOT bonds count as public building money (bkn_build_share); the next five (Little Caesars Arena, Madison Square Garden, American Airlines Center, Golden 1 Center and Crypto.com Arena) were built mainly with private money. Kept for the record; not in the copy.
 
 - key: costliest_public_n
   title: Of those costliest arenas, the ones that got public money
@@ -192,7 +192,7 @@ stats:
   unit: count
   label: a
   sources: [ledger]
-  note: Chase Center (transit capital only), Barclays Center, Little Caesars Arena, American Airlines Center, Golden 1 Center and Crypto.com Arena.
+  note: Chase Center (transit capital only). Kept for the record; not in the copy.
 
 - key: costliest_public_min
   title: Least public money among those that got some
@@ -226,7 +226,21 @@ stats:
   unit: count
   label: a
   sources: [ledger]
-  note: Public money was under half of the construction cost. Indianapolis's arena is in neither group, because its sources conflict (the Capital Improvement Board says $230.7 million of tax-backed 1997 bonds funded its construction and a garage, more than the $183 million reported cost) and no primary split was found.
+  note: Public money was under half of the construction cost. Barclays Center's PILOT bonds count as public building money for this test, as in the bill, so Brooklyn's arena is not in the group (bkn_build_share). Indianapolis's arena is in neither group, because its sources conflict (the Capital Improvement Board says $230.7 million of tax-backed 1997 bonds funded its construction and a garage, more than the $183 million reported cost) and no primary split was found.
+
+- key: bkn_build_share
+  title: Public share of Barclays Center's construction, counting the PILOT bonds as public building money
+  sql: |
+    select 100 * (public_construction_nominal_m + pilot_or_tax_diversion_financing_m)
+           / greatest(construction_cost_nominal_m, public_construction_nominal_m + private_construction_nominal_m)
+    from arenas where team = 'BKN'
+  check: select built_privately_majority = 'N' from arenas where team = 'BKN'
+  unit: pct
+  digits: 0
+  basis: share of nominal construction money
+  label: a
+  sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
+  note: City and state capital ($315 million, outside the developer's reported cost) plus $511 million of PILOT bonds, over the $950.7 million reported cost plus the public capital. Without the bonds the public share is 25 percent.
 
 # ------------------------------------------------------------------ building versus rebuilding
 - key: rebuild_since_2014
@@ -270,6 +284,37 @@ stats:
   digits: 1
   label: a
   sources: [ledger]
+
+- key: underway_public
+  title: Renovation money counted at face value because the work is still under way or the money is still to be paid
+  sql: select sum(public_2026_m) from items where core and kind = 'renovation' and year = 2026
+  unit: usd_m
+  basis: face value
+  label: a
+  sources: [ledger]
+  note: Salt Lake City's 2025 renovation, Washington's 2024 deal, Orlando's 2024 package, Indianapolis's technology money to 2034, Memphis's first phase, Phoenix's renewal and replacement deposits, and Salt Lake City's reimbursement of a 2017 renovation through 2040.
+
+- key: arenas_opened_1990_2005
+  title: Current arenas that opened between 1990 and 2005
+  sql: select count(*) from arenas where cast(opened as integer) between 1990 and 2005
+  unit: count
+  label: a
+  sources: [ledger]
+  note: Of the rest, Madison Square Garden opened in 1968 and seven opened from 2010 on.
+
+- key: rebuild_ratio_with_sas
+  title: The same multiple, counting Bexar County's voter-approved money for a new San Antonio arena with the new arenas
+  sql: |
+    select (select sum(public_2026_m) from items where core and kind in ('renovation', 'purchase') and year >= 2014)
+         / (select sum(public_2026_m) from items
+            where (core and kind = 'construction' and year >= 2014)
+               or (kind = 'project' and status = 'binding' and description not ilike '%district%')
+               or item_id = 'SAS-project')
+  unit: number
+  digits: 1
+  label: a
+  sources: [ledger]
+  note: Bexar County's money is approved by voters but not yet binding, because the city's share and the definitive agreements are pending.
 
 - key: opened_public_since_2014
   title: Arenas opened since 2014 with public construction money
@@ -338,7 +383,7 @@ stats:
   note: Houston, Memphis and Portland. Not counted in the totals.
 
 - key: new_arenas_committed
-  title: Public money committed to new arenas not yet open
+  title: Public money committed or approved for new arenas not yet open
   sql: select sum(public_2026_m) from items where kind = 'project' and team in ('OKC', 'SAS') and status <> 'pending'
   unit: usd_m
   basis: face value
@@ -362,6 +407,15 @@ stats:
   basis: face value
   label_sql: select public_label from items where item_id = 'SAS-project'
   sources_sql: select source_id from item_sources where item_id = 'SAS-project' and role = 'public' order by ord
+
+- key: sas_tirz
+  title: Midtown tax-increment debt the San Antonio council approved on Sept. 10, 2026 to buy the arena site, inside the city's pending money
+  sql: select public_nominal_m from buckets where item_id = 'SAS-project-pending' and bucket = 'tif'
+  unit: usd_m
+  basis: face value
+  label_sql: select public_label from items where item_id = 'SAS-project-pending'
+  sources_sql: select source_id from item_sources where item_id = 'SAS-project-pending' and role = 'public' order by ord
+  note: Up to $60 million, more than $115 million with financing; the final financing plan returns to the council.
 
 - key: sas_county_cap_pct
   title: Cap on Bexar County's money as a share of the arena's cost
@@ -592,7 +646,7 @@ stats:
   note: General funds and general-obligation bonds, dedicated sales taxes, tax increment and other tax capture, lease-revenue bonds, and alcohol and tobacco taxes.
 
 - key: visitors_share
-  title: Share of public capital from taxes on visitors
+  title: Share of public capital from hotel and car-rental taxes, which fall mostly on visitors
   sql: |
     select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital)
     from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'visitors'
@@ -600,7 +654,29 @@ stats:
   basis: share of 2026 dollars
   label: a
   sources: [ledger]
-  note: Taxes on hotel rooms, car rentals, restaurant food and drink, and tickets.
+  note: Taxes on hotel rooms and car rentals. Restaurant-meal and ticket taxes, alone or pooled with hotel taxes, are counted apart (shared_share), because residents pay much of them. Part of a hotel tax may also fall on local hotel owners and workers; no incidence study for these arenas was found.
+
+- key: shared_share
+  title: Share of public capital from restaurant-meal and ticket taxes, alone or pooled with hotel taxes, which visitors and residents share
+  sql: |
+    select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital)
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'shared'
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+  note: Indianapolis's Capital Improvement Board taxes (hotel, food and beverage, and admissions taxes pooled), the Wisconsin Center District's room, food-and-beverage and car-rental taxes for Milwaukee's arena, and Washington's tax on arena tickets and merchandise. The records do not split these pooled streams by tax.
+
+- key: visitors_shared_share
+  title: Share of public capital from hotel, car-rental, restaurant-meal and ticket taxes together
+  sql: |
+    select 100 * sum(b.public_2026_m) / (select sum(public_2026_m) from capital)
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer in ('visitors', 'shared')
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+  note: The upper bound for the money visitors paid; the lower bound is visitors_share.
 
 - key: other_share
   title: Share of public capital given as land, or with no documented funding stream
@@ -613,7 +689,7 @@ stats:
   sources: [ledger]
 
 - key: visitors_public
-  title: Public capital from taxes on visitors
+  title: Public capital from hotel and car-rental taxes
   sql: |
     select sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket)
     where g.payer = 'visitors'
@@ -625,7 +701,7 @@ stats:
 # Who paid, before and since 2014. Items are dated as the ledger dates them: construction in the year the arena opened,
 # renovations in the middle year of the work, purchases in the year of the sale, work still under way in 2026.
 - key: visitors_share_before_2014
-  title: Share of public capital dated before 2014 that came from taxes on visitors
+  title: Share of public capital dated before 2014 that came from hotel and car-rental taxes
   sql: |
     select 100 * sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m)
     from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014
@@ -637,7 +713,7 @@ stats:
   basis: share of 2026 dollars
   label: a
   sources: [ledger]
-  note: Construction dated by the year the arena opened, renovations by the middle year of the work, purchases by the year of the sale. The check confirms that visitor taxes were the largest source before 2014.
+  note: Construction dated by the year the arena opened, renovations by the middle year of the work, purchases by the year of the sale. The check confirms that hotel and car-rental taxes were the largest source before 2014.
 
 - key: residents_share_before_2014
   title: Share of public capital dated before 2014 that came from taxes residents mostly pay
@@ -676,9 +752,29 @@ stats:
   note: Led by Salt Lake City's arena sales tax and Washington's general fund. Work still under way is dated 2026. The check confirms that taxes residents mostly pay supplied more than half.
 
 - key: visitors_share_since_2014
-  title: Share of public capital dated 2014 or later that came from taxes on visitors
+  title: Share of public capital dated 2014 or later that came from hotel and car-rental taxes
   sql: |
     select 100 * sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m)
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
+- key: shared_share_before_2014
+  title: Share of public capital dated before 2014 that came from restaurant-meal and ticket taxes, alone or pooled with hotel taxes
+  sql: |
+    select 100 * coalesce(sum(b.public_2026_m) filter (where g.payer = 'shared'), 0) / sum(b.public_2026_m)
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014
+  unit: pct
+  basis: share of 2026 dollars
+  label: a
+  sources: [ledger]
+
+- key: shared_share_since_2014
+  title: Share of public capital dated 2014 or later that came from restaurant-meal and ticket taxes, alone or pooled with hotel taxes
+  sql: |
+    select 100 * coalesce(sum(b.public_2026_m) filter (where g.payer = 'shared'), 0) / sum(b.public_2026_m)
     from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014
   unit: pct
   basis: share of 2026 dollars
@@ -773,7 +869,7 @@ stats:
 
 # ------------------------------------------------------------------ money that never shows up as a check
 - key: nyk_exemption
-  title: Madison Square Garden's property-tax exemption since 1982
+  title: Madison Square Garden's property-tax exemption in fiscal 1984-2026 (the exemption dates to 1982)
   sql: select tax_break_cumulative_2026_m from arenas where team = 'NYK'
   unit: usd_m
   basis: 2026 dollars; more than
@@ -1139,6 +1235,20 @@ stats:
   label: a
   sources: [threat-ledger]
 
+- key: threat_share_n
+  title: Deals that followed a threat with a known total cost, for the public share
+  sql: select v from comparison where k = 'threat.n_share'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
+- key: nothreat_share_n
+  title: Deals with no threat with a known total cost, for the public share
+  sql: select v from comparison where k = 'no_threat.n_share'
+  unit: count
+  label: a
+  sources: [threat-ledger]
+
 - key: threat_median_share
   title: Median public share of deals that followed a threat
   sql: select 100 * v from comparison where k = 'threat.median_share'
@@ -1401,6 +1511,24 @@ stats:
   label: b
   sources: [slc-council-sec-district-2024]
 
+- key: slc_first_two_months
+  title: Salt Lake City's arena sales-tax distributions in January and February 2025 together, the first months of the series
+  sql: select sum(usd) / 1e6 from slc_monthly where month in ('2025-01', '2025-02')
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b
+  sources: [utah-tax-distributions]
+
+- key: slc_monthly_min_later
+  title: The smallest monthly distribution of Salt Lake City's arena sales tax from March 2025 on
+  sql: select min(usd) / 1e6 from slc_monthly where month >= '2025-03'
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b
+  sources: [utah-tax-distributions]
+
 - key: slc_tax_fy2026
   title: Salt Lake City arena sales tax distributed in fiscal 2026 (July 2025 to June 2026), its first full fiscal year
   sql: select sum(usd) / 1e6 from slc_monthly where month between '2025-07' and '2026-06'
@@ -1511,6 +1639,44 @@ stats:
   label: a
   sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
   note: $511 million issued in 2009 to build the arena, repaid from payments in lieu of the property tax the arena would owe; converted from the 2012 opening year.
+
+- key: phi_exemption_annual
+  title: Property tax a year forgone on Philadelphia's arena, on city-owned property of record (not added)
+  value: 3.49
+  evidence: {file: data/ledger/arena_ledger.csv, where: {row_type: current_arena, team: PHI}, column: property_tax_status, contains: 'about $3.49M a year'}
+  unit: usd_m
+  digits: 2
+  basis: a year, at the 2025 rate
+  label: a
+  sources_sql: select source_id from arena_sources where row_type = 'current_arena' and team = 'PHI' and field = 'property_tax_source' order by ord
+
+- key: por_ptax_forgone
+  title: Property tax a year forgone since Portland bought the Moda Center in 2024 (not added)
+  value: 1.2
+  evidence: {file: data/authorities/lease_clock.csv, where: {team: POR}, column: outs_penalties_notes, contains: 'an estimated $1.2M a year'}
+  unit: usd_m
+  digits: 1
+  basis: a year
+  label: b
+  sources_sql: select source_id from lease_sources where team = 'POR' order by ord
+
+- key: bkn_pilot_2023
+  title: Barclays Center's payments in lieu of property tax in 2023, which service the arena bonds
+  value: 39
+  evidence: {file: data/ledger/arena_ledger.csv, where: {row_type: current_arena, team: BKN}, column: property_tax_status, contains: 'Payments in lieu of tax, $39M in 2023'}
+  unit: usd_m
+  basis: nominal
+  label: b
+  sources: [ibo-2023-march-description-of-public-subsidies-for-m]
+
+- key: bkn_wouldbe_2023
+  title: The property tax Barclays Center would have owed in 2023
+  value: 99
+  evidence: {file: data/ledger/arena_ledger.csv, where: {row_type: current_arena, team: BKN}, column: property_tax_status, contains: 'the tax would have been $99M (IBO 2023)'}
+  unit: usd_m
+  basis: nominal
+  label: b
+  sources: [ibo-2023-march-description-of-public-subsidies-for-m]
 
 - key: exemptions_added
   title: Property-tax exemptions added to the expanded total
@@ -1670,6 +1836,16 @@ stats:
   label: c
   sources: [ibj-nba-new-11-year-media-rights-deal-with-disney-nb]
 
+- key: nba_media_2014_annual
+  title: Reported yearly value of the national TV deals the NBA signed with ESPN and TNT in 2014, which ran from 2016-17 through 2024-25
+  value: 2660
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nba_media_2014_annual}, column: quote, contains: '$2.66 billion per year'}
+  unit: usd_m
+  basis: nominal, a year
+  label: c
+  sources: [espn-nba-extends-television-deals-2014]
+  note: ESPN citing the New York Times.
+
 - key: nba_media_years
   title: Term of the NBA's national media deals, in years
   value: 11
@@ -1685,6 +1861,7 @@ stats:
   unit: count
   label: a
   sources: [team-ledger]
+  note: An arena deal is an agreement between a government and a team or its arena company. The privately owned arenas whose public money came only through a transit agency or state tax law (Chase Center's transit capital, Madison Square Garden's exemption, the United Center's assessment formula) have no such deal and are not counted.
 
 - key: public_deals_read
   title: Of those, the deals whose terms could be read
@@ -1811,6 +1988,17 @@ stats:
   evidence: {file: data/inputs/research_claims.csv, where: {key: broncos_sale_share}, column: quote, contains: 'The board approved that $41 million sum'}
   unit: usd_m
   basis: nominal
+  label: c
+  sources: [cbsnews-broncos-sale-help-youth-programs-denver-metro-ar]
+  note: The lease required a share of the sale money to go to the stadium district for youth programs; the buyers took over the lease "minus the same stipulation" (same source).
+
+- key: broncos_sale_pct
+  title: The Denver stadium district's payment from the Broncos sale, as a share of the sale's net profit
+  value: 2
+  evidence: {file: data/inputs/research_claims.csv, where: {key: broncos_sale_pct}, column: quote, contains: "2% of the sale's net profit"}
+  unit: pct
+  digits: 0
+  basis: share of net profit
   label: c
   sources: [cbsnews-broncos-sale-help-youth-programs-denver-metro-ar]
 
@@ -1970,6 +2158,22 @@ stats:
   sources: [team-ledger]
   note: Private equity or hedge funds (Atlanta, Boston, Charlotte, Detroit, Milwaukee, Philadelphia) and other finance (Cleveland and Phoenix in mortgage lending, the Lakers in asset management, Golden State in venture capital, Portland in financial services), by Forbes's source of wealth.
 
+- key: control_sales_pre2015_n
+  title: Sales of control before 2015 to the teams' current owners, with a comparable price
+  sql: select count(*) from team_values where control_year < 2015 and price_m is not null and price_scope <> 'not_comparable'
+  unit: count
+  label: a
+  sources: [team-ledger]
+  note: Only today's owners are counted, so earlier owners who have since sold are not in the base.
+
+- key: control_sales_pre2015_finance_n
+  title: Of those, the sales to buyers who made their money mainly in finance
+  sql: select count(*) from team_values where control_year < 2015 and price_m is not null and price_scope <> 'not_comparable' and owner_class <> 'other'
+  unit: count
+  label: a
+  sources: [team-ledger]
+  note: Cleveland (2005), Golden State (2010), Detroit and Philadelphia (2011) and Milwaukee (2014).
+
 - key: owners_pe_n
   title: Teams whose controlling owners made their money mainly in private equity or hedge funds
   sql: select count(*) from team_values where owner_class = 'private_equity'
@@ -2026,6 +2230,71 @@ stats:
             from arenas where team in (select team from t))
   unit: usd_m
   basis: 2026 dollars
+  label: a
+  sources: [team-ledger, ledger]
+
+- key: finance_teams_share
+  title: Share of all core public money held by the arenas of teams with a controlling owner from finance or a current fund stake
+  sql: |
+    with t as (select v.team from team_values v
+               where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current'))
+    select 100 * (select sum(public_2026_m) from items where core and team in (select team from t))
+           / (select sum(public_2026_m) from items where core)
+  check: |
+    with t as (select v.team from team_values v
+               where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current'))
+    select (select sum(coalesce(pilot_2026_m, 0) + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end)
+            from arenas where team in (select team from t)) = 0
+  unit: pct
+  digits: 0
+  basis: share of 2026 dollars
+  label: a
+  sources: [team-ledger, ledger]
+  note: The check confirms these arenas carry no tax breaks in the expanded total, so finance_teams_public equals their core public money. Their share of the league's teams is 53 percent. About half of the money ($2.44 billion by the ledger's year rule) was counted after the current finance owner or fund arrived, mostly the Salt Lake City, Washington, Detroit and Milwaukee deals.
+
+- key: finance_teams_after
+  title: Of the public money in the arenas of finance-owned or fund-held teams, the part counted after the current finance owner or fund arrived
+  sql: |
+    with ent as (
+        select v.team,
+               least(case when v.owner_class <> 'other' then v.control_year end,
+                     (select min(cast(substr(i.entered, 1, 4) as integer)) from investors i
+                      where i.team = v.team and i.status = 'current')) as entry
+        from team_values v
+        where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current'))
+    select sum(i.public_2026_m) from items i join ent e using (team) where i.core and i.year >= e.entry
+  check: |
+    with ent as (
+        select v.team,
+               least(case when v.owner_class <> 'other' then v.control_year end,
+                     (select min(cast(substr(i.entered, 1, 4) as integer)) from investors i
+                      where i.team = v.team and i.status = 'current')) as entry
+        from team_values v
+        where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current')),
+         a as (select sum(i.public_2026_m) filter (where i.year >= e.entry) as after, sum(i.public_2026_m) as all_
+               from items i join ent e using (team) where i.core)
+    select after / all_ between 0.4 and 0.6 from a
+  unit: usd_m
+  basis: 2026 dollars
+  label: a
+  sources: [team-ledger, ledger]
+  note: Items dated by the ledger's year rule (construction at opening, renovations at the middle year of the work, work under way at 2026). Entry is the year the current controlling owner from finance took control, or the first year a fund now holding a stake bought in, whichever came first; the Timberwolves' fund stake has no date and is left out. Mostly the Salt Lake City, Washington, Detroit and Milwaukee deals. The check confirms that it is about half.
+
+- key: finance_teams_after_share
+  title: The same money as a share of all the public money in those arenas
+  sql: |
+    with ent as (
+        select v.team,
+               least(case when v.owner_class <> 'other' then v.control_year end,
+                     (select min(cast(substr(i.entered, 1, 4) as integer)) from investors i
+                      where i.team = v.team and i.status = 'current')) as entry
+        from team_values v
+        where v.owner_class <> 'other' or exists (select 1 from investors i where i.team = v.team and i.status = 'current'))
+    select 100 * sum(i.public_2026_m) filter (where i.year >= e.entry) / sum(i.public_2026_m)
+    from items i join ent e using (team) where i.core
+  unit: pct
+  digits: 0
+  basis: share of 2026 dollars
   label: a
   sources: [team-ledger, ledger]
 

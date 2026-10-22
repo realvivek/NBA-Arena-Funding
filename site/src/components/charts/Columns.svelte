@@ -24,7 +24,14 @@
   const vmax = Math.max(...data.map((d) => d.parts.reduce((a, p) => a + p.v, 0)));
   const fmt = (v) => (v >= 1e6 ? `$${(v / 1e6).toFixed(v >= 1e7 ? 0 : 1)}M` : v === 0 ? '$0' : `$${Math.round(v / 1e3)}K`);
   const every = kind === 'wcd' ? 1 : narrow ? 6 : 3;
-  const shortName = (n) => (kind === 'wcd' ? n.replace(' Jan-Sep', '*') : n);
+  // months as the page writes them: Jan. 2025, April, July, Oct.; a partial year is marked and drawn lighter
+  const MON = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+  const shortName = (n) => {
+    if (kind === 'wcd') return n.replace(' Jan-Sep', '*');
+    const [yy, mm] = n.split('-').map(Number);
+    return mm === 1 || n === data[0].name ? `${MON[mm - 1]} ${yy}` : MON[mm - 1];
+  };
+  const partial = (n) => kind === 'wcd' && / Jan-/.test(n);
 </script>
 
 <div class="plot" style="aspect-ratio: {W} / {H}">
@@ -57,9 +64,9 @@
             {@const top = j === d.parts.length - 1}
             {#if p.v > 0}
               {#if top}
-                <path class={p.cls} d={vbar(x0, bw, y(below) - (j > 0 ? 2 : 0), y(below + p.v))} data-tip={`${d.name}, ${p.name}: ${dollars(p.v)}`} />
+                <path class={p.cls} fill-opacity={partial(d.name) ? 0.5 : undefined} d={vbar(x0, bw, y(below) - (j > 0 ? 2 : 0), y(below + p.v))} data-tip={`${d.name}, ${p.name}: ${dollars(p.v)}`} />
               {:else}
-                <rect class={p.cls} x={x0} width={bw} y={y(below + p.v)} height={Math.max(y(below) - y(below + p.v) - (j > 0 ? 2 : 0), 1)} data-tip={`${d.name}, ${p.name}: ${dollars(p.v)}`} />
+                <rect class={p.cls} fill-opacity={partial(d.name) ? 0.5 : undefined} x={x0} width={bw} y={y(below + p.v)} height={Math.max(y(below) - y(below + p.v) - (j > 0 ? 2 : 0), 1)} data-tip={`${d.name}, ${p.name}: ${dollars(p.v)}`} />
               {/if}
             {/if}
           {/each}

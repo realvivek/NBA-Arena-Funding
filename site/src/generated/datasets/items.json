@@ -8,7 +8,6 @@
   "wiki-state-farm-arena",
   "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
   "ibo-2009-may-atlantic-yards-testimony",
-  "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
   "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
   "nolandgrab-mtastaffsummaryvdyard062209",
   "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
@@ -259,10 +258,9 @@
    "public_2026_m": 455.027052,
    "cost_label": "b",
    "public_label": "b/c",
-   "note": "City capital contribution \"has grown from $100 million to $205 million\" (b, IBO testimony May 2009) + State $100M (b, IBO fiscal brief Sept 2009 p.2: \"direct payments of $100 million each from the city and state\"; also Doctoroff via Gotham Gazette, c). Alternative for the city: $150M, because IBO's Sept 2009 brief (p.3) counts only about half of the $105M addition, $50M, as caused by the project (b), for land acquisition and infrastructure for the arena block, outside the arena cost. MTA Vanderbilt Yard: IBO (Sept 2009) puts the subsidy at the $50M gap between Extell's $150M cash bid and Forest City's $100M and attributes $10M (present value) of it to the arena, using the 2009 terms' $20M of $100M for the arena block (b) -> land bucket (a public asset sold below the competing bid). Extell's $150M is computed from IBO's $50M gap (a). Whole-project alternatives, not counted: $50M bid gap (b); IBO's $214M appraisal ($214.5M per Atlantic Yards Report, c) minus the $100M present value of the 2009 payment stream at the MTA's 6.5% = $114.0M (a); replacement yard cut from $240-250M (MTA CFO via Atlantic Yards Report, c) or $182M (developer's figure via Atlantic Yards Report, c) to $147M (b, MTA staff summary) = $35M-$103M (a). The $10M is a present value as of FY2010 but is deflated with the construction money at the 2012 opening year (at 2010 it would be about $0.7M higher in 2026 dollars).",
+   "note": "City capital contribution \"has grown from $100 million to $205 million\" (b, IBO testimony May 2009) + State $100M (b, IBO fiscal brief Sept 2009 p.2: \"direct payments of $100 million each from the city and state\"). Alternative for the city: $150M, because IBO's Sept 2009 brief (p.3) counts only about half of the $105M addition, $50M, as caused by the project (b), for land acquisition and infrastructure for the arena block, outside the arena cost. MTA Vanderbilt Yard: IBO (Sept 2009) puts the subsidy at the $50M gap between Extell's $150M cash bid and Forest City's $100M and attributes $10M (present value) of it to the arena, using the 2009 terms' $20M of $100M for the arena block (b) -> land bucket (a public asset sold below the competing bid). Extell's $150M is computed from IBO's $50M gap (a). Whole-project alternatives, not counted: $50M bid gap (b); IBO's $214M appraisal ($214.5M per Atlantic Yards Report, c) minus the $100M present value of the 2009 payment stream at the MTA's 6.5% = $114.0M (a); replacement yard cut from $240-250M (MTA CFO via Atlantic Yards Report, c) or $182M (developer's figure via Atlantic Yards Report, c) to $147M (b, MTA staff summary) = $35M-$103M (a). The $10M is a present value as of FY2010 but is deflated with the construction money at the 2012 opening year (at 2010 it would be about $0.7M higher in 2026 dollars).",
    "sources": [
     "ibo-2009-may-atlantic-yards-testimony",
-    "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
     "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
     "nolandgrab-mtastaffsummaryvdyard062209",
     "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
@@ -369,7 +367,7 @@
    "public_2026_m": 46.931803,
    "cost_label": "b/c",
    "public_label": "b/c",
-   "note": "City $33.5M (c, WFAE) = $27.5M of capital improvements (b, ACFR FY2020: $15M issued June 2015, $12.5M in FY2019) + $0.6M a year for 10 years to the arena capital reserve, $6.0M (c, WFAE; the Hornets match it); funding stream assumed tourism funds (not verified; the ACFR gives none) -> tourist",
+   "note": "City $33.5M (c, WFAE) = $27.5M of capital improvements (b, ACFR FY2020: $15M issued June 2015, $12.5M in FY2019) + $0.6M a year for 10 years to the arena capital reserve, $6.0M (c, WFAE; the Hornets match it); funding stream not documented (the ACFR gives none; earlier coded as tourism taxes by assumption) -> mixed (not split)",
    "sources": [
     "lgreports-charlotte",
     "wfae-charlotte-spend-33-5-million-on-arena-for-hornet"
@@ -771,7 +769,7 @@
    "public_2026_m": 45.326672,
    "cost_label": "b",
    "public_label": "b",
-   "note": "CIB obligations under the 2014 Amended and Restated Operating Agreement: \"scheduled capital repairs and replacements (aggregating $7,000,000)\" and \"refresh improvements (aggregating $26,500,000)\" (CIB FY2025 notes, pdf p.66): locker rooms, concession stands and video boards (IBJ). About $1.6M unspent rolled into the 2019 refresh total; the 2019 row keeps $295M, so nothing is counted twice. Funded from CIB excise taxes -> tourist. Mid-construction year of 2014-19",
+   "note": "CIB obligations under the 2014 Amended and Restated Operating Agreement: \"scheduled capital repairs and replacements (aggregating $7,000,000)\" and \"refresh improvements (aggregating $26,500,000)\" (CIB FY2025 notes, pdf p.66): locker rooms, concession stands and video boards (IBJ). About $1.6M unspent rolled into the 2019 refresh total; the 2019 row keeps $295M, so nothing is counted twice. Funded from CIB excise taxes (hotel, food-and-beverage and admissions taxes pooled) -> meals. Mid-construction year of 2014-19",
    "sources": [
     "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
     "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
@@ -792,7 +790,7 @@
    "public_2026_m": 361.067372,
    "cost_label": "c/a",
    "public_label": "c/a",
-   "note": "Public $295M (state+CIB $270M, city $25M); split by PFM shares: state ~34% via PSDA tax capture (incl. athletes income tax) -> tif; CIB excise taxes -> tourist; Pacers $65M. The CIB's refresh obligation under the 2019 agreement is $296,641,331 (b), including about $1.6M carried from 2014. \"Between 2020-2022 ... a three year, three phase $360M renovation\" (CIB FY2021 ACFR)",
+   "note": "Public $295M (state+CIB $270M, city $25M); split by PFM shares: state ~34% via PSDA tax capture (incl. athletes income tax) -> tif; CIB excise taxes (hotel, food-and-beverage and admissions taxes pooled) -> meals; Pacers $65M. The CIB's refresh obligation under the 2019 agreement is $296,641,331 (b), including about $1.6M carried from 2014. \"Between 2020-2022 ... a three year, three phase $360M renovation\" (CIB FY2021 ACFR)",
    "sources": [
     "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
     "oregon-moda-center-arena-comparable-structure-overview",
@@ -814,7 +812,7 @@
    "public_2026_m": 21.571401,
    "cost_label": "b",
    "public_label": "b",
-   "note": "\"scheduled capital repairs and replacements (aggregating $17,624,310)\" (CIB FY2025 notes, pdf p.67), done over the first three years (IBJ); separate from the $360M renovation. CIB excise taxes -> tourist",
+   "note": "\"scheduled capital repairs and replacements (aggregating $17,624,310)\" (CIB FY2025 notes, pdf p.67), done over the first three years (IBJ); separate from the $360M renovation. CIB excise taxes (hotel, food-and-beverage and admissions taxes pooled) -> meals",
    "sources": [
     "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
     "ibj-73314-pacers-cib-agree-to-360m-renovation-expans"
@@ -1245,7 +1243,7 @@
    "public_2026_m": 470.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "Remaining $150M state + $320M hotel-motel tax held until a long-term lease is signed. The Oct 8 2026 MSCSA agenda lists Amendment 1 to the Design, Construction & Funding Agreement and a CMAR prime agreement; press reports they were approved and names Flintco as contractor (Audacy, Yahoo); lease unsigned as of Oct 22 2026 (Daily Memphian: \"very close\"). Private Chapter 70 (2026) extends the Shelby County hotel-motel tax to the later of the NBA tenant leaving and June 30 2050, subject to local approval (not found). Alternative: \"nearly $500 million in public tax dollars\" of the $550M (Yahoo/Roundtable 2026-10-13)",
+   "note": "Remaining $150M state + $320M hotel-motel tax held until a long-term lease is signed. The Oct. 8, 2026 Sports Authority agenda lists Amendment 1 to the Design, Construction and Funding Agreement and a construction manager agreement; press reports they were approved and names Flintco as contractor (Audacy, Yahoo); lease unsigned as of Oct 22 2026 (Daily Memphian: \"very close\"). Private Chapter 70 (2026) extends the Shelby County hotel-motel tax to the later of the NBA tenant leaving and June 30 2050, subject to local approval (not found). Alternative: \"nearly $500 million in public tax dollars\" of the $550M (Yahoo/Roundtable 2026-10-13)",
    "sources": [
     "tri-statedefender-p-349496",
     "dailymemphian",

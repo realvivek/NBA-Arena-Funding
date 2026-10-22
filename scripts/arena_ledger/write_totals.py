@@ -11,8 +11,8 @@ HH2=json.load(open(DATA+'/inputs/census/acs2024_B11001_states2.json'))
 for k,v in HH2['data'].items(): HH[k]=[HH2['geography'][k]['name'], int(v['B11001']['estimate']['B11001001'])]
 rows=list(csv.DictReader(open(DATA+'/ledger/arena_ledger.csv')))
 cur=[r for r in rows if r['row_type']=='current_arena']
-B=['general','sales','tourist','tif','leaserev','land','infra','sin','mixed']
-BN={'general':'General taxes / GO bonds / appropriations / state grants / public asset sales','sales':'Dedicated general sales tax','tourist':'Hotel, car-rental, F&B, ticket (visitor) taxes',
+B=['general','sales','tourist','meals','tif','leaserev','land','infra','sin','mixed']
+BN={'general':'General taxes / GO bonds / appropriations / state grants / public asset sales','sales':'Dedicated general sales tax','tourist':'Hotel and car-rental taxes (mostly visitors)','meals':'Restaurant-meal and ticket taxes, alone or pooled with hotel taxes (visitors and residents)',
     'tif':'Tax increment & tax capture (TIF, CRA, Indiana PSDA, Oregon income-tax capture)','leaserev':'Lease-revenue bonds (general fund / parking backed)','land':'Land contributed or sold below value',
     'infra':'Infrastructure / parking / site work (funding stream not specified)','sin':'Sin taxes (alcohol/tobacco, Cleveland)','mixed':'Public, mechanism split not documented'}
 f=lambda x: f"${x/1000:.2f}B" if abs(x)>=1000 else f"${x:.0f}M"
@@ -69,6 +69,10 @@ for b in sorted(B,key=lambda b:-C['bucket26'].get(b,0)):
     v=C['bucket26'].get(b,0)
     if v: P(f"  {BN[b]:<92}{f(v):>9}  {100*v/bt:5.1f}%")
 P(f"  {'TOTAL capital':<92}{f(bt):>9}")
+PAYER={'residents':['general','sales','tif','leaserev','sin'],'visitors':['tourist'],'shared':['meals'],'other':['land','infra','mixed']}
+P('  By who mostly pays: ' + '; '.join(f"{k} {f(sum(C['bucket26'].get(b,0) for b in v))} ({100*sum(C['bucket26'].get(b,0) for b in v)/bt:.1f}%)" for k,v in PAYER.items()))
+P('  (residents: general, dedicated sales, tax capture, lease-revenue and sin taxes; visitors: hotel and car-rental taxes; shared: meal and ticket')
+P('  taxes, alone or pooled with hotel taxes (Indianapolis CIB, Milwaukee WCD, Washington arena ticket tax); other: land, site work, not split)')
 P(f"  Ongoing operating subsidies (separate from capital): {f(agg['og26'])}")
 P('  Rule: each dollar assigned once - by documented funding stream; in-kind land -> land; infrastructure with no stated stream -> infrastructure.')
 P('')
@@ -98,7 +102,7 @@ P('Tax-exempt bonds behind privately built arenas: '+'; '.join(f"{k}: {v}" for k
 P('Other public money and tax breaks at arenas built and owned privately:')
 H={
 'BKN':'City $205M (IBO 2009 testimony; IBO\'s Sept 2009 brief counts $150M) + State $100M (IBO Sept 2009) capital for land/infrastructure + MTA rail yard $10M (IBO arena share of the $50M bid gap), counted in core; $511M tax-exempt PILOT bonds (property taxes diverted to arena debt; expanded total); full property-tax exemption (would-be $99M/yr 2023 vs $39M PILOT)',
-'DET':'$286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia rent-free',
+'DET':'$286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia runs it as concessionaire (its payments serviced the private share of the bonds)',
 'WAS':'1997 public money $75.5M (GAO: District $61.5M for land, site and Metro match + $14M federal and WMATA); $50M 2007 TIF notes (arena ticket tax); 2024 $87.5M purchase + $427.5M renovation; property/possessory-interest tax exemption since construction, ~$10M/yr now, continued to June 2050 by the 2024 law ($312.7M FY2025-50 per OCFO)',
 'UTA':'RDA-owned land at $1/yr (2026 assessed $68.8M, exempt); city CRA reimbursement for the 2017 renovation up to $22.7M through 2040; $525M of 0.5% city sales-tax bonds into a privately owned arena + $375M for the surrounding district',
 'POR':'City $34.5M (1995); building bought for $1 and land under it for $7.13M (2024); $573M pending (state income-tax capture $365M)',
@@ -150,10 +154,10 @@ P('-'*78)
 hh=lambda g: HH[g][1]
 memst=reno_pub('MEM','first phase')+TI['MEM']['state_m']*CPI[2026]/CPI[2004]  # the 2025 grant money is for work under way: face value
 D=[
- ('UTA',f"Delta Center, all public money (the 2025 renovation {f(reno_pub('UTA','sales tax'))} and the 2017 reimbursement; the district's {f(PJ[('UTA',False)]['pub'])} from the same tax is not included), 0.5% Salt Lake City sales tax",det['UTA']['core26'],[('16000US4967000',1.0)],'City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound'),
+ ('UTA',f"Delta Center, all public money (the 2025 renovation {f(reno_pub('UTA','sales tax'))} and the 2017 reimbursement; the district's {f(PJ[('UTA',False)]['pub'])} from the same tax is not included), 0.5% Salt Lake City sales tax",det['UTA']['core26'],[('16000US4967000',1.0)],'City sales tax, part of it paid by people who live elsewhere, so the figure per household in the city is an upper bound'),
  ('OKC',f"New Thunder arena and related 2025 GO projects ({f(PJ[('OKC',False)]['pub'])}) + Paycom 2002 & 2008 money ({f(det['OKC']['core26'])}), OKC city sales tax and GO bonds",PJ[('OKC',False)]['pub']+det['OKC']['core26'],[('16000US4055000',1.0)],'City sales tax (also paid by commuters/visitors) and GO bonds'),
  ('WAS','Capital One Arena all public money since 1997 (the $12M federal grant and $2M of WMATA money for the Metro link are not DC households\' share)',det['WAS']['core26'],[('04000US11',(det['WAS']['core26']-14.0*CPI[2026]/CPI[1997])/det['WAS']['core26'])],'District of Columbia general fund/GO'),
- ('ORL','Kia Center (2010 build + 2025 renovation)',det['ORL']['core26'],[('05000US12095',1.0)],'Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional'),
+ ('ORL','Kia Center (2010 build + 2025 renovation)',det['ORL']['core26'],[('05000US12095',1.0)],'Orange County 6% tourist tax, paid mostly by visitors, so the figure per household is notional'),
  ('IND','Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)',det['IND']['core26'],[('05000US18097',(det['IND']['core26']-reno_pub('IND','2020-22','tif')*CPI[2026]/CPI[2021])/det['IND']['core26']),('04000US18',reno_pub('IND','2020-22','tif')*CPI[2026]/CPI[2021]/det['IND']['core26'])],'Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)'),
  ('CHA','Spectrum Center (2005, 2014, 2024-25)',det['CHA']['core26'],[('16000US3712000',1.0)],'City of Charlotte hotel/car-rental taxes'),
  ('MEM','FedExForum (2004 build, $80M of the state grant in 2025, subsidies)',det['MEM']['core26'],[('05000US47157',(det['MEM']['core26']-memst)/det['MEM']['core26']),('04000US47',memst/det['MEM']['core26'])],'Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)'),
@@ -168,11 +172,12 @@ D=[
  ('SAC','Golden 1 Center',det['SAC']['core26'],[('16000US0664000',1.0)],'City of Sacramento general fund/parking'),
 ]
 hh_rows=[]
+PEND={'POR':det['POR']['pend26']}  # Portland's row adds the pending rebuild money, marked as pending on the site
 for team,desc,amt,geos,note in D:
     parts=[];
     for g,share in geos:
         nm,n=HH[g]; parts.append(f"{nm} {n:,} hh -> ${amt*share*1e6/n:,.0f}/hh (share {share:.0%})")
-        hh_rows.append(dict(team=team, deal=desc, amount_2026_m=round(amt,6), geo_id=g, jurisdiction=nm, households=n, share=round(share,6), per_household_2026=round(amt*share*1e6/n,2), note=note))
+        hh_rows.append(dict(team=team, deal=desc, amount_2026_m=round(amt,6), pending_2026_m=round(PEND.get(team,0.0),6), geo_id=g, jurisdiction=nm, households=n, share=round(share,6), per_household_2026=round(amt*share*1e6/n,2), note=note))
     P(f"{team}: {desc}: {f(amt)} | "+' ; '.join(parts)+f" | {note}")
 with open(DATA+'/ledger/households.csv','w',newline='') as fh:
     w=csv.DictWriter(fh, fieldnames=list(hh_rows[0].keys()), lineterminator='\n'); w.writeheader(); w.writerows(hh_rows)

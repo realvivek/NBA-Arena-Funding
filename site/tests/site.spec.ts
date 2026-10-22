@@ -87,7 +87,7 @@ test('every number in the copy links to its fact-check entry', async ({ page }) 
 
 test('the story renders its headline, every chart and the lead graphic\'s labels', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('h1')).toHaveText(/^Taxpayers Put \$[\d.]+ Billion Into the NBA’s Arenas\. Owners Kept the Gains\.$/);
+  await expect(page.locator('h1')).toHaveText(/^Taxpayers Have Put or Committed \$[\d.]+ Billion to the NBA’s Arenas\. Owners Kept the Gains\.$/);
   for (const id of ['bill', 'valuegroups', 'rebuild', 'payershift', 'trend', 'values', 'owners', 'leases'])
     await expect(page.locator(`#fig-${id}`)).toHaveCount(1);
   // every kind of money in the lead graphic carries its amount and its name

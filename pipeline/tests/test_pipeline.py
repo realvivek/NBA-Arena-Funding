@@ -47,7 +47,7 @@ def test_funding_streams_match_ledger(built):
     rows = {r['bucket']: r['public_2026_m'] for r in built['datasets']['who-pays'].rows}
     for b, v in built['calc']['bucket26'].items():
         assert rows[b] == pytest.approx(v, abs=0.01)
-    shares = built['stats']['residents_share'].value + built['stats']['visitors_share'].value + built['stats']['other_share'].value
+    shares = sum(built['stats'][k].value for k in ('residents_share', 'visitors_share', 'shared_share', 'other_share'))
     assert shares == pytest.approx(100, abs=1e-6)
 
 

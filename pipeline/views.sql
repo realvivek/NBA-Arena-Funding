@@ -18,15 +18,16 @@ from read_csv('{root}/data/ledger/ledger_buckets.csv', header = true);
 -- Funding streams, and who mostly pays each one (README, "Who pays").
 create or replace view bucket_groups as
 select * from (values
-    ('tourist',  'Visitor taxes on hotels, car rentals, food and drink, and tickets', 'visitors',  1),
-    ('general',  'General taxes, general-obligation bonds, appropriations, state grants and sales of public assets', 'residents', 2),
-    ('sales',    'Dedicated general sales tax', 'residents', 3),
-    ('tif',      'Tax increment and other tax capture', 'residents', 4),
-    ('leaserev', 'Lease-revenue bonds backed by the general fund or parking', 'residents', 5),
-    ('sin',      'Alcohol and tobacco taxes', 'residents', 6),
-    ('mixed',    'Public money not split among its funding streams', 'other', 7),
-    ('land',     'Land contributed or sold below value', 'other', 8),
-    ('infra',    'Infrastructure and site work, funding stream not stated', 'other', 9)
+    ('tourist',  'Hotel and car-rental taxes', 'visitors',  1),
+    ('meals',    'Restaurant-meal and ticket taxes, alone or pooled with hotel taxes', 'shared', 2),
+    ('general',  'General taxes, general-obligation bonds, appropriations, state grants and sales of public assets', 'residents', 3),
+    ('sales',    'Dedicated general sales tax', 'residents', 4),
+    ('tif',      'Tax increment and other tax capture', 'residents', 5),
+    ('leaserev', 'Lease-revenue bonds backed by the general fund or parking', 'residents', 6),
+    ('sin',      'Alcohol and tobacco taxes', 'residents', 7),
+    ('mixed',    'Public money not split among its funding streams', 'other', 8),
+    ('land',     'Land contributed or sold below value', 'other', 9),
+    ('infra',    'Infrastructure and site work, funding stream not stated', 'other', 10)
 ) t(bucket, name, payer, ord);
 
 -- Capital items (everything counted except yearly payments).

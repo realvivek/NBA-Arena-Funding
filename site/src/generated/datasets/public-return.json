@@ -218,7 +218,7 @@
    "public_deal": true,
    "sale_share": "none_found",
    "equity_stake": false,
-   "summary": "The city recovers its $70M advance from an arena admissions fee. No share of the 2025 sale.",
+   "summary": "The city's advance of about $70M is repaid mainly from city revenue, an admissions fee the city levies on arena tickets and convention-center parking, so it counts as public money; payments a team owes count as private. No share of the 2025 sale.",
    "label": "b",
    "note": "The arena is privately owned on city land. The city's 1997 advance is repaid from arena admissions fees and other city revenue, so the ledger counts it as public money. No public share of the 2025 sale was found.",
    "sources": [
@@ -230,8 +230,8 @@
    "public_deal": true,
    "sale_share": "unknown",
    "equity_stake": false,
-   "summary": "No rent found. The public pays the team $6.3M a year to 2029 under a 2022 settlement.",
-   "label": "b",
+   "summary": "No rent found. The ledger counts city and county payments to the team of $4.95M a year in 2021-2024 and $6.3M in 2025, with $6.3M a year due to 2029 under a 2022 settlement (press; the payments may overlap debt service already counted).",
+   "label": "c",
    "note": "The 2001 lease and the lease under negotiation were not reached.",
    "sources": [
     "memphistn-fy15-annual-report",
@@ -329,7 +329,7 @@
    "public_deal": false,
    "sale_share": "private_arena",
    "equity_stake": false,
-   "summary": "A privately run arena on city-owned property: $249.5M of its $253.2M assessed value is exempt from property tax, about $3.49M a year at the 2025 rate (computed).",
+   "summary": "No public money counted. The arena is privately run on property the city owns of record: $249.5M of its $253.2M assessed value is exempt from property tax, about $3.49M a year at the 2025 rate (computed), not added, as for other publicly owned arenas.",
    "label": "b",
    "note": null,
    "sources": [

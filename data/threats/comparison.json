@@ -29,8 +29,8 @@
    "id": "E07",
    "public_m": 195,
    "public_m_2025": 364.6,
-   "share": 0.8297872340425532,
-   "total_m": 235,
+   "share": 0.7647058823529411,
+   "total_m": 255,
    "year": 2000
   },
   {
@@ -232,7 +232,7 @@
    "year": 2024
   },
   {
-   "deal": "SAS new arena (county binding; share uses city term sheet)",
+   "deal": "SAS new arena (county voter-approved, not yet binding; share uses city term sheet)",
    "flags": "none;share 860/1300 planned",
    "group": "N",
    "id": "E24",
@@ -324,7 +324,7 @@
   "n_share": 11
  },
  "p_dollars": 0.946758392919716,
- "p_share": 0.5086968557661546,
+ "p_share": 0.4571931233680737,
  "pending_money": [
   "E22"
  ],
@@ -350,7 +350,7 @@
  ],
  "threat": {
   "mean_public_m_2025": 293.8777777777778,
-  "mean_share": 0.6246116039232149,
+  "mean_share": 0.6164764349620134,
   "median_public_m_2025": 308.3,
   "median_share": 0.6411598020434228,
   "n": 9,

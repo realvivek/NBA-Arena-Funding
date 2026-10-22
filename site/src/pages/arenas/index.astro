@@ -65,10 +65,11 @@ function itemRows(team: string) {
   for (const [desc, list] of ongoing) {
     const ys = list.map((i: any) => i.year);
     const srcs = [...new Set(list.flatMap((i: any) => i.sources))];
+    const y0 = Math.min(...ys), y1 = Math.max(...ys);
     rows.push({
       what: `Yearly payments: ${desc}`,
-      year: `${Math.min(...ys)}-${Math.max(...ys)}`,
-      status: `${list.length} years paid`,
+      year: y0 === y1 ? `${y0}` : `${y0}-${y1}`,
+      status: list.length === 1 ? '1 year paid' : `${list.length} years paid`,
       spending: '',
       nominal: money(list.reduce((a: number, i: any) => a + i.public_nominal_m, 0)),
       public: money(list.reduce((a: number, i: any) => a + i.public_2026_m, 0)),
@@ -89,6 +90,9 @@ const itemColumns = [
   { key: 'sources', label: 'Sources' },
 ];
 const byCity = [...arenas].sort((a: any, b: any) => TEAM_CITY[a.team].localeCompare(TEAM_CITY[b.team]));
+// construction spending counts public land and site money outside the reported cost (the larger of the reported cost
+// and public plus private money), so it can exceed the cost the arena was built for
+const conSpend = (team: string) => items.filter((i: any) => i.team === team && i.kind === 'construction').reduce((s: number, i: any) => s + i.spending_2026_m, 0);
 ---
 <Layout title={title} description={page.description} path="/arenas/">
   <article class="ref">
@@ -107,7 +111,7 @@ const byCity = [...arenas].sort((a: any, b: any) => TEAM_CITY[a.team].localeComp
             <dl class="facts">
               <dt>Opened</dt><dd>{a.opened}</dd>
               <dt>Owner</dt><dd>{a.owner}</dd>
-              <dt>Built for</dt><dd>{money(a.construction_cost_nominal_m)} then, {money(a.construction_cost_2026_m)} in 2026 dollars <span class="label" title={labelText(a.construction_cost_label)}>{a.construction_cost_label}</span>, {a.split_unresolved ? 'with a public and private split the records do not settle' : `mainly with ${a.built_private ? 'private' : 'public'} money`}</dd>
+              <dt>Built for</dt><dd>{money(a.construction_cost_nominal_m)} then, {money(a.construction_cost_2026_m)} in 2026 dollars <span class="label" title={labelText(a.construction_cost_label)}>{a.construction_cost_label}</span>, {a.split_unresolved ? 'with a public and private split the records do not settle' : `mainly with ${a.built_private ? 'private' : 'public'} money`}{conSpend(a.team) > a.construction_cost_2026_m * 1.005 ? `. Counting public land and site money outside that cost, construction came to ${money(conSpend(a.team))}` : ''}</dd>
               <dt>Public money</dt><dd>{money(a.public_2026_m)}, {pct(a.public_share_pct)} of {money(a.spending_2026_m)} spent (2026 dollars)</dd>
               {a.pending_2026_m > 0 && <><dt>Pending</dt><dd>{money(a.pending_2026_m)}, not counted</dd></>}
               <dt>Lease</dt><dd>{l?.term_and_nonrelocation || 'Team-owned or no public lease'}{l?.outs_penalties_notes && l.outs_penalties_notes !== 'n/a' ? `. ${l.outs_penalties_notes}` : ''}</dd>

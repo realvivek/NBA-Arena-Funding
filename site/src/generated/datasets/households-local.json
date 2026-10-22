@@ -103,7 +103,6 @@
   "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "ibo-2009-may-atlantic-yards-testimony",
-  "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
   "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
   "nolandgrab-mtastaffsummaryvdyard062209",
   "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
@@ -119,6 +118,10 @@
   "deal",
   "jurisdiction",
   "per_household_2026",
+  "pending_2026_m",
+  "visitors_share",
+  "shared_share",
+  "sales_share",
   "parts",
   "sources"
  ],
@@ -128,6 +131,10 @@
    "deal": "Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax",
    "jurisdiction": "Salt Lake City, UT",
    "per_household_2026": 5537.02,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.958554,
    "parts": [
     {
      "jurisdiction": "Salt Lake City, UT",
@@ -153,6 +160,10 @@
    "deal": "New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($331M), OKC city sales tax and GO bonds",
    "jurisdiction": "Oklahoma City, OK",
    "per_household_2026": 4275.16,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.951281,
    "parts": [
     {
      "jurisdiction": "Oklahoma City, OK",
@@ -184,10 +195,14 @@
    "deal": "Capital One Arena all public money since 1997 (the $12M federal grant and $2M of WMATA money for the Metro link are not DC households' share)",
    "jurisdiction": "District of Columbia",
    "per_household_2026": 2205.3,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.105793,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "District of Columbia",
-     "level": 3,
+     "level": 1,
      "per_household_2026": 2205.3,
      "households": 329687,
      "share": 0.961737
@@ -207,6 +222,10 @@
    "deal": "Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25)",
    "jurisdiction": "Marion County, IN",
    "per_household_2026": 1972.61,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.744202,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Marion County, IN",
@@ -236,6 +255,10 @@
    "deal": "Golden 1 Center",
    "jurisdiction": "Sacramento, CA",
    "per_household_2026": 1549.48,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Sacramento, CA",
@@ -255,6 +278,10 @@
    "deal": "Kia Center (2010 build + 2025 renovation)",
    "jurisdiction": "Orange County, FL",
    "per_household_2026": 1538.81,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.738788,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Orange County, FL",
@@ -277,6 +304,10 @@
    "deal": "Spectrum Center (2005, 2014, 2024-25)",
    "jurisdiction": "Charlotte, NC",
    "per_household_2026": 1467.43,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.91576,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Charlotte, NC",
@@ -300,6 +331,10 @@
    "deal": "Little Caesars Arena DDA TIF",
    "jurisdiction": "Detroit, MI",
    "per_household_2026": 1443.65,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Detroit, MI",
@@ -318,6 +353,10 @@
    "deal": "FedExForum (2004 build, $80M of the state grant in 2025, subsidies)",
    "jurisdiction": "Shelby County, TN",
    "per_household_2026": 1242.09,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.344875,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Shelby County, TN",
@@ -356,6 +395,10 @@
    "deal": "Moda Center pending rebuild ($573M) + past ($83M)",
    "jurisdiction": "Portland, OR",
    "per_household_2026": 1146.72,
+   "pending_2026_m": 573.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Portland, OR",
@@ -395,6 +438,10 @@
    "deal": "Frost Bank Center (2002, 2015) + county $311M for new arena",
    "jurisdiction": "Bexar County, TX",
    "per_household_2026": 935.91,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.568994,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Bexar County, TX",
@@ -424,6 +471,10 @@
    "deal": "Rocket Arena (1994, 2017-19, 2019 repairs)",
    "jurisdiction": "Cuyahoga County, OH",
    "per_household_2026": 783.72,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Cuyahoga County, OH",
@@ -446,6 +497,10 @@
    "deal": "Fiserv Forum",
    "jurisdiction": "Milwaukee County, WI",
    "per_household_2026": 681.36,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.3796,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Milwaukee County, WI",
@@ -471,6 +526,10 @@
    "deal": "Smoothie King Center",
    "jurisdiction": "Louisiana",
    "per_household_2026": 248.12,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.686725,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Louisiana",
@@ -495,6 +554,10 @@
    "deal": "Toyota Center (2003)",
    "jurisdiction": "Harris County, TX",
    "per_household_2026": 195.11,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.706519,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "Harris County, TX",
@@ -518,6 +581,10 @@
    "deal": "Barclays Center direct capital (city $205M, state $100M)",
    "jurisdiction": "New York, NY",
    "per_household_2026": 109.55,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
    "parts": [
     {
      "jurisdiction": "New York, NY",
@@ -536,7 +603,6 @@
    ],
    "sources": [
     "ibo-2009-may-atlantic-yards-testimony",
-    "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
     "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
     "nolandgrab-mtastaffsummaryvdyard062209",
     "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
@@ -545,6 +611,6 @@
    ]
   }
  ],
- "note": "For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.",
- "method": "with h as ( select *, case substr(geo_id, 1, 3) when '160' then 1 when '050' then 2 else 3 end as level from households) select team, any_value(deal) as deal, arg_min(jurisdiction, level) as jurisdiction, sum(per_household_2026) as per_household_2026, list({'jurisdiction': jurisdiction, 'level': level, 'per_household_2026': per_household_2026, 'households': households, 'share': share} order by level) as parts, (select coalesce(list(s.source_id order by s.item_id, s.ord), []) from item_sources s where s.team = h.team and s.role = 'public' and s.item_id not like '%-ongoing-%') as sources from h group by team order by per_household_2026 desc, team"
+ "note": "For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones. visitors_share, shared_share and sales_share are the shares of the deal's capital money from hotel and car-rental taxes, from meal and ticket taxes, and from dedicated sales taxes; pending_2026_m is pending money included in the deal (Portland).",
+ "method": "with h as ( -- the District of Columbia is a city as well as a state-level government, so it counts as local select *, case when geo_id = '04000US11' then 1 else case substr(geo_id, 1, 3) when '160' then 1 when '050' then 2 else 3 end end as level from households), -- who mostly pays the capital money behind each deal (counted, project and pending items), for the marks pay as ( select i.team, sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m) as visitors_share, sum(b.public_2026_m) filter (where g.payer = 'shared') / sum(b.public_2026_m) as shared_share, sum(b.public_2026_m) filter (where b.bucket = 'sales') / sum(b.public_2026_m) as sales_share from buckets b join items i using (item_id) join bucket_groups g using (bucket) where i.kind <> 'ongoing' and not (i.kind = 'project' and i.description ilike '%district%') group by i.team) select team, any_value(deal) as deal, arg_min(jurisdiction, level) as jurisdiction, sum(per_household_2026) as per_household_2026, max(pending_2026_m) as pending_2026_m, coalesce(any_value(p.visitors_share), 0) as visitors_share, coalesce(any_value(p.shared_share), 0) as shared_share, coalesce(any_value(p.sales_share), 0) as sales_share, list({'jurisdiction': jurisdiction, 'level': level, 'per_household_2026': per_household_2026, 'households': households, 'share': share} order by level) as parts, (select coalesce(list(s.source_id order by s.item_id, s.ord), []) from item_sources s where s.team = h.team and s.role = 'public' and s.item_id not like '%-ongoing-%') as sources from h left join pay p using (team) group by team order by per_household_2026 desc, team"
 }

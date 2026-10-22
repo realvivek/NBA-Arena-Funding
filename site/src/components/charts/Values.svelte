@@ -33,9 +33,14 @@
     {#each data as r, i}
       {@const y = mt + i * rowH + rowH / 2}
       {@const pub = r.public_2026_m + r.tax_breaks_2026_m}
+      {@const xd = sx(r.public_2026_m / 1000)}
       <text class="t-ink" x={lw} y={y} dy="0.32em" text-anchor="end" font-size={FONT}>{short(r.team)}</text>
-      {#if pub > 0}
-        <rect class="f-public" x={x0} y={y + 5} width={Math.max(sx(pub / 1000) - x0, 1.5)} height="5" rx="1.5" data-tip={tipPublic(r)} />
+      {#if r.public_2026_m > 0}
+        <rect class="f-public" x={x0} y={y + 5} width={Math.max(xd - x0, 1.5)} height="5" rx="1.5" data-tip={tipPublic(r)} />
+      {/if}
+      {#if r.tax_breaks_2026_m > 0}
+        <!-- tax breaks in the lighter blue, after the direct money -->
+        <rect class="f-public-soft" x={r.public_2026_m > 0 ? xd + 1 : x0} y={y + 5} width={Math.max(sx(pub / 1000) - (r.public_2026_m > 0 ? xd + 1 : x0), 1.5)} height="5" rx="1.5" data-tip={tipPublic(r)} />
       {/if}
       {#if comparable(r)}
         <!-- from the ring's edge on the side of the value, so the line never crosses the open ring -->

@@ -21,8 +21,15 @@
    "period": "before",
    "period_name": "Before 2014",
    "payer": "visitors",
-   "public_2026_m": 2236.308829,
-   "share_pct": 47.191781
+   "public_2026_m": 1999.039975,
+   "share_pct": 42.184808
+  },
+  {
+   "period": "before",
+   "period_name": "Before 2014",
+   "payer": "shared",
+   "public_2026_m": 237.268854,
+   "share_pct": 5.006974
   },
   {
    "period": "before",
@@ -42,8 +49,15 @@
    "period": "since",
    "period_name": "2014 and later",
    "payer": "visitors",
-   "public_2026_m": 1468.788688,
-   "share_pct": 35.857659
+   "public_2026_m": 928.929403,
+   "share_pct": 22.67803
+  },
+  {
+   "period": "since",
+   "period_name": "2014 and later",
+   "payer": "shared",
+   "public_2026_m": 492.927482,
+   "share_pct": 12.033879
   },
   {
    "period": "since",
@@ -56,10 +70,10 @@
    "period": "since",
    "period_name": "2014 and later",
    "payer": "other",
-   "public_2026_m": 111.543193,
-   "share_pct": 2.723113
+   "public_2026_m": 158.474996,
+   "share_pct": 3.868863
   }
  ],
  "note": "Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.",
- "method": "with t as ( select case when c.year < 2014 then 'before' else 'since' end as period, g.payer, b.public_2026_m, c.team from buckets b join capital c using (item_id) join bucket_groups g using (bucket)) select period, case period when 'before' then 'Before 2014' else '2014 and later' end as period_name, payer, sum(public_2026_m) as public_2026_m, 100 * sum(public_2026_m) / (select sum(public_2026_m) from t t2 where t2.period = t.period) as share_pct from t group by period, payer order by period, case payer when 'visitors' then 1 when 'residents' then 2 else 3 end"
+ "method": "with t as ( select case when c.year < 2014 then 'before' else 'since' end as period, g.payer, b.public_2026_m, c.team from buckets b join capital c using (item_id) join bucket_groups g using (bucket)) select period, case period when 'before' then 'Before 2014' else '2014 and later' end as period_name, payer, sum(public_2026_m) as public_2026_m, 100 * sum(public_2026_m) / (select sum(public_2026_m) from t t2 where t2.period = t.period) as share_pct from t group by period, payer order by period, case payer when 'visitors' then 1 when 'shared' then 2 when 'residents' then 3 else 4 end"
 }

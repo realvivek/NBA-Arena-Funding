@@ -6,8 +6,8 @@ DATA=ROOT+'/data'
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ledger_inputs import TEAMS, PROJECTS, U, AS_OF
 
-BUCKETS=['general','sales','tourist','tif','leaserev','land','infra','sin','mixed']
-BNAME={'general':'general taxes/GO/appropriations & state grants','sales':'dedicated general sales tax','tourist':'hotel/car-rental/F&B/ticket (visitor) taxes',
+BUCKETS=['general','sales','tourist','meals','tif','leaserev','land','infra','sin','mixed']
+BNAME={'general':'general taxes/GO/appropriations & state grants','sales':'dedicated general sales tax','tourist':'hotel and car-rental (visitor) taxes','meals':'restaurant-meal and ticket taxes, alone or pooled with hotel taxes',
        'tif':'tax increment & tax capture (TIF, PSDA, income-tax capture)','leaserev':'lease-revenue bonds (general fund/parking backed)',
        'land':'land contributed or sold below value','infra':'infrastructure/parking/site work','sin':'sin taxes (alcohol/tobacco)','mixed':'public, mechanism split not documented'}
 
@@ -79,8 +79,10 @@ for t in TEAMS:
     if priv is None and cad: priv=cost  # private arena, CAD converted
     # construction spending base: max(reported cost, public+private) to avoid understating when public sits outside reported cost
     con_total=max(cost or 0, (pubn or 0)+(priv or 0))
+    # PILOT bonds (Barclays) paid for construction and are repaid with the arena's property taxes: public building money
+    # for this test, as in the bill, though they stay out of the core total
     if t.get('split_unresolved'): SPLIT_UNRESOLVED.add(T)
-    elif pubn < 0.5*con_total: PRIVATE_BUILT.add(T)
+    elif pubn + (t.get('pilot') or 0) < 0.5*con_total: PRIVATE_BUILT.add(T)
     acq=t.get('acq'); acqn=acq['amt'] if acq else 0.0; acq26=acqn*f26(acq['year']) if acq else 0.0
     rb=[r for r in t.get('renos',[]) if r['status'] in ('completed','binding')]
     rp=[r for r in t.get('renos',[]) if r['status']=='pending']
@@ -184,9 +186,9 @@ for t in TEAMS:
 
 # notes/gaps per team
 GAPS={
-'ATL':'Original construction split from Marquette summary (via search index) - Recreation Authority official statements not reachable (EMMA blocked).',
+'ATL':'The original construction split is from a Marquette sports-law summary, read through a search index because the page is gone; the Recreation Authority official statements could not be reached.',
 'BOS':'No public construction money; as-built cost not found (the 1992 BRA estimate is used); the Chapter 121A tax arrangement and the deferred $5.126M MBTA note are not quantified.',
-'BKN':"State $100M from press (Gotham Gazette); city $205M from IBO 2009 testimony; MTA rail yard counted at IBO's $10M arena share; PILOT bonds counted only in expanded total.",
+'BKN':"State $100M from IBO's September 2009 fiscal brief (b); city $205M from IBO's May 2009 testimony (b), with IBO's $150M for the city as the alternative; MTA rail yard counted at IBO's $10M arena share; the PILOT bonds count in the expanded total and as public building money, not in the core total.",
 'CHA':'City ACFR states a $200M project without itemizing it; the $170M public figure (press) is not split in any primary document; arena reserve contributions before FY2020 not reachable.',
 'CHI':'1989 formula valuation counted in the expanded total for tax years 2002-2016 only; 1994-2001 inputs not reachable; last formula year inferred.',
 'CLE':"Arena cost is the recorded building line, excluding the complex's shared land, site and capitalized costs; repayment source of the county's 1992 and 1994 arena bonds not documented (mixed); of the county's $140M of 2017 bonds, the $70M series the Cavaliers repay through added rent is counted as private, and the other $70M's repayment source is not documented (mixed).",
@@ -212,7 +214,7 @@ GAPS={
 'SAC':"Cost from the construction monitor's last posted report (99.5% complete), not an audited total; value of city parcels and billboard rights not documented.",
 'SAS':'Recorded cost probably includes capitalized interest; the 2000 bond program also paid for Coliseum and grounds work.',
 'TOR':"Cost from the owner's web page only; no Canadian public money documented; property-tax status not verified.",
-'UTA':'1990 RDA land value and any RDA cash not documented; 2017 city reimbursement counted at its $22.7M cap; district $375M in project row.',
+'UTA':'The 1990 value of the redevelopment agency land and any agency cash are not documented; the 2017 city reimbursement is counted at its $22.7M cap, at face value because it is paid through 2040; the district\'s $375M is in the project row.',
 'WAS':'Building cost $175M (GAO, developer estimate) to $260M (press); 1997 public money from GAO (District $61.5M + $14M federal and WMATA for the Metro link); Monumental share of renovation computed from Council memo ($800M total).',
 }
 for r in rows: r['notes_and_gaps']=GAPS.get(r['team'],'')
@@ -229,7 +231,7 @@ for p in PROJECTS:
         construction_cost_nominal_m=r1(p.get('cost')), construction_cost_currency_note='USD (budget, nominal)', construction_cost_label=p['cost_label'], construction_cost_source=p['cost_src'], construction_cost_other_reports=p.get('cost_alt',''),
         public_construction_nominal_m=r1(pubn) if pub else ('0' if not pp else ''),
         public_construction_label=p['pub_label']+(' ; outside-budget '+p['extra_label'] if p.get('pub_extra') else ''), public_construction_source=p['pub_src']+(' ; '+p['extra_src'] if p.get('pub_extra') else ''),
-        public_construction_notes=p['pub_note']+(' OUTSIDE THE ARENA BUDGET: '+p['extra_note'] if p.get('pub_extra') else '')+(' PENDING: '+p.get('pending_note','') if pp else ''),
+        public_construction_notes=p['pub_note']+(' Outside the arena budget: '+p['extra_note'] if p.get('pub_extra') else '')+(' Pending: '+p.get('pending_note','') if pp else ''),
         private_construction_nominal_m=r1(p.get('priv')), private_construction_label=p.get('priv_label',''), private_construction_source=p.get('priv_src',''),
         public_renovation_pending_nominal_m=r1(ppn) if pp else '',
         lease_terms=p.get('lease',''),

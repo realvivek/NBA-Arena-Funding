@@ -17,7 +17,7 @@ def r25(x,y): return x*CPI[2025]/CPI[y]
 D=[
  ('MIN Target Center purchase','E01',1994,54.6,None,'T','explicit;league opposed'),
  ('MIA AmericanAirlines Arena (land)','E03',1996,37.6,272.5,'T','explicit; + $6.4M/yr county operating (not in capital); total = county land + the $234.9M the county capitalized'),
- ('HOU Toyota Center','E07',2000,195,235,'T','explicit;league-backed'),
+ ('HOU Toyota Center','E07',2000,195,255,'T','explicit;league-backed'),  # total as in the funding ledger: $175M arena budget + $20M city site money + $60M Rockets
  ('ORL Amway Center','E10',2007,418,480,'T','implied;66-month lag'),
  ('NOH arena upgrades','E15',2012,50,50,'T','implied;league-owned team'),
  ('SAC Golden 1 Center','E17',2013,223.1,559.2,'T','explicit;league opposed move'),
@@ -36,7 +36,7 @@ D=[
  ('OKC new arena','E23',2023,850,900,'N','official_cited'),
  ('UTA Delta Center (sales tax)','E31',2024,525,None,'N','none'),
  ('ORL Kia Center package','E32',2024,226,226,'N','none'),
- ('SAS new arena (county binding; share uses city term sheet)','E24',2025,311,1300,'N','none;share 860/1300 planned'),
+ ('SAS new arena (county voter-approved, not yet binding; share uses city term sheet)','E24',2025,311,1300,'N','none;share 860/1300 planned'),
 ]
 # SAS 2025 share: planned public $860M (county $311M + city up to $489M under the term sheet + $60M of Midtown TIRZ debt
 # for the site) of ~$1.3B

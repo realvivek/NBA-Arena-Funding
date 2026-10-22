@@ -8,8 +8,19 @@
   let { rows, variant = 'wide', label = '' } = $props();
   const narrow = variant === 'narrow';
   const name = (j) => (j === 'New York, NY' ? 'New York City' : j.replace(/, [A-Z]{2}$/, ''));
-  const MARK = { UTA: 'upper bound', ORL: 'mostly visitor taxes', SAS: 'mostly visitor taxes' };
-  const data = rows.map((r) => ({ ...r, name: name(r.jurisdiction) }));
+  // a mark by stated rule: pending money included; mostly a city sales tax, which people who live elsewhere also pay
+  // (an upper bound); mostly hotel and car-rental taxes; or mostly meal and ticket taxes, alone or pooled with hotel taxes
+  const mark = (r) =>
+    r.pending_2026_m > 0
+      ? 'includes pending money'
+      : r.sales_share >= 0.5
+        ? 'upper bound'
+        : r.visitors_share >= 0.5
+          ? 'mostly visitor taxes'
+          : r.shared_share >= 0.5
+            ? 'partly visitor taxes'
+            : '';
+  const data = rows.map((r) => ({ ...r, name: name(r.jurisdiction), mark: mark(r) }));
   const W = narrow ? NARROW : WIDE;
   const lw = narrow ? 0 : Math.ceil(Math.max(...data.map((d) => textWidth(d.name)))) + 14;
   const rowH = narrow ? 36 : 22;
@@ -30,7 +41,7 @@
           {@const bh = 12}
           {@const by = narrow ? 6 + i * rowH + 17 : 6 + i * rowH + (rowH - bh) / 2}
           {#if narrow}
-            <text class="t-ink" x="0" y={6 + i * rowH + 11} font-size={FONT}>{d.name}{#if MARK[d.team]}<tspan class="t-muted">, {MARK[d.team]}</tspan>{/if}</text>
+            <text class="t-ink" x="0" y={6 + i * rowH + 11} font-size={FONT}>{d.name}{#if d.mark}<tspan class="t-muted">, {d.mark}</tspan>{/if}</text>
           {:else}
             <text class="t-ink" x={lw - 10} y={by + bh / 2} dy="0.32em" text-anchor="end" font-size={FONT}>{d.name}</text>
           {/if}
@@ -40,13 +51,13 @@
               {@const s = x(before) + (j > 0 ? 2 : 0)}
               {@const e = x(before + p.per_household_2026)}
               {#if j === d.parts.length - 1}
-                <path class={p.level === 3 && d.parts.length > 1 ? 'f-public-soft' : 'f-public'} d={hbar(s, Math.max(e, s + 2), by, bh)} />
+                <path class={p.level === 3 ? 'f-public-soft' : 'f-public'} d={hbar(s, Math.max(e, s + 2), by, bh)} />
               {:else}
-                <rect class={p.level === 3 && d.parts.length > 1 ? 'f-public-soft' : 'f-public'} x={s} y={by} width={Math.max(e - s, 1)} height={bh} />
+                <rect class={p.level === 3 ? 'f-public-soft' : 'f-public'} x={s} y={by} width={Math.max(e - s, 1)} height={bh} />
               {/if}
             {/each}
           </g>
-          <text class="tick t-ink" x={x(d.per_household_2026) + 6} y={by + bh / 2} dy="0.32em" font-size={FONT}>{dollars(d.per_household_2026)}{#if !narrow && MARK[d.team]}<tspan class="t-muted" dx="8">{MARK[d.team]}</tspan>{/if}</text>
+          <text class="tick t-ink" x={x(d.per_household_2026) + 6} y={by + bh / 2} dy="0.32em" font-size={FONT}>{dollars(d.per_household_2026)}{#if !narrow && d.mark}<tspan class="t-muted" dx="8">{d.mark}</tspan>{/if}</text>
         {/each}
       </Svg>
     {/snippet}

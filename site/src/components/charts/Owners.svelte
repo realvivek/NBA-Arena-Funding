@@ -1,7 +1,8 @@
 <script>
   // Who owns the teams: one tile per team, marked by where its controlling owners made their money (a strip and a
-  // label, so identity is never color alone) and listing the investment funds with a stake in the team or its
-  // parent company. Tiles run from private equity and hedge funds, through other finance, to everyone else.
+  // label, so identity is never color alone) and listing, after a small marker, the investment funds with a stake in
+  // the team or its parent company. Tiles run from private equity and hedge funds, through other finance, to
+  // everyone else.
   import { WIDE, NARROW, FONT, textWidth, TEAM_NAME } from '../../lib/chart';
 
   let { rows, variant = 'wide', label = '' } = $props();
@@ -27,15 +28,17 @@
     return lines;
   };
   const fieldLines = (f) => wrap(f);
+  // the funds line starts after a small marker, so it is a little narrower
+  const fitsFund = (t) => textWidth(t, FONT, 600) * 1.04 <= tw - 29;
   const fundLines = (funds) => {
     if (!funds.length) return [];
     // funds wrap between names, never inside one
     const names = funds.map((f) => SHORT_FUND[f] ?? f);
     const lines = [];
     names.forEach((n, i) => {
-      const item = `${i ? '' : '+ '}${n}${i < names.length - 1 ? ',' : ''}`;
+      const item = `${n}${i < names.length - 1 ? ',' : ''}`;
       const last = lines[lines.length - 1];
-      if (last && fits(`${last} ${item}`, 600)) lines[lines.length - 1] = `${last} ${item}`;
+      if (last && fitsFund(`${last} ${item}`)) lines[lines.length - 1] = `${last} ${item}`;
       else lines.push(item);
     });
     return lines;
@@ -57,7 +60,9 @@
           <text class="own-field" x={x + 13} y={y + 36 + j * 15} font-size={FONT}>{l}</text>
         {/each}
         {#each fundLines(r.funds) as l, j}
-          <text class="own-funds" x={x + 13} y={y + th - 9 - (fundLines(r.funds).length - 1 - j) * 15} font-size={FONT}>{l}</text>
+          {@const ty = y + th - 9 - (fundLines(r.funds).length - 1 - j) * 15}
+          {#if j === 0}<rect class="own-fund-mark" x={x + 13} y={ty - 9} width="8" height="8" rx="1.5" />{/if}
+          <text class="own-funds" x={x + 25} y={ty} font-size={FONT}>{l}</text>
         {/each}
       </g>
     {/each}

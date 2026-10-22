@@ -6,14 +6,19 @@ import { referencePage } from '../../lib/page';
 import { SOURCES } from '../../lib/copy';
 
 const { page, cites, title } = await referencePage('sources');
-const all = Object.values(SOURCES).sort((a, b) => a.publisher.localeCompare(b.publisher) || a.title.localeCompare(b.title)).map((s) => s.id);
+const all = Object.values(SOURCES).sort((a, b) => a.publisher.localeCompare(b.publisher) || a.title.localeCompare(b.title));
+// this site's own ledgers are listed apart, so the groups add up to the documents counted in the title
+const docs = all.filter((s) => s.publisher !== 'This site').map((s) => s.id);
+const own = all.filter((s) => s.publisher === 'This site').map((s) => s.id);
 ---
 <Layout title={title} description={page.description} path="/sources/">
   <article class="ref">
     <PageHead page={page} id="sources" cites={cites} />
     <div class="col">
-      <p class="note">Origins: government documents (budgets, audits, statutes, filings with public agencies, government data); court records; documents from teams, the league or their filings with regulators; and independent sources (news, research, reference works and this site's own ledgers). A source's date is the document's own date; "checked" is the last date its figures were checked against it.</p>
-      <SourceList ids={all} group level={2} />
+      <p class="note">Origins: government documents (budgets, audits, statutes, filings with public agencies, government data); court records; documents from teams, the league or their filings with regulators; and independent sources (news, research and reference works). This site's own ledgers are listed last. A source's date is the document's own date; "checked" is the last date its figures were checked against it.</p>
+      <SourceList ids={docs} group level={2} />
+      <h2 id="origin-this-site">This site's ledgers ({own.length})</h2>
+      <SourceList ids={own} />
     </div>
   </article>
 </Layout>

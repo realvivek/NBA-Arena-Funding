@@ -58,7 +58,12 @@ for (const sid of credited) {
   const s = source(sid);
   if (!publishers.some((p) => p.name === creditName(s))) publishers.push({ name: creditName(s), url: s.url });
 }
-const keyClass: Record<string, string> = { pending: 'key key-outline', 'pending-orange': 'key key-outline-orange' };
+const keyClass: Record<string, string> = {
+  pending: 'key key-outline',
+  'pending-orange': 'key key-outline-orange',
+  ring: 'key key-ring',
+  'dot-orange': 'key key-dot',
+};
 const legendItems = fig.data.legend.map((l) => ({
   label: l.label,
   cls: keyClass[l.key] ?? (l.key.startsWith('line-') ? 'key key-line' : 'key'),
@@ -86,7 +91,9 @@ const legendItems = fig.data.legend.map((l) => ({
       <div class="scrolly-steps">
         {steps.map((st) => (
           <div class="step" data-step={st.step}>
-            <Prose html={st.html} sources={st.sources} numbers={st.numbers} quiet={quiet} />
+            <div class="step-card">
+              <Prose html={st.html} sources={st.sources} numbers={st.numbers} quiet={quiet} />
+            </div>
           </div>
         ))}
       </div>

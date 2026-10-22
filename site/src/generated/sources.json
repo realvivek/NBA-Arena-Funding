@@ -1168,6 +1168,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "espn-nba-extends-television-deals-2014",
+  "url": "https://www.espn.com/nba/story/_/id/11652297/nba-extends-television-deals-espn-tnt",
+  "title": "NBA extends television deals",
+  "title_from": "page title",
+  "publisher": "ESPN",
+  "origin": "independent",
+  "date": "2014-10-06",
+  "checked": "2026-10-22"
+ },
+ {
   "id": "espn-nba-intel-seattle-expansion-2026-10-16",
   "url": "https://www.espn.com/nba/story/_/id/50190888/preseason-intel-expansion-seattle-towns-extensions",
   "title": "NBA intel: Seattle expansion update, Towns extension drama, more from preseason",
@@ -2101,17 +2111,6 @@
   "checked": "2026-10-11"
  },
  {
-  "id": "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
-  "url": "https://www.gothamgazette.com/opinion/7271-in-new-books-on-bloomberg-and-de-blasio-unreliable-atlantic-yards-history",
-  "title": "In new books on Bloomberg and de Blasio unreliable Atlantic Yards history",
-  "title_from": "url",
-  "publisher": "Gotham Gazette",
-  "origin": "independent",
-  "date": "n.d.",
-  "checked": "2026-10-11",
-  "review": "not reached (HTTP 403 and 500); title from the URL"
- },
- {
   "id": "govinfo-crpt-119hrpt106-pt2",
   "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt106/html/CRPT-119hrpt106-pt2.htm",
   "title": "H. Rept. 119-106, One Big Beautiful Bill Act: report of the Committee on the Budget, book 2 (with the Ways and Means provisions)",
@@ -2335,7 +2334,7 @@
  {
   "id": "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
   "url": "https://www.ibj.com/articles/73314-pacers-cib-agree-to-360m-renovation-expansion-of-bankers-life-fieldhouse",
-  "title": "UPDATE: CIB approves Pacers deal to fund $360M renovation, expansion of Bankers Life Fieldhouse - Indianapolis Business Journal",
+  "title": "UPDATE: CIB approves Pacers deal to fund $360M renovation, expansion of Bankers Life Fieldhouse",
   "title_from": "page title",
   "publisher": "Indianapolis Business Journal",
   "origin": "independent",
@@ -3833,7 +3832,7 @@
  {
   "id": "pollstar-portland-fire-sale",
   "url": "https://news.pollstar.com/2006/06/12/portland-fire-sale/",
-  "title": "Portland Fire Sale - Pollstar News",
+  "title": "Portland Fire Sale",
   "title_from": "page title",
   "publisher": "Pollstar",
   "origin": "independent",
@@ -4901,13 +4900,13 @@
  },
  {
   "id": "utah-tax-distributions",
-  "url": "https://tax.utah.gov/sales/distributions/",
-  "title": "Sales and Use Tax Distributions",
+  "url": "https://tax.utah.gov/business/sales-tax/other-sales-tax/distribution/",
+  "title": "Monthly Distribution (sales and use tax distributions, including Capital City Revitalization)",
   "title_from": "curated",
   "publisher": "Utah State Tax Commission",
   "origin": "government",
   "date": "2026-09",
-  "checked": "2026-10-11"
+  "checked": "2026-10-22"
  },
  {
   "id": "vision-economic-community-development",

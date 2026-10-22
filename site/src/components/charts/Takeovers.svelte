@@ -78,7 +78,7 @@
     const x = cx + rr * Math.sin(a), y = cy - rr * Math.cos(a);
     return `M${cx},${cy}L${cx},${cy - rr}A${rr},${rr} 0 ${a > Math.PI ? 1 : 0},1 ${x},${y}Z`;
   }
-  const tipBuilt = (t) => `${t.arena}, opened ${t.opened}: built for ${money(t.cost)}, ${pct(t.share)} public (2026 dollars)`;
+  const tipBuilt = (t) => `${t.arena}, opened ${t.opened}: ${money(t.cost)} spent to build it, counting public land and site money, ${pct(t.share)} public (2026 dollars)`;
   const tipLater = (t, c) =>
     `${t.arena}, ${c.when}: ` +
     c.items.map((i) => `${i.description.toLowerCase()} ${money(i.public_2026_m)}${i.core ? '' : ' (pending)'}`).join('; ') +
@@ -100,7 +100,7 @@
       {@const last = t.clusters.length ? xs(t.clusters[t.clusters.length - 1].year) : xs(t.opened)}
       {@const cr = r(t.cost)}
       {#if narrow}
-        <text class="t-ink" x="0" y={y0 + 12} font-size={FONT} font-weight="600">{t.city}<tspan class="t-muted" font-weight="400" dx="5">opened {t.opened}, built for {money(t.cost)}</tspan></text>
+        <text class="t-ink" x="0" y={y0 + 12} font-size={FONT} font-weight="600">{t.city}<tspan class="t-muted" font-weight="400" dx="5">opened {t.opened}, {money(t.cost)} to build</tspan></text>
       {:else}
         <text class="t-ink" x="0" y={cy - 4} font-size={FONT} font-weight="600">{t.city}</text>
         <text class="t-muted" x="0" y={cy + 12} font-size={FONT}>opened {t.opened}</text>

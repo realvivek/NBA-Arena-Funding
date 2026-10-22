@@ -50,10 +50,12 @@
   const ymax = Math.max(...years.map(total));
   const yTop = Math.ceil(ymax / 500) * 500;
 
-  // the three existing arenas with the most public money since 2014
-  const byTeam = new Map();
-  for (const s of segs) if (s.category === 'existing' && !s.pending && s.year >= SINCE) byTeam.set(s.team, (byTeam.get(s.team) ?? 0) + s.value);
-  const largest = [...byTeam.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
+  // the largest renovations still under way, counted at face value in the last column, each labeled with its own amount
+  const largest = segs
+    .filter((s) => s.year === last && s.category === 'existing' && !s.pending)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, narrow ? 3 : 4)
+    .map((s) => [s.team, s.value]);
   const hl = new Set(largest.map(([t]) => t));
   // the largest new-arena columns before 2014: two on wide screens (at least five years apart), one on phones
   const bigNew = [];
@@ -63,7 +65,7 @@
   const pendingCities = [...new Set(segs.filter((s) => s.pending).map((s) => TEAM_CITY[s.team]))];
 
   const cls = (s) =>
-    ['seg', s.category === 'new' ? 'new' : s.pending ? 'pending' : 'existing', s.year >= SINCE ? 'late' : 'early', hl.has(s.team) && s.year >= SINCE && !s.pending ? 'hl' : '']
+    ['seg', s.category === 'new' ? 'new' : s.pending ? 'pending' : 'existing', s.year >= SINCE ? 'late' : 'early', hl.has(s.team) && s.year === last && s.category === 'existing' && !s.pending ? 'hl' : '']
       .filter(Boolean)
       .join(' ');
   const tip = (s) =>
@@ -80,8 +82,8 @@
   const ticksX = narrow ? [1990, 2000, 2010, 2020] : [1990, 1995, 2000, 2005, 2010, 2014, 2020, 2026];
   const ticksY = narrow ? Array.from({ length: Math.floor(yTop / 1000) + 1 }, (_, i) => i * 1000) : Array.from({ length: yTop / 500 + 1 }, (_, i) => i * 500);
 
-  // labels at the right of the last column: the pending total and its cities, then the three largest arenas below
-  // it, spread so no two overlap and joined to their segments by leaders
+  // labels at the right of the last column: the pending total and its cities, then the largest renovations under way
+  // below it, spread so no two overlap and joined to their segments by leaders
   const yS = scaleLinear().domain([0, yTop]).range([H - mb, mt]);
   const pend = segs.filter((s) => s.pending);
   const pendMid = pend.length ? (yS(Math.min(...pend.map((s) => s.y0))) + yS(Math.max(...pend.map((s) => s.y1)))) / 2 : 0;
@@ -160,19 +162,19 @@
           <path class="ann-line" d="M{x(SINCE)},{mt - 2}V{mt - 8}H{xr}V{mt - 2}" />
           {#if narrow}
             <text class="ann-text halo" x={xr} y={mt - 38} text-anchor="end" font-size={FONT}>Since {SINCE}: {rebuild} to rebuild</text>
-            <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} to build</text>
+            <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} to build, with Oklahoma City's</text>
           {:else}
             <text class="ann-text halo" x={xr} y={mt - 38} text-anchor="end" font-size={FONT}>Since {SINCE}: {rebuild} to renovate or buy</text>
             <text class="ann-sub halo" x={xr} y={mt - 22} text-anchor="end" font-size={FONT}>{build} to build, counting Oklahoma City's</text>
           {/if}
         </g>
 
-        <!-- step 3: the three existing arenas with the most since 2014 -->
+        <!-- step 3: the largest renovations under way, each with its own amount -->
         <g class="ann a-largest">
           {#each bigLabels as l}
             <path class="ann-line" d="M{xr + 2},{l.mid}H{xr + 5}V{l.ly}H{xr + 8}" />
             <text class="ann-text" x={xr + 11} y={l.ly - 3} font-size={FONT}>{TEAM_CITY[l.team]}</text>
-            <text class="ann-sub" x={xr + 11} y={l.ly + 12} font-size={FONT}>{money(l.value)}{narrow ? '' : ' since ' + SINCE}</text>
+            <text class="ann-sub" x={xr + 11} y={l.ly + 12} font-size={FONT}>{money(l.value)}{narrow ? '' : ' under way'}</text>
           {/each}
         </g>
 

@@ -103,7 +103,6 @@
   "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "ibo-2009-may-atlantic-yards-testimony",
-  "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
   "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
   "nolandgrab-mtastaffsummaryvdyard062209",
   "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
@@ -136,7 +135,7 @@
    "households": 98916,
    "share": 1.0,
    "per_household_2026": 5537.02,
-   "note": "City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound",
+   "note": "City sales tax, part of it paid by people who live elsewhere, so the figure per household in the city is an upper bound",
    "sources": [
     "ksl-salt-lake-city-approves-new-delta-center-lease-t",
     "slc-council-minutes-1989-03-07",
@@ -236,7 +235,7 @@
    "households": 560020,
    "share": 1.0,
    "per_household_2026": 1538.81,
-   "note": "Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional",
+   "note": "Orange County 6% tourist tax, paid mostly by visitors, so the figure per household is notional",
    "sources": [
     "occompt-occompt",
     "occompt-occompt-2",
@@ -476,7 +475,6 @@
    "note": "New York City + New York State",
    "sources": [
     "ibo-2009-may-atlantic-yards-testimony",
-    "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
     "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
     "nolandgrab-mtastaffsummaryvdyard062209",
     "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
@@ -555,7 +553,6 @@
    "note": "New York City + New York State",
    "sources": [
     "ibo-2009-may-atlantic-yards-testimony",
-    "gothamgazette-7271-in-new-books-on-bloomberg-and-de-blasio-u",
     "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
     "nolandgrab-mtastaffsummaryvdyard062209",
     "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",

@@ -21,10 +21,10 @@ E30 | 2022 | CHA Spectrum Center + practice | N | 275.0 | 302 | n/a | none
 E23 | 2023 | OKC new arena | N | 850.0 | 898 | 94% | official_cited
 E31 | 2024 | UTA Delta Center (sales tax) | N | 525.0 | 539 | n/a | none
 E32 | 2024 | ORL Kia Center package | N | 226.0 | 232 | 100% | none
-E24 | 2025 | SAS new arena (county binding; share uses city term sheet) | N | 311.0 | 311 | 66% | none;share 860/1300 planned
+E24 | 2025 | SAS new arena (county voter-approved, not yet binding; share uses city term sheet) | N | 311.0 | 311 | 66% | none;share 860/1300 planned
 E01 | 1994 | MIN Target Center purchase | T | 54.6 | 119 | n/a | explicit;league opposed
 E03 | 1996 | MIA AmericanAirlines Arena (land) | T | 37.6 | 77 | 14% | explicit; + $6.4M/yr county operating (not in capital); total = county land + the $234.9M the county capitalized
-E07 | 2000 | HOU Toyota Center | T | 195.0 | 365 | 83% | explicit;league-backed
+E07 | 2000 | HOU Toyota Center | T | 195.0 | 365 | 76% | explicit;league-backed
 E10 | 2007 | ORL Amway Center | T | 418.0 | 649 | 87% | implied;66-month lag
 E15 | 2012 | NOH arena upgrades | T | 50.0 | 70 | 100% | implied;league-owned team
 E17 | 2013 | SAC Golden 1 Center | T | 223.1 | 308 | 40% | explicit;league opposed move
@@ -36,29 +36,29 @@ RESULTS
 Main comparison
   threat: n=9 | public $ (2025$) median 308, mean 294 | public share n=8 median 64%, mean 62%
   no threat: n=13 | public $ (2025$) median 247, mean 311 | public share n=11 median 78%, mean 71%
-  Mann-Whitney two-sided p: dollars 0.95, share 0.51
+  Mann-Whitney two-sided p: dollars 0.95, share 0.46
 S1: drop the disputed threat case (PHX 2019)
-  threat: n=8 | public $ (2025$) median 324, mean 307 | public share n=7 median 64%, mean 62%
+  threat: n=8 | public $ (2025$) median 324, mean 307 | public share n=7 median 64%, mean 61%
   no threat: n=13 | public $ (2025$) median 247, mean 311 | public share n=11 median 78%, mean 71%
-  Mann-Whitney two-sided p: dollars 0.97, share 0.62
+  Mann-Whitney two-sided p: dollars 0.97, share 0.56
 S2: drop unclear no-threat cases (DAL 1998, SAS 1999)
   threat: n=9 | public $ (2025$) median 308, mean 294 | public share n=8 median 64%, mean 62%
   no threat: n=11 | public $ (2025$) median 232, mean 317 | public share n=9 median 78%, mean 75%
-  Mann-Whitney two-sided p: dollars 0.94, share 0.39
+  Mann-Whitney two-sided p: dollars 0.94, share 0.34
 S3: count official-cited risk (OKC 2023) as a threat
-  threat: n=10 | public $ (2025$) median 324, mean 354 | public share n=9 median 64%, mean 66%
+  threat: n=10 | public $ (2025$) median 324, mean 354 | public share n=9 median 64%, mean 65%
   no threat: n=12 | public $ (2025$) median 239, mean 262 | public share n=10 median 76%, mean 69%
-  Mann-Whitney two-sided p: dollars 0.58, share 0.93
+  Mann-Whitney two-sided p: dollars 0.58, share 0.87
 S4: approvals 2010-2026 only
   threat: n=5 | public $ (2025$) median 308, mean 287 | public share n=5 median 64%, mean 63%
   no threat: n=10 | public $ (2025$) median 267, mean 332 | public share n=8 median 79%, mean 74%
   Mann-Whitney two-sided p: dollars 0.86, share 0.38
 S5: 36-month window (drops ORL 2007, 66-month lag)
-  threat: n=8 | public $ (2025$) median 249, mean 249 | public share n=7 median 64%, mean 59%
+  threat: n=8 | public $ (2025$) median 249, mean 249 | public share n=7 median 64%, mean 58%
   no threat: n=13 | public $ (2025$) median 247, mean 311 | public share n=11 median 78%, mean 71%
-  Mann-Whitney two-sided p: dollars 0.65, share 0.30
+  Mann-Whitney two-sided p: dollars 0.65, share 0.26
 S6: stratified - NEW ARENAS only (MIA land, HOU, ORL, SAC, MIL vs DAL, SAS99, OKC, SAS25)
-  threat: n=5 | public $ (2025$) median 340, mean 348 | public share n=5 median 48%, mean 54%
+  threat: n=5 | public $ (2025$) median 340, mean 348 | public share n=5 median 48%, mean 53%
   no threat: n=4 | public $ (2025$) median 310, mean 441 | public share n=4 median 76%, mean 69%
 S7: stratified - RENOVATIONS/UPGRADES only
   threat: n=3 | public $ (2025$) median 189, mean 263 | public share n=3 median 64%, mean 76%

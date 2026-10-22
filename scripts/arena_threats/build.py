@@ -18,7 +18,7 @@ add(id='E01',team='MIN Timberwolves',owners='Marv Wolfenson & Harvey Ratner (sel
  said_or_done='Paraphrase (Wikipedia citing Star Tribune 1994-02-12): owners sought a public or private buyer for the $73M remaining Target Center mortgage, otherwise the team "would be sold and in all likelihood moved"; owners met San Diego, Nashville and New Orleans representatives (Feb 1994). 1994-05-23: agreed to sell to Top Rank of Louisiana for $152.5M to move to New Orleans (Times-Picayune 1994-05-24).',
  alt_city='New Orleans (also San Diego, Nashville)',
  league_role='opposed: Stern mediated (1994-02-11); relocation committee unanimously blocked sale 1994-06-15; NBA sued to enjoin transfer',
- money_after='Public purchase of Target Center: Laws of Minnesota 1994 ch. 648 (HF 3041) signed 1994-05-10; reported purchase price $48M (Star Tribune via Wikipedia); Minneapolis final financing approval Mar 1995',
+ money_after='Public purchase of Target Center: Laws of Minnesota 1994 ch. 648 (HF 3041) signed 1994-05-10; purchase price $54.6M (Minnesota Legislative Auditor 2017, b; $48M in the Star Tribune via Wikipedia, c); Minneapolis final financing approval Mar 1995',
  money_usd_m=54.6, mechanism='Metropolitan Sports Facilities Commission/City purchase financed by bonds (ticket-surcharge backed; 1995 revised plan incl. $12.7M business bond commitments)',
  vote='Legislature + City Council; no referendum (poll: 60% opposed intervention)',
  threat_date='1994-01-15', approval_date='1994-05-10', approval_date_final='1995-03-23',
@@ -33,7 +33,7 @@ add(id='E02',team='SEA SuperSonics (now OKC)',owners='Barry Ackerley',period='19
  money_usd_m=74.5, mechanism='City bonds repaid from arena revenue sharing', vote='City Council 7-2', threat_date='', approval_date='1993-05-15',
  outcome='stayed (until 2008)', sources='https://en.wikipedia.org/wiki/Climate_Pledge_Arena', label='c', notes='Comparison group N.')
 
-add(id='E03',team='MIA Heat',owners='Micky Arison',period='1996-06 to 1996-11',threat_class='explicit',
+add(id='E03',team='MIA Heat',owners='Micky Arison',period='1996-02 to 1996-11',threat_class='explicit',
  said_or_done='Verbatim (Miami New Times, 1996-11-14): "Back in June the shipping magnate forced the county into an agreement by threatening to move to Broward, a tactic his own negotiators later admitted was a bluff." Arison also sued (unsuccessfully) to block the ballot initiative, then funded an ad campaign.',
  alt_city='Broward County', league_role='none documented',
  money_after='Miami-Dade: $38M bayfront county land + county operating payments ($8.5M/yr in the deal announced days before the vote; later reported $6.4M/yr; $64M paid by 2010); county gets 40% of arena profits above $14M (paid once, $257,134 in 2013; deleted in the 2014 amended agreements)',
@@ -72,8 +72,8 @@ add(id='E06',team='SAS Spurs',owners='Peter M. Holt group (from 1996)',period='1
 add(id='E07',team='HOU Rockets',owners='Leslie Alexander',period='1995-2000 (key: 1999-11 to 2000-11)',threat_class='explicit',
  said_or_done='After voters rejected the arena (Nov 1999), Commissioner David Stern: "if there\'s not a new building...I think it\'s certain that the team will be relocated." (Houston Chronicle, 2000-02-13). Rockets talked to other cities: looked at Anaheim in 1999-2000 (LA Times 2001-02-13) and negotiated with Louisville ("Louisville Woos Rockets", Houston Chronicle 2000-05-13).',
  alt_city='Louisville, Anaheim', league_role='backed (commissioner ultimatum)',
- money_after='Toyota Center: city/Harris County-Houston Sports Authority $182M of $235M (77%); Rockets $43M; city bought land',
- money_usd_m=182, mechanism='Harris County-Houston Sports Authority financing; campaign promised "no new taxes of any kind"',
+ money_after='Toyota Center: the Harris County-Houston Sports Authority funded the $175M arena budget from hotel and car-rental tax bonds and the city paid up to $20M for the site and infrastructure, $195M in all (b, 2000 letter agreement and interlocal agreement), 76% of $255M of construction counting the Rockets\' $60M (the funding ledger\'s rule); press reported $182M of $235M',
+ money_usd_m=195, mechanism='Harris County-Houston Sports Authority financing; campaign promised "no new taxes of any kind"',
  vote='City Council ~2000-09-13; voters 2000-11-07, 66% yes (1999 version had failed). Pro campaign: Enron/Ken Lay $590K, Reliant $400K',
  threat_date='2000-02-13', approval_date='2000-09-13', approval_date_final='2000-11-07', outcome='stayed',
  sources='https://www.houstonpress.com/news/home-court-advantage-6564384/ ; https://houstonsports.org/wp-content/uploads/Multi-Purpose_Arena_Letter_of_Agreement.pdf ; https://www.bondbuyer.com/news/houston-city-council-cuts-property-taxes-oks-arena-deal ; https://houstonsports.org/wp-content/uploads/City-HCHSA-Ground-Lease-Toyota-Center-20011231.pdf ; https://en.wikipedia.org/wiki/Toyota_Center',
@@ -217,10 +217,10 @@ add(id='E22',team='POR Trail Blazers',owners='Paul Allen estate (Jody Allen) -> 
 add(id='E23',team='OKC Thunder',owners='Clay Bennett (Professional Basketball Club LLC)',period='2022-01 to 2023-12',threat_class='official_cited',
  said_or_done='Mayor David Holt (2022 State of the City): not funding a new arena could lead the Thunder to "look outside the state for a new home"; Holt (Nov 2023): without a yes vote "It will be the beginning of the end and there\'s no other real path" (PBS NewsHour 2023-11-15). No relocation statement by Bennett or the NBA found; Bennett: arena will "secure the long-term future of the Thunder."',
  alt_city='none named', league_role='none documented',
- money_after='Voters 2023-12-12: 1-cent sales tax for 72 months, >= $900M (incl. $70M MAPS 4); Thunder $50M (~5.5%); 25-yr license (June 2025) with > $1B exit penalties',
+ money_after='Voters 2023-12-12: 1-cent sales tax for 72 months, >= $900M (incl. $70M MAPS 4); Thunder $50M (~5.5%); 25-yr license (June 2025) with exit penalties of up to $1B, declining over the term',
  money_usd_m=900, mechanism='Temporary city sales tax', vote='71% yes (41,129 / 16,797); pro side outspent opponents >= 48:1',
  threat_date='', approval_date='2023-12-12', outcome='stayed',
- sources='https://www.pbs.org/newshour/nation/voters-in-oklahoma-city-will-decide-whether-a-new-thunder-arena-is-worth-the-investment ; prior round r4_gov/out/arena_votes.csv',
+ sources='https://www.pbs.org/newshour/nation/voters-in-oklahoma-city-will-decide-whether-a-new-thunder-arena-is-worth-the-investment ; vote count and campaign spending: data/votes_lobbying/arena_votes.csv',
  label='c', notes='Not an owner/league threat by the stated rule; sensitivity moves it into the threat group.')
 
 add(id='E24',team='SAS Spurs',owners='Peter J. Holt / Julianna Hawn Holt (Spurs Sports & Entertainment)',period='2022-2026',threat_class='none',
@@ -229,7 +229,7 @@ add(id='E24',team='SAS Spurs',owners='Peter J. Holt / Julianna Hawn Holt (Spurs 
  money_after='Bexar County Prop B 2025-11-04 (52.14%): venue tax up to $311M; city up to $489M in non-binding term sheet (2025-08-21, 7-4); Spurs >= $500M + overruns; July 2026 county allowed up to 4 home games/season elsewhere',
  money_usd_m=311, mechanism='County venue tax (voted); city funds (not voted)', vote='Prop B 52.14%; Spurs-funded PAC $9.2M vs ~ $270K opposition',
  threat_date='', approval_date='2025-11-04', outcome='stayed',
- sources='https://spectrumlocalnews.com/tx/san-antonio/news/2022/05/10/spurs-owner-insists-team-will-stay-in-san-antonio ; prior round r4_gov/out/arena_votes.csv',
+ sources='https://spectrumlocalnews.com/tx/san-antonio/news/2022/05/10/spurs-owner-insists-team-will-stay-in-san-antonio ; vote count: data/votes_lobbying/arena_votes.csv',
  label='c', notes='Ambiguous (Austin games) but no owner threat by the stated rule.')
 
 add(id='E25',team='SAS Spurs',owners='Peter M. Holt group',period='2014',threat_class='none',said_or_done='None documented.',alt_city='',league_role='none documented',
@@ -251,7 +251,7 @@ add(id='E28',team='CLE Cavaliers',owners='Dan Gilbert',period='2016-12 to 2017-0
 
 add(id='E29',team='IND Pacers',owners='Herb Simon',period='2019',threat_class='none',said_or_done='None documented (lease expiring 2019).',alt_city='',league_role='none documented',
  money_after='CIB (Apr 2019): $360M renovation, state+CIB $270M + city $25M (= $295M public), Pacers $65M; plus ~$12.5M+/yr CIB operating reimbursements 2019-44; Pacers owe up to $750M if they leave',money_usd_m=295,mechanism='CIB bonds (state/county taxes)',vote='CIB',threat_date='',approval_date='2019-04-12',outcome='stayed',
- sources='https://www.wfyi.org/news/articles/city-officials-indiana-pacers-sign-deal-to-keep-team-for-25-years ; CIB ACFR FY2023 Note 9 (prior round)',label='b/c',notes='')
+ sources='https://www.wfyi.org/news/articles/city-officials-indiana-pacers-sign-deal-to-keep-team-for-25-years ; https://www.in.gov/sboa/WebReports/83950A.pdf (CIB FY2023 audit, Note 9)',label='b/c',notes='')
 
 add(id='E30',team='CHA Hornets (current)',owners='Michael Jordan (seller 2023) -> Gabe Plotkin & Rick Schnall',period='2022-2023',threat_class='none',
  said_or_done='None documented. Lease required the city to keep the arena "among the most modern in the league" (WFAE paraphrase); city consultant said $173M was already contractually owed.',alt_city='',league_role='none documented',
@@ -260,14 +260,14 @@ add(id='E30',team='CHA Hornets (current)',owners='Michael Jordan (seller 2023) -
 
 add(id='E31',team='UTA Jazz',owners='Ryan & Ashley Smith (Smith Entertainment Group)',period='2024',threat_class='none',said_or_done='None documented for the Jazz (district deal paired with the NHL team relocated from Arizona).',alt_city='',league_role='none documented',
  money_after='Utah SB 272 (2024) + Salt Lake City 0.5% sales tax: ~$900M over 30 yrs ($525M Delta Center, $375M district); referendum drive dropped 2024-10-04',money_usd_m=525,mechanism='City sales tax',vote='No public vote',threat_date='',approval_date='2024-10-04',outcome='stayed',
- sources='https://www.utah.gov/pmn/files/1261183.pdf (Capital City Revitalization Zone PID bond notice) ; https://bondbuyer.com/news/new-issuer-will-sell-bonds-for-salt-lake-city-arena-project ; https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years ; Utah News Dispatch and SL Tribune 2024-10-04 on the dropped referendum (prior round r4_gov/out/arena_votes.csv)',label='c',notes='Arena privately owned -> public share n/a.')
+ sources='https://www.utah.gov/pmn/files/1261183.pdf (Capital City Revitalization Zone PID bond notice) ; https://bondbuyer.com/news/new-issuer-will-sell-bonds-for-salt-lake-city-arena-project ; https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years ; Utah News Dispatch and SL Tribune 2024-10-04 on the dropped referendum (vote record: data/votes_lobbying/arena_votes.csv)',label='c',notes='Arena privately owned -> public share n/a.')
 
 add(id='E32',team='ORL Magic',owners='DeVos family',period='2024',threat_class='none',said_or_done='None documented.',alt_city='',league_role='none documented',
  money_after='$226M Orange County tourist-tax package for Kia Center (Nov 2024); Magic $0',money_usd_m=226,mechanism='Tourist development tax',vote='County/City (Nov 2024)',threat_date='',approval_date='2024-11-20',outcome='stayed',
  sources='https://www.cfpublic.org/politics/2024-11-20/orlando-kia-center-camping-world-stadium-improvements-approved',label='c',notes='')
 
 add(id='E33',team='HOU Rockets',owners='Tilman Fertitta',period='2026',threat_class='none',said_or_done='None documented.',alt_city='',league_role='none documented',
- money_after='$180M Toyota Center overhaul with ~$95M State of Texas grant (Apr 2026)',money_usd_m=95,mechanism='State grant',vote='HCHSA board 2026-04-08',threat_date='',approval_date='2026-04-08',outcome='stayed',
+ money_after='$180M Toyota Center overhaul (Apr 2026) with about $95M expected from the State of Texas; no agreement found',money_usd_m=95,mechanism='State grant',vote='HCHSA board 2026-04-08',threat_date='',approval_date='2026-04-08',outcome='stayed',
  sources='https://therealdeal.com/texas/2026/04/09/toyota-center-in-houston-set-for-180m-overhaul',label='c',notes='')
 
 add(id='E34',team='MEM Grizzlies',owners='Robert Pera',period='2024-2026',threat_class='none',said_or_done='None documented; lease ends 2029.',alt_city='',league_role='none documented',
@@ -293,7 +293,7 @@ add(id='E38',team='LAC Clippers',owners='Steve Ballmer',period='2017-2024',threa
 
 add(id='E39',team='DET Pistons',owners='Tom Gores',period='2016-2017',threat_class='lure_only',said_or_done='Detroit induced a move from (private) Palace of Auburn Hills to Little Caesars Arena; DDA notes describe bonds issued "to incentivize the Detroit Pistons to relocate to the City of Detroit."',alt_city='Detroit (from suburb)',league_role='approved move unanimously 2017-08-03',
  money_after='Detroit City Council 2017-06-20 approved $34.5M public funding for the Pistons move (Downtown Development Authority bonds); LCA overall public share est. 58% at 2013 plan',money_usd_m=34.5,mechanism='DDA tax-capture bonds',vote='City Council',threat_date='',approval_date='2017-06-20',outcome='moved within region (2017)',
- sources='https://www.freep.com/story/news/local/michigan/detroit/2017/06/20/detroit-pistons-council-downtown/411786001/ ; Detroit DDA FY2024 financial statements Note H (prior round)',label='b/c',notes='Destination-type money; excluded from T vs N.')
+ sources='https://www.freep.com/story/news/local/michigan/detroit/2017/06/20/detroit-pistons-council-downtown/411786001/ ; https://www.degc.org/_files/ugd/a7a51b_45e5bce6092b43bf9c6702781cc4fd9a.pdf (DDA FY2021 audited statements, Note G p.37: $36M Series 2017 bonds)',label='b/c',notes='Destination-type money; excluded from T vs N.')
 
 add(id='E40',team='PHI 76ers',owners='Josh Harris & David Blitzer (HBSE)',period='2014; 2022-2025',threat_class='none',said_or_done='No relocation threat documented. 2014: moved practice facility/offices to Camden NJ for a 10-yr $82M Grow NJ tax credit (EDA unanimous, June 2014). 2022-25: proposed privately financed 76 Place (approved by City Council), abandoned Jan 2025 for a joint South Philadelphia arena with Comcast Spectacor (~2031).',alt_city='Camden NJ (practice facility only)',league_role='none documented',
  money_after='NJ $82M tax credit (practice facility; 250-job minimum)',money_usd_m=82,mechanism='State tax credit',vote='NJ EDA',threat_date='',approval_date='2014-06-10',outcome='stayed',
@@ -309,11 +309,11 @@ add(id='E51',team='PHI 76ers',owners='Josh Harris & David Blitzer (HBSE)',period
 
 for tid,team,txt in [('E41','BOS Celtics','TD Garden privately owned (Delaware North); lease extended to 2035-36 (2021). No threat or public arena money found.'),
                      ('E42','NYK Knicks','Madison Square Garden: full property-tax exemption since 1982 contingent on hosting the Knicks/Rangers; IBO (2023) assessed foregone tax at ~$42M/yr (FMV $867M). No relocation threat found 1990-2026.'),
-                     ('E43','LAL Lakers','Crypto.com Arena privately financed by AEG (1999). No threat found.'),
-                     ('E44','CHI Bulls','United Center privately built by Reinsdorf/Wirtz JV (1994); annual property-tax appeals (prior round). No threat found.'),
+                     ('E43','LAL Lakers','Crypto.com Arena built by AEG (1999) with a ~$70M city advance repaid mainly from city revenue. No threat found.'),
+                     ('E44','CHI Bulls','United Center privately built by the Reinsdorf and Wirtz joint venture (1994). No threat found.'),
                      ('E45','DEN Nuggets','Ball (Pepsi) Arena privately built by Kroenke (1999); 2024 council approval of 64-acre private redevelopment. No threat found.'),
                      ('E46','TOR Raptors','Scotiabank (Air Canada) Centre privately financed by MLSE (1999). No threat found.'),
-                     ('E47','NOP Pelicans','2023-06-13 amendment extended Smoothie King Center term to 2029; state pays $3.65M/yr Quality-Jobs-equivalent FY2023-29 plus ongoing LSED entitlements (FY2027 budget $17.7M). No threat found.')]:
+                     ('E47','NOP Pelicans','2023-06-13 amendment extended Smoothie King Center term to 2029; state obligated to pay $3.65M a year in Quality Jobs-equivalent payments for FY2023-29, budgeted from FY2025, plus ongoing LSED entitlements (FY2027 budget $17.7M). No threat found.')]:
     add(id=tid,team=team,owners='',period='1990-2026',threat_class='none',said_or_done=txt,alt_city='',league_role='none documented',money_after='',money_usd_m='',mechanism='',vote='',threat_date='',approval_date='',outcome='stayed',
         sources={'E41':'https://en.wikipedia.org/wiki/TD_Garden',
                  'E42':'https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf',

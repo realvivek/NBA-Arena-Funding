@@ -24,16 +24,20 @@ public money but not as new spending (they reimburse private builders). Debt ser
 
 B. MECHANISM SPLIT - public CAPITAL money (construction + purchases + completed/binding renovations), 2026$
 ------------------------------------------------------------------------------
-  Hotel, car-rental, F&B, ticket (visitor) taxes                                                 $3.71B   41.9%
+  Hotel and car-rental taxes (mostly visitors)                                                   $2.93B   33.1%
   General taxes / GO bonds / appropriations / state grants / public asset sales                  $1.71B   19.4%
-  Public, mechanism split not documented                                                         $1.12B   12.6%
+  Public, mechanism split not documented                                                         $1.16B   13.2%
   Dedicated general sales tax                                                                     $947M   10.7%
   Tax increment & tax capture (TIF, CRA, Indiana PSDA, Oregon income-tax capture)                 $790M    8.9%
+  Restaurant-meal and ticket taxes, alone or pooled with hotel taxes (visitors and residents)     $730M    8.3%
   Lease-revenue bonds (general fund / parking backed)                                             $305M    3.4%
   Land contributed or sold below value                                                            $166M    1.9%
   Sin taxes (alcohol/tobacco, Cleveland)                                                           $53M    0.6%
   Infrastructure / parking / site work (funding stream not specified)                              $45M    0.5%
   TOTAL capital                                                                                  $8.83B
+  By who mostly pays: residents $3.80B (43.0%); visitors $2.93B (33.1%); shared $730M (8.3%); other $1.37B (15.5%)
+  (residents: general, dedicated sales, tax capture, lease-revenue and sin taxes; visitors: hotel and car-rental taxes; shared: meal and ticket
+  taxes, alone or pooled with hotel taxes (Indianapolis CIB, Milwaukee WCD, Washington arena ticket tax); other: land, site work, not split)
   Ongoing operating subsidies (separate from capital): $753M
   Rule: each dollar assigned once - by documented funding stream; in-kind land -> land; infrastructure with no stated stream -> infrastructure.
 
@@ -50,18 +54,18 @@ C. TOP 10 ARENAS BY PUBLIC MONEY (core, 2026$)
  9. CLE Rocket Arena                       public    $433M | share  63.2% | constr 268.5 + acq 0 + reno 164.1 + ongoing 0
 10. SAS Frost Bank Center                  public    $414M | share  84.5% | constr 294.8 + acq 0 + reno 118.9 + ongoing 0
 
-D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (public money under half of construction cost) (21): ATL, BOS, BKN, CHI, DAL, DEN, DET, GSW, LAC, LAL, MIA, MIL, MIN, NYK, PHI, PHX, POR, SAC, TOR, UTA, WAS
+D. ARENAS BUILT MAINLY WITH PRIVATE MONEY (public money under half of construction cost) (20): ATL, BOS, CHI, DAL, DEN, DET, GSW, LAC, LAL, MIA, MIL, MIN, NYK, PHI, PHX, POR, SAC, TOR, UTA, WAS
 ------------------------------------------------------------------------------
 Construction split unresolved, counted in neither group: IND (see notes_and_gaps in arena_ledger.csv)
-Construction: private $13.55B vs public $2.56B (15.9% public); plus public purchases $219M and public renovation $1.56B
-Core public money $4.70B of $21.70B total spending = 21.6%
+Construction: private $12.18B vs public $2.11B (14.8% public); plus public purchases $219M and public renovation $1.56B
+Core public money $4.24B of $19.72B total spending = 21.5%
 Later bought or rebuilt with public money (6): WAS $600M, POR $581M, UTA $548M, MIN $219M, PHX $217M, ATL $188M = $2.35B, of which $573M pending
-Excluding those 6: public $2.40B of $17.09B = 14.0%
-Mechanism split of their public capital money (2026$): General taxes / GO bonds / appropriations / state grants / public asset sales $1.25B (29%); Hotel, car-rental, F&B, ticket $1.01B (23%); Tax increment & tax capture $640M (15%); Dedicated general sales tax $625M (14%); Public, mechanism split not documented $341M (8%); Lease-revenue bonds $305M (7%); Land contributed or sold below value $166M (4%); Infrastructure / parking / site work $9M (0%)
+Excluding those 6: public $1.95B of $15.12B = 12.9%
+Mechanism split of their public capital money (2026$): General taxes / GO bonds / appropriations / state grants / public asset sales $806M (21%); Hotel and car-rental taxes $804M (21%); Tax increment & tax capture $640M (16%); Dedicated general sales tax $625M (16%); Public, mechanism split not documented $341M (9%); Lease-revenue bonds $305M (8%); Restaurant-meal and ticket taxes, alone or pooled with hotel taxes $205M (5%); Land contributed or sold below value $152M (4%); Infrastructure / parking / site work $9M (0%)
 Tax-exempt bonds behind privately built arenas: BKN: PILOT bonds $511M (2009; refunded 2016: $478.7M tax-exempt + $15M taxable); DET: MSF 2014A $250M tax-exempt (2014B $200M taxable authorized, $188.5M drawn, Olympia-paid); DDA 2018A refunding $287.4M; UTA: PID sales-tax bonds 2025A/B/C $900M tax-exempt, up to $525M of it for the arena; WAS: DC GO-funded $515M (tax status of specific bonds not confirmed). Federal cost of their new money for the arena (tau .28, present value at issue in 2026$; GDG's value for BKN): BKN $225M, DET $90M, UTA $159M, WAS $156M.
 Other public money and tax breaks at arenas built and owned privately:
   BKN: City $205M (IBO 2009 testimony; IBO's Sept 2009 brief counts $150M) + State $100M (IBO Sept 2009) capital for land/infrastructure + MTA rail yard $10M (IBO arena share of the $50M bid gap), counted in core; $511M tax-exempt PILOT bonds (property taxes diverted to arena debt; expanded total); full property-tax exemption (would-be $99M/yr 2023 vs $39M PILOT)
-  DET: $286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia rent-free
+  DET: $286M DDA tax-increment bonds incl. captured school taxes ($387M 2026$); public ownership -> no property tax; Olympia runs it as concessionaire (its payments serviced the private share of the bonds)
   WAS: 1997 public money $75.5M (GAO: District $61.5M for land, site and Metro match + $14M federal and WMATA); $50M 2007 TIF notes (arena ticket tax); 2024 $87.5M purchase + $427.5M renovation; property/possessory-interest tax exemption since construction, ~$10M/yr now, continued to June 2050 by the 2024 law ($312.7M FY2025-50 per OCFO)
   UTA: RDA-owned land at $1/yr (2026 assessed $68.8M, exempt); city CRA reimbursement for the 2017 renovation up to $22.7M through 2040; $525M of 0.5% city sales-tax bonds into a privately owned arena + $375M for the surrounding district
   POR: City $34.5M (1995); building bought for $1 and land under it for $7.13M (2024); $573M pending (state income-tax capture $365M)
@@ -97,10 +101,10 @@ Core + binding new = $10.87B; + all approved/pending = $12.87B
 
 G. COST PER HOUSEHOLD - LARGEST PUBLIC DEALS (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)
 ------------------------------------------------------------------------------
-UTA: Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax: $548M | Salt Lake City, UT 98,916 hh -> $5,537/hh (share 100%) | City sales tax; >=30% paid by non-residents (taxflow round), so per-resident-household burden is an upper bound
+UTA: Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax: $548M | Salt Lake City, UT 98,916 hh -> $5,537/hh (share 100%) | City sales tax, part of it paid by people who live elsewhere, so the figure per household in the city is an upper bound
 OKC: New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($331M), OKC city sales tax and GO bonds: $1.24B | Oklahoma City, OK 290,311 hh -> $4,275/hh (share 100%) | City sales tax (also paid by commuters/visitors) and GO bonds
 WAS: Capital One Arena all public money since 1997 (the $12M federal grant and $2M of WMATA money for the Metro link are not DC households' share): $756M | District of Columbia 329,687 hh -> $2,205/hh (share 96%) | District of Columbia general fund/GO
-ORL: Kia Center (2010 build + 2025 renovation): $862M | Orange County, FL 560,020 hh -> $1,539/hh (share 100%) | Orange County 6% tourist tax - paid mostly by visitors; per-household figure is notional
+ORL: Kia Center (2010 build + 2025 renovation): $862M | Orange County, FL 560,020 hh -> $1,539/hh (share 100%) | Orange County 6% tourist tax, paid mostly by visitors, so the figure per household is notional
 IND: Gainbridge Fieldhouse (1999, CIB capital 2014-34 including the 2020-22 renovation, CIB payments 2001 and 2014-25): $934M | Marion County, IN 408,907 hh -> $1,919/hh (share 84%) ; Indiana 2,775,637 hh -> $54/hh (share 16%) | Marion County (CIB excise taxes, city) + Indiana (PSDA state-tax capture share)
 CHA: Spectrum Center (2005, 2014, 2024-25): $559M | Charlotte, NC 381,274 hh -> $1,467/hh (share 100%) | City of Charlotte hotel/car-rental taxes
 MEM: FedExForum (2004 build, $80M of the state grant in 2025, subsidies): $548M | Shelby County, TN 359,692 hh -> $1,203/hh (share 79%) ; Tennessee 2,928,765 hh -> $39/hh (share 21%) | Shelby County (city+county) + Tennessee ($20M in 2004 for the parking structure + $80M in 2025)
