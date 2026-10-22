@@ -6,7 +6,7 @@ Taxpayers have put or committed $9.59B to today's 30 NBA arenas, 35% of the $27.
 
 The money has moved from building arenas to rebuilding them. Since 2014, public money to renovate or buy existing arenas has come to $3.02B, 1.5 times the $1.99B for new ones: $1.08B in the four arenas with public money that opened in that time and $910M for Oklahoma City's arena under construction.
 
-Relocation threats worked as deadlines. Of 20 documented owner or league threats since 1994, 12 were followed by public money in the same city, 11 of them within two years, and Portland's money is approved but pending. Deals after a threat were no more lopsided than deals without one: at the median the public paid 64% after a threat and 78% without one.
+Relocation threats worked as deadlines. Of 21 documented owner or league threats since 1994, 12 were followed by public money in the same city, 11 of them within two years, and Portland's money is approved but pending. Deals after a threat were no more lopsided than deals without one: at the median the public paid 64% after a threat and 78% without one.
 
 Residents carried slightly more of it than visitors: their sales, property and general taxes supplied 43% of public capital, against 42% from hotel, car-rental and food taxes. The mix has turned: visitor taxes supplied 47% of the money dated before 2014, and residents' taxes have supplied 61% since. Almost none of the recent money went to voters, and the arenas of the league's 10 least valuable teams hold half of all of it. Most economic research finds that the money does not come back in local growth; economists still argue over whether that amounts to a consensus.
 
@@ -137,7 +137,7 @@ Like most published estimates, the database counts only construction. The ledger
 
 ## Relocation threats and what they bought
 
-Threats worked as a deadline more than a discount. Of 20 documented owner or league threats since 1994, 12 were followed by public money in the same city: eight within seven months, four after more than a year. Portland's state money is approved but still pending. In four more, the team left and the new city paid.
+Threats worked as a deadline more than a discount. Of 21 documented owner or league threats since 1994, 12 were followed by public money in the same city: eight within seven months, four after more than a year. Portland's state money is approved but still pending. In four more, the team left and the new city paid. In the other four the team stayed with no new money, among them the 76ers' 2024 talks with New Jersey about a Camden arena, reported from anonymous sources ([ROI-NJ](https://www.roi-nj.com/2024/07/18/lifestyle/n-j-making-serious-push-to-lure-sixers-to-new-arena-in-camden/), [Philadelphia Inquirer](https://www.inquirer.com/sixers/sixers-comcast-arena-deal-south-philly-camden-20250116.html), c); without that episode the count is 12 of 20.
 
 Threat deals were not more lopsided. After a threat, the median deal was $308M in 2025 dollars and 64% public; without one, $247M and 78% public. Neither gap is statistically meaningful (p = 0.95 and 0.51).
 

@@ -96,17 +96,17 @@ lag=[(x['id'],x['team'],float(x['months_threat_to_approval'])) for x in th if x[
 lv=sorted(v for _,_,v in lag)
 out.append('THREAT OUTCOMES (explicit/implied episodes in threat_ledger.csv: n=%d)'%len(th))
 same=['E01','E03','E07','E10','E14','E15','E17','E18','E19','E20','E21','E50']
-left=['E08','E09','E13','E36']; nomoney=['E11','E12','E16']
+left=['E08','E09','E13','E36']; nomoney=['E11','E12','E16','E51']
 assert sorted(same+left+nomoney+pending)==sorted(x['id'] for x in th), 'every counted threat needs one outcome'
 out.append('- Same-city public money approved afterward: %d (%s)'%(len(same),', '.join(same)))
 out.append('- Same-city public money approved but not final: %d (%s: Oregon\'s SB 1501 bonds, pending agreements)'%(len(pending),', '.join(pending)))
 out.append('- Team left; destination city paid (Memphis $250M, Oklahoma City $121.6M, New York PV ~$492M non-federal; New Orleans package): %d (%s)'%(len(left),', '.join(left)))
-out.append('- No new money and team stayed: %d (%s; SAC 2011 was followed by E17 money)'%(len(nomoney),', '.join(nomoney)))
+out.append('- No new money and team stayed: %d (%s; SAC 2011 was followed by E17 money; PHI 2024 rests on anonymous sources, and without it the counts are 12 of 20)'%(len(nomoney),', '.join(nomoney)))
 out.append('- Months from first documented threat to first same-city approval (n=%d): median %.1f, min %.1f, max %.1f; %d of %d within 24 months'%(len(lv),st.median(lv),min(lv),max(lv),sum(v<=24 for v in lv),len(lv)))
 out.append('  ' + '; '.join('%s %s %.1f'%(i,t.split(' (')[0],v) for i,t,v in sorted(lag,key=lambda z:z[2])))
 out.append('- League role: backed or enabled the threat in HOU 2000 (Stern ultimatum), MIL 2015 (buy-back clause), SEA->OKC 2008 and CHA->NOH 2002 (relocations approved); opposed in MIN 1994, SAC 2011 and SAC 2013 - yet home-city money still followed in MIN 1994 and SAC 2014.')
 out.append('')
-out.append('DESTINATION / LURE MONEY (not in T vs N): Memphis 2001 $250M (100% public); Oklahoma City 2008 $121.6M sales tax; Charlotte 2002 ~$265M for the expansion team after the Hornets left; New York 2006-09 PV $350M city + $142M state/MTA (+$194M federal via tax-exempt bonds); Detroit 2017 $34.5M for the Pistons; Kansas City 2004 ~$212M (no team came); offers not used: Seattle 2012 up to $200M, Anaheim 2011 $75M bonds, Louisville 2001 $200M arena, Virginia 2024 ~$1.47B bonds.')
+out.append('DESTINATION / LURE MONEY (not in T vs N): Memphis 2001 $250M (100% public); Oklahoma City 2008 $121.6M sales tax; Charlotte 2002 ~$265M for the expansion team after the Hornets left; New York 2006-09 PV $350M city + $142M state/MTA (+$194M federal via tax-exempt bonds); Detroit 2017 $34.5M for the Pistons; Kansas City 2004 ~$212M (no team came); offers not used: Seattle 2012 up to $200M, Anaheim 2011 $75M bonds, Louisville 2001 $200M arena, Virginia 2024 ~$1.47B bonds, New Jersey 2024 up to $400M of Aspire tax credits (ROI-NJ) or about $800M (Inquirer) for a Camden arena.')
 out.append('')
 out.append('CAVEATS')
 out.append('- Small samples (%d vs %d); p-values are descriptive only;'%(len(T),len(N))+' none of the differences is statistically distinguishable from chance. Deal sizes are driven by era, arena age and scope (new build vs renovation), so a raw comparison cannot isolate the effect of a threat.')

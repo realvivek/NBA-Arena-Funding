@@ -17,8 +17,16 @@
   "espn-nba",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
+  "mlgw-board-minutes-2026-08-19",
+  "memphis-council-agenda-2026-09-01",
+  "tn-private-chapter-67-2024",
+  "tn-public-chapter-405-2023",
+  "tn-public-chapter-272-2023",
   "wiki-delta-center",
   "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+  "slc-council-minutes-1989-03-07",
+  "slc-council-work-session-1991-01-03",
+  "slc-cafr-fy2003",
   "wiki-smoothie-king-center",
   "myneworleans-doing-it-right",
   "sec-fce-131201310k",
@@ -47,11 +55,15 @@
   "law-sfr-v13-nba",
   "texaspolitics-slide4b",
   "wiki-paycom-center",
+  "ok-sb1819-2008",
+  "ok-tax-commission-quality-jobs-fy2010",
+  "ok-sb604-2023",
   "wi-lfb-informational-paper-18",
   "wiki-state-farm-arena",
   "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
   "cityofsacramento-20170905golden1centermerrittharrisexecutive",
   "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+  "sacramento-acfr-fy2021",
   "sportsbusinessdaily-state-of-the-arena-america-west-arena",
   "phoenix-phoenix",
   "leg-other",
@@ -266,7 +278,12 @@
    "notes_and_gaps": "Cost and funding split from the City CAFR (FY2005); Sports Authority bond repayment streams not split (mixed); $470M of the $550M renovation pending lease.",
    "sources": [
     "memphistn-fy05-annual-report",
-    "memphistn-fy15-annual-report"
+    "memphistn-fy15-annual-report",
+    "mlgw-board-minutes-2026-08-19",
+    "memphis-council-agenda-2026-09-01",
+    "tn-private-chapter-67-2024",
+    "tn-public-chapter-405-2023",
+    "tn-public-chapter-272-2023"
    ]
   },
   {
@@ -296,7 +313,10 @@
    "notes_and_gaps": "1990 RDA land value and any RDA cash not documented; 2017 city reimbursement counted at its $22.7M cap; district $375M in project row.",
    "sources": [
     "wiki-delta-center",
-    "ksl-salt-lake-city-approves-new-delta-center-lease-t"
+    "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+    "slc-council-minutes-1989-03-07",
+    "slc-council-work-session-1991-01-03",
+    "slc-cafr-fy2003"
    ]
   },
   {
@@ -548,7 +568,10 @@
    "property_tax_status": "City-owned; no property tax",
    "notes_and_gaps": "2002 cost from press; 2008 renovation arena share computed pro rata from plan; operating subsidy documented for FY2023 only; MAPS 4 money for the new arena reported as $70M, $78M, $89M and ~$99M.",
    "sources": [
-    "wiki-paycom-center"
+    "wiki-paycom-center",
+    "ok-sb1819-2008",
+    "ok-tax-commission-quality-jobs-fy2010",
+    "ok-sb604-2023"
    ]
   },
   {
@@ -638,7 +661,8 @@
    "notes_and_gaps": "Cost from the construction monitor's last posted report (99.5% complete), not an audited total; value of city parcels and billboard rights not documented.",
    "sources": [
     "cityofsacramento-20170905golden1centermerrittharrisexecutive",
-    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c"
+    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+    "sacramento-acfr-fy2021"
    ]
   },
   {

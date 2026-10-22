@@ -78,6 +78,8 @@
   "wtop-alexandria-says-capitals-wizards-arena-deal-is-d",
   "axios-capital-one-arena-deal-approved",
   "communityaffairs-node",
+  "nbcwashington-ag-capitals-wizards-2047",
+  "dc-law-17-12",
   "opb-portland-unveils-timeline-for-moda-center-deal",
   "katu-silver-warns-moda-center-renovation-talks-off-tr",
   "opb-trail-blazers-moda-center-portland-basketball-sp",
@@ -127,7 +129,10 @@
   "council-seattle-city-council-approves-arena-legislation",
   "wiki-sonics-arena",
   "sportsbusinessdaily-are-warriors-heading-to-san-jose-or-hold",
-  "courts-a157688-coliseum-authority-v-warriors"
+  "courts-a157688-coliseum-authority-v-warriors",
+  "roinj-sixers-camden-2024",
+  "inquirer-sixers-camden-2025-01-16",
+  "ap-shapiro-no-state-money-arenas-2025"
  ],
  "base_sources": [
   "threat-ledger"
@@ -539,7 +544,7 @@
    "months_threat_to_approval": 4.0,
    "outcome": "moved to Oklahoma City (2008)",
    "label": "c",
-   "notes": "Lag measured to destination-city money.",
+   "notes": "Lag measured to destination-city money. Oklahoma also made sports teams eligible for 15-year Quality Jobs payroll rebates (SB 1819, approved with an emergency clause Apr 17 2008, the day before the NBA vote; b, https://www.oklegislature.gov/BillInfo.aspx?Bill=SB1819&Session=0800); the Tax Commission paid the team $14.87M in FY2010-FY2013 (b, Quality Jobs Incentive Payment Reports via Digital Prairie), and a 2023 law (SB 604) extended sports-team contracts to 30 years. Not counted in the funding ledger (a memo, like the Pelicans' pre-lease rebates).",
    "same_city_money": false,
    "team_left": true,
    "no_new_money": false,
@@ -787,8 +792,8 @@
    "approval_date_final": null,
    "months_threat_to_approval": 3.6,
    "outcome": "stayed",
-   "label": "c",
-   "notes": "3.6 months from the explicit announcement; 9.3 months from the June 2023 report.",
+   "label": "c + b (D.C. Law 17-12)",
+   "notes": "3.6 months from the explicit announcement; 9.3 months from the June 2023 report. In March 2024 the District's attorney general wrote that the teams were bound to play in Washington through 2047 under the 2007 bond deal (AP via NBC Washington, Mar 22 2024, c); D.C. Law 17-12 (2007) s.9(f)(4) required DC Arena to extend its ground lease by 20 years (b, https://code.dccouncil.gov/us/dc/council/laws/17-12). Monumental said a 2007 agreement let it prepay the bonds and revoke the extension on 120 days' notice (same AP story). The letter itself was not found.",
    "same_city_money": true,
    "team_left": false,
    "no_new_money": false,
@@ -799,7 +804,9 @@
     "bondbuyer-financial-framework-for-arena-complex-in-norther",
     "wtop-alexandria-says-capitals-wizards-arena-deal-is-d",
     "axios-capital-one-arena-deal-approved",
-    "communityaffairs-node"
+    "communityaffairs-node",
+    "nbcwashington-ag-capitals-wizards-2047",
+    "dc-law-17-12"
    ]
   },
   {
@@ -1345,7 +1352,7 @@
    "months_threat_to_approval": null,
    "outcome": "stayed",
    "label": "c",
-   "notes": "Not an arena; excluded from comparison.",
+   "notes": "Not an arena; excluded from comparison. The 2024 Camden arena talks are episode E51.",
    "same_city_money": false,
    "team_left": false,
    "no_new_money": false,
@@ -1637,6 +1644,36 @@
    "sources": [
     "sportsbusinessdaily-are-warriors-heading-to-san-jose-or-hold",
     "courts-a157688-coliseum-authority-v-warriors"
+   ]
+  },
+  {
+   "id": "E51",
+   "team": "PHI 76ers",
+   "owners": "Josh Harris & David Blitzer (HBSE)",
+   "period": "2024-05 to 2025-01",
+   "threat_class": "implied",
+   "said_or_done": "Talks with another city: \"Discussions between top state officials and leaders from Harris Blitzer Sports & Entertainment\" about a Camden arena had run for about two months (ROI-NJ, July 18 2024, four anonymous sources); the team did not deny them (\"We remain focused on bringing a state-of-the-art arena to Philadelphia, as we have been for the last four years\"). Inquirer column (Jan 16 2025, one anonymous source): the Sixers kept negotiating with Camden after the downtown arena passed Council, and \"Camden 'always' remained on the table\".",
+   "alt_city": "Camden NJ",
+   "league_role": "none documented",
+   "money_after": "None in Philadelphia: the teams call the joint South Philadelphia arena with Comcast Spectacor privately funded, and Gov. Shapiro said the state would provide no money for new arenas (AP, June 22 2025). New Jersey's offer, not used: up to $400M of Aspire tax credits (ROI-NJ) or about $800M (Inquirer)",
+   "money_usd_m": null,
+   "mechanism": null,
+   "vote": null,
+   "threat_date": "2024-07-18",
+   "approval_date": null,
+   "approval_date_final": null,
+   "months_threat_to_approval": null,
+   "outcome": "stayed (no public money in Philadelphia to date)",
+   "label": "c (anonymous sources; the team did not confirm)",
+   "notes": "Split from E40 (the 2014 practice facility) on Oct 22 2026. Implied by the ledger rule (\"talks with another city\"). No 2024-25 board agenda or minutes of the New Jersey Economic Development Authority mentions the team (45 of 49 files read). Dated from the first report; the talks began about May 2024.",
+   "same_city_money": false,
+   "team_left": false,
+   "no_new_money": true,
+   "lag_months": null,
+   "sources": [
+    "roinj-sixers-camden-2024",
+    "inquirer-sixers-camden-2025-01-16",
+    "ap-shapiro-no-state-money-arenas-2025"
    ]
   }
  ],

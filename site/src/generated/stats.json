@@ -637,6 +637,9 @@
    "fred-cpiaucns",
    "wiki-delta-center",
    "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+   "slc-council-minutes-1989-03-07",
+   "slc-council-work-session-1991-01-03",
+   "slc-cafr-fy2003",
    "utah-pmn",
    "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar"
   ],
@@ -2352,7 +2355,7 @@
  "threat_episodes": {
   "key": "threat_episodes",
   "title": "Episodes in the threat ledger",
-  "value": 50.0,
+  "value": 51.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2361,10 +2364,10 @@
    "threat-ledger"
   ],
   "display": {
-   "long": "50",
-   "short": "50",
-   "title": "50",
-   "cap": "50"
+   "long": "51",
+   "short": "51",
+   "title": "51",
+   "cap": "51"
   },
   "note": "",
   "method": "select count(*) from threats"
@@ -2372,7 +2375,7 @@
  "threats_counted": {
   "key": "threats_counted",
   "title": "Explicit or implied relocation threats by owners or the league",
-  "value": 20.0,
+  "value": 21.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2381,10 +2384,10 @@
    "threat-ledger"
   ],
   "display": {
-   "long": "20",
-   "short": "20",
-   "title": "20",
-   "cap": "20"
+   "long": "21",
+   "short": "21",
+   "title": "21",
+   "cap": "21"
   },
   "note": "",
   "method": "select v from comparison where k = 'episodes_explicit_or_implied'"
@@ -3213,7 +3216,7 @@
  "sources_n": {
   "key": "sources_n",
   "title": "Documents in the bibliography (not counting this site's own ledgers)",
-  "value": 537.0,
+  "value": 553.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3222,10 +3225,10 @@
    "ledger"
   ],
   "display": {
-   "long": "537",
-   "short": "537",
-   "title": "537",
-   "cap": "537"
+   "long": "553",
+   "short": "553",
+   "title": "553",
+   "cap": "553"
   },
   "note": "",
   "method": "select count(*) from sources where publisher <> 'This site'"
@@ -3233,7 +3236,7 @@
  "sources_government": {
   "key": "sources_government",
   "title": "Government sources",
-  "value": 144.0,
+  "value": 148.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3242,10 +3245,10 @@
    "ledger"
   ],
   "display": {
-   "long": "144",
-   "short": "144",
-   "title": "144",
-   "cap": "144"
+   "long": "148",
+   "short": "148",
+   "title": "148",
+   "cap": "148"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'government' and publisher <> 'This site'"
@@ -3293,7 +3296,7 @@
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 360.0,
+  "value": 372.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3302,10 +3305,10 @@
    "ledger"
   ],
   "display": {
-   "long": "360",
-   "short": "360",
-   "title": "360",
-   "cap": "360"
+   "long": "372",
+   "short": "372",
+   "title": "372",
+   "cap": "372"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"

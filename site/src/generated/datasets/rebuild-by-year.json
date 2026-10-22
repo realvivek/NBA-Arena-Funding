@@ -31,6 +31,9 @@
   "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
   "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye",
   "wiki-paycom-center",
+  "ok-sb1819-2008",
+  "ok-tax-commission-quality-jobs-fy2010",
+  "ok-sb604-2023",
   "bexar-adid-1188",
   "bexar-2019-tax-exempt-venue-project-revenue-refunding",
   "lla-vwprbyagencyjson",
@@ -40,6 +43,11 @@
   "texaspolitics-slide4b",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
+  "mlgw-board-minutes-2026-08-19",
+  "memphis-council-agenda-2026-09-01",
+  "tn-private-chapter-67-2024",
+  "tn-public-chapter-405-2023",
+  "tn-public-chapter-272-2023",
   "carolinajournal-on-world-class-chumps",
   "espn-nba",
   "cfo-fis-downtown-arena-revitalization",
@@ -60,6 +68,7 @@
   "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
   "bexar-adid-1520",
   "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+  "sacramento-acfr-fy2021",
   "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
   "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
   "degc-ugd-3",
@@ -344,7 +353,10 @@
    "binding": false,
    "public_2026_m": 164.467877,
    "sources": [
-    "wiki-paycom-center"
+    "wiki-paycom-center",
+    "ok-sb1819-2008",
+    "ok-tax-commission-quality-jobs-fy2010",
+    "ok-sb604-2023"
    ]
   },
   {
@@ -406,7 +418,12 @@
    "public_2026_m": 438.968554,
    "sources": [
     "memphistn-fy05-annual-report",
-    "memphistn-fy15-annual-report"
+    "memphistn-fy15-annual-report",
+    "mlgw-board-minutes-2026-08-19",
+    "memphis-council-agenda-2026-09-01",
+    "tn-private-chapter-67-2024",
+    "tn-public-chapter-405-2023",
+    "tn-public-chapter-272-2023"
    ]
   },
   {
@@ -602,7 +619,8 @@
    "binding": false,
    "public_2026_m": 308.292103,
    "sources": [
-    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c"
+    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+    "sacramento-acfr-fy2021"
    ]
   },
   {

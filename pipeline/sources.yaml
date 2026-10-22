@@ -744,6 +744,14 @@ sources:
   origin: government
   date: n.d.
   checked: '2026-10-16'
+- id: dc-law-17-12
+  url: https://code.dccouncil.gov/us/dc/council/laws/17-12
+  title: 'D.C. Law 17-12: Verizon Center Sales Tax Revenue Bond Approval Act of 2007'
+  title_from: curated
+  publisher: Council of the District of Columbia
+  origin: government
+  date: '2007-07-12'
+  checked: '2026-10-22'
 - id: dccouncil-4-2-24-arena-funding-memo
   url: https://dccouncil.gov/wp-content/uploads/2024/03/4.2.24-Arena-Funding-MEMO.pdf
   title: Request to Place Emergency Measures on the Agenda for the April 2, 2024 Legislative Meeting (Downtown Arena Financing Partnership)
@@ -1911,6 +1919,14 @@ sources:
   origin: independent
   date: '2011-10-14'
   checked: '2026-10-18'
+- id: inquirer-sixers-camden-2025-01-16
+  url: https://www.inquirer.com/sixers/sixers-comcast-arena-deal-south-philly-camden-20250116.html
+  title: A Sixers move to Camden lurked until South Philly arena deal was struck
+  title_from: page title
+  publisher: The Philadelphia Inquirer
+  origin: independent
+  date: '2025-01-16'
+  checked: '2026-10-22'
 - id: investmentnews-spurs-co-owner-sixth-street-laying-ground-for
   url: https://investmentnews.com/alternatives/spurs-co-owner-sixth-street-laying-ground-for-debut-sports-fund/252984
   title: Spurs co-owner Sixth Street laying ground for debut sports fund
@@ -2265,6 +2281,14 @@ sources:
   origin: government
   date: n.d.
   checked: '2026-10-11'
+- id: memphis-council-agenda-2026-09-01
+  url: https://memphistn.gov/wp-content/uploads/2026/08/Regular-Agenda-9.1.26-1.pdf
+  title: Memphis City Council regular agenda, Sept. 1, 2026
+  title_from: curated
+  publisher: City of Memphis
+  origin: government
+  date: '2026-09-01'
+  checked: '2026-10-22'
 - id: memphistn-0-sports-auth-board-agenda-10-8-2026-mtg
   url: https://memphistn.gov/wp-content/uploads/2026/10/0_Sports-Auth-Board-Agenda-10-8-2026-mtg.pdf
   title: Memphis & Shelby County Sports Authority, Inc. Board Meeting Agenda, October 8, 2026
@@ -2404,6 +2428,14 @@ sources:
   date: n.d.
   checked: '2026-10-16'
   review: folder URL returns HTTP 403; the cited files are e.g. 2012-adopted-budget-full.pdf in this folder
+- id: mlgw-board-minutes-2026-08-19
+  url: https://www.mlgw.com/images/content/files/board_meeting/mins81926.pdf
+  title: Minutes of the Board of Commissioners, Aug. 19, 2026
+  title_from: curated
+  publisher: Memphis Light, Gas and Water
+  origin: independent
+  date: '2026-08-19'
+  checked: '2026-10-22'
 - id: multco-news-release-board-commissioners-advances-framew
   url: https://multco.us/news/news-release-board-commissioners-advances-framework-regional-investment-moda-center-renovation
   title: Board of Commissioners advances framework for regional investment in Moda Center renovation
@@ -2548,6 +2580,14 @@ sources:
   origin: independent
   date: '2021-07-15'
   checked: '2026-10-18'
+- id: nbcwashington-ag-capitals-wizards-2047
+  url: https://www.nbcwashington.com/news/local/dc-attorney-general-argues-nhls-capitals-nbas-wizards-must-play-in-washington-through-2047/3573671/
+  title: DC attorney general argues NHL's Capitals, NBA's Wizards must play in Washington through 2047
+  title_from: page title
+  publisher: NBC Washington (AP)
+  origin: independent
+  date: '2024-03-22'
+  checked: '2026-10-22'
 - id: news4jax-michael-jordans-sale-of-majority-ownership-of-ho
   url: https://www.news4jax.com/sports/2023/08/03/michael-jordans-sale-of-majority-ownership-of-hornets-to-gabe-plotkin-and-rick-schnall-is-finalized/
   title: Michael Jordan's sale of majority ownership of Hornets to Gabe Plotkin and Rick Schnall is finalized
@@ -2676,6 +2716,30 @@ sources:
   origin: government
   date: '2000-03-21'
   checked: '2026-10-16'
+- id: ok-sb1819-2008
+  url: https://www.oklegislature.gov/BillInfo.aspx?Bill=SB1819&Session=0800
+  title: 'SB 1819 (2008): Oklahoma Quality Jobs Program Act amendments, bill information'
+  title_from: curated
+  publisher: Oklahoma Legislature
+  origin: independent
+  date: '2008-04-17'
+  checked: '2026-10-22'
+- id: ok-sb604-2023
+  url: https://www.oklegislature.gov/BillInfo.aspx?Bill=SB604&Session=2300
+  title: 'SB 604 (2023): Quality Jobs contracts for professional sports teams, bill information'
+  title_from: curated
+  publisher: Oklahoma Legislature
+  origin: independent
+  date: '2023-06-07'
+  checked: '2026-10-22'
+- id: ok-tax-commission-quality-jobs-fy2010
+  url: https://digitalprairie.ok.gov/digital/collection/stgovpub/id/19381/
+  title: Quality Jobs Incentive Payment Report, Fiscal Year 2010
+  title_from: curated
+  publisher: Oklahoma Tax Commission (via Digital Prairie)
+  origin: independent
+  date: '2010'
+  checked: '2026-10-22'
 - id: okc-audit-of-certain-public-ev
   url: https://www.okc.gov/files/assets/city/v/1/auditor/documents/audit-reports/audit-of-certain-public-ev.pdf
   title: Audit of Certain Public Event Facility-Related Agreements (Audit Report 20-02)
@@ -3048,6 +3112,15 @@ sources:
   origin: independent
   date: '2022-06-06'
   checked: '2026-10-18'
+- id: roinj-sixers-camden-2024
+  url: https://www.roi-nj.com/2024/07/18/lifestyle/n-j-making-serious-push-to-lure-sixers-to-new-arena-in-camden/
+  title: N.J. making serious push to lure Sixers to new arena in Camden
+  title_from: curated
+  publisher: ROI-NJ
+  origin: independent
+  date: '2024-07-18'
+  checked: '2026-10-22'
+  review: HTTP 403 to scripts; read through a summarizing fetch
 - id: sa-termsheet
   url: https://www.sa.gov/files/assets/main/v/1/initiatives/sports-amp-entertainment-district/termsheet.pdf
   title: Term sheet for a new Spurs arena in the downtown sports and entertainment district
@@ -3065,6 +3138,14 @@ sources:
   date: '2014-05-21'
   checked: '2026-10-11'
   review: not reached (connection failed); title and date from the citation in the Wikipedia article Golden 1 Center
+- id: sacramento-acfr-fy2021
+  url: https://www.cityofsacramento.gov/content/dam/portal/finance/Accounting/Financial-Reporting/CAFR-Documents/2021-ACFR-PDF-WITH-TABS.pdf
+  title: Annual Comprehensive Financial Report, fiscal year ended June 30, 2021
+  title_from: curated
+  publisher: City of Sacramento
+  origin: government
+  date: '2021'
+  checked: '2026-10-22'
 - id: sacramento-auditor-golden1-hiring-2017
   url: http://sacramento.granicus.com/MetaViewer.php?view_id=21&event_id=3117&meta_id=508994
   title: Follow-Up Audit of the Golden1 Center Local Hiring and Business Involvement (Budget and Audit Committee report, File ID 2017-01564)
@@ -3354,6 +3435,22 @@ sources:
   origin: independent
   date: '2023-08-29'
   checked: '2026-10-11'
+- id: slc-cafr-fy2003
+  url: http://www.slcdocs.com/accounting/CAFR2003.pdf
+  title: Comprehensive Annual Financial Report, fiscal year 2003
+  title_from: curated
+  publisher: Salt Lake City Corporation
+  origin: government
+  date: '2003'
+  checked: '2026-10-22'
+- id: slc-council-minutes-1989-03-07
+  url: https://www.slcinfobase.com/FormalMinutes_1982-2010/Documents/march71989.htm
+  title: City Council minutes, Mar. 7, 1989
+  title_from: curated
+  publisher: Salt Lake City Council
+  origin: independent
+  date: '1989-03-07'
+  checked: '2026-10-22'
 - id: slc-council-sec-district-2024
   url: https://www.slc.gov/council/salt-lake-city-council-approves-sports-entertainment-culture-and-convention-district/
   title: Salt Lake City Council approves Sports, Entertainment, Culture and Convention District
@@ -3361,6 +3458,14 @@ sources:
   publisher: Salt Lake City Council
   origin: government
   date: '2024-10-01'
+  checked: '2026-10-22'
+- id: slc-council-work-session-1991-01-03
+  url: https://www.slcinfobase.com/WorkSessionMinutes_1983-2010/WordDocuments/january31991.htm
+  title: City Council work session minutes, Jan. 3, 1991
+  title_from: curated
+  publisher: Salt Lake City Council
+  origin: independent
+  date: '1991-01-03'
   checked: '2026-10-22'
 - id: slc-slc-acfr-06-30-2025
   url: https://www.slc.gov/Finance/wp-content/uploads/sites/3/2026/04/SLC-ACFR-06.30.2025.pdf
@@ -3564,6 +3669,30 @@ sources:
   origin: independent
   date: '2026-04-09'
   checked: '2026-10-11'
+- id: tn-private-chapter-67-2024
+  url: https://www.capitol.tn.gov/Bills/113/Bill/HB3004.pdf
+  title: 'House Bill 3004 (Private Chapter 67, 2024): Shelby County hotel occupancy tax for the arena'
+  title_from: curated
+  publisher: Tennessee General Assembly
+  origin: independent
+  date: '2024-05-21'
+  checked: '2026-10-22'
+- id: tn-public-chapter-272-2023
+  url: https://www.capitol.tn.gov/Bills/113/Bill/HB1129.pdf
+  title: 'House Bill 1129 (Public Chapter 272, 2023): Memphis car-rental surcharge for the arena to June 30, 2059'
+  title_from: curated
+  publisher: Tennessee General Assembly
+  origin: independent
+  date: '2023'
+  checked: '2026-10-22'
+- id: tn-public-chapter-405-2023
+  url: https://www.capitol.tn.gov/Bills/113/Bill/HB1085.pdf
+  title: 'House Bill 1085 (Public Chapter 405, 2023): state sales-tax apportionment for an NBA arena to June 30, 2059'
+  title_from: curated
+  publisher: Tennessee General Assembly
+  origin: independent
+  date: '2023'
+  checked: '2026-10-22'
 - id: tpr-city-scraps-garage-project-marvel-2027-bond
   url: https://www.tpr.org/economy-and-labor/2026-10-05/city-scraps-plans-for-parking-garage-as-part-of-project-marvel-improvements-in-2027-bond
   title: City scraps plans for parking garage as part of Project Marvel improvements in 2027 bond

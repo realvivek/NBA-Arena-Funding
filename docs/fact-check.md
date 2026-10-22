@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-225 figures, 28 datasets, 541 sources. Ledger as of 2026-10-22.
+225 figures, 28 datasets, 557 sources. Ledger as of 2026-10-22.
 
 ## Figures
 
@@ -269,7 +269,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Shown as: 2.3 (2.3)
 - Value: 2.31814 number, 2026 dollars
 - Label: (a)
-- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government); [Delta Center](https://en.wikipedia.org/wiki/Delta_Center) (independent); [Salt Lake City approves new Delta Center lease that could extend 100 years](https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years) (independent); [Notice of Public Hearing, Interlocal Agreement and Bonds to Be Issued (Downtown Revitalization Public Infrastructure District)](https://www.utah.gov/pmn/files/1261183.pdf) (government); [Debut issuer will sell bonds for Salt Lake City arena project](https://bondbuyer.com/news/new-issuer-will-sell-bonds-for-salt-lake-city-arena-project) (independent)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government); [Delta Center](https://en.wikipedia.org/wiki/Delta_Center) (independent); [Salt Lake City approves new Delta Center lease that could extend 100 years](https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years) (independent); [City Council minutes, Mar. 7, 1989](https://www.slcinfobase.com/FormalMinutes_1982-2010/Documents/march71989.htm) (independent); [City Council work session minutes, Jan. 3, 1991](https://www.slcinfobase.com/WorkSessionMinutes_1983-2010/WordDocuments/january31991.htm) (independent); [Comprehensive Annual Financial Report, fiscal year 2003](http://www.slcdocs.com/accounting/CAFR2003.pdf) (government); [Notice of Public Hearing, Interlocal Agreement and Bonds to Be Issued (Downtown Revitalization Public Infrastructure District)](https://www.utah.gov/pmn/files/1261183.pdf) (government); [Debut issuer will sell bonds for Salt Lake City arena project](https://bondbuyer.com/news/new-issuer-will-sell-bonds-for-salt-lake-city-arena-project) (independent)
 - Note: The 2025 renovation's $525 million of city sales-tax money against the arena's 1991 construction cost, both in 2026 dollars. Construction costs have risen faster than consumer prices, so in construction terms the multiple would be smaller.
 - Method: `select (select public_2026_m from items where item_id = 'UTA-renovation-3') / (select spending_2026_m from items where item_id = 'UTA-construction')`
 
@@ -918,16 +918,16 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `threat_episodes`: Episodes in the threat ledger
 
-- Shown as: 50 (50)
-- Value: 50 count
+- Shown as: 51 (51)
+- Value: 51 count
 - Label: (a)
 - Sources: [Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats) (independent)
 - Method: `select count(*) from threats`
 
 ### `threats_counted`: Explicit or implied relocation threats by owners or the league
 
-- Shown as: 20 (20)
-- Value: 20 count
+- Shown as: 21 (21)
+- Value: 21 count
 - Label: (a)
 - Sources: [Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats) (independent)
 - Method: `select v from comparison where k = 'episodes_explicit_or_implied'`
@@ -1253,16 +1253,16 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_n`: Documents in the bibliography (not counting this site's own ledgers)
 
-- Shown as: 537 (537)
-- Value: 537 count
+- Shown as: 553 (553)
+- Value: 553 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where publisher <> 'This site'`
 
 ### `sources_government`: Government sources
 
-- Shown as: 144 (144)
-- Value: 144 count
+- Shown as: 148 (148)
+- Value: 148 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'government' and publisher <> 'This site'`
@@ -1285,8 +1285,8 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_independent`: Independent sources
 
-- Shown as: 360 (360)
-- Value: 360 count
+- Shown as: 372 (372)
+- Value: 372 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'independent' and publisher <> 'This site'`
@@ -1880,21 +1880,21 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ## Datasets behind the charts and tables
 
-- `items`: Every public-money item in the ledger. 195 rows; 165 sources.
+- `items`: Every public-money item in the ledger. 195 rows; 177 sources.
 - `item-buckets`: Public money in each item by funding stream. 82 rows; 1 sources.
 - `public-layers`: Public money in the 30 current arenas, by kind. 5 rows; 2 sources. The five parts of the expanded total. Building includes Barclays Center's PILOT bonds, which paid for its construction and are repaid with the property tax the arena would otherwise owe. Tax breaks are property-tax exemptions (Madison Square Garden, the United Center's valuation formula); the federal cost of tax-exempt bonds is not included.
-- `rebuild-by-year`: Public money by year, for new arenas and for existing ones. 63 rows; 115 sources. Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year. binding marks commitments that are signed, such as Oklahoma City's arena under construction.
-- `arenas`: The 30 current arenas, public and private money. 30 rows; 80 sources. Private money is construction and renovation spending not paid by the public. Tax breaks are the Barclays Center PILOT bonds and the exemptions counted in the expanded total.
+- `rebuild-by-year`: Public money by year, for new arenas and for existing ones. 63 rows; 124 sources. Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year. binding marks commitments that are signed, such as Oklahoma City's arena under construction.
+- `arenas`: The 30 current arenas, public and private money. 30 rows; 92 sources. Private money is construction and renovation spending not paid by the public. Tax breaks are the Barclays Center PILOT bonds and the exemptions counted in the expanded total.
 - `arena-map`: Where the public money went, arena by arena. 30 rows; 31 sources. Locations from each arena's Wikipedia article; money from the ledger.
 - `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 83 sources.
-- `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 21 rows; 35 sources.
+- `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 21 rows; 38 sources.
 - `who-pays`: Public capital money by funding stream. 9 rows; 2 sources.
 - `payer-periods`: Public capital money by who mostly pays, before and since 2014. 6 rows; 2 sources. Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.
-- `households`: Public money in the largest deals, per household in the jurisdictions that pay. 22 rows; 95 sources.
-- `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 16 rows; 95 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.
+- `households`: Public money in the largest deals, per household in the jurisdictions that pay. 22 rows; 107 sources.
+- `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 16 rows; 107 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.
 - `uc-bills`: United Center property-tax bills, with and without the 1989 valuation formula. 23 rows; 6 sources. Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.
 - `ongoing`: Yearly public payments to teams or arena operators. 117 rows; 25 sources.
-- `threats`: Relocation threats and what followed. 50 rows; 126 sources.
+- `threats`: Relocation threats and what followed. 51 rows; 131 sources.
 - `threat-deals`: Deals compared, with and without a prior threat. 22 rows; 2 sources. Public money at the deal year in 2025 dollars from compare.py, converted to 2026 dollars.
 - `left-behind`: Cities that kept paying after a team left. 9 rows; 19 sources.
 - `leases`: When each arena lease ends, and what leaving costs. 30 rows; 61 sources.

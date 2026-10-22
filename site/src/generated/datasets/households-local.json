@@ -5,11 +5,17 @@
   "ledger",
   "census-b11001-2024",
   "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+  "slc-council-minutes-1989-03-07",
+  "slc-council-work-session-1991-01-03",
+  "slc-cafr-fy2003",
   "utah-pmn",
   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
   "wiki-delta-center",
   "slc-slc-acfr-06-30-2025",
   "wiki-paycom-center",
+  "ok-sb1819-2008",
+  "ok-tax-commission-quality-jobs-fy2010",
+  "ok-sb604-2023",
   "okc-city-council-approves-letter-of-intent-with-the",
   "bondbuyer-financing-team-in-place-for-oklahoma-city-arena",
   "kutakrock-kutak-rock-tax-counsel-disclosure-counsel",
@@ -32,6 +38,7 @@
   "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
   "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
   "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+  "sacramento-acfr-fy2021",
   "occompt-occompt",
   "occompt-occompt-2",
   "oppaga-15-01",
@@ -45,6 +52,11 @@
   "degc-ugd-3",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
+  "mlgw-board-minutes-2026-08-19",
+  "memphis-council-agenda-2026-09-01",
+  "tn-private-chapter-67-2024",
+  "tn-public-chapter-405-2023",
+  "tn-public-chapter-272-2023",
   "tri-statedefender-p-349496",
   "downtownmemphis-city-council-approves-two-key-funding-m",
   "dailymemphian",
@@ -127,6 +139,9 @@
    ],
    "sources": [
     "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+    "slc-council-minutes-1989-03-07",
+    "slc-council-work-session-1991-01-03",
+    "slc-cafr-fy2003",
     "utah-pmn",
     "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
     "wiki-delta-center",
@@ -149,6 +164,9 @@
    ],
    "sources": [
     "wiki-paycom-center",
+    "ok-sb1819-2008",
+    "ok-tax-commission-quality-jobs-fy2010",
+    "ok-sb604-2023",
     "okc-city-council-approves-letter-of-intent-with-the",
     "bondbuyer-financing-team-in-place-for-oklahoma-city-arena",
     "kutakrock-kutak-rock-tax-counsel-disclosure-counsel",
@@ -228,7 +246,8 @@
     }
    ],
    "sources": [
-    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c"
+    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+    "sacramento-acfr-fy2021"
    ]
   },
   {
@@ -318,6 +337,11 @@
    "sources": [
     "memphistn-fy05-annual-report",
     "memphistn-fy15-annual-report",
+    "mlgw-board-minutes-2026-08-19",
+    "memphis-council-agenda-2026-09-01",
+    "tn-private-chapter-67-2024",
+    "tn-public-chapter-405-2023",
+    "tn-public-chapter-272-2023",
     "tri-statedefender-p-349496",
     "downtownmemphis-city-council-approves-two-key-funding-m",
     "dailymemphian",

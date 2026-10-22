@@ -68,6 +68,11 @@
   "wiki-crypto-com-arena",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
+  "mlgw-board-minutes-2026-08-19",
+  "memphis-council-agenda-2026-09-01",
+  "tn-private-chapter-67-2024",
+  "tn-public-chapter-405-2023",
+  "tn-public-chapter-272-2023",
   "tri-statedefender-p-349496",
   "downtownmemphis-city-council-approves-two-key-funding-m",
   "dailymemphian",
@@ -105,6 +110,9 @@
   "sec-msg12312013-10q",
   "sec-msg6302013-10k",
   "wiki-paycom-center",
+  "ok-sb1819-2008",
+  "ok-tax-commission-quality-jobs-fy2010",
+  "ok-sb604-2023",
   "news9-voters-approve-sales-tax-extension",
   "okc-maps4-downtown-arena-related-facilities",
   "okc-audit-of-certain-public-ev",
@@ -139,6 +147,7 @@
   "multco-news-release-board-commissioners-advances-framew",
   "portland-adopted",
   "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+  "sacramento-acfr-fy2021",
   "cityofsacramento-20170905golden1centermerrittharrisexecutive",
   "bexar-adid-1188",
   "bexar-2019-tax-exempt-venue-project-revenue-refunding",
@@ -156,6 +165,9 @@
   "scotiabankarena-history",
   "nsnews-a-look-at-torontos-scotiabank-arena-as-it-underg",
   "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+  "slc-council-minutes-1989-03-07",
+  "slc-council-work-session-1991-01-03",
+  "slc-cafr-fy2003",
   "wiki-delta-center",
   "slc-slc-acfr-06-30-2025",
   "utah-pmn",
@@ -1186,10 +1198,15 @@
    "public_2026_m": 438.968554,
    "cost_label": "b",
    "public_label": "b",
-   "note": "City CAFR FY2005: \"The total construction cost of $250,000 [thousand] is to be funded from $186,000 from Senior Lien Revenue Bonds, $20,000 from Subordinate Lien Revenue Bonds, $12,000 each by the City and the County from non-ad valorem revenues, and $20,000 from the State of Tennessee for a parking structure and intermodal transfer station.\" Sports Authority bonds ($206M) are repaid from seat fees, state sales-tax rebates on Grizzlies-generated taxes (2001-2031), county car-rental fees, city and county hotel-motel taxes and MLGW in-lieu-of-tax payments (FY2015 CAFR; split not documented -> mixed). City $12M for site and infrastructure, to be repaid from hotel-motel taxes (-> tourist); County $12M (general); State $20M parking structure (general). Total includes site, infrastructure and the parking structure; no team contribution in the funding table.",
+   "note": "City CAFR FY2005: \"The total construction cost of $250,000 [thousand] is to be funded from $186,000 from Senior Lien Revenue Bonds, $20,000 from Subordinate Lien Revenue Bonds, $12,000 each by the City and the County from non-ad valorem revenues, and $20,000 from the State of Tennessee for a parking structure and intermodal transfer station.\" Sports Authority bonds ($206M) are repaid from seat fees, state sales-tax rebates on Grizzlies-generated taxes (2001-2031), county car-rental fees, city and county hotel-motel taxes and MLGW in-lieu-of-tax payments (FY2015 CAFR; split not documented -> mixed). City $12M for site and infrastructure, to be repaid from hotel-motel taxes (-> tourist); County $12M (general); State $20M parking structure (general). Total includes site, infrastructure and the parking structure; no team contribution in the funding table. The 2001 MLGW Water PILOT ($2.5M a year through FY2028) was pledged to the senior arena bonds, so it is inside this money; MLGW's board (7-0, Aug 19 2026) and the City Council (Sept 1 2026) extended it to FY2048, \"exclusively for the maintenance and/or capital improvements\" of FedExForum: $2.5M a year for FY2029-48, $50M nominal, future and not counted (b). Private Chapter 67 (2024) allocates up to $11.4M a year of the county hotel tax, from July 2025, to the county's arena bond debt service and payments under the arena agreements (b; county approval not confirmed): a funding source for money already counted or pending, not added. 2023 Public Chapters 405 and 272 extend the state sales-tax apportionment and the car-rental surcharge for the arena to June 30 2059 (b): future money, not counted.",
    "sources": [
     "memphistn-fy05-annual-report",
-    "memphistn-fy15-annual-report"
+    "memphistn-fy15-annual-report",
+    "mlgw-board-minutes-2026-08-19",
+    "memphis-council-agenda-2026-09-01",
+    "tn-private-chapter-67-2024",
+    "tn-public-chapter-405-2023",
+    "tn-public-chapter-272-2023"
    ]
   },
   {
@@ -3786,9 +3803,12 @@
    "public_2026_m": 164.467877,
    "cost_label": "c",
    "public_label": "c",
-   "note": "Built with the MAPS (1993) one-cent sales tax before the NBA arrived.",
+   "note": "Built with the MAPS (1993) one-cent sales tax before the NBA arrived. Not counted, a memo like the Pelicans' pre-lease rebates: state Quality Jobs payroll rebates to the team under SB 1819 (approved Apr 17 2008, the day before the NBA approved the move; b), $14.87M in FY2010-FY2013 (b, Tax Commission reports); contracts extended to 30 years by SB 604 (2023, b); later years only as an industry total ($40.8M for 2011-2018, b) or in press.",
    "sources": [
-    "wiki-paycom-center"
+    "wiki-paycom-center",
+    "ok-sb1819-2008",
+    "ok-tax-commission-quality-jobs-fy2010",
+    "ok-sb604-2023"
    ]
   },
   {
@@ -4151,9 +4171,10 @@
    "public_2026_m": 308.292103,
    "cost_label": "b",
    "public_label": "b",
-   "note": "City Contribution $223,130,100 = $220,426,649 of Series 2015 (federally taxable) lease-revenue bond proceeds + $2,703,451 other City moneys; City has no obligation beyond it. City also transferred development parcels/billboard rights (value not documented). City CAFR FY2017 records the arena as \"sold to the Sacramento Kings\" under the arena lease (sales-type lease accounting; minimum lease payments $407.7M over 36 years).",
+   "note": "City Contribution $223,130,100 = $220,426,649 of Series 2015 (federally taxable) lease-revenue bond proceeds + $2,703,451 other City moneys; City has no obligation beyond it. City also transferred development parcels/billboard rights (value not documented). City CAFR FY2017 records the arena as \"sold to the Sacramento Kings\" under the arena lease (sales-type lease accounting; minimum lease payments $407.7M over 36 years). The rental payments are a General Fund obligation (2015 OS, b); the FY2021 ACFR records a one-time $5M General Fund transfer to the bond fund's liquidity reserve (b), and press reported \"more than $5.7 million\" from the general fund over two years by 2023 (Sacramento Bee via Field of Schemes, c). Debt service on these counted bonds, not added.",
    "sources": [
     "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+    "sacramento-acfr-fy2021",
     "cityofsacramento-20170905golden1centermerrittharrisexecutive"
    ]
   },
@@ -4310,9 +4331,12 @@
    "public_2026_m": 0.0,
    "cost_label": "c",
    "public_label": "c",
-   "note": "Built privately by Larry H. Miller on RDA-owned land leased at $1/yr to 2060 (land value not documented for 1990; 2026 assessed land $68.77M, exempt). RDA cash/TIF help in 1990 reported but unverified (forum citing ~$18.7M) -> blank.",
+   "note": "Built privately by Larry H. Miller on RDA-owned land leased at $1/yr to 2060 (land value not documented for 1990; 2026 assessed land $68.77M, exempt). Redevelopment Agency tax-increment bond financing for the arena is documented in 1989-91 council records (b): $20M planned (Mar 7 1989) and a debt service reserve \"for the Jazz arena financing\" (Jan 3 1991); the RDA's Dec 1990 remarketing of $24.27M of Utah Municipal Finance Cooperative bonds, repaid from tax increment (CAFR FY2003, b), is the likely issue, but its purpose is not stated, so the amount stays blank. Alternative: ~$18.7M (c, forum).",
    "sources": [
     "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+    "slc-council-minutes-1989-03-07",
+    "slc-council-work-session-1991-01-03",
+    "slc-cafr-fy2003",
     "wiki-delta-center"
    ]
   },

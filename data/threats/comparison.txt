@@ -64,16 +64,16 @@ S7: stratified - RENOVATIONS/UPGRADES only
   threat: n=3 | public $ (2025$) median 189, mean 263 | public share n=3 median 64%, mean 76%
   no threat: n=9 | public $ (2025$) median 191, mean 254 | public share n=7 median 78%, mean 73%
 
-THREAT OUTCOMES (explicit/implied episodes in threat_ledger.csv: n=20)
+THREAT OUTCOMES (explicit/implied episodes in threat_ledger.csv: n=21)
 - Same-city public money approved afterward: 12 (E01, E03, E07, E10, E14, E15, E17, E18, E19, E20, E21, E50)
 - Same-city public money approved but not final: 1 (E22: Oregon's SB 1501 bonds, pending agreements)
 - Team left; destination city paid (Memphis $250M, Oklahoma City $121.6M, New York PV ~$492M non-federal; New Orleans package): 4 (E08, E09, E13, E36)
-- No new money and team stayed: 3 (E11, E12, E16; SAC 2011 was followed by E17 money)
+- No new money and team stayed: 4 (E11, E12, E16, E51; SAC 2011 was followed by E17 money; PHI 2024 rests on anonymous sources, and without it the counts are 12 of 20)
 - Months from first documented threat to first same-city approval (n=12): median 3.9, min 1.1, max 66.4; 11 of 12 within 24 months
   E03 MIA Heat 1.1; E19 PHX Suns 1.4; E17 SAC Kings 2.1; E14 IND Pacers 3.1; E21 WAS Wizards 3.6; E01 MIN Timberwolves 3.8; E50 GSW Warriors 4.1; E07 HOU Rockets 7.0; E18 MIL Bucks 15.7; E15 NOH Hornets 18.3; E20 MEM Grizzlies 21.6; E10 ORL Magic 66.4
 - League role: backed or enabled the threat in HOU 2000 (Stern ultimatum), MIL 2015 (buy-back clause), SEA->OKC 2008 and CHA->NOH 2002 (relocations approved); opposed in MIN 1994, SAC 2011 and SAC 2013 - yet home-city money still followed in MIN 1994 and SAC 2014.
 
-DESTINATION / LURE MONEY (not in T vs N): Memphis 2001 $250M (100% public); Oklahoma City 2008 $121.6M sales tax; Charlotte 2002 ~$265M for the expansion team after the Hornets left; New York 2006-09 PV $350M city + $142M state/MTA (+$194M federal via tax-exempt bonds); Detroit 2017 $34.5M for the Pistons; Kansas City 2004 ~$212M (no team came); offers not used: Seattle 2012 up to $200M, Anaheim 2011 $75M bonds, Louisville 2001 $200M arena, Virginia 2024 ~$1.47B bonds.
+DESTINATION / LURE MONEY (not in T vs N): Memphis 2001 $250M (100% public); Oklahoma City 2008 $121.6M sales tax; Charlotte 2002 ~$265M for the expansion team after the Hornets left; New York 2006-09 PV $350M city + $142M state/MTA (+$194M federal via tax-exempt bonds); Detroit 2017 $34.5M for the Pistons; Kansas City 2004 ~$212M (no team came); offers not used: Seattle 2012 up to $200M, Anaheim 2011 $75M bonds, Louisville 2001 $200M arena, Virginia 2024 ~$1.47B bonds, New Jersey 2024 up to $400M of Aspire tax credits (ROI-NJ) or about $800M (Inquirer) for a Camden arena.
 
 CAVEATS
 - Small samples (9 vs 13); p-values are descriptive only; none of the differences is statistically distinguishable from chance. Deal sizes are driven by era, arena age and scope (new build vs renovation), so a raw comparison cannot isolate the effect of a threat.
