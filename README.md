@@ -4,7 +4,7 @@ A sourced funding ledger for all 30 current NBA arenas: how each was paid for, w
 
 The write-up is in [`report/who-paid-for-nba-arenas.md`](report/who-paid-for-nba-arenas.md), and the same findings are published as a data story with reference pages, built from this repository (`site/`, see [`docs/site.md`](docs/site.md)). Everything in both traces to a row in `data/`, and every row carries its source URL.
 
-Figures are as of October 18, 2026, in 2026 dollars unless noted.
+Figures are as of October 22, 2026, in 2026 dollars unless noted.
 
 ## Findings
 
@@ -111,6 +111,8 @@ The helper scripts (`wiki_extract.py`, `wiki_fin.py`, `wx.py`, `g.py`, `pdftxt.p
 ## Open items
 
 - Replace the remaining 17 secondary construction costs. Most of the missing records are bond official statements on EMMA or older city reports that could not be reached (see `notes/verification.md`).
+- Settle the four construction splits that every compilation disputes, from 29% to 100% public: Indianapolis, Atlanta, Memphis and New Orleans (also Phoenix's and Charlotte's public shares). Their 1997-2003 bond official statements on EMMA would decide them (`totals.txt`, section I).
+- Value the property tax forgone at the 18 publicly owned arenas from assessor records, as was done for Washington, Barclays Center and Madison Square Garden, and check it against Propheter's estimates; value event-day city services for a few arenas; and check the land and early money other compilations report: Salt Lake City's 1991 help (about $19M), Philadelphia's city and state money (about $23M), Chicago's (about $11M) and Long's $20M for TD Garden.
 - Find a city record of Denver's seat-tax receipts before 1999, the United Center's 1994-2001 assessments and tax rates, and the value of TD Garden's 1992 Chapter 121A tax payments.
 - Find a primary record of Memphis's yearly subsidy, and fill the gaps in the payment series: Miami FY2011-12, Minneapolis 2019-2025, Charlotte before FY2020, Oklahoma City other than FY2023.
 - Search Atlanta, Dallas, Philadelphia, Toronto and the privately owned arenas' recurring public costs, which the October 16 research could not cover.
