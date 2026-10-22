@@ -8,7 +8,7 @@ The money has moved from building arenas to rebuilding them. Since 2014, public 
 
 Relocation threats worked as deadlines. Of 20 documented owner or league threats since 1994, 12 were followed by public money in the same city, 11 of them within two years, and Portland's money is approved but pending. Deals after a threat were no more lopsided than deals without one: at the median the public paid 64% after a threat and 78% without one.
 
-Residents carried slightly more of it than visitors: their sales, property and general taxes supplied 43% of public capital, against 42% from hotel, car-rental and food taxes. The research consensus is that the money does not come back in local growth.
+Residents carried slightly more of it than visitors: their sales, property and general taxes supplied 43% of public capital, against 42% from hotel, car-rental and food taxes. The mix has turned: visitor taxes supplied 47% of the money dated before 2014, and residents' taxes have supplied 61% since. Almost none of the recent money went to voters, and most of it went to the arenas of the league's less valuable teams. The research consensus is that the money does not come back in local growth.
 
 ## All 30 arenas
 
@@ -104,6 +104,20 @@ Spread over the households that pay, the biggest commitments run to thousands of
 | Spectrum Center | Charlotte | $1,467 |
 
 The payments continue for decades after opening. Documented yearly payments to seven teams already total $753M. The largest are Miami-Dade County's and Florida's payments to the Heat's arena operator ([Inspector General](https://www.miamidadeig.org/resources-oig/pdf/Reports2012/IG11.34FinalBasketball.pdf), [OPPAGA](https://oppaga.fl.gov/Documents/Reports/15-01.pdf)) and Indianapolis's spending under its Pacers agreements ([CIB audit](https://www.in.gov/sboa/WebReports/83950A.pdf)). Louisiana has budgeted $17.68M of Pelicans "lease entitlements" for FY2027, covering payments to the team, a player-tax allocation and game-day expenses ([Louisiana Senate](https://www.senate.la.gov/FiscalServices/Presentations/2026/01%20-%20124%20LSED%20FY%2027%20FINAL.pdf)).
+
+## Who paid, who decided and who got it
+
+Four patterns in the ledger did not show in totals alone. Each is computed from the committed data, and the queries are in `pipeline/stats.yaml`.
+
+**Residents now pay most of it.** Items are dated as the ledger dates them: construction in the year an arena opened, renovations in the middle year of the work, purchases in the year of the sale and work under way in 2026. Of the $4.74B dated before 2014, visitor taxes supplied 47.2%, taxes residents mostly pay 27.2%, and land or money not split by stream 25.6%. Of the $4.10B dated since, residents' taxes supplied 61.4% and visitor taxes 35.9%, led by Salt Lake City's arena sales tax and Washington's general fund. Without those two deals, residents' share since 2014 is 47.8%, still well above the earlier 27.2%.
+
+**Voters decided almost none of it.** Of the $4.10B since 2014, $148M (3.6%) came from taxes that voters approved: Oklahoma City's MAPS 4 sales tax, approved Dec. 10, 2019, which paid for $27M of Paycom Center improvements ([city](https://www.okc.gov/Infrastructure-Development/Current-Infrastructure-Projects/MAPS-History)), and Bexar County's venue tax, extended on May 10, 2008 for projects that included $75M of improvements to the arena now called Frost Bank Center ([election results](https://www.bexar.org/DocumentCenter/View/8963/May-10-2008-Media-Report-Report), [Bond Buyer](https://www.bondbuyer.com/news/san-antonio-shopping-list)). City councils, county boards, legislatures and appointed boards approved the rest. A petition drive for a vote on Sacramento's arena failed to qualify for the ballot ([AP via Fox News](https://www.foxnews.com/sports/sacramento-approves-477-million-arena-caps-off-struggle-to-build-new-home-for-nbas-kings.amp)), and Cleveland's referendum petitions were withdrawn in 2017 ([News 5](https://www.news5cleveland.com/sports/basketball/cavaliers/cavaliers-withdraw-from-140-million-quicken-loans-arena-transformation-project)). The two most recent votes were for new arenas outside the 30-arena total: Oklahoma City's in 2023 and Bexar County's in 2025.
+
+**The least valuable teams got the most.** Ranked by Forbes's October 2026 values, the 10 least valuable teams play in arenas holding $4.77B of public money, 49.7% of it, and every one of those arenas took some. The middle 10 hold $3.41B. The 10 most valuable hold $1.41B, and five of their arenas took none. Counting the tax breaks for Madison Square Garden, Barclays Center and the United Center, the top 10 rise to $3.38B, still less. The rank correlation between a team's value and the public money in its arena is -0.60. A team's value tracks its market and the money its arena makes, so this shows where public money went, not why.
+
+**Renovations now rival the buildings.** Four renovations with public money since 2014 cost more than their arenas did to build, in 2026 dollars: Indianapolis (2020-22), Phoenix (2019-20), Washington (under way) and Salt Lake City (under way). Salt Lake City's public money alone, $525M, is 2.3 times the Delta Center's 1991 cost. Construction prices have risen faster than consumer prices, so a construction cost index would shrink these multiples.
+
+Miami's arena counts as privately built, but Miami-Dade County and Florida have paid its operator $335M since 1998 (2026 dollars), 4.5 times the county's land for the arena. The county's 2014 agreements schedule more: $6.4M a year through fiscal 2029, then $8.5M a year to June 2035, plus up to $2M a year of naming money through 2040 ([Commission Auditor](https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf), [ACFR FY2025](https://www.miamidadeclerk.gov/resources-clerk/library/finance/cafr2025-complete.pdf)).
 
 ## Relocation threats and what they bought
 

@@ -183,6 +183,40 @@ export function whoPaysTable(rows: any[]): Table {
   };
 }
 
+export function payerShiftTable(rows: any[]): Table {
+  const PAYER: Record<string, string> = { visitors: 'Mostly visitors', residents: 'Mostly residents', other: 'Land, or not split by stream' };
+  const PERIOD: Record<string, string> = { before: 'Before 2014', since: 'Since 2014' };
+  return {
+    columns: [
+      { key: 'period', label: 'Dated' },
+      { key: 'payer', label: 'Who mostly pays' },
+      { key: 'public', label: 'Public money (2026 $)', num: true },
+      { key: 'share', label: 'Share of the period', num: true },
+    ],
+    rows: rows.map((r) => ({ period: PERIOD[r.period], payer: PAYER[r.payer], public: m(r.public_2026_m), share: pct(r.share_pct, 1) })),
+  };
+}
+
+export function valueGroupsTable(rows: any[]): Table {
+  const ranked = [...rows].sort((a, b) => b.forbes_2026_b - a.forbes_2026_b || a.team.localeCompare(b.team));
+  const n = Math.round(ranked.length / 3);
+  const GROUP = [`The ${n} most valuable`, `The next ${n}`, `The ${n} least valuable`];
+  return {
+    columns: [
+      { key: 'team', label: 'Team' },
+      { key: 'value', label: 'Value, October 2026', num: true },
+      { key: 'group', label: 'Group' },
+      { key: 'public', label: 'Public money in the arena (2026 $)', num: true },
+    ],
+    rows: ranked.map((r, i) => ({
+      team: TEAM_NAME[r.team] ?? r.team,
+      value: money(r.forbes_2026_b * 1000, 2),
+      group: GROUP[Math.min(Math.floor(i / n), 2)],
+      public: m(r.public_2026_m) + (r.tax_breaks_2026_m ? ` (+ ${m(r.tax_breaks_2026_m)} tax breaks, not shown)` : ''),
+    })),
+  };
+}
+
 export function householdsTable(rows: any[]): Table {
   const out: Table['rows'] = [];
   for (const r of rows)

@@ -21,16 +21,21 @@ home:
       to: bill
       sources: [ledger]
     - p: >-
+        The {{value_group_n}} least valuable teams play in arenas holding **{{value_bottom10_public}}** of public
+        money, against {{value_top10_public}} for the {{value_group_n}} most valuable.
+      to: teams
+      sources: [ledger, team-ledger]
+    - p: >-
         Since 2014, renovating or buying arenas that already stand has drawn **{{rebuild_ratio}} times** as much
         public money as building new ones, counting Oklahoma City's arena under construction.
       to: rebuild
       sources: [ledger]
     - p: >-
-        Taxes on hotel rooms, car rentals, meals and tickets, which fall mostly on visitors, supplied
-        **{{visitors_share}}** of the money to build, renovate and buy the arenas. Taxes residents mostly pay
-        supplied {{residents_share}}.
+        Since 2014, taxes residents mostly pay have supplied **{{residents_share_since_2014}}** of the public money
+        to build, renovate and buy the arenas, up from {{residents_share_before_2014}} before, and
+        {{unvoted_since_2014_share}} of the money since 2014 was approved with no public vote.
       to: pays
-      sources: [ledger]
+      sources: [ledger, threat-ledger]
     - p: >-
         The average team is worth **{{value_mean_2026}}**, {{value_growth_2014}} times the 2014 average before
         inflation. None of the {{public_deals_read}} public arena deals whose terms could be read gives the public a
@@ -261,6 +266,12 @@ taxes:
         {{visitors_share}}, and land, or money the records do not split among its streams, {{other_share}}.
       sources: [ledger]
     - fig: whopays
+    - p: >-
+        The mix has changed over time. Before 2014, visitor taxes supplied {{visitors_share_before_2014}} of the
+        money; since then, taxes residents mostly pay have supplied {{residents_share_since_2014}}, led by Salt Lake
+        City's arena sales tax and Washington's general fund.
+      sources: [ledger]
+    - fig: payershift
     - h3: Salt Lake City's arena sales tax
     - p: >-
         The {{slc_sales_tax_rate}} city sales tax that repays the bonds for the Delta Center and the blocks

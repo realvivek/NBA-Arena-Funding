@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-182 figures, 27 datasets, 517 sources. Ledger as of 2026-10-18.
+206 figures, 28 datasets, 520 sources. Ledger as of 2026-10-18.
 
 ## Figures
 
@@ -263,6 +263,24 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Note: Indianapolis (the 2014 and 2019 agreements), Salt Lake City (the 2017 reimbursement and the 2025 renovation) and Washington (the 2024 purchase and renovation). The check confirms the three.
 - Method: `select min(v) from (select team, sum(public_2026_m) v from items where core and kind in ('renovation', 'purchase') and year >= 2014 group by team order by v desc limit 3)`
+
+### `uta_renovation_multiple`: Salt Lake City's public renovation money as a multiple of what the Delta Center cost to build
+
+- Shown as: 2.3 (2.3)
+- Value: 2.31814 number, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government); [Delta Center](https://en.wikipedia.org/wiki/Delta_Center) (independent); [Salt Lake City approves new Delta Center lease that could extend 100 years](https://www.ksl.com/article/51359287/salt-lake-city-approves-new-delta-center-lease-that-could-extend-100-years) (independent); [Notice of Public Hearing, Interlocal Agreement and Bonds to Be Issued (Downtown Revitalization Public Infrastructure District)](https://www.utah.gov/pmn/files/1261183.pdf) (government); [Debut issuer will sell bonds for Salt Lake City arena project](https://bondbuyer.com/news/new-issuer-will-sell-bonds-for-salt-lake-city-arena-project) (independent)
+- Note: The 2025 renovation's $525 million of city sales-tax money against the arena's 1991 construction cost, both in 2026 dollars. Construction costs have risen faster than consumer prices, so in construction terms the multiple would be smaller.
+- Method: `select (select public_2026_m from items where item_id = 'UTA-renovation-3') / (select spending_2026_m from items where item_id = 'UTA-construction')`
+
+### `renovations_over_cost_n`: Renovations with public money since 2014 that cost more than their arena did to build
+
+- Shown as: four (4)
+- Value: 4 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: Both in 2026 dollars, converted with consumer prices. Construction costs have risen faster than consumer prices, so a construction cost index would shrink these multiples. The check confirms the four are Indianapolis, Phoenix, Salt Lake City and Washington.
+- Method: `select count(*) from items r join items b on b.team = r.team and b.kind = 'construction' and b.core where r.core and r.kind = 'renovation' and r.year >= 2014 and r.public_2026_m > 0 and r.spending_2026_m > b.spending_2026_m`
 
 ### `pending_existing`: Public money pending for current arenas
 
@@ -527,6 +545,91 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
 - Method: `select sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'visitors'`
 
+### `visitors_share_before_2014`: Share of public capital dated before 2014 that came from taxes on visitors
+
+- Shown as: 47.2 percent (47.2%)
+- Value: 47.1918 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: Construction dated by the year the arena opened, renovations by the middle year of the work, purchases by the year of the sale. The check confirms that visitor taxes were the largest source before 2014.
+- Method: `select 100 * sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014`
+
+### `residents_share_before_2014`: Share of public capital dated before 2014 that came from taxes residents mostly pay
+
+- Shown as: 27.2 percent (27.2%)
+- Value: 27.1651 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select 100 * sum(b.public_2026_m) filter (where g.payer = 'residents') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014`
+
+### `other_share_before_2014`: Share of public capital dated before 2014 given as land, or not split by funding stream
+
+- Shown as: 25.6 percent (25.6%)
+- Value: 25.6431 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: Mostly Memphis's arena bonds, repaid from several taxes and fees that the records do not split, and Cleveland's county bonds.
+- Method: `select 100 * sum(b.public_2026_m) filter (where g.payer = 'other') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014`
+
+### `residents_share_since_2014`: Share of public capital dated 2014 or later that came from taxes residents mostly pay
+
+- Shown as: 61.4 percent (61.4%)
+- Value: 61.4192 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: Led by Salt Lake City's arena sales tax and Washington's general fund. Work still under way is dated 2026. The check confirms that taxes residents mostly pay supplied more than half.
+- Method: `select 100 * sum(b.public_2026_m) filter (where g.payer = 'residents') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014`
+
+### `visitors_share_since_2014`: Share of public capital dated 2014 or later that came from taxes on visitors
+
+- Shown as: 35.9 percent (35.9%)
+- Value: 35.8577 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select 100 * sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014`
+
+### `residents_share_since_2014_ex`: Share from taxes residents mostly pay since 2014, leaving out the Salt Lake City and Washington deals
+
+- Shown as: 47.8 percent (47.8%)
+- Value: 47.8172 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: A test of how much the shift depends on the two largest deals since 2014. The check confirms the share is still higher than before 2014.
+- Method: `select 100 * sum(b.public_2026_m) filter (where g.payer = 'residents') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014 and c.team not in ('UTA', 'WAS')`
+
+### `capital_before_2014`: Public capital in the 30 arenas dated before 2014
+
+- Shown as: $4.74 billion ($4.74B)
+- Value: 4,738.77 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Method: `select sum(public_2026_m) from capital where year < 2014`
+
+### `capital_since_2014`: Public capital in the 30 arenas dated 2014 or later
+
+- Shown as: $4.10 billion ($4.10B)
+- Value: 4,096.16 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Method: `select sum(public_2026_m) from capital where year >= 2014`
+
+### `voted_since_2014`: Public capital dated 2014 or later paid from taxes that voters approved
+
+- Shown as: $148 million ($148M)
+- Value: 148.328 usd_m, 2026 dollars
+- Label: (c/a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats) (independent); [MAPS History](https://www.okc.gov/Infrastructure-Development/Current-Infrastructure-Projects/MAPS-History) (government); [Media Report, Unofficial Results: May 10, 2008 Special Election (venue tax propositions)](https://www.bexar.org/DocumentCenter/View/8963/May-10-2008-Media-Report-Report) (government); [San Antonio Shopping List](https://www.bondbuyer.com/news/san-antonio-shopping-list) (independent)
+- Note: Oklahoma City's MAPS 4 sales tax, which voters approved on Dec. 10, 2019 and which paid for $27 million of Paycom Center improvements, and Bexar County's venue tax, which voters extended on May 10, 2008 for projects that included $75 million of improvements to the arena now called Frost Bank Center, renovated in 2015. The rest of the money dated 2014 or later was approved by city councils, county boards, legislatures or appointed boards, with no public vote (threat ledger, vote column).
+- Method: `select sum(public_2026_m) from capital where year >= 2014 and item_id in ('OKC-renovation-2', 'SAS-renovation-1')`
+
+### `unvoted_since_2014_share`: Share of public capital dated 2014 or later approved with no public vote
+
+- Shown as: 96 percent (96%)
+- Value: 96.3789 pct, share of 2026 dollars
+- Label: (c/a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats) (independent); [MAPS History](https://www.okc.gov/Infrastructure-Development/Current-Infrastructure-Projects/MAPS-History) (government); [Media Report, Unofficial Results: May 10, 2008 Special Election (venue tax propositions)](https://www.bexar.org/DocumentCenter/View/8963/May-10-2008-Media-Report-Report) (government)
+- Method: `select 100 - 100 * sum(public_2026_m) filter (where item_id in ('OKC-renovation-2', 'SAS-renovation-1')) / sum(public_2026_m) from capital where year >= 2014`
+
 ### `hh_uta`: Salt Lake City's Delta Center deal per household in the city
 
 - Shown as: $5,537 ($5,537)
@@ -771,6 +874,23 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Audit of the Agreements Between Miami-Dade County and Basketball Properties, Ltd., et al. to Operate the American Airlines Arena (Final Report IG11-34)](https://www.miamidadeig.org/resources-oig/pdf/Reports2012/IG11.34FinalBasketball.pdf) (government); [Miami-Dade County, Florida Annual Comprehensive Financial Report for the Fiscal Year Ended September 30, 2025](https://www.miamidadeclerk.gov/resources-clerk/library/finance/cafr2025-complete.pdf) (government); [Miami-Dade County Adopted Budgets, Volume 1 (budget archive folder)](https://www.miamidade.gov/resources/budget/archives/) (government); [Budget (Miami-Dade County Office of Management and Budget)](https://www.miamidade.gov/global/management/budget/home.page) (government); [Florida Economic Development Program Evaluations: Year 2 (Report No. 15-01)](https://oppaga.fl.gov/Documents/Reports/15-01.pdf) (government)
 - Method: `select sum(public_2026_m) from items where team = 'MIA' and kind = 'ongoing'`
 
+### `mia_construction_public`: Public money in building Miami's arena (the county's land)
+
+- Shown as: $75 million ($75M)
+- Value: 74.8626 usd_m, 2026 dollars
+- Label: (b/a)
+- Sources: [Audit of the Agreements Between Miami-Dade County and Basketball Properties, Ltd., et al. to Operate the American Airlines Arena (Final Report IG11-34)](https://www.miamidadeig.org/resources-oig/pdf/Reports2012/IG11.34FinalBasketball.pdf) (government); [The Heat’s Hot Air](https://www.miaminewtimes.com/news/the-heats-hot-air-6356397/) (independent)
+- Method: `select public_2026_m from items where item_id = 'MIA-construction'`
+
+### `mia_ongoing_multiple`: Miami's yearly payments to the arena operator as a multiple of the public money to build the arena
+
+- Shown as: 4.5 (4.5)
+- Value: 4.47863 number, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Note: Payments documented from 1998 to 2026 against the county's land for the arena, both in 2026 dollars. Payments still due under the agreement to 2040 are not counted.
+- Method: `select (select sum(public_2026_m) from items where team = 'MIA' and kind = 'ongoing') / (select public_2026_m from items where item_id = 'MIA-construction')`
+
 ### `nop_ongoing`: Louisiana stadium district payments to the Pelicans, documented
 
 - Shown as: $128 million ($128M)
@@ -990,16 +1110,16 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_n`: Documents in the bibliography (not counting this site's own ledgers)
 
-- Shown as: 513 (513)
-- Value: 513 count
+- Shown as: 516 (516)
+- Value: 516 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where publisher <> 'This site'`
 
 ### `sources_government`: Government sources
 
-- Shown as: 137 (137)
-- Value: 137 count
+- Shown as: 139 (139)
+- Value: 139 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'government' and publisher <> 'This site'`
@@ -1022,8 +1142,8 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_independent`: Independent sources
 
-- Shown as: 343 (343)
-- Value: 343 count
+- Shown as: 344 (344)
+- Value: 344 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'independent' and publisher <> 'This site'`
@@ -1342,6 +1462,90 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Note: The check confirms that Brooklyn's and New York's arenas rank first and second when tax breaks are counted.
 - Method: `select count(*) from arenas a where coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0) + coalesce(a.pilot_2026_m, 0) + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end > 0`
 
+### `value_group_n`: Teams in each third of the league by value
+
+- Shown as: 10 (10)
+- Value: 10 count
+- Label: (a)
+- Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `select count(*) / 3 from team_values`
+
+### `value_bottom10_public`: Public money in the arenas of the 10 least valuable teams
+
+- Shown as: $4.77 billion ($4.77B)
+- Value: 4,767.02 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Note: Values are Forbes's estimates of October 2026. Public money is the ledger's, without tax breaks. The check confirms that no two teams tie at the edges of the groups.
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select sum(i.public_2026_m) from items i join r using (team) where i.core and r.k <= 10`
+
+### `value_public_rank_corr`: Rank correlation between a team's value and the public money in its arena
+
+- Shown as: -0.60 (-0.60)
+- Value: -0.600563 number, Spearman rank correlation, 30 teams
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Note: Spearman's rank correlation, with tied ranks averaged (six teams' arenas have no public money). The check confirms it is clearly negative.
+- Method: `with v as (select t.team, t.forbes_2026_b as x, coalesce(p.m, 0) as y from team_values t left join (select team, sum(public_2026_m) as m from items where core group by team) p using (team)), r as (select rank() over (order by x) + (count(*) over (partition by x) - 1) / 2.0 as rx, rank() over (order by y) + (count(*) over (partition by y) - 1) / 2.0 as ry from v) select corr(rx, ry) from r`
+
+### `value_bottom10_share`: Share of all public money in the arenas of the 10 least valuable teams
+
+- Shown as: 49.7 percent (49.7%)
+- Value: 49.72 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select 100 * sum(i.public_2026_m) filter (where r.k <= 10) / sum(i.public_2026_m) from items i join r using (team) where i.core`
+
+### `value_bottom10_funded_n`: Of the 10 least valuable teams, those whose arenas have taken public money
+
+- Shown as: 10 (10)
+- Value: 10 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values), p as (select team, sum(public_2026_m) as m from items where core group by team) select count(*) from r join p using (team) where r.k <= 10 and p.m > 0`
+
+### `value_middle10_public`: Public money in the arenas of the 10 teams in the middle of the league by value
+
+- Shown as: $3.41 billion ($3.41B)
+- Value: 3,409.52 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select sum(i.public_2026_m) from items i join r using (team) where i.core and r.k between 11 and 20`
+
+### `value_top10_public`: Public money in the arenas of the 10 most valuable teams
+
+- Shown as: $1.41 billion ($1.41B)
+- Value: 1,411.19 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values) select sum(i.public_2026_m) from items i join r using (team) where i.core and r.k <= 10`
+
+### `value_top10_funded_n`: Of the 10 most valuable teams, those whose arenas have taken public money
+
+- Shown as: five (5)
+- Value: 5 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values), p as (select team, sum(public_2026_m) as m from items where core group by team) select count(*) from r join p using (team) where r.k <= 10 and p.m > 0`
+
+### `value_top10_with_breaks`: Public money and tax breaks in the arenas of the 10 most valuable teams
+
+- Shown as: $3.38 billion ($3.38B)
+- Value: 3,384.89 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Note: Adds Barclays Center's PILOT bonds and the property-tax breaks for Madison Square Garden and the United Center. The check confirms the total is still below the public money in the arenas of the 10 least valuable teams.
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values) select sum(coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0) + coalesce(a.pilot_2026_m, 0) + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end) from arenas a join r using (team) where r.k <= 10`
+
+### `public_owned_n`: Arenas the public owns
+
+- Shown as: 18 (18)
+- Value: 18 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: Owned by a city, county, state or public authority. Two more, Barclays Center and Little Caesars Arena, have public title, held for their financing, and private operators; the Lakers' and Jazz's arenas stand on public land but are privately owned. The check confirms the two.
+- Method: `select count(*) from arenas where owner_type like 'public%' and owner_type not like '%private operator%'`
+
 ### `owners_finance_n`: Teams whose controlling owners made their money mainly in finance
 
 - Shown as: 11 (11)
@@ -1525,6 +1729,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 81 sources.
 - `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 21 rows; 35 sources.
 - `who-pays`: Public capital money by funding stream. 9 rows; 2 sources.
+- `payer-periods`: Public capital money by who mostly pays, before and since 2014. 6 rows; 2 sources. Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.
 - `households`: Public money in the largest deals, per household in the jurisdictions that pay. 22 rows; 91 sources.
 - `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 16 rows; 91 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones.
 - `uc-bills`: United Center property-tax bills, with and without the 1989 valuation formula. 23 rows; 6 sources. Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.

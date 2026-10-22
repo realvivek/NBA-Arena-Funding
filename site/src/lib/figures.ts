@@ -14,6 +14,8 @@ export const FIG_DATA: Record<string, string> = {
   map: 'arena-map',
   takeovers: 'takeovers',
   whopays: 'who-pays',
+  payershift: 'payer-periods',
+  valuegroups: 'team-values',
   households: 'households-local',
   uc: 'uc-bills',
   ongoing: 'ongoing',
@@ -27,6 +29,7 @@ export const FIG_DATA: Record<string, string> = {
 export const FIG_RECORD: Record<string, { href: string; label: string }> = {
   rebuild: { href: sitePath('/arenas/'), label: "each arena's record" },
   arenas: { href: sitePath('/arenas/'), label: "each arena's record" },
+  valuegroups: { href: sitePath('/arenas/'), label: "each arena's record" },
   map: { href: sitePath('/arenas/'), label: "each arena's record" },
   takeovers: { href: sitePath('/arenas/'), label: "each arena's record" },
   households: { href: sitePath('/households/'), label: 'the households page' },

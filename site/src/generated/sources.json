@@ -276,6 +276,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "bexar-elections-2008-05-10-results",
+  "url": "https://www.bexar.org/DocumentCenter/View/8963/May-10-2008-Media-Report-Report",
+  "title": "Media Report, Unofficial Results: May 10, 2008 Special Election (venue tax propositions)",
+  "title_from": "curated",
+  "publisher": "Bexar County",
+  "origin": "government",
+  "date": "2008-05-15",
+  "checked": "2026-10-22"
+ },
+ {
   "id": "biztimes-bucks-sign-30-year-lease-agreement-with-wisconsi",
   "url": "https://biztimes.com/bucks-sign-30-year-lease-agreement-with-wisconsin-center-district/",
   "title": "Arena construction to begin June 18",
@@ -444,6 +454,16 @@
   "origin": "independent",
   "date": "2026-05-19",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "bondbuyer-san-antonio-shopping-list",
+  "url": "https://www.bondbuyer.com/news/san-antonio-shopping-list",
+  "title": "San Antonio Shopping List",
+  "title_from": "page title",
+  "publisher": "The Bond Buyer",
+  "origin": "independent",
+  "date": "2008-01-08",
+  "checked": "2026-10-22"
  },
  {
   "id": "bondbuyer-seattle-to-pay-off-arena-gos",
@@ -3304,6 +3324,17 @@
   "origin": "government",
   "date": "2026-10-12",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "okc-maps-history",
+  "url": "https://www.okc.gov/Infrastructure-Development/Current-Infrastructure-Projects/MAPS-History",
+  "title": "MAPS History",
+  "title_from": "curated",
+  "publisher": "City of Oklahoma City",
+  "origin": "government",
+  "date": "n.d.",
+  "checked": "2026-10-22",
+  "review": "not reached by script (HTTP 403); read through a summarizing fetch"
  },
  {
   "id": "okc-maps4-downtown-arena-related-facilities",

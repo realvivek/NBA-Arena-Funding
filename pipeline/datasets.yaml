@@ -163,6 +163,20 @@ datasets:
     group by all order by g.ord
   sources: [ledger, fred-cpiaucns]
 
+- id: payer-periods
+  title: Public capital money by who mostly pays, before and since 2014
+  sql: |
+    with t as (
+        select case when c.year < 2014 then 'before' else 'since' end as period, g.payer, b.public_2026_m, c.team
+        from buckets b join capital c using (item_id) join bucket_groups g using (bucket))
+    select period, case period when 'before' then 'Before 2014' else '2014 and later' end as period_name, payer,
+           sum(public_2026_m) as public_2026_m,
+           100 * sum(public_2026_m) / (select sum(public_2026_m) from t t2 where t2.period = t.period) as share_pct
+    from t group by period, payer
+    order by period, case payer when 'visitors' then 1 when 'residents' then 2 else 3 end
+  sources: [ledger, fred-cpiaucns]
+  note: Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.
+
 # ------------------------------------------------------------------ chart 6: per household
 - id: households
   title: Public money in the largest deals, per household in the jurisdictions that pay

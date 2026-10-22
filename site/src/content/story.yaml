@@ -50,6 +50,12 @@ teams:
         the most: **{{ind_public}}**, {{ind_share}} of everything spent on it, from construction to renovations and
         yearly payments.
       sources: [ledger, ibo-2023-march-description-of-public-subsidies-for-m]
+    - p: >-
+        The less a team is worth, the more public money its arena has tended to take. The {{value_group_n}} teams
+        worth the least, in Forbes's estimates, play in arenas holding **{{value_bottom10_public}}**,
+        {{value_bottom10_share}} of all the public money; the {{value_group_n}} worth the most, {{value_top10_public}}.
+      sources: [ledger, team-ledger]
+    - fig: valuegroups
     - teams: all
       title: All the teams
       intro: >-
@@ -72,6 +78,12 @@ rebuild:
       sources: [ledger]
     - fig: rebuild
     - p: >-
+        The renovations now rival the buildings. Since 2014, {{renovations_over_cost_n}} renovations with public
+        money have cost more than their arenas did to build, in 2026 dollars: in Indianapolis, Phoenix, Salt Lake
+        City and Washington. Salt Lake City's public money alone is {{uta_renovation_multiple}} times what the Delta
+        Center cost to build in 1991.
+      sources: [ledger]
+    - p: >-
         {{takeover_n:cap}} arenas built mainly with private money, in Atlanta, Minneapolis, Phoenix, Portland, Salt
         Lake City and Washington, were later bought or rebuilt with public money: **{{takeover_public}}**, of which
         {{takeover_pending}} is pending, against {{takeover_construction_public}} when they were built.
@@ -81,14 +93,26 @@ rebuild:
 
 pays:
   n: 4
-  title: Visitors pay a large share
+  title: The bill has shifted from visitors to residents
   blocks:
     - p: >-
         Taxes on hotel rooms, car rentals, restaurant meals and tickets, which fall mostly on visitors, supplied
-        **{{visitors_share}}** of the public money to build, renovate and buy the arenas. Taxes that residents
-        mostly pay supplied {{residents_share}}.
+        {{visitors_share}} of the public money to build, renovate and buy the arenas. Taxes that residents mostly
+        pay supplied {{residents_share}}.
       sources: [ledger]
-    - fig: whopays
+    - p: >-
+        The mix has changed. Before 2014, visitor taxes supplied **{{visitors_share_before_2014}}** of the money and
+        residents' taxes {{residents_share_before_2014}}. Since then, taxes residents mostly pay have supplied
+        **{{residents_share_since_2014}}**, led by Salt Lake City's arena sales tax and Washington's general fund.
+        Visitor taxes are still public money: a hotel tax spent on an arena is not spent on anything else.
+      sources: [ledger]
+    - fig: payershift
+    - p: >-
+        The decisions rarely went to voters. Of the {{capital_since_2014}} put or committed since 2014,
+        {{unvoted_since_2014_share}} was approved by councils, legislatures and appointed boards with no public vote.
+        The rest came from taxes voters had approved: Oklahoma City's MAPS 4 sales tax in 2019 and Bexar County's
+        venue tax, extended in 2008.
+      sources: [ledger, threat-ledger, okc-maps-history, bexar-elections-2008-05-10-results, bondbuyer-san-antonio-shopping-list]
     - p: >-
         Per household, the largest commitments are in Salt Lake City, where the Delta Center deal comes to
         **{{hh_uta}}** for each household in the city (an upper bound, because people who live elsewhere pay part
@@ -203,6 +227,56 @@ next:
   more:
     - { page: leases, text: 'Every lease and its exit terms' }
     - { page: threats, text: 'All the threat episodes' }
+
+claims:
+  n: 8
+  title: The arguments for the deals, checked against the record
+  blocks:
+    - p: >-
+        Arena deals come with familiar arguments. Here is how they hold up against the records gathered for this
+        story.
+    - cards:
+        - title: '"The team will leave without it"'
+          value: Teams seldom leave
+          text: >-
+            Owners or the league threatened to move a team at least {{threats_counted}} times since 1994. Teams left
+            {{threats_team_left}} times, and each time another city had public money waiting: Memphis, New Orleans,
+            Oklahoma City and Brooklyn.
+          sources: [threat-ledger]
+        - title: '"The public chose this"'
+          value: Rarely by vote
+          text: >-
+            Councils, legislatures and appointed boards approved {{unvoted_since_2014_share}} of the public capital
+            put or committed since 2014, with no public vote. Petition drives for a vote in Sacramento and Cleveland
+            ended without one.
+          sources: [ledger, threat-ledger, okc-maps-history, bexar-elections-2008-05-10-results, foxnews-sacramento-approves-477-million-arena-caps-off-s, news5cleveland-cavaliers-withdraw-from-140-million-quicken-l]
+        - title: '"Visitors pay for it"'
+          value: Less and less
+          text: >-
+            Visitor taxes supplied {{visitors_share_before_2014}} of the public capital before 2014 and
+            {{visitors_share_since_2014}} since. They are still public money: a hotel tax spent on an arena is not
+            spent on anything else.
+          sources: [ledger]
+        - title: '"It was built with private money"'
+          value: Not for long
+          text: >-
+            {{takeover_n:cap}} arenas built mainly with private money were later bought or rebuilt with public money.
+            Miami's counts as privately built, but the county and the state have paid its operator {{mia_ongoing}}
+            since 1998, {{mia_ongoing_multiple}} times the public money that went into building it.
+          sources: [ledger]
+        - title: '"The public owns the arena"'
+          value: And pays for its upkeep
+          text: >-
+            The public owns {{public_owned_n}} of the {{arenas_n}} arenas, and with them the bills for repairs and
+            renovations. None of the {{public_deals_read}} public deals whose terms could be read gives the public a
+            share when the team is sold.
+          sources: [ledger, team-ledger]
+        - title: '"It pays for itself"'
+          value: Not by the evidence
+          text: >-
+            Economists who reviewed more than {{research_studies}} studies over {{research_years}} years found "very
+            limited economic impacts of professional sports teams and stadiums."
+          sources: [bradbury-2023]
 
 method:
   n: 9

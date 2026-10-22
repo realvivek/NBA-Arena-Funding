@@ -17,6 +17,8 @@ import Ongoing from './charts/Ongoing.svelte';
 import Threats from './charts/Threats.svelte';
 import Leases from './charts/Leases.svelte';
 import Columns from './charts/Columns.svelte';
+import PayerShift from './charts/PayerShift.svelte';
+import ValueGroups from './charts/ValueGroups.svelte';
 import { dataset } from '../lib/data';
 import * as T from '../lib/tables';
 import { plain } from '../lib/copy';
@@ -42,6 +44,8 @@ const REG: Record<string, { C: any; data: string; table: (rows: any[]) => any; p
   map: { C: ArenaMap, data: 'arena-map', table: T.mapTable },
   takeovers: { C: Takeovers, data: 'takeovers', table: T.takeoversTable },
   whopays: { C: WhoPays, data: 'who-pays', table: T.whoPaysTable },
+  payershift: { C: PayerShift, data: 'payer-periods', table: T.payerShiftTable },
+  valuegroups: { C: ValueGroups, data: 'team-values', table: T.valueGroupsTable },
   households: { C: Households, data: 'households-local', table: T.householdsTable },
   uc: { C: UnitedCenter, data: 'uc-bills', table: T.ucTable },
   ongoing: { C: Ongoing, data: 'ongoing', table: T.ongoingTable },

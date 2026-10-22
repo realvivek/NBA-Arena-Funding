@@ -624,6 +624,51 @@
   "note": "Indianapolis (the 2014 and 2019 agreements), Salt Lake City (the 2017 reimbursement and the 2025 renovation) and Washington (the 2024 purchase and renovation). The check confirms the three.",
   "method": "select min(v) from (select team, sum(public_2026_m) v from items where core and kind in ('renovation', 'purchase') and year >= 2014 group by team order by v desc limit 3)"
  },
+ "uta_renovation_multiple": {
+  "key": "uta_renovation_multiple",
+  "title": "Salt Lake City's public renovation money as a multiple of what the Delta Center cost to build",
+  "value": 2.318141,
+  "unit": "number",
+  "basis": "2026 dollars",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns",
+   "wiki-delta-center",
+   "ksl-salt-lake-city-approves-new-delta-center-lease-t",
+   "utah-pmn",
+   "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar"
+  ],
+  "display": {
+   "long": "2.3",
+   "short": "2.3",
+   "title": "2.3",
+   "cap": "2.3"
+  },
+  "note": "The 2025 renovation's $525 million of city sales-tax money against the arena's 1991 construction cost, both in 2026 dollars. Construction costs have risen faster than consumer prices, so in construction terms the multiple would be smaller.",
+  "method": "select (select public_2026_m from items where item_id = 'UTA-renovation-3') / (select spending_2026_m from items where item_id = 'UTA-construction')"
+ },
+ "renovations_over_cost_n": {
+  "key": "renovations_over_cost_n",
+  "title": "Renovations with public money since 2014 that cost more than their arena did to build",
+  "value": 4.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "four",
+   "short": "4",
+   "title": "Four",
+   "cap": "Four"
+  },
+  "note": "Both in 2026 dollars, converted with consumer prices. Construction costs have risen faster than consumer prices, so a construction cost index would shrink these multiples. The check confirms the four are Indianapolis, Phoenix, Salt Lake City and Washington.",
+  "method": "select count(*) from items r join items b on b.team = r.team and b.kind = 'construction' and b.core where r.core and r.kind = 'renovation' and r.year >= 2014 and r.public_2026_m > 0 and r.spending_2026_m > b.spending_2026_m"
+ },
  "pending_existing": {
   "key": "pending_existing",
   "title": "Public money pending for current arenas",
@@ -1330,6 +1375,215 @@
   "note": "",
   "method": "select sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where g.payer = 'visitors'"
  },
+ "visitors_share_before_2014": {
+  "key": "visitors_share_before_2014",
+  "title": "Share of public capital dated before 2014 that came from taxes on visitors",
+  "value": 47.191781,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "47.2 percent",
+   "short": "47.2%",
+   "title": "47.2%",
+   "cap": "47.2 percent"
+  },
+  "note": "Construction dated by the year the arena opened, renovations by the middle year of the work, purchases by the year of the sale. The check confirms that visitor taxes were the largest source before 2014.",
+  "method": "select 100 * sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014"
+ },
+ "residents_share_before_2014": {
+  "key": "residents_share_before_2014",
+  "title": "Share of public capital dated before 2014 that came from taxes residents mostly pay",
+  "value": 27.165116,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "27.2 percent",
+   "short": "27.2%",
+   "title": "27.2%",
+   "cap": "27.2 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(b.public_2026_m) filter (where g.payer = 'residents') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014"
+ },
+ "other_share_before_2014": {
+  "key": "other_share_before_2014",
+  "title": "Share of public capital dated before 2014 given as land, or not split by funding stream",
+  "value": 25.643103,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "25.6 percent",
+   "short": "25.6%",
+   "title": "25.6%",
+   "cap": "25.6 percent"
+  },
+  "note": "Mostly Memphis's arena bonds, repaid from several taxes and fees that the records do not split, and Cleveland's county bonds.",
+  "method": "select 100 * sum(b.public_2026_m) filter (where g.payer = 'other') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year < 2014"
+ },
+ "residents_share_since_2014": {
+  "key": "residents_share_since_2014",
+  "title": "Share of public capital dated 2014 or later that came from taxes residents mostly pay",
+  "value": 61.419228,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "61.4 percent",
+   "short": "61.4%",
+   "title": "61.4%",
+   "cap": "61.4 percent"
+  },
+  "note": "Led by Salt Lake City's arena sales tax and Washington's general fund. Work still under way is dated 2026. The check confirms that taxes residents mostly pay supplied more than half.",
+  "method": "select 100 * sum(b.public_2026_m) filter (where g.payer = 'residents') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014"
+ },
+ "visitors_share_since_2014": {
+  "key": "visitors_share_since_2014",
+  "title": "Share of public capital dated 2014 or later that came from taxes on visitors",
+  "value": 35.857659,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "35.9 percent",
+   "short": "35.9%",
+   "title": "35.9%",
+   "cap": "35.9 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014"
+ },
+ "residents_share_since_2014_ex": {
+  "key": "residents_share_since_2014_ex",
+  "title": "Share from taxes residents mostly pay since 2014, leaving out the Salt Lake City and Washington deals",
+  "value": 47.817189,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "47.8 percent",
+   "short": "47.8%",
+   "title": "47.8%",
+   "cap": "47.8 percent"
+  },
+  "note": "A test of how much the shift depends on the two largest deals since 2014. The check confirms the share is still higher than before 2014.",
+  "method": "select 100 * sum(b.public_2026_m) filter (where g.payer = 'residents') / sum(b.public_2026_m) from buckets b join capital c using (item_id) join bucket_groups g using (bucket) where c.year >= 2014 and c.team not in ('UTA', 'WAS')"
+ },
+ "capital_before_2014": {
+  "key": "capital_before_2014",
+  "title": "Public capital in the 30 arenas dated before 2014",
+  "value": 4738.767563,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$4.74 billion",
+   "short": "$4.74B",
+   "title": "$4.74 Billion",
+   "cap": "$4.74 billion"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from capital where year < 2014"
+ },
+ "capital_since_2014": {
+  "key": "capital_since_2014",
+  "title": "Public capital in the 30 arenas dated 2014 or later",
+  "value": 4096.164512,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$4.10 billion",
+   "short": "$4.10B",
+   "title": "$4.10 Billion",
+   "cap": "$4.10 billion"
+  },
+  "note": "",
+  "method": "select sum(public_2026_m) from capital where year >= 2014"
+ },
+ "voted_since_2014": {
+  "key": "voted_since_2014",
+  "title": "Public capital dated 2014 or later paid from taxes that voters approved",
+  "value": 148.328009,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "c/a",
+  "sources": [
+   "ledger",
+   "threat-ledger",
+   "okc-maps-history",
+   "bexar-elections-2008-05-10-results",
+   "bondbuyer-san-antonio-shopping-list"
+  ],
+  "display": {
+   "long": "$148 million",
+   "short": "$148M",
+   "title": "$148 Million",
+   "cap": "$148 million"
+  },
+  "note": "Oklahoma City's MAPS 4 sales tax, which voters approved on Dec. 10, 2019 and which paid for $27 million of Paycom Center improvements, and Bexar County's venue tax, which voters extended on May 10, 2008 for projects that included $75 million of improvements to the arena now called Frost Bank Center, renovated in 2015. The rest of the money dated 2014 or later was approved by city councils, county boards, legislatures or appointed boards, with no public vote (threat ledger, vote column).",
+  "method": "select sum(public_2026_m) from capital where year >= 2014 and item_id in ('OKC-renovation-2', 'SAS-renovation-1')"
+ },
+ "unvoted_since_2014_share": {
+  "key": "unvoted_since_2014_share",
+  "title": "Share of public capital dated 2014 or later approved with no public vote",
+  "value": 96.378856,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": 0,
+  "label": "c/a",
+  "sources": [
+   "ledger",
+   "threat-ledger",
+   "okc-maps-history",
+   "bexar-elections-2008-05-10-results"
+  ],
+  "display": {
+   "long": "96 percent",
+   "short": "96%",
+   "title": "96%",
+   "cap": "96 percent"
+  },
+  "note": "",
+  "method": "select 100 - 100 * sum(public_2026_m) filter (where item_id in ('OKC-renovation-2', 'SAS-renovation-1')) / sum(public_2026_m) from capital where year >= 2014"
+ },
  "hh_uta": {
   "key": "hh_uta",
   "title": "Salt Lake City's Delta Center deal per household in the city",
@@ -1969,6 +2223,48 @@
   "note": "",
   "method": "select sum(public_2026_m) from items where team = 'MIA' and kind = 'ongoing'"
  },
+ "mia_construction_public": {
+  "key": "mia_construction_public",
+  "title": "Public money in building Miami's arena (the county's land)",
+  "value": 74.862627,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "b/a",
+  "sources": [
+   "miamidadeig-ig11-34finalbasketball",
+   "miaminewtimes-the-heats-hot-air-6356397"
+  ],
+  "display": {
+   "long": "$75 million",
+   "short": "$75M",
+   "title": "$75 Million",
+   "cap": "$75 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'MIA-construction'"
+ },
+ "mia_ongoing_multiple": {
+  "key": "mia_ongoing_multiple",
+  "title": "Miami's yearly payments to the arena operator as a multiple of the public money to build the arena",
+  "value": 4.478629,
+  "unit": "number",
+  "basis": "2026 dollars",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "4.5",
+   "short": "4.5",
+   "title": "4.5",
+   "cap": "4.5"
+  },
+  "note": "Payments documented from 1998 to 2026 against the county's land for the arena, both in 2026 dollars. Payments still due under the agreement to 2040 are not counted.",
+  "method": "select (select sum(public_2026_m) from items where team = 'MIA' and kind = 'ongoing') / (select public_2026_m from items where item_id = 'MIA-construction')"
+ },
  "nop_ongoing": {
   "key": "nop_ongoing",
   "title": "Louisiana stadium district payments to the Pelicans, documented",
@@ -2552,7 +2848,7 @@
  "sources_n": {
   "key": "sources_n",
   "title": "Documents in the bibliography (not counting this site's own ledgers)",
-  "value": 513.0,
+  "value": 516.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2561,10 +2857,10 @@
    "ledger"
   ],
   "display": {
-   "long": "513",
-   "short": "513",
-   "title": "513",
-   "cap": "513"
+   "long": "516",
+   "short": "516",
+   "title": "516",
+   "cap": "516"
   },
   "note": "",
   "method": "select count(*) from sources where publisher <> 'This site'"
@@ -2572,7 +2868,7 @@
  "sources_government": {
   "key": "sources_government",
   "title": "Government sources",
-  "value": 137.0,
+  "value": 139.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2581,10 +2877,10 @@
    "ledger"
   ],
   "display": {
-   "long": "137",
-   "short": "137",
-   "title": "137",
-   "cap": "137"
+   "long": "139",
+   "short": "139",
+   "title": "139",
+   "cap": "139"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'government' and publisher <> 'This site'"
@@ -2632,7 +2928,7 @@
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 343.0,
+  "value": 344.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -2641,10 +2937,10 @@
    "ledger"
   ],
   "display": {
-   "long": "343",
-   "short": "343",
-   "title": "343",
-   "cap": "343"
+   "long": "344",
+   "short": "344",
+   "title": "344",
+   "cap": "344"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"
@@ -3421,6 +3717,218 @@
   },
   "note": "The check confirms that Brooklyn's and New York's arenas rank first and second when tax breaks are counted.",
   "method": "select count(*) from arenas a where coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0) + coalesce(a.pilot_2026_m, 0) + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end > 0"
+ },
+ "value_group_n": {
+  "key": "value_group_n",
+  "title": "Teams in each third of the league by value",
+  "value": 10.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "team-ledger"
+  ],
+  "display": {
+   "long": "10",
+   "short": "10",
+   "title": "10",
+   "cap": "10"
+  },
+  "note": "",
+  "method": "select count(*) / 3 from team_values"
+ },
+ "value_bottom10_public": {
+  "key": "value_bottom10_public",
+  "title": "Public money in the arenas of the 10 least valuable teams",
+  "value": 4767.023586,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$4.77 billion",
+   "short": "$4.77B",
+   "title": "$4.77 Billion",
+   "cap": "$4.77 billion"
+  },
+  "note": "Values are Forbes's estimates of October 2026. Public money is the ledger's, without tax breaks. The check confirms that no two teams tie at the edges of the groups.",
+  "method": "with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select sum(i.public_2026_m) from items i join r using (team) where i.core and r.k <= 10"
+ },
+ "value_public_rank_corr": {
+  "key": "value_public_rank_corr",
+  "title": "Rank correlation between a team's value and the public money in its arena",
+  "value": -0.600563,
+  "unit": "number",
+  "basis": "Spearman rank correlation, 30 teams",
+  "digits": 2,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger"
+  ],
+  "display": {
+   "long": "-0.60",
+   "short": "-0.60",
+   "title": "-0.60",
+   "cap": "-0.60"
+  },
+  "note": "Spearman's rank correlation, with tied ranks averaged (six teams' arenas have no public money). The check confirms it is clearly negative.",
+  "method": "with v as (select t.team, t.forbes_2026_b as x, coalesce(p.m, 0) as y from team_values t left join (select team, sum(public_2026_m) as m from items where core group by team) p using (team)), r as (select rank() over (order by x) + (count(*) over (partition by x) - 1) / 2.0 as rx, rank() over (order by y) + (count(*) over (partition by y) - 1) / 2.0 as ry from v) select corr(rx, ry) from r"
+ },
+ "value_bottom10_share": {
+  "key": "value_bottom10_share",
+  "title": "Share of all public money in the arenas of the 10 least valuable teams",
+  "value": 49.720038,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger"
+  ],
+  "display": {
+   "long": "49.7 percent",
+   "short": "49.7%",
+   "title": "49.7%",
+   "cap": "49.7 percent"
+  },
+  "note": "",
+  "method": "with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select 100 * sum(i.public_2026_m) filter (where r.k <= 10) / sum(i.public_2026_m) from items i join r using (team) where i.core"
+ },
+ "value_bottom10_funded_n": {
+  "key": "value_bottom10_funded_n",
+  "title": "Of the 10 least valuable teams, those whose arenas have taken public money",
+  "value": 10.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger"
+  ],
+  "display": {
+   "long": "10",
+   "short": "10",
+   "title": "10",
+   "cap": "10"
+  },
+  "note": "",
+  "method": "with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values), p as (select team, sum(public_2026_m) as m from items where core group by team) select count(*) from r join p using (team) where r.k <= 10 and p.m > 0"
+ },
+ "value_middle10_public": {
+  "key": "value_middle10_public",
+  "title": "Public money in the arenas of the 10 teams in the middle of the league by value",
+  "value": 3409.519943,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$3.41 billion",
+   "short": "$3.41B",
+   "title": "$3.41 Billion",
+   "cap": "$3.41 billion"
+  },
+  "note": "",
+  "method": "with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select sum(i.public_2026_m) from items i join r using (team) where i.core and r.k between 11 and 20"
+ },
+ "value_top10_public": {
+  "key": "value_top10_public",
+  "title": "Public money in the arenas of the 10 most valuable teams",
+  "value": 1411.187592,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$1.41 billion",
+   "short": "$1.41B",
+   "title": "$1.41 Billion",
+   "cap": "$1.41 billion"
+  },
+  "note": "",
+  "method": "with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values) select sum(i.public_2026_m) from items i join r using (team) where i.core and r.k <= 10"
+ },
+ "value_top10_funded_n": {
+  "key": "value_top10_funded_n",
+  "title": "Of the 10 most valuable teams, those whose arenas have taken public money",
+  "value": 5.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger"
+  ],
+  "display": {
+   "long": "five",
+   "short": "5",
+   "title": "Five",
+   "cap": "Five"
+  },
+  "note": "",
+  "method": "with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values), p as (select team, sum(public_2026_m) as m from items where core group by team) select count(*) from r join p using (team) where r.k <= 10 and p.m > 0"
+ },
+ "value_top10_with_breaks": {
+  "key": "value_top10_with_breaks",
+  "title": "Public money and tax breaks in the arenas of the 10 most valuable teams",
+  "value": 3384.887592,
+  "unit": "usd_m",
+  "basis": "2026 dollars",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "team-ledger",
+   "fred-cpiaucns"
+  ],
+  "display": {
+   "long": "$3.38 billion",
+   "short": "$3.38B",
+   "title": "$3.38 Billion",
+   "cap": "$3.38 billion"
+  },
+  "note": "Adds Barclays Center's PILOT bonds and the property-tax breaks for Madison Square Garden and the United Center. The check confirms the total is still below the public money in the arenas of the 10 least valuable teams.",
+  "method": "with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values) select sum(coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0) + coalesce(a.pilot_2026_m, 0) + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end) from arenas a join r using (team) where r.k <= 10"
+ },
+ "public_owned_n": {
+  "key": "public_owned_n",
+  "title": "Arenas the public owns",
+  "value": 18.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger"
+  ],
+  "display": {
+   "long": "18",
+   "short": "18",
+   "title": "18",
+   "cap": "18"
+  },
+  "note": "Owned by a city, county, state or public authority. Two more, Barclays Center and Little Caesars Arena, have public title, held for their financing, and private operators; the Lakers' and Jazz's arenas stand on public land but are privately owned. The check confirms the two.",
+  "method": "select count(*) from arenas where owner_type like 'public%' and owner_type not like '%private operator%'"
  },
  "owners_finance_n": {
   "key": "owners_finance_n",

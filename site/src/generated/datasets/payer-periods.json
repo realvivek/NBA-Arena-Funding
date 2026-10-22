@@ -1,0 +1,65 @@
+{
+ "id": "payer-periods",
+ "title": "Public capital money by who mostly pays, before and since 2014",
+ "sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
+ "base_sources": [
+  "ledger",
+  "fred-cpiaucns"
+ ],
+ "columns": [
+  "period",
+  "period_name",
+  "payer",
+  "public_2026_m",
+  "share_pct"
+ ],
+ "rows": [
+  {
+   "period": "before",
+   "period_name": "Before 2014",
+   "payer": "visitors",
+   "public_2026_m": 2236.308829,
+   "share_pct": 47.191781
+  },
+  {
+   "period": "before",
+   "period_name": "Before 2014",
+   "payer": "residents",
+   "public_2026_m": 1287.291706,
+   "share_pct": 27.165116
+  },
+  {
+   "period": "before",
+   "period_name": "Before 2014",
+   "payer": "other",
+   "public_2026_m": 1215.167028,
+   "share_pct": 25.643103
+  },
+  {
+   "period": "since",
+   "period_name": "2014 and later",
+   "payer": "visitors",
+   "public_2026_m": 1468.788688,
+   "share_pct": 35.857659
+  },
+  {
+   "period": "since",
+   "period_name": "2014 and later",
+   "payer": "residents",
+   "public_2026_m": 2515.832634,
+   "share_pct": 61.419228
+  },
+  {
+   "period": "since",
+   "period_name": "2014 and later",
+   "payer": "other",
+   "public_2026_m": 111.543193,
+   "share_pct": 2.723113
+  }
+ ],
+ "note": "Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.",
+ "method": "with t as ( select case when c.year < 2014 then 'before' else 'since' end as period, g.payer, b.public_2026_m, c.team from buckets b join capital c using (item_id) join bucket_groups g using (bucket)) select period, case period when 'before' then 'Before 2014' else '2014 and later' end as period_name, payer, sum(public_2026_m) as public_2026_m, 100 * sum(public_2026_m) / (select sum(public_2026_m) from t t2 where t2.period = t.period) as share_pct from t group by period, payer order by period, case payer when 'visitors' then 1 when 'residents' then 2 else 3 end"
+}

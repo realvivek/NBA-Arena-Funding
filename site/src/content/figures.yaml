@@ -101,6 +101,21 @@ arenas:
       Shares count public money only; the tax breaks are shown but not included in the share. Private money is
       construction and renovation spending the public did not pay.
 
+valuegroups:
+  title: >-
+    The {{value_group_n}} least valuable teams play in arenas holding {{value_bottom10_share}} of the public money
+  sub: >-
+    Public money in each team's arena, in 2026 dollars, with the teams in thirds of the league by value, as Forbes
+    estimated it in October 2026. Each segment is an arena
+  dataset: team-values
+  notes:
+    - >-
+      Tax breaks are not included. Counting Barclays Center's PILOT bonds and the property-tax breaks for Madison
+      Square Garden and the United Center, the arenas of the {{value_group_n}} most valuable teams hold
+      {{value_top10_with_breaks}}, still less than the {{value_bottom10_public}} in the arenas of the
+      {{value_group_n}} least valuable. A team's value tracks the size of its market and the money its arena
+      makes, so the chart shows where the public money went, not why.
+
 map:
   title: >-
     The largest public shares are in the South and the middle of the country
@@ -147,6 +162,24 @@ whopays:
       Each dollar is assigned to one stream, as documented in the arena's records. Money that the records tie to
       several streams without splitting it is shown as not split. Yearly payments to teams and operators,
       {{ongoing_public}}, are not included.
+
+payershift:
+  title: >-
+    Since 2014, taxes residents mostly pay have supplied {{residents_share_since_2014}} of public arena capital
+  sub: >-
+    Public money to build, renovate and buy the arenas, by who mostly pays the taxes behind it, before and since
+    2014, in 2026 dollars
+  dataset: payer-periods
+  legend:
+    - { label: Mostly visitors, key: orange }
+    - { label: Mostly residents, key: public }
+    - { label: 'Land, or not split by stream', key: other }
+  notes:
+    - >-
+      Money is dated as the ledger dates it: construction in the year the arena opened, renovations in the middle
+      year of the work, purchases in the year of the sale, and work still under way in 2026. Without Salt Lake
+      City's and Washington's deals, taxes residents mostly pay supplied {{residents_share_since_2014_ex}} of the
+      money since 2014. Yearly payments to teams and operators are not included.
 
 households:
   title: >-
