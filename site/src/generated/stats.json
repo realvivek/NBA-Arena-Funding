@@ -5281,7 +5281,7 @@
   "value": 7.523914,
   "unit": "number",
   "basis": "ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65",
-  "digits": 0,
+  "digits": 1,
   "label": "a",
   "sources": [
    "itep-who-pays-7-data",
@@ -5289,10 +5289,10 @@
    "who-pays-ledger"
   ],
   "display": {
-   "long": "8",
-   "short": "8",
-   "title": "8",
-   "cap": "8"
+   "long": "7.5",
+   "short": "7.5",
+   "title": "7.5",
+   "cap": "7.5"
   },
   "note": "ITEP's \"General Sales--Individuals\" line for Oklahoma; Oklahoma City's MAPS sales taxes paid for its arena and are paying for the new one.",
   "method": "select ratio from incidence where team = 'OKC' and bucket = 'sales'"

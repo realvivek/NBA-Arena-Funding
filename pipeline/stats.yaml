@@ -2450,7 +2450,7 @@ stats:
   title: Share of income Oklahoma's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent
   sql: select ratio from incidence where team = 'OKC' and bucket = 'sales'
   unit: number
-  digits: 0
+  digits: 1
   basis: ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65
   label: a
   sources: [itep-who-pays-7-data, itep-who-pays-7, who-pays-ledger]

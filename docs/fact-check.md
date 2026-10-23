@@ -2095,7 +2095,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `itep_okc_sales_ratio`: Share of income Oklahoma's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent
 
-- Shown as: 8 (8)
+- Shown as: 7.5 (7.5)
 - Value: 7.52391 number, ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65
 - Label: (a)
 - Sources: [Who Pays?, 7th edition: state and national results by tax line, taxes as a share of family income (data workbook, revised February 2024)](https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx) (independent); [Who Pays? A Distributional Analysis of the Tax Systems in All 50 States, 7th edition](https://itep.org/whopays-7th-edition/) (independent); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
