@@ -166,3 +166,53 @@ teams/investors.csv:
     status: {type: string, constraints: {required: true, enum: [current, exited, pending]}}
     label: {type: string, constraints: {required: true, enum: [b, c, b/c]}}
     source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+
+who_pays/itep_who_pays_7.csv:
+  fields:
+    state: {type: string, constraints: {required: true}}
+    line: {type: string, constraints: {required: true, enum: [APP_A, SE_GST, SE_EXCISE, PROP_TOTAL]}}
+    grp: {type: string, constraints: {required: true, enum: ['Lowest 20%', 'Second 20%', 'Middle 20%', 'Fourth 20%', 'Next 15%', 'Next 4%', 'Top 1%']}}
+    grp_order: {type: integer, constraints: {required: true, minimum: 1, maximum: 7}}
+    share_of_income: {type: number, constraints: {required: true, minimum: 0, maximum: 0.5}}
+    label: {type: string, constraints: {required: true, enum: [c]}}
+
+who_pays/itep_tax_lines.csv:
+  fields:
+    team: {type: string, constraints: {required: true, pattern: '^[A-Z]{3}$'}}
+    bucket: {type: string, constraints: {required: true, enum: [general, sales, tif, leaserev, sin]}}
+    state: {type: string, constraints: {required: true}}
+    line: {type: string, constraints: {required: true, enum: [APP_A, SE_GST, SE_EXCISE, PROP_TOTAL]}}
+    note: {type: string, constraints: {required: true}}
+
+who_pays/bexar_2025_prop_b_precincts.csv:
+  primaryKey: [precinct]
+  fields:
+    precinct: {type: string, constraints: {required: true, unique: true, pattern: '^[0-9]{4}$'}}
+    registered: {type: integer, constraints: {required: true, minimum: 0}}
+    ballots: {type: integer, constraints: {required: true, minimum: 0}}
+    yes_votes: {type: integer, constraints: {required: true, minimum: 0}}
+    no_votes: {type: integer, constraints: {required: true, minimum: 0}}
+    households_est: {type: integer, constraints: {required: true, minimum: 0}}
+    median_income_est: {type: integer, constraints: {minimum: 1000}}
+    lon: {type: number, constraints: {required: true, minimum: -99.2, maximum: -98.0}}
+    lat: {type: number, constraints: {required: true, minimum: 29.0, maximum: 29.9}}
+    label: {type: string, constraints: {required: true, enum: [b/a]}}
+
+who_pays/bexar_arena_sites.csv:
+  fields:
+    site: {type: string, constraints: {required: true, unique: true}}
+    lat: {type: number, constraints: {required: true, minimum: 29.0, maximum: 29.9}}
+    lon: {type: number, constraints: {required: true, minimum: -99.2, maximum: -98.0}}
+    source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+
+who_pays/zip_jurisdictions.csv:
+  fields:
+    zip: {type: string, constraints: {required: true, pattern: '^[0-9]{5}$'}}
+    geo_id: {type: string, constraints: {required: true, pattern: '^[0-9]{5}US[0-9]+$'}}
+    land_share: {type: number, constraints: {required: true, minimum: 0.05, maximum: 1}}
+
+who_pays/sources.csv:
+  fields:
+    claim: {type: string, constraints: {required: true}}
+    label: {type: string, constraints: {required: true, pattern: '^[abcu](/[abc])*$'}}
+    source: {type: string, constraints: {required: true, pattern: '^https?://.+'}}

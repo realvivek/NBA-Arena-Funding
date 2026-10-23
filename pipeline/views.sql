@@ -119,3 +119,58 @@ select * from read_csv('{root}/data/tax_mechanisms/nba_arena_bonds.csv', header 
 create or replace view item_payers as
 select b.item_id, b.team, b.bucket, g.payer, b.public_2026_m
 from buckets b join bucket_groups g using (bucket);
+
+-- Who pays by income: ITEP's Who Pays? (7th edition) state and local taxes as a share of family income for seven
+-- income groups in each state, and the ITEP line that matches each resident-paid funding stream of each arena.
+create or replace view itep as
+select state, line, line_name, grp, grp_order, share_of_income
+from read_csv('{root}/data/who_pays/itep_who_pays_7.csv', header = true);
+
+create or replace view itep_lines as
+select team, bucket, state, line, note
+from read_csv('{root}/data/who_pays/itep_tax_lines.csv', header = true);
+
+-- For each arena's resident-paid capital money by funding stream: the share of income its tax line takes from the
+-- poorest fifth of households and from the richest 1% in that state, and the ratio of the two.
+create or replace view incidence as
+with m as (
+    select b.team, b.bucket, sum(b.public_2026_m) as public_2026_m
+    from buckets b join capital c using (item_id) join bucket_groups g using (bucket)
+    where g.payer = 'residents'
+    group by b.team, b.bucket)
+select m.team, m.bucket, l.state, l.line, any_value(i.line_name) as line_name, m.public_2026_m,
+       max(i.share_of_income) filter (where i.grp_order = 1) as poorest_share,
+       max(i.share_of_income) filter (where i.grp_order = 7) as top1_share,
+       max(i.share_of_income) filter (where i.grp_order = 1) / max(i.share_of_income) filter (where i.grp_order = 7) as ratio
+from m left join itep_lines l using (team, bucket) left join itep i on i.state = l.state and i.line = l.line
+group by m.team, m.bucket, l.state, l.line, m.public_2026_m;
+
+-- Bexar County's November 4, 2025 vote on Proposition B, precinct by precinct, with Census estimates.
+create or replace view prop_b as
+select * from read_csv('{root}/data/who_pays/bexar_2025_prop_b_precincts.csv', header = true, types = {'precinct': 'VARCHAR'});
+
+-- Precincts with votes in five groups holding equal numbers of households, by estimated median income (1 = lowest).
+create or replace view prop_b_fifths as
+with p as (
+    select *, sum(households_est) over (order by median_income_est, precinct rows between unbounded preceding and current row)
+                - households_est / 2.0 as mid,
+           sum(households_est) over () as total_hh
+    from prop_b where yes_votes + no_votes > 0 and median_income_est is not null)
+select *, least(5, 1 + floor(5 * mid / total_hh))::integer as fifth from p;
+
+create or replace view bexar_sites as
+select * from read_csv('{root}/data/who_pays/bexar_arena_sites.csv', header = true);
+
+-- ZIP code areas (2020) in each paying government of households.csv, with the share of the area's land inside it.
+create or replace view zip_geo as
+select * from read_csv('{root}/data/who_pays/zip_jurisdictions.csv', header = true, types = {'zip': 'VARCHAR', 'geo_id': 'VARCHAR'});
+
+-- The county outline drawn under the precinct map (simplified from the precincts), and the households in the United
+-- States (ACS 2024 1-year) for the federal bond cost per household.
+create or replace view bexar_outline as
+select geometry.type as geom_type, geometry.coordinates as coords
+from read_json_auto('{root}/data/who_pays/bexar_county_outline.json');
+
+create or replace view us_households as
+select data['01000US'].B11001.estimate.B11001001 as households, release.id as release
+from read_json_auto('{root}/data/inputs/census/acs2024_B11001_more.json');

@@ -185,6 +185,75 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
           });
         });
       })();
+      // The ZIP lookup: the form appears, and the ZIP code data loads the first time a reader uses it. Without this
+      // script the form stays hidden and a link leads to every deal per household.
+      (function () {
+        var box = document.querySelector('.ziplookup');
+        if (!box || !window.fetch) return;
+        var form = box.querySelector('.zl-form'), input = box.querySelector('.zl-input'), out = box.querySelector('.zl-out');
+        var loading = null;
+        form.hidden = false;
+        function load() {
+          if (!loading) loading = fetch(box.getAttribute('data-src')).then(function (r) {
+            if (!r.ok) throw new Error(String(r.status));
+            return r.json();
+          });
+          return loading;
+        }
+        input.addEventListener('focus', function () { load().catch(function () { loading = null; }); });
+        function usd(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+        function add(parent, tag, cls, text) {
+          var e = document.createElement(tag);
+          if (cls) e.className = cls;
+          if (text != null) e.textContent = text;
+          parent.appendChild(e);
+          return e;
+        }
+        function show(d, zip) {
+          out.textContent = '';
+          var card = add(out, 'div', 'zl-card');
+          add(card, 'p', 'zl-zip', 'ZIP code ' + zip);
+          var hits = (d.z[zip] || []).map(function (i) { return { g: d.g[i < 0 ? -i - 1 : i], part: i < 0 }; })
+            .sort(function (a, b) { return a.g.l - b.g.l; });
+          var total = 0, partial = false, lines = 0;
+          if (!hits.length) {
+            add(card, 'p', 'zl-none', 'No city, county or state that includes this ZIP code has put money into an NBA arena in this ledger.');
+          } else {
+            var list = add(card, 'ul', 'zl-lines');
+            hits.forEach(function (h) {
+              h.g.d.forEach(function (deal) {
+                var li = add(list, 'li', 'zl-line');
+                add(li, 'span', 'zl-amt', usd(deal.p));
+                var what = add(li, 'span', 'zl-what');
+                add(what, 'strong', null, h.g.j);
+                what.appendChild(document.createTextNode(': ' + deal.t + ', ' + deal.a + (deal.n ? ' (' + deal.n + ')' : '') + '.' +
+                  (h.part ? ' Only part of this ZIP code is in ' + h.g.j + '.' : '')));
+                total += deal.p;
+                partial = partial || h.part;
+                lines += 1;
+              });
+            });
+            if (lines > 1) {
+              var tl = add(card, 'p', 'zl-total');
+              add(tl, 'span', 'zl-amt', usd(total));
+              add(tl, 'span', 'zl-what', partial ? 'In all, at most, per household' : 'In all, per household');
+            }
+          }
+          add(card, 'p', 'zl-fed', 'Like every household in the country, yours also carries about ' + usd(d.fed) +
+            ' of the federal income tax forgone on tax-exempt bonds for NBA arenas.');
+          add(card, 'p', 'zl-note', 'Public money per household in 2026 dollars, over the life of each deal: a measure of scale, not a yearly bill.');
+        }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var zip = (input.value || '').replace(/[^0-9]/g, '');
+          if (zip.length !== 5) { out.textContent = 'Enter a ZIP code, like 73102.'; return; }
+          out.textContent = 'Looking up ' + zip + '...';
+          load().then(function (d) { show(d, zip); }).catch(function () {
+            loading = null;
+            out.textContent = 'The ZIP code data did not load. Every deal is on the households page.';
+          });
+        });
+      })();
     </script>
   </body>
 </html>

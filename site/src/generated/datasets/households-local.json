@@ -43,6 +43,9 @@
   "occompt-occompt-2",
   "oppaga-15-01",
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+  "leg-other",
+  "leg-031209-agenda",
+  "lrl-target",
   "carolinajournal-on-world-class-chumps",
   "espn-nba",
   "lgreports-charlotte",
@@ -50,6 +53,9 @@
   "wbtv-charlotte-city-council-approves-275-million-spec",
   "hochtief-turner-completes-spectrum-center-renovation",
   "degc-ugd-3",
+  "law-sfr-v13-nba",
+  "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
+  "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
   "mlgw-board-minutes-2026-08-19",
@@ -89,6 +95,16 @@
   "axios-cleveland-cavs-impact",
   "ideastream-county-council-approves-405-million-for-fieldhou",
   "wi-lfb-informational-paper-18",
+  "sportsbusinessdaily-state-of-the-arena-america-west-arena",
+  "phoenix-phoenix",
+  "phoenix-phoenix-2",
+  "webapi-texts",
+  "sportsbusinessdaily-morning-buzz",
+  "si-phoenix-city-council-approves-suns-arena-rennova",
+  "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
+  "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye",
+  "miamidadeig-ig11-34finalbasketball",
+  "miaminewtimes-the-heats-hot-air-6356397",
   "wiki-smoothie-king-center",
   "myneworleans-doing-it-right",
   "lla-vwprbyagencyjson",
@@ -96,18 +112,26 @@
   "lla-00006b8b",
   "lla-000144e2",
   "sportsbusinessdaily-new-orleans",
+  "renewdenver-pepsi-center",
+  "sec-0001047469-98-001379",
+  "sec-0000927356-99-000502",
+  "axios-ball-arena-renovation-135-million",
   "houstonsports-multi-purpose-arena-letter-of-agreement",
   "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
-  "law-sfr-v13-nba",
   "texaspolitics-slide4b",
   "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
+  "sfmta-letter-to-ocii-2015-10-20",
+  "sfmta-board-lrv4-modification-4",
+  "sfmta-board-warriors-supplemental-appropriation",
   "ibo-2009-may-atlantic-yards-testimony",
   "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
   "nolandgrab-mtastaffsummaryvdyard062209",
   "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
   "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
-  "wiki-barclays-center"
+  "wiki-barclays-center",
+  "cao-page379",
+  "seattle-seattle-partners-finance-team-evaluation-5-31-17"
  ],
  "base_sources": [
   "ledger",
@@ -300,6 +324,31 @@
    ]
   },
   {
+   "team": "MIN",
+   "deal": "Target Center (1990 subsidy, 1995 purchase, 2016-17 renovation, payments 2010-18)",
+   "jurisdiction": "Minneapolis, MN",
+   "per_household_2026": 1526.24,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.361016,
+   "parts": [
+    {
+     "jurisdiction": "Minneapolis, MN",
+     "level": 1,
+     "per_household_2026": 1526.24,
+     "households": 194480,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "leg-other",
+    "leg-031209-agenda",
+    "lrl-target",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
    "team": "CHA",
    "deal": "Spectrum Center (2005, 2014, 2024-25)",
    "jurisdiction": "Charlotte, NC",
@@ -346,6 +395,30 @@
    ],
    "sources": [
     "degc-ugd-3"
+   ]
+  },
+  {
+   "team": "ATL",
+   "deal": "State Farm Arena (1999 infrastructure, 2017-18 renovation)",
+   "jurisdiction": "Atlanta, GA",
+   "per_household_2026": 1278.82,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.862705,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
+   "parts": [
+    {
+     "jurisdiction": "Atlanta, GA",
+     "level": 1,
+     "per_household_2026": 1278.82,
+     "households": 244482,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "law-sfr-v13-nba",
+    "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
+    "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
    ]
   },
   {
@@ -522,6 +595,86 @@
    ]
   },
   {
+   "team": "PHX",
+   "deal": "Mortgage Matchup Center (1992, 2019-20 renovation, renewal account)",
+   "jurisdiction": "Phoenix, AZ",
+   "per_household_2026": 475.15,
+   "pending_2026_m": 0.0,
+   "visitors_share": 1.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
+   "parts": [
+    {
+     "jurisdiction": "Phoenix, AZ",
+     "level": 1,
+     "per_household_2026": 475.15,
+     "households": 631270,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "sportsbusinessdaily-state-of-the-arena-america-west-arena",
+    "phoenix-phoenix",
+    "phoenix-phoenix-2",
+    "webapi-texts",
+    "sportsbusinessdaily-morning-buzz",
+    "si-phoenix-city-council-approves-suns-arena-rennova"
+   ]
+  },
+  {
+   "team": "DAL",
+   "deal": "American Airlines Center (2001)",
+   "jurisdiction": "Dallas, TX",
+   "per_household_2026": 435.74,
+   "pending_2026_m": 0.0,
+   "visitors_share": 1.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
+   "parts": [
+    {
+     "jurisdiction": "Dallas, TX",
+     "level": 1,
+     "per_household_2026": 435.74,
+     "households": 537317,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
+    "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye"
+   ]
+  },
+  {
+   "team": "MIA",
+   "deal": "Kaseya Center (county land, county payments to the arena manager since 1999, state payments to the operator since 1998)",
+   "jurisdiction": "Miami-Dade County, FL",
+   "per_household_2026": 333.92,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
+   "parts": [
+    {
+     "jurisdiction": "Miami-Dade County, FL",
+     "level": 2,
+     "per_household_2026": 324.66,
+     "households": 1002537,
+     "share": 0.793589
+    },
+    {
+     "jurisdiction": "Florida",
+     "level": 3,
+     "per_household_2026": 9.26,
+     "households": 9141675,
+     "share": 0.206411
+    }
+   ],
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miaminewtimes-the-heats-hot-air-6356397"
+   ]
+  },
+  {
    "team": "NOP",
    "deal": "Smoothie King Center",
    "jurisdiction": "Louisiana",
@@ -550,6 +703,31 @@
    ]
   },
   {
+   "team": "DEN",
+   "deal": "Ball Arena (1999)",
+   "jurisdiction": "Denver, CO",
+   "per_household_2026": 233.38,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
+   "parts": [
+    {
+     "jurisdiction": "Denver, CO",
+     "level": 1,
+     "per_household_2026": 233.38,
+     "households": 349785,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "renewdenver-pepsi-center",
+    "sec-0001047469-98-001379",
+    "sec-0000927356-99-000502",
+    "axios-ball-arena-renovation-135-million"
+   ]
+  },
+  {
    "team": "HOU",
    "deal": "Toyota Center (2003)",
    "jurisdiction": "Harris County, TX",
@@ -574,6 +752,30 @@
     "texaspolitics-slide4b",
     "click2houston-harris-county-approves-180m-toyota-center",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+   ]
+  },
+  {
+   "team": "GSW",
+   "deal": "Chase Center (2019)",
+   "jurisdiction": "San Francisco County, CA",
+   "per_household_2026": 148.13,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
+   "parts": [
+    {
+     "jurisdiction": "San Francisco County, CA",
+     "level": 2,
+     "per_household_2026": 148.13,
+     "households": 371841,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "sfmta-letter-to-ocii-2015-10-20",
+    "sfmta-board-lrv4-modification-4",
+    "sfmta-board-warriors-supplemental-appropriation"
    ]
   },
   {
@@ -608,6 +810,29 @@
     "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
     "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
     "wiki-barclays-center"
+   ]
+  },
+  {
+   "team": "LAL",
+   "deal": "Crypto.com Arena (1999)",
+   "jurisdiction": "Los Angeles, CA",
+   "per_household_2026": 94.11,
+   "pending_2026_m": 0.0,
+   "visitors_share": 0.0,
+   "shared_share": 0.0,
+   "sales_share": 0.0,
+   "parts": [
+    {
+     "jurisdiction": "Los Angeles, CA",
+     "level": 1,
+     "per_household_2026": 94.11,
+     "households": 1480869,
+     "share": 1.0
+    }
+   ],
+   "sources": [
+    "cao-page379",
+    "seattle-seattle-partners-finance-team-evaluation-5-31-17"
    ]
   }
  ],

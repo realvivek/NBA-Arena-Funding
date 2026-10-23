@@ -2431,3 +2431,176 @@ stats:
   unit: count
   label: b
   sources: [govinfo-crpt-119hrpt106-pt2]
+
+# Who pays by income: ITEP's Who Pays? (7th edition) applied to the taxes behind each arena's resident-paid money
+# (data/who_pays/itep_tax_lines.csv). A ratio is the share of family income the tax line takes from the lowest 20% of
+# households in the state, divided by the share it takes from the top 1%.
+- key: itep_ut_sales_ratio
+  title: Share of income Utah's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent
+  sql: select ratio from incidence where team = 'UTA' and bucket = 'sales'
+  check: select count(*) = 0 from incidence where line is null or ratio is null
+  unit: number
+  digits: 0
+  basis: ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65
+  label: a
+  sources: [itep-who-pays-7-data, itep-who-pays-7, who-pays-ledger]
+  note: ITEP's "General Sales--Individuals" line for Utah. Salt Lake City's arena sales tax is a general sales tax, so it falls on incomes the same way; the check confirms every resident-paid funding stream has a tax line.
+
+- key: itep_okc_sales_ratio
+  title: Share of income Oklahoma's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent
+  sql: select ratio from incidence where team = 'OKC' and bucket = 'sales'
+  unit: number
+  digits: 0
+  basis: ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65
+  label: a
+  sources: [itep-who-pays-7-data, itep-who-pays-7, who-pays-ledger]
+  note: ITEP's "General Sales--Individuals" line for Oklahoma; Oklahoma City's MAPS sales taxes paid for its arena and are paying for the new one.
+
+- key: itep_was_poorest
+  title: Share of family income that the District of Columbia's state and local taxes take from its poorest fifth of households
+  sql: select 100 * poorest_share from incidence where team = 'WAS' and bucket = 'general'
+  unit: pct
+  digits: 1
+  basis: share of family income; 2024 tax law at 2023 incomes, households under 65
+  label: c
+  sources: [itep-who-pays-7-data, itep-who-pays-7]
+
+- key: itep_was_top1
+  title: Share of family income that the District of Columbia's state and local taxes take from its richest one percent
+  sql: select 100 * top1_share from incidence where team = 'WAS' and bucket = 'general'
+  check: select poorest_share < top1_share from incidence where team = 'WAS' and bucket = 'general'
+  unit: pct
+  digits: 1
+  basis: share of family income; 2024 tax law at 2023 incomes, households under 65
+  label: c
+  sources: [itep-who-pays-7-data, itep-who-pays-7]
+
+- key: incid_regressive_share
+  title: Share of the resident-paid capital money raised through taxes that take more of their income from the poorest fifth than from the richest one percent
+  sql: select 100 * sum(public_2026_m) filter (where ratio > 1) / sum(public_2026_m) from incidence
+  unit: pct
+  digits: 0
+  basis: share of 2026 dollars
+  label: a
+  sources: [itep-who-pays-7-data, who-pays-ledger, ledger]
+
+# Who voted: Bexar County's November 4, 2025 vote on Proposition B (the county venue tax for a new Spurs arena), with
+# precincts in five groups of equal households by estimated median household income.
+- key: propb_yes_share
+  title: Share of votes for Bexar County's Proposition B, November 4, 2025
+  sql: select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b
+  check: select sum(yes_votes) = 128786 and sum(no_votes) = 118192 from prop_b
+  unit: pct
+  digits: 1
+  basis: share of votes cast on the proposition
+  label: b
+  sources: [bexar-elections-2025-11-04-precinct, bexar-elections-2025-11-04-summary]
+  note: The precinct report's totals match the county's official summary, For 128,786 and Against 118,192.
+
+- key: propb_top_yes
+  title: Share voting yes on Proposition B in the fifth of Bexar precincts with the highest incomes
+  sql: select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth = 5
+  check: select bool_and(fifth between 1 and 5) and count(distinct fifth) = 5 from prop_b_fifths
+  unit: pct
+  digits: 0
+  basis: share of votes cast
+  label: a
+  sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+  note: Precincts are ranked by median household income estimated from Census block groups (ACS 2020-2024) and split into five groups holding equal numbers of households.
+
+- key: propb_rest_yes
+  title: Share voting yes on Proposition B in the other Bexar precincts (all but the fifth with the highest incomes)
+  sql: select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth < 5
+  check: select sum(yes_votes) < sum(no_votes) from prop_b_fifths where fifth < 5
+  unit: pct
+  digits: 1
+  basis: share of votes cast
+  label: a
+  sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+
+- key: propb_low_yes
+  title: Share voting yes on Proposition B in the fifth of Bexar precincts with the lowest incomes
+  sql: select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth = 1
+  unit: pct
+  digits: 0
+  basis: share of votes cast
+  label: a
+  sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+
+- key: propb_top_votes_share
+  title: Share of all votes on Proposition B cast in the fifth of Bexar precincts with the highest incomes
+  sql: select 100 * sum(yes_votes + no_votes) filter (where fifth = 5) / sum(yes_votes + no_votes) from prop_b_fifths
+  unit: pct
+  digits: 0
+  basis: share of votes cast
+  label: a
+  sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+
+- key: propb_low_votes_share
+  title: Share of all votes on Proposition B cast in the fifth of Bexar precincts with the lowest incomes
+  sql: select 100 * sum(yes_votes + no_votes) filter (where fifth = 1) / sum(yes_votes + no_votes) from prop_b_fifths
+  unit: pct
+  digits: 0
+  basis: share of votes cast
+  label: a
+  sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+
+- key: propb_top_turnout
+  title: Votes on Proposition B as a share of registered voters, in the fifth of Bexar precincts with the highest incomes
+  sql: select 100 * sum(yes_votes + no_votes) / sum(registered) from prop_b_fifths where fifth = 5
+  unit: pct
+  digits: 0
+  basis: votes cast on the proposition per registered voter
+  label: a
+  sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+
+- key: propb_low_turnout
+  title: Votes on Proposition B as a share of registered voters, in the fifth of Bexar precincts with the lowest incomes
+  sql: select 100 * sum(yes_votes + no_votes) / sum(registered) from prop_b_fifths where fifth = 1
+  unit: pct
+  digits: 0
+  basis: votes cast on the proposition per registered voter
+  label: a
+  sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+
+- key: propb_top_income
+  title: Lowest estimated median household income among the fifth of Bexar precincts with the highest incomes
+  sql: select min(median_income_est) from prop_b_fifths where fifth = 5
+  unit: usd
+  basis: ACS 2020-2024 dollars, estimated from block groups
+  label: a
+  sources: [census-acs2024-5yr-bg-bexar, census-cb-2024-bg-texas, tlc-precincts-2024g, who-pays-ledger]
+
+- key: propb_precincts
+  title: Bexar precincts with votes on Proposition B
+  sql: select count(*) from prop_b where yes_votes + no_votes > 0
+  check: select count(*) = (select count(*) from prop_b_fifths) from prop_b where yes_votes + no_votes > 0
+  unit: count
+  label: b
+  sources: [bexar-elections-2025-11-04-precinct, tlc-precincts-2024g]
+
+# The ZIP lookup
+- key: zip_areas_n
+  title: ZIP code areas that lie in at least one government paying for an NBA arena
+  sql: select count(distinct zip) from zip_geo
+  check: select count(distinct geo_id) = (select count(distinct geo_id) from households) from zip_geo
+  unit: count
+  label: a
+  sources: [census-zcta-county-2020, census-zcta-place-2020, ledger]
+
+- key: hh_deals_n
+  title: Arenas with counted public money, per household where they are
+  sql: select count(distinct team) from households
+  check: select count(*) = 0 from arenas where cast("PUBLIC_TOTAL_2026_m" as double) > 0 and team not in (select team from households)
+  unit: count
+  label: a
+  sources: [ledger, census-b11001-2024]
+
+- key: fed_per_household
+  title: Estimated federal cost of tax-exempt arena bonds per household in the United States
+  sql: select (select sum(fed_tax_expenditure_pv_2026_m) from arenas) * 1e6 / households from us_households
+  check: select release = 'acs2024_1yr' from us_households
+  unit: usd
+  basis: 2026 dollars per household; present value at issue; an estimate
+  label: a
+  sources: [ledger, gayer-2016, census-b11001-2024]

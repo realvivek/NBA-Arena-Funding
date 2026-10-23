@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-249 figures, 28 datasets, 557 sources. Ledger as of 2026-10-22.
+267 figures, 33 datasets, 569 sources. Ledger as of 2026-10-22.
 
 ## Figures
 
@@ -1364,16 +1364,16 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_n`: Documents in the bibliography (not counting this site's own ledgers)
 
-- Shown as: 553 (553)
-- Value: 553 count
+- Shown as: 564 (564)
+- Value: 564 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where publisher <> 'This site'`
 
 ### `sources_government`: Government sources
 
-- Shown as: 148 (148)
-- Value: 148 count
+- Shown as: 155 (155)
+- Value: 155 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'government' and publisher <> 'This site'`
@@ -1396,8 +1396,8 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_independent`: Independent sources
 
-- Shown as: 372 (372)
-- Value: 372 count
+- Shown as: 376 (376)
+- Value: 376 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'independent' and publisher <> 'This site'`
@@ -2084,6 +2084,154 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [H. Rept. 119-106, One Big Beautiful Bill Act: report of the Committee on the Budget, book 2 (with the Ways and Means provisions)](https://www.govinfo.gov/content/pkg/CRPT-119hrpt106/html/CRPT-119hrpt106-pt2.htm) (government)
 - Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=sec197_years, column quote: "amortizable on a straight-line basis over 15 years")`
 
+### `itep_ut_sales_ratio`: Share of income Utah's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent
+
+- Shown as: 15 (15)
+- Value: 15.1793 number, ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65
+- Label: (a)
+- Sources: [Who Pays?, 7th edition: state and national results by tax line, taxes as a share of family income (data workbook, revised February 2024)](https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx) (independent); [Who Pays? A Distributional Analysis of the Tax Systems in All 50 States, 7th edition](https://itep.org/whopays-7th-edition/) (independent); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Note: ITEP's "General Sales--Individuals" line for Utah. Salt Lake City's arena sales tax is a general sales tax, so it falls on incomes the same way; the check confirms every resident-paid funding stream has a tax line.
+- Method: `select ratio from incidence where team = 'UTA' and bucket = 'sales'`
+
+### `itep_okc_sales_ratio`: Share of income Oklahoma's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent
+
+- Shown as: 8 (8)
+- Value: 7.52391 number, ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65
+- Label: (a)
+- Sources: [Who Pays?, 7th edition: state and national results by tax line, taxes as a share of family income (data workbook, revised February 2024)](https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx) (independent); [Who Pays? A Distributional Analysis of the Tax Systems in All 50 States, 7th edition](https://itep.org/whopays-7th-edition/) (independent); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Note: ITEP's "General Sales--Individuals" line for Oklahoma; Oklahoma City's MAPS sales taxes paid for its arena and are paying for the new one.
+- Method: `select ratio from incidence where team = 'OKC' and bucket = 'sales'`
+
+### `itep_was_poorest`: Share of family income that the District of Columbia's state and local taxes take from its poorest fifth of households
+
+- Shown as: 4.8 percent (4.8%)
+- Value: 4.8153 pct, share of family income; 2024 tax law at 2023 incomes, households under 65
+- Label: (c)
+- Sources: [Who Pays?, 7th edition: state and national results by tax line, taxes as a share of family income (data workbook, revised February 2024)](https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx) (independent); [Who Pays? A Distributional Analysis of the Tax Systems in All 50 States, 7th edition](https://itep.org/whopays-7th-edition/) (independent)
+- Method: `select 100 * poorest_share from incidence where team = 'WAS' and bucket = 'general'`
+
+### `itep_was_top1`: Share of family income that the District of Columbia's state and local taxes take from its richest one percent
+
+- Shown as: 11.4 percent (11.4%)
+- Value: 11.435 pct, share of family income; 2024 tax law at 2023 incomes, households under 65
+- Label: (c)
+- Sources: [Who Pays?, 7th edition: state and national results by tax line, taxes as a share of family income (data workbook, revised February 2024)](https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx) (independent); [Who Pays? A Distributional Analysis of the Tax Systems in All 50 States, 7th edition](https://itep.org/whopays-7th-edition/) (independent)
+- Method: `select 100 * top1_share from incidence where team = 'WAS' and bucket = 'general'`
+
+### `incid_regressive_share`: Share of the resident-paid capital money raised through taxes that take more of their income from the poorest fifth than from the richest one percent
+
+- Shown as: 63 percent (63%)
+- Value: 63.1066 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Who Pays?, 7th edition: state and national results by tax line, taxes as a share of family income (data workbook, revised February 2024)](https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx) (independent); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent); [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select 100 * sum(public_2026_m) filter (where ratio > 1) / sum(public_2026_m) from incidence`
+
+### `propb_yes_share`: Share of votes for Bexar County's Proposition B, November 4, 2025
+
+- Shown as: 52.1 percent (52.1%)
+- Value: 52.1447 pct, share of votes cast on the proposition
+- Label: (b)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Summary Report](https://elections.bexar.gov/DocumentCenter/View/1219/November-4-2025-Official-Summary-Report-PDF) (government)
+- Note: The precinct report's totals match the county's official summary, For 128,786 and Against 118,192.
+- Method: `select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b`
+
+### `propb_top_yes`: Share voting yes on Proposition B in the fifth of Bexar precincts with the highest incomes
+
+- Shown as: 58 percent (58%)
+- Value: 57.895 pct, share of votes cast
+- Label: (a)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Note: Precincts are ranked by median household income estimated from Census block groups (ACS 2020-2024) and split into five groups holding equal numbers of households.
+- Method: `select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth = 5`
+
+### `propb_rest_yes`: Share voting yes on Proposition B in the other Bexar precincts (all but the fifth with the highest incomes)
+
+- Shown as: 49.3 percent (49.3%)
+- Value: 49.265 pct, share of votes cast
+- Label: (a)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Method: `select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth < 5`
+
+### `propb_low_yes`: Share voting yes on Proposition B in the fifth of Bexar precincts with the lowest incomes
+
+- Shown as: 48 percent (48%)
+- Value: 47.8513 pct, share of votes cast
+- Label: (a)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Method: `select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth = 1`
+
+### `propb_top_votes_share`: Share of all votes on Proposition B cast in the fifth of Bexar precincts with the highest incomes
+
+- Shown as: 33 percent (33%)
+- Value: 33.3686 pct, share of votes cast
+- Label: (a)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Method: `select 100 * sum(yes_votes + no_votes) filter (where fifth = 5) / sum(yes_votes + no_votes) from prop_b_fifths`
+
+### `propb_low_votes_share`: Share of all votes on Proposition B cast in the fifth of Bexar precincts with the lowest incomes
+
+- Shown as: 10 percent (10%)
+- Value: 10.1377 pct, share of votes cast
+- Label: (a)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Method: `select 100 * sum(yes_votes + no_votes) filter (where fifth = 1) / sum(yes_votes + no_votes) from prop_b_fifths`
+
+### `propb_top_turnout`: Votes on Proposition B as a share of registered voters, in the fifth of Bexar precincts with the highest incomes
+
+- Shown as: 24 percent (24%)
+- Value: 23.9403 pct, votes cast on the proposition per registered voter
+- Label: (a)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Method: `select 100 * sum(yes_votes + no_votes) / sum(registered) from prop_b_fifths where fifth = 5`
+
+### `propb_low_turnout`: Votes on Proposition B as a share of registered voters, in the fifth of Bexar precincts with the lowest incomes
+
+- Shown as: 13 percent (13%)
+- Value: 13.0244 pct, votes cast on the proposition per registered voter
+- Label: (a)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Method: `select 100 * sum(yes_votes + no_votes) / sum(registered) from prop_b_fifths where fifth = 1`
+
+### `propb_top_income`: Lowest estimated median household income among the fifth of Bexar precincts with the highest incomes
+
+- Shown as: $110,800 ($110,800)
+- Value: 110,800 usd, ACS 2020-2024 dollars, estimated from block groups
+- Label: (a)
+- Sources: [American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas](https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029) (government); [Cartographic boundary file: block groups, Texas, 2024 (1:500,000)](https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government); [Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays) (independent)
+- Method: `select min(median_income_est) from prop_b_fifths where fifth = 5`
+
+### `propb_precincts`: Bexar precincts with votes on Proposition B
+
+- Shown as: 712 (712)
+- Value: 712 count
+- Label: (b)
+- Sources: [November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report](https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF) (government); [Precincts: 2024 general election voting precincts shapefile (Precincts24G)](https://data.capitol.texas.gov/dataset/precincts) (government)
+- Method: `select count(*) from prop_b where yes_votes + no_votes > 0`
+
+### `zip_areas_n`: ZIP code areas that lie in at least one government paying for an NBA arena
+
+- Shown as: 6,863 (6,863)
+- Value: 6,863 count
+- Label: (a)
+- Sources: [2020 ZIP Code Tabulation Area to county relationship file](https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt) (government); [2020 ZIP Code Tabulation Area to place relationship file](https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_place20_natl.txt) (government); [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select count(distinct zip) from zip_geo`
+
+### `hh_deals_n`: Arenas with counted public money, per household where they are
+
+- Shown as: 24 (24)
+- Value: 24 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [American Community Survey 2024 1-year estimates, table B11001: Household Type](https://censusreporter.org/tables/B11001/) (government)
+- Method: `select count(distinct team) from households`
+
+### `fed_per_household`: Estimated federal cost of tax-exempt arena bonds per household in the United States
+
+- Shown as: $11 ($11)
+- Value: 10.633 usd, 2026 dollars per household; present value at issue; an estimate
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Tax-Exempt Municipal Bonds and the Financing of Professional Sports Stadiums](https://www.brookings.edu/wp-content/uploads/2016/09/gayerdrukkergold_stadiumsubsidies_090816.pdf) (independent); [American Community Survey 2024 1-year estimates, table B11001: Household Type](https://censusreporter.org/tables/B11001/) (government)
+- Method: `select (select sum(fed_tax_expenditure_pv_2026_m) from arenas) * 1e6 / households from us_households`
+
 ## Datasets behind the charts and tables
 
 - `items`: Every public-money item in the ledger. 195 rows; 176 sources.
@@ -2096,8 +2244,8 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 21 rows; 38 sources.
 - `who-pays`: Public capital money by funding stream. 10 rows; 2 sources.
 - `payer-periods`: Public capital money by who mostly pays, before and since 2014. 8 rows; 2 sources. Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.
-- `households`: Public money in the largest deals, per household in the jurisdictions that pay. 22 rows; 106 sources.
-- `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 16 rows; 106 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones. visitors_share, shared_share and sales_share are the shares of the deal's capital money from hotel and car-rental taxes, from meal and ticket taxes, and from dedicated sales taxes; pending_2026_m is pending money included in the deal (Portland).
+- `households`: Public money in the largest deals, per household in the jurisdictions that pay. 31 rows; 130 sources.
+- `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 24 rows; 130 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones. visitors_share, shared_share and sales_share are the shares of the deal's capital money from hotel and car-rental taxes, from meal and ticket taxes, and from dedicated sales taxes; pending_2026_m is pending money included in the deal (Portland).
 - `uc-bills`: United Center property-tax bills, with and without the 1989 valuation formula. 23 rows; 6 sources. Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.
 - `ongoing`: Yearly public payments to teams or arena operators. 117 rows; 25 sources.
 - `threats`: Relocation threats and what followed. 51 rows; 133 sources.
@@ -2114,3 +2262,8 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - `public-return`: What each public arena deal returns to the public. 30 rows; 37 sources. From the arena agreements, audits and budgets reviewed. sale_share is 'no' where the documents allow a sale with no payment to the public, 'none_found' where no clause was found in the documents reviewed, 'unknown' where the agreement could not be reached, and 'private_arena' where there is no public arena deal.
 - `investors`: The investment funds with current stakes in NBA teams or their parent companies, and each stake. 13 rows; 16 sources. From the funds' and teams' releases, filings and reports of each deal. Stakes are as reported; stakes seen only in search results are left out.
 - `ownership`: Who owns each team, the controlling owners' main source of wealth, and the investment funds with stakes. 30 rows; 46 sources. Main source of wealth from Forbes profiles read Oct. 17-18, 2026, or the release or report named, classed by this project as private equity (private equity or hedge funds), other finance (mortgage lending, asset management, venture capital, financial services) or other. Funds are those with a current stake in the team or its parent company; stakes seen only in search results are left out.
+- `incidence`: How hard the taxes behind each arena's resident-paid money fall on the poorest households, by ITEP's estimates for each state. 20 rows; 59 sources. One row per arena and tax line; the arena's resident-paid capital money (general funds, dedicated sales taxes, tax increment and tax capture, lease-revenue bonds, alcohol and tobacco taxes) in 2026 dollars. poorest_share and top1_share are the shares of family income the matching ITEP line takes in that state from the lowest 20% and the top 1% of households (2024 tax law at 2023 incomes, households under 65); ratio divides the first by the second. The line describes how the kind of tax falls across a state, not the arena tax alone.
+- `propb-fifths`: Bexar County's Proposition B (November 4, 2025) in five groups of precincts holding equal numbers of households, by estimated median household income. 5 rows; 6 sources. Each precinct's households and median household income are estimated from the Census block groups it overlaps, by area (ACS 2020-2024). Precincts are ranked by that income and cut into five groups with equal households; fifth 1 has the lowest incomes. turnout is votes on the proposition per registered voter.
+- `propb-precincts`: Proposition B by precinct, with each precinct's estimated median household income, income group and place on the map. 712 rows; 5 sources. lon and lat are a point inside each precinct (its centroid, or a point inside the precinct when the centroid falls outside it).
+- `bexar-map`: Bexar County's outline and the Spurs arena sites, for the precinct map. 3 rows; 5 sources. The outline is the union of the county's precincts, simplified to about 200 meters. The planned arena site is the former Institute of Texan Cultures at Hemisfair, which the city is buying.
+- `zip-lookup`: Each government that pays toward an NBA arena, its households, its deals' public money per household and the ZIP code areas inside it. 31 rows; 5 sources. level is 1 for a city (and the District of Columbia), 2 for a county, 3 for a state. zips lists the ZIP code areas (2020) with at least 95% of their land inside the government; zips_part those with 5% to 95%. A household in a city or county also pays its share of the state's money where the state pays.

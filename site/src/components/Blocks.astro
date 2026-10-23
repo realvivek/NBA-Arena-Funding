@@ -6,6 +6,7 @@ import Cites from './Cites.astro';
 import Tiles from './Tiles.astro';
 import Cards from './Cards.astro';
 import Funds from './Funds.astro';
+import ZipLookup from './ZipLookup.astro';
 import type { Prepared } from '../lib/prepare';
 interface Props {
   blocks: Prepared[];
@@ -37,5 +38,6 @@ const H = level === 3 ? 'h3' : 'h2';
   b.kind === 'stats' ? <Tiles tiles={b.tiles} sources={quiet ? [] : b.sources} numbers={b.numbers} /> :
   b.kind === 'cards' ? <Cards cards={b.cards} quiet={quiet} /> :
   b.kind === 'funds' ? <Funds funds={b.funds} quiet={quiet} /> :
+  b.kind === 'lookup' ? <ZipLookup title={b.title} intro={b.intro} sources={b.sources} numbers={b.numbers} quiet={quiet} level={level} /> :
   <H class="subhead" id={b.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}>{b.text}</H>
 )}

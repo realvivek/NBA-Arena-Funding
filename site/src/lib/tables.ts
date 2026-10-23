@@ -369,3 +369,55 @@ export function wcdTable(rows: any[]): Table {
     rows: rows.map((r) => ({ year: r.year, basic: d(r.basic_room), add: d(r.additional_room), fb: d(r.food_beverage), car: d(r.car_rental), total: d(r.total) })),
   };
 }
+
+export function incidenceTable(rows: any[]): Table {
+  return {
+    columns: [
+      { key: 'where', label: 'Arena' },
+      { key: 'kind', label: 'Kind of tax' },
+      { key: 'money', label: "Residents' money (2026 $)", num: true },
+      { key: 'state', label: 'State' },
+      { key: 'poor', label: 'Share of income it takes: poorest fifth', num: true },
+      { key: 'top', label: 'Richest one percent', num: true },
+      { key: 'ratio', label: 'Poorest fifth as a multiple of richest', num: true },
+    ],
+    rows: rows.map((r) => ({
+      where: { text: r.city, href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
+      kind: r.kind,
+      money: m(r.public_2026_m),
+      state: r.state,
+      poor: pct(100 * r.poorest_share, 1),
+      top: pct(100 * r.top1_share, 1),
+      ratio: `${r.ratio.toFixed(1)}×`,
+    })),
+  };
+}
+
+export function propbTable(rows: any[]): Table {
+  const usd = (v: number) => dollars(v);
+  const range = (r: any) => (r.fifth === 5 ? `${usd(r.income_min)} and up` : r.fifth === 1 ? `Up to ${usd(r.income_max)}` : `${usd(r.income_min)} to ${usd(r.income_max)}`);
+  return {
+    columns: [
+      { key: 'range', label: 'Median household income of the precincts' },
+      { key: 'precincts', label: 'Precincts', num: true },
+      { key: 'households', label: 'Households (estimated)', num: true },
+      { key: 'yes', label: 'Yes', num: true },
+      { key: 'no', label: 'No', num: true },
+      { key: 'share', label: 'Share yes', num: true },
+      { key: 'votes', label: 'Share of all votes', num: true },
+      { key: 'turnout', label: 'Votes per registered voter', num: true },
+    ],
+    rows: [...rows]
+      .sort((a, b) => b.fifth - a.fifth)
+      .map((r) => ({
+        range: range(r),
+        precincts: String(r.precincts),
+        households: r.households.toLocaleString('en-US'),
+        yes: r.yes_votes.toLocaleString('en-US'),
+        no: r.no_votes.toLocaleString('en-US'),
+        share: pct(100 * r.yes_share, 1),
+        votes: pct(100 * r.vote_share, 1),
+        turnout: pct(100 * r.turnout, 1),
+      })),
+  };
+}

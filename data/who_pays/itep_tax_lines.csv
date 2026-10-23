@@ -1,0 +1,24 @@
+team,bucket,state,line,note
+ATL,general,Georgia,APP_A,Public asset sales and general funds: all state and local taxes
+BKN,general,New York,APP_A,City and state capital money: all state and local taxes
+CLE,sin,Ohio,SE_EXCISE,Cuyahoga County alcohol and cigarette taxes: other sales and excise taxes
+DEN,tif,Colorado,PROP_TOTAL,Denver Urban Renewal Authority property-tax increment: property taxes
+DET,tif,Michigan,PROP_TOTAL,Downtown Development Authority property-tax increment: property taxes
+GSW,general,California,APP_A,San Francisco general fund: all state and local taxes
+GSW,tif,California,APP_A,"Mission Bay transportation fund, which holds general-fund revenue the project generates: all state and local taxes"
+IND,general,Indiana,APP_A,City and county general money: all state and local taxes
+IND,tif,Indiana,APP_A,"Indiana professional sports development area, which keeps state income and sales taxes that would go to the state: all state and local taxes"
+MEM,general,Tennessee,APP_A,Shelby County money in 2004 and state grants (the 2004 parking structure and $80M in 2025): all state and local taxes
+MIL,general,Wisconsin,APP_A,State general fund and reduced county aid: all state and local taxes
+MIL,tif,Wisconsin,PROP_TOTAL,City of Milwaukee tax-increment district: property taxes
+MIN,sales,Minnesota,SE_GST,Minneapolis sales tax redirected to the 2017 renovation: general sales taxes paid by individuals
+MIN,tif,Minnesota,PROP_TOTAL,Minneapolis Community Development Agency tax-increment bonds: property taxes
+NOP,general,Louisiana,APP_A,State capital money through the Louisiana Treasury and the Louisiana Stadium and Exposition District: all state and local taxes
+OKC,sales,Oklahoma,SE_GST,Oklahoma City MAPS sales taxes: general sales taxes paid by individuals
+ORL,general,Florida,APP_A,"Sale of city land, city covenant bonds and state money for the 2010 arena: all state and local taxes"
+POR,general,Oregon,APP_A,City of Portland general money: all state and local taxes
+SAC,general,California,APP_A,Sacramento general fund: all state and local taxes
+SAC,leaserev,California,APP_A,Lease-revenue bonds backed by the general fund and parking revenue: all state and local taxes
+UTA,sales,Utah,SE_GST,Salt Lake City arena sales tax: general sales taxes paid by individuals
+UTA,tif,Utah,PROP_TOTAL,2017 reimbursement from property-tax increment: property taxes
+WAS,general,District of Columbia,APP_A,"District of Columbia capital money for the 1997 site work, the 2024 purchase and the renovation: all state and local taxes"

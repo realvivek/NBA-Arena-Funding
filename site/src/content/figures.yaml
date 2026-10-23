@@ -195,8 +195,8 @@ households:
   title: >-
     In Salt Lake City, the arena deal comes to as much as {{hh_uta}} per household
   sub: >-
-    Public money in the largest deals, per household where each arena is, adding the shares of every government
-    that pays, in 2026 dollars
+    Public money in each arena deal, per household where the arena is, adding the shares of every government that
+    pays, in 2026 dollars
   dataset: households-local
   legend:
     - { label: City or county share, key: public }
@@ -293,3 +293,41 @@ wcd:
     - >-
       Hotel rooms combine the basic and additional room taxes. The 2026 column, marked with an asterisk and drawn
       lighter, covers January through September only, so it is not a full year.
+
+incidence:
+  title: >-
+    Sales, alcohol and tobacco taxes fall hardest on the poorest households: Utah's sales taxes, about
+    {{itep_ut_sales_ratio}} times as hard as on the richest
+  sub: >-
+    The kind of tax behind each arena's residents' money, and the share of income that kind of tax takes in the
+    state from the poorest fifth of households, as a multiple of the share it takes from the richest one percent
+  dataset: incidence
+  legend:
+    - { label: Takes a larger share from the poorest, key: orange }
+    - { label: Takes a larger share from the richest, key: public }
+  notes:
+    - >-
+      Shares of income are the Institute on Taxation and Economic Policy's estimates for each state, for 2024 tax
+      law at 2023 incomes, leaving out senior taxpayers. They describe how each kind of tax falls across the state, not
+      the arena tax alone. Tax-increment money is counted as property tax, except Indianapolis's sports-district
+      capture of state taxes, counted with the state's taxes as a whole. Dot area shows the money.
+  sources: [itep-who-pays-7]
+
+propb:
+  title: >-
+    The Spurs arena tax passed with {{propb_yes_share}}, carried by the precincts with the highest incomes
+  sub: >-
+    Bexar County's Proposition B, Nov. 4, 2025: precincts grouped into fifths with equal numbers of households, by
+    estimated median household income, each bar as thick as the group's share of all votes; and every precinct on
+    the map
+  dataset: propb-fifths
+  legend:
+    - { label: 'Yes', key: public }
+    - { label: 'No', key: orange }
+  notes:
+    - >-
+      Votes are from the county's official precinct report, which matches its official totals. Each precinct's
+      households and median household income are estimated from the Census Bureau's 2020-2024 survey, spreading
+      each block group over the precincts it overlaps by area. The tax on the ballot is the county's hotel and
+      car-rental tax, which falls mostly on visitors.
+  sources: [bexar-elections-2025-11-04-summary]

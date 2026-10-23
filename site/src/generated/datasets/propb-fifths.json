@@ -1,0 +1,102 @@
+{
+ "id": "propb-fifths",
+ "title": "Bexar County's Proposition B (November 4, 2025) in five groups of precincts holding equal numbers of households, by estimated median household income",
+ "sources": [
+  "bexar-elections-2025-11-04-precinct",
+  "bexar-elections-2025-11-04-summary",
+  "tlc-precincts-2024g",
+  "census-cb-2024-bg-texas",
+  "census-acs2024-5yr-bg-bexar",
+  "who-pays-ledger"
+ ],
+ "base_sources": [
+  "bexar-elections-2025-11-04-precinct",
+  "bexar-elections-2025-11-04-summary",
+  "tlc-precincts-2024g",
+  "census-cb-2024-bg-texas",
+  "census-acs2024-5yr-bg-bexar",
+  "who-pays-ledger"
+ ],
+ "columns": [
+  "fifth",
+  "precincts",
+  "yes_votes",
+  "no_votes",
+  "votes",
+  "yes_share",
+  "vote_share",
+  "turnout",
+  "households",
+  "income_min",
+  "income_max"
+ ],
+ "rows": [
+  {
+   "fifth": 1,
+   "precincts": 139,
+   "yes_votes": 11981,
+   "no_votes": 13057,
+   "votes": 25038,
+   "yes_share": 0.478513,
+   "vote_share": 0.101377,
+   "turnout": 0.130244,
+   "households": 148398,
+   "income_min": 17400,
+   "income_max": 51900
+  },
+  {
+   "fifth": 2,
+   "precincts": 145,
+   "yes_votes": 17163,
+   "no_votes": 18774,
+   "votes": 35937,
+   "yes_share": 0.477586,
+   "vote_share": 0.145507,
+   "turnout": 0.158852,
+   "households": 149297,
+   "income_min": 52000,
+   "income_max": 66500
+  },
+  {
+   "fifth": 3,
+   "precincts": 133,
+   "yes_votes": 22986,
+   "no_votes": 23818,
+   "votes": 46804,
+   "yes_share": 0.491112,
+   "vote_share": 0.189507,
+   "turnout": 0.186813,
+   "households": 149846,
+   "income_min": 66500,
+   "income_max": 83000
+  },
+  {
+   "fifth": 4,
+   "precincts": 143,
+   "yes_votes": 28943,
+   "no_votes": 27843,
+   "votes": 56786,
+   "yes_share": 0.509685,
+   "vote_share": 0.229923,
+   "turnout": 0.208085,
+   "households": 148461,
+   "income_min": 83800,
+   "income_max": 110800
+  },
+  {
+   "fifth": 5,
+   "precincts": 152,
+   "yes_votes": 47713,
+   "no_votes": 34700,
+   "votes": 82413,
+   "yes_share": 0.57895,
+   "vote_share": 0.333686,
+   "turnout": 0.239403,
+   "households": 150090,
+   "income_min": 110800,
+   "income_max": 249300
+  }
+ ],
+ "note": "Each precinct's households and median household income are estimated from the Census block groups it overlaps, by area (ACS 2020-2024). Precincts are ranked by that income and cut into five groups with equal households; fifth 1 has the lowest incomes. turnout is votes on the proposition per registered voter.",
+ "method": "select fifth, count(*) as precincts, sum(yes_votes) as yes_votes, sum(no_votes) as no_votes, sum(yes_votes + no_votes) as votes, sum(yes_votes) / sum(yes_votes + no_votes) as yes_share, sum(yes_votes + no_votes) / (select sum(yes_votes + no_votes) from prop_b_fifths) as vote_share, sum(yes_votes + no_votes) / sum(registered) as turnout, sum(households_est) as households, min(median_income_est) as income_min, max(median_income_est) as income_max from prop_b_fifths group by fifth order by fifth"
+}

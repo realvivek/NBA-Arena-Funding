@@ -43,6 +43,9 @@
   "occompt-occompt-2",
   "oppaga-15-01",
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+  "leg-other",
+  "leg-031209-agenda",
+  "lrl-target",
   "carolinajournal-on-world-class-chumps",
   "espn-nba",
   "lgreports-charlotte",
@@ -50,6 +53,9 @@
   "wbtv-charlotte-city-council-approves-275-million-spec",
   "hochtief-turner-completes-spectrum-center-renovation",
   "degc-ugd-3",
+  "law-sfr-v13-nba",
+  "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
+  "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
   "memphistn-fy05-annual-report",
   "memphistn-fy15-annual-report",
   "mlgw-board-minutes-2026-08-19",
@@ -89,6 +95,16 @@
   "multco-news-release-board-commissioners-advances-framew",
   "portland-adopted",
   "wi-lfb-informational-paper-18",
+  "sportsbusinessdaily-state-of-the-arena-america-west-arena",
+  "phoenix-phoenix",
+  "phoenix-phoenix-2",
+  "webapi-texts",
+  "sportsbusinessdaily-morning-buzz",
+  "si-phoenix-city-council-approves-suns-arena-rennova",
+  "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
+  "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye",
+  "miamidadeig-ig11-34finalbasketball",
+  "miaminewtimes-the-heats-hot-air-6356397",
   "wiki-smoothie-king-center",
   "myneworleans-doing-it-right",
   "lla-vwprbyagencyjson",
@@ -96,12 +112,20 @@
   "lla-00006b8b",
   "lla-000144e2",
   "sportsbusinessdaily-new-orleans",
+  "renewdenver-pepsi-center",
+  "sec-0001047469-98-001379",
+  "sec-0000927356-99-000502",
+  "axios-ball-arena-renovation-135-million",
   "houstonsports-multi-purpose-arena-letter-of-agreement",
   "houstonsports-city-hchsa-ground-lease-toyota-center-20011231",
-  "law-sfr-v13-nba",
   "texaspolitics-slide4b",
   "click2houston-harris-county-approves-180m-toyota-center",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
+  "sfmta-letter-to-ocii-2015-10-20",
+  "sfmta-board-lrv4-modification-4",
+  "sfmta-board-warriors-supplemental-appropriation",
+  "cao-page379",
+  "seattle-seattle-partners-finance-team-evaluation-5-31-17",
   "ibo-2009-may-atlantic-yards-testimony",
   "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
   "nolandgrab-mtastaffsummaryvdyard062209",
@@ -245,6 +269,23 @@
    ]
   },
   {
+   "team": "MIN",
+   "deal": "Target Center (1990 subsidy, 1995 purchase, 2016-17 renovation, payments 2010-18)",
+   "amount_2026_m": 296.822623,
+   "geo_id": "16000US2743000",
+   "jurisdiction": "Minneapolis, MN",
+   "households": 194480,
+   "share": 1.0,
+   "per_household_2026": 1526.24,
+   "note": "City of Minneapolis (tax increment, sales tax, entertainment taxes and parking revenue; a $750,000 yearly state appropriation also helped repay the 1995 bonds)",
+   "sources": [
+    "leg-other",
+    "leg-031209-agenda",
+    "lrl-target",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
    "team": "CHA",
    "deal": "Spectrum Center (2005, 2014, 2024-25)",
    "amount_2026_m": 559.491253,
@@ -275,6 +316,22 @@
    "note": "City of Detroit (TIF also captures county/school taxes; schools backfilled by state)",
    "sources": [
     "degc-ugd-3"
+   ]
+  },
+  {
+   "team": "ATL",
+   "deal": "State Farm Arena (1999 infrastructure, 2017-18 renovation)",
+   "amount_2026_m": 312.649501,
+   "geo_id": "16000US1304000",
+   "jurisdiction": "Atlanta, GA",
+   "households": 244482,
+   "share": 1.0,
+   "per_household_2026": 1278.82,
+   "note": "City of Atlanta car-rental tax, paid mostly by visitors, and sales of city property",
+   "sources": [
+    "law-sfr-v13-nba",
+    "bondbuyer-bond-financed-philips-arena-set-to-lose-nhls-atl",
+    "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
    ]
   },
   {
@@ -383,6 +440,55 @@
    ]
   },
   {
+   "team": "PHX",
+   "deal": "Mortgage Matchup Center (1992, 2019-20 renovation, renewal account)",
+   "amount_2026_m": 299.94527,
+   "geo_id": "16000US0455000",
+   "jurisdiction": "Phoenix, AZ",
+   "households": 631270,
+   "share": 1.0,
+   "per_household_2026": 475.15,
+   "note": "City of Phoenix hotel and car-rental taxes (Sports Facilities Fund), paid mostly by visitors",
+   "sources": [
+    "sportsbusinessdaily-state-of-the-arena-america-west-arena",
+    "phoenix-phoenix",
+    "phoenix-phoenix-2",
+    "webapi-texts",
+    "sportsbusinessdaily-morning-buzz",
+    "si-phoenix-city-council-approves-suns-arena-rennova"
+   ]
+  },
+  {
+   "team": "DAL",
+   "deal": "American Airlines Center (2001)",
+   "amount_2026_m": 234.131712,
+   "geo_id": "16000US4819000",
+   "jurisdiction": "Dallas, TX",
+   "households": 537317,
+   "share": 1.0,
+   "per_household_2026": 435.74,
+   "note": "City of Dallas hotel and car-rental taxes, paid mostly by visitors",
+   "sources": [
+    "hillwood-at-the-center-of-something-on-the-rise-5-years-o",
+    "bondbuyer-dallas-to-retire-final-piece-of-arena-debt-16-ye"
+   ]
+  },
+  {
+   "team": "MIA",
+   "deal": "Kaseya Center (county land, county payments to the arena manager since 1999, state payments to the operator since 1998)",
+   "amount_2026_m": 410.144553,
+   "geo_id": "05000US12086",
+   "jurisdiction": "Miami-Dade County, FL",
+   "households": 1002537,
+   "share": 0.793589,
+   "per_household_2026": 324.66,
+   "note": "Miami-Dade County (land and yearly payments) + State of Florida (sales-tax distribution to the operator)",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miaminewtimes-the-heats-hot-air-6356397"
+   ]
+  },
+  {
    "team": "POR",
    "deal": "Moda Center pending rebuild ($573M) + past ($83M)",
    "amount_2026_m": 655.626048,
@@ -424,6 +530,23 @@
    ]
   },
   {
+   "team": "DEN",
+   "deal": "Ball Arena (1999)",
+   "amount_2026_m": 81.63212,
+   "geo_id": "16000US0820000",
+   "jurisdiction": "Denver, CO",
+   "households": 349785,
+   "share": 1.0,
+   "per_household_2026": 233.38,
+   "note": "City and County of Denver (urban-renewal tax increment and city funds)",
+   "sources": [
+    "renewdenver-pepsi-center",
+    "sec-0001047469-98-001379",
+    "sec-0000927356-99-000502",
+    "axios-ball-arena-renovation-135-million"
+   ]
+  },
+  {
    "team": "POR",
    "deal": "Moda Center pending rebuild ($573M) + past ($83M)",
    "amount_2026_m": 655.626048,
@@ -461,6 +584,37 @@
     "texaspolitics-slide4b",
     "click2houston-harris-county-approves-180m-toyota-center",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
+   ]
+  },
+  {
+   "team": "GSW",
+   "deal": "Chase Center (2019)",
+   "amount_2026_m": 55.081865,
+   "geo_id": "05000US06075",
+   "jurisdiction": "San Francisco County, CA",
+   "households": 371841,
+   "share": 1.0,
+   "per_household_2026": 148.13,
+   "note": "City and County of San Francisco (general fund and the Mission Bay transportation fund)",
+   "sources": [
+    "sfmta-letter-to-ocii-2015-10-20",
+    "sfmta-board-lrv4-modification-4",
+    "sfmta-board-warriors-supplemental-appropriation"
+   ]
+  },
+  {
+   "team": "LAL",
+   "deal": "Crypto.com Arena (1999)",
+   "amount_2026_m": 139.371912,
+   "geo_id": "16000US0644000",
+   "jurisdiction": "Los Angeles, CA",
+   "households": 1480869,
+   "share": 1.0,
+   "per_household_2026": 94.11,
+   "note": "City of Los Angeles (repaid mostly from the arena admissions fee and convention center parking revenue)",
+   "sources": [
+    "cao-page379",
+    "seattle-seattle-partners-finance-team-evaluation-5-31-17"
    ]
   },
   {
@@ -558,6 +712,21 @@
     "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
     "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
     "wiki-barclays-center"
+   ]
+  },
+  {
+   "team": "MIA",
+   "deal": "Kaseya Center (county land, county payments to the arena manager since 1999, state payments to the operator since 1998)",
+   "amount_2026_m": 410.144553,
+   "geo_id": "04000US12",
+   "jurisdiction": "Florida",
+   "households": 9141675,
+   "share": 0.206411,
+   "per_household_2026": 9.26,
+   "note": "Miami-Dade County (land and yearly payments) + State of Florida (sales-tax distribution to the operator)",
+   "sources": [
+    "miamidadeig-ig11-34finalbasketball",
+    "miaminewtimes-the-heats-hot-air-6356397"
    ]
   }
  ],

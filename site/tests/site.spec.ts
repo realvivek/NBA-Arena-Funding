@@ -88,7 +88,7 @@ test('every number in the copy links to its fact-check entry', async ({ page }) 
 test('the story renders its headline, every chart and the lead graphic\'s labels', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('h1')).toHaveText(/^Taxpayers Have Put or Committed \$[\d.]+ Billion to the NBA’s Arenas\. Owners Kept the Gains\.$/);
-  for (const id of ['bill', 'valuegroups', 'rebuild', 'payershift', 'trend', 'values', 'owners', 'leases'])
+  for (const id of ['bill', 'valuegroups', 'rebuild', 'payershift', 'incidence', 'propb', 'trend', 'values', 'owners', 'leases'])
     await expect(page.locator(`#fig-${id}`)).toHaveCount(1);
   // every kind of money in the lead graphic carries its amount and its name
   const kinds = page.locator('#fig-bill .v-wide .bs-kind');
@@ -190,5 +190,37 @@ test('without JavaScript the lead graphic shows its last step, the team list kee
   await expect(page.locator('.teams-list > li')).toHaveCount(30);
   await expect(page.locator('.teams-list > li').first()).toHaveAttribute('data-name', 'Brooklyn Nets');
   await expect(page.locator('.progress')).toBeHidden();
+  await ctx.close();
+});
+
+test('the ZIP lookup adds up the governments that tax a ZIP code, and says when none pays', async ({ page }) => {
+  await page.goto('/');
+  const box = page.locator('.ziplookup').first();
+  await expect(box.locator('.zl-form')).toBeVisible();
+  // downtown Indianapolis: Marion County's share and the state's, added up
+  await box.locator('input').fill('46204');
+  await box.locator('button').click();
+  const out = box.locator('.zl-out');
+  await expect(out.locator('.zl-line')).toHaveCount(2);
+  await expect(out).toContainText('Marion County');
+  await expect(out).toContainText('Indiana');
+  const amounts = (await out.locator('.zl-line .zl-amt').allTextContents()).map((t) => Number(t.replace(/[$,]/g, '')));
+  const total = Number((await out.locator('.zl-total .zl-amt').textContent())!.replace(/[$,]/g, ''));
+  expect(total).toBe(amounts.reduce((a, b) => a + b, 0));
+  await expect(out.locator('.zl-fed')).toContainText('federal income tax');
+  // a ZIP code no paying government includes
+  await box.locator('input').fill('12345');
+  await box.locator('button').click();
+  await expect(out.locator('.zl-none')).toBeVisible();
+  await expect(out.locator('.zl-line')).toHaveCount(0);
+});
+
+test('without JavaScript the ZIP lookup hides its form and links to every deal per household', async ({ browser }) => {
+  const ctx = await browser.newContext({ javaScriptEnabled: false });
+  const page = await ctx.newPage();
+  await page.goto('/');
+  const box = page.locator('.ziplookup').first();
+  await expect(box.locator('.zl-form')).toBeHidden();
+  await expect(box.locator('.zl-fallback a')).toBeVisible();
   await ctx.close();
 });

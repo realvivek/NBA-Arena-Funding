@@ -296,6 +296,26 @@
   "checked": "2026-10-22"
  },
  {
+  "id": "bexar-elections-2025-11-04-precinct",
+  "url": "https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF",
+  "title": "November 4, 2025 joint constitutional amendment, general, special and bond election: Official Precinct Report",
+  "title_from": "curated",
+  "publisher": "Bexar County Elections Department",
+  "origin": "government",
+  "date": "2025-11-13",
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "bexar-elections-2025-11-04-summary",
+  "url": "https://elections.bexar.gov/DocumentCenter/View/1219/November-4-2025-Official-Summary-Report-PDF",
+  "title": "November 4, 2025 joint constitutional amendment, general, special and bond election: Official Summary Report",
+  "title_from": "curated",
+  "publisher": "Bexar County Elections Department",
+  "origin": "government",
+  "date": "2025-11-13",
+  "checked": "2026-10-22"
+ },
+ {
   "id": "biztimes-bucks-sign-30-year-lease-agreement-with-wisconsi",
   "url": "https://biztimes.com/bucks-sign-30-year-lease-agreement-with-wisconsin-center-district/",
   "title": "Arena construction to begin June 18",
@@ -666,6 +686,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "census-acs2024-5yr-bg-bexar",
+  "url": "https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029",
+  "title": "American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas",
+  "title_from": "curated",
+  "publisher": "U.S. Census Bureau (via Census Reporter)",
+  "origin": "government",
+  "date": "2025-12",
+  "checked": "2026-10-22"
+ },
+ {
   "id": "census-b11001-2024",
   "url": "https://censusreporter.org/tables/B11001/",
   "title": "American Community Survey 2024 1-year estimates, table B11001: Household Type",
@@ -674,6 +704,36 @@
   "origin": "government",
   "date": "2025-09",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "census-cb-2024-bg-texas",
+  "url": "https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip",
+  "title": "Cartographic boundary file: block groups, Texas, 2024 (1:500,000)",
+  "title_from": "curated",
+  "publisher": "U.S. Census Bureau",
+  "origin": "government",
+  "date": "2025",
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "census-zcta-county-2020",
+  "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt",
+  "title": "2020 ZIP Code Tabulation Area to county relationship file",
+  "title_from": "curated",
+  "publisher": "U.S. Census Bureau",
+  "origin": "government",
+  "date": "2021",
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "census-zcta-place-2020",
+  "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_place20_natl.txt",
+  "title": "2020 ZIP Code Tabulation Area to place relationship file",
+  "title_from": "curated",
+  "publisher": "U.S. Census Bureau",
+  "origin": "government",
+  "date": "2021",
+  "checked": "2026-10-22"
  },
  {
   "id": "cfo-arena-tax-revenue-clarification",
@@ -2512,6 +2572,26 @@
   "checked": "2026-10-18"
  },
  {
+  "id": "itep-who-pays-7",
+  "url": "https://itep.org/whopays-7th-edition/",
+  "title": "Who Pays? A Distributional Analysis of the Tax Systems in All 50 States, 7th edition",
+  "title_from": "curated",
+  "publisher": "Institute on Taxation and Economic Policy",
+  "origin": "independent",
+  "date": "2024-01",
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "itep-who-pays-7-data",
+  "url": "https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx",
+  "title": "Who Pays?, 7th edition: state and national results by tax line, taxes as a share of family income (data workbook, revised February 2024)",
+  "title_from": "curated",
+  "publisher": "Institute on Taxation and Economic Policy",
+  "origin": "independent",
+  "date": "2024-02",
+  "checked": "2026-10-22"
+ },
+ {
   "id": "jakar-2026-detroit-sport-tourism",
   "url": "https://doi.org/10.1123/jsm.2025-0050",
   "title": "Sport Tourism in the \"D\": New Sport Venues and the Lodging Industry (Jakar, Binesh and Kaplanidou)",
@@ -4124,6 +4204,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "sanantonioreport-spurs-arena-project-marvel-2026-06",
+  "url": "https://sanantonioreport.org/san-antonio-update-spurs-arena-project-marvel/",
+  "title": "San Antonio inches closer to buying property for Spurs arena",
+  "title_from": "curated",
+  "publisher": "San Antonio Report",
+  "origin": "independent",
+  "date": "2026-06-17",
+  "checked": "2026-10-22"
+ },
+ {
   "id": "sboa-84595a",
   "url": "https://audit.sboa.in.gov/WebReports/84595A.pdf",
   "title": "Financial Statement Audit Report of Capital Improvement Board of Managers, Marion County, Indiana, January 1, 2024 to December 31, 2024 (Report 84595A)",
@@ -4746,6 +4836,16 @@
   "checked": "2026-10-22"
  },
  {
+  "id": "tlc-precincts-2024g",
+  "url": "https://data.capitol.texas.gov/dataset/precincts",
+  "title": "Precincts: 2024 general election voting precincts shapefile (Precincts24G)",
+  "title_from": "curated",
+  "publisher": "Texas Legislative Council",
+  "origin": "government",
+  "date": "2025",
+  "checked": "2026-10-22"
+ },
+ {
   "id": "tn-private-chapter-67-2024",
   "url": "https://www.capitol.tn.gov/Bills/113/Bill/HB3004.pdf",
   "title": "House Bill 3004 (Private Chapter 67, 2024): Shelby County hotel occupancy tax for the arena",
@@ -5028,6 +5128,16 @@
   "origin": "independent",
   "date": "2019-04-12",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "who-pays-ledger",
+  "url": "https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/who_pays",
+  "title": "Who pays and who voted (the ITEP tax line for each arena's resident-paid money, Bexar County's 2025 arena vote by precinct with Census estimates, ZIP code areas in each paying government), compiled for this site",
+  "title_from": "curated",
+  "publisher": "This site",
+  "origin": "independent",
+  "date": "2026-10-22",
+  "checked": "2026-10-22"
  },
  {
   "id": "whyy-sixers-arena-south-philadelphia-timeline",
@@ -5488,6 +5598,16 @@
   "origin": "independent",
   "date": "n.d.",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "wikipedia-institute-of-texan-cultures",
+  "url": "https://en.wikipedia.org/wiki/Institute_of_Texan_Cultures",
+  "title": "Institute of Texan Cultures",
+  "title_from": "curated",
+  "publisher": "Wikipedia",
+  "origin": "independent",
+  "date": "n.d.",
+  "checked": "2026-10-22"
  },
  {
   "id": "wpr-milwaukee-bucks-sign-30-year-lease-new-arena-sit",

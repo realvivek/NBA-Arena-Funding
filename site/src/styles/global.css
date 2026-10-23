@@ -936,6 +936,16 @@ figure.chart:not(.scrolly) {
   stroke-linejoin: round;
   stroke-linecap: round;
 }
+.chart svg .s-orange {
+  stroke: var(--orange);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.chart svg .t-inverse {
+  fill: #fff;
+  font-weight: 600;
+}
 .chart svg .s-ink {
   stroke: var(--ink-2);
   fill: none;
@@ -2170,5 +2180,144 @@ details.all-sources > summary {
   }
   .v-wide {
     display: block !important;
+  }
+}
+.chart svg .site-mark {
+  fill: var(--ink);
+  stroke: var(--surface);
+  stroke-width: 1.5;
+}
+.chart svg .site-ring {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+/* The ZIP lookup: a ticket-like card; the script shows the form and fills the result */
+.ziplookup {
+  margin: 28px 0;
+  padding: 18px 20px 16px;
+  font-family: var(--sans);
+  background: var(--surface);
+  border: 1px solid var(--paper-edge);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+.zl-title {
+  font-family: var(--sans);
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+.zl-intro {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.zl-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 14px 0 4px;
+}
+.zl-form[hidden] {
+  display: none;
+}
+.zl-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.zl-input {
+  width: 8.5rem;
+  font: 600 1.125rem var(--sans);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  padding: 7px 10px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--axis);
+  border-radius: 6px;
+}
+.zl-input:focus {
+  outline: 2px solid var(--public);
+  outline-offset: 1px;
+}
+.zl-go {
+  font: 600 0.9375rem var(--sans);
+  padding: 8px 16px;
+  color: var(--surface);
+  background: var(--ink);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.zl-out:empty {
+  display: none;
+}
+.zl-out {
+  margin: 12px 0 0;
+  font-size: 0.9375rem;
+}
+.zl-card {
+  border-top: 2px dashed var(--axis);
+  padding-top: 12px;
+}
+.zl-zip {
+  margin: 0 0 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.zl-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.zl-line,
+.zl-total {
+  display: grid;
+  grid-template-columns: 6.25rem minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.zl-total {
+  border-bottom: 0;
+}
+.zl-amt {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--orange-ink);
+}
+.zl-what {
+  line-height: 1.45;
+}
+.zl-none,
+.zl-fed,
+.zl-note {
+  margin: 10px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.zl-note {
+  color: var(--muted);
+}
+.zl-fallback {
+  margin: 10px 0 0;
+  font-size: 0.875rem;
+}
+@media (max-width: 40rem) {
+  .zl-line,
+  .zl-total {
+    grid-template-columns: 5.25rem minmax(0, 1fr);
+    gap: 10px;
   }
 }

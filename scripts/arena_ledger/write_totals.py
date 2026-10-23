@@ -7,8 +7,10 @@ from ledger_inputs import TEAMS, PROJECTS
 TI={t['team']:t for t in TEAMS}
 C=json.load(open(DATA+'/ledger/_calc.json'))
 agg=C['agg']; aggp=C['aggp']; det=C['detail']; CPI={int(k):v for k,v in C['CPI'].items()}; HH=C['HH']
-HH2=json.load(open(DATA+'/inputs/census/acs2024_B11001_states2.json'))
-for k,v in HH2['data'].items(): HH[k]=[HH2['geography'][k]['name'], int(v['B11001']['estimate']['B11001001'])]
+for fn in ('acs2024_B11001_states2.json','acs2024_B11001_more.json'):
+    HH2=json.load(open(DATA+'/inputs/census/'+fn))
+    for k,v in HH2['data'].items():
+        if k!='01000US': HH[k]=[HH2['geography'][k]['name'], int(v['B11001']['estimate']['B11001001'])]
 rows=list(csv.DictReader(open(DATA+'/ledger/arena_ledger.csv')))
 cur=[r for r in rows if r['row_type']=='current_arena']
 B=['general','sales','tourist','meals','tif','leaserev','land','infra','sin','mixed']
@@ -149,10 +151,12 @@ P('OKC binding total includes $60M of 2025 GO bonds for a garage and team office
 allin=core+sb+sv+sp+agg['pend26']
 P(f"Core + binding new = {f(core+sb)}; + all approved/pending = {f(allin)}")
 P('')
-P('G. COST PER HOUSEHOLD - LARGEST PUBLIC DEALS (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)')
+P('G. COST PER HOUSEHOLD - EVERY ARENA WITH COUNTED PUBLIC MONEY (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)')
 P('-'*78)
 hh=lambda g: HH[g][1]
 memst=reno_pub('MEM','first phase')+TI['MEM']['state_m']*CPI[2026]/CPI[2004]  # the 2025 grant money is for work under way: face value
+# Florida's sales-tax distribution to Miami's arena operator, at each payment year (as in the ledger's yearly payments)
+miast=sum(a*fac(y) for e in TI['MIA']['ongoing_extra'] if e['component'].startswith('State of Florida') for y,a in e['series'])
 D=[
  ('UTA',f"Delta Center, all public money (the 2025 renovation {f(reno_pub('UTA','sales tax'))} and the 2017 reimbursement; the district's {f(PJ[('UTA',False)]['pub'])} from the same tax is not included), 0.5% Salt Lake City sales tax",det['UTA']['core26'],[('16000US4967000',1.0)],'City sales tax, part of it paid by people who live elsewhere, so the figure per household in the city is an upper bound'),
  ('OKC',f"New Thunder arena and related 2025 GO projects ({f(PJ[('OKC',False)]['pub'])}) + Paycom 2002 & 2008 money ({f(det['OKC']['core26'])}), OKC city sales tax and GO bonds",PJ[('OKC',False)]['pub']+det['OKC']['core26'],[('16000US4055000',1.0)],'City sales tax (also paid by commuters/visitors) and GO bonds'),
@@ -170,6 +174,14 @@ D=[
  ('MIL','Fiserv Forum',det['MIL']['core26'],[('05000US55079',(det['MIL']['core26']-TI['MIL']['pub']['general']/2*CPI[2026]/CPI[2018])/det['MIL']['core26']),('04000US55',TI['MIL']['pub']['general']/2*CPI[2026]/CPI[2018]/det['MIL']['core26'])],'Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)'),
  ('NOP','Smoothie King Center',det['NOP']['core26'],[('04000US22',1.0)],'State of Louisiana (LSED/state)'),
  ('SAC','Golden 1 Center',det['SAC']['core26'],[('16000US0664000',1.0)],'City of Sacramento general fund/parking'),
+ ('MIA','Kaseya Center (county land, county payments to the arena manager since 1999, state payments to the operator since 1998)',det['MIA']['core26'],[('05000US12086',(det['MIA']['core26']-miast)/det['MIA']['core26']),('04000US12',miast/det['MIA']['core26'])],'Miami-Dade County (land and yearly payments) + State of Florida (sales-tax distribution to the operator)'),
+ ('ATL','State Farm Arena (1999 infrastructure, 2017-18 renovation)',det['ATL']['core26'],[('16000US1304000',1.0)],'City of Atlanta car-rental tax, paid mostly by visitors, and sales of city property'),
+ ('PHX','Mortgage Matchup Center (1992, 2019-20 renovation, renewal account)',det['PHX']['core26'],[('16000US0455000',1.0)],'City of Phoenix hotel and car-rental taxes (Sports Facilities Fund), paid mostly by visitors'),
+ ('MIN','Target Center (1990 subsidy, 1995 purchase, 2016-17 renovation, payments 2010-18)',det['MIN']['core26'],[('16000US2743000',1.0)],'City of Minneapolis (tax increment, sales tax, entertainment taxes and parking revenue; a $750,000 yearly state appropriation also helped repay the 1995 bonds)'),
+ ('DAL','American Airlines Center (2001)',det['DAL']['core26'],[('16000US4819000',1.0)],'City of Dallas hotel and car-rental taxes, paid mostly by visitors'),
+ ('LAL','Crypto.com Arena (1999)',det['LAL']['core26'],[('16000US0644000',1.0)],'City of Los Angeles (repaid mostly from the arena admissions fee and convention center parking revenue)'),
+ ('DEN','Ball Arena (1999)',det['DEN']['core26'],[('16000US0820000',1.0)],'City and County of Denver (urban-renewal tax increment and city funds)'),
+ ('GSW','Chase Center (2019)',det['GSW']['core26'],[('05000US06075',1.0)],'City and County of San Francisco (general fund and the Mission Bay transportation fund)'),
 ]
 hh_rows=[]
 PEND={'POR':det['POR']['pend26']}  # Portland's row adds the pending rebuild money, marked as pending on the site

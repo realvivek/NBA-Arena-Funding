@@ -1,0 +1,32 @@
+---
+/**
+ * The ZIP lookup: a reader enters a ZIP code and sees the public arena money per household committed by each city,
+ * county and state that taxes it (data from the zip-lookup dataset, served at /zip-lookup.json and loaded the first
+ * time the reader uses the form). Without the script, the form stays hidden and a link leads to every deal per
+ * household.
+ */
+import Cites from './Cites.astro';
+import { sitePath } from '../lib/paths';
+interface Props {
+  title: string;
+  intro: string;
+  sources: string[];
+  numbers: number[];
+  quiet?: boolean;
+  /** The heading level: 3 inside the story's chapters, 2 on a reference page. */
+  level?: 2 | 3;
+}
+const { title, intro, sources, numbers, quiet = false, level = 3 } = Astro.props;
+const H = level === 2 ? 'h2' : 'h3';
+---
+<section class="ziplookup" data-src={sitePath('/zip-lookup.json')} aria-labelledby="zl-title">
+  <H class="zl-title" id="zl-title">{title}</H>
+  <div class="para zl-intro"><Fragment set:html={intro} />{!quiet && <>{' '}<Cites ids={sources} numbers={numbers} /></>}</div>
+  <form class="zl-form" hidden>
+    <label class="zl-label" for="zl-zip">ZIP code</label>
+    <input class="zl-input" id="zl-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="e.g. 73102" />
+    <button class="zl-go" type="submit">Look up</button>
+  </form>
+  <div class="zl-out" aria-live="polite"></div>
+  <p class="zl-fallback"><a href={sitePath('/households/')}>Every arena deal, per household</a></p>
+</section>

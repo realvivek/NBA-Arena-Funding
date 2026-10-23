@@ -113,16 +113,34 @@ pays:
       sources: [ledger]
     - fig: payershift
     - p: >-
+        Which tax pays decides who carries the bill. A sales tax takes a far larger share of income from poor
+        households than from rich ones: Utah's take about **{{itep_ut_sales_ratio}} times** as large a share from
+        the poorest fifth of households as from the richest one percent, by the Institute on Taxation and Economic
+        Policy's estimates, and Oklahoma's about {{itep_okc_sales_ratio}} times. Salt Lake City paid for its arena
+        with a sales tax, as Oklahoma City did and is doing again. Washington paid from a general fund drawn from
+        taxes that take {{itep_was_poorest}} of income from its poorest fifth of households and {{itep_was_top1}}
+        from its richest one percent.
+      sources: [itep-who-pays-7, ledger]
+    - fig: incidence
+    - p: >-
         The decisions rarely went to voters. Of the {{capital_since_2014}} put or committed since 2014,
         {{unvoted_since_2014_share}} was approved by councils, legislatures and appointed boards with no public vote.
         The rest came from taxes voters had approved: Oklahoma City's MAPS 4 sales tax in 2019 and Bexar County's
         venue tax, extended in 2008.
       sources: [ledger, threat-ledger, okc-maps-history, bexar-elections-2008-05-10-results, bondbuyer-san-antonio-shopping-list]
     - p: >-
-        Per household, the largest commitments are in Salt Lake City, where the Delta Center deal comes to
-        **{{hh_uta}}** for each household in the city (an upper bound, because people who live elsewhere pay part
-        of the sales tax); Oklahoma City, at **{{hh_okc}}**; and Washington, at **{{hh_was}}**.
-      sources: [ledger, census-b11001-2024]
+        Bexar County's November 2025 vote on a new Spurs arena turned on its richest precincts. Proposition B, which
+        put the county's visitor taxes toward the arena, passed with {{propb_yes_share}}. The fifth of precincts with
+        the highest incomes voted **{{propb_top_yes}} yes** and cast {{propb_top_votes_share}} of the votes; in the
+        rest of the county the measure drew {{propb_rest_yes}}.
+      sources: [bexar-elections-2025-11-04-precinct, census-acs2024-5yr-bg-bexar]
+    - fig: propb
+    - lookup: zip
+      title: What is your household's share?
+      intro: >-
+        Enter a ZIP code to see the public money committed to NBA arenas by the city, county and state that tax it,
+        per household. The most is in Salt Lake City, at **{{hh_uta}}** a household.
+      sources: [ledger, census-b11001-2024, census-zcta-county-2020, census-zcta-place-2020]
   more:
     - { page: taxes, text: 'Every funding stream' }
     - { page: households, text: 'Every deal, per household' }

@@ -1,0 +1,12 @@
+claim,label,source
+"Taxes as a share of family income for seven income groups in each state, by tax line (itep_who_pays_7.csv)",c,https://sfo2.digitaloceanspaces.com/itep/ITEP_WhoPays7_Data_Jan2024rev.xlsx
+Who Pays? 7th edition report and method (figures show 2024 tax law at 2023 income levels; senior taxpayers excluded),c,https://itep.org/whopays-7th-edition/
+Which ITEP line matches each arena's resident-paid funding stream (itep_tax_lines.csv): assigned for this site from the ledger's notes,a,https://github.com/realvivek/NBA-Arena-Funding/blob/main/data/ledger/ledger_items.csv
+"Registered voters, ballots and Proposition B votes for every precinct, November 4, 2025 (bexar_2025_prop_b_precincts.csv)",b,https://elections.bexar.gov/DocumentCenter/View/1217/November-4-2025-Official-Precinct-Report-PDF
+"Proposition B county totals: For 128,786 (52.14%), Against 118,192 (47.86%); registered voters 1,286,220; ballots cast 248,700",b,https://elections.bexar.gov/DocumentCenter/View/1219/November-4-2025-Official-Summary-Report-PDF
+Precinct boundaries in effect for the November 2025 election (the 776 Bexar precincts of the 2024 general election),b,https://data.capitol.texas.gov/dataset/precincts
+Block-group boundaries for the precincts' Census estimates,b,https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_48_bg_500k.zip
+"Households and median household income by block group, ACS 2020-2024; spread over precincts by area (households_est, median_income_est are computed, a)",b/a,"https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029"
+"ZIP code areas in each county and state (zip_jurisdictions.csv, land shares computed, a)",b/a,https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt
+"ZIP code areas in each city (zip_jurisdictions.csv, land shares computed, a)",b/a,https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_place20_natl.txt
+"Oklahoma City's December 12, 2023 arena sales-tax vote by precinct: not reached (the State Election Board's results site refuses automated access; its export is meant to be downloaded by hand)",u,https://results.okelections.us/OKER/?elecDate=20231212

@@ -19,6 +19,8 @@ import Leases from './charts/Leases.svelte';
 import Columns from './charts/Columns.svelte';
 import PayerShift from './charts/PayerShift.svelte';
 import ValueGroups from './charts/ValueGroups.svelte';
+import Incidence from './charts/Incidence.svelte';
+import PropB from './charts/PropB.svelte';
 import { dataset } from '../lib/data';
 import * as T from '../lib/tables';
 import { plain } from '../lib/copy';
@@ -53,6 +55,8 @@ const REG: Record<string, { C: any; data: string; table: (rows: any[]) => any; p
   leases: { C: Leases, data: 'leases', table: T.leasesTable },
   slc: { C: Columns, data: 'slc-monthly', table: T.slcTable, props: { kind: 'slc' } },
   wcd: { C: Columns, data: 'wcd-annual', table: T.wcdTable, props: { kind: 'wcd' } },
+  incidence: { C: Incidence, data: 'incidence', table: T.incidenceTable },
+  propb: { C: PropB, data: 'propb-fifths', table: T.propbTable, props: { precincts: dataset('propb-precincts').rows, map: dataset('bexar-map').rows } },
 };
 const spec = REG[id];
 if (!spec) throw new Error(`no chart registered for figure ${id}`);

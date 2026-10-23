@@ -1,0 +1,427 @@
+{
+ "id": "incidence",
+ "title": "How hard the taxes behind each arena's resident-paid money fall on the poorest households, by ITEP's estimates for each state",
+ "sources": [
+  "itep-who-pays-7-data",
+  "itep-who-pays-7",
+  "who-pays-ledger",
+  "ledger",
+  "ideastream-county-council-approves-405-million-for-fieldhou",
+  "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+  "utah-pmn",
+  "lrl-target",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "news9-voters-approve-sales-tax-extension",
+  "ok-sb1819-2008",
+  "ok-sb604-2023",
+  "ok-tax-commission-quality-jobs-fy2010",
+  "okc-maps4-downtown-arena-related-facilities",
+  "wiki-paycom-center",
+  "occompt-occompt",
+  "occompt-occompt-2",
+  "oppaga-15-01",
+  "wi-lfb-informational-paper-18",
+  "downtownmemphis-city-council-approves-two-key-funding-m",
+  "memphis-council-agenda-2026-09-01",
+  "memphistn-fy05-annual-report",
+  "memphistn-fy15-annual-report",
+  "mlgw-board-minutes-2026-08-19",
+  "tn-private-chapter-67-2024",
+  "tn-public-chapter-272-2023",
+  "tn-public-chapter-405-2023",
+  "tri-statedefender-p-349496",
+  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "lla-0000b6bd",
+  "lla-vwprbyagencyjson",
+  "sportsbusinessdaily-new-orleans",
+  "slc-slc-acfr-06-30-2025",
+  "renewdenver-pepsi-center",
+  "sec-0000927356-99-000502",
+  "sec-0001047469-98-001379",
+  "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
+  "degc-ugd-3",
+  "portland-2024-annual-comprehensive-financial-report",
+  "wweek-proposed-city-purchase-of-moda-center-would-trig",
+  "leg-031209-agenda",
+  "leg-other",
+  "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+  "sacramento-acfr-fy2021",
+  "sfmta-board-lrv4-modification-4",
+  "sfmta-board-warriors-supplemental-appropriation",
+  "sfmta-letter-to-ocii-2015-10-20",
+  "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
+  "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
+  "ibo-2009-may-atlantic-yards-testimony",
+  "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
+  "nolandgrab-mtastaffsummaryvdyard062209",
+  "cfo-arena-tax-revenue-clarification",
+  "cfo-fis-downtown-arena-revitalization",
+  "dccouncil-4-2-24-arena-funding-memo",
+  "govinfo-gaoreports-aimd-98-223",
+  "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
+  "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+ ],
+ "base_sources": [
+  "itep-who-pays-7-data",
+  "itep-who-pays-7",
+  "who-pays-ledger",
+  "ledger"
+ ],
+ "columns": [
+  "team",
+  "city",
+  "state",
+  "line",
+  "kind",
+  "line_name",
+  "public_2026_m",
+  "poorest_share",
+  "top1_share",
+  "ratio",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "CLE",
+   "city": "Cleveland",
+   "state": "Ohio",
+   "line": "SE_EXCISE",
+   "kind": "alcohol and tobacco taxes",
+   "line_name": "Other sales and excise taxes paid by individuals",
+   "public_2026_m": 52.539226,
+   "poorest_share": 0.025662,
+   "top1_share": 0.001172,
+   "ratio": 21.895904,
+   "sources": [
+    "ideastream-county-council-approves-405-million-for-fieldhou"
+   ]
+  },
+  {
+   "team": "UTA",
+   "city": "Salt Lake City",
+   "state": "Utah",
+   "line": "SE_GST",
+   "kind": "sales tax",
+   "line_name": "General sales taxes paid by individuals",
+   "public_2026_m": 525.0,
+   "poorest_share": 0.039284,
+   "top1_share": 0.002588,
+   "ratio": 15.179289,
+   "sources": [
+    "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+    "utah-pmn"
+   ]
+  },
+  {
+   "team": "MIN",
+   "city": "Minneapolis",
+   "state": "Minnesota",
+   "line": "SE_GST",
+   "kind": "sales tax",
+   "line_name": "General sales taxes paid by individuals",
+   "public_2026_m": 100.12459,
+   "poorest_share": 0.025657,
+   "top1_share": 0.002848,
+   "ratio": 9.008778,
+   "sources": [
+    "lrl-target",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "OKC",
+   "city": "Oklahoma City",
+   "state": "Oklahoma",
+   "line": "SE_GST",
+   "kind": "sales tax",
+   "line_name": "General sales taxes paid by individuals",
+   "public_2026_m": 321.548638,
+   "poorest_share": 0.037597,
+   "top1_share": 0.004997,
+   "ratio": 7.523914,
+   "sources": [
+    "news9-voters-approve-sales-tax-extension",
+    "ok-sb1819-2008",
+    "ok-sb604-2023",
+    "ok-tax-commission-quality-jobs-fy2010",
+    "okc-maps4-downtown-arena-related-facilities",
+    "wiki-paycom-center"
+   ]
+  },
+  {
+   "team": "ORL",
+   "city": "Orlando",
+   "state": "Florida",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 196.204835,
+   "poorest_share": 0.13172,
+   "top1_share": 0.027376,
+   "ratio": 4.811514,
+   "sources": [
+    "occompt-occompt",
+    "occompt-occompt-2",
+    "oppaga-15-01",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "MIL",
+   "city": "Milwaukee",
+   "state": "Wisconsin",
+   "line": "PROP_TOTAL",
+   "kind": "property-tax increment",
+   "line_name": "Property taxes",
+   "public_2026_m": 62.076378,
+   "poorest_share": 0.046817,
+   "top1_share": 0.011374,
+   "ratio": 4.116142,
+   "sources": [
+    "wi-lfb-informational-paper-18"
+   ]
+  },
+  {
+   "team": "MEM",
+   "city": "Memphis",
+   "state": "Tennessee",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 136.187975,
+   "poorest_share": 0.1281,
+   "top1_share": 0.037522,
+   "ratio": 3.413997,
+   "sources": [
+    "downtownmemphis-city-council-approves-two-key-funding-m",
+    "memphis-council-agenda-2026-09-01",
+    "memphistn-fy05-annual-report",
+    "memphistn-fy15-annual-report",
+    "mlgw-board-minutes-2026-08-19",
+    "tn-private-chapter-67-2024",
+    "tn-public-chapter-272-2023",
+    "tn-public-chapter-405-2023",
+    "tri-statedefender-p-349496"
+   ]
+  },
+  {
+   "team": "IND",
+   "city": "Indianapolis",
+   "state": "Indiana",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 180.411291,
+   "poorest_share": 0.133135,
+   "top1_share": 0.061918,
+   "ratio": 2.150182,
+   "sources": [
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
+   ]
+  },
+  {
+   "team": "NOP",
+   "city": "New Orleans",
+   "state": "Louisiana",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 99.58314,
+   "poorest_share": 0.1314,
+   "top1_share": 0.065004,
+   "ratio": 2.021414,
+   "sources": [
+    "lla-0000b6bd",
+    "lla-vwprbyagencyjson",
+    "sportsbusinessdaily-new-orleans"
+   ]
+  },
+  {
+   "team": "UTA",
+   "city": "Salt Lake City",
+   "state": "Utah",
+   "line": "PROP_TOTAL",
+   "kind": "property-tax increment",
+   "line_name": "Property taxes",
+   "public_2026_m": 22.7,
+   "poorest_share": 0.027514,
+   "top1_share": 0.014896,
+   "ratio": 1.847073,
+   "sources": [
+    "slc-slc-acfr-06-30-2025"
+   ]
+  },
+  {
+   "team": "MIL",
+   "city": "Milwaukee",
+   "state": "Wisconsin",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 142.775669,
+   "poorest_share": 0.107858,
+   "top1_share": 0.066496,
+   "ratio": 1.622022,
+   "sources": [
+    "wi-lfb-informational-paper-18"
+   ]
+  },
+  {
+   "team": "DEN",
+   "city": "Denver",
+   "state": "Colorado",
+   "line": "PROP_TOTAL",
+   "kind": "property-tax increment",
+   "line_name": "Property taxes",
+   "public_2026_m": 72.672497,
+   "poorest_share": 0.037324,
+   "top1_share": 0.023821,
+   "ratio": 1.566853,
+   "sources": [
+    "renewdenver-pepsi-center",
+    "sec-0000927356-99-000502",
+    "sec-0001047469-98-001379"
+   ]
+  },
+  {
+   "team": "ATL",
+   "city": "Atlanta",
+   "state": "Georgia",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 42.925155,
+   "poorest_share": 0.103103,
+   "top1_share": 0.069205,
+   "ratio": 1.48982,
+   "sources": [
+    "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
+   ]
+  },
+  {
+   "team": "DET",
+   "city": "Detroit",
+   "state": "Michigan",
+   "line": "PROP_TOTAL",
+   "kind": "property-tax increment",
+   "line_name": "Property taxes",
+   "public_2026_m": 386.968009,
+   "poorest_share": 0.015862,
+   "top1_share": 0.013692,
+   "ratio": 1.158487,
+   "sources": [
+    "degc-ugd-3"
+   ]
+  },
+  {
+   "team": "POR",
+   "city": "Portland",
+   "state": "Oregon",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 7.538371,
+   "poorest_share": 0.119585,
+   "top1_share": 0.104312,
+   "ratio": 1.146417,
+   "sources": [
+    "portland-2024-annual-comprehensive-financial-report",
+    "wweek-proposed-city-purchase-of-moda-center-would-trig"
+   ]
+  },
+  {
+   "team": "MIN",
+   "city": "Minneapolis",
+   "state": "Minnesota",
+   "line": "PROP_TOTAL",
+   "kind": "property-tax increment",
+   "line_name": "Property taxes",
+   "public_2026_m": 50.766815,
+   "poorest_share": 0.019978,
+   "top1_share": 0.019571,
+   "ratio": 1.020796,
+   "sources": [
+    "leg-031209-agenda",
+    "leg-other",
+    "lrl-target"
+   ]
+  },
+  {
+   "team": "SAC",
+   "city": "Sacramento",
+   "state": "California",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 308.292104,
+   "poorest_share": 0.117339,
+   "top1_share": 0.120387,
+   "ratio": 0.974682,
+   "sources": [
+    "cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c",
+    "sacramento-acfr-fy2021"
+   ]
+  },
+  {
+   "team": "GSW",
+   "city": "San Francisco",
+   "state": "California",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 55.081865,
+   "poorest_share": 0.117339,
+   "top1_share": 0.120387,
+   "ratio": 0.974682,
+   "sources": [
+    "sfmta-board-lrv4-modification-4",
+    "sfmta-board-warriors-supplemental-appropriation",
+    "sfmta-letter-to-ocii-2015-10-20"
+   ]
+  },
+  {
+   "team": "BKN",
+   "city": "Brooklyn",
+   "state": "New York",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 440.581749,
+   "poorest_share": 0.11109,
+   "top1_share": 0.135259,
+   "ratio": 0.821313,
+   "sources": [
+    "atlanticyardsreport-amazing-shrinking-railyard-deal-partial",
+    "atlanticyardsreport-mta-deal-revealed-20m-down-21-years-to",
+    "ibo-2009-may-atlantic-yards-testimony",
+    "ibo-2009-september-the-proposed-arena-at-atlantic-ya",
+    "nolandgrab-mtastaffsummaryvdyard062209"
+   ]
+  },
+  {
+   "team": "WAS",
+   "city": "Washington",
+   "state": "District of Columbia",
+   "line": "APP_A",
+   "kind": "general taxes",
+   "line_name": "All state and local taxes",
+   "public_2026_m": 599.146033,
+   "poorest_share": 0.048153,
+   "top1_share": 0.11435,
+   "ratio": 0.421102,
+   "sources": [
+    "cfo-arena-tax-revenue-clarification",
+    "cfo-fis-downtown-arena-revitalization",
+    "dccouncil-4-2-24-arena-funding-memo",
+    "govinfo-gaoreports-aimd-98-223",
+    "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
+    "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+   ]
+  }
+ ],
+ "note": "One row per arena and tax line; the arena's resident-paid capital money (general funds, dedicated sales taxes, tax increment and tax capture, lease-revenue bonds, alcohol and tobacco taxes) in 2026 dollars. poorest_share and top1_share are the shares of family income the matching ITEP line takes in that state from the lowest 20% and the top 1% of households (2024 tax law at 2023 incomes, households under 65); ratio divides the first by the second. The line describes how the kind of tax falls across a state, not the arena tax alone.",
+ "method": "select i.team, regexp_replace(a.city, ', [A-Z]{2}$', '') as city, i.state, i.line, case i.line when 'SE_GST' then 'sales tax' when 'SE_EXCISE' then 'alcohol and tobacco taxes' when 'PROP_TOTAL' then 'property-tax increment' else 'general taxes' end as kind, any_value(i.line_name) as line_name, sum(i.public_2026_m) as public_2026_m, any_value(i.poorest_share) as poorest_share, any_value(i.top1_share) as top1_share, any_value(i.ratio) as ratio, (select list_sort(coalesce(list(distinct s.source_id), [])) from item_sources s join buckets b on b.item_id = s.item_id join itep_lines l on l.team = b.team and l.bucket = b.bucket join capital c on c.item_id = b.item_id where s.team = i.team and s.role = 'public' and l.line = i.line) as sources from incidence i join arenas a using (team) group by i.team, a.city, i.state, i.line order by ratio desc, public_2026_m desc"
+}

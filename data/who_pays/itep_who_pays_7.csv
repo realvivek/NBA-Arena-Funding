@@ -1,0 +1,1429 @@
+state,line,line_name,grp,grp_order,share_of_income,label
+Alabama,APP_A,All state and local taxes,Lowest 20%,1,0.118693,c
+Alabama,APP_A,All state and local taxes,Second 20%,2,0.114875,c
+Alabama,APP_A,All state and local taxes,Middle 20%,3,0.10486,c
+Alabama,APP_A,All state and local taxes,Fourth 20%,4,0.092935,c
+Alabama,APP_A,All state and local taxes,Next 15%,5,0.08354,c
+Alabama,APP_A,All state and local taxes,Next 4%,6,0.067361,c
+Alabama,APP_A,All state and local taxes,Top 1%,7,0.053764,c
+Alaska,APP_A,All state and local taxes,Lowest 20%,1,0.087146,c
+Alaska,APP_A,All state and local taxes,Second 20%,2,0.058692,c
+Alaska,APP_A,All state and local taxes,Middle 20%,3,0.053672,c
+Alaska,APP_A,All state and local taxes,Fourth 20%,4,0.053783,c
+Alaska,APP_A,All state and local taxes,Next 15%,5,0.043156,c
+Alaska,APP_A,All state and local taxes,Next 4%,6,0.032193,c
+Alaska,APP_A,All state and local taxes,Top 1%,7,0.027766,c
+Arizona,APP_A,All state and local taxes,Lowest 20%,1,0.118305,c
+Arizona,APP_A,All state and local taxes,Second 20%,2,0.101228,c
+Arizona,APP_A,All state and local taxes,Middle 20%,3,0.098361,c
+Arizona,APP_A,All state and local taxes,Fourth 20%,4,0.091028,c
+Arizona,APP_A,All state and local taxes,Next 15%,5,0.077946,c
+Arizona,APP_A,All state and local taxes,Next 4%,6,0.062649,c
+Arizona,APP_A,All state and local taxes,Top 1%,7,0.050163,c
+Arkansas,APP_A,All state and local taxes,Lowest 20%,1,0.13056,c
+Arkansas,APP_A,All state and local taxes,Second 20%,2,0.110974,c
+Arkansas,APP_A,All state and local taxes,Middle 20%,3,0.116856,c
+Arkansas,APP_A,All state and local taxes,Fourth 20%,4,0.100678,c
+Arkansas,APP_A,All state and local taxes,Next 15%,5,0.094396,c
+Arkansas,APP_A,All state and local taxes,Next 4%,6,0.080775,c
+Arkansas,APP_A,All state and local taxes,Top 1%,7,0.057934,c
+California,APP_A,All state and local taxes,Lowest 20%,1,0.117339,c
+California,APP_A,All state and local taxes,Second 20%,2,0.103302,c
+California,APP_A,All state and local taxes,Middle 20%,3,0.103587,c
+California,APP_A,All state and local taxes,Fourth 20%,4,0.110101,c
+California,APP_A,All state and local taxes,Next 15%,5,0.10844,c
+California,APP_A,All state and local taxes,Next 4%,6,0.10388,c
+California,APP_A,All state and local taxes,Top 1%,7,0.120387,c
+Colorado,APP_A,All state and local taxes,Lowest 20%,1,0.082544,c
+Colorado,APP_A,All state and local taxes,Second 20%,2,0.089817,c
+Colorado,APP_A,All state and local taxes,Middle 20%,3,0.098506,c
+Colorado,APP_A,All state and local taxes,Fourth 20%,4,0.092801,c
+Colorado,APP_A,All state and local taxes,Next 15%,5,0.085053,c
+Colorado,APP_A,All state and local taxes,Next 4%,6,0.075572,c
+Colorado,APP_A,All state and local taxes,Top 1%,7,0.070307,c
+Connecticut,APP_A,All state and local taxes,Lowest 20%,1,0.124042,c
+Connecticut,APP_A,All state and local taxes,Second 20%,2,0.104062,c
+Connecticut,APP_A,All state and local taxes,Middle 20%,3,0.116939,c
+Connecticut,APP_A,All state and local taxes,Fourth 20%,4,0.12217,c
+Connecticut,APP_A,All state and local taxes,Next 15%,5,0.108126,c
+Connecticut,APP_A,All state and local taxes,Next 4%,6,0.092657,c
+Connecticut,APP_A,All state and local taxes,Top 1%,7,0.078636,c
+Delaware,APP_A,All state and local taxes,Lowest 20%,1,0.081783,c
+Delaware,APP_A,All state and local taxes,Second 20%,2,0.076316,c
+Delaware,APP_A,All state and local taxes,Middle 20%,3,0.079462,c
+Delaware,APP_A,All state and local taxes,Fourth 20%,4,0.081312,c
+Delaware,APP_A,All state and local taxes,Next 15%,5,0.077372,c
+Delaware,APP_A,All state and local taxes,Next 4%,6,0.077163,c
+Delaware,APP_A,All state and local taxes,Top 1%,7,0.067922,c
+District of Columbia,APP_A,All state and local taxes,Lowest 20%,1,0.048153,c
+District of Columbia,APP_A,All state and local taxes,Second 20%,2,0.106423,c
+District of Columbia,APP_A,All state and local taxes,Middle 20%,3,0.114625,c
+District of Columbia,APP_A,All state and local taxes,Fourth 20%,4,0.124175,c
+District of Columbia,APP_A,All state and local taxes,Next 15%,5,0.121404,c
+District of Columbia,APP_A,All state and local taxes,Next 4%,6,0.109101,c
+District of Columbia,APP_A,All state and local taxes,Top 1%,7,0.11435,c
+Florida,APP_A,All state and local taxes,Lowest 20%,1,0.13172,c
+Florida,APP_A,All state and local taxes,Second 20%,2,0.108609,c
+Florida,APP_A,All state and local taxes,Middle 20%,3,0.094605,c
+Florida,APP_A,All state and local taxes,Fourth 20%,4,0.083902,c
+Florida,APP_A,All state and local taxes,Next 15%,5,0.063905,c
+Florida,APP_A,All state and local taxes,Next 4%,6,0.050373,c
+Florida,APP_A,All state and local taxes,Top 1%,7,0.027376,c
+Georgia,APP_A,All state and local taxes,Lowest 20%,1,0.103103,c
+Georgia,APP_A,All state and local taxes,Second 20%,2,0.101327,c
+Georgia,APP_A,All state and local taxes,Middle 20%,3,0.096351,c
+Georgia,APP_A,All state and local taxes,Fourth 20%,4,0.097962,c
+Georgia,APP_A,All state and local taxes,Next 15%,5,0.09271,c
+Georgia,APP_A,All state and local taxes,Next 4%,6,0.080329,c
+Georgia,APP_A,All state and local taxes,Top 1%,7,0.069205,c
+Hawaii,APP_A,All state and local taxes,Lowest 20%,1,0.140529,c
+Hawaii,APP_A,All state and local taxes,Second 20%,2,0.137353,c
+Hawaii,APP_A,All state and local taxes,Middle 20%,3,0.142204,c
+Hawaii,APP_A,All state and local taxes,Fourth 20%,4,0.134002,c
+Hawaii,APP_A,All state and local taxes,Next 15%,5,0.118467,c
+Hawaii,APP_A,All state and local taxes,Next 4%,6,0.102321,c
+Hawaii,APP_A,All state and local taxes,Top 1%,7,0.101017,c
+Idaho,APP_A,All state and local taxes,Lowest 20%,1,0.095442,c
+Idaho,APP_A,All state and local taxes,Second 20%,2,0.078255,c
+Idaho,APP_A,All state and local taxes,Middle 20%,3,0.084097,c
+Idaho,APP_A,All state and local taxes,Fourth 20%,4,0.085942,c
+Idaho,APP_A,All state and local taxes,Next 15%,5,0.084064,c
+Idaho,APP_A,All state and local taxes,Next 4%,6,0.072844,c
+Idaho,APP_A,All state and local taxes,Top 1%,7,0.063983,c
+Illinois,APP_A,All state and local taxes,Lowest 20%,1,0.148419,c
+Illinois,APP_A,All state and local taxes,Second 20%,2,0.126057,c
+Illinois,APP_A,All state and local taxes,Middle 20%,3,0.12781,c
+Illinois,APP_A,All state and local taxes,Fourth 20%,4,0.116105,c
+Illinois,APP_A,All state and local taxes,Next 15%,5,0.10839,c
+Illinois,APP_A,All state and local taxes,Next 4%,6,0.091426,c
+Illinois,APP_A,All state and local taxes,Top 1%,7,0.072978,c
+Indiana,APP_A,All state and local taxes,Lowest 20%,1,0.133135,c
+Indiana,APP_A,All state and local taxes,Second 20%,2,0.109631,c
+Indiana,APP_A,All state and local taxes,Middle 20%,3,0.10352,c
+Indiana,APP_A,All state and local taxes,Fourth 20%,4,0.096701,c
+Indiana,APP_A,All state and local taxes,Next 15%,5,0.086611,c
+Indiana,APP_A,All state and local taxes,Next 4%,6,0.07409,c
+Indiana,APP_A,All state and local taxes,Top 1%,7,0.061918,c
+Iowa,APP_A,All state and local taxes,Lowest 20%,1,0.115551,c
+Iowa,APP_A,All state and local taxes,Second 20%,2,0.113756,c
+Iowa,APP_A,All state and local taxes,Middle 20%,3,0.105388,c
+Iowa,APP_A,All state and local taxes,Fourth 20%,4,0.107493,c
+Iowa,APP_A,All state and local taxes,Next 15%,5,0.105859,c
+Iowa,APP_A,All state and local taxes,Next 4%,6,0.089401,c
+Iowa,APP_A,All state and local taxes,Top 1%,7,0.071625,c
+Kansas,APP_A,All state and local taxes,Lowest 20%,1,0.113845,c
+Kansas,APP_A,All state and local taxes,Second 20%,2,0.111693,c
+Kansas,APP_A,All state and local taxes,Middle 20%,3,0.117085,c
+Kansas,APP_A,All state and local taxes,Fourth 20%,4,0.111734,c
+Kansas,APP_A,All state and local taxes,Next 15%,5,0.108178,c
+Kansas,APP_A,All state and local taxes,Next 4%,6,0.089585,c
+Kansas,APP_A,All state and local taxes,Top 1%,7,0.075205,c
+Kentucky,APP_A,All state and local taxes,Lowest 20%,1,0.123603,c
+Kentucky,APP_A,All state and local taxes,Second 20%,2,0.108748,c
+Kentucky,APP_A,All state and local taxes,Middle 20%,3,0.11013,c
+Kentucky,APP_A,All state and local taxes,Fourth 20%,4,0.103088,c
+Kentucky,APP_A,All state and local taxes,Next 15%,5,0.099537,c
+Kentucky,APP_A,All state and local taxes,Next 4%,6,0.083708,c
+Kentucky,APP_A,All state and local taxes,Top 1%,7,0.065877,c
+Louisiana,APP_A,All state and local taxes,Lowest 20%,1,0.1314,c
+Louisiana,APP_A,All state and local taxes,Second 20%,2,0.127212,c
+Louisiana,APP_A,All state and local taxes,Middle 20%,3,0.124911,c
+Louisiana,APP_A,All state and local taxes,Fourth 20%,4,0.109094,c
+Louisiana,APP_A,All state and local taxes,Next 15%,5,0.101111,c
+Louisiana,APP_A,All state and local taxes,Next 4%,6,0.087191,c
+Louisiana,APP_A,All state and local taxes,Top 1%,7,0.065004,c
+Maine,APP_A,All state and local taxes,Lowest 20%,1,0.086189,c
+Maine,APP_A,All state and local taxes,Second 20%,2,0.092784,c
+Maine,APP_A,All state and local taxes,Middle 20%,3,0.106039,c
+Maine,APP_A,All state and local taxes,Fourth 20%,4,0.107398,c
+Maine,APP_A,All state and local taxes,Next 15%,5,0.107965,c
+Maine,APP_A,All state and local taxes,Next 4%,6,0.101037,c
+Maine,APP_A,All state and local taxes,Top 1%,7,0.094585,c
+Maryland,APP_A,All state and local taxes,Lowest 20%,1,0.095731,c
+Maryland,APP_A,All state and local taxes,Second 20%,2,0.097011,c
+Maryland,APP_A,All state and local taxes,Middle 20%,3,0.112097,c
+Maryland,APP_A,All state and local taxes,Fourth 20%,4,0.119885,c
+Maryland,APP_A,All state and local taxes,Next 15%,5,0.108477,c
+Maryland,APP_A,All state and local taxes,Next 4%,6,0.09574,c
+Maryland,APP_A,All state and local taxes,Top 1%,7,0.090485,c
+Massachusetts,APP_A,All state and local taxes,Lowest 20%,1,0.081959,c
+Massachusetts,APP_A,All state and local taxes,Second 20%,2,0.091698,c
+Massachusetts,APP_A,All state and local taxes,Middle 20%,3,0.095548,c
+Massachusetts,APP_A,All state and local taxes,Fourth 20%,4,0.09961,c
+Massachusetts,APP_A,All state and local taxes,Next 15%,5,0.091157,c
+Massachusetts,APP_A,All state and local taxes,Next 4%,6,0.078579,c
+Massachusetts,APP_A,All state and local taxes,Top 1%,7,0.089193,c
+Michigan,APP_A,All state and local taxes,Lowest 20%,1,0.071143,c
+Michigan,APP_A,All state and local taxes,Second 20%,2,0.090361,c
+Michigan,APP_A,All state and local taxes,Middle 20%,3,0.097303,c
+Michigan,APP_A,All state and local taxes,Fourth 20%,4,0.096998,c
+Michigan,APP_A,All state and local taxes,Next 15%,5,0.085879,c
+Michigan,APP_A,All state and local taxes,Next 4%,6,0.073795,c
+Michigan,APP_A,All state and local taxes,Top 1%,7,0.057082,c
+Minnesota,APP_A,All state and local taxes,Lowest 20%,1,0.061913,c
+Minnesota,APP_A,All state and local taxes,Second 20%,2,0.080339,c
+Minnesota,APP_A,All state and local taxes,Middle 20%,3,0.099707,c
+Minnesota,APP_A,All state and local taxes,Fourth 20%,4,0.109181,c
+Minnesota,APP_A,All state and local taxes,Next 15%,5,0.099273,c
+Minnesota,APP_A,All state and local taxes,Next 4%,6,0.098529,c
+Minnesota,APP_A,All state and local taxes,Top 1%,7,0.104943,c
+Mississippi,APP_A,All state and local taxes,Lowest 20%,1,0.123814,c
+Mississippi,APP_A,All state and local taxes,Second 20%,2,0.108327,c
+Mississippi,APP_A,All state and local taxes,Middle 20%,3,0.110472,c
+Mississippi,APP_A,All state and local taxes,Fourth 20%,4,0.100996,c
+Mississippi,APP_A,All state and local taxes,Next 15%,5,0.09624,c
+Mississippi,APP_A,All state and local taxes,Next 4%,6,0.082413,c
+Mississippi,APP_A,All state and local taxes,Top 1%,7,0.069123,c
+Missouri,APP_A,All state and local taxes,Lowest 20%,1,0.097563,c
+Missouri,APP_A,All state and local taxes,Second 20%,2,0.084739,c
+Missouri,APP_A,All state and local taxes,Middle 20%,3,0.08646,c
+Missouri,APP_A,All state and local taxes,Fourth 20%,4,0.088763,c
+Missouri,APP_A,All state and local taxes,Next 15%,5,0.086857,c
+Missouri,APP_A,All state and local taxes,Next 4%,6,0.072636,c
+Missouri,APP_A,All state and local taxes,Top 1%,7,0.056976,c
+Montana,APP_A,All state and local taxes,Lowest 20%,1,0.094991,c
+Montana,APP_A,All state and local taxes,Second 20%,2,0.07507,c
+Montana,APP_A,All state and local taxes,Middle 20%,3,0.083271,c
+Montana,APP_A,All state and local taxes,Fourth 20%,4,0.084891,c
+Montana,APP_A,All state and local taxes,Next 15%,5,0.083734,c
+Montana,APP_A,All state and local taxes,Next 4%,6,0.076788,c
+Montana,APP_A,All state and local taxes,Top 1%,7,0.067231,c
+Nebraska,APP_A,All state and local taxes,Lowest 20%,1,0.112499,c
+Nebraska,APP_A,All state and local taxes,Second 20%,2,0.101059,c
+Nebraska,APP_A,All state and local taxes,Middle 20%,3,0.11007,c
+Nebraska,APP_A,All state and local taxes,Fourth 20%,4,0.101441,c
+Nebraska,APP_A,All state and local taxes,Next 15%,5,0.101701,c
+Nebraska,APP_A,All state and local taxes,Next 4%,6,0.090783,c
+Nebraska,APP_A,All state and local taxes,Top 1%,7,0.072388,c
+Nevada,APP_A,All state and local taxes,Lowest 20%,1,0.118517,c
+Nevada,APP_A,All state and local taxes,Second 20%,2,0.095068,c
+Nevada,APP_A,All state and local taxes,Middle 20%,3,0.086262,c
+Nevada,APP_A,All state and local taxes,Fourth 20%,4,0.077873,c
+Nevada,APP_A,All state and local taxes,Next 15%,5,0.0674,c
+Nevada,APP_A,All state and local taxes,Next 4%,6,0.050305,c
+Nevada,APP_A,All state and local taxes,Top 1%,7,0.027737,c
+New Hampshire,APP_A,All state and local taxes,Lowest 20%,1,0.089409,c
+New Hampshire,APP_A,All state and local taxes,Second 20%,2,0.060451,c
+New Hampshire,APP_A,All state and local taxes,Middle 20%,3,0.067159,c
+New Hampshire,APP_A,All state and local taxes,Fourth 20%,4,0.063306,c
+New Hampshire,APP_A,All state and local taxes,Next 15%,5,0.05183,c
+New Hampshire,APP_A,All state and local taxes,Next 4%,6,0.042059,c
+New Hampshire,APP_A,All state and local taxes,Top 1%,7,0.028468,c
+New Jersey,APP_A,All state and local taxes,Lowest 20%,1,0.087654,c
+New Jersey,APP_A,All state and local taxes,Second 20%,2,0.093611,c
+New Jersey,APP_A,All state and local taxes,Middle 20%,3,0.108018,c
+New Jersey,APP_A,All state and local taxes,Fourth 20%,4,0.120419,c
+New Jersey,APP_A,All state and local taxes,Next 15%,5,0.111478,c
+New Jersey,APP_A,All state and local taxes,Next 4%,6,0.094366,c
+New Jersey,APP_A,All state and local taxes,Top 1%,7,0.104562,c
+New Mexico,APP_A,All state and local taxes,Lowest 20%,1,0.071075,c
+New Mexico,APP_A,All state and local taxes,Second 20%,2,0.090432,c
+New Mexico,APP_A,All state and local taxes,Middle 20%,3,0.109607,c
+New Mexico,APP_A,All state and local taxes,Fourth 20%,4,0.116329,c
+New Mexico,APP_A,All state and local taxes,Next 15%,5,0.106714,c
+New Mexico,APP_A,All state and local taxes,Next 4%,6,0.095572,c
+New Mexico,APP_A,All state and local taxes,Top 1%,7,0.081488,c
+New York,APP_A,All state and local taxes,Lowest 20%,1,0.11109,c
+New York,APP_A,All state and local taxes,Second 20%,2,0.117871,c
+New York,APP_A,All state and local taxes,Middle 20%,3,0.132714,c
+New York,APP_A,All state and local taxes,Fourth 20%,4,0.138335,c
+New York,APP_A,All state and local taxes,Next 15%,5,0.137836,c
+New York,APP_A,All state and local taxes,Next 4%,6,0.127577,c
+New York,APP_A,All state and local taxes,Top 1%,7,0.135259,c
+North Carolina,APP_A,All state and local taxes,Lowest 20%,1,0.105223,c
+North Carolina,APP_A,All state and local taxes,Second 20%,2,0.095622,c
+North Carolina,APP_A,All state and local taxes,Middle 20%,3,0.09339,c
+North Carolina,APP_A,All state and local taxes,Fourth 20%,4,0.09093,c
+North Carolina,APP_A,All state and local taxes,Next 15%,5,0.085269,c
+North Carolina,APP_A,All state and local taxes,Next 4%,6,0.072125,c
+North Carolina,APP_A,All state and local taxes,Top 1%,7,0.059736,c
+North Dakota,APP_A,All state and local taxes,Lowest 20%,1,0.098443,c
+North Dakota,APP_A,All state and local taxes,Second 20%,2,0.08247,c
+North Dakota,APP_A,All state and local taxes,Middle 20%,3,0.085112,c
+North Dakota,APP_A,All state and local taxes,Fourth 20%,4,0.06675,c
+North Dakota,APP_A,All state and local taxes,Next 15%,5,0.066812,c
+North Dakota,APP_A,All state and local taxes,Next 4%,6,0.057264,c
+North Dakota,APP_A,All state and local taxes,Top 1%,7,0.049345,c
+Ohio,APP_A,All state and local taxes,Lowest 20%,1,0.127359,c
+Ohio,APP_A,All state and local taxes,Second 20%,2,0.104896,c
+Ohio,APP_A,All state and local taxes,Middle 20%,3,0.104324,c
+Ohio,APP_A,All state and local taxes,Fourth 20%,4,0.099769,c
+Ohio,APP_A,All state and local taxes,Next 15%,5,0.093032,c
+Ohio,APP_A,All state and local taxes,Next 4%,6,0.080262,c
+Ohio,APP_A,All state and local taxes,Top 1%,7,0.062862,c
+Oklahoma,APP_A,All state and local taxes,Lowest 20%,1,0.122451,c
+Oklahoma,APP_A,All state and local taxes,Second 20%,2,0.103132,c
+Oklahoma,APP_A,All state and local taxes,Middle 20%,3,0.104957,c
+Oklahoma,APP_A,All state and local taxes,Fourth 20%,4,0.097533,c
+Oklahoma,APP_A,All state and local taxes,Next 15%,5,0.088748,c
+Oklahoma,APP_A,All state and local taxes,Next 4%,6,0.078954,c
+Oklahoma,APP_A,All state and local taxes,Top 1%,7,0.063215,c
+Oregon,APP_A,All state and local taxes,Lowest 20%,1,0.119585,c
+Oregon,APP_A,All state and local taxes,Second 20%,2,0.100991,c
+Oregon,APP_A,All state and local taxes,Middle 20%,3,0.096561,c
+Oregon,APP_A,All state and local taxes,Fourth 20%,4,0.108679,c
+Oregon,APP_A,All state and local taxes,Next 15%,5,0.109612,c
+Oregon,APP_A,All state and local taxes,Next 4%,6,0.099733,c
+Oregon,APP_A,All state and local taxes,Top 1%,7,0.104312,c
+Pennsylvania,APP_A,All state and local taxes,Lowest 20%,1,0.151199,c
+Pennsylvania,APP_A,All state and local taxes,Second 20%,2,0.128409,c
+Pennsylvania,APP_A,All state and local taxes,Middle 20%,3,0.113702,c
+Pennsylvania,APP_A,All state and local taxes,Fourth 20%,4,0.102059,c
+Pennsylvania,APP_A,All state and local taxes,Next 15%,5,0.093758,c
+Pennsylvania,APP_A,All state and local taxes,Next 4%,6,0.081824,c
+Pennsylvania,APP_A,All state and local taxes,Top 1%,7,0.059881,c
+Rhode Island,APP_A,All state and local taxes,Lowest 20%,1,0.132871,c
+Rhode Island,APP_A,All state and local taxes,Second 20%,2,0.098197,c
+Rhode Island,APP_A,All state and local taxes,Middle 20%,3,0.096275,c
+Rhode Island,APP_A,All state and local taxes,Fourth 20%,4,0.104477,c
+Rhode Island,APP_A,All state and local taxes,Next 15%,5,0.094352,c
+Rhode Island,APP_A,All state and local taxes,Next 4%,6,0.090674,c
+Rhode Island,APP_A,All state and local taxes,Top 1%,7,0.085667,c
+South Carolina,APP_A,All state and local taxes,Lowest 20%,1,0.101478,c
+South Carolina,APP_A,All state and local taxes,Second 20%,2,0.08187,c
+South Carolina,APP_A,All state and local taxes,Middle 20%,3,0.087501,c
+South Carolina,APP_A,All state and local taxes,Fourth 20%,4,0.095288,c
+South Carolina,APP_A,All state and local taxes,Next 15%,5,0.094066,c
+South Carolina,APP_A,All state and local taxes,Next 4%,6,0.080752,c
+South Carolina,APP_A,All state and local taxes,Top 1%,7,0.064996,c
+South Dakota,APP_A,All state and local taxes,Lowest 20%,1,0.11438,c
+South Dakota,APP_A,All state and local taxes,Second 20%,2,0.08773,c
+South Dakota,APP_A,All state and local taxes,Middle 20%,3,0.086256,c
+South Dakota,APP_A,All state and local taxes,Fourth 20%,4,0.070131,c
+South Dakota,APP_A,All state and local taxes,Next 15%,5,0.067013,c
+South Dakota,APP_A,All state and local taxes,Next 4%,6,0.042249,c
+South Dakota,APP_A,All state and local taxes,Top 1%,7,0.025648,c
+Tennessee,APP_A,All state and local taxes,Lowest 20%,1,0.1281,c
+Tennessee,APP_A,All state and local taxes,Second 20%,2,0.109252,c
+Tennessee,APP_A,All state and local taxes,Middle 20%,3,0.101909,c
+Tennessee,APP_A,All state and local taxes,Fourth 20%,4,0.08554,c
+Tennessee,APP_A,All state and local taxes,Next 15%,5,0.071046,c
+Tennessee,APP_A,All state and local taxes,Next 4%,6,0.052558,c
+Tennessee,APP_A,All state and local taxes,Top 1%,7,0.037522,c
+Texas,APP_A,All state and local taxes,Lowest 20%,1,0.128114,c
+Texas,APP_A,All state and local taxes,Second 20%,2,0.111541,c
+Texas,APP_A,All state and local taxes,Middle 20%,3,0.098706,c
+Texas,APP_A,All state and local taxes,Fourth 20%,4,0.088158,c
+Texas,APP_A,All state and local taxes,Next 15%,5,0.072462,c
+Texas,APP_A,All state and local taxes,Next 4%,6,0.062454,c
+Texas,APP_A,All state and local taxes,Top 1%,7,0.045739,c
+Utah,APP_A,All state and local taxes,Lowest 20%,1,0.098251,c
+Utah,APP_A,All state and local taxes,Second 20%,2,0.099578,c
+Utah,APP_A,All state and local taxes,Middle 20%,3,0.104022,c
+Utah,APP_A,All state and local taxes,Fourth 20%,4,0.103229,c
+Utah,APP_A,All state and local taxes,Next 15%,5,0.094923,c
+Utah,APP_A,All state and local taxes,Next 4%,6,0.07596,c
+Utah,APP_A,All state and local taxes,Top 1%,7,0.063726,c
+Vermont,APP_A,All state and local taxes,Lowest 20%,1,0.063177,c
+Vermont,APP_A,All state and local taxes,Second 20%,2,0.082462,c
+Vermont,APP_A,All state and local taxes,Middle 20%,3,0.095846,c
+Vermont,APP_A,All state and local taxes,Fourth 20%,4,0.105004,c
+Vermont,APP_A,All state and local taxes,Next 15%,5,0.10559,c
+Vermont,APP_A,All state and local taxes,Next 4%,6,0.103208,c
+Vermont,APP_A,All state and local taxes,Top 1%,7,0.100949,c
+Virginia,APP_A,All state and local taxes,Lowest 20%,1,0.086747,c
+Virginia,APP_A,All state and local taxes,Second 20%,2,0.096595,c
+Virginia,APP_A,All state and local taxes,Middle 20%,3,0.103309,c
+Virginia,APP_A,All state and local taxes,Fourth 20%,4,0.102883,c
+Virginia,APP_A,All state and local taxes,Next 15%,5,0.096273,c
+Virginia,APP_A,All state and local taxes,Next 4%,6,0.084671,c
+Virginia,APP_A,All state and local taxes,Top 1%,7,0.072174,c
+Washington,APP_A,All state and local taxes,Lowest 20%,1,0.137997,c
+Washington,APP_A,All state and local taxes,Second 20%,2,0.109162,c
+Washington,APP_A,All state and local taxes,Middle 20%,3,0.109265,c
+Washington,APP_A,All state and local taxes,Fourth 20%,4,0.094187,c
+Washington,APP_A,All state and local taxes,Next 15%,5,0.079667,c
+Washington,APP_A,All state and local taxes,Next 4%,6,0.054476,c
+Washington,APP_A,All state and local taxes,Top 1%,7,0.040548,c
+West Virginia,APP_A,All state and local taxes,Lowest 20%,1,0.115811,c
+West Virginia,APP_A,All state and local taxes,Second 20%,2,0.108571,c
+West Virginia,APP_A,All state and local taxes,Middle 20%,3,0.099894,c
+West Virginia,APP_A,All state and local taxes,Fourth 20%,4,0.096144,c
+West Virginia,APP_A,All state and local taxes,Next 15%,5,0.093206,c
+West Virginia,APP_A,All state and local taxes,Next 4%,6,0.085785,c
+West Virginia,APP_A,All state and local taxes,Top 1%,7,0.071697,c
+Wisconsin,APP_A,All state and local taxes,Lowest 20%,1,0.107858,c
+Wisconsin,APP_A,All state and local taxes,Second 20%,2,0.101331,c
+Wisconsin,APP_A,All state and local taxes,Middle 20%,3,0.098967,c
+Wisconsin,APP_A,All state and local taxes,Fourth 20%,4,0.097511,c
+Wisconsin,APP_A,All state and local taxes,Next 15%,5,0.089423,c
+Wisconsin,APP_A,All state and local taxes,Next 4%,6,0.073636,c
+Wisconsin,APP_A,All state and local taxes,Top 1%,7,0.066496,c
+Wyoming,APP_A,All state and local taxes,Lowest 20%,1,0.111174,c
+Wyoming,APP_A,All state and local taxes,Second 20%,2,0.08853,c
+Wyoming,APP_A,All state and local taxes,Middle 20%,3,0.0735,c
+Wyoming,APP_A,All state and local taxes,Fourth 20%,4,0.069444,c
+Wyoming,APP_A,All state and local taxes,Next 15%,5,0.065616,c
+Wyoming,APP_A,All state and local taxes,Next 4%,6,0.050394,c
+Wyoming,APP_A,All state and local taxes,Top 1%,7,0.033722,c
+Alabama,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.040593,c
+Alabama,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.04059,c
+Alabama,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.035333,c
+Alabama,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.028263,c
+Alabama,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.021678,c
+Alabama,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.013683,c
+Alabama,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.006512,c
+Alaska,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.010951,c
+Alaska,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.0092,c
+Alaska,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.008695,c
+Alaska,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.007126,c
+Alaska,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.005131,c
+Alaska,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.00327,c
+Alaska,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.00086,c
+Arizona,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.046045,c
+Arizona,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.047039,c
+Arizona,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.043139,c
+Arizona,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.035339,c
+Arizona,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.026729,c
+Arizona,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.017732,c
+Arizona,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.007717,c
+Arkansas,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.053335,c
+Arkansas,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.049152,c
+Arkansas,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.046403,c
+Arkansas,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.038352,c
+Arkansas,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.029182,c
+Arkansas,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.019144,c
+Arkansas,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.005205,c
+California,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.041947,c
+California,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.038677,c
+California,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.034179,c
+California,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.026775,c
+California,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.019902,c
+California,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.010943,c
+California,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.00356,c
+Colorado,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.027409,c
+Colorado,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.025535,c
+Colorado,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.020762,c
+Colorado,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.017159,c
+Colorado,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.013013,c
+Colorado,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.007233,c
+Colorado,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.001998,c
+Connecticut,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.031143,c
+Connecticut,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.028512,c
+Connecticut,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.02316,c
+Connecticut,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.019451,c
+Connecticut,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.014049,c
+Connecticut,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.007119,c
+Connecticut,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.001623,c
+Delaware,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.0,c
+Delaware,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.0,c
+Delaware,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.0,c
+Delaware,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.0,c
+Delaware,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.0,c
+Delaware,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.0,c
+Delaware,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.0,c
+District of Columbia,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.033129,c
+District of Columbia,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.030731,c
+District of Columbia,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.023225,c
+District of Columbia,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.017624,c
+District of Columbia,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.013407,c
+District of Columbia,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.007368,c
+District of Columbia,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.00189,c
+Florida,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.033003,c
+Florida,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.032787,c
+Florida,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.029495,c
+Florida,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.024884,c
+Florida,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.017871,c
+Florida,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.00987,c
+Florida,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.001753,c
+Georgia,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.031177,c
+Georgia,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.029824,c
+Georgia,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.025203,c
+Georgia,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.019897,c
+Georgia,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.014977,c
+Georgia,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.009087,c
+Georgia,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.003603,c
+Hawaii,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.047909,c
+Hawaii,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.055758,c
+Hawaii,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.044005,c
+Hawaii,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.032088,c
+Hawaii,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.022507,c
+Hawaii,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.01256,c
+Hawaii,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.005004,c
+Idaho,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.034579,c
+Idaho,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.023482,c
+Idaho,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.02329,c
+Idaho,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.019853,c
+Idaho,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.015651,c
+Idaho,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.009612,c
+Idaho,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.0054,c
+Illinois,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.040317,c
+Illinois,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.03444,c
+Illinois,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.030681,c
+Illinois,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.024219,c
+Illinois,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.018518,c
+Illinois,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.01049,c
+Illinois,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.003366,c
+Indiana,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.037243,c
+Indiana,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.035195,c
+Indiana,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.029418,c
+Indiana,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.024865,c
+Indiana,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.019339,c
+Indiana,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.01261,c
+Indiana,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.006686,c
+Iowa,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.029282,c
+Iowa,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.027783,c
+Iowa,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.022267,c
+Iowa,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.019386,c
+Iowa,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.016023,c
+Iowa,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.010065,c
+Iowa,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.003488,c
+Kansas,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.037511,c
+Kansas,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.033454,c
+Kansas,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.028975,c
+Kansas,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.02384,c
+Kansas,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.018644,c
+Kansas,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.011412,c
+Kansas,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.005932,c
+Kentucky,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.027707,c
+Kentucky,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.02474,c
+Kentucky,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.021843,c
+Kentucky,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.018796,c
+Kentucky,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.014538,c
+Kentucky,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.010276,c
+Kentucky,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.004387,c
+Louisiana,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.048147,c
+Louisiana,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.052816,c
+Louisiana,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.045796,c
+Louisiana,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.03494,c
+Louisiana,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.026873,c
+Louisiana,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.016888,c
+Louisiana,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.006988,c
+Maine,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.017605,c
+Maine,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.019334,c
+Maine,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.02021,c
+Maine,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.016592,c
+Maine,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.01314,c
+Maine,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.008006,c
+Maine,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.0033,c
+Maryland,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.024328,c
+Maryland,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.020407,c
+Maryland,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.016893,c
+Maryland,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.013648,c
+Maryland,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.010477,c
+Maryland,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.006607,c
+Maryland,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.0032,c
+Massachusetts,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.018394,c
+Massachusetts,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.016999,c
+Massachusetts,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.013697,c
+Massachusetts,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.011331,c
+Massachusetts,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.008163,c
+Massachusetts,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.004179,c
+Massachusetts,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.000859,c
+Michigan,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.032442,c
+Michigan,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.030123,c
+Michigan,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.026627,c
+Michigan,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.021048,c
+Michigan,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.015792,c
+Michigan,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.009689,c
+Michigan,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002714,c
+Minnesota,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.025657,c
+Minnesota,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.024099,c
+Minnesota,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.020209,c
+Minnesota,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.017423,c
+Minnesota,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.013123,c
+Minnesota,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.007953,c
+Minnesota,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002848,c
+Mississippi,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.046128,c
+Mississippi,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.041567,c
+Mississippi,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.03954,c
+Mississippi,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.030773,c
+Mississippi,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.02297,c
+Mississippi,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.015742,c
+Mississippi,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.008309,c
+Missouri,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.030134,c
+Missouri,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.029291,c
+Missouri,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.024068,c
+Missouri,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.020052,c
+Missouri,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.015815,c
+Missouri,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.009753,c
+Missouri,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002868,c
+Montana,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.0,c
+Montana,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.0,c
+Montana,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.0,c
+Montana,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.0,c
+Montana,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.0,c
+Montana,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.0,c
+Montana,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.0,c
+Nebraska,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.028989,c
+Nebraska,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.028819,c
+Nebraska,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.02564,c
+Nebraska,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.020052,c
+Nebraska,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.016772,c
+Nebraska,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.01052,c
+Nebraska,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.004107,c
+Nevada,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.032485,c
+Nevada,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.031692,c
+Nevada,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.027312,c
+Nevada,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.023586,c
+Nevada,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.018619,c
+Nevada,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.011003,c
+Nevada,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002233,c
+New Hampshire,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.0,c
+New Hampshire,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.0,c
+New Hampshire,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.0,c
+New Hampshire,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.0,c
+New Hampshire,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.0,c
+New Hampshire,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.0,c
+New Hampshire,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.0,c
+New Jersey,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.026787,c
+New Jersey,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.022938,c
+New Jersey,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.019698,c
+New Jersey,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.016307,c
+New Jersey,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.011692,c
+New Jersey,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.006683,c
+New Jersey,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002515,c
+New Mexico,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.037003,c
+New Mexico,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.033736,c
+New Mexico,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.030903,c
+New Mexico,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.02703,c
+New Mexico,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.021307,c
+New Mexico,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.015131,c
+New Mexico,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.008084,c
+New York,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.03095,c
+New York,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.029228,c
+New York,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.025468,c
+New York,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.020422,c
+New York,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.015649,c
+New York,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.008309,c
+New York,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002671,c
+North Carolina,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.035916,c
+North Carolina,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.031852,c
+North Carolina,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.028013,c
+North Carolina,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.022634,c
+North Carolina,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.017494,c
+North Carolina,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.010157,c
+North Carolina,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.00401,c
+North Dakota,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.034881,c
+North Dakota,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.026696,c
+North Dakota,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.025313,c
+North Dakota,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.019514,c
+North Dakota,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.016084,c
+North Dakota,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.010364,c
+North Dakota,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.00362,c
+Ohio,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.031215,c
+Ohio,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.028583,c
+Ohio,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.024769,c
+Ohio,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.020726,c
+Ohio,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.016311,c
+Ohio,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.010078,c
+Ohio,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.004507,c
+Oklahoma,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.037597,c
+Oklahoma,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.03886,c
+Oklahoma,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.033973,c
+Oklahoma,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.027659,c
+Oklahoma,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.021115,c
+Oklahoma,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.012556,c
+Oklahoma,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.004997,c
+Oregon,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.0,c
+Oregon,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.0,c
+Oregon,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.0,c
+Oregon,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.0,c
+Oregon,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.0,c
+Oregon,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.0,c
+Oregon,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.0,c
+Pennsylvania,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.01884,c
+Pennsylvania,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.019201,c
+Pennsylvania,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.016428,c
+Pennsylvania,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.013206,c
+Pennsylvania,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.01004,c
+Pennsylvania,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.005589,c
+Pennsylvania,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.001693,c
+Rhode Island,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.028356,c
+Rhode Island,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.025612,c
+Rhode Island,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.023365,c
+Rhode Island,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.018531,c
+Rhode Island,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.014207,c
+Rhode Island,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.008659,c
+Rhode Island,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.004433,c
+South Carolina,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.032741,c
+South Carolina,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.031071,c
+South Carolina,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.028842,c
+South Carolina,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.024272,c
+South Carolina,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.018643,c
+South Carolina,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.011418,c
+South Carolina,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.003713,c
+South Dakota,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.032908,c
+South Dakota,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.026753,c
+South Dakota,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.026176,c
+South Dakota,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.02027,c
+South Dakota,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.01816,c
+South Dakota,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.010074,c
+South Dakota,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.003227,c
+Tennessee,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.053633,c
+Tennessee,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.049648,c
+Tennessee,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.04524,c
+Tennessee,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.036062,c
+Tennessee,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.027946,c
+Tennessee,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.016406,c
+Tennessee,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.004143,c
+Texas,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.036975,c
+Texas,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.036525,c
+Texas,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.032111,c
+Texas,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.026162,c
+Texas,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.019647,c
+Texas,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.011216,c
+Texas,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.00242,c
+Utah,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.039284,c
+Utah,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.036267,c
+Utah,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.032581,c
+Utah,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.026979,c
+Utah,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.021329,c
+Utah,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.011898,c
+Utah,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002588,c
+Vermont,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.014212,c
+Vermont,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.013724,c
+Vermont,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.012519,c
+Vermont,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.011159,c
+Vermont,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.009056,c
+Vermont,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.005125,c
+Vermont,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002144,c
+Virginia,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.023138,c
+Virginia,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.021637,c
+Virginia,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.018675,c
+Virginia,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.01438,c
+Virginia,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.010735,c
+Virginia,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.006641,c
+Virginia,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002459,c
+Washington,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.047349,c
+Washington,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.040014,c
+Washington,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.035156,c
+Washington,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.028219,c
+Washington,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.020854,c
+Washington,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.012025,c
+Washington,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.004141,c
+West Virginia,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.026953,c
+West Virginia,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.031153,c
+West Virginia,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.027234,c
+West Virginia,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.022489,c
+West Virginia,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.018055,c
+West Virginia,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.01265,c
+West Virginia,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.005696,c
+Wisconsin,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.030828,c
+Wisconsin,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.026073,c
+Wisconsin,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.021851,c
+Wisconsin,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.018326,c
+Wisconsin,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.014699,c
+Wisconsin,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.008815,c
+Wisconsin,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.003506,c
+Wyoming,SE_GST,General sales taxes paid by individuals,Lowest 20%,1,0.028657,c
+Wyoming,SE_GST,General sales taxes paid by individuals,Second 20%,2,0.02463,c
+Wyoming,SE_GST,General sales taxes paid by individuals,Middle 20%,3,0.019885,c
+Wyoming,SE_GST,General sales taxes paid by individuals,Fourth 20%,4,0.016356,c
+Wyoming,SE_GST,General sales taxes paid by individuals,Next 15%,5,0.013823,c
+Wyoming,SE_GST,General sales taxes paid by individuals,Next 4%,6,0.007887,c
+Wyoming,SE_GST,General sales taxes paid by individuals,Top 1%,7,0.002548,c
+Alabama,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.020975,c
+Alabama,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.015821,c
+Alabama,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.01133,c
+Alabama,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007936,c
+Alabama,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005811,c
+Alabama,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003577,c
+Alabama,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001734,c
+Alaska,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.031014,c
+Alaska,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.013559,c
+Alaska,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.009488,c
+Alaska,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.006264,c
+Alaska,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003744,c
+Alaska,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002455,c
+Alaska,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000698,c
+Arizona,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.016824,c
+Arizona,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.008817,c
+Arizona,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.006349,c
+Arizona,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.004357,c
+Arizona,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.00284,c
+Arizona,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001777,c
+Arizona,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000768,c
+Arkansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.028708,c
+Arkansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016026,c
+Arkansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.011689,c
+Arkansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008171,c
+Arkansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005079,c
+Arkansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003191,c
+Arkansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000845,c
+California,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.019978,c
+California,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.011846,c
+California,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.00823,c
+California,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005537,c
+California,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003861,c
+California,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002051,c
+California,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000719,c
+Colorado,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.021625,c
+Colorado,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.009984,c
+Colorado,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.00687,c
+Colorado,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.004474,c
+Colorado,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.002973,c
+Colorado,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001606,c
+Colorado,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000437,c
+Connecticut,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.030476,c
+Connecticut,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.013628,c
+Connecticut,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.008048,c
+Connecticut,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.00586,c
+Connecticut,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.00367,c
+Connecticut,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001897,c
+Connecticut,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000434,c
+Delaware,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.024925,c
+Delaware,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.013296,c
+Delaware,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.009106,c
+Delaware,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.0072,c
+Delaware,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.00509,c
+Delaware,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003108,c
+Delaware,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001475,c
+District of Columbia,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.009222,c
+District of Columbia,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.006457,c
+District of Columbia,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.004599,c
+District of Columbia,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.003526,c
+District of Columbia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003032,c
+District of Columbia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.00177,c
+District of Columbia,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000371,c
+Florida,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.024112,c
+Florida,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016266,c
+Florida,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.012043,c
+Florida,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008846,c
+Florida,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005694,c
+Florida,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002912,c
+Florida,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.00053,c
+Georgia,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.014471,c
+Georgia,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.011821,c
+Georgia,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.009214,c
+Georgia,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007247,c
+Georgia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005226,c
+Georgia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002954,c
+Georgia,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001167,c
+Hawaii,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.023024,c
+Hawaii,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.013416,c
+Hawaii,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.008341,c
+Hawaii,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.00603,c
+Hawaii,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.004463,c
+Hawaii,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002655,c
+Hawaii,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001141,c
+Idaho,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.011464,c
+Idaho,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.006812,c
+Idaho,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.005905,c
+Idaho,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.004335,c
+Idaho,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003333,c
+Idaho,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.00203,c
+Idaho,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.00114,c
+Illinois,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.030849,c
+Illinois,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.015375,c
+Illinois,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.010844,c
+Illinois,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007395,c
+Illinois,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005061,c
+Illinois,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002831,c
+Illinois,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001086,c
+Indiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.019199,c
+Indiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.01088,c
+Indiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.007254,c
+Indiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005154,c
+Indiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003336,c
+Indiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002065,c
+Indiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001381,c
+Iowa,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.022175,c
+Iowa,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.015486,c
+Iowa,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.011638,c
+Iowa,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008836,c
+Iowa,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006434,c
+Iowa,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003845,c
+Iowa,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001463,c
+Kansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.017297,c
+Kansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.009771,c
+Kansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.007139,c
+Kansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005654,c
+Kansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.004066,c
+Kansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002442,c
+Kansas,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001396,c
+Kentucky,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.025847,c
+Kentucky,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.014286,c
+Kentucky,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.010041,c
+Kentucky,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.00745,c
+Kentucky,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005523,c
+Kentucky,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003713,c
+Kentucky,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001605,c
+Louisiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.025065,c
+Louisiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.01805,c
+Louisiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.013261,c
+Louisiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.009487,c
+Louisiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006703,c
+Louisiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.004276,c
+Louisiana,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001811,c
+Maine,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.03327,c
+Maine,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.014893,c
+Maine,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.00993,c
+Maine,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007006,c
+Maine,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.004618,c
+Maine,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002623,c
+Maine,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001095,c
+Maryland,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.030078,c
+Maryland,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016569,c
+Maryland,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.012053,c
+Maryland,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008926,c
+Maryland,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006367,c
+Maryland,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003702,c
+Maryland,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001793,c
+Massachusetts,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.019149,c
+Massachusetts,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.008391,c
+Massachusetts,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.005213,c
+Massachusetts,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.003618,c
+Massachusetts,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.002285,c
+Massachusetts,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001188,c
+Massachusetts,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000269,c
+Michigan,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.026741,c
+Michigan,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.013653,c
+Michigan,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.009093,c
+Michigan,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005776,c
+Michigan,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003674,c
+Michigan,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002211,c
+Michigan,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000807,c
+Minnesota,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.023429,c
+Minnesota,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.011915,c
+Minnesota,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.00776,c
+Minnesota,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005658,c
+Minnesota,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003966,c
+Minnesota,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002326,c
+Minnesota,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000915,c
+Mississippi,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.022077,c
+Mississippi,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016068,c
+Mississippi,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.012695,c
+Mississippi,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.00961,c
+Mississippi,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006726,c
+Mississippi,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.00467,c
+Mississippi,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.002731,c
+Missouri,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.012168,c
+Missouri,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.008928,c
+Missouri,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.00647,c
+Missouri,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.004911,c
+Missouri,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003428,c
+Missouri,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002058,c
+Missouri,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000676,c
+Montana,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.032581,c
+Montana,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016259,c
+Montana,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.012725,c
+Montana,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008905,c
+Montana,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005832,c
+Montana,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003619,c
+Montana,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.00139,c
+Nebraska,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.009947,c
+Nebraska,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.006252,c
+Nebraska,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.005247,c
+Nebraska,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.00352,c
+Nebraska,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.002818,c
+Nebraska,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001591,c
+Nebraska,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000638,c
+Nevada,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.026539,c
+Nevada,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.014548,c
+Nevada,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.010934,c
+Nevada,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008243,c
+Nevada,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005633,c
+Nevada,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003248,c
+Nevada,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000655,c
+New Hampshire,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.021841,c
+New Hampshire,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.012896,c
+New Hampshire,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.009266,c
+New Hampshire,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.006749,c
+New Hampshire,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.004735,c
+New Hampshire,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002529,c
+New Hampshire,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.00071,c
+New Jersey,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.017934,c
+New Jersey,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.009718,c
+New Jersey,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.006437,c
+New Jersey,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.004761,c
+New Jersey,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003094,c
+New Jersey,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001721,c
+New Jersey,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000853,c
+New Mexico,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.025088,c
+New Mexico,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.015033,c
+New Mexico,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.01283,c
+New Mexico,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.01015,c
+New Mexico,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.007207,c
+New Mexico,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.004995,c
+New Mexico,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.002517,c
+New York,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.013224,c
+New York,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.007127,c
+New York,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.004696,c
+New York,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.003239,c
+New York,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.002397,c
+New York,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001259,c
+New York,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000398,c
+North Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.016167,c
+North Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.011982,c
+North Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.008876,c
+North Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.006896,c
+North Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005157,c
+North Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.00292,c
+North Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001301,c
+North Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.015936,c
+North Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.011341,c
+North Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.011254,c
+North Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008569,c
+North Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006809,c
+North Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.004253,c
+North Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001292,c
+Ohio,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.025662,c
+Ohio,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.013706,c
+Ohio,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.008646,c
+Ohio,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005859,c
+Ohio,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003937,c
+Ohio,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002267,c
+Ohio,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001172,c
+Oklahoma,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.031344,c
+Oklahoma,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016039,c
+Oklahoma,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.009984,c
+Oklahoma,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.006341,c
+Oklahoma,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.004175,c
+Oklahoma,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.00236,c
+Oklahoma,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000985,c
+Oregon,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.039034,c
+Oregon,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.018349,c
+Oregon,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.011124,c
+Oregon,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007199,c
+Oregon,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.004578,c
+Oregon,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002484,c
+Oregon,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001065,c
+Pennsylvania,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.037559,c
+Pennsylvania,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.019886,c
+Pennsylvania,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.013681,c
+Pennsylvania,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.009231,c
+Pennsylvania,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005902,c
+Pennsylvania,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003437,c
+Pennsylvania,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001411,c
+Rhode Island,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.036039,c
+Rhode Island,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016885,c
+Rhode Island,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.012443,c
+Rhode Island,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007901,c
+Rhode Island,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005476,c
+Rhode Island,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.00355,c
+Rhode Island,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.002105,c
+South Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.014101,c
+South Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.009564,c
+South Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.007327,c
+South Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005681,c
+South Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003946,c
+South Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002234,c
+South Carolina,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000757,c
+South Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.020637,c
+South Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.012175,c
+South Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.010685,c
+South Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007868,c
+South Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006347,c
+South Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003407,c
+South Dakota,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000969,c
+Tennessee,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.018012,c
+Tennessee,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.013582,c
+Tennessee,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.010437,c
+Tennessee,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.007487,c
+Tennessee,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.005657,c
+Tennessee,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003177,c
+Tennessee,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000876,c
+Texas,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.017638,c
+Texas,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.011205,c
+Texas,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.007649,c
+Texas,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005531,c
+Texas,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003936,c
+Texas,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002166,c
+Texas,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000451,c
+Utah,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.011429,c
+Utah,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.008125,c
+Utah,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.006251,c
+Utah,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.004575,c
+Utah,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003393,c
+Utah,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001781,c
+Utah,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000397,c
+Vermont,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.036462,c
+Vermont,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016133,c
+Vermont,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.011842,c
+Vermont,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.008972,c
+Vermont,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006521,c
+Vermont,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.003444,c
+Vermont,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001483,c
+Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.015746,c
+Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.010568,c
+Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.00751,c
+Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.005416,c
+Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.003722,c
+Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.002199,c
+Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000932,c
+Washington,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.027533,c
+Washington,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.016906,c
+Washington,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.013499,c
+Washington,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.010225,c
+Washington,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.007564,c
+Washington,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.004392,c
+Washington,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.001568,c
+West Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.034762,c
+West Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.019961,c
+West Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.01416,c
+West Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.009443,c
+West Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.006193,c
+West Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.004325,c
+West Virginia,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.002166,c
+Wisconsin,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.019963,c
+Wisconsin,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.009592,c
+Wisconsin,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.006045,c
+Wisconsin,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.004139,c
+Wisconsin,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.002828,c
+Wisconsin,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.00156,c
+Wisconsin,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.00068,c
+Wyoming,SE_EXCISE,Other sales and excise taxes paid by individuals,Lowest 20%,1,0.010597,c
+Wyoming,SE_EXCISE,Other sales and excise taxes paid by individuals,Second 20%,2,0.005806,c
+Wyoming,SE_EXCISE,Other sales and excise taxes paid by individuals,Middle 20%,3,0.00442,c
+Wyoming,SE_EXCISE,Other sales and excise taxes paid by individuals,Fourth 20%,4,0.002979,c
+Wyoming,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 15%,5,0.002137,c
+Wyoming,SE_EXCISE,Other sales and excise taxes paid by individuals,Next 4%,6,0.001124,c
+Wyoming,SE_EXCISE,Other sales and excise taxes paid by individuals,Top 1%,7,0.000396,c
+Alabama,PROP_TOTAL,Property taxes,Lowest 20%,1,0.025205,c
+Alabama,PROP_TOTAL,Property taxes,Second 20%,2,0.016282,c
+Alabama,PROP_TOTAL,Property taxes,Middle 20%,3,0.014919,c
+Alabama,PROP_TOTAL,Property taxes,Fourth 20%,4,0.013907,c
+Alabama,PROP_TOTAL,Property taxes,Next 15%,5,0.013066,c
+Alabama,PROP_TOTAL,Property taxes,Next 4%,6,0.012027,c
+Alabama,PROP_TOTAL,Property taxes,Top 1%,7,0.010084,c
+Alaska,PROP_TOTAL,Property taxes,Lowest 20%,1,0.034938,c
+Alaska,PROP_TOTAL,Property taxes,Second 20%,2,0.02668,c
+Alaska,PROP_TOTAL,Property taxes,Middle 20%,3,0.026148,c
+Alaska,PROP_TOTAL,Property taxes,Fourth 20%,4,0.03243,c
+Alaska,PROP_TOTAL,Property taxes,Next 15%,5,0.026009,c
+Alaska,PROP_TOTAL,Property taxes,Next 4%,6,0.019477,c
+Alaska,PROP_TOTAL,Property taxes,Top 1%,7,0.018745,c
+Arizona,PROP_TOTAL,Property taxes,Lowest 20%,1,0.037461,c
+Arizona,PROP_TOTAL,Property taxes,Second 20%,2,0.02291,c
+Arizona,PROP_TOTAL,Property taxes,Middle 20%,3,0.024053,c
+Arizona,PROP_TOTAL,Property taxes,Fourth 20%,4,0.024039,c
+Arizona,PROP_TOTAL,Property taxes,Next 15%,5,0.020912,c
+Arizona,PROP_TOTAL,Property taxes,Next 4%,6,0.016868,c
+Arizona,PROP_TOTAL,Property taxes,Top 1%,7,0.015501,c
+Arkansas,PROP_TOTAL,Property taxes,Lowest 20%,1,0.027697,c
+Arkansas,PROP_TOTAL,Property taxes,Second 20%,2,0.018822,c
+Arkansas,PROP_TOTAL,Property taxes,Middle 20%,3,0.022515,c
+Arkansas,PROP_TOTAL,Property taxes,Fourth 20%,4,0.015321,c
+Arkansas,PROP_TOTAL,Property taxes,Next 15%,5,0.015484,c
+Arkansas,PROP_TOTAL,Property taxes,Next 4%,6,0.015154,c
+Arkansas,PROP_TOTAL,Property taxes,Top 1%,7,0.011887,c
+California,PROP_TOTAL,Property taxes,Lowest 20%,1,0.054095,c
+California,PROP_TOTAL,Property taxes,Second 20%,2,0.032906,c
+California,PROP_TOTAL,Property taxes,Middle 20%,3,0.033197,c
+California,PROP_TOTAL,Property taxes,Fourth 20%,4,0.032105,c
+California,PROP_TOTAL,Property taxes,Next 15%,5,0.033059,c
+California,PROP_TOTAL,Property taxes,Next 4%,6,0.026247,c
+California,PROP_TOTAL,Property taxes,Top 1%,7,0.017422,c
+Colorado,PROP_TOTAL,Property taxes,Lowest 20%,1,0.037324,c
+Colorado,PROP_TOTAL,Property taxes,Second 20%,2,0.032281,c
+Colorado,PROP_TOTAL,Property taxes,Middle 20%,3,0.030261,c
+Colorado,PROP_TOTAL,Property taxes,Fourth 20%,4,0.028323,c
+Colorado,PROP_TOTAL,Property taxes,Next 15%,5,0.027233,c
+Colorado,PROP_TOTAL,Property taxes,Next 4%,6,0.024731,c
+Colorado,PROP_TOTAL,Property taxes,Top 1%,7,0.023821,c
+Connecticut,PROP_TOTAL,Property taxes,Lowest 20%,1,0.072627,c
+Connecticut,PROP_TOTAL,Property taxes,Second 20%,2,0.044662,c
+Connecticut,PROP_TOTAL,Property taxes,Middle 20%,3,0.042965,c
+Connecticut,PROP_TOTAL,Property taxes,Fourth 20%,4,0.044319,c
+Connecticut,PROP_TOTAL,Property taxes,Next 15%,5,0.038124,c
+Connecticut,PROP_TOTAL,Property taxes,Next 4%,6,0.026111,c
+Connecticut,PROP_TOTAL,Property taxes,Top 1%,7,0.014218,c
+Delaware,PROP_TOTAL,Property taxes,Lowest 20%,1,0.033689,c
+Delaware,PROP_TOTAL,Property taxes,Second 20%,2,0.024273,c
+Delaware,PROP_TOTAL,Property taxes,Middle 20%,3,0.021924,c
+Delaware,PROP_TOTAL,Property taxes,Fourth 20%,4,0.021612,c
+Delaware,PROP_TOTAL,Property taxes,Next 15%,5,0.018304,c
+Delaware,PROP_TOTAL,Property taxes,Next 4%,6,0.018665,c
+Delaware,PROP_TOTAL,Property taxes,Top 1%,7,0.010918,c
+District of Columbia,PROP_TOTAL,Property taxes,Lowest 20%,1,0.040368,c
+District of Columbia,PROP_TOTAL,Property taxes,Second 20%,2,0.040726,c
+District of Columbia,PROP_TOTAL,Property taxes,Middle 20%,3,0.034921,c
+District of Columbia,PROP_TOTAL,Property taxes,Fourth 20%,4,0.036268,c
+District of Columbia,PROP_TOTAL,Property taxes,Next 15%,5,0.039221,c
+District of Columbia,PROP_TOTAL,Property taxes,Next 4%,6,0.028958,c
+District of Columbia,PROP_TOTAL,Property taxes,Top 1%,7,0.024318,c
+Florida,PROP_TOTAL,Property taxes,Lowest 20%,1,0.054897,c
+Florida,PROP_TOTAL,Property taxes,Second 20%,2,0.040754,c
+Florida,PROP_TOTAL,Property taxes,Middle 20%,3,0.035155,c
+Florida,PROP_TOTAL,Property taxes,Fourth 20%,4,0.03429,c
+Florida,PROP_TOTAL,Property taxes,Next 15%,5,0.02686,c
+Florida,PROP_TOTAL,Property taxes,Next 4%,6,0.026239,c
+Florida,PROP_TOTAL,Property taxes,Top 1%,7,0.016279,c
+Georgia,PROP_TOTAL,Property taxes,Lowest 20%,1,0.034859,c
+Georgia,PROP_TOTAL,Property taxes,Second 20%,2,0.025047,c
+Georgia,PROP_TOTAL,Property taxes,Middle 20%,3,0.019459,c
+Georgia,PROP_TOTAL,Property taxes,Fourth 20%,4,0.023411,c
+Georgia,PROP_TOTAL,Property taxes,Next 15%,5,0.022871,c
+Georgia,PROP_TOTAL,Property taxes,Next 4%,6,0.022085,c
+Georgia,PROP_TOTAL,Property taxes,Top 1%,7,0.017502,c
+Hawaii,PROP_TOTAL,Property taxes,Lowest 20%,1,0.045599,c
+Hawaii,PROP_TOTAL,Property taxes,Second 20%,2,0.026309,c
+Hawaii,PROP_TOTAL,Property taxes,Middle 20%,3,0.025024,c
+Hawaii,PROP_TOTAL,Property taxes,Fourth 20%,4,0.030888,c
+Hawaii,PROP_TOTAL,Property taxes,Next 15%,5,0.023544,c
+Hawaii,PROP_TOTAL,Property taxes,Next 4%,6,0.020226,c
+Hawaii,PROP_TOTAL,Property taxes,Top 1%,7,0.016866,c
+Idaho,PROP_TOTAL,Property taxes,Lowest 20%,1,0.03318,c
+Idaho,PROP_TOTAL,Property taxes,Second 20%,2,0.0239,c
+Idaho,PROP_TOTAL,Property taxes,Middle 20%,3,0.020139,c
+Idaho,PROP_TOTAL,Property taxes,Fourth 20%,4,0.021131,c
+Idaho,PROP_TOTAL,Property taxes,Next 15%,5,0.017327,c
+Idaho,PROP_TOTAL,Property taxes,Next 4%,6,0.015083,c
+Idaho,PROP_TOTAL,Property taxes,Top 1%,7,0.013191,c
+Illinois,PROP_TOTAL,Property taxes,Lowest 20%,1,0.051276,c
+Illinois,PROP_TOTAL,Property taxes,Second 20%,2,0.037415,c
+Illinois,PROP_TOTAL,Property taxes,Middle 20%,3,0.041688,c
+Illinois,PROP_TOTAL,Property taxes,Fourth 20%,4,0.037176,c
+Illinois,PROP_TOTAL,Property taxes,Next 15%,5,0.040268,c
+Illinois,PROP_TOTAL,Property taxes,Next 4%,6,0.034714,c
+Illinois,PROP_TOTAL,Property taxes,Top 1%,7,0.02032,c
+Indiana,PROP_TOTAL,Property taxes,Lowest 20%,1,0.039774,c
+Indiana,PROP_TOTAL,Property taxes,Second 20%,2,0.02245,c
+Indiana,PROP_TOTAL,Property taxes,Middle 20%,3,0.022533,c
+Indiana,PROP_TOTAL,Property taxes,Fourth 20%,4,0.021498,c
+Indiana,PROP_TOTAL,Property taxes,Next 15%,5,0.018301,c
+Indiana,PROP_TOTAL,Property taxes,Next 4%,6,0.017635,c
+Indiana,PROP_TOTAL,Property taxes,Top 1%,7,0.013786,c
+Iowa,PROP_TOTAL,Property taxes,Lowest 20%,1,0.059378,c
+Iowa,PROP_TOTAL,Property taxes,Second 20%,2,0.037939,c
+Iowa,PROP_TOTAL,Property taxes,Middle 20%,3,0.034528,c
+Iowa,PROP_TOTAL,Property taxes,Fourth 20%,4,0.033445,c
+Iowa,PROP_TOTAL,Property taxes,Next 15%,5,0.036085,c
+Iowa,PROP_TOTAL,Property taxes,Next 4%,6,0.028756,c
+Iowa,PROP_TOTAL,Property taxes,Top 1%,7,0.018111,c
+Kansas,PROP_TOTAL,Property taxes,Lowest 20%,1,0.040615,c
+Kansas,PROP_TOTAL,Property taxes,Second 20%,2,0.031817,c
+Kansas,PROP_TOTAL,Property taxes,Middle 20%,3,0.035917,c
+Kansas,PROP_TOTAL,Property taxes,Fourth 20%,4,0.031441,c
+Kansas,PROP_TOTAL,Property taxes,Next 15%,5,0.032433,c
+Kansas,PROP_TOTAL,Property taxes,Next 4%,6,0.024588,c
+Kansas,PROP_TOTAL,Property taxes,Top 1%,7,0.016158,c
+Kentucky,PROP_TOTAL,Property taxes,Lowest 20%,1,0.038147,c
+Kentucky,PROP_TOTAL,Property taxes,Second 20%,2,0.022648,c
+Kentucky,PROP_TOTAL,Property taxes,Middle 20%,3,0.020279,c
+Kentucky,PROP_TOTAL,Property taxes,Fourth 20%,4,0.019384,c
+Kentucky,PROP_TOTAL,Property taxes,Next 15%,5,0.021061,c
+Kentucky,PROP_TOTAL,Property taxes,Next 4%,6,0.015178,c
+Kentucky,PROP_TOTAL,Property taxes,Top 1%,7,0.011885,c
+Louisiana,PROP_TOTAL,Property taxes,Lowest 20%,1,0.028551,c
+Louisiana,PROP_TOTAL,Property taxes,Second 20%,2,0.017877,c
+Louisiana,PROP_TOTAL,Property taxes,Middle 20%,3,0.018689,c
+Louisiana,PROP_TOTAL,Property taxes,Fourth 20%,4,0.016709,c
+Louisiana,PROP_TOTAL,Property taxes,Next 15%,5,0.017887,c
+Louisiana,PROP_TOTAL,Property taxes,Next 4%,6,0.018804,c
+Louisiana,PROP_TOTAL,Property taxes,Top 1%,7,0.013867,c
+Maine,PROP_TOTAL,Property taxes,Lowest 20%,1,0.047901,c
+Maine,PROP_TOTAL,Property taxes,Second 20%,2,0.037323,c
+Maine,PROP_TOTAL,Property taxes,Middle 20%,3,0.04192,c
+Maine,PROP_TOTAL,Property taxes,Fourth 20%,4,0.039575,c
+Maine,PROP_TOTAL,Property taxes,Next 15%,5,0.037444,c
+Maine,PROP_TOTAL,Property taxes,Next 4%,6,0.032931,c
+Maine,PROP_TOTAL,Property taxes,Top 1%,7,0.025826,c
+Maryland,PROP_TOTAL,Property taxes,Lowest 20%,1,0.037161,c
+Maryland,PROP_TOTAL,Property taxes,Second 20%,2,0.023407,c
+Maryland,PROP_TOTAL,Property taxes,Middle 20%,3,0.02506,c
+Maryland,PROP_TOTAL,Property taxes,Fourth 20%,4,0.030462,c
+Maryland,PROP_TOTAL,Property taxes,Next 15%,5,0.027346,c
+Maryland,PROP_TOTAL,Property taxes,Next 4%,6,0.021752,c
+Maryland,PROP_TOTAL,Property taxes,Top 1%,7,0.017439,c
+Massachusetts,PROP_TOTAL,Property taxes,Lowest 20%,1,0.045519,c
+Massachusetts,PROP_TOTAL,Property taxes,Second 20%,2,0.029894,c
+Massachusetts,PROP_TOTAL,Property taxes,Middle 20%,3,0.030518,c
+Massachusetts,PROP_TOTAL,Property taxes,Fourth 20%,4,0.036925,c
+Massachusetts,PROP_TOTAL,Property taxes,Next 15%,5,0.033946,c
+Massachusetts,PROP_TOTAL,Property taxes,Next 4%,6,0.026425,c
+Massachusetts,PROP_TOTAL,Property taxes,Top 1%,7,0.016819,c
+Michigan,PROP_TOTAL,Property taxes,Lowest 20%,1,0.015862,c
+Michigan,PROP_TOTAL,Property taxes,Second 20%,2,0.02456,c
+Michigan,PROP_TOTAL,Property taxes,Middle 20%,3,0.026197,c
+Michigan,PROP_TOTAL,Property taxes,Fourth 20%,4,0.030448,c
+Michigan,PROP_TOTAL,Property taxes,Next 15%,5,0.026373,c
+Michigan,PROP_TOTAL,Property taxes,Next 4%,6,0.023554,c
+Michigan,PROP_TOTAL,Property taxes,Top 1%,7,0.013692,c
+Minnesota,PROP_TOTAL,Property taxes,Lowest 20%,1,0.019978,c
+Minnesota,PROP_TOTAL,Property taxes,Second 20%,2,0.019635,c
+Minnesota,PROP_TOTAL,Property taxes,Middle 20%,3,0.025574,c
+Minnesota,PROP_TOTAL,Property taxes,Fourth 20%,4,0.031224,c
+Minnesota,PROP_TOTAL,Property taxes,Next 15%,5,0.028202,c
+Minnesota,PROP_TOTAL,Property taxes,Next 4%,6,0.025696,c
+Minnesota,PROP_TOTAL,Property taxes,Top 1%,7,0.019571,c
+Mississippi,PROP_TOTAL,Property taxes,Lowest 20%,1,0.037607,c
+Mississippi,PROP_TOTAL,Property taxes,Second 20%,2,0.028346,c
+Mississippi,PROP_TOTAL,Property taxes,Middle 20%,3,0.027096,c
+Mississippi,PROP_TOTAL,Property taxes,Fourth 20%,4,0.021722,c
+Mississippi,PROP_TOTAL,Property taxes,Next 15%,5,0.023335,c
+Mississippi,PROP_TOTAL,Property taxes,Next 4%,6,0.022019,c
+Mississippi,PROP_TOTAL,Property taxes,Top 1%,7,0.017569,c
+Missouri,PROP_TOTAL,Property taxes,Lowest 20%,1,0.03862,c
+Missouri,PROP_TOTAL,Property taxes,Second 20%,2,0.021911,c
+Missouri,PROP_TOTAL,Property taxes,Middle 20%,3,0.02138,c
+Missouri,PROP_TOTAL,Property taxes,Fourth 20%,4,0.022402,c
+Missouri,PROP_TOTAL,Property taxes,Next 15%,5,0.024518,c
+Missouri,PROP_TOTAL,Property taxes,Next 4%,6,0.0202,c
+Missouri,PROP_TOTAL,Property taxes,Top 1%,7,0.011868,c
+Montana,PROP_TOTAL,Property taxes,Lowest 20%,1,0.054718,c
+Montana,PROP_TOTAL,Property taxes,Second 20%,2,0.031803,c
+Montana,PROP_TOTAL,Property taxes,Middle 20%,3,0.034321,c
+Montana,PROP_TOTAL,Property taxes,Fourth 20%,4,0.032187,c
+Montana,PROP_TOTAL,Property taxes,Next 15%,5,0.028859,c
+Montana,PROP_TOTAL,Property taxes,Next 4%,6,0.024493,c
+Montana,PROP_TOTAL,Property taxes,Top 1%,7,0.017612,c
+Nebraska,PROP_TOTAL,Property taxes,Lowest 20%,1,0.051847,c
+Nebraska,PROP_TOTAL,Property taxes,Second 20%,2,0.038033,c
+Nebraska,PROP_TOTAL,Property taxes,Middle 20%,3,0.038157,c
+Nebraska,PROP_TOTAL,Property taxes,Fourth 20%,4,0.032699,c
+Nebraska,PROP_TOTAL,Property taxes,Next 15%,5,0.033209,c
+Nebraska,PROP_TOTAL,Property taxes,Next 4%,6,0.028972,c
+Nebraska,PROP_TOTAL,Property taxes,Top 1%,7,0.021313,c
+Nevada,PROP_TOTAL,Property taxes,Lowest 20%,1,0.033718,c
+Nevada,PROP_TOTAL,Property taxes,Second 20%,2,0.02412,c
+Nevada,PROP_TOTAL,Property taxes,Middle 20%,3,0.025014,c
+Nevada,PROP_TOTAL,Property taxes,Fourth 20%,4,0.024919,c
+Nevada,PROP_TOTAL,Property taxes,Next 15%,5,0.023288,c
+Nevada,PROP_TOTAL,Property taxes,Next 4%,6,0.017985,c
+Nevada,PROP_TOTAL,Property taxes,Top 1%,7,0.011202,c
+New Hampshire,PROP_TOTAL,Property taxes,Lowest 20%,1,0.059002,c
+New Hampshire,PROP_TOTAL,Property taxes,Second 20%,2,0.039982,c
+New Hampshire,PROP_TOTAL,Property taxes,Middle 20%,3,0.050394,c
+New Hampshire,PROP_TOTAL,Property taxes,Fourth 20%,4,0.050165,c
+New Hampshire,PROP_TOTAL,Property taxes,Next 15%,5,0.040472,c
+New Hampshire,PROP_TOTAL,Property taxes,Next 4%,6,0.032501,c
+New Hampshire,PROP_TOTAL,Property taxes,Top 1%,7,0.019733,c
+New Jersey,PROP_TOTAL,Property taxes,Lowest 20%,1,0.044769,c
+New Jersey,PROP_TOTAL,Property taxes,Second 20%,2,0.03769,c
+New Jersey,PROP_TOTAL,Property taxes,Middle 20%,3,0.046537,c
+New Jersey,PROP_TOTAL,Property taxes,Fourth 20%,4,0.054121,c
+New Jersey,PROP_TOTAL,Property taxes,Next 15%,5,0.04713,c
+New Jersey,PROP_TOTAL,Property taxes,Next 4%,6,0.029832,c
+New Jersey,PROP_TOTAL,Property taxes,Top 1%,7,0.022402,c
+New Mexico,PROP_TOTAL,Property taxes,Lowest 20%,1,0.038683,c
+New Mexico,PROP_TOTAL,Property taxes,Second 20%,2,0.02348,c
+New Mexico,PROP_TOTAL,Property taxes,Middle 20%,3,0.023766,c
+New Mexico,PROP_TOTAL,Property taxes,Fourth 20%,4,0.023325,c
+New Mexico,PROP_TOTAL,Property taxes,Next 15%,5,0.016861,c
+New Mexico,PROP_TOTAL,Property taxes,Next 4%,6,0.016416,c
+New Mexico,PROP_TOTAL,Property taxes,Top 1%,7,0.011635,c
+New York,PROP_TOTAL,Property taxes,Lowest 20%,1,0.06207,c
+New York,PROP_TOTAL,Property taxes,Second 20%,2,0.043729,c
+New York,PROP_TOTAL,Property taxes,Middle 20%,3,0.039066,c
+New York,PROP_TOTAL,Property taxes,Fourth 20%,4,0.045797,c
+New York,PROP_TOTAL,Property taxes,Next 15%,5,0.051548,c
+New York,PROP_TOTAL,Property taxes,Next 4%,6,0.040906,c
+New York,PROP_TOTAL,Property taxes,Top 1%,7,0.034678,c
+North Carolina,PROP_TOTAL,Property taxes,Lowest 20%,1,0.033605,c
+North Carolina,PROP_TOTAL,Property taxes,Second 20%,2,0.022123,c
+North Carolina,PROP_TOTAL,Property taxes,Middle 20%,3,0.019264,c
+North Carolina,PROP_TOTAL,Property taxes,Fourth 20%,4,0.02107,c
+North Carolina,PROP_TOTAL,Property taxes,Next 15%,5,0.019716,c
+North Carolina,PROP_TOTAL,Property taxes,Next 4%,6,0.017972,c
+North Carolina,PROP_TOTAL,Property taxes,Top 1%,7,0.012624,c
+North Dakota,PROP_TOTAL,Property taxes,Lowest 20%,1,0.024127,c
+North Dakota,PROP_TOTAL,Property taxes,Second 20%,2,0.023851,c
+North Dakota,PROP_TOTAL,Property taxes,Middle 20%,3,0.026956,c
+North Dakota,PROP_TOTAL,Property taxes,Fourth 20%,4,0.01809,c
+North Dakota,PROP_TOTAL,Property taxes,Next 15%,5,0.020728,c
+North Dakota,PROP_TOTAL,Property taxes,Next 4%,6,0.018427,c
+North Dakota,PROP_TOTAL,Property taxes,Top 1%,7,0.013642,c
+Ohio,PROP_TOTAL,Property taxes,Lowest 20%,1,0.037774,c
+Ohio,PROP_TOTAL,Property taxes,Second 20%,2,0.025552,c
+Ohio,PROP_TOTAL,Property taxes,Middle 20%,3,0.026363,c
+Ohio,PROP_TOTAL,Property taxes,Fourth 20%,4,0.027148,c
+Ohio,PROP_TOTAL,Property taxes,Next 15%,5,0.026069,c
+Ohio,PROP_TOTAL,Property taxes,Next 4%,6,0.024014,c
+Ohio,PROP_TOTAL,Property taxes,Top 1%,7,0.013602,c
+Oklahoma,PROP_TOTAL,Property taxes,Lowest 20%,1,0.036567,c
+Oklahoma,PROP_TOTAL,Property taxes,Second 20%,2,0.019187,c
+Oklahoma,PROP_TOTAL,Property taxes,Middle 20%,3,0.021298,c
+Oklahoma,PROP_TOTAL,Property taxes,Fourth 20%,4,0.019444,c
+Oklahoma,PROP_TOTAL,Property taxes,Next 15%,5,0.017501,c
+Oklahoma,PROP_TOTAL,Property taxes,Next 4%,6,0.017847,c
+Oklahoma,PROP_TOTAL,Property taxes,Top 1%,7,0.012462,c
+Oregon,PROP_TOTAL,Property taxes,Lowest 20%,1,0.047681,c
+Oregon,PROP_TOTAL,Property taxes,Second 20%,2,0.031297,c
+Oregon,PROP_TOTAL,Property taxes,Middle 20%,3,0.023426,c
+Oregon,PROP_TOTAL,Property taxes,Fourth 20%,4,0.032019,c
+Oregon,PROP_TOTAL,Property taxes,Next 15%,5,0.032589,c
+Oregon,PROP_TOTAL,Property taxes,Next 4%,6,0.023594,c
+Oregon,PROP_TOTAL,Property taxes,Top 1%,7,0.020422,c
+Pennsylvania,PROP_TOTAL,Property taxes,Lowest 20%,1,0.049186,c
+Pennsylvania,PROP_TOTAL,Property taxes,Second 20%,2,0.033861,c
+Pennsylvania,PROP_TOTAL,Property taxes,Middle 20%,3,0.030131,c
+Pennsylvania,PROP_TOTAL,Property taxes,Fourth 20%,4,0.029082,c
+Pennsylvania,PROP_TOTAL,Property taxes,Next 15%,5,0.028807,c
+Pennsylvania,PROP_TOTAL,Property taxes,Next 4%,6,0.026864,c
+Pennsylvania,PROP_TOTAL,Property taxes,Top 1%,7,0.015733,c
+Rhode Island,PROP_TOTAL,Property taxes,Lowest 20%,1,0.064991,c
+Rhode Island,PROP_TOTAL,Property taxes,Second 20%,2,0.036603,c
+Rhode Island,PROP_TOTAL,Property taxes,Middle 20%,3,0.03177,c
+Rhode Island,PROP_TOTAL,Property taxes,Fourth 20%,4,0.042867,c
+Rhode Island,PROP_TOTAL,Property taxes,Next 15%,5,0.037124,c
+Rhode Island,PROP_TOTAL,Property taxes,Next 4%,6,0.032189,c
+Rhode Island,PROP_TOTAL,Property taxes,Top 1%,7,0.027569,c
+South Carolina,PROP_TOTAL,Property taxes,Lowest 20%,1,0.043415,c
+South Carolina,PROP_TOTAL,Property taxes,Second 20%,2,0.024763,c
+South Carolina,PROP_TOTAL,Property taxes,Middle 20%,3,0.026421,c
+South Carolina,PROP_TOTAL,Property taxes,Fourth 20%,4,0.025325,c
+South Carolina,PROP_TOTAL,Property taxes,Next 15%,5,0.024784,c
+South Carolina,PROP_TOTAL,Property taxes,Next 4%,6,0.021938,c
+South Carolina,PROP_TOTAL,Property taxes,Top 1%,7,0.016252,c
+South Dakota,PROP_TOTAL,Property taxes,Lowest 20%,1,0.036219,c
+South Dakota,PROP_TOTAL,Property taxes,Second 20%,2,0.027501,c
+South Dakota,PROP_TOTAL,Property taxes,Middle 20%,3,0.02867,c
+South Dakota,PROP_TOTAL,Property taxes,Fourth 20%,4,0.02439,c
+South Dakota,PROP_TOTAL,Property taxes,Next 15%,5,0.024814,c
+South Dakota,PROP_TOTAL,Property taxes,Next 4%,6,0.01562,c
+South Dakota,PROP_TOTAL,Property taxes,Top 1%,7,0.010883,c
+Tennessee,PROP_TOTAL,Property taxes,Lowest 20%,1,0.027243,c
+Tennessee,PROP_TOTAL,Property taxes,Second 20%,2,0.018801,c
+Tennessee,PROP_TOTAL,Property taxes,Middle 20%,3,0.020495,c
+Tennessee,PROP_TOTAL,Property taxes,Fourth 20%,4,0.020293,c
+Tennessee,PROP_TOTAL,Property taxes,Next 15%,5,0.017362,c
+Tennessee,PROP_TOTAL,Property taxes,Next 4%,6,0.015504,c
+Tennessee,PROP_TOTAL,Property taxes,Top 1%,7,0.011553,c
+Texas,PROP_TOTAL,Property taxes,Lowest 20%,1,0.045411,c
+Texas,PROP_TOTAL,Property taxes,Second 20%,2,0.037373,c
+Texas,PROP_TOTAL,Property taxes,Middle 20%,3,0.035088,c
+Texas,PROP_TOTAL,Property taxes,Fourth 20%,4,0.036345,c
+Texas,PROP_TOTAL,Property taxes,Next 15%,5,0.031391,c
+Texas,PROP_TOTAL,Property taxes,Next 4%,6,0.035169,c
+Texas,PROP_TOTAL,Property taxes,Top 1%,7,0.026795,c
+Utah,PROP_TOTAL,Property taxes,Lowest 20%,1,0.027514,c
+Utah,PROP_TOTAL,Property taxes,Second 20%,2,0.022106,c
+Utah,PROP_TOTAL,Property taxes,Middle 20%,3,0.024408,c
+Utah,PROP_TOTAL,Property taxes,Fourth 20%,4,0.024106,c
+Utah,PROP_TOTAL,Property taxes,Next 15%,5,0.021604,c
+Utah,PROP_TOTAL,Property taxes,Next 4%,6,0.017247,c
+Utah,PROP_TOTAL,Property taxes,Top 1%,7,0.014896,c
+Vermont,PROP_TOTAL,Property taxes,Lowest 20%,1,0.021917,c
+Vermont,PROP_TOTAL,Property taxes,Second 20%,2,0.036448,c
+Vermont,PROP_TOTAL,Property taxes,Middle 20%,3,0.038427,c
+Vermont,PROP_TOTAL,Property taxes,Fourth 20%,4,0.043711,c
+Vermont,PROP_TOTAL,Property taxes,Next 15%,5,0.043067,c
+Vermont,PROP_TOTAL,Property taxes,Next 4%,6,0.041613,c
+Vermont,PROP_TOTAL,Property taxes,Top 1%,7,0.030178,c
+Virginia,PROP_TOTAL,Property taxes,Lowest 20%,1,0.029317,c
+Virginia,PROP_TOTAL,Property taxes,Second 20%,2,0.029529,c
+Virginia,PROP_TOTAL,Property taxes,Middle 20%,3,0.029396,c
+Virginia,PROP_TOTAL,Property taxes,Fourth 20%,4,0.029215,c
+Virginia,PROP_TOTAL,Property taxes,Next 15%,5,0.029391,c
+Virginia,PROP_TOTAL,Property taxes,Next 4%,6,0.025001,c
+Virginia,PROP_TOTAL,Property taxes,Top 1%,7,0.016308,c
+Washington,PROP_TOTAL,Property taxes,Lowest 20%,1,0.040714,c
+Washington,PROP_TOTAL,Property taxes,Second 20%,2,0.023792,c
+Washington,PROP_TOTAL,Property taxes,Middle 20%,3,0.032395,c
+Washington,PROP_TOTAL,Property taxes,Fourth 20%,4,0.031951,c
+Washington,PROP_TOTAL,Property taxes,Next 15%,5,0.030465,c
+Washington,PROP_TOTAL,Property taxes,Next 4%,6,0.0217,c
+Washington,PROP_TOTAL,Property taxes,Top 1%,7,0.016485,c
+West Virginia,PROP_TOTAL,Property taxes,Lowest 20%,1,0.028875,c
+West Virginia,PROP_TOTAL,Property taxes,Second 20%,2,0.01972,c
+West Virginia,PROP_TOTAL,Property taxes,Middle 20%,3,0.01744,c
+West Virginia,PROP_TOTAL,Property taxes,Fourth 20%,4,0.016254,c
+West Virginia,PROP_TOTAL,Property taxes,Next 15%,5,0.016118,c
+West Virginia,PROP_TOTAL,Property taxes,Next 4%,6,0.015913,c
+West Virginia,PROP_TOTAL,Property taxes,Top 1%,7,0.012563,c
+Wisconsin,PROP_TOTAL,Property taxes,Lowest 20%,1,0.046817,c
+Wisconsin,PROP_TOTAL,Property taxes,Second 20%,2,0.037533,c
+Wisconsin,PROP_TOTAL,Property taxes,Middle 20%,3,0.035802,c
+Wisconsin,PROP_TOTAL,Property taxes,Fourth 20%,4,0.03143,c
+Wisconsin,PROP_TOTAL,Property taxes,Next 15%,5,0.026886,c
+Wisconsin,PROP_TOTAL,Property taxes,Next 4%,6,0.020157,c
+Wisconsin,PROP_TOTAL,Property taxes,Top 1%,7,0.011374,c
+Wyoming,PROP_TOTAL,Property taxes,Lowest 20%,1,0.042829,c
+Wyoming,PROP_TOTAL,Property taxes,Second 20%,2,0.032601,c
+Wyoming,PROP_TOTAL,Property taxes,Middle 20%,3,0.028923,c
+Wyoming,PROP_TOTAL,Property taxes,Fourth 20%,4,0.03091,c
+Wyoming,PROP_TOTAL,Property taxes,Next 15%,5,0.030739,c
+Wyoming,PROP_TOTAL,Property taxes,Next 4%,6,0.025439,c
+Wyoming,PROP_TOTAL,Property taxes,Top 1%,7,0.017611,c

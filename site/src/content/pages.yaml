@@ -33,9 +33,11 @@ home:
     - p: >-
         Since 2014, taxes residents mostly pay have supplied **{{residents_share_since_2014}}** of the public money
         to build, renovate and buy the arenas, up from {{residents_share_before_2014}} before, and
-        {{unvoted_since_2014_share}} of the money since 2014 was approved with no public vote.
+        {{unvoted_since_2014_share}} of it was approved with no public vote. Sales taxes like Salt Lake City's take
+        about {{itep_ut_sales_ratio}} times as large a share of income from Utah's poorest fifth of households as from
+        its richest one percent.
       to: pays
-      sources: [ledger, threat-ledger]
+      sources: [ledger, threat-ledger, itep-who-pays-7]
     - p: >-
         The average team is worth **{{value_mean_2026}}**, {{value_growth_2014}} times the 2014 average before
         inflation. None of the {{public_deals_read}} public arena deals whose terms could be read gives the public a
@@ -404,12 +406,20 @@ households:
   title: >-
     In Salt Lake City, the Arena Deal Comes to as Much as {{hh_uta}} per Household
   deck: >-
-    The public money in the largest deals, divided by the households in the jurisdictions that pay. Salt Lake
-    City's figure is an upper bound, because people who live elsewhere pay part of its sales tax.
+    The public money in each of the {{hh_deals_n}} arena deals that took it, divided by the households in the
+    governments that pay. Salt Lake City's figure is an upper bound, because people who live elsewhere pay part of
+    its sales tax.
   description: >-
-    Per-household figures for the largest arena deals, the paying jurisdictions and their weights.
+    Per-household figures for every arena deal with public money, the paying governments and their shares, and a
+    lookup by ZIP code.
   sources: [ledger, census-b11001-2024]
   blocks:
+    - lookup: zip
+      title: Look up a ZIP code
+      intro: >-
+        See the public money committed to NBA arenas by the city, county and state that tax a ZIP code, per
+        household. The lookup covers {{zip_areas_n}} ZIP code areas.
+      sources: [ledger, census-b11001-2024, census-zcta-county-2020, census-zcta-place-2020]
     - p: >-
         Each deal's public money is split among the governments that pay it, by their documented shares, and
         divided by each one's households in the Census Bureau's 2024 American Community Survey. A household in a

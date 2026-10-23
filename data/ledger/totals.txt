@@ -99,7 +99,7 @@ No public deal: PHI 76ers-Comcast Spectacor South Philadelphia arena; DAL Maveri
 OKC binding total includes $60M of 2025 GO bonds for a garage and team offices outside the $900M arena budget; Bexar County $311M is the voter-approved cap.
 Core + binding new = $10.87B; + all approved/pending = $12.87B
 
-G. COST PER HOUSEHOLD - LARGEST PUBLIC DEALS (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)
+G. COST PER HOUSEHOLD - EVERY ARENA WITH COUNTED PUBLIC MONEY (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)
 ------------------------------------------------------------------------------
 UTA: Delta Center, all public money (the 2025 renovation $525M and the 2017 reimbursement; the district's $375M from the same tax is not included), 0.5% Salt Lake City sales tax: $548M | Salt Lake City, UT 98,916 hh -> $5,537/hh (share 100%) | City sales tax, part of it paid by people who live elsewhere, so the figure per household in the city is an upper bound
 OKC: New Thunder arena and related 2025 GO projects ($910M) + Paycom 2002 & 2008 money ($331M), OKC city sales tax and GO bonds: $1.24B | Oklahoma City, OK 290,311 hh -> $4,275/hh (share 100%) | City sales tax (also paid by commuters/visitors) and GO bonds
@@ -117,6 +117,14 @@ POR: Moda Center pending rebuild ($573M) + past ($83M): $656M | Oregon 1,744,270
 MIL: Fiserv Forum: $330M | Milwaukee County, WI 396,211 hh -> $653/hh (share 78%) ; Wisconsin 2,535,198 hh -> $28/hh (share 22%) | Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)
 NOP: Smoothie King Center: $459M | Louisiana 1,848,965 hh -> $248/hh (share 100%) | State of Louisiana (LSED/state)
 SAC: Golden 1 Center: $308M | Sacramento, CA 198,965 hh -> $1,549/hh (share 100%) | City of Sacramento general fund/parking
+MIA: Kaseya Center (county land, county payments to the arena manager since 1999, state payments to the operator since 1998): $410M | Miami-Dade County, FL 1,002,537 hh -> $325/hh (share 79%) ; Florida 9,141,675 hh -> $9/hh (share 21%) | Miami-Dade County (land and yearly payments) + State of Florida (sales-tax distribution to the operator)
+ATL: State Farm Arena (1999 infrastructure, 2017-18 renovation): $313M | Atlanta, GA 244,482 hh -> $1,279/hh (share 100%) | City of Atlanta car-rental tax, paid mostly by visitors, and sales of city property
+PHX: Mortgage Matchup Center (1992, 2019-20 renovation, renewal account): $300M | Phoenix, AZ 631,270 hh -> $475/hh (share 100%) | City of Phoenix hotel and car-rental taxes (Sports Facilities Fund), paid mostly by visitors
+MIN: Target Center (1990 subsidy, 1995 purchase, 2016-17 renovation, payments 2010-18): $297M | Minneapolis, MN 194,480 hh -> $1,526/hh (share 100%) | City of Minneapolis (tax increment, sales tax, entertainment taxes and parking revenue; a $750,000 yearly state appropriation also helped repay the 1995 bonds)
+DAL: American Airlines Center (2001): $234M | Dallas, TX 537,317 hh -> $436/hh (share 100%) | City of Dallas hotel and car-rental taxes, paid mostly by visitors
+LAL: Crypto.com Arena (1999): $139M | Los Angeles, CA 1,480,869 hh -> $94/hh (share 100%) | City of Los Angeles (repaid mostly from the arena admissions fee and convention center parking revenue)
+DEN: Ball Arena (1999): $82M | Denver, CO 349,785 hh -> $233/hh (share 100%) | City and County of Denver (urban-renewal tax increment and city funds)
+GSW: Chase Center (2019): $55M | San Francisco County, CA 371,841 hh -> $148/hh (share 100%) | City and County of San Francisco (general fund and the Mission Bay transportation fund)
 
 H. LABELS AND SOURCING
 ------------------------------------------------------------------------------

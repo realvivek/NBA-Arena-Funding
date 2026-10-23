@@ -3483,7 +3483,7 @@
  "sources_n": {
   "key": "sources_n",
   "title": "Documents in the bibliography (not counting this site's own ledgers)",
-  "value": 553.0,
+  "value": 564.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3492,10 +3492,10 @@
    "ledger"
   ],
   "display": {
-   "long": "553",
-   "short": "553",
-   "title": "553",
-   "cap": "553"
+   "long": "564",
+   "short": "564",
+   "title": "564",
+   "cap": "564"
   },
   "note": "",
   "method": "select count(*) from sources where publisher <> 'This site'"
@@ -3503,7 +3503,7 @@
  "sources_government": {
   "key": "sources_government",
   "title": "Government sources",
-  "value": 148.0,
+  "value": 155.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3512,10 +3512,10 @@
    "ledger"
   ],
   "display": {
-   "long": "148",
-   "short": "148",
-   "title": "148",
-   "cap": "148"
+   "long": "155",
+   "short": "155",
+   "title": "155",
+   "cap": "155"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'government' and publisher <> 'This site'"
@@ -3563,7 +3563,7 @@
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 372.0,
+  "value": 376.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3572,10 +3572,10 @@
    "ledger"
   ],
   "display": {
-   "long": "372",
-   "short": "372",
-   "title": "372",
-   "cap": "372"
+   "long": "376",
+   "short": "376",
+   "title": "376",
+   "cap": "376"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"
@@ -5252,5 +5252,411 @@
   },
   "note": "",
   "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=sec197_years, column quote: \"amortizable on a straight-line basis over 15 years\")"
+ },
+ "itep_ut_sales_ratio": {
+  "key": "itep_ut_sales_ratio",
+  "title": "Share of income Utah's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent",
+  "value": 15.179289,
+  "unit": "number",
+  "basis": "ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "itep-who-pays-7-data",
+   "itep-who-pays-7",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "15",
+   "short": "15",
+   "title": "15",
+   "cap": "15"
+  },
+  "note": "ITEP's \"General Sales--Individuals\" line for Utah. Salt Lake City's arena sales tax is a general sales tax, so it falls on incomes the same way; the check confirms every resident-paid funding stream has a tax line.",
+  "method": "select ratio from incidence where team = 'UTA' and bucket = 'sales'"
+ },
+ "itep_okc_sales_ratio": {
+  "key": "itep_okc_sales_ratio",
+  "title": "Share of income Oklahoma's general sales taxes take from the poorest fifth of households, as a multiple of the share they take from the richest one percent",
+  "value": 7.523914,
+  "unit": "number",
+  "basis": "ratio of shares of family income; 2024 tax law at 2023 incomes, households under 65",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "itep-who-pays-7-data",
+   "itep-who-pays-7",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "8",
+   "short": "8",
+   "title": "8",
+   "cap": "8"
+  },
+  "note": "ITEP's \"General Sales--Individuals\" line for Oklahoma; Oklahoma City's MAPS sales taxes paid for its arena and are paying for the new one.",
+  "method": "select ratio from incidence where team = 'OKC' and bucket = 'sales'"
+ },
+ "itep_was_poorest": {
+  "key": "itep_was_poorest",
+  "title": "Share of family income that the District of Columbia's state and local taxes take from its poorest fifth of households",
+  "value": 4.8153,
+  "unit": "pct",
+  "basis": "share of family income; 2024 tax law at 2023 incomes, households under 65",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "itep-who-pays-7-data",
+   "itep-who-pays-7"
+  ],
+  "display": {
+   "long": "4.8 percent",
+   "short": "4.8%",
+   "title": "4.8%",
+   "cap": "4.8 percent"
+  },
+  "note": "",
+  "method": "select 100 * poorest_share from incidence where team = 'WAS' and bucket = 'general'"
+ },
+ "itep_was_top1": {
+  "key": "itep_was_top1",
+  "title": "Share of family income that the District of Columbia's state and local taxes take from its richest one percent",
+  "value": 11.435,
+  "unit": "pct",
+  "basis": "share of family income; 2024 tax law at 2023 incomes, households under 65",
+  "digits": 1,
+  "label": "c",
+  "sources": [
+   "itep-who-pays-7-data",
+   "itep-who-pays-7"
+  ],
+  "display": {
+   "long": "11.4 percent",
+   "short": "11.4%",
+   "title": "11.4%",
+   "cap": "11.4 percent"
+  },
+  "note": "",
+  "method": "select 100 * top1_share from incidence where team = 'WAS' and bucket = 'general'"
+ },
+ "incid_regressive_share": {
+  "key": "incid_regressive_share",
+  "title": "Share of the resident-paid capital money raised through taxes that take more of their income from the poorest fifth than from the richest one percent",
+  "value": 63.106603,
+  "unit": "pct",
+  "basis": "share of 2026 dollars",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "itep-who-pays-7-data",
+   "who-pays-ledger",
+   "ledger"
+  ],
+  "display": {
+   "long": "63 percent",
+   "short": "63%",
+   "title": "63%",
+   "cap": "63 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(public_2026_m) filter (where ratio > 1) / sum(public_2026_m) from incidence"
+ },
+ "propb_yes_share": {
+  "key": "propb_yes_share",
+  "title": "Share of votes for Bexar County's Proposition B, November 4, 2025",
+  "value": 52.144725,
+  "unit": "pct",
+  "basis": "share of votes cast on the proposition",
+  "digits": 1,
+  "label": "b",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "bexar-elections-2025-11-04-summary"
+  ],
+  "display": {
+   "long": "52.1 percent",
+   "short": "52.1%",
+   "title": "52.1%",
+   "cap": "52.1 percent"
+  },
+  "note": "The precinct report's totals match the county's official summary, For 128,786 and Against 118,192.",
+  "method": "select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b"
+ },
+ "propb_top_yes": {
+  "key": "propb_top_yes",
+  "title": "Share voting yes on Proposition B in the fifth of Bexar precincts with the highest incomes",
+  "value": 57.894992,
+  "unit": "pct",
+  "basis": "share of votes cast",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "58 percent",
+   "short": "58%",
+   "title": "58%",
+   "cap": "58 percent"
+  },
+  "note": "Precincts are ranked by median household income estimated from Census block groups (ACS 2020-2024) and split into five groups holding equal numbers of households.",
+  "method": "select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth = 5"
+ },
+ "propb_rest_yes": {
+  "key": "propb_rest_yes",
+  "title": "Share voting yes on Proposition B in the other Bexar precincts (all but the fifth with the highest incomes)",
+  "value": 49.265032,
+  "unit": "pct",
+  "basis": "share of votes cast",
+  "digits": 1,
+  "label": "a",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "49.3 percent",
+   "short": "49.3%",
+   "title": "49.3%",
+   "cap": "49.3 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth < 5"
+ },
+ "propb_low_yes": {
+  "key": "propb_low_yes",
+  "title": "Share voting yes on Proposition B in the fifth of Bexar precincts with the lowest incomes",
+  "value": 47.851266,
+  "unit": "pct",
+  "basis": "share of votes cast",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "48 percent",
+   "short": "48%",
+   "title": "48%",
+   "cap": "48 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(yes_votes) / sum(yes_votes + no_votes) from prop_b_fifths where fifth = 1"
+ },
+ "propb_top_votes_share": {
+  "key": "propb_top_votes_share",
+  "title": "Share of all votes on Proposition B cast in the fifth of Bexar precincts with the highest incomes",
+  "value": 33.368559,
+  "unit": "pct",
+  "basis": "share of votes cast",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "33 percent",
+   "short": "33%",
+   "title": "33%",
+   "cap": "33 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(yes_votes + no_votes) filter (where fifth = 5) / sum(yes_votes + no_votes) from prop_b_fifths"
+ },
+ "propb_low_votes_share": {
+  "key": "propb_low_votes_share",
+  "title": "Share of all votes on Proposition B cast in the fifth of Bexar precincts with the lowest incomes",
+  "value": 10.137745,
+  "unit": "pct",
+  "basis": "share of votes cast",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "10 percent",
+   "short": "10%",
+   "title": "10%",
+   "cap": "10 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(yes_votes + no_votes) filter (where fifth = 1) / sum(yes_votes + no_votes) from prop_b_fifths"
+ },
+ "propb_top_turnout": {
+  "key": "propb_top_turnout",
+  "title": "Votes on Proposition B as a share of registered voters, in the fifth of Bexar precincts with the highest incomes",
+  "value": 23.940287,
+  "unit": "pct",
+  "basis": "votes cast on the proposition per registered voter",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "24 percent",
+   "short": "24%",
+   "title": "24%",
+   "cap": "24 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(yes_votes + no_votes) / sum(registered) from prop_b_fifths where fifth = 5"
+ },
+ "propb_low_turnout": {
+  "key": "propb_low_turnout",
+  "title": "Votes on Proposition B as a share of registered voters, in the fifth of Bexar precincts with the lowest incomes",
+  "value": 13.024412,
+  "unit": "pct",
+  "basis": "votes cast on the proposition per registered voter",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "13 percent",
+   "short": "13%",
+   "title": "13%",
+   "cap": "13 percent"
+  },
+  "note": "",
+  "method": "select 100 * sum(yes_votes + no_votes) / sum(registered) from prop_b_fifths where fifth = 1"
+ },
+ "propb_top_income": {
+  "key": "propb_top_income",
+  "title": "Lowest estimated median household income among the fifth of Bexar precincts with the highest incomes",
+  "value": 110800.0,
+  "unit": "usd",
+  "basis": "ACS 2020-2024 dollars, estimated from block groups",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "census-acs2024-5yr-bg-bexar",
+   "census-cb-2024-bg-texas",
+   "tlc-precincts-2024g",
+   "who-pays-ledger"
+  ],
+  "display": {
+   "long": "$110,800",
+   "short": "$110,800",
+   "title": "$110,800",
+   "cap": "$110,800"
+  },
+  "note": "",
+  "method": "select min(median_income_est) from prop_b_fifths where fifth = 5"
+ },
+ "propb_precincts": {
+  "key": "propb_precincts",
+  "title": "Bexar precincts with votes on Proposition B",
+  "value": 712.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "bexar-elections-2025-11-04-precinct",
+   "tlc-precincts-2024g"
+  ],
+  "display": {
+   "long": "712",
+   "short": "712",
+   "title": "712",
+   "cap": "712"
+  },
+  "note": "",
+  "method": "select count(*) from prop_b where yes_votes + no_votes > 0"
+ },
+ "zip_areas_n": {
+  "key": "zip_areas_n",
+  "title": "ZIP code areas that lie in at least one government paying for an NBA arena",
+  "value": 6863.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "census-zcta-county-2020",
+   "census-zcta-place-2020",
+   "ledger"
+  ],
+  "display": {
+   "long": "6,863",
+   "short": "6,863",
+   "title": "6,863",
+   "cap": "6,863"
+  },
+  "note": "",
+  "method": "select count(distinct zip) from zip_geo"
+ },
+ "hh_deals_n": {
+  "key": "hh_deals_n",
+  "title": "Arenas with counted public money, per household where they are",
+  "value": 24.0,
+  "unit": "count",
+  "basis": "",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "census-b11001-2024"
+  ],
+  "display": {
+   "long": "24",
+   "short": "24",
+   "title": "24",
+   "cap": "24"
+  },
+  "note": "",
+  "method": "select count(distinct team) from households"
+ },
+ "fed_per_household": {
+  "key": "fed_per_household",
+  "title": "Estimated federal cost of tax-exempt arena bonds per household in the United States",
+  "value": 10.633045,
+  "unit": "usd",
+  "basis": "2026 dollars per household; present value at issue; an estimate",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "ledger",
+   "gayer-2016",
+   "census-b11001-2024"
+  ],
+  "display": {
+   "long": "$11",
+   "short": "$11",
+   "title": "$11",
+   "cap": "$11"
+  },
+  "note": "",
+  "method": "select (select sum(fed_tax_expenditure_pv_2026_m) from arenas) * 1e6 / households from us_households"
  }
 }

@@ -448,3 +448,90 @@ datasets:
   row_sources: sources
   require_row_sources: true
   note: Main source of wealth from Forbes profiles read Oct. 17-18, 2026, or the release or report named, classed by this project as private equity (private equity or hedge funds), other finance (mortgage lending, asset management, venture capital, financial services) or other. Funds are those with a current stake in the team or its parent company; stakes seen only in search results are left out.
+
+- id: incidence
+  title: How hard the taxes behind each arena's resident-paid money fall on the poorest households, by ITEP's estimates for each state
+  sql: |
+    select i.team, regexp_replace(a.city, ', [A-Z]{2}$', '') as city, i.state, i.line,
+           case i.line when 'SE_GST' then 'sales tax' when 'SE_EXCISE' then 'alcohol and tobacco taxes'
+                       when 'PROP_TOTAL' then 'property-tax increment' else 'general taxes' end as kind,
+           any_value(i.line_name) as line_name, sum(i.public_2026_m) as public_2026_m,
+           any_value(i.poorest_share) as poorest_share, any_value(i.top1_share) as top1_share, any_value(i.ratio) as ratio,
+           (select list_sort(coalesce(list(distinct s.source_id), []))
+              from item_sources s join buckets b on b.item_id = s.item_id
+              join itep_lines l on l.team = b.team and l.bucket = b.bucket
+              join capital c on c.item_id = b.item_id
+             where s.team = i.team and s.role = 'public' and l.line = i.line) as sources
+    from incidence i join arenas a using (team)
+    group by i.team, a.city, i.state, i.line
+    order by ratio desc, public_2026_m desc
+  sources: [itep-who-pays-7-data, itep-who-pays-7, who-pays-ledger, ledger]
+  row_sources: sources
+  require_row_sources: true
+  note: One row per arena and tax line; the arena's resident-paid capital money (general funds, dedicated sales taxes, tax increment and tax capture, lease-revenue bonds, alcohol and tobacco taxes) in 2026 dollars. poorest_share and top1_share are the shares of family income the matching ITEP line takes in that state from the lowest 20% and the top 1% of households (2024 tax law at 2023 incomes, households under 65); ratio divides the first by the second. The line describes how the kind of tax falls across a state, not the arena tax alone.
+
+- id: propb-fifths
+  title: Bexar County's Proposition B (November 4, 2025) in five groups of precincts holding equal numbers of households, by estimated median household income
+  sql: |
+    select fifth, count(*) as precincts, sum(yes_votes) as yes_votes, sum(no_votes) as no_votes,
+           sum(yes_votes + no_votes) as votes, sum(yes_votes) / sum(yes_votes + no_votes) as yes_share,
+           sum(yes_votes + no_votes) / (select sum(yes_votes + no_votes) from prop_b_fifths) as vote_share,
+           sum(yes_votes + no_votes) / sum(registered) as turnout, sum(households_est) as households,
+           min(median_income_est) as income_min, max(median_income_est) as income_max
+    from prop_b_fifths group by fifth order by fifth
+  sources: [bexar-elections-2025-11-04-precinct, bexar-elections-2025-11-04-summary, tlc-precincts-2024g, census-cb-2024-bg-texas, census-acs2024-5yr-bg-bexar, who-pays-ledger]
+  note: Each precinct's households and median household income are estimated from the Census block groups it overlaps, by area (ACS 2020-2024). Precincts are ranked by that income and cut into five groups with equal households; fifth 1 has the lowest incomes. turnout is votes on the proposition per registered voter.
+
+- id: propb-precincts
+  title: Proposition B by precinct, with each precinct's estimated median household income, income group and place on the map
+  sql: |
+    select p.precinct, p.yes_votes, p.no_votes, p.yes_votes + p.no_votes as votes,
+           p.yes_votes / (p.yes_votes + p.no_votes) as yes_share, p.median_income_est, f.fifth, p.lon, p.lat
+    from prop_b p left join prop_b_fifths f using (precinct)
+    where p.yes_votes + p.no_votes > 0
+    order by votes desc, p.precinct
+  sources: [bexar-elections-2025-11-04-precinct, tlc-precincts-2024g, census-cb-2024-bg-texas, census-acs2024-5yr-bg-bexar, who-pays-ledger]
+  note: lon and lat are a point inside each precinct (its centroid, or a point inside the precinct when the centroid falls outside it).
+
+- id: bexar-map
+  title: Bexar County's outline and the Spurs arena sites, for the precinct map
+  sql: |
+    select 'outline' as kind, null::varchar as name, null::varchar as role, null::double as lon, null::double as lat, coords
+    from bexar_outline
+    union all
+    select 'site', site, role, lon, lat, null from bexar_sites
+  sources: [tlc-precincts-2024g, wiki-frost-bank-center, wikipedia-institute-of-texan-cultures, sanantonioreport-spurs-arena-project-marvel-2026-06, who-pays-ledger]
+  note: The outline is the union of the county's precincts, simplified to about 200 meters. The planned arena site is the former Institute of Texan Cultures at Hemisfair, which the city is buying.
+
+- id: zip-lookup
+  title: Each government that pays toward an NBA arena, its households, its deals' public money per household and the ZIP code areas inside it
+  sql: |
+    with pay as (
+        select i.team,
+               sum(b.public_2026_m) filter (where g.payer = 'visitors') / sum(b.public_2026_m) as visitors_share,
+               sum(b.public_2026_m) filter (where g.payer = 'shared') / sum(b.public_2026_m) as shared_share,
+               sum(b.public_2026_m) filter (where b.bucket = 'sales') / sum(b.public_2026_m) as sales_share
+        from buckets b join items i using (item_id) join bucket_groups g using (bucket)
+        where i.kind <> 'ongoing' and not (i.kind = 'project' and i.description ilike '%district%')
+        group by i.team),
+         h as (
+        select *, case when geo_id = '04000US11' then 1
+                       else case substr(geo_id, 1, 3) when '160' then 1 when '050' then 2 else 3 end end as level
+        from households),
+         z as (
+        select geo_id, list(zip order by zip) filter (where land_share >= 0.95) as zips,
+               list(zip order by zip) filter (where land_share < 0.95) as zips_part
+        from zip_geo group by geo_id)
+    select h.geo_id, h.jurisdiction, h.level, h.households,
+           list({'team': h.team, 'arena': a.arena,
+                 'label': case when h.deal ilike '%new%arena%' then a.arena || ' and the new arena'
+                               when h.pending_2026_m > 0 then a.arena || ', with the pending rebuild' else a.arena end,
+                 'per_household_2026': h.per_household_2026, 'share': h.share,
+                 'pending_2026_m': h.pending_2026_m, 'visitors_share': coalesce(p.visitors_share, 0),
+                 'shared_share': coalesce(p.shared_share, 0), 'sales_share': coalesce(p.sales_share, 0)} order by h.team) as deals,
+           coalesce(any_value(z.zips), []) as zips, coalesce(any_value(z.zips_part), []) as zips_part
+    from h join arenas a using (team) left join pay p using (team) left join z using (geo_id)
+    group by h.geo_id, h.jurisdiction, h.level, h.households
+    order by h.level, h.jurisdiction
+  sources: [ledger, census-b11001-2024, census-zcta-county-2020, census-zcta-place-2020, who-pays-ledger]
+  note: level is 1 for a city (and the District of Columbia), 2 for a county, 3 for a state. zips lists the ZIP code areas (2020) with at least 95% of their land inside the government; zips_part those with 5% to 95%. A household in a city or county also pays its share of the state's money where the state pays.

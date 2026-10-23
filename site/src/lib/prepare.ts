@@ -21,7 +21,8 @@ type Block =
   | { stats: { value: string; label: string }[]; sources?: Ref[] }
   | { cards: { title: string; value?: string; text: string; sources?: Ref[] }[] }
   | { funds: { fund: string; text: string; sources?: Ref[] }[] }
-  | { reveal: string; value: string; sources?: Ref[] };
+  | { reveal: string; value: string; sources?: Ref[] }
+  | { lookup: string; title: string; intro: string; sources?: Ref[] };
 export type PreparedStep = { step: string; html: string; sources: string[]; numbers: number[] };
 export type Prepared =
   | { kind: 'p'; html: string; sources: string[]; numbers: number[] }
@@ -33,7 +34,8 @@ export type Prepared =
   | { kind: 'stats'; tiles: { value: string; label: string }[]; sources: string[]; numbers: number[] }
   | { kind: 'cards'; cards: PreparedCard[] }
   | { kind: 'funds'; funds: PreparedFund[] }
-  | { kind: 'reveal'; lead: string; value: string; sources: string[]; numbers: number[] };
+  | { kind: 'reveal'; lead: string; value: string; sources: string[]; numbers: number[] }
+  | { kind: 'lookup'; id: string; title: string; intro: string; sources: string[]; numbers: number[] };
 export type PreparedCard = { title: string; value?: string; text: string; sources: string[]; numbers: number[] };
 export type PreparedFund = {
   fund: string;
@@ -111,6 +113,10 @@ export async function prepare(blocks: Block[], cites: Citations, where: string):
       const own = ids(b.sources);
       const all = blockSources(`${b.reveal} ${b.value}`, own);
       out.push({ kind: 'reveal', lead: paragraph(b.reveal, all, `${at} lead`).html, value: paragraph(b.value, all, `${at} value`).html, sources: all, numbers: cites.add(all) });
+    } else if ('lookup' in b) {
+      if (b.lookup !== 'zip') throw new Error(`${at}: unknown lookup ${b.lookup}`);
+      const intro = paragraph(b.intro, b.sources ?? [], `${at} intro`, cites);
+      out.push({ kind: 'lookup', id: b.lookup, title: plain(b.title, { where: `${at} title`, allow: ALLOW }), intro: intro.html, sources: intro.sources, numbers: intro.numbers });
     } else throw new Error(`${at}: unsupported block`);
   }
   return out;
@@ -121,7 +127,7 @@ export function textSources(blocks: Prepared[]): string[] {
   const out: string[] = [];
   const add = (ids: string[]) => ids.forEach((id) => !out.includes(id) && out.push(id));
   for (const b of blocks) {
-    if (b.kind === 'p' || b.kind === 'quote' || b.kind === 'teams' || b.kind === 'stats' || b.kind === 'reveal') add(b.sources);
+    if (b.kind === 'p' || b.kind === 'quote' || b.kind === 'teams' || b.kind === 'stats' || b.kind === 'reveal' || b.kind === 'lookup') add(b.sources);
     else if (b.kind === 'scrolly') b.steps.forEach((s) => add(s.sources));
     else if (b.kind === 'cards') b.cards.forEach((c) => add(c.sources));
     else if (b.kind === 'funds') b.funds.forEach((f) => add(f.sources));

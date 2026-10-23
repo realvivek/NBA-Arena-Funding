@@ -18,7 +18,7 @@ git status --short data/                                  # empty when inputs ar
 
 Scripts run from any directory. Hand-entered figures live in `scripts/arena_ledger/ledger_inputs.py` and `scripts/arena_threats/build.py`; edit those, never the generated files in `data/ledger/` and `data/threats/`. After any input change, rebuild all four and commit inputs and outputs together.
 
-The helper scripts (`wiki_extract.py`, `wiki_fin.py`, `wx.py`, `g.py`, `pdftxt.py`, `pdf2txt.py`) read raw downloads from `./raw` or `$RAW_DIR`. `pdftxt.py` needs PyMuPDF and `pdf2txt.py` needs pypdfium2.
+The helper scripts (`wiki_extract.py`, `wiki_fin.py`, `wx.py`, `g.py`, `pdftxt.py`, `pdf2txt.py`) read raw downloads from `./raw` or `$RAW_DIR`. `pdftxt.py` needs PyMuPDF and `pdf2txt.py` needs pypdfium2. The `scripts/who_pays/` helpers write `data/who_pays/` the same way (raw files listed in its `sources.csv`): `itep_extract.py` needs openpyxl, `bexar_precincts.py` needs PyMuPDF, pyshp, shapely and pyproj, and `zip_jurisdictions.py` reads `data/ledger/households.csv`, so rerun it after `write_totals.py` when the paying governments change.
 
 ### The site
 

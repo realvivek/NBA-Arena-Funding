@@ -3678,6 +3678,378 @@
      }
     ]
    }
+  },
+  {
+   "name": "who-pays-bexar-2025-prop-b-precincts",
+   "type": "table",
+   "path": "who_pays/bexar_2025_prop_b_precincts.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "precinct",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^[0-9]{4}$"
+      }
+     },
+     {
+      "name": "registered",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "ballots",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "yes_votes",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "no_votes",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "households_est",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "median_income_est",
+      "type": "integer",
+      "constraints": {
+       "minimum": 1000
+      }
+     },
+     {
+      "name": "lon",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": -99.2,
+       "maximum": -98.0
+      }
+     },
+     {
+      "name": "lat",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 29.0,
+       "maximum": 29.9
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "b/a"
+       ]
+      }
+     }
+    ],
+    "primaryKey": [
+     "precinct"
+    ]
+   }
+  },
+  {
+   "name": "who-pays-bexar-arena-sites",
+   "type": "table",
+   "path": "who_pays/bexar_arena_sites.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "site",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true
+      }
+     },
+     {
+      "name": "role",
+      "type": "string"
+     },
+     {
+      "name": "lat",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 29.0,
+       "maximum": 29.9
+      }
+     },
+     {
+      "name": "lon",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": -99.2,
+       "maximum": -98.0
+      }
+     },
+     {
+      "name": "label",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "who-pays-itep-tax-lines",
+   "type": "table",
+   "path": "who_pays/itep_tax_lines.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "bucket",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "general",
+        "sales",
+        "tif",
+        "leaserev",
+        "sin"
+       ]
+      }
+     },
+     {
+      "name": "state",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "line",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "APP_A",
+        "SE_GST",
+        "SE_EXCISE",
+        "PROP_TOTAL"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "who-pays-itep-who-pays-7",
+   "type": "table",
+   "path": "who_pays/itep_who_pays_7.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "state",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "line",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "APP_A",
+        "SE_GST",
+        "SE_EXCISE",
+        "PROP_TOTAL"
+       ]
+      }
+     },
+     {
+      "name": "line_name",
+      "type": "string"
+     },
+     {
+      "name": "grp",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "Lowest 20%",
+        "Second 20%",
+        "Middle 20%",
+        "Fourth 20%",
+        "Next 15%",
+        "Next 4%",
+        "Top 1%"
+       ]
+      }
+     },
+     {
+      "name": "grp_order",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1,
+       "maximum": 7
+      }
+     },
+     {
+      "name": "share_of_income",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0,
+       "maximum": 0.5
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "c"
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "who-pays-sources",
+   "type": "table",
+   "path": "who_pays/sources.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "claim",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[abcu](/[abc])*$"
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^https?://.+"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "who-pays-zip-jurisdictions",
+   "type": "table",
+   "path": "who_pays/zip_jurisdictions.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "zip",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[0-9]{5}$"
+      }
+     },
+     {
+      "name": "geo_id",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[0-9]{5}US[0-9]+$"
+      }
+     },
+     {
+      "name": "land_share",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0.05,
+       "maximum": 1
+      }
+     }
+    ]
+   }
   }
  ]
 }

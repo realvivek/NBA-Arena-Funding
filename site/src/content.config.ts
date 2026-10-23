@@ -39,6 +39,8 @@ const block = z.union([
   z.object({ funds: z.array(fund).min(1) }).strict(),
   // a sentence that ends on a number set large: the lead-in, then the number (a token) on its own line
   z.object({ reveal: z.string(), value: z.string(), sources: cites }).strict(),
+  // an interactive lookup (the ZIP lookup): a title and a short introduction; its answers come from the data
+  z.object({ lookup: z.string(), title: z.string(), intro: z.string(), sources: cites }).strict(),
 ]);
 // A chapter ends with a link to the reference page that holds its full record.
 const more = z.object({ page: z.string(), text: z.string() }).strict();

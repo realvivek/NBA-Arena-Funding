@@ -21,3 +21,12 @@ MIL,Fiserv Forum,330.193498,0.0,05000US55079,"Milwaukee County, WI",396211,0.783
 MIL,Fiserv Forum,330.193498,0.0,04000US55,Wisconsin,2535198,0.2162,28.16,"Milwaukee County (WCD taxes, county aid cut, city TIF) + Wisconsin (state GPR half of $108.1M)"
 NOP,Smoothie King Center,458.761416,0.0,04000US22,Louisiana,1848965,1.0,248.12,State of Louisiana (LSED/state)
 SAC,Golden 1 Center,308.292103,0.0,16000US0664000,"Sacramento, CA",198965,1.0,1549.48,City of Sacramento general fund/parking
+MIA,"Kaseya Center (county land, county payments to the arena manager since 1999, state payments to the operator since 1998)",410.144553,0.0,05000US12086,"Miami-Dade County, FL",1002537,0.793589,324.66,Miami-Dade County (land and yearly payments) + State of Florida (sales-tax distribution to the operator)
+MIA,"Kaseya Center (county land, county payments to the arena manager since 1999, state payments to the operator since 1998)",410.144553,0.0,04000US12,Florida,9141675,0.206411,9.26,Miami-Dade County (land and yearly payments) + State of Florida (sales-tax distribution to the operator)
+ATL,"State Farm Arena (1999 infrastructure, 2017-18 renovation)",312.649501,0.0,16000US1304000,"Atlanta, GA",244482,1.0,1278.82,"City of Atlanta car-rental tax, paid mostly by visitors, and sales of city property"
+PHX,"Mortgage Matchup Center (1992, 2019-20 renovation, renewal account)",299.94527,0.0,16000US0455000,"Phoenix, AZ",631270,1.0,475.15,"City of Phoenix hotel and car-rental taxes (Sports Facilities Fund), paid mostly by visitors"
+MIN,"Target Center (1990 subsidy, 1995 purchase, 2016-17 renovation, payments 2010-18)",296.822623,0.0,16000US2743000,"Minneapolis, MN",194480,1.0,1526.24,"City of Minneapolis (tax increment, sales tax, entertainment taxes and parking revenue; a $750,000 yearly state appropriation also helped repay the 1995 bonds)"
+DAL,American Airlines Center (2001),234.131712,0.0,16000US4819000,"Dallas, TX",537317,1.0,435.74,"City of Dallas hotel and car-rental taxes, paid mostly by visitors"
+LAL,Crypto.com Arena (1999),139.371912,0.0,16000US0644000,"Los Angeles, CA",1480869,1.0,94.11,City of Los Angeles (repaid mostly from the arena admissions fee and convention center parking revenue)
+DEN,Ball Arena (1999),81.63212,0.0,16000US0820000,"Denver, CO",349785,1.0,233.38,City and County of Denver (urban-renewal tax increment and city funds)
+GSW,Chase Center (2019),55.081865,0.0,05000US06075,"San Francisco County, CA",371841,1.0,148.13,City and County of San Francisco (general fund and the Mission Bay transportation fund)
