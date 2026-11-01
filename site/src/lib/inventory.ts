@@ -34,7 +34,7 @@ function blockItems(blocks: Block[], where: string, href: string, figWhere: Map<
     if ('stats' in b)
       b.stats.forEach((t: Block) => out.push(item(`${where}: key figure`, href, `${t.value} ${t.label}`, own)));
     if ('cards' in b)
-      b.cards.forEach((c: Block) => out.push(item(`${where}: card "${c.title}"`, href, `${c.value ?? ''} ${c.text}`.trim(), ids(c.sources))));
+      b.cards.forEach((c: Block) => out.push(item(`${where}: card "${c.title}"`, href, `${c.stat ?? ''} ${c.value ?? ''} ${c.text}`.trim(), ids(c.sources))));
     if ('funds' in b) b.funds.forEach((f: Block) => out.push(item(`${where}: ${f.fund}`, href, f.text, ids(f.sources))));
     const fig = b.fig ?? b.scrolly;
     if (fig && !figWhere.has(fig)) figWhere.set(fig, { where, href });

@@ -11,9 +11,9 @@ bill:
       steps:
         - step: built
           p: >-
-            Governments paid **{{building_public}}**, in today's dollars, to build the {{arenas_n}} arenas NBA
-            teams play in now, counting {{bkn_pilot}} of Barclays Center bonds repaid with the arena's property
-            taxes. That is {{construction_share}} of what the public has put into them.
+            Building the {{arenas_n}} arenas NBA teams play in now cost {{construction_cost}} in today's dollars.
+            Governments paid **{{building_public}}** of it, {{building_cost_share}}, counting {{bkn_pilot}} of
+            Barclays Center bonds repaid with the arena's property taxes. Private money paid the rest.
           sources: [ledger]
         - step: renovated
           p: >-
@@ -74,6 +74,80 @@ rebuild:
   title: The bill keeps coming after opening night
   blocks:
     - p: >-
+        Opening night does not end the public's bill. At **{{after_more_n}}** of the {{arenas_n}} arenas, the public
+        has now paid more since the doors opened than it did to build them. New York tops the list without writing a
+        check: the state excused Madison Square Garden from property tax in 1982, a break worth **{{nyk_exemption}}**
+        since 1984. Indianapolis follows with {{ind_after}}, Washington with {{was_after}} and Salt Lake City with
+        {{uta_after}}, for an arena its owner built with private money.
+      sources: [ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026, in-83950a, utah-pmn]
+    - fig: afterrank
+    - h3: How the bill keeps coming
+    - p: >-
+        Most of this money was never one big decision. It is written into the standard parts of an arena deal: who
+        repairs the building, what the public pays each year, which taxes it gives up and what happens when the
+        lease runs out.
+      sources: [ledger]
+    - cards:
+        - title: Repairs and upgrades
+          stat: '{{public_owned_n}} of {{arenas_n}}'
+          value: Arenas the public owns, and often repairs
+          text: >-
+            In Cleveland and Indianapolis, the team handles daily upkeep and the public owner pays for major
+            repairs. Cleveland's owner has told the city and county it lacks the money. Charlotte's old lease
+            obligated the city to pay {{cha_old_lease}} for renovations. Not every lease works this way:
+            Milwaukee's makes the Bucks pay for capital repairs.
+          sources: [ohioauditor-auditsearch, gwcomplex-board-packet-12-17-25, in-83950a, wbtv-charlotte-city-council-approves-275-million-spec, wi-lfb-informational-paper-18]
+        - title: Yearly payments
+          stat: '{{ongoing_public}}'
+          value: To run a public building
+          text: >-
+            Some deals pay the team, or the company that runs the arena, every year. Miami-Dade pays the Heat's
+            arena company {{mia_payment_now}} a year now and will pay {{mia_payment_late}} a year from July 2030 to
+            June 2035. Indianapolis's board reimburses the Pacers about {{ind_reimbursement}} a year for running the
+            Fieldhouse, more in later years, and the team may end the deal if the board does not budget for it.
+          sources: [ledger, miamidadeclerk-cafr2025-complete, miamidade-volume-1, in-83950a]
+        - title: Tax breaks
+          stat: '{{exemptions_added}}'
+          value: Some with no end date
+          text: >-
+            A state law of 1982 excuses Madison Square Garden from New York City property tax for as long as both
+            an NBA and an NHL team play there. It is worth about {{nyk_exemption_fy2026}} a year now and has no end
+            date: only the state can repeal it. Illinois valued the United Center under a formula of its own from
+            1989 until 2016.
+          sources: [ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026, uc-formula-method]
+        - title: New deals at lease time
+          stat: '{{after_deals}}'
+          value: Paid for with a longer lease
+          text: >-
+            When a lease nears its end, the team asks for upgrades and the public pays to keep it, in return for a
+            longer lease. The money often comes from a tax set aside for decades: Salt Lake City's arena sales tax
+            is expected to run {{slc_tax_projection_years}} years, and Georgia's legislature extended Atlanta's
+            rental-car tax to 2047 to repay the renovation bonds.
+          sources: [ledger, threat-ledger, utah-pmn, slc-council-sec-district-2024, bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements]
+    - h3: Why the bills keep coming
+    - p: >-
+        The arenas aged together: {{arenas_opened_1990_2005}} of the {{arenas_n}} opened between 1990 and 2005, so
+        they came due for major work in the same years. Leases end in waves, and that is when teams ask, with other
+        cities as the alternative: public money followed {{threats_same_city}} of {{threats_counted}} relocation
+        threats in the same city. And the cost is spread over decades of taxes set aside for it, so no single
+        year's budget shows the whole bill.
+      sources: [ledger, threat-ledger]
+    - h3: Who decided, and for how long
+    - p: >-
+        Much of it needed no new deal. Of the {{after_public}} the public has put in since the arenas opened,
+        **{{after_owed}}** came due under contracts and laws already in place: yearly payments, tax breaks and
+        repairs that leases leave to the public. The rest came in new renovation and purchase deals, each approved
+        when it was struck. Voters approved {{after_voters_share}} of the total; councils, legislatures and
+        appointed boards approved the rest.
+      sources: [ledger, threat-ledger]
+    - fig: afteropen
+    - p: >-
+        Those payments come to about {{recurring_2025}} a year, and many run for decades. Several end just as the
+        next leases do, which is when the asking starts again.
+      sources: [ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026]
+    - fig: commitments
+    - h3: Rebuilding has overtaken building
+    - p: >-
         The spending does not stop when an arena opens. Since 2014, governments have put or committed
         **{{rebuild_since_2014}}** to renovating or buying arenas that already stand, {{rebuild_ratio}} times the
         {{build_since_2014}} for new ones: {{build_opened_since_2014}} for the arenas that opened in those years and
@@ -85,31 +159,22 @@ rebuild:
         The renovations now rival the buildings. Since 2014, {{renovations_over_cost_n}} renovations with public
         money have cost more than their arenas did to build, in 2026 dollars: in Indianapolis, Phoenix, Salt Lake
         City and Washington. Salt Lake City's public money alone is {{uta_renovation_multiple}} times what the Delta
-        Center cost to build in 1991. Part of the shift is age: {{arenas_opened_1990_2005}} of the {{arenas_n}}
-        arenas opened between 1990 and 2005, so most of them came due for major work in the same years.
-      sources: [ledger]
-    - p: >-
-        {{takeover_n:cap}} arenas built mainly with private money, in Atlanta, Minneapolis, Phoenix, Portland, Salt
-        Lake City and Washington, were later bought or rebuilt with public money: **{{takeover_public}}**, of which
-        {{takeover_pending}} is pending, against {{takeover_construction_public}} when they were built.
+        Center cost to build in 1991.
       sources: [ledger]
   more:
     - { page: arenas, text: 'The record for each arena' }
+    - { page: taxes, text: 'Every yearly payment, year by year' }
 
 pays:
   n: 4
   title: The bill has shifted from visitors to residents
   blocks:
     - p: >-
-        Taxes on hotel rooms and car rentals, which fall mostly on visitors, supplied {{visitors_share}} of the
-        public money to build, renovate and buy the arenas. Taxes on restaurant meals and tickets, which visitors
-        and residents share, supplied {{shared_share}}, and taxes that residents mostly pay, {{residents_share}}.
-      sources: [ledger]
-    - p: >-
-        The mix has changed. Before 2014, hotel and car-rental taxes supplied **{{visitors_share_before_2014}}** of
-        the money and residents' taxes {{residents_share_before_2014}}. Since then, taxes residents mostly pay have supplied
-        **{{residents_share_since_2014}}**, led by Salt Lake City's arena sales tax and Washington's general fund.
-        Visitor taxes are still public money: a hotel tax spent on an arena is not spent on anything else.
+        Who pays has changed. Taxes on hotel rooms and car rentals, which fall mostly on visitors, paid for much of
+        the older arenas: **{{visitors_share_before_2014}}** of the money before 2014. Since then, taxes residents
+        mostly pay have supplied **{{residents_share_since_2014}}**, led by Salt Lake City's arena sales tax and
+        Washington's general fund. Visitor taxes are still public money: a hotel tax spent on an arena is not spent
+        on anything else.
       sources: [ledger]
     - fig: payershift
     - p: >-
@@ -126,8 +191,8 @@ pays:
         The decisions rarely went to voters. Of the {{capital_since_2014}} put or committed since 2014,
         {{unvoted_since_2014_share}} was approved by councils, legislatures and appointed boards with no public vote.
         The rest came from taxes voters had approved: Oklahoma City's MAPS 4 sales tax in 2019 and Bexar County's
-        venue tax, extended in 2008.
-      sources: [ledger, threat-ledger, okc-maps-history, bexar-elections-2008-05-10-results, bondbuyer-san-antonio-shopping-list]
+        venue tax, extended in 2008. Petition drives for a vote in Sacramento and Cleveland ended without one.
+      sources: [ledger, threat-ledger, okc-maps-history, bexar-elections-2008-05-10-results, bondbuyer-san-antonio-shopping-list, foxnews-sacramento-approves-477-million-arena-caps-off-s, news5cleveland-cavaliers-withdraw-from-140-million-quicken-l]
     - p: >-
         Bexar County's November 2025 vote on a new Spurs arena turned on its richest precincts. Proposition B, which
         put the county's visitor taxes toward the arena, passed with {{propb_yes_share}}. The fifth of precincts with
@@ -168,8 +233,9 @@ gains:
     - fig: values
     - h3: What the public gets back
     - p: >-
-        Rent and fees that do not grow with a team's value. Oklahoma City charges the Thunder **{{okc_game_fee}} a
-        game**, capped at {{okc_fee_cap}} a year, for an arena the city is putting {{okc_new_arena}} into.
+        Rent and fees that do not grow with a team's value. In the arena it is building with {{okc_new_arena}} of
+        public money, Oklahoma City will charge the Thunder **{{okc_game_fee}} a game**, capped at {{okc_fee_cap}} a
+        year.
         Washington collects {{was_rent_min}} to {{was_rent_max}} a year after committing {{was_2024_deal}} to buy
         and renovate its arena.
       sources: [okc-pbcarena-use-license-agreementfinal-6-12-25-1, cfo-tafa-capital-one-arena-112624]
@@ -232,11 +298,10 @@ next:
       sources: [threat-ledger, ledger, portland-ordinance-192244]
     - fig: leases
     - p: >-
-        The asking has already begun. Memphis is holding **{{mem_pending}}** for a FedExForum renovation until the
-        Grizzlies sign a new lease. Portland has **{{por_pending}}** pending for the Moda Center, including up to
-        {{por_state}} of state bonds. San Antonio's own share of a new Spurs arena, up to {{sas_pending}}, is
-        pending, on top of up to {{sas_county}} from Bexar County. In Houston, the state is expected to put about
-        {{hou_pending}} into a renovation of the Toyota Center; no agreement has been found.
+        The asking has already begun. **{{pending_existing}}** is pending for the arenas in Memphis, Portland and
+        Houston, labeled on the chart, and San Antonio's own share of a new Spurs arena is pending on top of Bexar
+        County's. Memphis is holding its money until the Grizzlies sign a new lease; Portland's includes up to
+        {{por_state}} of state bonds; in Houston, no agreement with the state has been found.
       sources: [tri-statedefender-p-349496, olis-enrolled, ksat-results-props-a-and-b-for-coliseum-complex-downt, click2houston-harris-county-approves-180m-toyota-center]
     - p: >-
         Oklahoma City is already building. Its new arena, with **{{okc_new_arena}}** of public money counting a
@@ -259,27 +324,23 @@ next:
 
 claims:
   n: 8
-  title: The arguments for the deals, checked against the record
+  title: The case for the deals, checked against the record
   blocks:
     - p: >-
-        Arena deals come with familiar arguments. Here is how they hold up against the records gathered for this
-        story.
+        Every deal came with a case for it: the team would leave without it, visitors would pay, private money
+        built the arena, and the arena would lift its neighborhood and pay for itself. Here is each argument, and
+        what the records gathered for this story show.
     - cards:
         - title: '"The team will leave without it"'
+          stat: '{{threats_team_left:short}} of {{threats_counted}}'
           value: Teams seldom leave
           text: >-
             Owners or the league threatened to move a team at least {{threats_counted}} times since 1994. Teams left
             {{threats_team_left}} times, and each time another city had public money waiting: Memphis, New Orleans,
             Oklahoma City and Brooklyn.
           sources: [threat-ledger]
-        - title: '"The public chose this"'
-          value: Rarely by vote
-          text: >-
-            Councils, legislatures and appointed boards approved {{unvoted_since_2014_share}} of the public capital
-            put or committed since 2014, with no public vote. Petition drives for a vote in Sacramento and Cleveland
-            ended without one.
-          sources: [ledger, threat-ledger, okc-maps-history, bexar-elections-2008-05-10-results, foxnews-sacramento-approves-477-million-arena-caps-off-s, news5cleveland-cavaliers-withdraw-from-140-million-quicken-l]
         - title: '"Visitors pay for it"'
+          stat: '{{visitors_share_before_2014:short}} to {{visitors_share_since_2014:short}}'
           value: Less and less
           text: >-
             Visitor taxes supplied {{visitors_share_before_2014}} of the public capital before 2014 and
@@ -287,26 +348,40 @@ claims:
             spent on anything else.
           sources: [ledger]
         - title: '"It was built with private money"'
-          value: Not for long
+          stat: '{{private_build_share:short}}'
+          value: True at first
           text: >-
-            {{takeover_n:cap}} arenas built mainly with private money were later bought or rebuilt with public money.
-            Miami's counts as privately built, but the county and the state have paid its operator {{mia_ongoing}}
-            since 1998, {{mia_ongoing_multiple}} times the public money that went into building it.
+            Private money paid {{private_build_share}} of what today's arenas cost to build. But {{takeover_n}} arenas
+            built mainly with private money were later bought or rebuilt with public money. Miami's counts as
+            privately built, but the county and the state have paid its operator {{mia_ongoing}} since 1998,
+            {{mia_ongoing_multiple}} times the public money that went into building it.
           sources: [ledger]
         - title: '"The public owns the arena"'
-          value: And pays for its upkeep
+          stat: '{{renovation_public}}'
+          value: And often pays for its upkeep
           text: >-
-            The public owns {{public_owned_n}} of the {{arenas_n}} arenas, and with them the bills for repairs and
-            renovations. None of the {{public_deals_read}} public deals whose terms could be read gives the public a
-            share when the team is sold.
+            The public owns {{public_owned_n}} of the {{arenas_n}} arenas, and often the bills for repairs and
+            renovations with them: {{renovation_public}} so far. None of the {{public_deals_read}} public deals whose
+            terms could be read gives the public a share when the team is sold.
           sources: [ledger, team-ledger]
+        - title: '"It will lift the neighborhood"'
+          stat: '{{local_gain_radius:short}} mile'
+          value: Where gains were found
+          text: >-
+            Detroit's arena was announced as a project to "help revitalize" the city, and Salt Lake City's arena tax
+            also pays to revitalize the district around the Delta Center. A review of the research finds the gains
+            near arenas small: a study of several new stadiums found no rise in overall jobs, only a small one at
+            restaurants and bars within a mile. Studies of nearby home values are mixed.
+          sources: [michigan-snyder-detroit-arena-4380-jobs-2013, slc-council-sec-district-2024, campus-bradbury-coates-humphreys-01-30-2023]
         - title: '"It pays for itself"'
+          stat: '{{research_studies}} studies'
           value: Not by the evidence
           text: >-
-            Economists who reviewed more than {{research_studies}} studies over {{research_years}} years found "very
-            limited economic impacts of professional sports teams and stadiums." A 2026 study of Detroit found that
-            sports events at its new arena were not associated with a significant rise in demand for hotel rooms or
-            short-term rentals.
+            A review of more than {{research_studies}} studies over {{research_years}} years found "very limited
+            economic impacts of professional sports teams and stadiums," though findings have grown more nuanced.
+            Even counting civic pride, the gains from hosting a team "tend to fall well short of covering public
+            outlays." A 2026 study of Detroit found that events at its new arena did not significantly raise demand
+            for hotel rooms or short-term rentals.
           sources: [bradbury-2023, jakar-2026-detroit-sport-tourism]
     - h3: What the deals promised
     - p: >-

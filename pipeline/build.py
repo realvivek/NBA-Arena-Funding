@@ -96,7 +96,8 @@ def source_tables(by_url):
         with open(os.path.join(ROOT, fn), newline='') as f:
             return list(csv.DictReader(f))
     t = {'item_sources': [], 'arena_sources': [], 'lease_sources': [], 'threat_sources': [], 'left_behind_sources': [],
-         'coord_sources': [], 'value_sources': [], 'history_sources': [], 'return_sources': [], 'investor_sources': []}
+         'coord_sources': [], 'value_sources': [], 'history_sources': [], 'return_sources': [], 'investor_sources': [],
+         'term_sources': []}
     for r in read('data/ledger/ledger_items.csv'):
         for role in ('cost', 'public'):
             for i, sid in enumerate(ids_for(r[f'{role}_source'], by_url)):
@@ -109,6 +110,9 @@ def source_tables(by_url):
     for r in read('data/authorities/lease_clock.csv'):
         for i, sid in enumerate(ids_for(r['source'], by_url)):
             t['lease_sources'].append((r['team'], sid, i))
+    for r in read('data/authorities/payment_terms.csv'):
+        for i, sid in enumerate(ids_for(r['source'], by_url)):
+            t['term_sources'].append((r['team'], r['what'], sid, i))
     for r in read('data/threats/threat_ledger.csv'):
         for i, sid in enumerate(ids_for(r['sources'], by_url)):
             t['threat_sources'].append((r['id'], sid, i))
@@ -137,6 +141,11 @@ def source_tables(by_url):
 # ---------------------------------------------------------------- 3. database
 def connect(by_url, srcs):
     con = duckdb.connect()
+    # the CPI table comes first, because some views convert dollars with it
+    calc = json.load(open(os.path.join(ROOT, 'data', 'ledger', '_calc.json')))
+    con.execute('create table cpi (year INTEGER, cpi DOUBLE, factor_2026 DOUBLE)')
+    base = calc['CPI']['2026']
+    con.executemany('insert into cpi values (?, ?, ?)', [(int(y), v, base / v) for y, v in calc['CPI'].items()])
     with open(os.path.join(HERE, 'views.sql')) as f:
         con.execute(f.read().replace('{root}', ROOT))
     cols = {'item_sources': 'item_id VARCHAR, team VARCHAR, role VARCHAR, source_id VARCHAR, ord INTEGER',
@@ -148,15 +157,12 @@ def connect(by_url, srcs):
             'value_sources': 'team VARCHAR, field VARCHAR, source_id VARCHAR, ord INTEGER',
             'history_sources': 'year INTEGER, source_id VARCHAR, ord INTEGER',
             'return_sources': 'team VARCHAR, source_id VARCHAR, ord INTEGER',
-            'investor_sources': 'fund VARCHAR, team VARCHAR, source_id VARCHAR, ord INTEGER'}
+            'investor_sources': 'fund VARCHAR, team VARCHAR, source_id VARCHAR, ord INTEGER',
+            'term_sources': 'team VARCHAR, what VARCHAR, source_id VARCHAR, ord INTEGER'}
     for name, rows in source_tables(by_url).items():
         con.execute(f'create table {name} ({cols[name]})')
         if rows:
             con.executemany(f"insert into {name} values ({', '.join('?' * len(rows[0]))})", rows)
-    calc = json.load(open(os.path.join(ROOT, 'data', 'ledger', '_calc.json')))
-    con.execute('create table cpi (year INTEGER, cpi DOUBLE, factor_2026 DOUBLE)')
-    base = calc['CPI']['2026']
-    con.executemany('insert into cpi values (?, ?, ?)', [(int(y), v, base / v) for y, v in calc['CPI'].items()])
     comp = json.load(open(os.path.join(ROOT, 'data', 'threats', 'comparison.json')))
     con.execute('create table comparison (k VARCHAR, v DOUBLE)')
     con.execute('create table comparison_ids (k VARCHAR, id VARCHAR)')

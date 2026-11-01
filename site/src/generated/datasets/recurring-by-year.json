@@ -1,0 +1,1219 @@
+{
+ "id": "recurring-by-year",
+ "title": "Yearly payments to teams and arena operators and property-tax breaks, by year",
+ "sources": [
+  "ledger",
+  "ibo-msg-property-tax-exemption-2023-report",
+  "nyc-dof-tax-expenditures-fy2026",
+  "uc-formula-method",
+  "fred-cpiaucns"
+ ],
+ "base_sources": [
+  "ledger",
+  "ibo-msg-property-tax-exemption-2023-report",
+  "nyc-dof-tax-expenditures-fy2026",
+  "uc-formula-method",
+  "fred-cpiaucns"
+ ],
+ "columns": [
+  "year",
+  "team",
+  "kind",
+  "description",
+  "public_2026_m"
+ ],
+ "rows": [
+  {
+   "year": 1984,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 11.658491
+  },
+  {
+   "year": 1985,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 16.889628
+  },
+  {
+   "year": 1986,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 16.34431
+  },
+  {
+   "year": 1987,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 15.5813
+  },
+  {
+   "year": 1988,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 14.928224
+  },
+  {
+   "year": 1989,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 18.523406
+  },
+  {
+   "year": 1990,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 19.176482
+  },
+  {
+   "year": 1991,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 19.286416
+  },
+  {
+   "year": 1992,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 19.939492
+  },
+  {
+   "year": 1993,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 20.48481
+  },
+  {
+   "year": 1994,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 20.048338
+  },
+  {
+   "year": 1995,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 19.068724
+  },
+  {
+   "year": 1996,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 18.41456
+  },
+  {
+   "year": 1997,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 17.760396
+  },
+  {
+   "year": 1998,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.051887
+  },
+  {
+   "year": 1998,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 17.325012
+  },
+  {
+   "year": 1999,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 9.955137
+  },
+  {
+   "year": 1999,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.982055
+  },
+  {
+   "year": 1999,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 17.106232
+  },
+  {
+   "year": 2000,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 6.163166
+  },
+  {
+   "year": 2000,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.851979
+  },
+  {
+   "year": 2000,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 16.126618
+  },
+  {
+   "year": 2001,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 2.137617
+  },
+  {
+   "year": 2001,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 11.987544
+  },
+  {
+   "year": 2001,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.746107
+  },
+  {
+   "year": 2001,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 15.472454
+  },
+  {
+   "year": 2002,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 11.800386
+  },
+  {
+   "year": 2002,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.687621
+  },
+  {
+   "year": 2002,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 17.433858
+  },
+  {
+   "year": 2003,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 7.609607
+  },
+  {
+   "year": 2003,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 11.538452
+  },
+  {
+   "year": 2003,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.605766
+  },
+  {
+   "year": 2003,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 2.704325
+  },
+  {
+   "year": 2003,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 18.632252
+  },
+  {
+   "year": 2004,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 5.994841
+  },
+  {
+   "year": 2004,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 11.237595
+  },
+  {
+   "year": 2004,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.511748
+  },
+  {
+   "year": 2004,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 2.765502
+  },
+  {
+   "year": 2004,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 20.048338
+  },
+  {
+   "year": 2005,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 6.454398
+  },
+  {
+   "year": 2005,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 10.868843
+  },
+  {
+   "year": 2005,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.396513
+  },
+  {
+   "year": 2005,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 3.94198
+  },
+  {
+   "year": 2005,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 19.504108
+  },
+  {
+   "year": 2006,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 7.040634
+  },
+  {
+   "year": 2006,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 10.529177
+  },
+  {
+   "year": 2006,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.290368
+  },
+  {
+   "year": 2006,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 1.599124
+  },
+  {
+   "year": 2006,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 18.95879
+  },
+  {
+   "year": 2007,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 5.81978
+  },
+  {
+   "year": 2007,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 10.237145
+  },
+  {
+   "year": 2007,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.199108
+  },
+  {
+   "year": 2007,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 0.99104
+  },
+  {
+   "year": 2007,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 18.41456
+  },
+  {
+   "year": 2008,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 5.528334
+  },
+  {
+   "year": 2008,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 9.858661
+  },
+  {
+   "year": 2008,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.080832
+  },
+  {
+   "year": 2008,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 10.33339
+  },
+  {
+   "year": 2008,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 17.542704
+  },
+  {
+   "year": 2009,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 5.619238
+  },
+  {
+   "year": 2009,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 9.893838
+  },
+  {
+   "year": 2009,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.091824
+  },
+  {
+   "year": 2009,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 1.328223
+  },
+  {
+   "year": 2009,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 18.523406
+  },
+  {
+   "year": 2010,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 5.354679
+  },
+  {
+   "year": 2010,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 9.734193
+  },
+  {
+   "year": 2010,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 3.041935
+  },
+  {
+   "year": 2010,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.079163
+  },
+  {
+   "year": 2010,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.243028
+  },
+  {
+   "year": 2010,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 20.375964
+  },
+  {
+   "year": 2011,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 5.770916
+  },
+  {
+   "year": 2011,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.948845
+  },
+  {
+   "year": 2011,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.304522
+  },
+  {
+   "year": 2011,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 13.177747
+  },
+  {
+   "year": 2011,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 20.811348
+  },
+  {
+   "year": 2012,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 3.999639
+  },
+  {
+   "year": 2012,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.889061
+  },
+  {
+   "year": 2012,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.142238
+  },
+  {
+   "year": 2012,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.816788
+  },
+  {
+   "year": 2012,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 20.811348
+  },
+  {
+   "year": 2013,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 4.244563
+  },
+  {
+   "year": 2013,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 9.111525
+  },
+  {
+   "year": 2013,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.847352
+  },
+  {
+   "year": 2013,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.101346
+  },
+  {
+   "year": 2013,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 6.051559
+  },
+  {
+   "year": 2013,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 21.900896
+  },
+  {
+   "year": 2014,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 3.145348
+  },
+  {
+   "year": 2014,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 11.09695
+  },
+  {
+   "year": 2014,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 8.966076
+  },
+  {
+   "year": 2014,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.801899
+  },
+  {
+   "year": 2014,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 1.772201
+  },
+  {
+   "year": 2014,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 6.921917
+  },
+  {
+   "year": 2014,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 23.09929
+  },
+  {
+   "year": 2015,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 1.996715
+  },
+  {
+   "year": 2015,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 19.946922
+  },
+  {
+   "year": 2015,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 8.955452
+  },
+  {
+   "year": 2015,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.798579
+  },
+  {
+   "year": 2015,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.016376
+  },
+  {
+   "year": 2015,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 4.980382
+  },
+  {
+   "year": 2015,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 58.730017
+  },
+  {
+   "year": 2016,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 1.888682
+  },
+  {
+   "year": 2016,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 20.002366
+  },
+  {
+   "year": 2016,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 8.843879
+  },
+  {
+   "year": 2016,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.763712
+  },
+  {
+   "year": 2016,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.21097
+  },
+  {
+   "year": 2016,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 4.721963
+  },
+  {
+   "year": 2016,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 52.95465
+  },
+  {
+   "year": 2017,
+   "team": "CHI",
+   "kind": "break",
+   "description": "United Center property-tax valuation formula",
+   "public_2026_m": 2.440438
+  },
+  {
+   "year": 2017,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 24.380815
+  },
+  {
+   "year": 2017,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 8.659424
+  },
+  {
+   "year": 2017,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.70607
+  },
+  {
+   "year": 2017,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.70607
+  },
+  {
+   "year": 2017,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.271048
+  },
+  {
+   "year": 2017,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 52.192728
+  },
+  {
+   "year": 2018,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 21.545695
+  },
+  {
+   "year": 2018,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 8.452954
+  },
+  {
+   "year": 2018,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.641548
+  },
+  {
+   "year": 2018,
+   "team": "MIN",
+   "kind": "ongoing",
+   "description": "City payments to the arena operator",
+   "public_2026_m": 2.148899
+  },
+  {
+   "year": 2018,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.962978
+  },
+  {
+   "year": 2018,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 51.756256
+  },
+  {
+   "year": 2019,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 22.411667
+  },
+  {
+   "year": 2019,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 8.302495
+  },
+  {
+   "year": 2019,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.59453
+  },
+  {
+   "year": 2019,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.916293
+  },
+  {
+   "year": 2019,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 51.865102
+  },
+  {
+   "year": 2020,
+   "team": "CHA",
+   "kind": "ongoing",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "public_2026_m": 0.605601
+  },
+  {
+   "year": 2020,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 22.318873
+  },
+  {
+   "year": 2020,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 8.201325
+  },
+  {
+   "year": 2020,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.562914
+  },
+  {
+   "year": 2020,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.177285
+  },
+  {
+   "year": 2020,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 52.192728
+  },
+  {
+   "year": 2021,
+   "team": "CHA",
+   "kind": "ongoing",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "public_2026_m": 0.607105
+  },
+  {
+   "year": 2021,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 21.982844
+  },
+  {
+   "year": 2021,
+   "team": "MEM",
+   "kind": "ongoing",
+   "description": "City and county operating subsidy (press only)",
+   "public_2026_m": 6.058588
+  },
+  {
+   "year": 2021,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County naming-rights payments to the arena manager",
+   "public_2026_m": 4.895829
+  },
+  {
+   "year": 2021,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 7.833326
+  },
+  {
+   "year": 2021,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.447914
+  },
+  {
+   "year": 2021,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 4.539556
+  },
+  {
+   "year": 2021,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 52.192728
+  },
+  {
+   "year": 2022,
+   "team": "CHA",
+   "kind": "ongoing",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "public_2026_m": 0.612762
+  },
+  {
+   "year": 2022,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 17.886595
+  },
+  {
+   "year": 2022,
+   "team": "MEM",
+   "kind": "ongoing",
+   "description": "City and county operating subsidy (press only)",
+   "public_2026_m": 5.609658
+  },
+  {
+   "year": 2022,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County naming-rights payments to the arena manager",
+   "public_2026_m": 2.266529
+  },
+  {
+   "year": 2022,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 7.252892
+  },
+  {
+   "year": 2022,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.266529
+  },
+  {
+   "year": 2022,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.57333
+  },
+  {
+   "year": 2022,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 42.168015
+  },
+  {
+   "year": 2023,
+   "team": "CHA",
+   "kind": "ongoing",
+   "description": "City arena maintenance reserve contributions beyond the $0.6M a year counted in the 2014 deal, net of the Hornets' match",
+   "public_2026_m": 0.54423
+  },
+  {
+   "year": 2023,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 16.010847
+  },
+  {
+   "year": 2023,
+   "team": "MEM",
+   "kind": "ongoing",
+   "description": "City and county operating subsidy (press only)",
+   "public_2026_m": 5.387875
+  },
+  {
+   "year": 2023,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County naming-rights payments to the arena manager",
+   "public_2026_m": 2.176919
+  },
+  {
+   "year": 2023,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 6.966142
+  },
+  {
+   "year": 2023,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.176919
+  },
+  {
+   "year": 2023,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.875662
+  },
+  {
+   "year": 2023,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 46.199669
+  },
+  {
+   "year": 2023,
+   "team": "OKC",
+   "kind": "ongoing",
+   "description": "City operating subsidy to ASM Global for the Paycom Center",
+   "public_2026_m": 9.578445
+  },
+  {
+   "year": 2024,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 15.659289
+  },
+  {
+   "year": 2024,
+   "team": "MEM",
+   "kind": "ongoing",
+   "description": "City and county operating subsidy (press only)",
+   "public_2026_m": 5.233511
+  },
+  {
+   "year": 2024,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County naming-rights payments to the arena manager",
+   "public_2026_m": 2.11455
+  },
+  {
+   "year": 2024,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 6.76656
+  },
+  {
+   "year": 2024,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.11455
+  },
+  {
+   "year": 2024,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 5.977679
+  },
+  {
+   "year": 2024,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 44.617007
+  },
+  {
+   "year": 2025,
+   "team": "IND",
+   "kind": "ongoing",
+   "description": "Capital Improvement Board spending on Fieldhouse operating costs and Pacers loan forgiveness",
+   "public_2026_m": 13.686928
+  },
+  {
+   "year": 2025,
+   "team": "MEM",
+   "kind": "ongoing",
+   "description": "City and county operating subsidy (press only)",
+   "public_2026_m": 6.490058
+  },
+  {
+   "year": 2025,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County naming-rights payments to the arena manager",
+   "public_2026_m": 2.060336
+  },
+  {
+   "year": 2025,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "County payments to the arena manager",
+   "public_2026_m": 6.593075
+  },
+  {
+   "year": 2025,
+   "team": "MIA",
+   "kind": "ongoing",
+   "description": "State of Florida sales-tax distribution to the operator (BPL, Ltd.), $166,667 a month for 30 years, Mar 1998-Mar 2028",
+   "public_2026_m": 2.060336
+  },
+  {
+   "year": 2025,
+   "team": "NOP",
+   "kind": "ongoing",
+   "description": "Stadium district payments to the team",
+   "public_2026_m": 9.719295
+  },
+  {
+   "year": 2025,
+   "team": "NYK",
+   "kind": "break",
+   "description": "Madison Square Garden property-tax exemption",
+   "public_2026_m": 44.194207
+  }
+ ],
+ "note": "Through 2025, the last full year in the records. Madison Square Garden's exemption for fiscal 1984-2023 is read from the bars of the Independent Budget Office's chart and scaled to its stated total; fiscal 2024 and 2025 are the Department of Finance's values. The United Center's formula is counted in the year each tax bill was paid. Repairs and renovation money are counted by project, not by year, and are not included.",
+ "method": "select year, team, kind, description, public_2026_m from after_items where kind in ('ongoing', 'break') and year <= 2025 order by year, team, description"
+}

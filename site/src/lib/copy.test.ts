@@ -77,7 +77,7 @@ describe('every piece of copy in the content files', () => {
     if (b.quote) items.push([`${where} quote`, b.quote, own], [`${where} byline`, b.by, own]);
     for (const [i, s] of (b.steps ?? []).entries()) items.push([`${where} step ${i + 1}`, s.p, s.sources ?? []]);
     for (const t of b.stats ?? []) items.push([`${where} key figure`, `${t.value} ${t.label}`, own]);
-    for (const c of b.cards ?? []) items.push([`${where} card ${c.title}`, `${c.title} ${c.value ?? ''} ${c.text}`, c.sources ?? []]);
+    for (const c of b.cards ?? []) items.push([`${where} card ${c.title}`, `${c.title} ${c.stat ?? ''} ${c.value ?? ''} ${c.text}`, c.sources ?? []]);
     for (const f of b.funds ?? []) items.push([`${where} fund ${f.fund}`, f.text, f.sources ?? []]);
   };
   for (const [id, s] of Object.entries<any>(story)) {
@@ -86,7 +86,11 @@ describe('every piece of copy in the content files', () => {
   }
   for (const [id, p] of Object.entries<any>(pages)) {
     for (const k of ['title', 'deck', 'description']) items.push([`page ${id} ${k}`, p[k], p.sources ?? []]);
-    for (const [i, f] of (p.findings ?? []).entries()) items.push([`page ${id} finding ${i + 1}`, f.p, f.sources ?? []]);
+    for (const [i, f] of (p.findings ?? []).entries()) {
+      items.push([`page ${id} finding ${i + 1}`, f.p, f.sources ?? []]);
+      items.push([`page ${id} finding ${i + 1} figure`, f.n, f.sources ?? []]);
+      if (f.link) items.push([`page ${id} finding ${i + 1} link`, f.link, []]);
+    }
     for (const t of p.tiles ?? []) items.push([`page ${id} tile`, `${t.value} ${t.label}`, p.sources ?? []]);
     for (const [i, b] of [...(p.blocks ?? []), ...(p.notes ?? [])].entries()) blockCopy(`page ${id} block ${i + 1}`, b);
   }

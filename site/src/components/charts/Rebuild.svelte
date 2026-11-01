@@ -50,11 +50,12 @@
   const ymax = Math.max(...years.map(total));
   const yTop = Math.ceil(ymax / 500) * 500;
 
-  // the largest renovations still under way, counted at face value in the last column, each labeled with its own amount
+  // the largest renovation still under way, counted at face value in the last column, labeled with its amount; the
+  // others are named in their hover tips, so the labels at the right edge never crowd on phones
   const largest = segs
     .filter((s) => s.year === last && s.category === 'existing' && !s.pending)
     .sort((a, b) => b.value - a.value)
-    .slice(0, narrow ? 3 : 4)
+    .slice(0, 1)
     .map((s) => [s.team, s.value]);
   const hl = new Set(largest.map(([t]) => t));
   // the largest new-arena columns before 2014: two on wide screens (at least five years apart), one on phones

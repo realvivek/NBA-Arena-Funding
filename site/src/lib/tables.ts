@@ -421,3 +421,84 @@ export function propbTable(rows: any[]): Table {
       })),
   };
 }
+
+/** The arenas with public money after opening: by kind, against the public money that built them. */
+export function afterRankTable(rows: any[]): Table {
+  return {
+    columns: [
+      { key: 'city', label: 'City' },
+      { key: 'reno', label: 'Renovations', num: true },
+      { key: 'buy', label: 'Buying it', num: true },
+      { key: 'pay', label: 'Yearly payments', num: true },
+      { key: 'brk', label: 'Tax breaks', num: true },
+      { key: 'after', label: 'After opening', num: true },
+      { key: 'build', label: 'To build', num: true },
+    ],
+    rows: rows.map((r) => ({
+      city: { text: TEAM_CITY[r.team], href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
+      reno: r.renovation ? money(r.renovation) : '',
+      buy: r.purchase ? money(r.purchase) : '',
+      pay: r.ongoing ? money(r.ongoing) : '',
+      brk: r.tax_breaks ? money(r.tax_breaks) : '',
+      after: money(r.after_2026_m),
+      build: r.build_2026_m ? money(r.build_2026_m) : '$0',
+    })),
+  };
+}
+
+/** The money after opening by what it paid for, when it comes due and who approved it. */
+export function afterKindsTable(rows: any[]): Table {
+  const bar: Record<string, string> = { what: 'What it paid for', due: 'When it comes due', who: 'Who approved it' };
+  const name: Record<string, string> = {
+    renovation: 'Renovations', purchase: 'Buying arenas', ongoing: 'Yearly payments', break: 'Property-tax breaks',
+    owed: 'Owed under deals and laws already in place', deal: 'New renovation and purchase deals',
+    officials: 'Councils, legislatures and appointed boards', voters: 'Voters',
+  };
+  return {
+    columns: [
+      { key: 'bar', label: 'Measure' },
+      { key: 'part', label: 'Part' },
+      { key: 'arenas', label: 'Arenas', num: true },
+      { key: 'value', label: '2026 $', num: true },
+    ],
+    rows: rows.map((r) => ({ bar: bar[r.bar], part: name[r.key] ?? r.key, arenas: r.arenas, value: money(r.value_2026_m) })),
+  };
+}
+
+/** Yearly payments and property-tax breaks, one row per year. */
+export function recurringTable(rows: any[]): Table {
+  const years = [...new Set(rows.map((r) => r.year))].sort((a, b) => a - b);
+  const sum = (ys: any[]) => ys.reduce((a, r) => a + r.public_2026_m, 0);
+  return {
+    columns: [
+      { key: 'year', label: 'Year' },
+      { key: 'breaks', label: 'Property-tax breaks', num: true },
+      { key: 'pay', label: 'Yearly payments', num: true },
+      { key: 'total', label: 'Total, 2026 $', num: true },
+    ],
+    rows: years.map((y) => {
+      const ys = rows.filter((r) => r.year === y);
+      return { year: String(y), breaks: money(sum(ys.filter((r) => r.kind === 'break'))), pay: money(sum(ys.filter((r) => r.kind === 'ongoing'))), total: money(sum(ys)) };
+    }),
+  };
+}
+
+/** Public payments under deals and laws in force, with the years they run. */
+export function commitmentsTable(rows: any[]): Table {
+  return {
+    columns: [
+      { key: 'city', label: 'City' },
+      { key: 'what', label: 'Payment' },
+      { key: 'years', label: 'Years' },
+      { key: 'amount', label: 'Amount' },
+      { key: 'decided', label: 'Decided by' },
+    ],
+    rows: rows.map((r) => ({
+      city: { text: r.team === 'NYK' ? 'New York' : TEAM_CITY[r.team], href: sitePath(`/arenas/#${r.team.toLowerCase()}`) },
+      what: r.what,
+      years: `${r.start}-${r.end ?? 'no end date'}`,
+      amount: r.amount,
+      decided: r.decided,
+    })),
+  };
+}

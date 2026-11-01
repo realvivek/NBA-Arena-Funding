@@ -190,9 +190,9 @@ add(id='E19',team='PHX Suns',owners='Robert Sarver',period='2018-12 to 2019-01',
 add(id='E20',team='MEM Grizzlies',owners='Robert Pera',period='2020-06 to 2022-04',threat_class='implied',
  said_or_done='Lease "Shortfall Season" clause (avg paid attendance < 14,900, 64 largest suites unsold, or < 2,500 club seats): city/county must buy the shortfall within 60 days or the team may terminate early (Commercial Appeal / Daily Memphian, June 2020).',
  alt_city='none named', league_role='none documented',
- money_after='Shelby County Commission 2022-04-13 (unanimous): city+county pay $4.95M/yr for four seasons from 2021-22, then $6.3M/yr for four seasons (= $44.8M); team through 2029',
+ money_after='Shelby County Commission 2022-04-11 (unanimous): city+county pay $4.95M/yr for four seasons from 2021-22, then $6.3M/yr for four seasons (= $44.8M); team through 2029',
  money_usd_m=44.8, mechanism='Annual operating payments', vote='County Commission unanimous; no referendum',
- threat_date='2020-06-25', approval_date='2022-04-13', outcome='stayed',
+ threat_date='2020-06-25', approval_date='2022-04-11', outcome='stayed',
  sources='https://dailymemphian.com/article/15067/memphis-grizzlies-fedexforum-lease-provision-robert-pera ; https://www.actionnews5.com/2022/04/13/shelby-county-commissioners-vote-unanimously-keep-grizzlies-memphis-through-2029',
  label='c', notes='Operating money: excluded from capital comparison.')
 

@@ -29,6 +29,7 @@
   "degc-ugd-3",
   "sf-wv5m-vpq2",
   "houstonsports-toyota-center-arena-lease",
+  "houstonsports-2clutch-city-hchsa-arena-lease-sublease-licens",
   "houstonsports-hchsa-special-bod-agenda-4-8-26",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "in-83950a",
@@ -115,6 +116,7 @@
   "degc-ugd-3",
   "sf-wv5m-vpq2",
   "houstonsports-toyota-center-arena-lease",
+  "houstonsports-2clutch-city-hchsa-arena-lease-sublease-licens",
   "houstonsports-hchsa-special-bod-agenda-4-8-26",
   "stadiumjourney-toyota-center-gets-approval-for-180-million-r",
   "in-83950a",
@@ -266,7 +268,7 @@
    "conduit_note": null,
    "bond_detail": "2003 City of Charlotte COPs $229M tax-exempt | 2023 City of Charlotte variable-rate COPs (converted 2024) $110M not confirmed",
    "lease_terms": "Extended from 2030 to 2045 (council vote of 10-1, June 13 2022)",
-   "exit_penalty": "City was already obligated to spend $173M under the old lease; the Hornets pay a total of $32M in rent through 2045 (start year not stated) and continue a $1.1M-a-year capital fund contribution (WBTV); under the 2005 lease the rent was a capital amount of $250,000 rising to $500,000 (Marquette summary)",
+   "exit_penalty": "Under the old lease the city was obligated to pay $173M for renovations (WBTV); the Hornets pay a total of $32M in rent through 2045 (start year not stated) and continue a $1.1M-a-year capital fund contribution (WBTV); under the 2005 lease the rent was a capital amount of $250,000 rising to $500,000 (Marquette summary)",
    "lease_label": "c",
    "property_tax_sources": [],
    "lease_sources": [
@@ -308,7 +310,7 @@
    "conduit_note": null,
    "bond_detail": null,
    "lease_terms": "Through the 2033-34 season, with two successive five-year team options",
-   "exit_penalty": "Gateway owes Major Capital Repairs; told City/County it lacks funds; a recent assessment says the arena and the ballpark \"will need more than $400 million for repairs through 2037,\" and the city and county are drafting a plan that could raise sales and sin taxes (Ideastream, Oct 19 2026, c)",
+   "exit_penalty": "Gateway owes Major Capital Repairs; its board has told the City and County it lacks the funds (recited in Resolution 2025-4 of July 16 2025, which gives no date for the notice); a recent assessment says the arena and the ballpark \"will need more than $400 million for repairs through 2037,\" and the city and county are drafting a plan that could raise sales and sin taxes (Ideastream, Oct 19 2026, c)",
    "lease_label": "b/c",
    "property_tax_sources": [],
    "lease_sources": [
@@ -414,11 +416,12 @@
    "conduit_note": "Rent Supported Debt backed by Rockets rent: principal capped at $30.4M without tenant approval (b, lease App. A p.A-4); a $57.54M 2014 taxable \"Toyota Center Project\" refunding is listed in the HCHSA debt worksheet, link to the rent-supported debt not confirmed",
    "bond_detail": "2001 Harris County-Houston Sports Authority $304M tax-exempt",
    "lease_terms": "360 months from October 2003 (ends after the 2032-33 season); no extension reported with the April 2026 $180M renovation, for which about $95M is expected from the state (no agreement found)",
-   "exit_penalty": "The landlord's duty to keep the arena \"first-class, state of the art\" (lease section 8.6) is limited to the Renovation Fund",
+   "exit_penalty": "The authority pays defined Landlord Capital Work from its Capital Fund and the team does the rest of the capital work (s7.1, s8.3). The original one-time duty to renovate to \"first-class, state of the art\" standards (s8.6, limited to the Renovation Fund) was replaced in its entirety by a refinancing clause in the Second Amendment of Dec 1 2014",
    "lease_label": "b/c",
    "property_tax_sources": [],
    "lease_sources": [
     "houstonsports-toyota-center-arena-lease",
+    "houstonsports-2clutch-city-hchsa-arena-lease-sublease-licens",
     "houstonsports-hchsa-special-bod-agenda-4-8-26",
     "stadiumjourney-toyota-center-gets-approval-for-180-million-r"
    ],

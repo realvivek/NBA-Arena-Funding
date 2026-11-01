@@ -154,6 +154,7 @@
   "deal_label",
   "note",
   "public_2026_m",
+  "spending_2026_m",
   "tax_breaks_2026_m",
   "sources"
  ],
@@ -180,6 +181,7 @@
    "deal_label": "c",
    "note": null,
    "public_2026_m": 55.081865,
+   "spending_2026_m": 1896.419563,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "si-warriors-sale",
@@ -212,6 +214,7 @@
    "deal_label": "b",
    "note": null,
    "public_2026_m": 0.0,
+   "spending_2026_m": 3140.477568,
    "tax_breaks_2026_m": 1162.6,
    "sources": [
     "sec-0000912057-97-029548",
@@ -244,6 +247,7 @@
    "deal_label": "c",
    "note": "Forbes and Sportico set their 2026 values at the deal price. Forbes's team page says the Buss family owns 17.8%; Jeanie Buss has petitioned to block her siblings' sale of the family's stake (August 2026).",
    "public_2026_m": 139.371912,
+   "spending_2026_m": 746.635243,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "abc7",
@@ -278,6 +282,7 @@
    "deal_label": null,
    "note": null,
    "public_2026_m": 0.0,
+   "spending_2026_m": 2114.550088,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "aljazeera-clippers-2bn-sale-finalised-nba",
@@ -309,6 +314,7 @@
    "deal_label": null,
    "note": "The sellers, the Grousbeck group, paid $360M in 2002 (same AP report).",
    "public_2026_m": 0.0,
+   "spending_2026_m": 477.959186,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "westernmassnews-nba-approves-sale-boston-celtics-private-equ",
@@ -340,6 +346,7 @@
    "deal_label": "c",
    "note": "No deal value disclosed.",
    "public_2026_m": 0.0,
+   "spending_2026_m": 391.564787,
    "tax_breaks_2026_m": 72.9,
    "sources": [
     "chicago-reinsdorfs-new-investors-bulls-and-united-center",
@@ -372,6 +379,7 @@
    "deal_label": null,
    "note": null,
    "public_2026_m": 351.56221,
+   "spending_2026_m": 459.735197,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "ktnv-golden-nugget-owner-tilman-fertitta-finalizes-pu",
@@ -403,6 +411,7 @@
    "deal_label": "c",
    "note": "Deal value is for BSE Global, not the Nets alone. Forbes's team page lists a $3.2B price for 2019.",
    "public_2026_m": 455.027052,
+   "spending_2026_m": 1978.342032,
    "tax_breaks_2026_m": 738.2,
    "sources": [
     "fox5ny-tsai-completes-purchase-of-nets-arena-hires-levy",
@@ -436,6 +445,7 @@
    "deal_label": "c",
    "note": "Deal value is for HBSE, 'believed to be greater than $3 billion', not the 76ers alone.",
    "public_2026_m": 0.0,
+   "spending_2026_m": 897.34544,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "inquirer-20111014-sale-of-76ers-expected-to-conclude-next",
@@ -469,6 +479,7 @@
    "deal_label": "c",
    "note": null,
    "public_2026_m": 410.144553,
+   "spending_2026_m": 877.836869,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "upi-arison-family-takes-control-of-heat",
@@ -501,6 +512,7 @@
    "deal_label": null,
    "note": null,
    "public_2026_m": 299.94527,
+   "spending_2026_m": 551.240105,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "abc17news-p-1103237",
@@ -533,6 +545,7 @@
    "deal_label": "c",
    "note": "The deal covers all of MLSE, in Canadian dollars.",
    "public_2026_m": 0.0,
+   "spending_2026_m": 656.036856,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "sec-d944781dex991",
@@ -565,6 +578,7 @@
    "deal_label": null,
    "note": "Cuban bought the team for $285M in 2000 (same reports). Forbes's team page lists $3.55B for 2023 and $280M for Cuban's 2000 purchase.",
    "public_2026_m": 234.131712,
+   "spending_2026_m": 786.682554,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "forbes-mark-cubans-mavericks-sale-miriam-adelson-approv",
@@ -598,6 +612,7 @@
    "deal_label": "c",
    "note": "Deal value reported as 'nearly $2 billion'.",
    "public_2026_m": 312.649501,
+   "spending_2026_m": 679.333326,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "abc7news-hawks-announce-sale-for-850m-to-antony-ressler-l",
@@ -630,6 +645,7 @@
    "deal_label": "c",
    "note": "Terms not disclosed.",
    "public_2026_m": 413.764864,
+   "spending_2026_m": 489.401732,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "sacurrent-mccombs-family-returns-as-part-owners-of-san-ant",
@@ -661,6 +677,7 @@
    "deal_label": "c",
    "note": "The $5.5B value was reported before signing; Blue Owl's release gave no price or percentage.",
    "public_2026_m": 432.583988,
+   "spending_2026_m": 684.19326,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "nba-cavs-gilbert-acquires-minority-share-of-former-o",
@@ -694,6 +711,7 @@
    "deal_label": "c",
    "note": "Deal value is for all of Monumental.",
    "public_2026_m": 755.985405,
+   "spending_2026_m": 1361.708653,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "pollstar-leonsis-takes-over-wizards",
@@ -726,6 +744,7 @@
    "deal_label": null,
    "note": null,
    "public_2026_m": 81.63212,
+   "spending_2026_m": 407.165086,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "newson6-avalanche-nuggets-pepsi-center-sold",
@@ -757,6 +776,7 @@
    "deal_label": null,
    "note": "Forbes's team page lists $325M for 2006.",
    "public_2026_m": 331.127083,
+   "spending_2026_m": 331.127083,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "aljazeera-sold-supersonics-to-stay-in-seattle",
@@ -789,6 +809,7 @@
    "deal_label": "c",
    "note": "No deal value disclosed.",
    "public_2026_m": 547.7,
+   "spending_2026_m": 912.590055,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "forbes-utah-jazz",
@@ -820,6 +841,7 @@
    "deal_label": "c",
    "note": "The report gives the team 'a valuation of $1.9 billion' but not as the deal price.",
    "public_2026_m": 308.292103,
+   "spending_2026_m": 772.733949,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "si-sacramento-kings-sold-534-million-vivek-ranadive",
@@ -852,6 +874,7 @@
    "deal_label": "c",
    "note": "Kohl paid $19M in 1985 (SI). The Haslam deal was reported at about $3.5B when agreed; one report put it closer to $3.2B at closing.",
    "public_2026_m": 330.193498,
+   "spending_2026_m": 692.21765,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "si-milwaukee-bucks-sold-herb-kohl",
@@ -884,6 +907,7 @@
    "deal_label": "c",
    "note": null,
    "public_2026_m": 934.355886,
+   "spending_2026_m": 1220.979945,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "wrtv-pacers-still-call-indiana-home-thanks-to-herb-an",
@@ -916,6 +940,7 @@
    "deal_label": null,
    "note": null,
    "public_2026_m": 861.764504,
+   "spending_2026_m": 956.064502,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "deseret-amway-head-buys-orlando-magic",
@@ -947,6 +972,7 @@
    "deal_label": null,
    "note": "Jordan paid $275M for control in 2010 (same report).",
    "public_2026_m": 559.491253,
+   "spending_2026_m": 610.438953,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "cbssports-michael-jordans-13-year-run-as-hornets-owner-end",
@@ -979,6 +1005,7 @@
    "deal_label": null,
    "note": "Paul Allen paid $70M in 1988 (Forbes team page); his estate sold.",
    "public_2026_m": 82.626048,
+   "spending_2026_m": 570.231051,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "blazersedge-nba-approves-sale-to-tom-dundon",
@@ -1012,6 +1039,7 @@
    "deal_label": null,
    "note": "The league approval release gives no price.",
    "public_2026_m": 386.968009,
+   "spending_2026_m": 1257.781334,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "sportsbusinessdaily-pistons",
@@ -1044,6 +1072,7 @@
    "deal_label": "c",
    "note": "League approval not confirmed as of Oct. 18, 2026. Forbes's team page dates the purchase to 2021, when the $1.5B valuation was set.",
    "public_2026_m": 296.822623,
+   "spending_2026_m": 531.275963,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "nbcbayarea-marc-shad-timberwolves-lynx-sale-controlling-sta",
@@ -1076,6 +1105,7 @@
    "deal_label": null,
    "note": null,
    "public_2026_m": 458.761418,
+   "spending_2026_m": 458.761418,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "bangordailynews-saints-owner-tom-benson-buys-hornets-from-nb",
@@ -1107,6 +1137,7 @@
    "deal_label": "c",
    "note": "Stake sizes and value not disclosed.",
    "public_2026_m": 547.748244,
+   "spending_2026_m": 547.748244,
    "tax_breaks_2026_m": 0.0,
    "sources": [
     "si-robert-pera-memphis-grizzlies-ap",
@@ -1119,5 +1150,5 @@
   }
  ],
  "note": "Prices are what the current controlling owner paid, or the valuation at which a controlling stake changed hands, in the year paid and in 2026 dollars; prices that bought more or less than the team are marked by price_scope. Values are Forbes's of October 2026 and 2025 and Sportico's of October 2026. Public money is the ledger's, with tax breaks shown separately.",
- "method": "with pub as (select team, sum(public_2026_m) filter (where core) as public_2026_m from items where kind <> 'project' group by team), brk as (select team, coalesce(pilot_2026_m, 0) + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end as tax_breaks_2026_m from arenas) select v.team, v.owner, v.control_year, v.price_year, v.price_m, v.price_scope, v.price_note, v.price_label, v.price_m * (select factor_2026 from cpi where cpi.year = v.price_year) as price_2026_m, v.seller_price_m, v.seller_year, v.forbes_2025_b, v.forbes_2026_b, v.sportico_2026_b, v.value_label, v.deal, v.deal_value_b, v.deal_date, v.deal_label, v.note, coalesce(p.public_2026_m, 0) as public_2026_m, coalesce(b.tax_breaks_2026_m, 0) as tax_breaks_2026_m, coalesce((select list(s.source_id order by case s.field when 'price' then 1 when 'value' then 2 else 3 end, s.ord) from value_sources s where s.team = v.team), []) as sources from team_values v left join pub p using (team) left join brk b using (team) order by v.forbes_2026_b desc, v.team"
+ "method": "with pub as (select team, sum(public_2026_m) filter (where core) as public_2026_m, sum(spending_2026_m) filter (where core) as spending_2026_m from items where kind <> 'project' group by team), brk as (select team, coalesce(pilot_2026_m, 0) + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end as tax_breaks_2026_m from arenas) select v.team, v.owner, v.control_year, v.price_year, v.price_m, v.price_scope, v.price_note, v.price_label, v.price_m * (select factor_2026 from cpi where cpi.year = v.price_year) as price_2026_m, v.seller_price_m, v.seller_year, v.forbes_2025_b, v.forbes_2026_b, v.sportico_2026_b, v.value_label, v.deal, v.deal_value_b, v.deal_date, v.deal_label, v.note, coalesce(p.public_2026_m, 0) as public_2026_m, coalesce(p.spending_2026_m, 0) as spending_2026_m, coalesce(b.tax_breaks_2026_m, 0) as tax_breaks_2026_m, coalesce((select list(s.source_id order by case s.field when 'price' then 1 when 'value' then 2 else 3 end, s.ord) from value_sources s where s.team = v.team), []) as sources from team_values v left join pub p using (team) left join brk b using (team) order by v.forbes_2026_b desc, v.team"
 }

@@ -1,5 +1,6 @@
 ---
-/** A set of cards: a place or a finding, an optional key figure, and a sentence or two with its sources. */
+/** A set of cards: a place or a claim, an optional number in large type, a short verdict or key figure, and a
+ * sentence or two with its sources. */
 import Cites from './Cites.astro';
 import type { PreparedCard } from '../lib/prepare';
 interface Props {
@@ -12,6 +13,7 @@ const { cards, quiet = false } = Astro.props;
   {cards.map((c) => (
     <li class="cardset-item">
       <p class="cs-title">{c.title}</p>
+      {c.stat && <p class="cs-stat" set:html={c.stat} />}
       {c.value && <p class="cs-value" set:html={c.value} />}
       <div class="cs-text"><Fragment set:html={c.text} />{!quiet && <>{' '}<Cites ids={c.sources} numbers={c.numbers} /></>}</div>
     </li>

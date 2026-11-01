@@ -446,43 +446,66 @@ h1 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  gap: 0;
 }
+/* each finding: its key figure in a column of its own, the sentence that goes with it, then a link to its chapter */
 .findings li {
-  position: relative;
-  padding: 0 0 0 24px;
-  margin: 0 0 12px;
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 0 20px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+}
+.findings li:first-child {
+  border-top: 0;
+  padding-top: 4px;
+}
+.find-n {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  text-wrap: balance;
+}
+.find-n a.num {
+  color: inherit;
+}
+.find-body {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+.find-p {
+  margin: 0;
   font-size: 1.0625rem;
   line-height: 1.5;
   max-width: 40em;
   text-wrap: pretty;
 }
-.findings li::before {
-  content: '';
-  position: absolute;
-  left: 3px;
-  top: 0.6em;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--orange);
-}
 .findings strong {
   font-weight: 700;
 }
 .find-go {
+  justify-self: start;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--rule);
-  border-radius: 50%;
-  vertical-align: -3px;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--link);
+  text-decoration: none;
 }
 .find-go svg {
   width: 12px;
   height: 12px;
+  flex: none;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
@@ -490,8 +513,7 @@ h1 {
   stroke-linejoin: round;
 }
 .find-go:hover {
-  border-color: var(--link);
-  background: var(--public-wash);
+  text-decoration: underline;
 }
 @media (max-width: 40rem) {
   .findings {
@@ -499,11 +521,14 @@ h1 {
     margin-bottom: 48px;
   }
   .findings li {
-    font-size: 1rem;
-    padding-left: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
   }
-  .findings li::before {
-    left: 1px;
+  .find-n {
+    font-size: 1.5rem;
+  }
+  .find-p {
+    font-size: 1rem;
   }
 }
 
@@ -582,7 +607,7 @@ a.num:hover {
 .reveal-value {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(2.75rem, 1.8rem + 4vw, 4.5rem);
+  font-size: clamp(2.25rem, 1.6rem + 3vw, 3.5rem);
   line-height: 1;
   letter-spacing: -0.02em;
   margin: 6px 0 0;
@@ -716,6 +741,14 @@ figure.chart {
   box-shadow: inset 0 0 0 1.5px var(--orange);
 }
 /* point marks: an open ring and a filled dot, drawn as they are in the chart */
+/* a short upright mark, for a value marked on a bar */
+.key-tick {
+  width: 2px;
+  height: 14px;
+  border-radius: 0;
+  background: var(--ink);
+  margin: 0 5px;
+}
 .key-ring {
   width: 10px;
   height: 10px;
@@ -832,7 +865,7 @@ figure.chart:not(.scrolly),
 .cardset-item,
 .fund,
 .findings,
-.card a {
+.cards {
   background: var(--surface);
   border: 1px solid var(--paper-edge);
   border-radius: 8px;
@@ -908,6 +941,9 @@ figure.chart:not(.scrolly) {
 }
 .chart svg .f-private {
   fill: var(--private);
+}
+.chart svg .f-ink {
+  fill: var(--ink);
 }
 .chart svg .f-other {
   fill: var(--other);
@@ -1084,35 +1120,52 @@ th.n {
 /* Section links at the end of the story */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 16px;
-  margin: 24px 0 0;
-  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin: 20px 0 0;
+  padding: 6px 22px;
   list-style: none;
   font-family: var(--sans);
 }
+.card {
+  min-width: 0;
+  border-top: 1px solid var(--rule);
+}
+/* the first row has no rule above it */
+.card:nth-child(-n + 2) {
+  border-top: 0;
+}
 .card a {
   display: block;
-  height: 100%;
-  padding: 14px 16px;
+  padding: 11px 0 12px;
   text-decoration: none;
   color: var(--ink);
 }
-.card a:hover {
-  border-color: var(--public);
+.card a:hover .card-title {
+  color: var(--link);
+  text-decoration: underline;
 }
 .card-title {
   display: block;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 650;
+  font-size: 0.9375rem;
   line-height: 1.3;
 }
 .card-text {
   display: block;
-  color: var(--ink-2);
-  font-size: 0.875rem;
-  line-height: 1.45;
-  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+@media (max-width: 40rem) {
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 4px 14px;
+  }
+  .card:nth-child(2) {
+    border-top: 1px solid var(--rule);
+  }
 }
 
 /* Reference pages: tables get more room than the story's text column */
@@ -1352,6 +1405,20 @@ figure.chart {
   text-transform: uppercase;
   color: var(--muted);
 }
+/* a number in large type above the verdict, so a set of claims scans like the key findings */
+.cs-stat {
+  margin: 2px 0 0;
+  font-family: var(--serif);
+  font-size: 2.125rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.cs-stat a.num {
+  color: inherit;
+}
 .cs-value {
   margin: 0;
   font-family: var(--serif);
@@ -1473,6 +1540,14 @@ figure.chart {
   }
   .scrolly.js .step:not(.is-active) {
     opacity: 0.32;
+  }
+  /* the step text sits on paper, as on phones, so it never reads straight off the floorboards */
+  .step-card {
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
   }
 }
 @media (max-width: 63.99rem) {
@@ -1645,7 +1720,34 @@ figure.chart {
 [data-step='bought'] .bs-breaks .bs-lead {
   stroke: var(--axis);
 }
+/* above the stack, what the arenas cost to build: the public's part in blue, the private part in gray; it steps
+   back once the reader moves past the first step */
+.chart svg .bs-cost-pub {
+  fill: var(--public);
+}
+.chart svg .bs-cost-priv {
+  fill: var(--private);
+}
+.chart svg .bs-strong {
+  font-weight: 650;
+  fill: var(--ink);
+}
+.chart svg .bs-in-pub {
+  font-weight: 650;
+  fill: #fff;
+}
+.chart svg .bs-in-priv {
+  font-weight: 650;
+  fill: var(--ink);
+}
+.chart svg .bs-cost {
+  transition: opacity 0.35s ease;
+}
+.chart[data-step]:not([data-step='built']) svg .bs-cost {
+  opacity: 0.5;
+}
 @media (prefers-reduced-motion: reduce) {
+  .chart svg .bs-cost,
   .chart svg .bs-bill,
   .chart svg .bs-inner,
   .chart svg .bs-num,
@@ -1814,7 +1916,7 @@ figure.chart {
 }
 .tm summary {
   display: grid;
-  grid-template-columns: 1.75rem 28px minmax(0, 13rem) minmax(0, 1fr) 4.5rem 4rem;
+  grid-template-columns: 1.75rem 28px minmax(0, 12.5rem) 6.5rem minmax(0, 1fr) 4.5rem 4rem;
   align-items: center;
   gap: 10px;
   padding: 9px 4px;
@@ -1884,6 +1986,17 @@ figure.chart {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* the public share has its own column on wide screens, so a long arena name never cuts it off; on phones it
+   follows the arena's name */
+.tm-share {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.tm-chip-inline {
+  display: none;
 }
 .tm-bar {
   display: flex;
@@ -1981,6 +2094,12 @@ figure.chart {
   }
   .tm-name small {
     white-space: normal;
+  }
+  .tm-share {
+    display: none;
+  }
+  .tm-chip-inline {
+    display: inline;
   }
   .tm-body {
     padding-left: 4px;

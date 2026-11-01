@@ -80,6 +80,8 @@ const rows = Object.keys(arenas).map((team) => {
     share: a.public_share_pct,
     value: v.forbes_2026_b,
     chip: direct > 0 ? `${pct(a.public_share_pct)} public` : breaks > 0 ? 'tax breaks only' : 'no public money counted',
+    // the same, short enough for its own column on wide screens
+    short: direct > 0 ? `${pct(a.public_share_pct)} public` : breaks > 0 ? 'tax breaks' : 'none counted',
     record: [
       ['Arena', `${a.arena}, ${a.city}. Opened ${a.opened}. Owned by ${a.owner.replace(/ - /g, '; ')}.`],
       ['Public money', parts.length ? `${cap(parts.join(', '))}, in 2026 dollars. Public share of all spending on the arena: ${pct(a.public_share_pct)}${bondShare}.` : 'None counted in the records reviewed.'],
@@ -117,7 +119,8 @@ const top = rows[0].total;
           <summary>
             <span class="tm-rank">{i + 1}</span>
             <span class="tm-arena" aria-hidden="true" style={`--share: ${(r.share / 100).toFixed(3)}`}><i /></span>
-            <span class="tm-name"><b>{r.name}</b><small>{r.arena} · {r.chip}</small></span>
+            <span class="tm-name"><b>{r.name}</b><small>{r.arena}<span class="tm-chip-inline"> · {r.chip}</span></small></span>
+            <span class="tm-share">{r.short}</span>
             <span class="tm-bar" aria-hidden="true">
               {r.direct > 0 && <span class="tm-direct" style={`width: ${((100 * r.direct) / top).toFixed(2)}%`} />}
               {r.breaks > 0 && <span class="tm-breaks" style={`width: ${((100 * r.breaks) / top).toFixed(2)}%`} />}

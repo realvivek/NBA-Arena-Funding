@@ -203,6 +203,103 @@
    }
   },
   {
+   "name": "authorities-payment-terms",
+   "type": "table",
+   "path": "authorities/payment_terms.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "team",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[A-Z]{3}$"
+      }
+     },
+     {
+      "name": "what",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "start_year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1960,
+       "maximum": 2026
+      }
+     },
+     {
+      "name": "end_year",
+      "type": "integer",
+      "constraints": {
+       "minimum": 2026,
+       "maximum": 2100
+      }
+     },
+     {
+      "name": "amount",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "decided",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "approved",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "voters",
+        "officials"
+       ]
+      }
+     },
+     {
+      "name": "clause",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[abc](/[abc])?$"
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     }
+    ],
+    "primaryKey": [
+     "team",
+     "what"
+    ]
+   }
+  },
+  {
    "name": "dedicated-taxes-cib-indy-taxes-2013-2022",
    "type": "table",
    "path": "dedicated_taxes/cib_indy_taxes_2013_2022.csv",
@@ -2003,6 +2100,74 @@
       "name": "Shape.STLength()",
       "type": "number"
      }
+    ]
+   }
+  },
+  {
+   "name": "property-tax-msg-exemption-by-year",
+   "type": "table",
+   "path": "property_tax/msg_exemption_by_year.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "fiscal_year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "minimum": 1984,
+       "maximum": 2026
+      }
+     },
+     {
+      "name": "forgone_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "dollars",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "2023",
+        "nominal"
+       ]
+      }
+     },
+     {
+      "name": "bar_reading_m",
+      "type": "number"
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "a",
+        "b"
+       ]
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^https?://.*"
+      }
+     }
+    ],
+    "primaryKey": [
+     "fiscal_year"
     ]
    }
   },

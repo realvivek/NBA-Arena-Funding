@@ -25,7 +25,7 @@ const cites = z.array(reference('sources')).default([]);
 // with stakes in teams (a sentence for each; their stakes come from the data). Everything with words cites sources.
 const step = z.object({ step: z.string(), p: z.string(), sources: cites }).strict();
 const tile = z.object({ value: z.string(), label: z.string() }).strict();
-const card = z.object({ title: z.string(), value: z.string().optional(), text: z.string(), sources: cites }).strict();
+const card = z.object({ title: z.string(), stat: z.string().optional(), value: z.string().optional(), text: z.string(), sources: cites }).strict();
 const fund = z.object({ fund: z.string(), text: z.string(), sources: cites }).strict();
 const block = z.union([
   z.object({ p: z.string(), sources: cites }).strict(),
@@ -67,8 +67,11 @@ const pages = defineCollection({
     description: z.string(),
     sources: cites,
     tiles: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
-    // the home page's "What we found": one line per finding, each pointing to the chapter that holds it
-    findings: z.array(z.object({ p: z.string(), to: z.string(), sources: cites }).strict()).default([]),
+    // the home page's key findings: a key figure (tokens), the sentence that goes with it and the chapter that holds
+    // it, named in the link by its title unless a shorter link text is given
+    findings: z
+      .array(z.object({ n: z.string(), p: z.string(), to: z.string(), link: z.string().optional(), sources: cites }).strict())
+      .default([]),
     blocks: z.array(block).default([]),
     notes: z.array(block).default([]),
   }),

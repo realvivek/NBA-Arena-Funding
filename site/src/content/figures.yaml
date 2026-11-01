@@ -108,10 +108,11 @@ arenas:
 
 valuegroups:
   title: >-
-    The {{value_group_n}} least valuable teams play in arenas holding {{value_bottom10_share}} of the public money
+    The public has paid {{value_bottom10_spend_share}} of what the {{value_group_n}} least valuable teams' arenas cost,
+    and {{value_top10_spend_share}} for the {{value_group_n}} most valuable
   sub: >-
     Public money in each team's arena, in 2026 dollars, with the teams in thirds of the league by value, as Forbes
-    estimated it in October 2026. Each segment is an arena
+    estimated it in October 2026, and its share of everything spent on those arenas. Each segment is an arena
   dataset: team-values
   notes:
     - >-
@@ -120,6 +121,10 @@ valuegroups:
       {{value_top10_with_breaks}}, still less than the {{value_bottom10_public}} in the arenas of the
       {{value_group_n}} least valuable. A team's value tracks the size of its market and the money its arena
       makes, so the chart shows where the public money went, not why.
+    - >-
+      The shares divide public money by everything spent on the arenas, public and private: construction,
+      renovations and yearly payments. Counting the tax breaks on both sides, the share for the {{value_group_n}}
+      most valuable teams is {{value_top10_spend_share_breaks}}.
 
 map:
   title: >-
@@ -331,3 +336,95 @@ propb:
       each block group over the precincts it overlaps by area. The tax on the ballot is the county's hotel and
       car-rental tax, which falls mostly on visitors.
   sources: [bexar-elections-2025-11-04-summary]
+
+afterrank:
+  title: >-
+    At {{after_more_n}} of the {{arenas_n}} arenas, the public has paid more since opening night than it did to build
+    them
+  sub: >-
+    Public money after each arena opened, by kind, and a mark for the public money that built it, in 2026 dollars.
+    Names in bold: more after opening than to build
+  dataset: after-by-arena
+  legend:
+    - { label: Renovations, key: orange }
+    - { label: Buying the arena, key: orange-soft }
+    - { label: Yearly payments, key: aqua }
+    - { label: Property-tax breaks, key: public-soft }
+    - { label: Public money to build it, key: tick }
+  notes:
+    - >-
+      Every arena with public money after it opened. Building money counts Barclays Center's PILOT bonds, as the
+      bill does; no public money after opening was found for Brooklyn's arena. Renovations still under way or still
+      to be paid count at face value, as in the rest of the story. Madison Square Garden, the Delta Center and the
+      United Center were built with private money.
+
+afteropen:
+  title: >-
+    Voters approved {{after_voters_share}} of the {{after_public}} the public has put into the arenas since they opened
+  sub: >-
+    Public money after opening, in 2026 dollars: what it paid for, when it comes due and who approved it
+  dataset: after-kinds
+  notes:
+    - >-
+      Owed under deals and laws already in place: yearly payments to teams and arena operators, property-tax breaks,
+      and the repairs, reserves and technology money that agreements in Indianapolis, Phoenix, Cleveland and New
+      Orleans require. New deals: renovations and purchases approved as deals. Voters approved Oklahoma City's sales
+      taxes of 2008 and 2019, the Bexar County venue tax that paid for the 2015 renovation, and the 1996 Miami-Dade
+      arena deal that set the county's yearly payments; councils, legislatures and appointed boards approved
+      everything else.
+  sources: [threat-ledger, okc-maps-history, bexar-elections-2008-05-10-results, miaminewtimes-p-40379989]
+
+recurring:
+  title: >-
+    About {{recurring_2025}} a year comes due under deals and laws already in place, {{msg_2025}} of it Madison Square
+    Garden's tax break
+  sub: >-
+    Yearly public payments to teams and arena operators, and property-tax breaks, by year, in 2026 dollars
+  dataset: recurring-by-year
+  legend:
+    - { label: "Madison Square Garden's tax break", key: public-soft }
+    - { label: Indianapolis, key: orange }
+    - { label: Miami, key: orange-soft }
+    - { label: New Orleans, key: other }
+    - { label: Others, key: private }
+  notes:
+    - >-
+      Madison Square Garden's tax break for fiscal 1984 to 2023 is read from the bars of the Independent Budget
+      Office's chart, which add up to its published total, and converted from 2023 dollars; fiscal 2024 and 2025 are
+      the Department of Finance's values. The United Center's formula is counted in the year each tax bill was paid.
+      Repairs and renovation money are counted by project, not by year, and are not included. A year with no bar for
+      a city has no record in the documents reached, which does not always mean nothing was paid.
+  sources: [ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026]
+
+commitments:
+  title: >-
+    Many of these payments run for decades: to 2044 in Indianapolis and about 2054 in Salt Lake City, and New York's
+    tax break has no end date
+  sub: >-
+    Public payments under deals and laws in force, from the year each took effect to the year it ends; the darker
+    part is still to come
+  dataset: payment-terms
+  notes:
+    - >-
+      End years are the ones the agreements and laws set: Indianapolis's operating agreement runs to 2044, Miami-Dade's
+      county payments to June 2035 under its 2014 agreements, Louisiana's payments to fiscal 2029 and Memphis's to
+      the 2028-29 season. Salt Lake City's sales tax runs {{slc_tax_projection_years}} years from 2025, and Atlanta's
+      rental-car tax was extended to 2047 to repay the renovation bonds. Madison Square Garden's exemption is set by
+      state law and has no end date. Amounts are as the documents state them, in the dollars of their day.
+  sources:
+    - ibo-msg-property-tax-exemption-2023-report
+    - nyc-dof-tax-expenditures-fy2026
+    - utah-pmn
+    - slc-council-sec-district-2024
+    - bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements
+    - in-83950a
+    - miamidade-volume-1
+    - miamidade-2014-06-03-bcc
+    - hoodline-target-center-if-wolves-move
+    - gateway-edc-audit-2022
+    - gwcomplex-board-packet-12-17-25
+    - lla-0000454ba
+    - senate-01-124-lsed-fy-26-final
+    - actionnews5-shelby-county-commissioners-vote-unanimously-kee
+    - dailymemphian-memphis-grizzlies-fedexforum-lease-provision-r
+

@@ -1,0 +1,388 @@
+{
+ "id": "after-by-arena",
+ "title": "Each arena's public money after it opened, by kind, against the public money that built it",
+ "sources": [
+  "ledger",
+  "ibo-msg-property-tax-exemption-2023-report",
+  "nyc-dof-tax-expenditures-fy2026",
+  "uc-formula-method",
+  "fred-cpiaucns",
+  "ibo-2023-july-ibo-reviews-the-madison-square-garden-ta",
+  "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+  "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
+  "in-83950a",
+  "in-b37170",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "sboa-84595a",
+  "wfyi-city-officials-indiana-pacers-sign-deal-to-keep",
+  "cfo-fis-downtown-arena-revitalization",
+  "dccouncil-4-2-24-arena-funding-memo",
+  "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
+  "wtop-take-a-look-at-the-newest-renderings-of-the-capi",
+  "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+  "slc-slc-acfr-06-30-2025",
+  "utah-pmn",
+  "miamidade-archives",
+  "miamidade-home-page",
+  "miamidadeclerk-cafr2025-complete",
+  "miamidadeig-ig11-34finalbasketball",
+  "oppaga-15-01",
+  "charlottenc-adopted-fy-2027-budget-print",
+  "hochtief-turner-completes-spectrum-center-renovation",
+  "lgreports-charlotte",
+  "wbtv-charlotte-city-council-approves-275-million-spec",
+  "wfae-charlotte-spend-33-5-million-on-arena-for-hornet",
+  "leg-031209-agenda",
+  "leg-other",
+  "lrl-target",
+  "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+  "minneapolismn-www-content-assets",
+  "doa-otherrequirements",
+  "lla-00000f4f",
+  "lla-000040e2",
+  "lla-0000454ba",
+  "lla-00006b8b",
+  "lla-0000b6bd",
+  "lla-000144e2",
+  "lla-0002644e",
+  "lla-vwprbyagencyjson",
+  "senate-01-124-lsed-fy-26-final",
+  "sportsbusinessdaily-new-orleans",
+  "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+  "occompt-occompt-2",
+  "phoenix-phoenix-2",
+  "si-phoenix-city-council-approves-suns-arena-rennova",
+  "sportsbusinessdaily-morning-buzz",
+  "webapi-texts",
+  "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
+  "news9-voters-approve-sales-tax-extension",
+  "okc-audit-of-certain-public-ev",
+  "okc-maps4-downtown-arena-related-facilities",
+  "okc-ocppa-2024-final-web",
+  "sai-ocppa-final-2023-9hvg",
+  "wiki-paycom-center",
+  "axios-cleveland-cavs-impact",
+  "ideastream-county-council-approves-405-million-for-fieldhou",
+  "ohioauditor-auditsearch",
+  "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll",
+  "bexar-adid-1520",
+  "downtownmemphis-city-council-approves-two-key-funding-m",
+  "tri-statedefender-p-349496",
+  "ilga-003502000k10-220",
+  "portland-2024-annual-comprehensive-financial-report",
+  "wweek-proposed-city-purchase-of-moda-center-would-trig"
+ ],
+ "base_sources": [
+  "ledger",
+  "ibo-msg-property-tax-exemption-2023-report",
+  "nyc-dof-tax-expenditures-fy2026",
+  "uc-formula-method",
+  "fred-cpiaucns"
+ ],
+ "columns": [
+  "team",
+  "renovation",
+  "purchase",
+  "ongoing",
+  "tax_breaks",
+  "after_2026_m",
+  "owed_2026_m",
+  "build_2026_m",
+  "more_after",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "NYK",
+   "renovation": 0.0,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 1162.554864,
+   "after_2026_m": 1162.554864,
+   "owed_2026_m": 1162.554864,
+   "build_2026_m": 0.0,
+   "more_after": true,
+   "sources": [
+    "ibo-2023-july-ibo-reviews-the-madison-square-garden-ta",
+    "ibo-msg-property-tax-exemption-2023-report",
+    "nyc-dof-tax-expenditures-fy2026"
+   ]
+  },
+  {
+   "team": "IND",
+   "renovation": 547.99732,
+   "purchase": 0.0,
+   "ongoing": 229.067408,
+   "tax_breaks": 0.0,
+   "after_2026_m": 777.064728,
+   "owed_2026_m": 415.997356,
+   "build_2026_m": 157.291158,
+   "more_after": true,
+   "sources": [
+    "capitalimprovementboard-cib-of-managers-of-marion-county-fs",
+    "ibj-73314-pacers-cib-agree-to-360m-renovation-expans",
+    "in-83950a",
+    "in-b37170",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "sboa-84595a",
+    "wfyi-city-officials-indiana-pacers-sign-deal-to-keep"
+   ]
+  },
+  {
+   "team": "WAS",
+   "renovation": 507.477696,
+   "purchase": 92.511566,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 599.989262,
+   "owed_2026_m": 0.0,
+   "build_2026_m": 155.996143,
+   "more_after": true,
+   "sources": [
+    "cfo-fis-downtown-arena-revitalization",
+    "dccouncil-4-2-24-arena-funding-memo",
+    "kutakrock-kutak-rock-lead-counsel-for-capital-one-arena",
+    "wtop-take-a-look-at-the-newest-renderings-of-the-capi"
+   ]
+  },
+  {
+   "team": "UTA",
+   "renovation": 547.7,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 547.7,
+   "owed_2026_m": 0.0,
+   "build_2026_m": 0.0,
+   "more_after": true,
+   "sources": [
+    "bondbuyer-new-issuer-will-sell-bonds-for-salt-lake-city-ar",
+    "slc-slc-acfr-06-30-2025",
+    "utah-pmn"
+   ]
+  },
+  {
+   "team": "MIA",
+   "renovation": 0.0,
+   "purchase": 0.0,
+   "ongoing": 335.281926,
+   "tax_breaks": 0.0,
+   "after_2026_m": 335.281926,
+   "owed_2026_m": 335.281926,
+   "build_2026_m": 74.862627,
+   "more_after": true,
+   "sources": [
+    "miamidade-archives",
+    "miamidade-home-page",
+    "miamidadeclerk-cafr2025-complete",
+    "miamidadeig-ig11-34finalbasketball",
+    "oppaga-15-01"
+   ]
+  },
+  {
+   "team": "CHA",
+   "renovation": 268.417922,
+   "purchase": 0.0,
+   "ongoing": 2.369698,
+   "tax_breaks": 0.0,
+   "after_2026_m": 270.78762,
+   "owed_2026_m": 2.369698,
+   "build_2026_m": 288.703633,
+   "more_after": false,
+   "sources": [
+    "charlottenc-adopted-fy-2027-budget-print",
+    "hochtief-turner-completes-spectrum-center-renovation",
+    "lgreports-charlotte",
+    "wbtv-charlotte-city-council-approves-275-million-spec",
+    "wfae-charlotte-spend-33-5-million-on-arena-for-hornet"
+   ]
+  },
+  {
+   "team": "MIN",
+   "renovation": 100.12459,
+   "purchase": 118.83441,
+   "ongoing": 19.481785,
+   "tax_breaks": 0.0,
+   "after_2026_m": 238.440785,
+   "owed_2026_m": 19.481785,
+   "build_2026_m": 58.381838,
+   "more_after": true,
+   "sources": [
+    "leg-031209-agenda",
+    "leg-other",
+    "lrl-target",
+    "minneapolismn-2024-acfr-city-of-minneapolis-edited",
+    "minneapolismn-www-content-assets",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "NOP",
+   "renovation": 103.54421,
+   "purchase": 0.0,
+   "ongoing": 128.240094,
+   "tax_breaks": 0.0,
+   "after_2026_m": 231.784304,
+   "owed_2026_m": 132.201164,
+   "build_2026_m": 226.977114,
+   "more_after": true,
+   "sources": [
+    "doa-otherrequirements",
+    "lla-00000f4f",
+    "lla-000040e2",
+    "lla-0000454ba",
+    "lla-00006b8b",
+    "lla-0000b6bd",
+    "lla-000144e2",
+    "lla-0002644e",
+    "lla-vwprbyagencyjson",
+    "senate-01-124-lsed-fy-26-final",
+    "sportsbusinessdaily-new-orleans"
+   ]
+  },
+  {
+   "team": "ORL",
+   "renovation": 226.0,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 226.0,
+   "owed_2026_m": 0.0,
+   "build_2026_m": 635.764504,
+   "more_after": false,
+   "sources": [
+    "cfpublic-orlando-kia-center-camping-world-stadium-improve",
+    "occompt-occompt-2",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "PHX",
+   "renovation": 217.218546,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 217.218546,
+   "owed_2026_m": 25.0,
+   "build_2026_m": 82.726724,
+   "more_after": true,
+   "sources": [
+    "phoenix-phoenix-2",
+    "si-phoenix-city-council-approves-suns-arena-rennova",
+    "sportsbusinessdaily-morning-buzz",
+    "webapi-texts"
+   ]
+  },
+  {
+   "team": "ATL",
+   "renovation": 188.210294,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 188.210294,
+   "owed_2026_m": 0.0,
+   "build_2026_m": 124.439207,
+   "more_after": true,
+   "sources": [
+    "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
+   ]
+  },
+  {
+   "team": "OKC",
+   "renovation": 157.080761,
+   "purchase": 0.0,
+   "ongoing": 9.578445,
+   "tax_breaks": 0.0,
+   "after_2026_m": 166.659206,
+   "owed_2026_m": 9.578445,
+   "build_2026_m": 164.467877,
+   "more_after": true,
+   "sources": [
+    "news9-voters-approve-sales-tax-extension",
+    "okc-audit-of-certain-public-ev",
+    "okc-maps4-downtown-arena-related-facilities",
+    "okc-ocppa-2024-final-web",
+    "sai-ocppa-final-2023-9hvg",
+    "wiki-paycom-center"
+   ]
+  },
+  {
+   "team": "CLE",
+   "renovation": 164.082419,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 164.082419,
+   "owed_2026_m": 71.628239,
+   "build_2026_m": 268.501569,
+   "more_after": false,
+   "sources": [
+    "axios-cleveland-cavs-impact",
+    "ideastream-county-council-approves-405-million-for-fieldhou",
+    "ohioauditor-auditsearch",
+    "signalcleveland-gateway-the-nonprofit-managing-your-tax-doll"
+   ]
+  },
+  {
+   "team": "SAS",
+   "renovation": 118.939599,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 118.939599,
+   "owed_2026_m": 0.0,
+   "build_2026_m": 294.825265,
+   "more_after": false,
+   "sources": [
+    "bexar-adid-1520"
+   ]
+  },
+  {
+   "team": "MEM",
+   "renovation": 80.0,
+   "purchase": 0.0,
+   "ongoing": 28.77969,
+   "tax_breaks": 0.0,
+   "after_2026_m": 108.77969,
+   "owed_2026_m": 28.77969,
+   "build_2026_m": 438.968554,
+   "more_after": false,
+   "sources": [
+    "downtownmemphis-city-council-approves-two-key-funding-m",
+    "oregon-moda-center-arena-comparable-structure-overview",
+    "tri-statedefender-p-349496"
+   ]
+  },
+  {
+   "team": "CHI",
+   "renovation": 0.0,
+   "purchase": 0.0,
+   "ongoing": 0.0,
+   "tax_breaks": 72.907812,
+   "after_2026_m": 72.907812,
+   "owed_2026_m": 72.907812,
+   "build_2026_m": 0.0,
+   "more_after": true,
+   "sources": [
+    "ilga-003502000k10-220"
+   ]
+  },
+  {
+   "team": "POR",
+   "renovation": 0.0,
+   "purchase": 7.538371,
+   "ongoing": 0.0,
+   "tax_breaks": 0.0,
+   "after_2026_m": 7.538371,
+   "owed_2026_m": 0.0,
+   "build_2026_m": 75.087677,
+   "more_after": false,
+   "sources": [
+    "portland-2024-annual-comprehensive-financial-report",
+    "wweek-proposed-city-purchase-of-moda-center-would-trig"
+   ]
+  }
+ ],
+ "note": "After opening means renovations, purchases, yearly payments and property-tax breaks; building money includes Barclays Center's PILOT bonds, as in the bill. more_after marks arenas where the public has paid more since opening than it did to build them.",
+ "method": "select a.team, a.renovation, a.purchase, a.ongoing, a.tax_breaks, a.after_2026_m, a.owed_2026_m, a.build_2026_m, a.more_after, coalesce((select list(distinct s.source_id order by s.source_id) from item_sources s where s.role = 'public' and s.item_id in (select item_id from after_items x where x.team = a.team)), []) || coalesce((select list(distinct s.source_id order by s.source_id) from arena_sources s where s.row_type = 'current_arena' and s.team = a.team and s.field = 'tax_break_source' and a.tax_breaks > 0), []) as sources from after_by_arena a order by a.after_2026_m desc"
+}

@@ -21,6 +21,10 @@ import PayerShift from './charts/PayerShift.svelte';
 import ValueGroups from './charts/ValueGroups.svelte';
 import Incidence from './charts/Incidence.svelte';
 import PropB from './charts/PropB.svelte';
+import AfterRank from './charts/AfterRank.svelte';
+import AfterOpen from './charts/AfterOpen.svelte';
+import Recurring from './charts/Recurring.svelte';
+import Commitments from './charts/Commitments.svelte';
 import { dataset } from '../lib/data';
 import * as T from '../lib/tables';
 import { plain } from '../lib/copy';
@@ -56,6 +60,10 @@ const REG: Record<string, { C: any; data: string; table: (rows: any[]) => any; p
   slc: { C: Columns, data: 'slc-monthly', table: T.slcTable, props: { kind: 'slc' } },
   wcd: { C: Columns, data: 'wcd-annual', table: T.wcdTable, props: { kind: 'wcd' } },
   incidence: { C: Incidence, data: 'incidence', table: T.incidenceTable },
+  afterrank: { C: AfterRank, data: 'after-by-arena', table: T.afterRankTable },
+  afteropen: { C: AfterOpen, data: 'after-kinds', table: T.afterKindsTable },
+  recurring: { C: Recurring, data: 'recurring-by-year', table: T.recurringTable },
+  commitments: { C: Commitments, data: 'payment-terms', table: T.commitmentsTable },
   propb: { C: PropB, data: 'propb-fifths', table: T.propbTable, props: { precincts: dataset('propb-precincts').rows, map: dataset('bexar-map').rows } },
 };
 const spec = REG[id];

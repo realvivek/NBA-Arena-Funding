@@ -1,6 +1,7 @@
 <script>
   // The public money in each team's arena, with the teams in thirds of the league by value (Forbes, October 2026):
-  // one bar per third, one segment per arena, all on one dollar scale. Tax breaks are not included.
+  // one bar per third, one segment per arena, all on one dollar scale, and each third's public share of everything
+  // spent on its arenas. Tax breaks are not included.
   import { WIDE, NARROW, FONT, money, textWidth, TEAM_NAME } from '../../lib/chart';
 
   let { rows, variant = 'wide', label = '' } = $props();
@@ -17,6 +18,7 @@
       teams,
       funded,
       total: teams.reduce((a, r) => a + r.public_2026_m, 0),
+      spend: teams.reduce((a, r) => a + r.spending_2026_m, 0),
       vmin: Math.min(...teams.map((r) => r.forbes_2026_b)),
       vmax: Math.max(...teams.map((r) => r.forbes_2026_b)),
     };
@@ -40,13 +42,21 @@
       return s;
     });
   }
-  const headH = narrow ? 40 : 22;
+  // each group's public share of everything spent on its arenas (construction, renovations, yearly payments), at
+  // the right of its name
+  for (const g of groups) g.share = Math.round((100 * g.total) / g.spend);
+  const right = (g) => {
+    if (!narrow) return `${money(g.total)}, ${g.share}% of all spending`;
+    const t = `${money(g.total)} · ${g.share}% public`;
+    return textWidth(g.name, FONT, 650) + textWidth(t, FONT, 650) + 12 <= W ? t : `${g.share}% public`;
+  };
+  const headH = 40;
   const rowH = headH + bh + 46;
   const H = groups.length * rowH - 18;
   const bn = (v) => `$${v.toFixed(1)}B`;
   const detail = (g) => {
     const full = `worth ${bn(g.vmin)} to ${bn(g.vmax)}; public money in ${g.funded.length} of ${g.teams.length} arenas`;
-    if (!narrow) return full;
+    if (!narrow) return full.charAt(0).toUpperCase() + full.slice(1);
     const mid = `Worth ${bn(g.vmin)} to ${bn(g.vmax)}; money in ${g.funded.length} of ${g.teams.length} arenas`;
     return textWidth(mid) <= W ? mid : `Worth ${bn(g.vmin)} to ${bn(g.vmax)}`;
   };
@@ -60,8 +70,8 @@
       {@const top = i * rowH}
       {@const by = top + headH + 8}
       <text class="t-strong" x="0" y={top + 14} font-size={FONT}>{g.name}</text>
-      <text class="t-strong" x={x1} y={top + 14} text-anchor="end" font-size={FONT}>{money(g.total)}</text>
-      <text class="tick t-muted" x={narrow ? 0 : textWidth(g.name, FONT, 650) + 12} y={top + (narrow ? 32 : 14)} font-size={FONT}>{detail(g)}</text>
+      <text class="t-strong" x={x1} y={top + 14} text-anchor="end" font-size={FONT}>{right(g)}</text>
+      <text class="tick t-muted" x="0" y={top + 32} font-size={FONT}>{detail(g)}</text>
       <line class="grid" x1={x0} x2={x1} y1={by + bh / 2} y2={by + bh / 2} />
       {#each g.segs as s}
         <rect class="f-public" x={s.x} y={by} width={s.w} height={bh} rx="3" data-tip={tip(s)} />

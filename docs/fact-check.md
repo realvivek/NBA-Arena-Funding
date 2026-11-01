@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-267 figures, 33 datasets, 569 sources. Ledger as of 2026-10-22.
+305 figures, 37 datasets, 571 sources. Ledger as of 2026-10-22.
 
 ## Figures
 
@@ -1144,7 +1144,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Shown as: 11 (11)
 - Value: 11 count
 - Label: (a)
-- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Deal to keep Grizzlies in Memphis won’t be done this summer, mayor says](https://dailymemphian.com/article/53292) (independent); [Memphis & Shelby County Sports Authority, Inc. Board Meeting Agenda, October 8, 2026](https://memphistn.gov/wp-content/uploads/2026/10/0_Sports-Auth-Board-Agenda-10-8-2026-mtg.pdf) (government); [Daily Memphian: J&J discuss lease "soon" for FedExForum](https://www.audacy.com/929espn/sports/memphis-grizzlies/fedexforum) (independent); [Louisiana Stadium and Exposition District: Financial Statement Audit for the Year Ended June 30, 2023](https://lla.la.gov/publicreports.nsf/0/ae49cb44840fe57986258b0900722bdf/$file/0000454ba.pdf) (government); [FY26 Executive Budget: 01-124 Louisiana Stadium and Exposition District (Senate Finance Committee presentation)](https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf) (government); [City of Portland, Oregon Annual Comprehensive Financial Report for the Fiscal Year Ended June 30, 2024](https://www.portland.gov/accounting/documents/2024-annual-comprehensive-financial-report/download) (government); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government); [Resolution 37750: Authorize a non-binding term sheet with Rip City Management LLC and Trail Blazers Holdings, LLC for Moda Center arena renovation](https://www.portland.gov/council/documents/resolution/adopted/37750) (government); [In Moda Center talks, Tom Dundon and city officials are 10 years, $1 billion and one jet ride apart](https://sports.yahoo.com/articles/moda-center-talks-tom-dundon-215452701.html) (independent); [Dallas Mavericks have deal for arena site that would move club out of downtown for 1st time](https://wtop.com/news/2026/06/dallas-mavericks-have-deal-for-arena-site-that-would-move-club-out-of-downtown-for-1st-time/) (independent); [Comcast’s $400M Wells Fargo Center Upgrades Near Completion](https://frontofficesports.com/article/comcasts-400-million-wells-fargo-center-upgrades-near-completion/) (independent); [76ers and Comcast unveil design for South Philly arena that will open in 2030](https://whyy.org/articles/south-philadelphia-new-arena-design-76ers-comcast/) (independent); [San Antonio Spurs consider a downtown move](https://www.ksat.com/news/local/2023/07/17/spurs-consider-a-downtown-move/) (independent); [Here's what's in the downtown arena term sheet the city just inked with the San Antonio Spurs](https://www.tpr.org/government-politics/2025-08-21/heres-whats-in-the-downtown-arena-term-sheet-the-city-just-inked-with-the-san-antonio-spurs) (independent); [Arena Lease, Sublease, License and Management Agreement between the Harris County-Houston Sports Authority and Rocket Ball, Ltd.](https://houstonsports.org/wp-content/uploads/Toyota_Center_-_Arena_Lease.pdf) (government); [HCHSA Special Meeting of the Board of Directors, April 8, 2026 (agenda)](https://houstonsports.org/wp-content/uploads/HCHSA-Special-BOD-Agenda-4.8.26.pdf) (government); [Toyota Center Gets Approval for $180 Million Renovation](https://www.stadiumjourney.com/stadiums/toyota-center-gets-approval-for-180-million-renovation) (independent); [Gateway Economic Development Corporation of Greater Cleveland, Regular Audit for the Year Ended December 31, 2022](https://ohioauditor.gov/auditsearch/Reports/2023/Gateway_Economic_Development_Corporation_of_Greater_Cleveland_22-Cuyahoga_FINAL.pdf) (government); [Gateway Board of Trustees Meeting Agenda (board packet), December 17, 2025](https://www.gwcomplex.org/mymedia/2026/01/Board_Packet_12-17-25.pdf) (government); [State bill would require vote on county tax hikes, complicating plan to fund Cavs, Guardians](https://www.ideastream.org/government-politics/2026-10-19/state-bill-would-require-vote-on-county-tax-hikes-complicating-plan-to-fund-cavs-guardians) (independent); [New T'Wolves Owner Would Face Penalty For Leaving Target Center](https://www.sportsbusinessdaily.com/Daily/Issues/2020/07/30/Facilities/TWolves.aspx) (independent); [What Happens To Minneapolis' Target Center If Wolves Move](https://hoodline.com/2026/07/if-wolves-skip-town-does-target-center-become-downtown-s-biggest-question-mark/) (independent); [Interlocal and Funding Agreement between Orange County, Florida and City of Orlando, Florida for Kia Center](https://occompt.legistar1.com/occompt/attachments/690dcf2e-1e33-4045-8ef4-598605dc8be4.pdf) (government); [Lease Summary: Orlando Magic, Amway Center](https://law.marquette.edu/assets/sports-law/pdf/Orlando%20Magic%20Lease%20Summary%208-14.pdf) (independent); [Orlando’s Kia Center and Camping World Stadium improvements approved](https://www.cfpublic.org/politics/2024-11-20/orlando-kia-center-camping-world-stadium-improvements-approved) (independent); [Celtics extend their lease at TD Garden through the 2035-36 season](https://www.bostonglobe.com/2021/01/21/sports/celtics-extend-their-lease-td-garden-through-2035-36-season) (independent)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Deal to keep Grizzlies in Memphis won’t be done this summer, mayor says](https://dailymemphian.com/article/53292) (independent); [Memphis & Shelby County Sports Authority, Inc. Board Meeting Agenda, October 8, 2026](https://memphistn.gov/wp-content/uploads/2026/10/0_Sports-Auth-Board-Agenda-10-8-2026-mtg.pdf) (government); [Daily Memphian: J&J discuss lease "soon" for FedExForum](https://www.audacy.com/929espn/sports/memphis-grizzlies/fedexforum) (independent); [Louisiana Stadium and Exposition District: Financial Statement Audit for the Year Ended June 30, 2023](https://lla.la.gov/publicreports.nsf/0/ae49cb44840fe57986258b0900722bdf/$file/0000454ba.pdf) (government); [FY26 Executive Budget: 01-124 Louisiana Stadium and Exposition District (Senate Finance Committee presentation)](https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf) (government); [City of Portland, Oregon Annual Comprehensive Financial Report for the Fiscal Year Ended June 30, 2024](https://www.portland.gov/accounting/documents/2024-annual-comprehensive-financial-report/download) (government); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government); [Resolution 37750: Authorize a non-binding term sheet with Rip City Management LLC and Trail Blazers Holdings, LLC for Moda Center arena renovation](https://www.portland.gov/council/documents/resolution/adopted/37750) (government); [In Moda Center talks, Tom Dundon and city officials are 10 years, $1 billion and one jet ride apart](https://sports.yahoo.com/articles/moda-center-talks-tom-dundon-215452701.html) (independent); [Dallas Mavericks have deal for arena site that would move club out of downtown for 1st time](https://wtop.com/news/2026/06/dallas-mavericks-have-deal-for-arena-site-that-would-move-club-out-of-downtown-for-1st-time/) (independent); [Comcast’s $400M Wells Fargo Center Upgrades Near Completion](https://frontofficesports.com/article/comcasts-400-million-wells-fargo-center-upgrades-near-completion/) (independent); [76ers and Comcast unveil design for South Philly arena that will open in 2030](https://whyy.org/articles/south-philadelphia-new-arena-design-76ers-comcast/) (independent); [San Antonio Spurs consider a downtown move](https://www.ksat.com/news/local/2023/07/17/spurs-consider-a-downtown-move/) (independent); [Here's what's in the downtown arena term sheet the city just inked with the San Antonio Spurs](https://www.tpr.org/government-politics/2025-08-21/heres-whats-in-the-downtown-arena-term-sheet-the-city-just-inked-with-the-san-antonio-spurs) (independent); [Arena Lease, Sublease, License and Management Agreement between the Harris County-Houston Sports Authority and Rocket Ball, Ltd.](https://houstonsports.org/wp-content/uploads/Toyota_Center_-_Arena_Lease.pdf) (government); [Second Amendment to the Toyota Center Arena Lease, Sublease, License and Management Agreement](https://houstonsports.org/wp-content/uploads/2Clutch-City-HCHSA-Arena-Lease-Sublease-License-Mgmt-Agmt-2nd-Amend-20141201.pdf) (government); [HCHSA Special Meeting of the Board of Directors, April 8, 2026 (agenda)](https://houstonsports.org/wp-content/uploads/HCHSA-Special-BOD-Agenda-4.8.26.pdf) (government); [Toyota Center Gets Approval for $180 Million Renovation](https://www.stadiumjourney.com/stadiums/toyota-center-gets-approval-for-180-million-renovation) (independent); [Gateway Economic Development Corporation of Greater Cleveland, Regular Audit for the Year Ended December 31, 2022](https://ohioauditor.gov/auditsearch/Reports/2023/Gateway_Economic_Development_Corporation_of_Greater_Cleveland_22-Cuyahoga_FINAL.pdf) (government); [Gateway Board of Trustees Meeting Agenda (board packet), December 17, 2025](https://www.gwcomplex.org/mymedia/2026/01/Board_Packet_12-17-25.pdf) (government); [State bill would require vote on county tax hikes, complicating plan to fund Cavs, Guardians](https://www.ideastream.org/government-politics/2026-10-19/state-bill-would-require-vote-on-county-tax-hikes-complicating-plan-to-fund-cavs-guardians) (independent); [New T'Wolves Owner Would Face Penalty For Leaving Target Center](https://www.sportsbusinessdaily.com/Daily/Issues/2020/07/30/Facilities/TWolves.aspx) (independent); [What Happens To Minneapolis' Target Center If Wolves Move](https://hoodline.com/2026/07/if-wolves-skip-town-does-target-center-become-downtown-s-biggest-question-mark/) (independent); [Interlocal and Funding Agreement between Orange County, Florida and City of Orlando, Florida for Kia Center](https://occompt.legistar1.com/occompt/attachments/690dcf2e-1e33-4045-8ef4-598605dc8be4.pdf) (government); [Lease Summary: Orlando Magic, Amway Center](https://law.marquette.edu/assets/sports-law/pdf/Orlando%20Magic%20Lease%20Summary%208-14.pdf) (independent); [Orlando’s Kia Center and Camping World Stadium improvements approved](https://www.cfpublic.org/politics/2024-11-20/orlando-kia-center-camping-world-stadium-improvements-approved) (independent); [Celtics extend their lease at TD Garden through the 2035-36 season](https://www.bostonglobe.com/2021/01/21/sports/celtics-extend-their-lease-td-garden-through-2035-36-season) (independent)
 - Method: `select count(*) from leases where term_end_year <= 2036`
 
 ### `leases_by_2031`: Leases that end by 2031
@@ -1195,6 +1195,14 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Label: (b)
 - Sources: [The impact of professional sports franchises and venues on local economies: A comprehensive survey](https://doi.org/10.1111/joes.12533) (independent)
 - Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=studies, column quote: "more than 130 studies")`
+
+### `local_gain_radius`: How far from new stadiums one study found job gains, only at restaurants and bars (Harger, Humphreys and Ross 2016, as summarized in a 2023 survey)
+
+- Shown as: one (1)
+- Value: 1 count, miles
+- Label: (b)
+- Sources: [The Economics of Stadium Subsidies: A Policy Retrospective (working paper)](https://campus.kennesaw.edu/colleges-departments/coles/centers/markets-economic-opportunity/docs/bradbury-coates-humphreys-01-30-2023.pdf) (independent)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=bch_wp_bars, column quote: "within one mile of the venues")`
 
 ### `research_years`: Years of research the survey covers
 
@@ -1364,16 +1372,16 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_n`: Documents in the bibliography (not counting this site's own ledgers)
 
-- Shown as: 564 (564)
-- Value: 564 count
+- Shown as: 566 (566)
+- Value: 566 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where publisher <> 'This site'`
 
 ### `sources_government`: Government sources
 
-- Shown as: 155 (155)
-- Value: 155 count
+- Shown as: 156 (156)
+- Value: 156 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'government' and publisher <> 'This site'`
@@ -1396,8 +1404,8 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_independent`: Independent sources
 
-- Shown as: 376 (376)
-- Value: 376 count
+- Shown as: 377 (377)
+- Value: 377 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'independent' and publisher <> 'This site'`
@@ -1435,6 +1443,282 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Description of Public Subsidies for Madison Square Garden, Yankee Stadium, Citi Field & Barclays Center](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/economy-and-employment/2023/2023-march-description-of-public-subsidies-for-madison-square-garden-yankee-stadium-citi-field-and-barclays-center.pdf) (government)
 - Note: $511 million issued in 2009 to build the arena, repaid from payments in lieu of the property tax the arena would owe; converted from the 2012 opening year.
 - Method: `select sum(coalesce(pilot_2026_m, 0)) from arenas`
+
+### `construction_cost`: What the 30 current arenas cost to build, public and private money
+
+- Shown as: $19.54 billion ($19.54B)
+- Value: 19,538.4 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Method: `select sum(spending_2026_m) from items where core and kind = 'construction'`
+
+### `building_cost_share`: Public share of what the 30 arenas cost to build, counting Barclays Center's PILOT bonds as public
+
+- Shown as: 31 percent (31%)
+- Value: 31.361 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: The PILOT bonds already sit inside Barclays Center's construction cost, so only the numerator changes. Without them the share is 28 percent; counting public bonds that teams repay as public, about 34 percent.
+- Method: `select 100 * ((select sum(public_2026_m) from items where core and kind = 'construction') + (select sum(coalesce(pilot_2026_m, 0)) from arenas)) / (select sum(spending_2026_m) from items where core and kind = 'construction')`
+
+### `private_build_share`: Private share of what the 30 arenas cost to build
+
+- Shown as: 69 percent (69%)
+- Value: 68.639 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: Private money includes public bonds that a team repays, which the ledger counts as private.
+- Method: `select 100 - 100 * ((select sum(public_2026_m) from items where core and kind = 'construction') + (select sum(coalesce(pilot_2026_m, 0)) from arenas)) / (select sum(spending_2026_m) from items where core and kind = 'construction')`
+
+### `building_private`: Private money to build the 30 arenas, with Barclays Center's PILOT bonds counted as public
+
+- Shown as: $13.41 billion ($13.41B)
+- Value: 13,411 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Note: Includes public bonds that teams repay, which the ledger counts as private.
+- Method: `select (select sum(spending_2026_m) from items where core and kind = 'construction') - (select sum(public_2026_m) from items where core and kind = 'construction') - (select sum(coalesce(pilot_2026_m, 0)) from arenas)`
+
+### `private_remainder_n`: Arenas whose private building money is computed as the cost less the documented public money
+
+- Shown as: 11 (11)
+- Value: 11 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: Indianapolis, whose private figure is partly computed (label c/a), is not counted.
+- Method: `select count(*) from arenas where private_construction_label = 'a'`
+
+### `building_share_with_conduit`: Public share of what the arenas cost to build if public bonds that teams repay counted as public
+
+- Shown as: 34 percent (34%)
+- Value: 33.9984 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: The bonds are Detroit's Michigan Strategic Fund Series 2014B, which Olympia retired in 2017 (primary document), and Atlanta's arena authority bonds repaid from arena revenue (press). The check confirms the two.
+- Method: `select 100 * ((select sum(public_2026_m) from items where core and kind = 'construction') + (select sum(coalesce(pilot_2026_m, 0)) from arenas) + (select sum(coalesce(conduit_2026_m, 0)) from arenas)) / (select sum(spending_2026_m) from items where core and kind = 'construction')`
+
+### `mil_owners_initial`: What the Bucks' owners first put into Fiserv Forum
+
+- Shown as: $150 million ($150M)
+- Value: 150 usd_m, nominal
+- Label: (b)
+- Sources: [Local Professional Sports Facilities Financing (Informational Paper 18)](https://docs.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf) (government)
+- Method: `Entered by hand; confirmed against data/ledger/arena_ledger.csv (row_type=current_arena, team=MIL, column private_construction_source: "Kohl gift $100M + owners $150M")`
+
+### `mil_kohl_gift`: Former owner Herb Kohl's gift toward Fiserv Forum
+
+- Shown as: $100 million ($100M)
+- Value: 100 usd_m, nominal
+- Label: (b)
+- Sources: [Local Professional Sports Facilities Financing (Informational Paper 18)](https://docs.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf) (government)
+- Method: `Entered by hand; confirmed against data/ledger/arena_ledger.csv (row_type=current_arena, team=MIL, column private_construction_source: "Kohl gift $100M")`
+
+### `mil_overruns`: Costs above the other commitments that the Bucks' owners paid, as estimated by the Legislative Fiscal Bureau
+
+- Shown as: $24.1 million ($24.1M)
+- Value: 24.1 usd_m, nominal; estimated
+- Label: (b)
+- Sources: [Local Professional Sports Facilities Financing (Informational Paper 18)](https://docs.legis.wisconsin.gov/misc/lfb/informational_papers/january_2021/0018_local_professional_sports_facilities_financing_informational_paper_18.pdf) (government)
+- Method: `Entered by hand; confirmed against data/ledger/arena_ledger.csv (row_type=current_arena, team=MIL, column private_construction_source: "est. $24.1M overruns")`
+
+### `sac_kings_loan`: Bank loan available to the Kings' arena company for Golden 1 Center's costs, at the 2015 estimate
+
+- Shown as: $216.9 million ($216.9M)
+- Value: 216.9 usd_m, nominal
+- Label: (b)
+- Sources: [Remarketing Circular: $272,870,000 Sacramento Public Financing Authority Lease Revenue Bonds, Series 2015 (Golden 1 Center) (Federally Taxable)](https://www.cityofsacramento.gov/content/dam/portal/treasurer/DebtManagement/officialstatements/lease-revenue-revenue/2015_Lease_Revenue_Bonds_Series_2015_(G1C)_Taxable.pdf) (government)
+- Note: The loan, from banks led by Goldman Sachs, was up to $265 million; the rest covered financing costs and capitalized interest (remarketing circular, Sept. 2015).
+- Method: `Entered by hand; confirmed against data/ledger/arena_ledger.csv (row_type=current_arena, team=SAC, column private_construction_source: "Kings ArenaCo loan $216.9M")`
+
+### `sac_kings_equity`: The Kings' owners' equity in Golden 1 Center, at the 2015 estimate
+
+- Shown as: $67.1 million ($67.1M)
+- Value: 67.1 usd_m, nominal
+- Label: (b)
+- Sources: [Remarketing Circular: $272,870,000 Sacramento Public Financing Authority Lease Revenue Bonds, Series 2015 (Golden 1 Center) (Federally Taxable)](https://www.cityofsacramento.gov/content/dam/portal/treasurer/DebtManagement/officialstatements/lease-revenue-revenue/2015_Lease_Revenue_Bonds_Series_2015_(G1C)_Taxable.pdf) (government)
+- Method: `Entered by hand; confirmed against data/ledger/arena_ledger.csv (row_type=current_arena, team=SAC, column private_construction_source: "equity $67.1M")`
+
+### `det_2014b`: State bonds for Little Caesars Arena that an Ilitch family trust repaid in 2017
+
+- Shown as: $188.5 million ($188.5M)
+- Value: 188.5 usd_m, nominal
+- Label: (b)
+- Sources: [City of Detroit Downtown Development Authority Financial Statements (With Required Supplementary Information), June 30, 2018 and 2017](https://www.degc.org/_files/ugd/a7a51b_bcada3f462e04bc4bf264be9ccd60b91.pdf) (government)
+- Note: Michigan Strategic Fund Series 2014B, serviced by concession payments from Olympia and retired Nov. 9, 2017 through a prepayment of the base concession fees owed to the Downtown Development Authority by Garden Trust, trustee of the Michael Ilitch Trust Agreement (DDA statements FY2018, Note G).
+- Method: `Entered by hand; confirmed against data/ledger/arena_ledger.csv (row_type=current_arena, team=DET, column conduit_note: "$188.5M drawn, retired in 2017 through prepayment of base concession fees")`
+
+### `after_public`: Public money that came after the arenas opened, counting property-tax breaks
+
+- Shown as: $5.43 billion ($5.43B)
+- Value: 5,433.94 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [An Examination of the Madison Square Garden Property Tax Exemption](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/taxes-and-other-revenues/2023/2023-july-an-examination-of-the-madison-square-garden-property-tax-exemption.pdf) (government); [Annual Report on Tax Expenditures, Fiscal Year 2026](https://www.nyc.gov/assets/finance/downloads/pdf/reports/reports-tax-expenditure/ter_2026_final.pdf) (government); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
+- Note: Renovations, purchases, yearly payments and property-tax breaks; the expanded total less the money to build. The check confirms that the tax breaks counted year by year add up to the ledger's totals.
+- Method: `select sum(public_2026_m) from after_items`
+
+### `after_owed`: Public money after opening that is owed under agreements and laws already in place
+
+- Shown as: $2.28 billion ($2.28B)
+- Value: 2,275.78 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [An Examination of the Madison Square Garden Property Tax Exemption](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/taxes-and-other-revenues/2023/2023-july-an-examination-of-the-madison-square-garden-property-tax-exemption.pdf) (government); [Annual Report on Tax Expenditures, Fiscal Year 2026](https://www.nyc.gov/assets/finance/downloads/pdf/reports/reports-tax-expenditure/ter_2026_final.pdf) (government); [Financial Statement Audit Report of Capital Improvement Board of Managers, Marion County, Indiana, January 1, 2023 to December 31, 2023 (Report 83950A)](https://www.in.gov/sboa/WebReports/83950A.pdf) (government)
+- Note: Yearly payments to teams and arena operators, property-tax breaks, and the repairs, reserves and technology money that Indianapolis's, Phoenix's, Cleveland's and New Orleans's agreements require (view after_items).
+- Method: `select sum(public_2026_m) from after_items where timing = 'owed'`
+
+### `after_owed_share`: Share of the public money after opening that is owed under agreements and laws already in place
+
+- Shown as: 42 percent (42%)
+- Value: 41.8809 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select 100 * sum(public_2026_m) filter (where timing = 'owed') / sum(public_2026_m) from after_items`
+
+### `after_deals`: Public money after opening that came in new renovation and purchase deals
+
+- Shown as: $3.16 billion ($3.16B)
+- Value: 3,158.16 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select sum(public_2026_m) from after_items where timing = 'deal'`
+
+### `after_voters_share`: Share of the public money after opening that voters approved
+
+- Shown as: 9 percent (9%)
+- Value: 9.40624 pct, share of 2026 dollars
+- Label: (c/a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Relocation threat ledger and comparison (threat_ledger.csv, comparison.txt), compiled for this site](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/threats) (independent); [MAPS History](https://www.okc.gov/Infrastructure-Development/Current-Infrastructure-Projects/MAPS-History) (government); [Media Report, Unofficial Results: May 10, 2008 Special Election (venue tax propositions)](https://www.bexar.org/DocumentCenter/View/8963/May-10-2008-Media-Report-Report) (government); [Micky Arison is a greedy corporate pig . . . and other observations about big boys and their expensive toys](https://www.miaminewtimes.com/?p=40379989) (independent)
+- Note: Oklahoma City's sales taxes approved on March 4, 2008 and Dec. 10, 2019, Bexar County's venue tax extended by voters on May 10, 2008, and Miami-Dade's yearly payments to the arena's operator, set by the arena deal voters approved on Nov. 5, 1996. Everything else was approved by city councils, county boards, legislatures or appointed boards (threat ledger, vote column).
+- Method: `select 100 * sum(public_2026_m) filter (where approved = 'voters') / sum(public_2026_m) from after_items`
+
+### `after_more_n`: Arenas where the public has paid more after opening than it did to build them
+
+- Shown as: 11 (11)
+- Value: 11 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Note: New York, Indianapolis, Washington, Salt Lake City, Miami, Minneapolis, New Orleans, Phoenix, Atlanta, Oklahoma City and Chicago. In Oklahoma City and New Orleans the two amounts are within 3 percent of each other.
+- Method: `select count(*) from after_by_arena where more_after`
+
+### `after_arenas_n`: Arenas with public money or tax breaks after opening
+
+- Shown as: 17 (17)
+- Value: 17 count
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select count(*) from after_by_arena where after_2026_m > 0`
+
+### `ind_after`: Public money in Indianapolis's arena after it opened
+
+- Shown as: $777 million ($777M)
+- Value: 777.065 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Financial Statement Audit Report of Capital Improvement Board of Managers, Marion County, Indiana, January 1, 2023 to December 31, 2023 (Report 83950A)](https://www.in.gov/sboa/WebReports/83950A.pdf) (government)
+- Method: `select after_2026_m from after_by_arena where team = 'IND'`
+
+### `was_after`: Public money in Washington's arena after it opened, including its purchase
+
+- Shown as: $600 million ($600M)
+- Value: 599.989 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
+- Method: `select after_2026_m from after_by_arena where team = 'WAS'`
+
+### `uta_after`: Public money in Salt Lake City's arena after it opened
+
+- Shown as: $548 million ($548M)
+- Value: 547.7 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Notice of Public Hearing, Interlocal Agreement and Bonds to Be Issued (Downtown Revitalization Public Infrastructure District)](https://www.utah.gov/pmn/files/1261183.pdf) (government)
+- Method: `select after_2026_m from after_by_arena where team = 'UTA'`
+
+### `recurring_2025`: Yearly payments to teams and arena operators and property-tax breaks in 2025
+
+- Shown as: $85 million ($85M)
+- Value: 84.8042 usd_m, 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [An Examination of the Madison Square Garden Property Tax Exemption](https://www.ibo.nyc.gov/assets/ibo/downloads/pdf/taxes-and-other-revenues/2023/2023-july-an-examination-of-the-madison-square-garden-property-tax-exemption.pdf) (government); [Annual Report on Tax Expenditures, Fiscal Year 2026](https://www.nyc.gov/assets/finance/downloads/pdf/reports/reports-tax-expenditure/ter_2026_final.pdf) (government)
+- Note: The last full year in the records. Years are fiscal or calendar years as each payer reports them.
+- Method: `select sum(public_2026_m) from after_items where kind in ('ongoing', 'break') and year = 2025`
+
+### `mia_payment_now`: Miami-Dade's yearly payment to the Kaseya Center's operator, through fiscal 2029
+
+- Shown as: $6.4 million ($6.4M)
+- Value: 6.4 usd_m, nominal, a year
+- Label: (b)
+- Sources: [Miami-Dade County, Florida Annual Comprehensive Financial Report for the Fiscal Year Ended September 30, 2025](https://www.miamidadeclerk.gov/resources-clerk/library/finance/cafr2025-complete.pdf) (government); [Adopted Budget and Multi-Year Capital Plan 2025-26, Volume 1](https://www.miamidade.gov/resources/budget/adopted/fy2025-26/volume-1.pdf) (government); [Board of County Commissioners Meeting, June 3, 2014: research notes on the HEAT agreements](https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf) (government)
+- Method: `Entered by hand; confirmed against data/authorities/payment_terms.csv (team=MIA, column clause: "County payments of $6.4M a year")`
+
+### `mia_payment_late`: Miami-Dade's yearly payment to the arena's operator from fiscal 2030 to June 2035
+
+- Shown as: $8.5 million ($8.5M)
+- Value: 8.5 usd_m, nominal, a year
+- Label: (b)
+- Sources: [Miami-Dade County, Florida Annual Comprehensive Financial Report for the Fiscal Year Ended September 30, 2025](https://www.miamidadeclerk.gov/resources-clerk/library/finance/cafr2025-complete.pdf) (government); [Adopted Budget and Multi-Year Capital Plan 2025-26, Volume 1](https://www.miamidade.gov/resources/budget/adopted/fy2025-26/volume-1.pdf) (government); [Board of County Commissioners Meeting, June 3, 2014: research notes on the HEAT agreements](https://www.miamidade.gov/auditor//library/2014-06-03-bcc.pdf) (government)
+- Method: `Entered by hand; confirmed against data/authorities/payment_terms.csv (team=MIA, column clause: "then $8.5M a year to June 2035")`
+
+### `ind_reimbursement`: Indianapolis's operating-expense reimbursement to the Pacers in the first year of the 2019 agreement
+
+- Shown as: $12.5 million ($12.5M)
+- Value: 12.5 usd_m, nominal, a year; a 4.6% increase after six years
+- Label: (b)
+- Sources: [Financial Statement Audit Report of Capital Improvement Board of Managers, Marion County, Indiana, January 1, 2023 to December 31, 2023 (Report 83950A)](https://www.in.gov/sboa/WebReports/83950A.pdf) (government)
+- Method: `Entered by hand; confirmed against data/authorities/payment_terms.csv (team=IND, column clause: "approximately $12,500,000 in year one")`
+
+### `nop_state_annual`: What Louisiana must pay the Pelicans each year through fiscal 2029, a Quality Jobs equivalent
+
+- Shown as: $3.65 million ($3.65M)
+- Value: 3.65 usd_m, nominal, a year
+- Label: (b)
+- Sources: [Louisiana Stadium and Exposition District: Financial Statement Audit for the Year Ended June 30, 2023](https://lla.la.gov/publicreports.nsf/0/ae49cb44840fe57986258b0900722bdf/$file/0000454ba.pdf) (government); [FY26 Executive Budget: 01-124 Louisiana Stadium and Exposition District (Senate Finance Committee presentation)](https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf) (government)
+- Method: `Entered by hand; confirmed against data/authorities/payment_terms.csv (team=NOP, column clause: "$3.65M a year")`
+
+### `mem_payment_late`: Memphis's and Shelby County's yearly operating payment for the 2025-26 to 2028-29 seasons
+
+- Shown as: $6.3 million ($6.3M)
+- Value: 6.3 usd_m, nominal, a season
+- Label: (c)
+- Sources: [Shelby County Commissioners vote unanimously to keep Grizzlies in Memphis through 2029](https://www.actionnews5.com/2022/04/13/shelby-county-commissioners-vote-unanimously-keep-grizzlies-memphis-through-2029) (independent); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government)
+- Method: `Entered by hand; confirmed against data/authorities/payment_terms.csv (team=MEM, column clause: "then $6.3M/yr")`
+
+### `phx_rr_annual`: Phoenix's yearly deposit into the arena's renewal and replacement account
+
+- Shown as: $2 million ($2M)
+- Value: 2 usd_m, nominal, a year
+- Label: (b)
+- Sources: [City-Owned Downtown Arena Renovation (Ordinance S-45266), council item 18-3724 report text](https://webapi.legistar.com/v1/phoenix/matters/10618/texts/10724) (government)
+- Method: `Entered by hand; confirmed against data/ledger/ledger_items.csv (item_id=PHX-renovation-2, column note: "the city contributes $2M a year from the Sports Facilities Fund up to $25M")`
+
+### `phx_rr_cap`: Cap on Phoenix's deposits into the arena's renewal and replacement account
+
+- Shown as: $25 million ($25M)
+- Value: 25 usd_m, nominal
+- Label: (b)
+- Sources: [City-Owned Downtown Arena Renovation (Ordinance S-45266), council item 18-3724 report text](https://webapi.legistar.com/v1/phoenix/matters/10618/texts/10724) (government)
+- Method: `Entered by hand; confirmed against data/ledger/ledger_items.csv (item_id=PHX-renovation-2, column note: "the city contributes $2M a year from the Sports Facilities Fund up to $25M")`
+
+### `cle_repairs_needed`: Repairs Cleveland's arena and ballpark will need through 2037, by a recent assessment
+
+- Shown as: $400 million ($400M)
+- Value: 400 usd_m, nominal; more than; arena and ballpark together
+- Label: (c)
+- Sources: [State bill would require vote on county tax hikes, complicating plan to fund Cavs, Guardians](https://www.ideastream.org/government-politics/2026-10-19/state-bill-would-require-vote-on-county-tax-hikes-complicating-plan-to-fund-cavs-guardians) (independent)
+- Method: `Entered by hand; confirmed against data/authorities/lease_clock.csv (team=CLE, column outs_penalties_notes: "will need more than $400 million for repairs through 2037")`
+
+### `cha_old_lease`: What Charlotte was obligated to pay for renovations under the old lease, before the 2022 deal
+
+- Shown as: $173 million ($173M)
+- Value: 173 usd_m, nominal
+- Label: (c)
+- Sources: [Charlotte City Council approves $275 million Spectrum Center renovations](https://www.wbtv.com/2022/06/14/charlotte-city-council-approves-275-million-spectrum-center-renovations) (independent)
+- Method: `Entered by hand; confirmed against data/authorities/lease_clock.csv (team=CHA, column outs_penalties_notes: "Under the old lease the city was obligated to pay $173M for renovations")`
+
+### `msg_2025`: Madison Square Garden's property-tax exemption in fiscal 2025
+
+- Shown as: $44 million ($44M)
+- Value: 44.1942 usd_m, 2026 dollars
+- Label: (b)
+- Sources: [Annual Report on Tax Expenditures, Fiscal Year 2026](https://www.nyc.gov/assets/finance/downloads/pdf/reports/reports-tax-expenditure/ter_2026_final.pdf) (government)
+- Method: `select public_2026_m from tax_break_years where team = 'NYK' and year = 2025`
 
 ### `phi_exemption_annual`: Property tax a year forgone on Philadelphia's arena, on city-owned property of record (not added)
 
@@ -1652,7 +1936,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
 - Method: `select count(*) from public_return where public_deal and sale_share not in ('no', 'none_found', 'unknown')`
 
-### `okc_game_fee`: Oklahoma City's license fee per Thunder game under the 2025 agreement
+### `okc_game_fee`: Oklahoma City's license fee per Thunder game in the new arena, under the 2025 agreement
 
 - Shown as: $58,000 ($58,000)
 - Value: 58,000 usd, nominal
@@ -1841,6 +2125,40 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent); [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government)
 - Note: Adds Barclays Center's PILOT bonds and the property-tax breaks for Madison Square Garden and the United Center. The check confirms the total is still below the public money in the arenas of the 10 least valuable teams.
 - Method: `with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values) select sum(coalesce((select sum(public_2026_m) from items i where i.team = a.team and i.core), 0) + coalesce(a.pilot_2026_m, 0) + case when a.tax_break_in_expanded_total = 'Y' then coalesce(a.tax_break_cumulative_2026_m, 0) else 0 end) from arenas a join r using (team) where r.k <= 10`
+
+### `value_bottom10_spend_share`: Public share of everything spent on the arenas of the 10 least valuable teams
+
+- Shown as: 63 percent (63%)
+- Value: 62.5739 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Note: Construction, renovations and yearly payments, public and private, without tax breaks, as in the chart.
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select 100 * sum(i.public_2026_m) / sum(i.spending_2026_m) from items i join r using (team) where i.core and r.k <= 10`
+
+### `value_middle10_spend_share`: Public share of everything spent on the arenas of the 10 teams in the middle by value
+
+- Shown as: 50 percent (50%)
+- Value: 49.7052 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b, team) as k from team_values) select 100 * sum(i.public_2026_m) / sum(i.spending_2026_m) from items i join r using (team) where i.core and r.k between 11 and 20`
+
+### `value_top10_spend_share`: Public share of everything spent on the arenas of the 10 most valuable teams
+
+- Shown as: 11 percent (11%)
+- Value: 10.8713 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values) select 100 * sum(i.public_2026_m) / sum(i.spending_2026_m) from items i join r using (team) where i.core and r.k <= 10`
+
+### `value_top10_spend_share_breaks`: Public share for the arenas of the 10 most valuable teams, counting tax breaks on both sides
+
+- Shown as: 24 percent (24%)
+- Value: 23.8098 pct, share of 2026 dollars
+- Label: (a)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Team ledger (team_values.csv, value_history.csv, public_return.csv), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/teams) (independent)
+- Note: Adds Barclays Center's PILOT bonds (already inside its cost) and the Madison Square Garden and United Center tax breaks (added to both sides).
+- Method: `with r as (select team, row_number() over (order by forbes_2026_b desc, team) as k from team_values), br as (select team, coalesce(pilot_2026_m, 0) as pilot, case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end as brk from arenas) select 100 * ((select sum(i.public_2026_m) from items i join r using (team) where i.core and r.k <= 10) + (select sum(pilot + brk) from br join r using (team) where r.k <= 10)) / ((select sum(i.spending_2026_m) from items i join r using (team) where i.core and r.k <= 10) + (select sum(brk) from br join r using (team) where r.k <= 10))`
 
 ### `public_owned_n`: Arenas the public owns
 
@@ -2236,11 +2554,11 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 - `items`: Every public-money item in the ledger. 195 rows; 176 sources.
 - `item-buckets`: Public money in each item by funding stream. 82 rows; 1 sources.
-- `public-layers`: Public money in the 30 current arenas, by kind. 5 rows; 2 sources. The five parts of the expanded total. Building includes Barclays Center's PILOT bonds, which paid for its construction and are repaid with the property tax the arena would otherwise owe. Tax breaks are property-tax exemptions (Madison Square Garden, the United Center's valuation formula); the federal cost of tax-exempt bonds is not included.
+- `public-layers`: Public money in the 30 current arenas, by kind. 5 rows; 2 sources. The five parts of the expanded total, and on the first row what the arenas cost to build, public and private money together (cost_2026_m). Building includes Barclays Center's PILOT bonds, which paid for its construction and are repaid with the property tax the arena would otherwise owe. Tax breaks are property-tax exemptions (Madison Square Garden, the United Center's valuation formula); the federal cost of tax-exempt bonds is not included.
 - `rebuild-by-year`: Public money by year, for new arenas and for existing ones. 63 rows; 123 sources. Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year. binding marks commitments that are signed, such as Oklahoma City's arena under construction.
 - `arenas`: The 30 current arenas, public and private money. 30 rows; 91 sources. Private money is construction and renovation spending not paid by the public. Tax breaks are the Barclays Center PILOT bonds and the exemptions counted in the expanded total. The PILOT bonds paid for part of Barclays Center's construction, so its private money is net of them.
 - `arena-map`: Where the public money went, arena by arena. 30 rows; 31 sources. Locations from each arena's Wikipedia article; money from the ledger.
-- `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 84 sources.
+- `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 85 sources.
 - `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 21 rows; 38 sources.
 - `who-pays`: Public capital money by funding stream. 10 rows; 2 sources.
 - `payer-periods`: Public capital money by who mostly pays, before and since 2014. 8 rows; 2 sources. Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.
@@ -2248,10 +2566,14 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 24 rows; 130 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones. visitors_share, shared_share and sales_share are the shares of the deal's capital money from hotel and car-rental taxes, from meal and ticket taxes, and from dedicated sales taxes; pending_2026_m is pending money included in the deal (Portland).
 - `uc-bills`: United Center property-tax bills, with and without the 1989 valuation formula. 23 rows; 6 sources. Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.
 - `ongoing`: Yearly public payments to teams or arena operators. 117 rows; 25 sources.
+- `after-kinds`: Public money after the arenas opened, by what it paid for, when it comes due and who approved it. 8 rows; 6 sources. What it paid for (renovation, purchase, ongoing yearly payments, property-tax break), when it comes due (owed under agreements and laws already in place, or a new deal) and who approved it (voters or officials), from the view after_items; largest lists the three arenas with the most in each part.
+- `after-by-arena`: Each arena's public money after it opened, by kind, against the public money that built it. 17 rows; 69 sources. After opening means renovations, purchases, yearly payments and property-tax breaks; building money includes Barclays Center's PILOT bonds, as in the bill. more_after marks arenas where the public has paid more since opening than it did to build them.
+- `recurring-by-year`: Yearly payments to teams and arena operators and property-tax breaks, by year. 170 rows; 5 sources. Through 2025, the last full year in the records. Madison Square Garden's exemption for fiscal 1984-2023 is read from the bars of the Independent Budget Office's chart and scaled to its stated total; fiscal 2024 and 2025 are the Department of Finance's values. The United Center's formula is counted in the year each tax bill was paid. Repairs and renovation money are counted by project, not by year, and are not included.
+- `payment-terms`: Public payments under deals and laws in force, and the years they run. 9 rows; 19 sources. Entered by hand from each agreement, audit, budget or report named in its sources (data/authorities/payment_terms.csv); amounts as the documents state them, in the dollars of their day. A blank end year means the payment has no end date.
 - `threats`: Relocation threats and what followed. 51 rows; 133 sources.
 - `threat-deals`: Deals compared, with and without a prior threat. 22 rows; 2 sources. Public money at the deal year in 2025 dollars from compare.py, converted to 2026 dollars.
 - `left-behind`: Cities that kept paying after a team left. 9 rows; 19 sources.
-- `leases`: When each arena lease ends, and what leaving costs. 30 rows; 61 sources.
+- `leases`: When each arena lease ends, and what leaving costs. 30 rows; 62 sources.
 - `projects`: New arenas, districts and pending deals. 10 rows; 45 sources.
 - `slc-monthly`: Salt Lake City's arena sales tax, monthly distributions. 21 rows; 1 sources. Final distributions from the Utah State Tax Commission's monthly reports (Salt Lake City, code 18122).
 - `wcd-annual`: Wisconsin Center District taxes by source. 5 rows; 2 sources.

@@ -63,6 +63,7 @@ const keyClass: Record<string, string> = {
   'pending-orange': 'key key-outline-orange',
   ring: 'key key-ring',
   'dot-orange': 'key key-dot',
+  tick: 'key key-tick',
 };
 const legendItems = fig.data.legend.map((l) => ({
   label: l.label,
@@ -114,12 +115,13 @@ const legendItems = fig.data.legend.map((l) => ({
   <figcaption class="fig-foot">
     <p class="fig-src">
       {credited.length > 1 ? 'Sources: ' : 'Source: '}
-      {publishers.map((p, i) => (
+      {publishers.slice(0, 2).map((p, i) => (
         <>
           {i > 0 && '; '}
           <a href={p.url} rel="noopener">{p.name}</a>
         </>
       ))}
+      {publishers.length > 2 && <> and {publishers.length - 2} more, in the notes</>}
       {rowCount > 0 && record && <>; each row's own documents ({rowCount}) are in <a href={record.href}>{record.label}</a></>}
     </p>
     <details class="data">
@@ -127,9 +129,9 @@ const legendItems = fig.data.legend.map((l) => ({
       <div class="chart-notes">
         {notes.map((n) => <p set:html={n.html} />)}
         <div class="chart-source">
-          {all.length > 1 ? 'Documents: ' : 'Document: '}
-          {few ? (
-            all.map((sid, i) => {
+          {credited.length > 1 ? 'Documents: ' : 'Document: '}
+          {few || publishers.length > 2 ? (
+            credited.map((sid, i) => {
               const s = source(sid);
               return (
                 <>

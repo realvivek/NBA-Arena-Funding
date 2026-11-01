@@ -21,6 +21,8 @@ CITED = {
     'data/ledger/ledger_items.csv': ['cost_source', 'public_source'],
     'data/ledger/arena_ledger.csv': None,  # every column whose name contains "source"
     'data/authorities/lease_clock.csv': ['source'],
+    'data/authorities/payment_terms.csv': ['source'],
+    'data/property_tax/msg_exemption_by_year.csv': ['source'],
     'data/threats/threat_ledger.csv': ['sources'],
     'data/threats/left_behind.csv': ['sources'],
     'data/inputs/arena_coordinates.csv': ['source'],

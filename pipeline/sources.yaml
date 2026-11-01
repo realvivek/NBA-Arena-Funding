@@ -432,6 +432,15 @@ sources:
   origin: independent
   date: '2026-10-01'
   checked: '2026-10-18'
+- id: campus-bradbury-coates-humphreys-01-30-2023
+  url: https://campus.kennesaw.edu/colleges-departments/coles/centers/markets-economic-opportunity/docs/bradbury-coates-humphreys-01-30-2023.pdf
+  title: 'The Economics of Stadium Subsidies: A Policy Retrospective (working paper)'
+  title_from: curated
+  publisher: Kennesaw State University (John Charles Bradbury, Dennis Coates and Brad R. Humphreys)
+  origin: independent
+  date: '2023-01-30'
+  checked: '2026-11-01'
+  review: the server sends an incomplete certificate chain; fetched with the issuer's intermediate certificate added, verification on
 - id: cao-page379
   url: https://cao.lacity.gov/content/budget/22-23/ProposedBudget/files/basic-html/page379.html
   title: Staples Arena Funding Agreement Reconciliation (FY 2022-23 Proposed Budget, page 379)
@@ -1758,6 +1767,15 @@ sources:
   date: '2000-06-22'
   checked: '2026-10-18'
   review: not reached by script (HTTP 403); read through a fetch tool
+- id: houstonsports-2clutch-city-hchsa-arena-lease-sublease-licens
+  url: https://houstonsports.org/wp-content/uploads/2Clutch-City-HCHSA-Arena-Lease-Sublease-License-Mgmt-Agmt-2nd-Amend-20141201.pdf
+  title: Second Amendment to the Toyota Center Arena Lease, Sublease, License and Management Agreement
+  title_from: curated
+  publisher: Harris County-Houston Sports Authority
+  origin: government
+  date: '2014-12-01'
+  checked: '2026-11-01'
+  review: scanned PDF with no text layer; section 3 was transcribed from the page image
 - id: houstonsports-city-hchsa-ground-lease-toyota-center-20011231
   url: https://houstonsports.org/wp-content/uploads/City-HCHSA-Ground-Lease-Toyota-Center-20011231.pdf
   title: Ground Lease by and between City of Houston, Texas, as Landlord, and Harris County-Houston Sports Authority, as Tenant (with exhibits)

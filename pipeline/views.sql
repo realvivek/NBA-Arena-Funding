@@ -174,3 +174,67 @@ from read_json_auto('{root}/data/who_pays/bexar_county_outline.json');
 create or replace view us_households as
 select data['01000US'].B11001.estimate.B11001001 as households, release.id as release
 from read_json_auto('{root}/data/inputs/census/acs2024_B11001_more.json');
+
+-- Property-tax breaks year by year, in 2026 dollars. Madison Square Garden: the Independent Budget Office's bars for
+-- fiscal 1984-2023 (read from its chart and scaled to its stated total, in 2023 dollars; see
+-- scripts/arena_ledger/msg_exemption_series.py), then the Department of Finance's values for fiscal 2024-2026, each at
+-- its year. The United Center's 1989 formula: tax year T is billed in T+1 and counted there, as in the ledger.
+create or replace view tax_break_years as
+select 'NYK' as team, fiscal_year as year, 'Madison Square Garden property-tax exemption' as description,
+       forgone_m * (select factor_2026 from cpi where cpi.year = case when m.dollars = '2023' then 2023 else m.fiscal_year end)
+           as public_2026_m
+from read_csv('{root}/data/property_tax/msg_exemption_by_year.csv', header = true) m
+union all
+select 'CHI', tax_year + 1, 'United Center property-tax valuation formula',
+       saving_a / 1e6 * (select factor_2026 from cpi where cpi.year = u.tax_year + 1)
+from read_csv('{root}/data/property_tax/united_center_formula_savings.csv', header = true) u;
+
+-- Public money after the arenas opened: renovations, purchases, yearly payments and property-tax breaks, one row per
+-- ledger item or tax-break year, with when it comes due and who approved it.
+--   timing 'owed': yearly payments, property-tax breaks, and the repairs, reserves and technology money that an
+--   operating agreement or lease already requires (named here: Indianapolis's 2014 and 2019 agreements, Phoenix's
+--   renewal and replacement account, Cleveland's major capital repairs, New Orleans's capital reimbursements).
+--   'deal': renovations and purchases approved as new deals.
+--   approved 'voters': money from taxes voters approved (Oklahoma City, March 4, 2008 and Dec. 10, 2019; Bexar County,
+--   May 10, 2008) or set by a deal voters approved (Miami-Dade's county payments, Nov. 5, 1996 referendum); everything
+--   else was approved by councils, county boards, legislatures or appointed boards (threat ledger, vote column).
+create or replace view after_items as
+select team, item_id, kind, year, description, public_2026_m,
+       case when kind = 'ongoing'
+              or item_id in ('IND-renovation-1', 'IND-renovation-3', 'IND-renovation-4', 'PHX-renovation-2',
+                             'CLE-renovation-2', 'CLE-renovation-3', 'NOP-renovation-5') then 'owed'
+            else 'deal' end as timing,
+       case when item_id in ('OKC-renovation-1', 'OKC-renovation-2', 'SAS-renovation-1')
+              or (kind = 'ongoing' and team = 'MIA' and description like 'County payments to the arena manager%') then 'voters'
+            else 'officials' end as approved
+from items
+where core and kind in ('renovation', 'purchase', 'ongoing') and public_2026_m > 0
+union all
+select team, team || '-break-' || year, 'break', year, description, public_2026_m, 'owed', 'officials'
+from tax_break_years;
+
+-- Each arena's public money after opening, by kind, against the public money that built it (Barclays Center's PILOT
+-- bonds counted as building money, as in the bill).
+create or replace view after_by_arena as
+with a as (
+    select team,
+           sum(public_2026_m) filter (where kind = 'renovation') as renovation,
+           sum(public_2026_m) filter (where kind = 'purchase') as purchase,
+           sum(public_2026_m) filter (where kind = 'ongoing') as ongoing,
+           sum(public_2026_m) filter (where kind = 'break') as tax_breaks,
+           sum(public_2026_m) as after_2026_m,
+           sum(public_2026_m) filter (where timing = 'owed') as owed_2026_m
+    from after_items group by team),
+b as (
+    select a.team, (select coalesce(sum(public_2026_m), 0) from items i where i.team = a.team and i.core and i.kind = 'construction')
+                   + coalesce(a.pilot_2026_m, 0) as build_2026_m
+    from arenas a)
+select a.team, coalesce(renovation, 0) as renovation, coalesce(purchase, 0) as purchase, coalesce(ongoing, 0) as ongoing,
+       coalesce(tax_breaks, 0) as tax_breaks, after_2026_m, coalesce(owed_2026_m, 0) as owed_2026_m, b.build_2026_m,
+       after_2026_m > b.build_2026_m as more_after
+from a join b using (team);
+
+-- Public payments under deals and laws in force: what each is, the years it runs, the amount as the agreement or
+-- budget states it, who decided it, and the clause that sets it (hand-entered from the documents named in source).
+create or replace view payment_terms as
+select * from read_csv('{root}/data/authorities/payment_terms.csv', header = true, all_varchar = true);

@@ -28,7 +28,16 @@
   const cw = narrow ? 22 : 40, ch = narrow ? 11 : 19, gap = narrow ? 3 : 4, sep = narrow ? 7 : 11;
   const colW = cols * cw + (cols - 1) * gap;
   const x0 = narrow ? W - colW : 300;
-  const top = narrow ? 46 : 66;
+  // above the stack, what the arenas cost to build, public and private money: the bill is the public's part of it
+  const cost = layers.find((l) => l.key === 'build')?.cost_2026_m ?? 0;
+  const pubBuild = layers.find((l) => l.key === 'build')?.public_2026_m ?? 0;
+  // on phones the shares sit inside the bar, so the graphic stays short enough for the step cards below it
+  const costTop = narrow ? 34 : 44;
+  const barY = costTop + (narrow ? 8 : 12);
+  const barH = narrow ? 18 : 14;
+  const pw = cost ? (W * pubBuild) / cost : 0;
+  const pct = (v) => `${Math.round((100 * v) / cost)}%`;
+  const top = (narrow ? 46 : 66) + (cost ? (narrow ? 48 : 74) : 0);
   const rowsOf = count.map((c) => Math.max(1, Math.ceil(c / cols)));
   const colH = rowsOf.reduce((a, r) => a + r * ch + (r - 1) * gap, 0) + (rowsOf.length - 1) * sep;
   const H = top + colH + (narrow ? 8 : 12);
@@ -73,6 +82,20 @@
       <rect class="bs-bill bs-swatch" x="0" y="3" width={narrow ? 22 : 30} height={narrow ? 11 : 15} rx="2" />
       <text class="t-muted" x={narrow ? 30 : 38} y={narrow ? 13 : 15} font-size={FONT}>Each bill: $100 million</text>
     </g>
+    {#if cost}
+      <g class="bs-cost" data-tip={`Building the arenas cost ${money(cost)} (2026 dollars): ${money(pubBuild)} public, ${money(cost - pubBuild)} private`}>
+        <text class="bs-name" x="0" y={costTop} font-size={FONT}>What the arenas cost to build: <tspan class="bs-strong">{long(cost)}</tspan></text>
+        <path class="bs-cost-pub" d="M0,{barY}H{pw - 1}V{barY + barH}H0Z" />
+        <path class="bs-cost-priv" d="M{pw + 1},{barY}H{W - 3}Q{W},{barY} {W},{barY + 3}V{barY + barH - 3}Q{W},{barY + barH} {W - 3},{barY + barH}H{pw + 1}Z" />
+        {#if narrow}
+          <text class="bs-in-pub" x="6" y={barY + barH / 2} dy="0.34em" font-size={FONT}>Public {pct(pubBuild)}</text>
+          <text class="bs-in-priv" x={W - 6} y={barY + barH / 2} dy="0.34em" text-anchor="end" font-size={FONT}>Private {pct(cost - pubBuild)}</text>
+        {:else}
+          <text class="bs-name" x="0" y={barY + barH + 16} font-size={FONT}><tspan class="bs-strong">Public {pct(pubBuild)}</tspan>, {long(pubBuild)}</text>
+          <text class="bs-name" x={W} y={barY + barH + 16} text-anchor="end" font-size={FONT}><tspan class="bs-strong">Private {pct(cost - pubBuild)}</tspan>, {long(cost - pubBuild)}</text>
+        {/if}
+      </g>
+    {/if}
     <g class="bs-total">
       <text class="bs-num" x={totalX} y={top - (narrow ? 14 : 18)} text-anchor="middle" font-size={narrow ? 19 : 26}>{long(total)}{narrow ? '' : ' in all'}</text>
     </g>

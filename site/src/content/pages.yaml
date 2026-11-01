@@ -15,44 +15,47 @@ home:
   sources: [ledger, team-ledger]
   # What we found, under the head: one line per finding, each pointing to the section of story.yaml that holds it
   findings:
-    - p: >-
-        Governments have put or committed **{{expanded_public}}** in public money and tax breaks to the
-        {{arenas_n}} arenas, and {{after_opening_share}} of it came, or is committed, after the arenas opened.
+    - n: '{{expanded_public:short}}'
+      p: >-
+        in public money and tax breaks for the {{arenas_n}} arenas, {{expanded_share}} of all the money that has gone
+        into them. Private money paid {{private_build_share}} of the cost of building them.
       to: bill
+      link: How the bill adds up
       sources: [ledger]
-    - p: >-
-        The {{value_group_n}} least valuable teams play in arenas holding **{{value_bottom10_public}}** of public
-        money, against {{value_top10_public}} for the {{value_group_n}} most valuable.
+    - n: '{{value_bottom10_spend_share:short}} vs {{value_top10_spend_share:short}}'
+      p: >-
+        The public's share of everything spent on the arenas of the {{value_group_n}} least valuable teams, against
+        the {{value_group_n}} most valuable.
       to: teams
       sources: [ledger, team-ledger]
-    - p: >-
-        Since 2014, renovating or buying arenas that already stand has drawn **{{rebuild_ratio}} times** as much
-        public money as building new ones, counting Oklahoma City's arena under construction.
+    - n: '{{after_opening_share:short}}'
+      p: >-
+        of the public money came, or is committed, after the arenas opened. At {{after_more_n}} of the
+        {{arenas_n}} arenas the public has now paid more since opening night than it did to build them, led by
+        Madison Square Garden's tax break: {{nyk_exemption}} since 1984, with no end date.
       to: rebuild
-      sources: [ledger]
-    - p: >-
-        Since 2014, taxes residents mostly pay have supplied **{{residents_share_since_2014}}** of the public money
-        to build, renovate and buy the arenas, up from {{residents_share_before_2014}} before, and
-        {{unvoted_since_2014_share}} of it was approved with no public vote. Sales taxes like Salt Lake City's take
-        about {{itep_ut_sales_ratio}} times as large a share of income from Utah's poorest fifth of households as from
-        its richest one percent.
+      sources: [ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026]
+    - n: '{{residents_share_since_2014:short}}'
+      p: >-
+        of the public money since 2014 came from taxes residents mostly pay, up from {{residents_share_before_2014}}
+        before, and {{unvoted_since_2014_share}} of it was approved with no public vote.
       to: pays
-      sources: [ledger, threat-ledger, itep-who-pays-7]
-    - p: >-
-        The average team is worth **{{value_mean_2026}}**, {{value_growth_2014}} times the 2014 average before
-        inflation. None of the {{public_deals_read}} public arena deals whose terms could be read gives the public a
-        share when a team is sold.
+      sources: [ledger, threat-ledger]
+    - n: '{{value_mean_2026:short}}'
+      p: >-
+        is the average team's value, {{value_growth_2014}} times the 2014 average before inflation. None of the
+        {{public_deals_read}} public deals whose terms could be read gives the public a share when a team is sold.
       to: gains
       sources: [team-ledger]
-    - p: >-
-        Owners from finance or investment funds reach **{{finance_teams_n}}** of the {{arenas_n}} teams, and the
-        league itself receives a share of one fund's fees.
+    - n: '{{finance_teams_n}} of {{arenas_n}}'
+      p: >-
+        teams have an owner from finance or an investment fund behind them, and the league itself receives a share of
+        one fund's fees.
       to: behind
       sources: [team-ledger, sec-owl-20251231]
-    - p: >-
-        Of the current arena leases, **{{leases_by_2036}}** end by 2036. After {{threats_same_city}} of the
-        {{threats_counted}} relocation threats documented since 1994, public money followed in the same city, but
-        deals that came with no threat were no smaller and no less one-sided.
+    - n: '{{leases_by_2036}}'
+      p: >-
+        arena leases end by 2036, and public money is already pending in Memphis, Portland, San Antonio and Houston.
       to: next
       sources: [threat-ledger, ledger]
 
@@ -263,6 +266,45 @@ arenas:
         against {{takeover_construction_public}} of public money when they were built.
       sources: [ledger, capitalimprovementboard-cib-of-managers-of-marion-county-fs, ibo-2023-march-description-of-public-subsidies-for-m]
     - fig: takeovers
+    - h3: How owners paid their share
+    - p: >-
+        Private money paid {{building_private}}, **{{private_build_share}}** of what today's arenas cost to build.
+        Owners seldom publish how they raised it: for {{private_remainder_n}} of the {{arenas_n}} arenas, the private
+        figure here is the cost less the public money the records show. Where documents do show it, the money came
+        from the owners themselves, from bank loans and from public bonds that the team repays.
+      sources: [ledger]
+    - cards:
+        - title: The owners' money
+          stat: '{{mil_owners_initial:short}}'
+          value: From the Bucks' owners, at first
+          text: >-
+            Milwaukee's owners put {{mil_owners_initial}} into Fiserv Forum and agreed to pay any costs beyond the
+            budget, about {{mil_overruns}} more. Herb Kohl, who sold them the team, gave {{mil_kohl_gift}}.
+          sources: [wi-lfb-informational-paper-18]
+        - title: Bank loans
+          stat: '{{sac_kings_loan:short}}'
+          value: Borrowed by the Kings
+          text: >-
+            The Kings' arena company borrowed {{sac_kings_loan}} for Golden 1 Center from banks led by Goldman Sachs
+            and added {{sac_kings_equity}} of its owners' money, at the city's 2015 estimate of the cost.
+          sources: [cityofsacramento-2015-lease-revenue-bonds-series-2015-g1c]
+        - title: Public bonds the team repays
+          stat: '{{det_2014b:short}}'
+          value: Repaid by the Ilitch family
+          text: >-
+            The Ilitch family, whose company runs Little Caesars Arena, repaid {{det_2014b}} of state bonds for it
+            in 2017 by paying its concession fees early. This page counts such bonds as private money. Counted as
+            public, the public share of building would be {{building_share_with_conduit}}, not
+            {{building_cost_share}}.
+          sources: [degc-ugd-2, ledger]
+    - p: >-
+        What owners get back is the arena's income. Milwaukee's lease gives the Bucks all arena revenue except a
+        ticket surcharge, and has them run and repair the building. Houston's lets the Rockets keep naming, parking
+        and concession revenue, and Oklahoma City's license for its new arena lets the Thunder keep the naming rights
+        the city used to share. A few deals split the income: Miami-Dade collects the naming-rights money for the
+        Heat's arena and passes part of it to the team's arena company, and the Magic pay Orlando part of theirs
+        toward the arena's operating costs.
+      sources: [wi-lfb-informational-paper-18, houstonsports-toyota-center-arena-lease, okc-pbcarena-use-license-agreementfinal-6-12-25-1, miamidadeclerk-cafr2025-complete, occompt-occompt]
 
 taxes:
   path: /taxes/
@@ -305,6 +347,13 @@ taxes:
         drink, and car rentals in Milwaukee County. Part of those taxes repays the district's arena bonds.
       sources: [wi-dor-expo-tax, wi-lfb-informational-paper-18]
     - fig: wcd
+    - h3: What comes due every year
+    - p: >-
+        Yearly payments and property-tax breaks are owed under deals and laws already in place, so they come due
+        without a new vote. Together they came to about {{recurring_2025}} in 2025, {{msg_2025}} of it Madison Square
+        Garden's tax break.
+      sources: [ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026]
+    - fig: recurring
     - h3: Payments to teams and operators
     - fig: ongoing
 

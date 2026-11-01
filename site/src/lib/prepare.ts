@@ -19,7 +19,7 @@ type Block =
   | { scrolly: string; steps: Step[] }
   | { teams: string; title: string; intro: string; sources?: Ref[] }
   | { stats: { value: string; label: string }[]; sources?: Ref[] }
-  | { cards: { title: string; value?: string; text: string; sources?: Ref[] }[] }
+  | { cards: { title: string; stat?: string; value?: string; text: string; sources?: Ref[] }[] }
   | { funds: { fund: string; text: string; sources?: Ref[] }[] }
   | { reveal: string; value: string; sources?: Ref[] }
   | { lookup: string; title: string; intro: string; sources?: Ref[] };
@@ -36,7 +36,7 @@ export type Prepared =
   | { kind: 'funds'; funds: PreparedFund[] }
   | { kind: 'reveal'; lead: string; value: string; sources: string[]; numbers: number[] }
   | { kind: 'lookup'; id: string; title: string; intro: string; sources: string[]; numbers: number[] };
-export type PreparedCard = { title: string; value?: string; text: string; sources: string[]; numbers: number[] };
+export type PreparedCard = { title: string; stat?: string; value?: string; text: string; sources: string[]; numbers: number[] };
 export type PreparedFund = {
   fund: string;
   type: string;
@@ -77,9 +77,11 @@ export async function prepare(blocks: Block[], cites: Citations, where: string):
       const cards = b.cards.map((c, j) => {
         const where = `${at} card ${j + 1}`;
         const own = ids(c.sources);
-        const all = blockSources(`${c.value ?? ''} ${c.text}`, own);
+        const all = blockSources(`${c.stat ?? ''} ${c.value ?? ''} ${c.text}`, own);
+        if (c.stat && !tokenKeys(c.stat).length) throw new Error(`${where}: the key figure must be a token`);
         return {
           title: plain(c.title, { where: `${where} title`, allow: ALLOW, sources: own }),
+          stat: c.stat ? paragraph(c.stat, all, `${where} figure`, undefined, { link: false }).html : undefined,
           value: c.value ? paragraph(c.value, all, `${where} value`).html : undefined,
           text: paragraph(c.text, all, `${where} text`).html,
           sources: all,

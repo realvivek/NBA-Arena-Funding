@@ -35,15 +35,16 @@ datasets:
     select * from (
         select 1 as ord, 'build' as key, 'Building the arenas' as name,
                (select sum(public_2026_m) from items where core and kind = 'construction')
-               + (select sum(coalesce(pilot_2026_m, 0)) from arenas) as public_2026_m
-        union all select 2, 'reno', 'Renovations', sum(public_2026_m) from items where core and kind = 'renovation'
-        union all select 3, 'buy', 'Buying arenas', sum(public_2026_m) from items where core and kind = 'purchase'
-        union all select 4, 'pay', 'Yearly payments', sum(public_2026_m) from items where core and kind = 'ongoing'
+               + (select sum(coalesce(pilot_2026_m, 0)) from arenas) as public_2026_m,
+               (select sum(spending_2026_m) from items where core and kind = 'construction') as cost_2026_m
+        union all select 2, 'reno', 'Renovations', sum(public_2026_m), null from items where core and kind = 'renovation'
+        union all select 3, 'buy', 'Buying arenas', sum(public_2026_m), null from items where core and kind = 'purchase'
+        union all select 4, 'pay', 'Yearly payments', sum(public_2026_m), null from items where core and kind = 'ongoing'
         union all select 5, 'breaks', 'Property-tax breaks',
-               (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'))
+               (select sum(tax_break_cumulative_2026_m) from arenas where tax_break_in_expanded_total = 'Y'), null)
     order by ord
   sources: [ledger, fred-cpiaucns]
-  note: The five parts of the expanded total. Building includes Barclays Center's PILOT bonds, which paid for its construction and are repaid with the property tax the arena would otherwise owe. Tax breaks are property-tax exemptions (Madison Square Garden, the United Center's valuation formula); the federal cost of tax-exempt bonds is not included.
+  note: The five parts of the expanded total, and on the first row what the arenas cost to build, public and private money together (cost_2026_m). Building includes Barclays Center's PILOT bonds, which paid for its construction and are repaid with the property tax the arena would otherwise owe. Tax breaks are property-tax exemptions (Madison Square Garden, the United Center's valuation formula); the federal cost of tax-exempt bonds is not included.
 
 # ------------------------------------------------------------------ chart 1: building versus rebuilding
 - id: rebuild-by-year
@@ -249,6 +250,61 @@ datasets:
   row_sources: sources
   require_row_sources: true
 
+# ------------------------------------------------------------------ after opening night (chapter 3, taxes page)
+- id: after-kinds
+  title: Public money after the arenas opened, by what it paid for, when it comes due and who approved it
+  sql: |
+    with g as (
+        select 'what' as bar, kind as key, public_2026_m, team from after_items
+        union all select 'due', timing, public_2026_m, team from after_items
+        union all select 'who', approved, public_2026_m, team from after_items),
+    t as (select bar, key, team, sum(public_2026_m) as v from g group by all)
+    select bar, key, sum(v) as value_2026_m, count(*) as arenas,
+           list(team order by v desc)[1:3] as largest
+    from t group by bar, key
+    order by case bar when 'what' then 1 when 'due' then 2 else 3 end, value_2026_m desc
+  sources: [ledger, threat-ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026, uc-formula-method, fred-cpiaucns]
+  note: What it paid for (renovation, purchase, ongoing yearly payments, property-tax break), when it comes due (owed under agreements and laws already in place, or a new deal) and who approved it (voters or officials), from the view after_items; largest lists the three arenas with the most in each part.
+
+- id: after-by-arena
+  title: Each arena's public money after it opened, by kind, against the public money that built it
+  sql: |
+    select a.team, a.renovation, a.purchase, a.ongoing, a.tax_breaks, a.after_2026_m, a.owed_2026_m, a.build_2026_m,
+           a.more_after,
+           coalesce((select list(distinct s.source_id order by s.source_id) from item_sources s
+                     where s.role = 'public' and s.item_id in (select item_id from after_items x where x.team = a.team)), [])
+           || coalesce((select list(distinct s.source_id order by s.source_id) from arena_sources s
+                        where s.row_type = 'current_arena' and s.team = a.team and s.field = 'tax_break_source'
+                          and a.tax_breaks > 0), []) as sources
+    from after_by_arena a
+    order by a.after_2026_m desc
+  sources: [ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026, uc-formula-method, fred-cpiaucns]
+  row_sources: sources
+  require_row_sources: true
+  note: After opening means renovations, purchases, yearly payments and property-tax breaks; building money includes Barclays Center's PILOT bonds, as in the bill. more_after marks arenas where the public has paid more since opening than it did to build them.
+
+- id: recurring-by-year
+  title: Yearly payments to teams and arena operators and property-tax breaks, by year
+  sql: |
+    select year, team, kind, description, public_2026_m
+    from after_items where kind in ('ongoing', 'break') and year <= 2025
+    order by year, team, description
+  sources: [ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026, uc-formula-method, fred-cpiaucns]
+  note: Through 2025, the last full year in the records. Madison Square Garden's exemption for fiscal 1984-2023 is read from the bars of the Independent Budget Office's chart and scaled to its stated total; fiscal 2024 and 2025 are the Department of Finance's values. The United Center's formula is counted in the year each tax bill was paid. Repairs and renovation money are counted by project, not by year, and are not included.
+
+- id: payment-terms
+  title: Public payments under deals and laws in force, and the years they run
+  sql: |
+    select p.team, p.what, cast(p.start_year as integer) as "start", try_cast(p.end_year as integer) as "end", p.amount,
+           p.decided, p.approved, p.clause, p.label,
+           coalesce((select list(s.source_id order by s.ord) from term_sources s where s.team = p.team and s.what = p.what), []) as sources
+    from payment_terms p
+    order by coalesce(try_cast(p.end_year as integer), 9999) desc, p.team
+  sources: [ledger]
+  row_sources: sources
+  require_row_sources: true
+  note: Entered by hand from each agreement, audit, budget or report named in its sources (data/authorities/payment_terms.csv); amounts as the documents state them, in the dollars of their day. A blank end year means the payment has no end date.
+
 # ------------------------------------------------------------------ chart 9 and the threats page
 - id: threats
   title: Relocation threats and what followed
@@ -367,7 +423,9 @@ datasets:
 - id: team-values
   title: What each team's owner paid, what the team is worth now, and the public money in its arena
   sql: |
-    with pub as (select team, sum(public_2026_m) filter (where core) as public_2026_m from items where kind <> 'project' group by team),
+    with pub as (select team, sum(public_2026_m) filter (where core) as public_2026_m,
+                        sum(spending_2026_m) filter (where core) as spending_2026_m
+                 from items where kind <> 'project' group by team),
          brk as (select team, coalesce(pilot_2026_m, 0)
                        + case when tax_break_in_expanded_total = 'Y' then tax_break_cumulative_2026_m else 0 end as tax_breaks_2026_m
                  from arenas)
@@ -375,7 +433,8 @@ datasets:
            v.price_m * (select factor_2026 from cpi where cpi.year = v.price_year) as price_2026_m,
            v.seller_price_m, v.seller_year, v.forbes_2025_b, v.forbes_2026_b, v.sportico_2026_b, v.value_label,
            v.deal, v.deal_value_b, v.deal_date, v.deal_label, v.note,
-           coalesce(p.public_2026_m, 0) as public_2026_m, coalesce(b.tax_breaks_2026_m, 0) as tax_breaks_2026_m,
+           coalesce(p.public_2026_m, 0) as public_2026_m, coalesce(p.spending_2026_m, 0) as spending_2026_m,
+           coalesce(b.tax_breaks_2026_m, 0) as tax_breaks_2026_m,
            coalesce((select list(s.source_id order by case s.field when 'price' then 1 when 'value' then 2 else 3 end, s.ord)
                      from value_sources s where s.team = v.team), []) as sources
     from team_values v left join pub p using (team) left join brk b using (team)

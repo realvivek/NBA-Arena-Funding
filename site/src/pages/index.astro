@@ -33,18 +33,21 @@ const deck = paragraph(page.deck, page.sources, 'home deck', cites);
 const leadFigure = (blocks: (typeof sections)[number]['data']['blocks']) => {
   for (const b of blocks) if ('scrolly' in b || 'fig' in b) return 'scrolly' in b ? b.scrolly : b.fig;
 };
-const findings: { html: string; href: string; label: string }[] = [];
+const findings: { n: string; html: string; href: string; label: string }[] = [];
 for (const [i, f] of page.findings.entries()) {
   const where = `home finding ${i + 1}`;
   const s = sections.find((x) => x.id === f.to);
   if (!s) throw new Error(`${where}: unknown story section ${f.to}`);
   const fig = s.data.title ? undefined : leadFigure(s.data.blocks);
   if (!s.data.title && !fig) throw new Error(`${where}: section ${f.to} has neither a title nor a chart to link to`);
-  const label = s.data.title
-    ? plain(s.data.title, { where: `${where} link` })
-    : plain((await getEntry('figures', fig!))!.data.title, { where: `${where} link` });
+  const label = f.link
+    ? plain(f.link, { where: `${where} link` })
+    : s.data.title
+      ? plain(s.data.title, { where: `${where} link` })
+      : plain((await getEntry('figures', fig!))!.data.title, { where: `${where} link` });
+  const n = paragraph(f.n, f.sources, `${where} figure`, cites, { link: false }).html;
   const { html } = paragraph(f.p, f.sources, where, cites);
-  findings.push({ html, href: s.data.title ? `#${slug(s.data.title)}` : `#fig-${fig}`, label });
+  findings.push({ n, html, href: s.data.title ? `#${slug(s.data.title)}` : `#fig-${fig}`, label });
 }
 const [opening, ...rest] = sections;
 if (opening.data.title) throw new Error('the story opens with its lead graphic, without a chapter title');
@@ -98,7 +101,11 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
         <ul>
           {findings.map((f) => (
             <li>
-              <Fragment set:html={f.html} />{'\u00a0'}<a class="find-go" href={f.href} aria-label={`Read more: ${f.label}`} title={f.label}><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v7.5M2.75 6.5 6 9.75 9.25 6.5" /></svg></a>
+              <p class="find-n" set:html={f.n} />
+              <div class="find-body">
+                <p class="find-p" set:html={f.html} />
+                <a class="find-go" href={f.href}>{f.label}<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v7.5M2.75 6.5 6 9.75 9.25 6.5" /></svg></a>
+              </div>
             </li>
           ))}
         </ul>

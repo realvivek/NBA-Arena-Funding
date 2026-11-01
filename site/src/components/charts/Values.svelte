@@ -20,6 +20,14 @@
   const ticks = Array.from({ length: vmax / (narrow ? 4 : 2) + 1 }, (_, i) => i * (narrow ? 4 : 2));
   const tipPrice = (r) => `${TEAM_NAME[r.team]}: ${r.owner} paid ${money(r.price_m)} in ${r.price_year} (${money(r.price_2026_m)} in 2026 dollars)`;
   const tipValue = (r) => `${TEAM_NAME[r.team]}: worth ${money(r.forbes_2026_b * 1000)} (Forbes, October 2026)`;
+  // one label on the row with the most direct public money, so the small blue bars read as money next to the values
+  const call = [...data].sort((a, b) => b.public_2026_m - a.public_2026_m)[0];
+  const cy = mt + data.indexOf(call) * rowH + rowH / 2;
+  const cxBar = sx(call.public_2026_m / 1000);
+  const cxText = sx(vmax * (narrow ? 0.62 : 0.56));
+  const callLines = narrow
+    ? [`${short(call.team)}: ${money(call.public_2026_m)}`, 'of public money', 'in the arena']
+    : [`${short(call.team)}: ${money(call.public_2026_m)} of public money in the arena,`, `against a team value of ${money(call.forbes_2026_b * 1000, 1)}`];
   const tipPublic = (r) =>
     `${TEAM_NAME[r.team]}: ${money(r.public_2026_m)} of public money in the arena${r.tax_breaks_2026_m ? `, plus ${money(r.tax_breaks_2026_m)} in tax breaks` : ''} (2026 dollars)`;
 </script>
@@ -52,6 +60,10 @@
         <circle class="db-paid" cx={sx(r.price_2026_m / 1000)} cy={y - 3} r="4" data-tip={tipPrice(r)} />
       {/if}
       <text class="tick t-ink" x={sx(r.forbes_2026_b) + 9} y={y - 3} dy="0.32em" font-size={FONT}>{money(r.forbes_2026_b * 1000, 1)}</text>
+    {/each}
+    <path class="ann-line" d="M{cxBar + 3},{cy + 7.5}H{cxText - 6}" stroke-dasharray="2 3" />
+    {#each callLines as l, j}
+      <text class={j === 0 ? 'ann-text' : 'ann-sub'} x={cxText} y={cy + 1 + j * 15} font-size={FONT}>{l}</text>
     {/each}
   </svg>
 </div>

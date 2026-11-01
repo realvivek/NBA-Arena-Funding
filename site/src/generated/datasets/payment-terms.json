@@ -1,0 +1,179 @@
+{
+ "id": "payment-terms",
+ "title": "Public payments under deals and laws in force, and the years they run",
+ "sources": [
+  "ledger",
+  "ibo-msg-property-tax-exemption-2023-report",
+  "nyc-dof-tax-expenditures-fy2026",
+  "utah-pmn",
+  "slc-council-sec-district-2024",
+  "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements",
+  "in-83950a",
+  "miamidadeclerk-cafr2025-complete",
+  "miamidade-volume-1",
+  "miamidade-2014-06-03-bcc",
+  "hoodline-target-center-if-wolves-move",
+  "gateway-edc-audit-2022",
+  "gwcomplex-board-packet-12-17-25",
+  "ideastream-county-council-approves-405-million-for-fieldhou",
+  "ideastream-county-tax-vote-cavs-guardians",
+  "actionnews5-shelby-county-commissioners-vote-unanimously-kee",
+  "oregon-moda-center-arena-comparable-structure-overview",
+  "lla-0000454ba",
+  "senate-01-124-lsed-fy-26-final"
+ ],
+ "base_sources": [
+  "ledger"
+ ],
+ "columns": [
+  "team",
+  "what",
+  "start",
+  "end",
+  "amount",
+  "decided",
+  "approved",
+  "clause",
+  "label",
+  "sources"
+ ],
+ "rows": [
+  {
+   "team": "NYK",
+   "what": "Madison Square Garden's property-tax exemption",
+   "start": 1982,
+   "end": null,
+   "amount": "about $43M a year",
+   "decided": "State law, 1982",
+   "approved": "officials",
+   "clause": "Full property-tax exemption since 1982 (Real Property Tax Law section 429) for as long as both an NBA and an NHL team play their home games there, with no sunset; the Department of Finance values it at $43.3M in fiscal 2026",
+   "label": "b",
+   "sources": [
+    "ibo-msg-property-tax-exemption-2023-report",
+    "nyc-dof-tax-expenditures-fy2026"
+   ]
+  },
+  {
+   "team": "UTA",
+   "what": "0.5% city sales tax for the Delta Center deal",
+   "start": 2025,
+   "end": 2054,
+   "amount": "projected $1.2B over 30 years",
+   "decided": "Legislature and city council, 2024",
+   "approved": "officials",
+   "clause": "30-year non-relocation commitment tied to Salt Lake City's 0.5% sales tax from 2025 (about 2054-55)",
+   "label": "b/c",
+   "sources": [
+    "utah-pmn",
+    "slc-council-sec-district-2024"
+   ]
+  },
+  {
+   "team": "ATL",
+   "what": "Rental-car tax for the renovation bonds",
+   "start": 2016,
+   "end": 2047,
+   "amount": "tax extended to 2047",
+   "decided": "Legislature and city council, 2016",
+   "approved": "officials",
+   "clause": "City $142.5M = $110M of bonds backed by the existing rental-car tax, which the Legislature extended from 2038 to 2047 (House Bill 937, signed May 3, 2016)",
+   "label": "c",
+   "sources": [
+    "bondbuyer-atlanta-to-pay-200m-for-nba-arena-improvements"
+   ]
+  },
+  {
+   "team": "IND",
+   "what": "Pacers operating agreement",
+   "start": 2019,
+   "end": 2044,
+   "amount": "about $12.5M a year, plus repairs",
+   "decided": "Capital Improvement Board, 2019",
+   "approved": "officials",
+   "clause": "operating expense reimbursements (approximately $12,500,000 in year one with a 4.6% increase after six years)",
+   "label": "b",
+   "sources": [
+    "in-83950a"
+   ]
+  },
+  {
+   "team": "MIA",
+   "what": "County payments to the arena operator",
+   "start": 1999,
+   "end": 2035,
+   "amount": "$6.4M a year, then $8.5M",
+   "decided": "Voters, 1996; county commission, 2014",
+   "approved": "voters",
+   "clause": "County payments of $6.4M a year through fiscal 2029 (FY2026 budget), $1.5M in fiscal 2030, then $8.5M a year to June 2035, under the 2014 agreements; either side may end them from July 2035",
+   "label": "b",
+   "sources": [
+    "miamidadeclerk-cafr2025-complete",
+    "miamidade-volume-1",
+    "miamidade-2014-06-03-bcc"
+   ]
+  },
+  {
+   "team": "MIN",
+   "what": "Target Center debt service",
+   "start": 2016,
+   "end": 2035,
+   "amount": "$53.5M in 2026-2035",
+   "decided": "City council, 2016",
+   "approved": "officials",
+   "clause": "a city finance memo puts Target Center debt service at about $53.5M for 2026-2035",
+   "label": "c",
+   "sources": [
+    "hoodline-target-center-if-wolves-move"
+   ]
+  },
+  {
+   "team": "CLE",
+   "what": "Major capital repairs the lease leaves to the public",
+   "start": 2017,
+   "end": 2034,
+   "amount": "no fixed amount",
+   "decided": "County and city, 2017",
+   "approved": "officials",
+   "clause": "Gateway still responsible for Major Capital Repairs (audits); its board has told the city and county it lacks the funds (Resolution 2025-4, which gives no date for the notice); press reports the lease covers capital repairs totaling more than $500,000 (Ideastream, 2019) and more than $400 million of repairs needed at the arena and ballpark through 2037 (Ideastream, 2026)",
+   "label": "b/c",
+   "sources": [
+    "gateway-edc-audit-2022",
+    "gwcomplex-board-packet-12-17-25",
+    "ideastream-county-council-approves-405-million-for-fieldhou",
+    "ideastream-county-tax-vote-cavs-guardians"
+   ]
+  },
+  {
+   "team": "MEM",
+   "what": "City and county operating payments",
+   "start": 2021,
+   "end": 2029,
+   "amount": "$6.3M a year from 2025",
+   "decided": "County commission, April 2022",
+   "approved": "officials",
+   "clause": "city+county pay $4.95M/yr for four seasons from 2021-22, then $6.3M/yr for four seasons",
+   "label": "c",
+   "sources": [
+    "actionnews5-shelby-county-commissioners-vote-unanimously-kee",
+    "oregon-moda-center-arena-comparable-structure-overview"
+   ]
+  },
+  {
+   "team": "NOP",
+   "what": "State payments to the team",
+   "start": 2003,
+   "end": 2029,
+   "amount": "at least $3.65M a year",
+   "decided": "Legislature and state, 2012",
+   "approved": "officials",
+   "clause": "The state must keep paying $3.65M a year, a Quality Jobs equivalent, through FY2029",
+   "label": "b",
+   "sources": [
+    "lla-0000454ba",
+    "senate-01-124-lsed-fy-26-final"
+   ]
+  }
+ ],
+ "note": "Entered by hand from each agreement, audit, budget or report named in its sources (data/authorities/payment_terms.csv); amounts as the documents state them, in the dollars of their day. A blank end year means the payment has no end date.",
+ "method": "select p.team, p.what, cast(p.start_year as integer) as \"start\", try_cast(p.end_year as integer) as \"end\", p.amount, p.decided, p.approved, p.clause, p.label, coalesce((select list(s.source_id order by s.ord) from term_sources s where s.team = p.team and s.what = p.what), []) as sources from payment_terms p order by coalesce(try_cast(p.end_year as integer), 9999) desc, p.team"
+}

@@ -16,8 +16,8 @@ for (const s of docs) {
   if (p) p.n += 1;
   else publishers.push({ name: creditName(s), url: s.url, n: 1 });
 }
-// a long list is cut short; every document is in the folded list
-const shown = publishers.slice(0, 6);
+// two publishers name the line; the rest are counted, and every document is in the folded list
+const shown = publishers.slice(0, 2);
 ---
 {docs.length > 0 && (
   <div class="src-line">

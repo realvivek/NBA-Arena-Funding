@@ -25,6 +25,10 @@ export const FIG_DATA: Record<string, string> = {
   wcd: 'wcd-annual',
   incidence: 'incidence',
   propb: 'propb-fifths',
+  afterrank: 'after-by-arena',
+  afteropen: 'after-kinds',
+  recurring: 'recurring-by-year',
+  commitments: 'payment-terms',
 };
 
 // Where each row's own sources are listed, for charts whose rows come from many documents.
@@ -40,6 +44,7 @@ export const FIG_RECORD: Record<string, { href: string; label: string }> = {
   threats: { href: sitePath('/threats/#ledger'), label: 'the threat ledger' },
   leases: { href: sitePath('/leases/#every-lease'), label: 'the lease table' },
   incidence: { href: sitePath('/arenas/'), label: "each arena's record" },
+  afterrank: { href: sitePath('/arenas/'), label: "each arena's record" },
 };
 
 /** The sources a figure cites in its caption: its own and its dataset's, not each row's. */

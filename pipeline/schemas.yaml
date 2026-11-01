@@ -67,6 +67,29 @@ authorities/lease_clock.csv:
     summary: {type: string, constraints: {required: true}}
     label: {type: string, constraints: {required: true, pattern: '^[abcu].*'}}
 
+authorities/payment_terms.csv:
+  primaryKey: [team, what]
+  fields:
+    team: {type: string, constraints: {required: true, pattern: '^[A-Z]{3}$'}}
+    what: {type: string, constraints: {required: true}}
+    start_year: {type: integer, constraints: {required: true, minimum: 1960, maximum: 2026}}
+    end_year: {type: integer, constraints: {minimum: 2026, maximum: 2100}}
+    amount: {type: string, constraints: {required: true}}
+    decided: {type: string, constraints: {required: true}}
+    approved: {type: string, constraints: {required: true, enum: [voters, officials]}}
+    clause: {type: string, constraints: {required: true}}
+    label: {type: string, constraints: {required: true, pattern: '^[abc](/[abc])?$'}}
+    source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+
+property_tax/msg_exemption_by_year.csv:
+  primaryKey: [fiscal_year]
+  fields:
+    fiscal_year: {type: integer, constraints: {required: true, unique: true, minimum: 1984, maximum: 2026}}
+    forgone_m: {type: number, constraints: {required: true, minimum: 0}}
+    dollars: {type: string, constraints: {required: true, enum: ['2023', nominal]}}
+    label: {type: string, constraints: {required: true, enum: [a, b]}}
+    source: {type: string, constraints: {required: true, pattern: '^https?://.*'}}
+
 property_tax/united_center_formula_savings.csv:
   primaryKey: [tax_year]
   fields:
