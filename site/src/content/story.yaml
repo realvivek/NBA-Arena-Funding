@@ -142,16 +142,16 @@ rebuild:
       sources: [ledger, threat-ledger]
     - fig: afteropen
     - p: >-
-        Those payments come to about {{recurring_2025}} a year, and many run for decades. Several end just as the
-        next leases do, which is when the asking starts again.
+        Yearly payments and tax breaks come to about {{recurring_2025}} a year, and many run for decades. Several
+        end just as the next leases do, which is when the asking starts again.
       sources: [ledger, ibo-msg-property-tax-exemption-2023-report, nyc-dof-tax-expenditures-fy2026]
     - fig: commitments
     - h3: Rebuilding has overtaken building
     - p: >-
-        The spending does not stop when an arena opens. Since 2014, governments have put or committed
-        **{{rebuild_since_2014}}** to renovating or buying arenas that already stand, {{rebuild_ratio}} times the
-        {{build_since_2014}} for new ones: {{build_opened_since_2014}} for the arenas that opened in those years and
-        {{okc_new_arena}} for Oklahoma City's, now under construction. Over those years, Indianapolis, Salt Lake City
+        Since 2014, governments have put or committed **{{rebuild_since_2014}}** to renovating or buying arenas
+        that already stand, {{rebuild_ratio}} times the {{build_since_2014}} for new ones:
+        {{build_opened_since_2014}} for the arenas that opened in those years and {{okc_new_arena}} for Oklahoma
+        City's, now under construction. Over those years, Indianapolis, Salt Lake City
         and Washington have each put or committed at least {{rebuild_top3_min}} to an arena that already stands.
       sources: [ledger]
     - fig: rebuild
