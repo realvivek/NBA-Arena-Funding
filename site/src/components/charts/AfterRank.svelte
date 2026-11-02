@@ -34,6 +34,11 @@
       return s;
     });
   };
+  // the amount sits just after its bar, unless the tick for the building money is in the way, then after the tick
+  const labelX = (r) => {
+    const xb = sx(r.after_2026_m), xt = r.build_2026_m > 0 ? sx(r.build_2026_m) : -Infinity;
+    return xt <= xb + 2 || xb + 7 + textWidth(money(r.after_2026_m), FONT) + 8 <= xt ? xb + 7 : xt + 7;
+  };
   const tip = (r) =>
     `${city(r.team)}: ${money(r.after_2026_m)} of public money since the arena opened (${KINDS.filter((k) => r[k.key] > 0)
       .map((k) => `${k.name.toLowerCase()} ${money(r[k.key])}`)
@@ -61,7 +66,7 @@
           <!-- what the public paid to build it -->
           <rect class="f-ink" x={sx(r.build_2026_m) - 1} y={y - 3} width="2" height={bh + 6} />
         {/if}
-        <text class="tick t-ink" x={Math.max(sx(r.after_2026_m), sx(r.build_2026_m)) + 7} y={y + bh / 2} dy="0.32em" font-size={FONT}>{money(r.after_2026_m)}{#if !narrow && r.build_2026_m === 0}<tspan class="t-muted" dx="6">built privately</tspan>{/if}</text>
+        <text class="tick t-ink" x={labelX(r)} y={y + bh / 2} dy="0.32em" font-size={FONT}>{money(r.after_2026_m)}{#if !narrow && r.build_2026_m === 0}<tspan class="t-muted" dx="6">built privately</tspan>{/if}</text>
       </g>
     {/each}
   </svg>

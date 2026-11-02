@@ -24,8 +24,10 @@
   for (let k = 0; k < n - count.reduce((a, c) => a + c, 0); k++) count[order[k][1]] += 1;
 
   const W = narrow ? NARROW : WIDE;
-  const cols = 6;
-  const cw = narrow ? 22 : 40, ch = narrow ? 11 : 19, gap = narrow ? 3 : 4, sep = narrow ? 7 : 11;
+  // on phones the bills are smaller and the rows longer, so the chart stays short enough to hold the top of the
+  // screen with each step's text beneath it
+  const cols = narrow ? 8 : 6;
+  const cw = narrow ? 18 : 40, ch = narrow ? 10 : 19, gap = narrow ? 3 : 4, sep = narrow ? 7 : 11;
   const colW = cols * cw + (cols - 1) * gap;
   const x0 = narrow ? W - colW : 300;
   // above the stack, what the arenas cost to build, public and private money: the bill is the public's part of it
@@ -54,18 +56,21 @@
     return { ...l, cells, y0, y1, mid: (y0 + y1) / 2 };
   });
 
-  // labels beside the stack: spread apart so they never overlap, from the bottom up
+  // labels beside the stack, each as close to its bills as the labels around it allow: spread upward from the
+  // bottom, then, if the top one would leave the chart, back down from the top only as far as needed. A leader
+  // runs from each label to its bills.
   const NUM = narrow ? 19 : 26, NAME = narrow ? FONT : 14;
-  const minGap = narrow ? 45 : 60;
-  const lx = narrow ? x0 - 12 : x0 - 34;
-  const ly = [];
-  for (let k = 0; k < kinds.length; k++) {
-    let y = kinds[k].mid + NUM / 3;
-    if (k > 0 && ly[k - 1] - y < minGap) y = ly[k - 1] - minGap;
-    ly.push(y);
+  const minGap = narrow ? 40 : 60;
+  const lx = narrow ? x0 - 20 : x0 - 34;
+  const ly = kinds.map((l) => l.mid + NUM / 3);
+  for (let k = 1; k < ly.length; k++) if (ly[k - 1] - ly[k] < minGap) ly[k] = ly[k - 1] - minGap;
+  const last = ly.length - 1;
+  if (ly[last] < top + NUM) {
+    ly[last] = top + NUM;
+    for (let k = last - 1; k >= 0; k--) if (ly[k] - ly[k + 1] < minGap) ly[k] = ly[k + 1] + minGap;
   }
-  const over = Math.max(0, top + NUM - ly[ly.length - 1]);
-  for (let k = 0; k < ly.length; k++) ly[k] += over;
+  // the chart is tall enough for the lowest label as well as the stack
+  const Hfit = Math.max(H, ly[0] + NAME + 7 + 6);
   const nameOf = (l) => (narrow ? `${l.name} · ${share(l.public_2026_m)}` : l.name);
 
   // brackets: building, and everything after it
@@ -76,8 +81,8 @@
   const totalX = x0 + colW / 2;
 </script>
 
-<div class="plot billplot" style="aspect-ratio: {W} / {H}">
-  <svg viewBox="0 0 {W} {H}" role="img" aria-label={label}>
+<div class="plot billplot" style="aspect-ratio: {W} / {Hfit}; --ar: {(W / Hfit).toFixed(4)}">
+  <svg viewBox="0 0 {W} {Hfit}" role="img" aria-label={label}>
     <g class="bs-key">
       <rect class="bs-bill bs-swatch" x="0" y="3" width={narrow ? 22 : 30} height={narrow ? 11 : 15} rx="2" />
       <text class="t-muted" x={narrow ? 30 : 38} y={narrow ? 13 : 15} font-size={FONT}>Each bill: $100 million</text>
@@ -109,7 +114,9 @@
             <ellipse class="bs-inner" cx={c.x + cw / 2} cy={c.y + ch / 2} rx="5" ry="4" />
           {/if}
         {/each}
-        {#if !narrow}
+        {#if narrow}
+          <path class="bs-lead" d="M{lx + 4},{ly[k] - NUM / 3}H{lx + 9}L{x0 - 3},{l.mid}" />
+        {:else}
           <path class="bs-lead" d="M{lx + 6},{ly[k] - NUM / 3}H{lx + 16}L{x0 - 5},{l.mid}" />
         {/if}
         <text class="bs-num" x={lx} y={ly[k]} text-anchor="end" font-size={NUM}>{long(l.public_2026_m)}</text>

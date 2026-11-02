@@ -1474,7 +1474,8 @@ figure.chart {
 }
 
 /* Scrollytelling: the chart holds still while the steps scroll past it. Without scripts every step is shown and
-   the chart rests in its last state, which carries every mark and label. */
+   the chart rests in its last state, which carries every mark and label. The script (Layout.astro) measures the
+   chart so it fits the screen: --plot-chrome and --plot-top on wide screens, --card-top on phones. */
 .scrolly-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1491,6 +1492,12 @@ figure.chart {
   border-radius: 8px;
   box-shadow: var(--card-shadow);
   padding: 16px 18px 12px;
+}
+/* the chart is scaled down, never past its column, until it fits the height it is given (--ar is its width over
+   its height, set on the chart) */
+.scrolly .scrolly-sticky .plot {
+  width: min(100%, max(var(--fit-min, 18rem), calc(var(--fit-h) * var(--ar, 1))));
+  margin-inline: auto;
 }
 .step {
   font-family: var(--serif);
@@ -1509,29 +1516,52 @@ figure.chart {
 }
 .scrolly:not(.ready) .seg,
 .scrolly:not(.ready) .ann,
-.scrolly:not(.ready) .band {
+.scrolly:not(.ready) .band,
+.scrolly:not(.ready) .step,
+.scrolly:not(.ready) .step-card {
   transition: none;
 }
+/* Wide screens: the steps scroll in a column at the left while the chart, with its title, holds the middle of
+   the screen at the right. A step takes over as it passes 60 percent of the way down the screen, so the text
+   that explains the chart is always in view beside it. */
 @media (min-width: 64rem) {
   .scrolly-body {
     grid-template-columns: minmax(16rem, 21rem) minmax(0, 1fr);
     gap: 0 48px;
+    align-items: start;
   }
   .scrolly-steps {
     grid-column: 1;
     grid-row: 1;
-    padding: 30vh 0 34vh;
+    padding: 34vh 0 48vh;
   }
   .scrolly-plot {
     grid-column: 2;
     grid-row: 1;
+    position: sticky;
+    top: var(--plot-top, 16px);
+    background: var(--surface);
+    border: 1px solid var(--paper-edge);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    padding: 16px 22px 12px;
+    --fit-h: calc(100vh - var(--plot-chrome, 190px));
+    --fit-min: 30rem;
   }
   .scrolly-sticky {
-    top: max(16px, calc(50vh - 18rem));
+    position: static;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .scrolly .fig-head {
+    padding-top: 0;
   }
   .step {
-    margin: 0 0 58vh;
-    font-size: 1.3125rem;
+    margin: 0 0 44vh;
+    font-size: 1.1875rem;
     line-height: 1.5;
     transition: opacity 0.3s ease;
   }
@@ -1539,7 +1569,7 @@ figure.chart {
     margin-bottom: 0;
   }
   .scrolly.js .step:not(.is-active) {
-    opacity: 0.32;
+    opacity: 0.28;
   }
   /* the step text sits on paper, as on phones, so it never reads straight off the floorboards */
   .step-card {
@@ -1550,7 +1580,18 @@ figure.chart {
     box-shadow: var(--shadow);
   }
 }
+/* Phones and tablets: the chart holds the top of the screen, scaled to leave room below it, and each step's card
+   holds just under the chart while it is read. The script hands over to the next step just before the card
+   would be pushed up, and the card fades out, so a card never covers the bills it describes. */
 @media (max-width: 63.99rem) {
+  .scrolly-body {
+    --fit-h: calc(52vh - 30px);
+  }
+  @supports (height: 1svh) {
+    .scrolly-body {
+      --fit-h: calc(52svh - 30px);
+    }
+  }
   .scrolly-plot,
   .scrolly-steps {
     grid-area: 1 / 1;
@@ -1565,30 +1606,52 @@ figure.chart {
     font-size: 0.8125rem;
     gap: 2px 12px;
   }
-  /* each step is a tall stretch of scroll whose card holds below the chart while it is read, then fades as the
-     next one takes over, so a card never sits on the bills it describes */
   .step {
     max-width: 32rem;
-    min-height: 78vh;
+    min-height: 82vh;
     margin: 0 auto;
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
+    line-height: 1.5;
   }
   .step:last-child {
-    min-height: 52vh;
+    min-height: 56vh;
   }
   .step-card {
     pointer-events: auto;
     position: sticky;
-    top: 60vh;
-    padding: 14px 16px;
+    top: var(--card-top, 60vh);
+    padding: 12px 15px;
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: 4px;
     box-shadow: var(--shadow);
-    transition: opacity 0.25s ease;
+    transition: opacity 0.2s ease;
   }
-  .scrolly.js .step:not(.is-active) .step-card {
+  .scrolly.js .step:not(.is-active) .step-card,
+  .scrolly.js.is-done .step-card {
     opacity: 0;
+    pointer-events: none;
+  }
+}
+@media (max-width: 40rem) {
+  .scrolly-sticky {
+    padding: 10px 10px 6px;
+  }
+}
+/* tablets show the wide chart, which drawn narrower than 36rem would set its labels under 11px */
+@media (min-width: 40.0625rem) and (max-width: 63.99rem) {
+  .scrolly-body {
+    --fit-min: 36rem;
+  }
+}
+/* small laptops: a narrower text column leaves the chart room for its labels */
+@media (min-width: 64rem) and (max-width: 74.99rem) {
+  .scrolly-body {
+    grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+    gap: 0 32px;
+  }
+  .step {
+    font-size: 1.0625rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {

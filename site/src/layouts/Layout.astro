@@ -98,29 +98,66 @@ const asOf = new Date(meta.as_of + 'T12:00:00Z').toLocaleDateString('en-US', { m
         document.querySelectorAll('figure.scrolly').forEach(function (fig) {
           var steps = Array.prototype.slice.call(fig.querySelectorAll('.step'));
           if (!steps.length) return;
+          var cards = steps.map(function (s) { return s.querySelector('.step-card') || s; });
+          var plot = fig.querySelector('.scrolly-plot'), box = fig.querySelector('.scrolly-sticky');
           fig.classList.add('js');
+          var phone = window.matchMedia('(max-width: 63.99rem)');
+          var current = null, queued = false, cardTop = 0;
           function activate(el) {
             steps.forEach(function (s) { s.classList.toggle('is-active', s === el); });
             fig.setAttribute('data-step', el.getAttribute('data-step'));
           }
-          // The active step is the last one whose top has passed a line across the screen, so a jump (a link, a
-          // key, a fast fling) lands on the right state. On phones the chart holds the top of the screen, so the
-          // line sits lower down.
-          var phone = window.matchMedia('(max-width: 63.99rem)');
-          var current = null, queued = false;
+          function shown() {
+            var plots = Array.prototype.slice.call(box.querySelectorAll('.plot'));
+            return plots.filter(function (p) { return p.offsetHeight > 0; })[0] || null;
+          }
+          // Fit the chart to the screen. On wide screens the chart and its title hold the middle of the screen,
+          // scaled to fit its height. On phones the chart holds the top, and each step's card sits just under it.
+          function measure() {
+            var vh = window.innerHeight, p = shown();
+            if (phone.matches) {
+              fig.style.removeProperty('--plot-top');
+              fig.style.removeProperty('--plot-chrome');
+              cardTop = Math.round(box.getBoundingClientRect().height) + 10;
+              fig.style.setProperty('--card-top', cardTop + 'px');
+            } else {
+              fig.style.removeProperty('--card-top');
+              var chrome = plot.offsetHeight - (p ? p.offsetHeight : 0);
+              fig.style.setProperty('--plot-chrome', Math.round(chrome + 32) + 'px');
+              fig.style.setProperty('--plot-top', Math.max(12, Math.round((vh - plot.offsetHeight) / 2)) + 'px');
+            }
+            queue();
+          }
+          // The active step: on wide screens, the last one whose top has passed 60 percent of the way down the
+          // screen. On phones, the next step takes over just before the card above it would be pushed up over
+          // the chart, so that card has faded out by then. A jump (a link, a key, a fast fling) lands on the
+          // right state either way.
           function update() {
             queued = false;
-            var line = window.innerHeight * (phone.matches ? 0.62 : 0.5), el = steps[0];
-            steps.forEach(function (s) { if (s.getBoundingClientRect().top < line) el = s; });
+            var el = steps[0], k;
+            if (phone.matches) {
+              for (k = 1; k < steps.length; k++)
+                if (steps[k].getBoundingClientRect().top < cardTop + cards[k - 1].offsetHeight + 16) el = steps[k];
+              // past the last step the chart scrolls away; its card fades first rather than slide over it
+              k = steps.length - 1;
+              fig.classList.toggle('is-done', steps[k].getBoundingClientRect().bottom < cardTop + cards[k].offsetHeight + 16);
+            } else {
+              fig.classList.remove('is-done');
+              var line = window.innerHeight * 0.6;
+              for (k = 0; k < steps.length; k++) if (steps[k].getBoundingClientRect().top < line) el = steps[k];
+            }
             if (el !== current) { current = el; activate(el); }
           }
           function queue() {
             if (!queued) { queued = true; requestAnimationFrame(update); }
           }
-          update();
+          measure();
           requestAnimationFrame(function () { requestAnimationFrame(function () { fig.classList.add('ready'); }); });
           window.addEventListener('scroll', queue, { passive: true });
-          window.addEventListener('resize', queue);
+          window.addEventListener('resize', measure);
+          // the typefaces load after the first layout and change the title's and the cards' heights
+          if (window.ResizeObserver) new ResizeObserver(function () { measure(); }).observe(box);
+          if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
         });
       })();
       // Reading progress on the story: a line under the masthead fills as the reader goes through it, with a tick

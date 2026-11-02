@@ -123,16 +123,30 @@ test('the investigation page shows its key figures, the funds and a link to the 
 });
 
 test('the lead graphic follows the steps as the reader scrolls', async ({ browser }) => {
-  for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 }]) {
+  for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 }, { width: 375, height: 667 }]) {
     const ctx = await browser.newContext({ viewport });
     const page = await ctx.newPage();
     await page.goto('/');
     const fig = page.locator('figure.scrolly');
     const steps = await fig.locator('.step').evaluateAll((els) => els.map((e) => (e as HTMLElement).dataset.step ?? ''));
     expect(steps.length).toBeGreaterThan(1);
+    const wide = viewport.width >= 1024;
     for (const s of steps) {
-      await fig.locator(`.step[data-step="${s}"]`).evaluate((e) => e.scrollIntoView({ block: 'center' }));
+      const step = fig.locator(`.step[data-step="${s}"]`);
+      await step.evaluate((e) => e.scrollIntoView({ block: 'center' }));
       await expect(fig, `${viewport.width}px, step ${s}`).toHaveAttribute('data-step', s);
+      await page.waitForTimeout(150);
+      if (wide) {
+        // the chart and its title fit the screen while they hold
+        const plot = (await fig.locator('.scrolly-plot').boundingBox())!;
+        expect(plot.y, `${viewport.width}px, step ${s}: chart top`).toBeGreaterThanOrEqual(0);
+        expect(plot.y + plot.height, `${viewport.width}px, step ${s}: chart bottom`).toBeLessThanOrEqual(viewport.height);
+      } else {
+        // the step's card sits under the chart, never on it
+        const chart = (await fig.locator('.scrolly-sticky').boundingBox())!;
+        const card = (await step.locator('.step-card').boundingBox())!;
+        expect(card.y, `${viewport.width}px, step ${s}: card over the chart`).toBeGreaterThanOrEqual(chart.y + chart.height - 1);
+      }
     }
     await ctx.close();
   }
