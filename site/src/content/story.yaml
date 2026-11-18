@@ -294,30 +294,75 @@ next:
         without a threat were no smaller and no less one-sided: the median public share was
         {{threat_median_share}} after a threat and {{nothreat_median_share}} without one, in small samples. In
         Portland, where the team was sold in 2026 to a buyer from Dallas, the state's money is approved but still
-        pending; on Oct. 21, 2026, the city said it and the team had not yet agreed on the essential terms of a lease.
-      sources: [threat-ledger, ledger, portland-ordinance-192244]
+        pending, and on Nov. 13, 2026, the city said a deal looked unlikely before the year-end deadline for that
+        money.
+      sources: [threat-ledger, ledger, portland-ordinance-192244, sports-city-says-moda-center-deal-005331872]
     - fig: leases
     - p: >-
-        The asking has already begun. **{{pending_existing}}** is pending for the arenas in Memphis, Portland and
-        Houston, labeled on the chart, and San Antonio's own share of a new Spurs arena is pending on top of Bexar
-        County's. Memphis is holding its money until the Grizzlies sign a new lease; Portland's includes up to
-        {{por_state}} of state bonds; in Houston, no agreement with the state has been found.
-      sources: [tri-statedefender-p-349496, olis-enrolled, ksat-results-props-a-and-b-for-coliseum-complex-downt, click2houston-harris-county-approves-180m-toyota-center]
+        The asking has already begun. **{{pending_existing}}** is pending for the arenas in Memphis, Portland, Houston
+        and New Orleans, labeled on the chart, and San Antonio's own share of a new Spurs arena is pending on top of
+        Bexar County's. Memphis is holding its money until the Grizzlies sign a new lease; Portland's includes up to
+        {{por_state}} of state bonds; in Houston, no agreement with the state has been found. In New Orleans, where
+        the Pelicans' lease ends in 2029, the owner has pledged {{nop_reno_owner}} toward a proposed
+        {{nop_reno_total}} renovation and the governor {{nop_reno_state}} of state money; the state's stadium district
+        would have to find the other {{nop_reno_gap}}.
+      sources: [tri-statedefender-p-349496, olis-enrolled, ksat-results-props-a-and-b-for-coliseum-complex-downt, click2houston-harris-county-approves-180m-toyota-center, fox8live-proposed-renovations-smoothie-king-center-facing, louisianaradionetwork]
     - p: >-
         Oklahoma City is already building. Its new arena, with **{{okc_new_arena}}** of public money counting a
         garage and team offices, is due to open in 2028, and the Thunder's lease runs through at least 2053, with penalties of up to {{okc_exit_penalty}}
         for leaving early.
       sources: [okc-oklahoma-city-and-thunder-break-ground-on-contin, okc-okc-and-thunder-approve-agreements-to-keep-the-thu]
+    - h3: "Las Vegas: the expansion talks and Nevada's playbook"
     - p: >-
         Expansion would bring more deals. In March 2026 the league's owners voted to explore adding teams in Las
-        Vegas and Seattle. The labor contract keeps any expansion fees out of the revenue the league shares with
-        players, and owners expect {{expansion_fee_min}} to {{expansion_fee_max}} each, ESPN reported in October 2026,
-        money that teams have planned to spend on rosters, arena upgrades or debt. Seattle already shares arena-related tax revenue with the company that leases its arena:
-        **{{sea_arena_payments_2024}}** in 2024. Nevada exempts games played by its own professional teams from its
-        {{nv_live_ent_tax}} tax on live entertainment, and it has put public money into stadiums before: up to
-        {{nv_nfl_bonds}} of county bonds for an NFL stadium in 2016 and up to {{nv_mlb_cap}} for a baseball stadium
-        in 2023.
-      sources: [nba-pr-expansion-las-vegas-seattle-2026, nba-cba-2023, espn-nba-intel-seattle-expansion-2026-10-16, seattle-2026-adopted-budget-finance-general, seattle-2025-26-proposed-budget-finance-general, nv-nrs-368a-live-entertainment-tax, nv-sb1-2016-stadium-bonds, nv-sb1-2023-mlb-stadium]
+        Vegas and Seattle. Commissioner Adam Silver said the league needed to decide by the end of the year, that
+        expansion would take the votes of {{nba_expansion_vote_share}} of the owners, and that new teams could start
+        play in the 2028-29 season at the earliest. The labor contract keeps expansion fees out of the revenue the
+        league shares with players, and owners expect {{expansion_fee_min}} to {{expansion_fee_max}} each, ESPN
+        reported in October 2026, money teams have planned to spend on rosters, arena upgrades or debt. Seattle
+        already shares arena-related tax revenue with the company that leases its arena:
+        **{{sea_arena_payments_2024}}** in 2024.
+      sources: [nba-pr-expansion-las-vegas-seattle-2026, asaptext-transcripts, nba-cba-2023, espn-nba-intel-seattle-expansion-2026-10-16, seattle-2026-adopted-budget-finance-general, seattle-2025-26-proposed-budget-finance-general]
+    - p: >-
+        In Las Vegas, groups bidding for a team have proposed valuations of {{lv_bids_min}} or more, ESPN's Shams
+        Charania said in November 2026, and the owners would vote at a December meeting not yet scheduled, the Las
+        Vegas Review-Journal reported. Where the team would play is still open. The Golden Knights play at T-Mobile
+        Arena, which MGM Resorts and AEG built with {{tmobile_cost}} of private money in 2016. In July 2026 Bill
+        Foley, the hockey team's owner, now part of one of the groups still bidding, put the cost of making it ready
+        for the NBA at about {{foley_tmobile_reno}}.
+      sources: [fox5vegas-las-vegas-nba-expansion-bids-reach-10-billion-re, kdhnews-article-3e13af3f-9404-5564-b2c6-2b2fb9a85655, skift-new-t-mobile-arena-in-las-vegas-signals-return-o, lasvegasweekly-golden-knights-owner-bill-foley-details-his-p]
+    - p: >-
+        Silver has said some groups presented plans for "a modern entertainment palace," and the winning group would
+        spend **{{lv_arena_min}} to {{lv_arena_max}}** on a new arena, the Review-Journal reported, citing one
+        source. None of the bidders has said in public that it wants tax money to build one, and in March 2026 the
+        governor's office said public funding had not come up in its talks with groups.
+      sources: [fox5vegas-nba-las-vegas-expansion-adam-silver-talks-sphere, kdhnews-article-3e13af3f-9404-5564-b2c6-2b2fb9a85655, cdcgaming-las-vegas-governor-has-talked-with-multiple-grou]
+    - fig: lasvegas
+    - p: >-
+        If a group does ask, Nevada has a playbook. The Legislature wrote both of its big-league stadium deals in
+        special sessions, in October 2016 for the Raiders and in June 2023 for the Athletics. The Raiders' public
+        money, **{{lv_allegiant_public}}** in 2026 dollars and {{lv_allegiant_share}} of the stadium's cost, comes from
+        a new tax on hotel rooms, {{nv_room_tax_strip}} of room charges on the Strip, spent directly and through
+        county bonds the tax repays. The Athletics can get up to {{nv_mlb_cap}}: state tax credits, county bonds
+        repaid from taxes collected in a {{nv_seid_acres}}-acre district on the ballpark's site, and a county credit.
+      sources: [nv-sb1-2016-stadium-bonds, nv-sb1-2023-mlb-stadium, clark-clark]
+    - p: >-
+        Neither deal went to voters. Both laws set aside the state law that otherwise requires an election on county
+        debt or lets voters force one by petition, and in May 2024 the Nevada Supreme Court upheld a ruling that
+        stopped a referendum petition on the 2023 law, because the petition did not include the whole bill and
+        described it in a misleading way. In both cases the public owns the stadium, through the Las Vegas Stadium
+        Authority, and the lease says "No rent is payable." Since October 2015 Nevada has also exempted games played by its own professional teams from its
+        {{nv_live_ent_tax}} tax on live entertainment, an exemption a Las Vegas NBA team would share under current
+        law. State Sen. Dina Neal, who tried to repeal it in 2021, said lawmakers created it as a "carrot" to attract
+        teams.
+      sources: [nv-sb1-2016-stadium-bonds, nv-sb1-2023-mlb-stadium, statecourtreport-schs-over-stadiums-v-thompson-nev-87613, lvstadiumauthority-stadium-lease-agreement-executed, lvstadiumauthority-stadium-lease-agreement-executed-2, nv-nrs-368a-live-entertainment-tax, leg-sb266-en, thenevadaindependent-raiders-golden-knights-tickets-could-be]
+    - p: >-
+        The hotel tax has not always covered the debt. During the pandemic the Stadium Authority drew
+        {{lvsa_reserve_draws}} from the bonds' reserve fund, in November 2020 and May 2021, to make its payments.
+        Since then the tax has brought in more than the payments, and in September 2026 the Authority's board voted
+        unanimously to put up to {{lvsa_plaza}} of the extra toward a {{lvsa_plaza_cost}} plaza at the stadium,
+        which the Authority will own and the Raiders will maintain, rather than pay off the bonds early.
+      sources: [lvstadiumauthority-8a-las-vegas-stadium-authority-fy2020-aud, lvstadiumauthority-14-stadium-authority-fy21-audit-final, lvstadiumauthority-posted-agenda-book-november-4-2026-sa]
   more:
     - { page: leases, text: 'Every lease and its exit terms' }
     - { page: threats, text: 'All the threat episodes' }

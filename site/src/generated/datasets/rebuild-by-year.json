@@ -100,6 +100,8 @@
   "audacy-fedexforum",
   "sports-fedexforum-documents-offer-strong-clue-194527628",
   "wapp-billinfo",
+  "fox8live-proposed-renovations-smoothie-king-center-facing",
+  "louisianaradionetwork",
   "cfpublic-orlando-kia-center-camping-world-stadium-improve",
   "olis-enrolled",
   "efiles",
@@ -937,6 +939,21 @@
     "audacy-fedexforum",
     "sports-fedexforum-documents-offer-strong-clue-194527628",
     "wapp-billinfo"
+   ]
+  },
+  {
+   "year": 2026,
+   "team": "NOP",
+   "item_id": "NOP-renovation-7",
+   "description": "Proposed $420M renovation (2026 talks)",
+   "kind": "renovation",
+   "category": "existing",
+   "status": "pending",
+   "binding": false,
+   "public_2026_m": 75.0,
+   "sources": [
+    "fox8live-proposed-renovations-smoothie-king-center-facing",
+    "louisianaradionetwork"
    ]
   },
   {

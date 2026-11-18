@@ -66,6 +66,126 @@
    }
   },
   {
+   "name": "authorities-las-vegas-venues",
+   "type": "table",
+   "path": "authorities/las_vegas_venues.csv",
+   "scheme": "file",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "id",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "unique": true,
+       "pattern": "^[a-z_]+$"
+      }
+     },
+     {
+      "name": "venue",
+      "type": "string",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "league",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "NFL",
+        "MLB",
+        "NHL",
+        "NBA"
+       ]
+      }
+     },
+     {
+      "name": "status",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "integer",
+      "constraints": {
+       "required": true,
+       "minimum": 1960,
+       "maximum": 2026
+      }
+     },
+     {
+      "name": "cost_m",
+      "type": "number",
+      "constraints": {
+       "required": true,
+       "minimum": 0
+      }
+     },
+     {
+      "name": "cost_max_m",
+      "type": "number",
+      "constraints": {
+       "minimum": 0
+      }
+     },
+     {
+      "name": "public_m",
+      "type": "number",
+      "constraints": {
+       "minimum": 0
+      }
+     },
+     {
+      "name": "public_basis",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "paid",
+        "cap",
+        "none asked"
+       ]
+      }
+     },
+     {
+      "name": "how",
+      "type": "string"
+     },
+     {
+      "name": "decided",
+      "type": "string"
+     },
+     {
+      "name": "label",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": "^[abc](/[abc])*$"
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "constraints": {
+       "required": true,
+       "pattern": ".*https?://.*"
+      }
+     }
+    ],
+    "primaryKey": [
+     "id"
+    ]
+   }
+  },
+  {
    "name": "authorities-lease-clock",
    "type": "table",
    "path": "authorities/lease_clock.csv",

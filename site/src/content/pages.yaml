@@ -55,7 +55,8 @@ home:
       sources: [team-ledger, sec-owl-20251231]
     - n: '{{leases_by_2036}}'
       p: >-
-        arena leases end by 2036, and public money is already pending in Memphis, Portland, San Antonio and Houston.
+        arena leases end by 2036, and public money is already pending in Memphis, Portland, San Antonio, Houston and
+        New Orleans.
       to: next
       sources: [threat-ledger, ledger]
 
@@ -437,7 +438,7 @@ leases:
     {{leases_by_2036:cap}} NBA Leases End by 2036
   deck: >-
     The year each arena lease ends, what leaving would cost, and the deals pending or planned in Houston,
-    Memphis, Portland, San Antonio, Dallas and Philadelphia, along with Oklahoma City's new arena.
+    Memphis, New Orleans, Portland, San Antonio, Dallas and Philadelphia, along with Oklahoma City's new arena.
   description: >-
     Lease terms, exit penalties and the pending deals, arena by arena.
   sources: [ledger]

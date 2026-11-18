@@ -15,7 +15,7 @@ Figures are as of October 22, 2026, in 2026 dollars unless noted.
 | Public money since 2014 to renovate or buy existing arenas vs. to build new ones | $3.02B vs. $1.99B (1.5 times; 1.3 counting Bexar County's voter-approved $311M for a new San Antonio arena): $1.08B in the four arenas with public money that opened since 2014 and $910M in Oklahoma City's arena under construction | section J |
 | Public total with tax-break financing added | at least $11.56B (40.3%) | section E: Barclays PILOT bonds $738M, MSG exemption $1.16B (IBO's $946.7M for FY1984-2023 in 2023 dollars, converted, plus the Department of Finance's values for FY2024-2026), United Center valuation formula $73M (2002-2016) |
 | Building's share of that total | 53%, counting Barclays Center's PILOT bonds, which paid for its construction; the other 47% came after the arenas opened | stats `construction_share`, `after_opening_share` |
-| New public commitments outside the 30-arena total | $3.28B binding, approved or pending (Oklahoma City, Salt Lake City, San Antonio, Portland, Memphis, Houston) | sections A and F |
+| New public commitments outside the 30-arena total | $3.36B binding, approved or pending (Oklahoma City, Salt Lake City, San Antonio, Portland, Memphis, Houston, New Orleans) | sections A and F |
 | Share of public money in the top 10 arenas | 62% | section C |
 | Arenas built mainly with private money (public money under half of construction cost; Barclays Center's PILOT bonds count as public) | 20, with Indianapolis unresolved; six were later bought or rebuilt with public money, $2.35B ($573M pending) | section D |
 | Public capital paid mostly by residents / visitors (hotel and car-rental taxes) / both (meal and ticket taxes, alone or pooled with hotel taxes) / other | 43.0% / 33.1% / 8.3% / 15.5% of $8.83B | section B |
@@ -48,7 +48,8 @@ data/
   ledger/                        arena_ledger.csv (30 arenas + 10 project rows, 96 columns), ledger_items.csv and ledger_buckets.csv (one row per item and funding stream), households.csv, totals.txt, _calc.json
   threats/                       threat_ledger.csv (50 episodes), left_behind.csv, comparison.txt
   authorities/                   lease terms and exit penalties, net public cost, Indianapolis CIB payments to the Pacers, verbatim quotes from audits and agendas,
-                                 payment_terms.csv (public payments under deals and laws in force: years, amounts, who decided, the clause, sources)
+                                 payment_terms.csv (public payments under deals and laws in force: years, amounts, who decided, the clause, sources),
+                                 las_vegas_venues.csv (Las Vegas's stadiums and arenas and a proposed NBA arena: cost, public money, how it was paid, sources)
   tax_mechanisms/                arena bonds, federal cost of tax-exempt bonds, Louisiana stadium district payments, Indiana PSDA, Section 197 franchise amortization, player income-tax capture
   property_tax/                  United Center assessment history and taxes forgone under its 1989 valuation formula, Madison Square Garden's exemption by fiscal year, Intuit Dome parcels, Opportunity Zone sites, illustrative forgone tax on public arenas
   labor_contract/                2023 CBA clauses on arena revenue, naming rights at public arenas, renovation cycles
@@ -120,7 +121,7 @@ The `scripts/who_pays/` helpers write `data/who_pays/` from the raw downloads li
 - Oklahoma City's Dec. 12, 2023 arena vote is not analyzed by precinct: the State Election Board's results site refuses automated access, and its precinct export is meant to be downloaded by hand.
 - The precinct income estimates are spread by area, so a precinct that crosses block groups with different incomes is smoothed. With the county's current precinct boundaries instead, the fifths show the same pattern (47.6% yes in the lowest, 57.7% in the highest).
 - The threat comparison is in 2025 dollars (CPI-U annual averages from the same FRED file), so its dollar figures differ from the ledger's 2026 dollars.
-- Pending deals will move these numbers: the Memphis lease, the Portland agreements (due by Dec. 31, 2026 under Resolution 37750), the San Antonio city agreement (targeted for the end of December 2026; the term sheet sets no deadline) and Houston's expected state grant.
+- Pending deals will move these numbers: the Memphis lease, the Portland agreements (due by Dec. 31, 2026 under Resolution 37750; on Nov. 13, 2026 the city said a deal looked unlikely by then), the San Antonio city agreement (targeted for the end of December 2026; the term sheet sets no deadline), Houston's expected state grant and the proposed New Orleans renovation (the state's $75M is pending; the stadium district has no timeframe for the rest).
 
 ## Open items
 
@@ -130,6 +131,6 @@ The `scripts/who_pays/` helpers write `data/who_pays/` from the raw downloads li
 - Find a city record of Denver's seat-tax receipts before 1999, the United Center's 1994-2001 assessments and tax rates, and the value of TD Garden's 1992 Chapter 121A tax payments.
 - Find a primary record of Memphis's yearly subsidy, and fill the gaps in the payment series: Miami FY2011-12, Minneapolis 2019-2025, Charlotte before FY2020, Oklahoma City other than FY2023.
 - Search Atlanta, Dallas, Philadelphia, Toronto and the privately owned arenas' recurring public costs, which the October 16 research could not cover.
-- Track the pending Houston, Memphis, Portland and San Antonio deals into the ledger as they close.
+- Track the pending Houston, Memphis, New Orleans, Portland and San Antonio deals into the ledger as they close, and any Las Vegas or Seattle arena deal if the league expands.
 - Analyze Oklahoma City's Dec. 12, 2023 arena vote by precinct once the State Election Board's precinct export is downloaded by hand (`results.okelections.us`, export tab).
 - Leads checked on October 22, 2026 (`notes/verification.md`, "Leads checked"): find the Oklahoma Tax Commission's Quality Jobs payments to the Thunder after FY2013 and decide whether state payroll rebates should be counted for both the Thunder and the Pelicans; read the Memphis Sports Authority's funding agreement to see whether MLGW's $50M for FY2029-48 is inside the $550M plan; confirm Shelby County's votes on Private Chapters 67 and 70; get Salt Lake City's 1990 Resolution 112 and RDA minutes for the original Delta Center's public money; find DC's 2024 attorney general letter.

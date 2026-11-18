@@ -305,6 +305,21 @@ datasets:
   require_row_sources: true
   note: Entered by hand from each agreement, audit, budget or report named in its sources (data/authorities/payment_terms.csv); amounts as the documents state them, in the dollars of their day. A blank end year means the payment has no end date.
 
+- id: las-vegas-venues
+  title: Stadiums and arenas in Las Vegas, what they cost and what the public put in
+  sql: |
+    select v.id, v.venue, v.team, v.league, v.status, v.year, v.cost_m, v.cost_max_m, v.public_m, v.public_basis,
+           v.factor_2026, v.cost_2026_m, v.cost_max_2026_m, v.public_2026_m,
+           case when v.public_m is null then null else 100 * v.public_m / v.cost_m end as public_share_pct,
+           v.how, v.decided, v.label,
+           coalesce((select list(s.source_id order by s.ord) from lv_sources s where s.id = v.id), []) as sources
+    from las_vegas_venues v
+    order by case v.league when 'NBA' then 0 else 1 end, v.year desc, v.venue
+  sources: [fred-cpiaucns]
+  row_sources: sources
+  require_row_sources: true
+  note: Entered by hand from the documents named in each row (data/authorities/las_vegas_venues.csv). Allegiant Stadium's cost and public money convert to 2026 dollars at its opening year (2020) and T-Mobile Arena's at 2016; the ballpark under construction and the proposed NBA arena stay at face value. The ballpark's public figure is the cap in the 2023 law, not money paid out; the NBA arena's cost is a press report of what the winning group would spend, and no public money has been asked for.
+
 # ------------------------------------------------------------------ chart 9 and the threats page
 - id: threats
   title: Relocation threats and what followed

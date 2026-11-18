@@ -428,3 +428,34 @@ commitments:
     - actionnews5-shelby-county-commissioners-vote-unanimously-kee
     - dailymemphian-memphis-grizzlies-fedexforum-lease-provision-r
 
+
+lasvegas:
+  title: >-
+    Nevada put public money into its NFL and MLB stadiums; the Golden Knights' arena was built privately
+  sub: >-
+    What each venue in Las Vegas cost and the public's part, in 2026 dollars, with the reported cost of a new NBA
+    arena
+  dataset: las-vegas-venues
+  legend:
+    - { label: Public money, key: public }
+    - { label: 'Public money the 2023 law allows, up to its cap', key: pending }
+    - { label: Private money, key: private }
+    - { label: 'Reported cost of a new NBA arena; who would pay is not decided', key: range }
+  notes:
+    - >-
+      Allegiant Stadium's public money is the {{lv_allegiant_public_nominal}} of county bond proceeds and room-tax
+      money the Stadium Authority reported as paid in full, converted from 2020, the year the stadium opened;
+      interest on the bonds is not counted. The ballpark's public part is the cap in the 2023 law, and its cost is the
+      budget in the December 2024 development agreement, both at face value while it is being built; the team's
+      owner has since put the cost in the {{lv_ballpark_cost_press}} range. T-Mobile Arena's cost is as reported
+      when it opened in 2016. The NBA arena's range is what the winning group would spend, as the Las Vegas
+      Review-Journal reported from one source on Nov. 14, 2026; no site has been chosen and no public money has
+      been asked for.
+  sources:
+    - lvstadiumauthority-6d-allegiant-stadium-by-the-numbers
+    - lvstadiumauthority-7b-lvsa-financial-report-2023-08
+    - nv-sb1-2016-stadium-bonds
+    - nv-sb1-2023-mlb-stadium
+    - lvstadiumauthority-stadium-development-agreement-executed
+    - skift-new-t-mobile-arena-in-las-vegas-signals-return-o
+    - kdhnews-article-3e13af3f-9404-5564-b2c6-2b2fb9a85655

@@ -6,7 +6,7 @@ b/a means a primary figure converted or combined by computation. Dollars are 202
 adjusted, 2026 base 331.655) unless the basis says otherwise. The site's fact-check page also lists every number typed
 in the copy (years, names) with the sources of the paragraph it appears in.
 
-305 figures, 37 datasets, 571 sources. Ledger as of 2026-10-22.
+326 figures, 38 datasets, 594 sources. Ledger as of 2026-10-22.
 
 ## Figures
 
@@ -320,12 +320,44 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `pending_existing`: Public money pending for current arenas
 
-- Shown as: $1.14 billion ($1.14B)
-- Value: 1,138 usd_m, face value
+- Shown as: $1.21 billion ($1.21B)
+- Value: 1,213 usd_m, face value
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
-- Note: Houston, Memphis and Portland. Not counted in the totals.
+- Note: Houston, Memphis, New Orleans and Portland. Not counted in the totals.
 - Method: `select sum(public_2026_m) from items where kind = 'renovation' and status = 'pending'`
+
+### `nop_reno_total`: Cost of the proposed Smoothie King Center renovation in New Orleans (2026 talks)
+
+- Shown as: $420 million ($420M)
+- Value: 420 usd_m, face value
+- Label: (c)
+- Sources: [Proposed renovations to Smoothie King Center facing questions about funding](https://www.fox8live.com/2026/11/09/proposed-renovations-smoothie-king-center-facing-questions-about-funding/) (independent); [Smoothie King Center renovation plan continues to face questions regarding funding](https://louisianaradionetwork.com/2026/11/10/48853/) (independent)
+- Method: `select spending_2026_m from items where item_id = 'NOP-renovation-7'`
+
+### `nop_reno_state`: State money Louisiana's governor has committed to support for the Smoothie King Center renovation, over two years
+
+- Shown as: $75 million ($75M)
+- Value: 75 usd_m, face value; pending, not counted
+- Label: (c)
+- Sources: [Proposed renovations to Smoothie King Center facing questions about funding](https://www.fox8live.com/2026/11/09/proposed-renovations-smoothie-king-center-facing-questions-about-funding/) (independent); [Smoothie King Center renovation plan continues to face questions regarding funding](https://louisianaradionetwork.com/2026/11/10/48853/) (independent)
+- Method: `select public_2026_m from items where item_id = 'NOP-renovation-7'`
+
+### `nop_reno_owner`: What the Pelicans' owner has pledged toward the Smoothie King Center renovation
+
+- Shown as: $150 million ($150M)
+- Value: 150 usd_m, nominal
+- Label: (c)
+- Sources: [Proposed renovations to Smoothie King Center facing questions about funding](https://www.fox8live.com/2026/11/09/proposed-renovations-smoothie-king-center-facing-questions-about-funding/) (independent)
+- Method: `Entered by hand; confirmed against data/ledger/ledger_items.csv (item_id=NOP-renovation-7, column note: "is pledging $150 million")`
+
+### `nop_reno_gap`: The rest of the Smoothie King Center renovation, left to the state's stadium district with no source yet
+
+- Shown as: $195 million ($195M)
+- Value: 195 usd_m, nominal; FOX8 says roughly $200 million
+- Label: (c)
+- Sources: [Smoothie King Center renovation plan continues to face questions regarding funding](https://louisianaradionetwork.com/2026/11/10/48853/) (independent)
+- Method: `Entered by hand; confirmed against data/ledger/ledger_items.csv (item_id=NOP-renovation-7, column note: ""$195 million" (LRN)")`
 
 ### `new_arenas_committed`: Public money committed or approved for new arenas not yet open
 
@@ -1144,7 +1176,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Shown as: 11 (11)
 - Value: 11 count
 - Label: (a)
-- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Deal to keep Grizzlies in Memphis won’t be done this summer, mayor says](https://dailymemphian.com/article/53292) (independent); [Memphis & Shelby County Sports Authority, Inc. Board Meeting Agenda, October 8, 2026](https://memphistn.gov/wp-content/uploads/2026/10/0_Sports-Auth-Board-Agenda-10-8-2026-mtg.pdf) (government); [Daily Memphian: J&J discuss lease "soon" for FedExForum](https://www.audacy.com/929espn/sports/memphis-grizzlies/fedexforum) (independent); [Louisiana Stadium and Exposition District: Financial Statement Audit for the Year Ended June 30, 2023](https://lla.la.gov/publicreports.nsf/0/ae49cb44840fe57986258b0900722bdf/$file/0000454ba.pdf) (government); [FY26 Executive Budget: 01-124 Louisiana Stadium and Exposition District (Senate Finance Committee presentation)](https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf) (government); [City of Portland, Oregon Annual Comprehensive Financial Report for the Fiscal Year Ended June 30, 2024](https://www.portland.gov/accounting/documents/2024-annual-comprehensive-financial-report/download) (government); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government); [Resolution 37750: Authorize a non-binding term sheet with Rip City Management LLC and Trail Blazers Holdings, LLC for Moda Center arena renovation](https://www.portland.gov/council/documents/resolution/adopted/37750) (government); [In Moda Center talks, Tom Dundon and city officials are 10 years, $1 billion and one jet ride apart](https://sports.yahoo.com/articles/moda-center-talks-tom-dundon-215452701.html) (independent); [Dallas Mavericks have deal for arena site that would move club out of downtown for 1st time](https://wtop.com/news/2026/06/dallas-mavericks-have-deal-for-arena-site-that-would-move-club-out-of-downtown-for-1st-time/) (independent); [Comcast’s $400M Wells Fargo Center Upgrades Near Completion](https://frontofficesports.com/article/comcasts-400-million-wells-fargo-center-upgrades-near-completion/) (independent); [76ers and Comcast unveil design for South Philly arena that will open in 2030](https://whyy.org/articles/south-philadelphia-new-arena-design-76ers-comcast/) (independent); [San Antonio Spurs consider a downtown move](https://www.ksat.com/news/local/2023/07/17/spurs-consider-a-downtown-move/) (independent); [Here's what's in the downtown arena term sheet the city just inked with the San Antonio Spurs](https://www.tpr.org/government-politics/2025-08-21/heres-whats-in-the-downtown-arena-term-sheet-the-city-just-inked-with-the-san-antonio-spurs) (independent); [Arena Lease, Sublease, License and Management Agreement between the Harris County-Houston Sports Authority and Rocket Ball, Ltd.](https://houstonsports.org/wp-content/uploads/Toyota_Center_-_Arena_Lease.pdf) (government); [Second Amendment to the Toyota Center Arena Lease, Sublease, License and Management Agreement](https://houstonsports.org/wp-content/uploads/2Clutch-City-HCHSA-Arena-Lease-Sublease-License-Mgmt-Agmt-2nd-Amend-20141201.pdf) (government); [HCHSA Special Meeting of the Board of Directors, April 8, 2026 (agenda)](https://houstonsports.org/wp-content/uploads/HCHSA-Special-BOD-Agenda-4.8.26.pdf) (government); [Toyota Center Gets Approval for $180 Million Renovation](https://www.stadiumjourney.com/stadiums/toyota-center-gets-approval-for-180-million-renovation) (independent); [Gateway Economic Development Corporation of Greater Cleveland, Regular Audit for the Year Ended December 31, 2022](https://ohioauditor.gov/auditsearch/Reports/2023/Gateway_Economic_Development_Corporation_of_Greater_Cleveland_22-Cuyahoga_FINAL.pdf) (government); [Gateway Board of Trustees Meeting Agenda (board packet), December 17, 2025](https://www.gwcomplex.org/mymedia/2026/01/Board_Packet_12-17-25.pdf) (government); [State bill would require vote on county tax hikes, complicating plan to fund Cavs, Guardians](https://www.ideastream.org/government-politics/2026-10-19/state-bill-would-require-vote-on-county-tax-hikes-complicating-plan-to-fund-cavs-guardians) (independent); [New T'Wolves Owner Would Face Penalty For Leaving Target Center](https://www.sportsbusinessdaily.com/Daily/Issues/2020/07/30/Facilities/TWolves.aspx) (independent); [What Happens To Minneapolis' Target Center If Wolves Move](https://hoodline.com/2026/07/if-wolves-skip-town-does-target-center-become-downtown-s-biggest-question-mark/) (independent); [Interlocal and Funding Agreement between Orange County, Florida and City of Orlando, Florida for Kia Center](https://occompt.legistar1.com/occompt/attachments/690dcf2e-1e33-4045-8ef4-598605dc8be4.pdf) (government); [Lease Summary: Orlando Magic, Amway Center](https://law.marquette.edu/assets/sports-law/pdf/Orlando%20Magic%20Lease%20Summary%208-14.pdf) (independent); [Orlando’s Kia Center and Camping World Stadium improvements approved](https://www.cfpublic.org/politics/2024-11-20/orlando-kia-center-camping-world-stadium-improvements-approved) (independent); [Celtics extend their lease at TD Garden through the 2035-36 season](https://www.bostonglobe.com/2021/01/21/sports/celtics-extend-their-lease-td-garden-through-2035-36-season) (independent)
+- Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent); [Deal to keep Grizzlies in Memphis won’t be done this summer, mayor says](https://dailymemphian.com/article/53292) (independent); [Memphis & Shelby County Sports Authority, Inc. Board Meeting Agenda, October 8, 2026](https://memphistn.gov/wp-content/uploads/2026/10/0_Sports-Auth-Board-Agenda-10-8-2026-mtg.pdf) (government); [Daily Memphian: J&J discuss lease "soon" for FedExForum](https://www.audacy.com/929espn/sports/memphis-grizzlies/fedexforum) (independent); [Louisiana Stadium and Exposition District: Financial Statement Audit for the Year Ended June 30, 2023](https://lla.la.gov/publicreports.nsf/0/ae49cb44840fe57986258b0900722bdf/$file/0000454ba.pdf) (government); [FY26 Executive Budget: 01-124 Louisiana Stadium and Exposition District (Senate Finance Committee presentation)](https://www.senate.la.gov/FiscalServices/Presentations/2025/01%20-%20124%20LSED%20FY%2026%20FINAL.pdf) (government); [City of Portland, Oregon Annual Comprehensive Financial Report for the Fiscal Year Ended June 30, 2024](https://www.portland.gov/accounting/documents/2024-annual-comprehensive-financial-report/download) (government); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government); [Resolution 37750: Authorize a non-binding term sheet with Rip City Management LLC and Trail Blazers Holdings, LLC for Moda Center arena renovation](https://www.portland.gov/council/documents/resolution/adopted/37750) (government); [In Moda Center talks, Tom Dundon and city officials are 10 years, $1 billion and one jet ride apart](https://sports.yahoo.com/articles/moda-center-talks-tom-dundon-215452701.html) (independent); [City says Moda Center deal with Blazers appears unlikely by end of year deadline](https://sports.yahoo.com/articles/city-says-moda-center-deal-005331872.html) (independent); [Dallas Mavericks have deal for arena site that would move club out of downtown for 1st time](https://wtop.com/news/2026/06/dallas-mavericks-have-deal-for-arena-site-that-would-move-club-out-of-downtown-for-1st-time/) (independent); [Comcast’s $400M Wells Fargo Center Upgrades Near Completion](https://frontofficesports.com/article/comcasts-400-million-wells-fargo-center-upgrades-near-completion/) (independent); [76ers and Comcast unveil design for South Philly arena that will open in 2030](https://whyy.org/articles/south-philadelphia-new-arena-design-76ers-comcast/) (independent); [San Antonio Spurs consider a downtown move](https://www.ksat.com/news/local/2023/07/17/spurs-consider-a-downtown-move/) (independent); [Here's what's in the downtown arena term sheet the city just inked with the San Antonio Spurs](https://www.tpr.org/government-politics/2025-08-21/heres-whats-in-the-downtown-arena-term-sheet-the-city-just-inked-with-the-san-antonio-spurs) (independent); [Arena Lease, Sublease, License and Management Agreement between the Harris County-Houston Sports Authority and Rocket Ball, Ltd.](https://houstonsports.org/wp-content/uploads/Toyota_Center_-_Arena_Lease.pdf) (government); [Second Amendment to the Toyota Center Arena Lease, Sublease, License and Management Agreement](https://houstonsports.org/wp-content/uploads/2Clutch-City-HCHSA-Arena-Lease-Sublease-License-Mgmt-Agmt-2nd-Amend-20141201.pdf) (government); [HCHSA Special Meeting of the Board of Directors, April 8, 2026 (agenda)](https://houstonsports.org/wp-content/uploads/HCHSA-Special-BOD-Agenda-4.8.26.pdf) (government); [Toyota Center Gets Approval for $180 Million Renovation](https://www.stadiumjourney.com/stadiums/toyota-center-gets-approval-for-180-million-renovation) (independent); [Gateway Economic Development Corporation of Greater Cleveland, Regular Audit for the Year Ended December 31, 2022](https://ohioauditor.gov/auditsearch/Reports/2023/Gateway_Economic_Development_Corporation_of_Greater_Cleveland_22-Cuyahoga_FINAL.pdf) (government); [Gateway Board of Trustees Meeting Agenda (board packet), December 17, 2025](https://www.gwcomplex.org/mymedia/2026/01/Board_Packet_12-17-25.pdf) (government); [State bill would require vote on county tax hikes, complicating plan to fund Cavs, Guardians](https://www.ideastream.org/government-politics/2026-10-19/state-bill-would-require-vote-on-county-tax-hikes-complicating-plan-to-fund-cavs-guardians) (independent); [New T'Wolves Owner Would Face Penalty For Leaving Target Center](https://www.sportsbusinessdaily.com/Daily/Issues/2020/07/30/Facilities/TWolves.aspx) (independent); [What Happens To Minneapolis' Target Center If Wolves Move](https://hoodline.com/2026/07/if-wolves-skip-town-does-target-center-become-downtown-s-biggest-question-mark/) (independent); [Interlocal and Funding Agreement between Orange County, Florida and City of Orlando, Florida for Kia Center](https://occompt.legistar1.com/occompt/attachments/690dcf2e-1e33-4045-8ef4-598605dc8be4.pdf) (government); [Lease Summary: Orlando Magic, Amway Center](https://law.marquette.edu/assets/sports-law/pdf/Orlando%20Magic%20Lease%20Summary%208-14.pdf) (independent); [Orlando’s Kia Center and Camping World Stadium improvements approved](https://www.cfpublic.org/politics/2024-11-20/orlando-kia-center-camping-world-stadium-improvements-approved) (independent); [Celtics extend their lease at TD Garden through the 2035-36 season](https://www.bostonglobe.com/2021/01/21/sports/celtics-extend-their-lease-td-garden-through-2035-36-season) (independent)
 - Method: `select count(*) from leases where term_end_year <= 2036`
 
 ### `leases_by_2031`: Leases that end by 2031
@@ -1364,32 +1396,32 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `items_n`: Money rows in the ledger
 
-- Shown as: 195 (195)
-- Value: 195 count
+- Shown as: 196 (196)
+- Value: 196 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from items`
 
 ### `sources_n`: Documents in the bibliography (not counting this site's own ledgers)
 
-- Shown as: 566 (566)
-- Value: 566 count
+- Shown as: 589 (589)
+- Value: 589 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where publisher <> 'This site'`
 
 ### `sources_government`: Government sources
 
-- Shown as: 156 (156)
-- Value: 156 count
+- Shown as: 166 (166)
+- Value: 166 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'government' and publisher <> 'This site'`
 
 ### `sources_court`: Court sources
 
-- Shown as: one (1)
-- Value: 1 count
+- Shown as: two (2)
+- Value: 2 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'court' and publisher <> 'This site'`
@@ -1404,8 +1436,8 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ### `sources_independent`: Independent sources
 
-- Shown as: 377 (377)
-- Value: 377 count
+- Shown as: 389 (389)
+- Value: 389 count
 - Label: (a)
 - Sources: [Arena funding ledger (arena_ledger.csv, ledger_items.csv, totals.txt), compiled for this site from the documents on the Sources page](https://github.com/realvivek/NBA-Arena-Funding/tree/main/data/ledger) (independent)
 - Method: `select count(*) from sources where origin = 'independent' and publisher <> 'This site'`
@@ -1733,7 +1765,7 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Shown as: $1.2 million ($1.2M)
 - Value: 1.2 usd_m, a year
 - Label: (b)
-- Sources: [City of Portland, Oregon Annual Comprehensive Financial Report for the Fiscal Year Ended June 30, 2024](https://www.portland.gov/accounting/documents/2024-annual-comprehensive-financial-report/download) (government); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government); [Resolution 37750: Authorize a non-binding term sheet with Rip City Management LLC and Trail Blazers Holdings, LLC for Moda Center arena renovation](https://www.portland.gov/council/documents/resolution/adopted/37750) (government); [In Moda Center talks, Tom Dundon and city officials are 10 years, $1 billion and one jet ride apart](https://sports.yahoo.com/articles/moda-center-talks-tom-dundon-215452701.html) (independent)
+- Sources: [City of Portland, Oregon Annual Comprehensive Financial Report for the Fiscal Year Ended June 30, 2024](https://www.portland.gov/accounting/documents/2024-annual-comprehensive-financial-report/download) (government); [Portland Trailblazers, Moda Center: State Funding and Governance Comparable Summary](https://www.oregon.gov/das/Docs/moda-center-arena-comparable-structure-overview.pdf) (government); [Resolution 37750: Authorize a non-binding term sheet with Rip City Management LLC and Trail Blazers Holdings, LLC for Moda Center arena renovation](https://www.portland.gov/council/documents/resolution/adopted/37750) (government); [In Moda Center talks, Tom Dundon and city officials are 10 years, $1 billion and one jet ride apart](https://sports.yahoo.com/articles/moda-center-talks-tom-dundon-215452701.html) (independent); [City says Moda Center deal with Blazers appears unlikely by end of year deadline](https://sports.yahoo.com/articles/city-says-moda-center-deal-005331872.html) (independent)
 - Method: `Entered by hand; confirmed against data/authorities/lease_clock.csv (team=POR, column outs_penalties_notes: "an estimated $1.2M a year")`
 
 ### `bkn_pilot_2023`: Barclays Center's payments in lieu of property tax in 2023, which service the arena bonds
@@ -2370,6 +2402,152 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 - Sources: [Senate Bill No. 1, 35th Special Session (2023), enrolled](https://www.leg.state.nv.us/Session/35th2023Special/Bills/SB/SB1_EN.pdf) (government)
 - Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nv_mlb_cap, column quote: "The amount of $380,000,000")`
 
+### `nba_expansion_vote_share`: Share of NBA owners who must vote for expansion
+
+- Shown as: 75 percent (75%)
+- Value: 75 pct
+- Label: (b)
+- Sources: [NBA Media Conference: Commissioner Adam Silver (transcript)](https://asaptext.com/asap_media/media/1002/1004/transcripts/165890.pdf) (independent)
+- Note: Commissioner Adam Silver at his March 25, 2026 news conference ("three-quarters of the owners"), in the verbatim transcript by ASAP Sports.
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_expansion_vote_share, column quote: "three-quarters of the owners")`
+
+### `lv_bids_min`: Franchise valuations proposed by the groups bidding for a Las Vegas team
+
+- Shown as: $10 billion ($10B)
+- Value: 10,000 usd_m, as reported, "or more"
+- Label: (c)
+- Sources: [Las Vegas NBA expansion bids reach $10 billion, reporter says](https://www.fox5vegas.com/2026/11/12/las-vegas-nba-expansion-bids-reach-10-billion-reporter-says/) (independent)
+- Note: ESPN's Shams Charania on Nov. 11, 2026, as reported by FOX5 Las Vegas. The league has set no price; the Review-Journal reported a fee of $10 billion to $11.5 billion (one source, Nov. 14, 2026).
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=lv_bids_min, column quote: "franchise valuations of $10 billion or more")`
+
+### `lv_arena_min`: What the winning Las Vegas group would spend on a new NBA arena, low end of the reported range
+
+- Shown as: $2 billion ($2B)
+- Value: 2,000 usd_m, face value, as reported
+- Label: (c)
+- Sources: [NBA Las Vegas expansion bid process sees 2 groups, potential arena sites emerge](https://kdhnews.com/sports/nba/nba-las-vegas-expansion-bid-process-sees-2-groups-potential-arena-sites-emerge/article_3e13af3f-9404-5564-b2c6-2b2fb9a85655.html) (independent); [Las Vegas: Governor has talked with multiple groups regarding NBA expansion](https://cdcgaming.com/brief/las-vegas-governor-has-talked-with-multiple-groups-regarding-nba-expansion/) (independent)
+- Note: Las Vegas Review-Journal, Nov. 14, 2026, citing one source. No group has publicly asked for public money to build it.
+- Method: `select cost_m from las_vegas_venues where id = 'nba_arena'`
+
+### `lv_arena_max`: What the winning Las Vegas group would spend on a new NBA arena, high end of the reported range
+
+- Shown as: $3 billion ($3B)
+- Value: 3,000 usd_m, face value, as reported
+- Label: (c)
+- Sources: [NBA Las Vegas expansion bid process sees 2 groups, potential arena sites emerge](https://kdhnews.com/sports/nba/nba-las-vegas-expansion-bid-process-sees-2-groups-potential-arena-sites-emerge/article_3e13af3f-9404-5564-b2c6-2b2fb9a85655.html) (independent); [Las Vegas: Governor has talked with multiple groups regarding NBA expansion](https://cdcgaming.com/brief/las-vegas-governor-has-talked-with-multiple-groups-regarding-nba-expansion/) (independent)
+- Method: `select cost_max_m from las_vegas_venues where id = 'nba_arena'`
+
+### `tmobile_cost`: What T-Mobile Arena cost to build, all of it private money
+
+- Shown as: $375 million ($375M)
+- Value: 375 usd_m, nominal, opened 2016
+- Label: (c)
+- Sources: [New T-Mobile Arena in Las Vegas signals return of large hospitality investment](https://skift.com/2016/04/07/new-t-mobile-arena-in-las-vegas-signals-return-of-large-hospitality-investment/) (independent)
+- Method: `select cost_m from las_vegas_venues where id = 'tmobile'`
+
+### `foley_tmobile_reno`: What the Golden Knights' owner says it would take to make T-Mobile Arena ready for the NBA
+
+- Shown as: $400 million ($400M)
+- Value: 400 usd_m, as stated, "about"
+- Label: (c)
+- Sources: [Golden Knights owner Bill Foley details his plan to bring an NBA expansion team to Las Vegas](https://lasvegasweekly.com/news/2026/jul/09/golden-knights-owner-bill-foley-details-his-plan-t/) (independent)
+- Note: Bill Foley in a Las Vegas Weekly interview, July 9, 2026. He did not say who would pay.
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=foley_tmobile_reno, column quote: "it will take about $400 million to do that")`
+
+### `lv_allegiant_cost`: Allegiant Stadium's final construction cost
+
+- Shown as: $1.97 billion ($1.97B)
+- Value: 1,970 usd_m, nominal, opened 2020
+- Label: (b)
+- Sources: [Allegiant Stadium by the Numbers](https://www.lvstadiumauthority.com/docs/2020/09/17/6d-Allegiant%20Stadium%20by%20the%20Numbers.pdf) (government); [Senate Bill No. 1, 30th Special Session (2016), enrolled](https://www.leg.state.nv.us/Session/30th2016Special/Bills/SB/SB1_EN.pdf) (government); [Stadium Lease Agreement for Allegiant Stadium (executed)](https://www.lvstadiumauthority.com/docs/allegiant/Stadium%20Lease%20Agreement%20(EXECUTED).pdf) (government); [Stadium Authority Financial Report, August 2023 (project funding through December 2022)](https://www.lvstadiumauthority.com/docs/2023/08/24/7b-LVSA%20Financial%20Report%202023.08.pdf) (government)
+- Method: `select cost_m from las_vegas_venues where id = 'allegiant'`
+
+### `lv_allegiant_public`: Public money in Allegiant Stadium, in 2026 dollars
+
+- Shown as: $961 million ($961M)
+- Value: 961.093 usd_m, 2026 dollars, converted at the opening year (2020)
+- Label: (a)
+- Sources: [Consumer Price Index for All Urban Consumers, All Items in U.S. City Average, not seasonally adjusted (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) (government); [Allegiant Stadium by the Numbers](https://www.lvstadiumauthority.com/docs/2020/09/17/6d-Allegiant%20Stadium%20by%20the%20Numbers.pdf) (government); [Senate Bill No. 1, 30th Special Session (2016), enrolled](https://www.leg.state.nv.us/Session/30th2016Special/Bills/SB/SB1_EN.pdf) (government); [Stadium Lease Agreement for Allegiant Stadium (executed)](https://www.lvstadiumauthority.com/docs/allegiant/Stadium%20Lease%20Agreement%20(EXECUTED).pdf) (government); [Stadium Authority Financial Report, August 2023 (project funding through December 2022)](https://www.lvstadiumauthority.com/docs/2023/08/24/7b-LVSA%20Financial%20Report%202023.08.pdf) (government)
+- Note: The $750 million of county bond proceeds and room-tax money the Stadium Authority reported as paid in full, converted from 2020 dollars. Interest on the bonds is not counted.
+- Method: `select public_2026_m from las_vegas_venues where id = 'allegiant'`
+
+### `lv_allegiant_share`: Public share of Allegiant Stadium's construction cost
+
+- Shown as: 38 percent (38%)
+- Value: 38.0711 pct, share of the final cost, nominal dollars
+- Label: (a)
+- Sources: [Allegiant Stadium by the Numbers](https://www.lvstadiumauthority.com/docs/2020/09/17/6d-Allegiant%20Stadium%20by%20the%20Numbers.pdf) (government); [Senate Bill No. 1, 30th Special Session (2016), enrolled](https://www.leg.state.nv.us/Session/30th2016Special/Bills/SB/SB1_EN.pdf) (government); [Stadium Lease Agreement for Allegiant Stadium (executed)](https://www.lvstadiumauthority.com/docs/allegiant/Stadium%20Lease%20Agreement%20(EXECUTED).pdf) (government); [Stadium Authority Financial Report, August 2023 (project funding through December 2022)](https://www.lvstadiumauthority.com/docs/2023/08/24/7b-LVSA%20Financial%20Report%202023.08.pdf) (government)
+- Method: `select 100 * public_m / cost_m from las_vegas_venues where id = 'allegiant'`
+
+### `lv_ballpark_cost`: The Athletics ballpark's budget when the development agreement was signed (December 2024)
+
+- Shown as: $1.75 billion ($1.75B)
+- Value: 1,750 usd_m, face value; work under way
+- Label: (b)
+- Sources: [Stadium Development Agreement for the Athletics ballpark (executed)](https://www.lvstadiumauthority.com/docs/mlb/Stadium%20Development%20Agreement--Executed.pdf) (government); [Senate Bill No. 1, 35th Special Session (2023), enrolled](https://www.leg.state.nv.us/Session/35th2023Special/Bills/SB/SB1_EN.pdf) (government); [Stadium Lease Agreement for the Athletics ballpark (executed)](https://www.lvstadiumauthority.com/docs/mlb/Stadium%20Lease%20Agreement--Executed.pdf) (government); [Schools Over Stadiums v. Thompson, No. 87613, Order of Affirmance](https://statecourtreport.org/sites/default/files/fastcase/converted/Schs.%20Over%20Stadiums%20v.%20Thompson%2C%20Nev.%2087613.pdf) (court); [Fisher says cost for the Las Vegas A's ballpark has risen above $2 billion](https://thenevadaindependent.com/article/fisher-says-cost-for-the-las-vegas-as-ballpark-has-risen-above-2-billion) (independent)
+- Note: Exhibit D of the Stadium Development Agreement. The team has since put the cost above $2 billion (press).
+- Method: `select cost_m from las_vegas_venues where id = 'ballpark'`
+
+### `lv_ballpark_cost_press`: The Athletics ballpark's cost as the team's owner described it in July 2025
+
+- Shown as: $2 billion ($2B)
+- Value: 2,000 usd_m, as reported, "in the $2 billion range"
+- Label: (c)
+- Sources: [Fisher says cost for the Las Vegas A's ballpark has risen above $2 billion](https://thenevadaindependent.com/article/fisher-says-cost-for-the-las-vegas-as-ballpark-has-risen-above-2-billion) (independent)
+- Method: `Entered by hand; confirmed against data/authorities/las_vegas_venues.csv (id=ballpark, column how: "up in the $2 billion range")`
+
+### `lv_allegiant_public_nominal`: Public money in Allegiant Stadium, as paid
+
+- Shown as: $750 million ($750M)
+- Value: 750 usd_m, nominal; reported as paid in full by December 2022
+- Label: (b)
+- Sources: [Allegiant Stadium by the Numbers](https://www.lvstadiumauthority.com/docs/2020/09/17/6d-Allegiant%20Stadium%20by%20the%20Numbers.pdf) (government); [Senate Bill No. 1, 30th Special Session (2016), enrolled](https://www.leg.state.nv.us/Session/30th2016Special/Bills/SB/SB1_EN.pdf) (government); [Stadium Lease Agreement for Allegiant Stadium (executed)](https://www.lvstadiumauthority.com/docs/allegiant/Stadium%20Lease%20Agreement%20(EXECUTED).pdf) (government); [Stadium Authority Financial Report, August 2023 (project funding through December 2022)](https://www.lvstadiumauthority.com/docs/2023/08/24/7b-LVSA%20Financial%20Report%202023.08.pdf) (government)
+- Method: `select public_m from las_vegas_venues where id = 'allegiant'`
+
+### `nv_room_tax_strip`: Hotel-room tax Nevada added on the Las Vegas Strip for the NFL stadium
+
+- Shown as: 0.88 percent (0.88%)
+- Value: 0.88 pct, of room charges, in the Strip corridor
+- Label: (b)
+- Sources: [Senate Bill No. 1, 30th Special Session (2016), enrolled](https://www.leg.state.nv.us/Session/30th2016Special/Bills/SB/SB1_EN.pdf) (government)
+- Note: SB 1 (30th Special Session, 2016), section 33; the rate is 0.5 percent elsewhere in the stadium district.
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nv_room_tax_strip, column quote: "eighty-eight one-hundredths of one percent")`
+
+### `nv_seid_acres`: Size of the tax district around the Athletics ballpark
+
+- Shown as: nine (9)
+- Value: 9 count, approximately
+- Label: (b)
+- Sources: [Staff report: ordinance creating Clark County Sports and Entertainment Improvement District No. 1](https://clark.legistar1.com/clark/attachments/a2b1593c-4305-4ad9-ac1b-1371f09a1bea.pdf) (government)
+- Note: Clark County Sports and Entertainment Improvement District No. 1, created in 2025 under SB 1 (35th Special Session, 2023).
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=nv_seid_acres, column quote: "totaling approximately 9 acres")`
+
+### `lvsa_reserve_draws`: Unscheduled draws on the Allegiant Stadium bonds' reserve fund, 2020 and 2021
+
+- Shown as: $23.3 million ($23.3M)
+- Value: 23.2875 usd_m, nominal
+- Label: (b/a)
+- Sources: [Las Vegas Stadium Authority audit report, fiscal year 2020](https://www.lvstadiumauthority.com/docs/2021/01/21/8a-Las%20Vegas%20Stadium%20Authority%20FY2020%20Audit%20Report%20(FINAL).pdf) (government); [Clark County Stadium Authority financial audit, fiscal year 2021](https://www.lvstadiumauthority.com/docs/2022/01/12/14-Stadium%20Authority%20FY21%20Audit%20FINAL.pdf) (government)
+- Note: The sum of $11,553,389 (Nov. 25, 2020) and $11,734,117 (May 25, 2021), drawn because room-tax collections fell short of the debt payments.
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=lvsa_reserve_draws, column quote: "$11,553,389 was made on the debt reserve fund; On May 25, 2021, an unscheduled draw in the amount of $11,734,117")`
+
+### `lvsa_plaza`: Room-tax money the Stadium Authority voted to put toward a new plaza at Allegiant Stadium
+
+- Shown as: $75 million ($75M)
+- Value: 75 usd_m, nominal; up to
+- Label: (b)
+- Sources: [Board meeting agenda book, November 4, 2026 (with the minutes of September 2, 2026)](https://www.lvstadiumauthority.com/docs/2026/11/04/Posted%20Agenda%20Book%20-%20November%204%2C%202026%20SA.pdf) (government)
+- Note: Approved unanimously on Sept. 2, 2026, from the Authority's residual room-tax fund in fiscal 2028; the minutes were approved on Nov. 4, 2026.
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=lvsa_plaza, column quote: "in an amount not to exceed $75,000,000")`
+
+### `lvsa_plaza_cost`: Cost of the elevated plaza at Allegiant Stadium
+
+- Shown as: $158 million ($158M)
+- Value: 158 usd_m, nominal; approximately
+- Label: (b)
+- Sources: [Board meeting agenda book, November 4, 2026 (with the minutes of September 2, 2026)](https://www.lvstadiumauthority.com/docs/2026/11/04/Posted%20Agenda%20Book%20-%20November%204%2C%202026%20SA.pdf) (government)
+- Method: `Entered by hand; confirmed against data/inputs/research_claims.csv (key=lvsa_plaza_cost, column quote: "an approximately $158 million elevated plaza platform")`
+
 ### `por_lobbying`: Lobbying reported by the Trail Blazers' arena company in the first three months of 2026
 
 - Shown as: $100,000 ($100,000)
@@ -2552,28 +2730,29 @@ in the copy (years, names) with the sources of the paragraph it appears in.
 
 ## Datasets behind the charts and tables
 
-- `items`: Every public-money item in the ledger. 195 rows; 176 sources.
-- `item-buckets`: Public money in each item by funding stream. 82 rows; 1 sources.
+- `items`: Every public-money item in the ledger. 196 rows; 178 sources.
+- `item-buckets`: Public money in each item by funding stream. 83 rows; 1 sources.
 - `public-layers`: Public money in the 30 current arenas, by kind. 5 rows; 2 sources. The five parts of the expanded total, and on the first row what the arenas cost to build, public and private money together (cost_2026_m). Building includes Barclays Center's PILOT bonds, which paid for its construction and are repaid with the property tax the arena would otherwise owe. Tax breaks are property-tax exemptions (Madison Square Garden, the United Center's valuation formula); the federal cost of tax-exempt bonds is not included.
-- `rebuild-by-year`: Public money by year, for new arenas and for existing ones. 63 rows; 123 sources. Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year. binding marks commitments that are signed, such as Oklahoma City's arena under construction.
+- `rebuild-by-year`: Public money by year, for new arenas and for existing ones. 64 rows; 125 sources. Construction money at the opening year, renovations at the mid-construction year (work still under way at face value, shown in 2026), purchases at the purchase year. binding marks commitments that are signed, such as Oklahoma City's arena under construction.
 - `arenas`: The 30 current arenas, public and private money. 30 rows; 91 sources. Private money is construction and renovation spending not paid by the public. Tax breaks are the Barclays Center PILOT bonds and the exemptions counted in the expanded total. The PILOT bonds paid for part of Barclays Center's construction, so its private money is net of them.
 - `arena-map`: Where the public money went, arena by arena. 30 rows; 31 sources. Locations from each arena's Wikipedia article; money from the ledger.
-- `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 85 sources.
+- `arena-fields`: Notes and sources for each arena's construction, renovations, tax status and lease. 30 rows; 86 sources.
 - `takeovers`: Arenas built mainly with private money that were later bought or rebuilt with public money. 21 rows; 38 sources.
 - `who-pays`: Public capital money by funding stream. 10 rows; 2 sources.
 - `payer-periods`: Public capital money by who mostly pays, before and since 2014. 8 rows; 2 sources. Items are dated as the ledger dates them, construction in the year the arena opened, renovations in the middle year of the work, purchases in the year of the sale and work still under way in 2026. Yearly payments are not included.
-- `households`: Public money in the largest deals, per household in the jurisdictions that pay. 31 rows; 130 sources.
-- `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 24 rows; 130 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones. visitors_share, shared_share and sales_share are the shares of the deal's capital money from hotel and car-rental taxes, from meal and ticket taxes, and from dedicated sales taxes; pending_2026_m is pending money included in the deal (Portland).
+- `households`: Public money in the largest deals, per household in the jurisdictions that pay. 31 rows; 132 sources.
+- `households-local`: Arena money per household where each arena is, adding the share of every government that pays. 24 rows; 132 sources. For a deal paid by several governments, a household in the most local one (city or county) also pays its share of the larger ones, so the amounts add. Assumes each smaller jurisdiction lies inside the larger ones. visitors_share, shared_share and sales_share are the shares of the deal's capital money from hotel and car-rental taxes, from meal and ticket taxes, and from dedicated sales taxes; pending_2026_m is pending money included in the deal (Portland).
 - `uc-bills`: United Center property-tax bills, with and without the 1989 valuation formula. 23 rows; 6 sources. Nominal dollars. 2002-2005 bills computed from the Board of Review value, equalization factor and tax rate; the statute's $1 million minimum applied in 2005-2008.
 - `ongoing`: Yearly public payments to teams or arena operators. 117 rows; 25 sources.
 - `after-kinds`: Public money after the arenas opened, by what it paid for, when it comes due and who approved it. 8 rows; 6 sources. What it paid for (renovation, purchase, ongoing yearly payments, property-tax break), when it comes due (owed under agreements and laws already in place, or a new deal) and who approved it (voters or officials), from the view after_items; largest lists the three arenas with the most in each part.
 - `after-by-arena`: Each arena's public money after it opened, by kind, against the public money that built it. 17 rows; 69 sources. After opening means renovations, purchases, yearly payments and property-tax breaks; building money includes Barclays Center's PILOT bonds, as in the bill. more_after marks arenas where the public has paid more since opening than it did to build them.
 - `recurring-by-year`: Yearly payments to teams and arena operators and property-tax breaks, by year. 170 rows; 5 sources. Through 2025, the last full year in the records. Madison Square Garden's exemption for fiscal 1984-2023 is read from the bars of the Independent Budget Office's chart and scaled to its stated total; fiscal 2024 and 2025 are the Department of Finance's values. The United Center's formula is counted in the year each tax bill was paid. Repairs and renovation money are counted by project, not by year, and are not included.
 - `payment-terms`: Public payments under deals and laws in force, and the years they run. 9 rows; 19 sources. Entered by hand from each agreement, audit, budget or report named in its sources (data/authorities/payment_terms.csv); amounts as the documents state them, in the dollars of their day. A blank end year means the payment has no end date.
+- `las-vegas-venues`: Stadiums and arenas in Las Vegas, what they cost and what the public put in. 4 rows; 13 sources. Entered by hand from the documents named in each row (data/authorities/las_vegas_venues.csv). Allegiant Stadium's cost and public money convert to 2026 dollars at its opening year (2020) and T-Mobile Arena's at 2016; the ballpark under construction and the proposed NBA arena stay at face value. The ballpark's public figure is the cap in the 2023 law, not money paid out; the NBA arena's cost is a press report of what the winning group would spend, and no public money has been asked for.
 - `threats`: Relocation threats and what followed. 51 rows; 133 sources.
 - `threat-deals`: Deals compared, with and without a prior threat. 22 rows; 2 sources. Public money at the deal year in 2025 dollars from compare.py, converted to 2026 dollars.
 - `left-behind`: Cities that kept paying after a team left. 9 rows; 19 sources.
-- `leases`: When each arena lease ends, and what leaving costs. 30 rows; 62 sources.
+- `leases`: When each arena lease ends, and what leaving costs. 30 rows; 63 sources.
 - `projects`: New arenas, districts and pending deals. 10 rows; 45 sources.
 - `slc-monthly`: Salt Lake City's arena sales tax, monthly distributions. 21 rows; 1 sources. Final distributions from the Utah State Tax Commission's monthly reports (Salt Lake City, code 18122).
 - `wcd-annual`: Wisconsin Center District taxes by source. 5 rows; 2 sources.

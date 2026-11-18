@@ -22,6 +22,7 @@ CITED = {
     'data/ledger/arena_ledger.csv': None,  # every column whose name contains "source"
     'data/authorities/lease_clock.csv': ['source'],
     'data/authorities/payment_terms.csv': ['source'],
+    'data/authorities/las_vegas_venues.csv': ['source'],
     'data/property_tax/msg_exemption_by_year.csv': ['source'],
     'data/threats/threat_ledger.csv': ['sources'],
     'data/threats/left_behind.csv': ['sources'],

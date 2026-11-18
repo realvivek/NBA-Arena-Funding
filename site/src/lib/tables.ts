@@ -484,6 +484,35 @@ export function recurringTable(rows: any[]): Table {
 }
 
 /** Public payments under deals and laws in force, with the years they run. */
+export function lasVegasTable(rows: any[]): Table {
+  const range = (lo: number, hi: number | null) => (hi == null ? money(lo) : `${money(lo, 0)} to ${money(hi, 0)}`);
+  const pub = (v: number | null, basis: string) => (v == null ? 'None asked for' : basis === 'cap' ? `Up to ${money(v)}` : money(v));
+  return {
+    columns: [
+      { key: 'venue', label: 'Venue' },
+      { key: 'status', label: 'Status' },
+      { key: 'cost', label: 'Cost', num: true },
+      { key: 'cost26', label: 'Cost (2026 $)', num: true },
+      { key: 'pub', label: 'Public money', num: true },
+      { key: 'pub26', label: 'Public money (2026 $)', num: true },
+      { key: 'how', label: 'How it was paid' },
+      { key: 'label', label: 'Label' },
+      { key: 'sources', label: 'Sources' },
+    ],
+    rows: rows.map((r) => ({
+      venue: `${r.venue} (${r.league}, ${r.team})`,
+      status: r.status,
+      cost: range(r.cost_m, r.cost_max_m),
+      cost26: range(r.cost_2026_m, r.cost_max_2026_m),
+      pub: pub(r.public_m, r.public_basis),
+      pub26: pub(r.public_2026_m, r.public_basis),
+      how: r.how,
+      label: { label: r.label },
+      sources: { sources: r.sources },
+    })),
+  };
+}
+
 export function commitmentsTable(rows: any[]): Table {
   return {
     columns: [

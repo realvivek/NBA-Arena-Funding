@@ -74,6 +74,7 @@
   "oregon-moda-center-arena-comparable-structure-overview",
   "portland-adopted",
   "oregonian-moda-center-talks-dundon-2026-10-21",
+  "sports-city-says-moda-center-deal-005331872",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
   "efiles",
   "cityofsacramento-city-of-sacramento-2025-acfr",
@@ -161,6 +162,7 @@
   "oregon-moda-center-arena-comparable-structure-overview",
   "portland-adopted",
   "oregonian-moda-center-talks-dundon-2026-10-21",
+  "sports-city-says-moda-center-deal-005331872",
   "wweek-proposed-city-purchase-of-moda-center-would-trig",
   "efiles",
   "cityofsacramento-city-of-sacramento-2025-acfr",
@@ -715,8 +717,8 @@
    "pilot_note": null,
    "conduit_note": null,
    "bond_detail": "2027 State of Oregon debt (SB 1501, Oregon Laws 2026 ch. 74) - pl $365M planned",
-   "lease_terms": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); the 2024 bridge agreement has a five-year option to extend through 2035 (City Ordinance 191857, per ACFR FY2024, b); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026 (Resolution 37750)",
-   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c)",
+   "lease_terms": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); the 2024 bridge agreement has a five-year option to extend through 2035 (City Ordinance 191857, per ACFR FY2024, b); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026 (Resolution 37750), which the city said on Nov 13 2026 appeared unlikely",
+   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c); on Nov 13 2026 the city said an agreement \"appears unlikely before the end-of-year deadline to greenlight state funding\", and the council president said he would not schedule a final funding vote in December without the definitive documents the term sheet requires (KGW via Yahoo Sports, Nov 14 2026, c)",
    "lease_label": "b/c",
    "property_tax_sources": [
     "wweek-proposed-city-purchase-of-moda-center-would-trig",
@@ -726,7 +728,8 @@
     "portland-2024-annual-comprehensive-financial-report",
     "oregon-moda-center-arena-comparable-structure-overview",
     "portland-adopted",
-    "oregonian-moda-center-talks-dundon-2026-10-21"
+    "oregonian-moda-center-talks-dundon-2026-10-21",
+    "sports-city-says-moda-center-deal-005331872"
    ],
    "tax_break_sources": []
   },

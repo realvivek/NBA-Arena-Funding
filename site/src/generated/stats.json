@@ -756,7 +756,7 @@
  "pending_existing": {
   "key": "pending_existing",
   "title": "Public money pending for current arenas",
-  "value": 1138.0,
+  "value": 1213.0,
   "unit": "usd_m",
   "basis": "face value",
   "digits": null,
@@ -765,13 +765,95 @@
    "ledger"
   ],
   "display": {
-   "long": "$1.14 billion",
-   "short": "$1.14B",
-   "title": "$1.14 Billion",
-   "cap": "$1.14 billion"
+   "long": "$1.21 billion",
+   "short": "$1.21B",
+   "title": "$1.21 Billion",
+   "cap": "$1.21 billion"
   },
-  "note": "Houston, Memphis and Portland. Not counted in the totals.",
+  "note": "Houston, Memphis, New Orleans and Portland. Not counted in the totals.",
   "method": "select sum(public_2026_m) from items where kind = 'renovation' and status = 'pending'"
+ },
+ "nop_reno_total": {
+  "key": "nop_reno_total",
+  "title": "Cost of the proposed Smoothie King Center renovation in New Orleans (2026 talks)",
+  "value": 420.0,
+  "unit": "usd_m",
+  "basis": "face value",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "fox8live-proposed-renovations-smoothie-king-center-facing",
+   "louisianaradionetwork"
+  ],
+  "display": {
+   "long": "$420 million",
+   "short": "$420M",
+   "title": "$420 Million",
+   "cap": "$420 million"
+  },
+  "note": "",
+  "method": "select spending_2026_m from items where item_id = 'NOP-renovation-7'"
+ },
+ "nop_reno_state": {
+  "key": "nop_reno_state",
+  "title": "State money Louisiana's governor has committed to support for the Smoothie King Center renovation, over two years",
+  "value": 75.0,
+  "unit": "usd_m",
+  "basis": "face value; pending, not counted",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "fox8live-proposed-renovations-smoothie-king-center-facing",
+   "louisianaradionetwork"
+  ],
+  "display": {
+   "long": "$75 million",
+   "short": "$75M",
+   "title": "$75 Million",
+   "cap": "$75 million"
+  },
+  "note": "",
+  "method": "select public_2026_m from items where item_id = 'NOP-renovation-7'"
+ },
+ "nop_reno_owner": {
+  "key": "nop_reno_owner",
+  "title": "What the Pelicans' owner has pledged toward the Smoothie King Center renovation",
+  "value": 150.0,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "fox8live-proposed-renovations-smoothie-king-center-facing"
+  ],
+  "display": {
+   "long": "$150 million",
+   "short": "$150M",
+   "title": "$150 Million",
+   "cap": "$150 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/ledger/ledger_items.csv (item_id=NOP-renovation-7, column note: \"is pledging $150 million\")"
+ },
+ "nop_reno_gap": {
+  "key": "nop_reno_gap",
+  "title": "The rest of the Smoothie King Center renovation, left to the state's stadium district with no source yet",
+  "value": 195.0,
+  "unit": "usd_m",
+  "basis": "nominal; FOX8 says roughly $200 million",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "louisianaradionetwork"
+  ],
+  "display": {
+   "long": "$195 million",
+   "short": "$195M",
+   "title": "$195 Million",
+   "cap": "$195 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/ledger/ledger_items.csv (item_id=NOP-renovation-7, column note: \"\"$195 million\" (LRN)\")"
  },
  "new_arenas_committed": {
   "key": "new_arenas_committed",
@@ -2920,6 +3002,7 @@
    "oregon-moda-center-arena-comparable-structure-overview",
    "portland-adopted",
    "oregonian-moda-center-talks-dundon-2026-10-21",
+   "sports-city-says-moda-center-deal-005331872",
    "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
    "frontofficesports-comcasts-400-million-wells-fargo-center-up",
    "whyy-south-philadelphia-new-arena-design-76ers-comcas",
@@ -3484,7 +3567,7 @@
  "items_n": {
   "key": "items_n",
   "title": "Money rows in the ledger",
-  "value": 195.0,
+  "value": 196.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3493,10 +3576,10 @@
    "ledger"
   ],
   "display": {
-   "long": "195",
-   "short": "195",
-   "title": "195",
-   "cap": "195"
+   "long": "196",
+   "short": "196",
+   "title": "196",
+   "cap": "196"
   },
   "note": "",
   "method": "select count(*) from items"
@@ -3504,7 +3587,7 @@
  "sources_n": {
   "key": "sources_n",
   "title": "Documents in the bibliography (not counting this site's own ledgers)",
-  "value": 566.0,
+  "value": 589.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3513,10 +3596,10 @@
    "ledger"
   ],
   "display": {
-   "long": "566",
-   "short": "566",
-   "title": "566",
-   "cap": "566"
+   "long": "589",
+   "short": "589",
+   "title": "589",
+   "cap": "589"
   },
   "note": "",
   "method": "select count(*) from sources where publisher <> 'This site'"
@@ -3524,7 +3607,7 @@
  "sources_government": {
   "key": "sources_government",
   "title": "Government sources",
-  "value": 156.0,
+  "value": 166.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3533,10 +3616,10 @@
    "ledger"
   ],
   "display": {
-   "long": "156",
-   "short": "156",
-   "title": "156",
-   "cap": "156"
+   "long": "166",
+   "short": "166",
+   "title": "166",
+   "cap": "166"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'government' and publisher <> 'This site'"
@@ -3544,7 +3627,7 @@
  "sources_court": {
   "key": "sources_court",
   "title": "Court sources",
-  "value": 1.0,
+  "value": 2.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3553,10 +3636,10 @@
    "ledger"
   ],
   "display": {
-   "long": "one",
-   "short": "1",
-   "title": "One",
-   "cap": "One"
+   "long": "two",
+   "short": "2",
+   "title": "Two",
+   "cap": "Two"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'court' and publisher <> 'This site'"
@@ -3584,7 +3667,7 @@
  "sources_independent": {
   "key": "sources_independent",
   "title": "Independent sources",
-  "value": 377.0,
+  "value": 389.0,
   "unit": "count",
   "basis": "",
   "digits": null,
@@ -3593,10 +3676,10 @@
    "ledger"
   ],
   "display": {
-   "long": "377",
-   "short": "377",
-   "title": "377",
-   "cap": "377"
+   "long": "389",
+   "short": "389",
+   "title": "389",
+   "cap": "389"
   },
   "note": "",
   "method": "select count(*) from sources where origin = 'independent' and publisher <> 'This site'"
@@ -4397,7 +4480,8 @@
    "portland-2024-annual-comprehensive-financial-report",
    "oregon-moda-center-arena-comparable-structure-overview",
    "portland-adopted",
-   "oregonian-moda-center-talks-dundon-2026-10-21"
+   "oregonian-moda-center-talks-dundon-2026-10-21",
+   "sports-city-says-moda-center-deal-005331872"
   ],
   "display": {
    "long": "$1.2 million",
@@ -5959,6 +6043,366 @@
   },
   "note": "",
   "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nv_mlb_cap, column quote: \"The amount of $380,000,000\")"
+ },
+ "nba_expansion_vote_share": {
+  "key": "nba_expansion_vote_share",
+  "title": "Share of NBA owners who must vote for expansion",
+  "value": 75.0,
+  "unit": "pct",
+  "basis": "",
+  "digits": 0,
+  "label": "b",
+  "sources": [
+   "asaptext-transcripts"
+  ],
+  "display": {
+   "long": "75 percent",
+   "short": "75%",
+   "title": "75%",
+   "cap": "75 percent"
+  },
+  "note": "Commissioner Adam Silver at his March 25, 2026 news conference (\"three-quarters of the owners\"), in the verbatim transcript by ASAP Sports.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nba_expansion_vote_share, column quote: \"three-quarters of the owners\")"
+ },
+ "lv_bids_min": {
+  "key": "lv_bids_min",
+  "title": "Franchise valuations proposed by the groups bidding for a Las Vegas team",
+  "value": 10000.0,
+  "unit": "usd_m",
+  "basis": "as reported, \"or more\"",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "fox5vegas-las-vegas-nba-expansion-bids-reach-10-billion-re"
+  ],
+  "display": {
+   "long": "$10 billion",
+   "short": "$10B",
+   "title": "$10 Billion",
+   "cap": "$10 billion"
+  },
+  "note": "ESPN's Shams Charania on Nov. 11, 2026, as reported by FOX5 Las Vegas. The league has set no price; the Review-Journal reported a fee of $10 billion to $11.5 billion (one source, Nov. 14, 2026).",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=lv_bids_min, column quote: \"franchise valuations of $10 billion or more\")"
+ },
+ "lv_arena_min": {
+  "key": "lv_arena_min",
+  "title": "What the winning Las Vegas group would spend on a new NBA arena, low end of the reported range",
+  "value": 2000.0,
+  "unit": "usd_m",
+  "basis": "face value, as reported",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "kdhnews-article-3e13af3f-9404-5564-b2c6-2b2fb9a85655",
+   "cdcgaming-las-vegas-governor-has-talked-with-multiple-grou"
+  ],
+  "display": {
+   "long": "$2 billion",
+   "short": "$2B",
+   "title": "$2 Billion",
+   "cap": "$2 billion"
+  },
+  "note": "Las Vegas Review-Journal, Nov. 14, 2026, citing one source. No group has publicly asked for public money to build it.",
+  "method": "select cost_m from las_vegas_venues where id = 'nba_arena'"
+ },
+ "lv_arena_max": {
+  "key": "lv_arena_max",
+  "title": "What the winning Las Vegas group would spend on a new NBA arena, high end of the reported range",
+  "value": 3000.0,
+  "unit": "usd_m",
+  "basis": "face value, as reported",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "kdhnews-article-3e13af3f-9404-5564-b2c6-2b2fb9a85655",
+   "cdcgaming-las-vegas-governor-has-talked-with-multiple-grou"
+  ],
+  "display": {
+   "long": "$3 billion",
+   "short": "$3B",
+   "title": "$3 Billion",
+   "cap": "$3 billion"
+  },
+  "note": "",
+  "method": "select cost_max_m from las_vegas_venues where id = 'nba_arena'"
+ },
+ "tmobile_cost": {
+  "key": "tmobile_cost",
+  "title": "What T-Mobile Arena cost to build, all of it private money",
+  "value": 375.0,
+  "unit": "usd_m",
+  "basis": "nominal, opened 2016",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "skift-new-t-mobile-arena-in-las-vegas-signals-return-o"
+  ],
+  "display": {
+   "long": "$375 million",
+   "short": "$375M",
+   "title": "$375 Million",
+   "cap": "$375 million"
+  },
+  "note": "",
+  "method": "select cost_m from las_vegas_venues where id = 'tmobile'"
+ },
+ "foley_tmobile_reno": {
+  "key": "foley_tmobile_reno",
+  "title": "What the Golden Knights' owner says it would take to make T-Mobile Arena ready for the NBA",
+  "value": 400.0,
+  "unit": "usd_m",
+  "basis": "as stated, \"about\"",
+  "digits": null,
+  "label": "c",
+  "sources": [
+   "lasvegasweekly-golden-knights-owner-bill-foley-details-his-p"
+  ],
+  "display": {
+   "long": "$400 million",
+   "short": "$400M",
+   "title": "$400 Million",
+   "cap": "$400 million"
+  },
+  "note": "Bill Foley in a Las Vegas Weekly interview, July 9, 2026. He did not say who would pay.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=foley_tmobile_reno, column quote: \"it will take about $400 million to do that\")"
+ },
+ "lv_allegiant_cost": {
+  "key": "lv_allegiant_cost",
+  "title": "Allegiant Stadium's final construction cost",
+  "value": 1970.0,
+  "unit": "usd_m",
+  "basis": "nominal, opened 2020",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "lvstadiumauthority-6d-allegiant-stadium-by-the-numbers",
+   "nv-sb1-2016-stadium-bonds",
+   "lvstadiumauthority-stadium-lease-agreement-executed",
+   "lvstadiumauthority-7b-lvsa-financial-report-2023-08"
+  ],
+  "display": {
+   "long": "$1.97 billion",
+   "short": "$1.97B",
+   "title": "$1.97 Billion",
+   "cap": "$1.97 billion"
+  },
+  "note": "",
+  "method": "select cost_m from las_vegas_venues where id = 'allegiant'"
+ },
+ "lv_allegiant_public": {
+  "key": "lv_allegiant_public",
+  "title": "Public money in Allegiant Stadium, in 2026 dollars",
+  "value": 961.092732,
+  "unit": "usd_m",
+  "basis": "2026 dollars, converted at the opening year (2020)",
+  "digits": null,
+  "label": "a",
+  "sources": [
+   "fred-cpiaucns",
+   "lvstadiumauthority-6d-allegiant-stadium-by-the-numbers",
+   "nv-sb1-2016-stadium-bonds",
+   "lvstadiumauthority-stadium-lease-agreement-executed",
+   "lvstadiumauthority-7b-lvsa-financial-report-2023-08"
+  ],
+  "display": {
+   "long": "$961 million",
+   "short": "$961M",
+   "title": "$961 Million",
+   "cap": "$961 million"
+  },
+  "note": "The $750 million of county bond proceeds and room-tax money the Stadium Authority reported as paid in full, converted from 2020 dollars. Interest on the bonds is not counted.",
+  "method": "select public_2026_m from las_vegas_venues where id = 'allegiant'"
+ },
+ "lv_allegiant_share": {
+  "key": "lv_allegiant_share",
+  "title": "Public share of Allegiant Stadium's construction cost",
+  "value": 38.071066,
+  "unit": "pct",
+  "basis": "share of the final cost, nominal dollars",
+  "digits": 0,
+  "label": "a",
+  "sources": [
+   "lvstadiumauthority-6d-allegiant-stadium-by-the-numbers",
+   "nv-sb1-2016-stadium-bonds",
+   "lvstadiumauthority-stadium-lease-agreement-executed",
+   "lvstadiumauthority-7b-lvsa-financial-report-2023-08"
+  ],
+  "display": {
+   "long": "38 percent",
+   "short": "38%",
+   "title": "38%",
+   "cap": "38 percent"
+  },
+  "note": "",
+  "method": "select 100 * public_m / cost_m from las_vegas_venues where id = 'allegiant'"
+ },
+ "lv_ballpark_cost": {
+  "key": "lv_ballpark_cost",
+  "title": "The Athletics ballpark's budget when the development agreement was signed (December 2024)",
+  "value": 1750.0,
+  "unit": "usd_m",
+  "basis": "face value; work under way",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "lvstadiumauthority-stadium-development-agreement-executed",
+   "nv-sb1-2023-mlb-stadium",
+   "lvstadiumauthority-stadium-lease-agreement-executed-2",
+   "statecourtreport-schs-over-stadiums-v-thompson-nev-87613",
+   "thenevadaindependent-fisher-says-cost-for-the-las-vegas-as-b"
+  ],
+  "display": {
+   "long": "$1.75 billion",
+   "short": "$1.75B",
+   "title": "$1.75 Billion",
+   "cap": "$1.75 billion"
+  },
+  "note": "Exhibit D of the Stadium Development Agreement. The team has since put the cost above $2 billion (press).",
+  "method": "select cost_m from las_vegas_venues where id = 'ballpark'"
+ },
+ "lv_ballpark_cost_press": {
+  "key": "lv_ballpark_cost_press",
+  "title": "The Athletics ballpark's cost as the team's owner described it in July 2025",
+  "value": 2000.0,
+  "unit": "usd_m",
+  "basis": "as reported, \"in the $2 billion range\"",
+  "digits": 0,
+  "label": "c",
+  "sources": [
+   "thenevadaindependent-fisher-says-cost-for-the-las-vegas-as-b"
+  ],
+  "display": {
+   "long": "$2 billion",
+   "short": "$2B",
+   "title": "$2 Billion",
+   "cap": "$2 billion"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/authorities/las_vegas_venues.csv (id=ballpark, column how: \"up in the $2 billion range\")"
+ },
+ "lv_allegiant_public_nominal": {
+  "key": "lv_allegiant_public_nominal",
+  "title": "Public money in Allegiant Stadium, as paid",
+  "value": 750.0,
+  "unit": "usd_m",
+  "basis": "nominal; reported as paid in full by December 2022",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "lvstadiumauthority-6d-allegiant-stadium-by-the-numbers",
+   "nv-sb1-2016-stadium-bonds",
+   "lvstadiumauthority-stadium-lease-agreement-executed",
+   "lvstadiumauthority-7b-lvsa-financial-report-2023-08"
+  ],
+  "display": {
+   "long": "$750 million",
+   "short": "$750M",
+   "title": "$750 Million",
+   "cap": "$750 million"
+  },
+  "note": "",
+  "method": "select public_m from las_vegas_venues where id = 'allegiant'"
+ },
+ "nv_room_tax_strip": {
+  "key": "nv_room_tax_strip",
+  "title": "Hotel-room tax Nevada added on the Las Vegas Strip for the NFL stadium",
+  "value": 0.88,
+  "unit": "pct",
+  "basis": "of room charges, in the Strip corridor",
+  "digits": 2,
+  "label": "b",
+  "sources": [
+   "nv-sb1-2016-stadium-bonds"
+  ],
+  "display": {
+   "long": "0.88 percent",
+   "short": "0.88%",
+   "title": "0.88%",
+   "cap": "0.88 percent"
+  },
+  "note": "SB 1 (30th Special Session, 2016), section 33; the rate is 0.5 percent elsewhere in the stadium district.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nv_room_tax_strip, column quote: \"eighty-eight one-hundredths of one percent\")"
+ },
+ "nv_seid_acres": {
+  "key": "nv_seid_acres",
+  "title": "Size of the tax district around the Athletics ballpark",
+  "value": 9.0,
+  "unit": "count",
+  "basis": "approximately",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "clark-clark"
+  ],
+  "display": {
+   "long": "nine",
+   "short": "9",
+   "title": "Nine",
+   "cap": "Nine"
+  },
+  "note": "Clark County Sports and Entertainment Improvement District No. 1, created in 2025 under SB 1 (35th Special Session, 2023).",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=nv_seid_acres, column quote: \"totaling approximately 9 acres\")"
+ },
+ "lvsa_reserve_draws": {
+  "key": "lvsa_reserve_draws",
+  "title": "Unscheduled draws on the Allegiant Stadium bonds' reserve fund, 2020 and 2021",
+  "value": 23.287506,
+  "unit": "usd_m",
+  "basis": "nominal",
+  "digits": 1,
+  "label": "b/a",
+  "sources": [
+   "lvstadiumauthority-8a-las-vegas-stadium-authority-fy2020-aud",
+   "lvstadiumauthority-14-stadium-authority-fy21-audit-final"
+  ],
+  "display": {
+   "long": "$23.3 million",
+   "short": "$23.3M",
+   "title": "$23.3 Million",
+   "cap": "$23.3 million"
+  },
+  "note": "The sum of $11,553,389 (Nov. 25, 2020) and $11,734,117 (May 25, 2021), drawn because room-tax collections fell short of the debt payments.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=lvsa_reserve_draws, column quote: \"$11,553,389 was made on the debt reserve fund; On May 25, 2021, an unscheduled draw in the amount of $11,734,117\")"
+ },
+ "lvsa_plaza": {
+  "key": "lvsa_plaza",
+  "title": "Room-tax money the Stadium Authority voted to put toward a new plaza at Allegiant Stadium",
+  "value": 75.0,
+  "unit": "usd_m",
+  "basis": "nominal; up to",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "lvstadiumauthority-posted-agenda-book-november-4-2026-sa"
+  ],
+  "display": {
+   "long": "$75 million",
+   "short": "$75M",
+   "title": "$75 Million",
+   "cap": "$75 million"
+  },
+  "note": "Approved unanimously on Sept. 2, 2026, from the Authority's residual room-tax fund in fiscal 2028; the minutes were approved on Nov. 4, 2026.",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=lvsa_plaza, column quote: \"in an amount not to exceed $75,000,000\")"
+ },
+ "lvsa_plaza_cost": {
+  "key": "lvsa_plaza_cost",
+  "title": "Cost of the elevated plaza at Allegiant Stadium",
+  "value": 158.0,
+  "unit": "usd_m",
+  "basis": "nominal; approximately",
+  "digits": null,
+  "label": "b",
+  "sources": [
+   "lvstadiumauthority-posted-agenda-book-november-4-2026-sa"
+  ],
+  "display": {
+   "long": "$158 million",
+   "short": "$158M",
+   "title": "$158 Million",
+   "cap": "$158 million"
+  },
+  "note": "",
+  "method": "Entered by hand; confirmed against data/inputs/research_claims.csv (key=lvsa_plaza_cost, column quote: \"an approximately $158 million elevated plaza platform\")"
  },
  "por_lobbying": {
   "key": "por_lobbying",

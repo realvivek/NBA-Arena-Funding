@@ -238,3 +238,16 @@ from a join b using (team);
 -- budget states it, who decided it, and the clause that sets it (hand-entered from the documents named in source).
 create or replace view payment_terms as
 select * from read_csv('{root}/data/authorities/payment_terms.csv', header = true, all_varchar = true);
+
+-- Stadiums and arenas in Las Vegas: what each cost and what the public put in. Built venues convert at the opening
+-- year; work under way and proposals stay at face value (their year is 2026, where the factor is 1).
+create or replace view las_vegas_venues as
+select v.id, v.venue, v.team, v.league, v.status, cast(v.year as integer) as year,
+       cast(v.cost_m as double) as cost_m, try_cast(v.cost_max_m as double) as cost_max_m,
+       try_cast(v.public_m as double) as public_m, v.public_basis, v.how, v.decided, v.label, v.source,
+       c.factor_2026,
+       cast(v.cost_m as double) * c.factor_2026 as cost_2026_m,
+       try_cast(v.cost_max_m as double) * c.factor_2026 as cost_max_2026_m,
+       try_cast(v.public_m as double) * c.factor_2026 as public_2026_m
+from read_csv('{root}/data/authorities/las_vegas_venues.csv', header = true, delim = ',', quote = '"', escape = '"', all_varchar = true) v
+join cpi c on c.year = cast(v.year as integer);

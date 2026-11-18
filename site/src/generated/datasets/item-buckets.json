@@ -417,6 +417,14 @@
    "public_2026_m": 71.183793
   },
   {
+   "item_id": "NOP-renovation-7",
+   "team": "NOP",
+   "bucket": "general",
+   "payer": "residents",
+   "public_nominal_m": 75.0,
+   "public_2026_m": 75.0
+  },
+  {
    "item_id": "OKC-construction",
    "team": "OKC",
    "bucket": "sales",

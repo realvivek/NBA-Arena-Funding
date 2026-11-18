@@ -756,6 +756,10 @@ figure.chart {
   background: var(--orange-wash);
   box-shadow: inset 0 0 0 1.5px var(--orange);
 }
+.key-range {
+  background: repeating-linear-gradient(135deg, var(--other) 0 1.5px, transparent 1.5px 3.5px);
+  border: 1px dashed var(--other);
+}
 /* point marks: an open ring and a filled dot, drawn as they are in the chart */
 /* a short upright mark, for a value marked on a bar */
 .key-tick {
@@ -1716,6 +1720,22 @@ figure.chart {
 .chart svg .f-pending-dash {
   fill: var(--orange-wash);
   stroke: var(--orange);
+  stroke-width: 1.25;
+  stroke-dasharray: 3 2;
+}
+/* a cost that is only reported, as a range: the low end filled, the rest outlined (the Las Vegas chart) */
+.chart svg .f-range {
+  stroke: var(--other);
+  stroke-width: 1.25;
+  stroke-dasharray: 3 2;
+}
+.chart svg .hatch {
+  stroke: var(--other);
+  stroke-width: 1.5;
+}
+.chart svg .f-range-end {
+  fill: none;
+  stroke: var(--other);
   stroke-width: 1.25;
   stroke-dasharray: 3 2;
 }

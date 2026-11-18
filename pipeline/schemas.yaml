@@ -81,6 +81,20 @@ authorities/payment_terms.csv:
     label: {type: string, constraints: {required: true, pattern: '^[abc](/[abc])?$'}}
     source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
 
+authorities/las_vegas_venues.csv:
+  primaryKey: [id]
+  fields:
+    id: {type: string, constraints: {required: true, unique: true, pattern: '^[a-z_]+$'}}
+    venue: {type: string, constraints: {required: true}}
+    league: {type: string, constraints: {required: true, enum: [NFL, MLB, NHL, NBA]}}
+    year: {type: integer, constraints: {required: true, minimum: 1960, maximum: 2026}}
+    cost_m: {type: number, constraints: {required: true, minimum: 0}}
+    cost_max_m: {type: number, constraints: {minimum: 0}}
+    public_m: {type: number, constraints: {minimum: 0}}
+    public_basis: {type: string, constraints: {required: true, enum: [paid, cap, none asked]}}
+    label: {type: string, constraints: {required: true, pattern: '^[abc](/[abc])*$'}}
+    source: {type: string, constraints: {required: true, pattern: '.*https?://.*'}}
+
 property_tax/msg_exemption_by_year.csv:
   primaryKey: [fiscal_year]
   fields:

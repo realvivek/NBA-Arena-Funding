@@ -12,6 +12,7 @@
   "oregon-moda-center-arena-comparable-structure-overview",
   "portland-adopted",
   "oregonian-moda-center-talks-dundon-2026-10-21",
+  "sports-city-says-moda-center-deal-005331872",
   "wtop-dallas-mavericks-have-deal-for-arena-site-that-w",
   "frontofficesports-comcasts-400-million-wells-fargo-center-up",
   "whyy-south-philadelphia-new-arena-design-76ers-comcas",
@@ -115,7 +116,7 @@
    "summary": "The initial term ends June 30, 2029.",
    "label": "b",
    "exit_penalty": "The state must keep paying $3.65M a year, a Quality Jobs equivalent, through FY2029",
-   "pending_2026_m": null,
+   "pending_2026_m": 75.0,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
    "new_arena_binding": false,
@@ -129,11 +130,11 @@
    "arena": "Moda Center",
    "owner": "City of Portland (public since 2024: building bought for $1, land under it for $7.13M)",
    "term_end_year": 2030,
-   "term_and_nonrelocation": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); the 2024 bridge agreement has a five-year option to extend through 2035 (City Ordinance 191857, per ACFR FY2024, b); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026 (Resolution 37750)",
-   "outs_penalties_notes": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c)",
+   "term_and_nonrelocation": "Operating lease expires Oct 11 2030 unless extended (Resolution 37750 recital); the 2024 bridge agreement has a five-year option to extend through 2035 (City Ordinance 191857, per ACFR FY2024, b); new 20-yr lease + $573M public renovation under negotiation, definitive documents due by Dec 31 2026 (Resolution 37750), which the city said on Nov 13 2026 appeared unlikely",
+   "outs_penalties_notes": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c); on Nov 13 2026 the city said an agreement \"appears unlikely before the end-of-year deadline to greenlight state funding\", and the council president said he would not schedule a final funding vote in December without the definitive documents the term sheet requires (KGW via Yahoo Sports, Nov 14 2026, c)",
    "summary": "Expires Oct. 11, 2030, unless extended; a 20-year lease is being negotiated.",
    "label": "b/c",
-   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c)",
+   "exit_penalty": "City agreed not to enforce \"first-class\" maintenance duty during bridge (tolled); relocation needs City consent during term; team must repay City Contribution if it leaves; city ownership reduces property taxes collected by an estimated $1.2M a year (ACFR FY2024, b); in October 2026 Dundon asked the city to put a number on the lease's \"first-class\" maintenance clause, and \"The number they landed on was upwards of $1 billion\" (Oregonian via Yahoo, Oct 21 2026, unnamed sources, c); on Nov 13 2026 the city said an agreement \"appears unlikely before the end-of-year deadline to greenlight state funding\", and the council president said he would not schedule a final funding vote in December without the definitive documents the term sheet requires (KGW via Yahoo Sports, Nov 14 2026, c)",
    "pending_2026_m": 573.0,
    "new_arena_2026_m": null,
    "new_arena_pending_2026_m": null,
@@ -142,7 +143,8 @@
     "portland-2024-annual-comprehensive-financial-report",
     "oregon-moda-center-arena-comparable-structure-overview",
     "portland-adopted",
-    "oregonian-moda-center-talks-dundon-2026-10-21"
+    "oregonian-moda-center-talks-dundon-2026-10-21",
+    "sports-city-says-moda-center-deal-005331872"
    ]
   },
   {

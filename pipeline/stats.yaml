@@ -380,7 +380,44 @@ stats:
   basis: face value
   label: a
   sources: [ledger]
-  note: Houston, Memphis and Portland. Not counted in the totals.
+  note: Houston, Memphis, New Orleans and Portland. Not counted in the totals.
+
+- key: nop_reno_total
+  title: Cost of the proposed Smoothie King Center renovation in New Orleans (2026 talks)
+  sql: select spending_2026_m from items where item_id = 'NOP-renovation-7'
+  unit: usd_m
+  basis: face value
+  label: c
+  sources_sql: select source_id from item_sources where item_id = 'NOP-renovation-7' and role = 'public' order by ord
+
+- key: nop_reno_state
+  title: State money Louisiana's governor has committed to support for the Smoothie King Center renovation, over two years
+  sql: select public_2026_m from items where item_id = 'NOP-renovation-7'
+  check: select status = 'pending' from items where item_id = 'NOP-renovation-7'
+  unit: usd_m
+  basis: face value; pending, not counted
+  label: c
+  sources_sql: select source_id from item_sources where item_id = 'NOP-renovation-7' and role = 'public' order by ord
+
+- key: nop_reno_owner
+  title: What the Pelicans' owner has pledged toward the Smoothie King Center renovation
+  value: 150
+  evidence: {file: data/ledger/ledger_items.csv, where: {item_id: NOP-renovation-7}, column: note, contains: 'is pledging $150 million'}
+  unit: usd_m
+  digits: 0
+  basis: nominal
+  label: c
+  sources: [fox8live-proposed-renovations-smoothie-king-center-facing]
+
+- key: nop_reno_gap
+  title: The rest of the Smoothie King Center renovation, left to the state's stadium district with no source yet
+  value: 195
+  evidence: {file: data/ledger/ledger_items.csv, where: {item_id: NOP-renovation-7}, column: note, contains: '"$195 million" (LRN)'}
+  unit: usd_m
+  digits: 0
+  basis: nominal; FOX8 says roughly $200 million
+  label: c
+  sources: [louisianaradionetwork]
 
 - key: new_arenas_committed
   title: Public money committed or approved for new arenas not yet open
@@ -2789,6 +2826,174 @@ stats:
   basis: nominal, a cap including transferable tax credits
   label: b
   sources: [nv-sb1-2023-mlb-stadium]
+
+# ------------------------------------------------------------------ Las Vegas: the expansion talks and Nevada's record
+- key: nba_expansion_vote_share
+  title: Share of NBA owners who must vote for expansion
+  value: 75
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nba_expansion_vote_share}, column: quote, contains: 'three-quarters of the owners'}
+  unit: pct
+  digits: 0
+  label: b
+  sources: [asaptext-transcripts]
+  note: Commissioner Adam Silver at his March 25, 2026 news conference ("three-quarters of the owners"), in the verbatim transcript by ASAP Sports.
+
+- key: lv_bids_min
+  title: Franchise valuations proposed by the groups bidding for a Las Vegas team
+  value: 10000
+  evidence: {file: data/inputs/research_claims.csv, where: {key: lv_bids_min}, column: quote, contains: 'franchise valuations of $10 billion or more'}
+  unit: usd_m
+  digits: 0
+  basis: as reported, "or more"
+  label: c
+  sources: [fox5vegas-las-vegas-nba-expansion-bids-reach-10-billion-re]
+  note: ESPN's Shams Charania on Nov. 11, 2026, as reported by FOX5 Las Vegas. The league has set no price; the Review-Journal reported a fee of $10 billion to $11.5 billion (one source, Nov. 14, 2026).
+
+- key: lv_arena_min
+  title: What the winning Las Vegas group would spend on a new NBA arena, low end of the reported range
+  sql: select cost_m from las_vegas_venues where id = 'nba_arena'
+  check: select public_m is null and public_basis = 'none asked' from las_vegas_venues where id = 'nba_arena'
+  unit: usd_m
+  digits: 0
+  basis: face value, as reported
+  label: c
+  sources_sql: select source_id from lv_sources where id = 'nba_arena' order by ord
+  note: Las Vegas Review-Journal, Nov. 14, 2026, citing one source. No group has publicly asked for public money to build it.
+
+- key: lv_arena_max
+  title: What the winning Las Vegas group would spend on a new NBA arena, high end of the reported range
+  sql: select cost_max_m from las_vegas_venues where id = 'nba_arena'
+  unit: usd_m
+  digits: 0
+  basis: face value, as reported
+  label: c
+  sources_sql: select source_id from lv_sources where id = 'nba_arena' order by ord
+
+- key: tmobile_cost
+  title: What T-Mobile Arena cost to build, all of it private money
+  sql: select cost_m from las_vegas_venues where id = 'tmobile'
+  check: select public_m = 0 from las_vegas_venues where id = 'tmobile'
+  unit: usd_m
+  basis: nominal, opened 2016
+  label: c
+  sources_sql: select source_id from lv_sources where id = 'tmobile' order by ord
+
+- key: foley_tmobile_reno
+  title: What the Golden Knights' owner says it would take to make T-Mobile Arena ready for the NBA
+  value: 400
+  evidence: {file: data/inputs/research_claims.csv, where: {key: foley_tmobile_reno}, column: quote, contains: 'it will take about $400 million to do that'}
+  unit: usd_m
+  basis: as stated, "about"
+  label: c
+  sources: [lasvegasweekly-golden-knights-owner-bill-foley-details-his-p]
+  note: Bill Foley in a Las Vegas Weekly interview, July 9, 2026. He did not say who would pay.
+
+- key: lv_allegiant_cost
+  title: Allegiant Stadium's final construction cost
+  sql: select cost_m from las_vegas_venues where id = 'allegiant'
+  unit: usd_m
+  basis: nominal, opened 2020
+  label: b
+  sources_sql: select source_id from lv_sources where id = 'allegiant' order by ord
+
+- key: lv_allegiant_public
+  title: Public money in Allegiant Stadium, in 2026 dollars
+  sql: select public_2026_m from las_vegas_venues where id = 'allegiant'
+  check: select public_basis = 'paid' from las_vegas_venues where id = 'allegiant'
+  unit: usd_m
+  basis: 2026 dollars, converted at the opening year (2020)
+  label: a
+  sources: [fred-cpiaucns]
+  sources_sql: select source_id from lv_sources where id = 'allegiant' order by ord
+  note: The $750 million of county bond proceeds and room-tax money the Stadium Authority reported as paid in full, converted from 2020 dollars. Interest on the bonds is not counted.
+
+- key: lv_allegiant_share
+  title: Public share of Allegiant Stadium's construction cost
+  sql: select 100 * public_m / cost_m from las_vegas_venues where id = 'allegiant'
+  unit: pct
+  digits: 0
+  basis: share of the final cost, nominal dollars
+  label: a
+  sources_sql: select source_id from lv_sources where id = 'allegiant' order by ord
+
+- key: lv_ballpark_cost
+  title: The Athletics ballpark's budget when the development agreement was signed (December 2024)
+  sql: select cost_m from las_vegas_venues where id = 'ballpark'
+  unit: usd_m
+  basis: face value; work under way
+  label: b
+  sources_sql: select source_id from lv_sources where id = 'ballpark' order by ord
+  note: Exhibit D of the Stadium Development Agreement. The team has since put the cost above $2 billion (press).
+
+- key: lv_ballpark_cost_press
+  title: The Athletics ballpark's cost as the team's owner described it in July 2025
+  value: 2000
+  evidence: {file: data/authorities/las_vegas_venues.csv, where: {id: ballpark}, column: how, contains: 'up in the $2 billion range'}
+  unit: usd_m
+  digits: 0
+  basis: as reported, "in the $2 billion range"
+  label: c
+  sources: [thenevadaindependent-fisher-says-cost-for-the-las-vegas-as-b]
+
+- key: lv_allegiant_public_nominal
+  title: Public money in Allegiant Stadium, as paid
+  sql: select public_m from las_vegas_venues where id = 'allegiant'
+  check: select public_basis = 'paid' from las_vegas_venues where id = 'allegiant'
+  unit: usd_m
+  basis: nominal; reported as paid in full by December 2022
+  label: b
+  sources_sql: select source_id from lv_sources where id = 'allegiant' order by ord
+
+- key: nv_room_tax_strip
+  title: Hotel-room tax Nevada added on the Las Vegas Strip for the NFL stadium
+  value: 0.88
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nv_room_tax_strip}, column: quote, contains: 'eighty-eight one-hundredths of one percent'}
+  unit: pct
+  digits: 2
+  basis: of room charges, in the Strip corridor
+  label: b
+  sources: [nv-sb1-2016-stadium-bonds]
+  note: SB 1 (30th Special Session, 2016), section 33; the rate is 0.5 percent elsewhere in the stadium district.
+
+- key: nv_seid_acres
+  title: Size of the tax district around the Athletics ballpark
+  value: 9
+  evidence: {file: data/inputs/research_claims.csv, where: {key: nv_seid_acres}, column: quote, contains: 'totaling approximately 9 acres'}
+  unit: count
+  basis: approximately
+  label: b
+  sources: [clark-clark]
+  note: Clark County Sports and Entertainment Improvement District No. 1, created in 2025 under SB 1 (35th Special Session, 2023).
+
+- key: lvsa_reserve_draws
+  title: Unscheduled draws on the Allegiant Stadium bonds' reserve fund, 2020 and 2021
+  value: 23.287506
+  evidence: {file: data/inputs/research_claims.csv, where: {key: lvsa_reserve_draws}, column: quote, contains: '$11,553,389 was made on the debt reserve fund; On May 25, 2021, an unscheduled draw in the amount of $11,734,117'}
+  unit: usd_m
+  digits: 1
+  basis: nominal
+  label: b/a
+  sources: [lvstadiumauthority-8a-las-vegas-stadium-authority-fy2020-aud, lvstadiumauthority-14-stadium-authority-fy21-audit-final]
+  note: The sum of $11,553,389 (Nov. 25, 2020) and $11,734,117 (May 25, 2021), drawn because room-tax collections fell short of the debt payments.
+
+- key: lvsa_plaza
+  title: Room-tax money the Stadium Authority voted to put toward a new plaza at Allegiant Stadium
+  value: 75
+  evidence: {file: data/inputs/research_claims.csv, where: {key: lvsa_plaza}, column: quote, contains: 'in an amount not to exceed $75,000,000'}
+  unit: usd_m
+  basis: nominal; up to
+  label: b
+  sources: [lvstadiumauthority-posted-agenda-book-november-4-2026-sa]
+  note: Approved unanimously on Sept. 2, 2026, from the Authority's residual room-tax fund in fiscal 2028; the minutes were approved on Nov. 4, 2026.
+
+- key: lvsa_plaza_cost
+  title: Cost of the elevated plaza at Allegiant Stadium
+  value: 158
+  evidence: {file: data/inputs/research_claims.csv, where: {key: lvsa_plaza_cost}, column: quote, contains: 'an approximately $158 million elevated plaza platform'}
+  unit: usd_m
+  basis: nominal; approximately
+  label: b
+  sources: [lvstadiumauthority-posted-agenda-book-november-4-2026-sa]
 
 # ------------------------------------------------------------------ who is behind the deals
 - key: por_lobbying

@@ -18,7 +18,7 @@ Total arena spending (construction public+private, renovations public+private, o
 PUBLIC SHARE OF TOTAL ARENA SPENDING ........... 34.9%
   construction only: public $5.39B of $19.54B = 27.6%  (private construction $14.15B)
   renovations only: public $3.23B of $7.17B = 45.0%
-Pending public money on current arenas (not in core): $1.14B  (HOU $95M; MEM $470M; POR $573M; see the renovation items in arena_ledger.csv)
+Pending public money on current arenas (not in core): $1.21B  (HOU $95M; MEM $470M; NOP $75M; POR $573M; see the renovation items in arena_ledger.csv)
 Method: public share = public money / (max(reported cost, public+private construction) + renovation totals + ongoing public). Public purchases count as
 public money but not as new spending (they reimburse private builders). Debt service on counted bonds is NOT added (no double counting).
 
@@ -94,10 +94,10 @@ F. NEW-ARENA / DISTRICT COMMITMENTS NOT IN THE 30-ARENA CORE (face value = 2026$
 ------------------------------------------------------------------------------
 Binding: OKC New Oklahoma City arena (Continental Coliseum, Paycom Center replacement) $910M; UTA Delta Center district (Jazz/Mammoth) $375M -> $1.28B
 Voter-approved, agreements pending: SAS Spurs downtown arena (Project Marvel) $311M -> $311M
-Pending/non-binding, new arenas: SAS Spurs downtown arena (Project Marvel) $549M -> $549M; pending on current arenas (team rows): $1.14B
+Pending/non-binding, new arenas: SAS Spurs downtown arena (Project Marvel) $549M -> $549M; pending on current arenas (team rows): $1.21B
 No public deal: PHI 76ers-Comcast Spectacor South Philadelphia arena; DAL Mavericks planned arena (Valley View site)
 OKC binding total includes $60M of 2025 GO bonds for a garage and team offices outside the $900M arena budget; Bexar County $311M is the voter-approved cap.
-Core + binding new = $10.87B; + all approved/pending = $12.87B
+Core + binding new = $10.87B; + all approved/pending = $12.95B
 
 G. COST PER HOUSEHOLD - EVERY ARENA WITH COUNTED PUBLIC MONEY (2026$; ACS 2024 1-year households, table B11001, Census Reporter API)
 ------------------------------------------------------------------------------
@@ -206,5 +206,5 @@ Public construction money in arenas opened 2014-2026: $1.08B (DET 2017 $387M, GS
 Public money for new arenas under construction, binding (face value): $910M (OKC $910M); building since 2014 in all: $1.99B
 Public money to renovate or buy existing arenas, 2014-2026 (completed or binding): $3.02B = 1.51 times the money to build new arenas (2.79 times the money in the arenas that opened)
   by arena: IND $548M, UTA $548M, WAS $520M, CHA $268M, ORL $226M, PHX $217M, ATL $188M, CLE $164M, SAS $119M, MIN $100M, MEM $80M, OKC $29M, POR $8M
-Pending on existing arenas (not counted): $1.14B; new or replacement arenas and districts outside the 30-arena total, binding or voter-approved: $1.60B
+Pending on existing arenas (not counted): $1.21B; new or replacement arenas and districts outside the 30-arena total, binding or voter-approved: $1.60B
 Years: construction at the opening year; renovations at the mid-construction year (future and in-progress work at face value, year 2026); purchases at the transaction year.

@@ -141,6 +141,17 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "asaptext-transcripts",
+  "url": "https://asaptext.com/asap_media/media/1002/1004/transcripts/165890.pdf",
+  "title": "NBA Media Conference: Commissioner Adam Silver (transcript)",
+  "title_from": "curated",
+  "publisher": "ASAP Sports",
+  "origin": "independent",
+  "date": "2026-03-25",
+  "checked": "2026-11-18",
+  "review": "verbatim transcript produced by ASAP Sports, not by the league; two-column PDF, quotes checked in reading order"
+ },
+ {
   "id": "athleticbusiness-phoenix-suns-owner-mulls-move-amid-arena-fi",
   "url": "https://www.athleticbusiness.com/facilities/stadium-arena/news/15156284/phoenix-suns-owner-mulls-move-amid-arena-fight",
   "title": "Phoenix Suns owner mulls move amid arena fight",
@@ -697,6 +708,17 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "cdcgaming-las-vegas-governor-has-talked-with-multiple-grou",
+  "url": "https://cdcgaming.com/brief/las-vegas-governor-has-talked-with-multiple-groups-regarding-nba-expansion/",
+  "title": "Las Vegas: Governor has talked with multiple groups regarding NBA expansion",
+  "title_from": "curated",
+  "publisher": "CDC Gaming (excerpt of the Las Vegas Review-Journal)",
+  "origin": "independent",
+  "date": "2026-03-19",
+  "checked": "2026-11-18",
+  "review": "reviewjournal.com refuses scripted requests (HTTP 403); read through the CDC Gaming excerpt"
+ },
+ {
   "id": "census-acs2024-5yr-bg-bexar",
   "url": "https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013,B11001&geo_ids=150%7C05000US48029",
   "title": "American Community Survey 2020-2024 5-year estimates, tables B19013 (median household income) and B11001 (households), block groups in Bexar County, Texas",
@@ -845,6 +867,16 @@
   "origin": "government",
   "date": "2025",
   "checked": "2026-10-17"
+ },
+ {
+  "id": "clark-clark",
+  "url": "https://clark.legistar1.com/clark/attachments/a2b1593c-4305-4ad9-ac1b-1371f09a1bea.pdf",
+  "title": "Staff report: ordinance creating Clark County Sports and Entertainment Improvement District No. 1",
+  "title_from": "curated",
+  "publisher": "Clark County, Nevada",
+  "origin": "government",
+  "date": "2025-04-02",
+  "checked": "2026-11-18"
  },
  {
   "id": "clearygottlieb-sixth-street-invests-in-boston-celtics",
@@ -2021,6 +2053,26 @@
   "checked": "2026-10-18"
  },
  {
+  "id": "fox5vegas-las-vegas-nba-expansion-bids-reach-10-billion-re",
+  "url": "https://www.fox5vegas.com/2026/11/12/las-vegas-nba-expansion-bids-reach-10-billion-reporter-says/",
+  "title": "Las Vegas NBA expansion bids reach $10 billion, reporter says",
+  "title_from": "curated",
+  "publisher": "FOX5 Las Vegas",
+  "origin": "independent",
+  "date": "2026-11-12",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "fox5vegas-nba-las-vegas-expansion-adam-silver-talks-sphere",
+  "url": "https://www.fox5vegas.com/2026/09/15/nba-las-vegas-expansion-adam-silver-talks-sphere-inspired-arena/",
+  "title": "NBA Las Vegas expansion: Adam Silver talks Sphere-inspired arena",
+  "title_from": "curated",
+  "publisher": "FOX5 Las Vegas",
+  "origin": "independent",
+  "date": "2026-09-15",
+  "checked": "2026-11-18"
+ },
+ {
   "id": "fox6now-haslams-purchase-lasrys-stake-bucks-approved-nba",
   "url": "https://www.fox6now.com/sports/haslams-purchase-lasrys-stake-bucks-approved-nba",
   "title": "Haslams purchase of Lasry's Bucks stake approved by NBA",
@@ -2039,6 +2091,16 @@
   "origin": "independent",
   "date": "2015-07-28",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "fox8live-proposed-renovations-smoothie-king-center-facing",
+  "url": "https://www.fox8live.com/2026/11/09/proposed-renovations-smoothie-king-center-facing-questions-about-funding/",
+  "title": "Proposed renovations to Smoothie King Center facing questions about funding",
+  "title_from": "curated",
+  "publisher": "FOX 8 (WVUE New Orleans)",
+  "origin": "independent",
+  "date": "2026-11-09",
+  "checked": "2026-11-18"
  },
  {
   "id": "foxbusiness-joshua-kushner-purchases-minority-stake-in-memph",
@@ -2655,6 +2717,17 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "kdhnews-article-3e13af3f-9404-5564-b2c6-2b2fb9a85655",
+  "url": "https://kdhnews.com/sports/nba/nba-las-vegas-expansion-bid-process-sees-2-groups-potential-arena-sites-emerge/article_3e13af3f-9404-5564-b2c6-2b2fb9a85655.html",
+  "title": "NBA Las Vegas expansion bid process sees 2 groups, potential arena sites emerge",
+  "title_from": "curated",
+  "publisher": "Las Vegas Review-Journal (via Tribune Content Agency, kdhnews.com)",
+  "origin": "independent",
+  "date": "2026-11-14",
+  "checked": "2026-11-18",
+  "review": "reviewjournal.com refuses scripted requests (HTTP 403); read through the syndicated copy"
+ },
+ {
   "id": "kgou-oklahoma-city-inks-deal-to-keep-thunder-through",
   "url": "https://www.kgou.org/sports/2025-06-18/oklahoma-city-inks-deal-to-keep-thunder-through-2053-nails-down-new-arena-policies",
   "title": "Oklahoma City inks deal to keep Thunder through 2053, nails down new arena policies",
@@ -2825,6 +2898,16 @@
   "checked": "2026-10-18"
  },
  {
+  "id": "lasvegasweekly-golden-knights-owner-bill-foley-details-his-p",
+  "url": "https://lasvegasweekly.com/news/2026/jul/09/golden-knights-owner-bill-foley-details-his-plan-t/",
+  "title": "Golden Knights owner Bill Foley details his plan to bring an NBA expansion team to Las Vegas",
+  "title_from": "curated",
+  "publisher": "Las Vegas Weekly",
+  "origin": "independent",
+  "date": "2026-07-09",
+  "checked": "2026-11-18"
+ },
+ {
   "id": "latimes-la-xpm-2001-jul-04-sp-18655-story",
   "url": "https://www.latimes.com/archives/la-xpm-2001-jul-04-sp-18655-story.html",
   "title": "NBA Approves Grizzlies’ Move",
@@ -2904,6 +2987,16 @@
   "origin": "government",
   "date": "2017-07-26",
   "checked": "2026-10-16"
+ },
+ {
+  "id": "leg-sb266-en",
+  "url": "https://www.leg.state.nv.us/Session/78th2015/Bills/SB/SB266_EN.pdf",
+  "title": "Senate Bill 266 (2015), as enrolled: the live entertainment tax",
+  "title_from": "curated",
+  "publisher": "Nevada Legislature",
+  "origin": "government",
+  "date": "2015",
+  "checked": "2026-11-18"
  },
  {
   "id": "lgreports-charlotte",
@@ -3036,6 +3129,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "louisianaradionetwork",
+  "url": "https://louisianaradionetwork.com/2026/11/10/48853/",
+  "title": "Smoothie King Center renovation plan continues to face questions regarding funding",
+  "title_from": "curated",
+  "publisher": "Louisiana Radio Network",
+  "origin": "independent",
+  "date": "2026-11-10",
+  "checked": "2026-11-18"
+ },
+ {
   "id": "lrl-target",
   "url": "https://www.lrl.mn.gov/guides/target.aspx",
   "title": "Basketball in Minnesota and the Target Center Arena",
@@ -3044,6 +3147,86 @@
   "origin": "government",
   "date": "n.d.",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "lvstadiumauthority-14-stadium-authority-fy21-audit-final",
+  "url": "https://www.lvstadiumauthority.com/docs/2022/01/12/14-Stadium%20Authority%20FY21%20Audit%20FINAL.pdf",
+  "title": "Clark County Stadium Authority financial audit, fiscal year 2021",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2022-01-12",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "lvstadiumauthority-6d-allegiant-stadium-by-the-numbers",
+  "url": "https://www.lvstadiumauthority.com/docs/2020/09/17/6d-Allegiant%20Stadium%20by%20the%20Numbers.pdf",
+  "title": "Allegiant Stadium by the Numbers",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2020-09-17",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "lvstadiumauthority-7b-lvsa-financial-report-2023-08",
+  "url": "https://www.lvstadiumauthority.com/docs/2023/08/24/7b-LVSA%20Financial%20Report%202023.08.pdf",
+  "title": "Stadium Authority Financial Report, August 2023 (project funding through December 2022)",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2023-08-24",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "lvstadiumauthority-8a-las-vegas-stadium-authority-fy2020-aud",
+  "url": "https://www.lvstadiumauthority.com/docs/2021/01/21/8a-Las%20Vegas%20Stadium%20Authority%20FY2020%20Audit%20Report%20(FINAL).pdf",
+  "title": "Las Vegas Stadium Authority audit report, fiscal year 2020",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2021-01-21",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "lvstadiumauthority-posted-agenda-book-november-4-2026-sa",
+  "url": "https://www.lvstadiumauthority.com/docs/2026/11/04/Posted%20Agenda%20Book%20-%20November%204%2C%202026%20SA.pdf",
+  "title": "Board meeting agenda book, November 4, 2026 (with the minutes of September 2, 2026)",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2026-11-04",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "lvstadiumauthority-stadium-development-agreement-executed",
+  "url": "https://www.lvstadiumauthority.com/docs/mlb/Stadium%20Development%20Agreement--Executed.pdf",
+  "title": "Stadium Development Agreement for the Athletics ballpark (executed)",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2024-12-05",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "lvstadiumauthority-stadium-lease-agreement-executed",
+  "url": "https://www.lvstadiumauthority.com/docs/allegiant/Stadium%20Lease%20Agreement%20(EXECUTED).pdf",
+  "title": "Stadium Lease Agreement for Allegiant Stadium (executed)",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2018-03-28",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "lvstadiumauthority-stadium-lease-agreement-executed-2",
+  "url": "https://www.lvstadiumauthority.com/docs/mlb/Stadium%20Lease%20Agreement--Executed.pdf",
+  "title": "Stadium Lease Agreement for the Athletics ballpark (executed)",
+  "title_from": "curated",
+  "publisher": "Las Vegas Stadium Authority",
+  "origin": "government",
+  "date": "2024-12-05",
+  "checked": "2026-11-18"
  },
  {
   "id": "memphis-council-agenda-2026-09-01",
@@ -4546,6 +4729,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "skift-new-t-mobile-arena-in-las-vegas-signals-return-o",
+  "url": "https://skift.com/2016/04/07/new-t-mobile-arena-in-las-vegas-signals-return-of-large-hospitality-investment/",
+  "title": "New T-Mobile Arena in Las Vegas signals return of large hospitality investment",
+  "title_from": "curated",
+  "publisher": "Skift",
+  "origin": "independent",
+  "date": "2016-04-07",
+  "checked": "2026-11-18"
+ },
+ {
   "id": "slc-cafr-fy2003",
   "url": "http://www.slcdocs.com/accounting/CAFR2003.pdf",
   "title": "Comprehensive Annual Financial Report, fiscal year 2003",
@@ -4667,6 +4860,17 @@
   "checked": "2026-10-18"
  },
  {
+  "id": "sports-city-says-moda-center-deal-005331872",
+  "url": "https://sports.yahoo.com/articles/city-says-moda-center-deal-005331872.html",
+  "title": "City says Moda Center deal with Blazers appears unlikely by end of year deadline",
+  "title_from": "curated",
+  "publisher": "KGW (via Yahoo Sports)",
+  "origin": "independent",
+  "date": "2026-11-13",
+  "checked": "2026-11-18",
+  "review": "kgw.com refuses scripted requests (HTTP 403); read through the Yahoo Sports copy"
+ },
+ {
   "id": "sports-fedexforum-documents-offer-strong-clue-194527628",
   "url": "https://sports.yahoo.com/articles/fedexforum-documents-offer-strong-clue-194527628.html",
   "title": "New FedExForum Documents Offer Strong Clue About Grizzlies’ Future In Memphis",
@@ -4777,6 +4981,16 @@
   "checked": "2026-10-11"
  },
  {
+  "id": "statecourtreport-schs-over-stadiums-v-thompson-nev-87613",
+  "url": "https://statecourtreport.org/sites/default/files/fastcase/converted/Schs.%20Over%20Stadiums%20v.%20Thompson%2C%20Nev.%2087613.pdf",
+  "title": "Schools Over Stadiums v. Thompson, No. 87613, Order of Affirmance",
+  "title_from": "curated",
+  "publisher": "Supreme Court of Nevada (copy via State Court Report)",
+  "origin": "court",
+  "date": "2024-05-13",
+  "checked": "2026-11-18"
+ },
+ {
   "id": "stocktitan-blue-owl-s-home-court-partners-fund-announces-mi",
   "url": "https://www.stocktitan.net/news/OWL/blue-owl-s-home-court-partners-fund-announces-minority-equity-7fv3ubpu2vaq.html",
   "title": "Blue Owl's Home Court Partners fund announces minority equity investment",
@@ -4826,6 +5040,26 @@
   "origin": "independent",
   "date": "n.d.",
   "checked": "2026-10-11"
+ },
+ {
+  "id": "thenevadaindependent-fisher-says-cost-for-the-las-vegas-as-b",
+  "url": "https://thenevadaindependent.com/article/fisher-says-cost-for-the-las-vegas-as-ballpark-has-risen-above-2-billion",
+  "title": "Fisher says cost for the Las Vegas A's ballpark has risen above $2 billion",
+  "title_from": "curated",
+  "publisher": "The Nevada Independent",
+  "origin": "independent",
+  "date": "2025-07-30",
+  "checked": "2026-11-18"
+ },
+ {
+  "id": "thenevadaindependent-raiders-golden-knights-tickets-could-be",
+  "url": "https://thenevadaindependent.com/article/raiders-golden-knights-tickets-could-be-assessed-states-9-percent-ticket-tax-after-years-of-carve-out",
+  "title": "Raiders, Golden Knights tickets could be assessed state's 9 percent ticket tax after years of carve-out",
+  "title_from": "curated",
+  "publisher": "The Nevada Independent",
+  "origin": "independent",
+  "date": "2021-04-06",
+  "checked": "2026-11-18"
  },
  {
   "id": "thepeninsulaqatar-knicks-still-the-most-valuable-team-forbes",

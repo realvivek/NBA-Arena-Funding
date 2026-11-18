@@ -29,6 +29,7 @@ export const FIG_DATA: Record<string, string> = {
   afteropen: 'after-kinds',
   recurring: 'recurring-by-year',
   commitments: 'payment-terms',
+  lasvegas: 'las-vegas-venues',
 };
 
 // Where each row's own sources are listed, for charts whose rows come from many documents.

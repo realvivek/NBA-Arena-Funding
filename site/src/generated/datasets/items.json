@@ -98,6 +98,8 @@
   "lla-00006b8b",
   "lla-000144e2",
   "sportsbusinessdaily-new-orleans",
+  "fox8live-proposed-renovations-smoothie-king-center-facing",
+  "louisianaradionetwork",
   "lla-000040e2",
   "lla-0002644e",
   "lla-00000f4f",
@@ -3098,6 +3100,27 @@
    "sources": [
     "lla-vwprbyagencyjson",
     "sportsbusinessdaily-new-orleans"
+   ]
+  },
+  {
+   "team": "NOP",
+   "item_id": "NOP-renovation-7",
+   "kind": "renovation",
+   "description": "Proposed $420M renovation (2026 talks)",
+   "year": 2026,
+   "status": "pending",
+   "core": false,
+   "spending_nominal_m": 420.0,
+   "public_nominal_m": 75.0,
+   "cpi_factor": 1.0,
+   "spending_2026_m": 420.0,
+   "public_2026_m": 75.0,
+   "cost_label": "c",
+   "public_label": "c",
+   "note": "Proposed $420M renovation: Gayle Benson \"is pledging $150 million\" (team spokesman, FOX8, Nov 9 2026) and Gov. Landry \"has committed to supporting $75 million in the Capital Outlay Budget over two years\" (NOLA.com's business editor on Louisiana Radio Network, Nov 10 2026). The rest, \"roughly $200 million\" (FOX8) or \"$195 million\" (LRN), would fall to the LSED, which has no source for it yet; it is not counted here even as pending. No appropriation or agreement; the state's $75M is pending (not counted), as Houston's expected state money is. Lease ends June 30 2029; LSED chairman: \"We do not have a timeframe\"",
+   "sources": [
+    "fox8live-proposed-renovations-smoothie-king-center-facing",
+    "louisianaradionetwork"
    ]
   },
   {

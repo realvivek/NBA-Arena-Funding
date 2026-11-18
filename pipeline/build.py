@@ -97,7 +97,7 @@ def source_tables(by_url):
             return list(csv.DictReader(f))
     t = {'item_sources': [], 'arena_sources': [], 'lease_sources': [], 'threat_sources': [], 'left_behind_sources': [],
          'coord_sources': [], 'value_sources': [], 'history_sources': [], 'return_sources': [], 'investor_sources': [],
-         'term_sources': []}
+         'term_sources': [], 'lv_sources': []}
     for r in read('data/ledger/ledger_items.csv'):
         for role in ('cost', 'public'):
             for i, sid in enumerate(ids_for(r[f'{role}_source'], by_url)):
@@ -113,6 +113,9 @@ def source_tables(by_url):
     for r in read('data/authorities/payment_terms.csv'):
         for i, sid in enumerate(ids_for(r['source'], by_url)):
             t['term_sources'].append((r['team'], r['what'], sid, i))
+    for r in read('data/authorities/las_vegas_venues.csv'):
+        for i, sid in enumerate(ids_for(r['source'], by_url)):
+            t['lv_sources'].append((r['id'], sid, i))
     for r in read('data/threats/threat_ledger.csv'):
         for i, sid in enumerate(ids_for(r['sources'], by_url)):
             t['threat_sources'].append((r['id'], sid, i))
@@ -158,7 +161,8 @@ def connect(by_url, srcs):
             'history_sources': 'year INTEGER, source_id VARCHAR, ord INTEGER',
             'return_sources': 'team VARCHAR, source_id VARCHAR, ord INTEGER',
             'investor_sources': 'fund VARCHAR, team VARCHAR, source_id VARCHAR, ord INTEGER',
-            'term_sources': 'team VARCHAR, what VARCHAR, source_id VARCHAR, ord INTEGER'}
+            'term_sources': 'team VARCHAR, what VARCHAR, source_id VARCHAR, ord INTEGER',
+            'lv_sources': 'id VARCHAR, source_id VARCHAR, ord INTEGER'}
     for name, rows in source_tables(by_url).items():
         con.execute(f'create table {name} ({cols[name]})')
         if rows:
