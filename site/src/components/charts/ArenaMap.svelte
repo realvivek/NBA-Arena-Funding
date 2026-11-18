@@ -123,7 +123,7 @@
         </g>
       {:else}
         {#each points.filter((d) => rank[d.team] <= 10) as d}
-          <text x={d.px} y={d.py} dy="0.35em" text-anchor="middle" font-size={FONT} font-weight="700" fill={bin(d.public_share_pct) >= 3 ? '#fff' : 'var(--ink)'}>{rank[d.team]}</text>
+          <text x={d.px} y={d.py} dy="0.35em" text-anchor="middle" font-size={FONT} font-weight="700" style="fill: var(--seq-ink-{bin(d.public_share_pct)})">{rank[d.team]}</text>
         {/each}
       {/if}
     </Svg>

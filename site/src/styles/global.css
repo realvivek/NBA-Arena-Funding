@@ -35,6 +35,12 @@
   --seq-3: #5598e7;
   --seq-4: #256abf;
   --seq-5: #104281;
+  /* text set on each step of the blue ramp (the map's ranks) */
+  --seq-ink-1: #0c1626;
+  --seq-ink-2: #0c1626;
+  --seq-ink-3: #fff;
+  --seq-ink-4: #fff;
+  --seq-ink-5: #fff;
   --band: #0c1626;
   --band-ink: #f4f6fa;
   --band-muted: #aab5c7;
@@ -82,6 +88,11 @@
     --seq-3: #3987e5;
     --seq-4: #6da7ec;
     --seq-5: #b7d3f6;
+    --seq-ink-1: #fff;
+    --seq-ink-2: #fff;
+    --seq-ink-3: #fff;
+    --seq-ink-4: #0a1220;
+    --seq-ink-5: #0a1220;
     --band: #0a1220;
     --band-ink: #f0efec;
     --band-muted: #9ca7b9;
@@ -123,6 +134,11 @@
   --seq-3: #3987e5;
   --seq-4: #6da7ec;
   --seq-5: #b7d3f6;
+  --seq-ink-1: #fff;
+  --seq-ink-2: #fff;
+  --seq-ink-3: #fff;
+  --seq-ink-4: #0a1220;
+  --seq-ink-5: #0a1220;
   --band: #0a1220;
   --band-ink: #f0efec;
   --band-muted: #9ca7b9;
@@ -772,7 +788,8 @@ figure.chart {
 .v-narrow {
   display: none;
 }
-@media (max-width: 40rem) {
+/* charts switch to their wide layout from 44rem: narrower than that, the wide layout would set its labels under 11px */
+@media (max-width: 44rem) {
   .v-wide {
     display: none;
   }
@@ -1115,6 +1132,12 @@ th.n {
 }
 .src-links a {
   white-space: nowrap;
+}
+@media (min-width: 40.0625rem) {
+  th.long,
+  td.long {
+    min-width: 15rem;
+  }
 }
 
 /* Section links at the end of the story */
@@ -1639,7 +1662,7 @@ figure.chart {
   }
 }
 /* tablets show the wide chart, which drawn narrower than 36rem would set its labels under 11px */
-@media (min-width: 40.0625rem) and (max-width: 63.99rem) {
+@media (min-width: 44.0625rem) and (max-width: 63.99rem) {
   .scrolly-body {
     --fit-min: 36rem;
   }

@@ -23,7 +23,7 @@ const groups = group
           <a class="s-title" href={s.url} rel="noopener">{s.title}</a>
           {!group && <span class="origin">{ORIGIN_LABEL[s.origin]}</span>}
           <span class="s-meta">
-            {s.publisher}. {s.date === 'n.d.' ? 'Undated' : `Dated ${s.date}`}. Figures last checked {s.checked}.
+            {s.publisher.replace(/\.$/, '')}. {s.date === 'n.d.' ? 'Undated' : `Dated ${s.date}`}. Figures last checked {s.checked}.
           </span>
         </li>
       ))}
